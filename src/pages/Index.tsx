@@ -1,12 +1,49 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import ProgramsSection from '@/components/ProgramsSection';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import Testimonials from '@/components/Testimonials';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main>
+        <Hero />
+        <div className="py-16 bg-white">
+          <div className="container-wide text-center">
+            <h2 className="section-heading">Experience Learning Through Adventure</h2>
+            <p className="section-subheading mx-auto">
+              Since 1993, we've specialized in small-group immersive experiences that combine authentic cultural engagement, wilderness exploration, and transformative education.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
+              <div className="flex flex-col items-center">
+                <p className="text-4xl font-bold text-dragon mb-2">30+</p>
+                <p className="text-dragon-gray text-center">Years of Experience</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <p className="text-4xl font-bold text-dragon mb-2">25</p>
+                <p className="text-dragon-gray text-center">Countries</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <p className="text-4xl font-bold text-dragon mb-2">100+</p>
+                <p className="text-dragon-gray text-center">Program Leaders</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <p className="text-4xl font-bold text-dragon mb-2">10,000+</p>
+                <p className="text-dragon-gray text-center">Alumni Worldwide</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ProgramsSection />
+        <WhyChooseUs />
+        <Testimonials />
+      </main>
+      <Footer />
     </div>
   );
 };
