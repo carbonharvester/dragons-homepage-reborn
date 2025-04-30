@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="relative h-[80vh] min-h-[600px] flex items-center">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1465919292275-c60ba49da6ae?q=80&w=2070&auto=format')] bg-cover bg-center">
+      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1466721591366-2d5fba72006d?q=80&w=1500&auto=format')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
       
