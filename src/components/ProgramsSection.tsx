@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,7 +21,7 @@ const programs = [{
   description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.",
   image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png" // Swapped with Empowering Women image
 }, {
-  title: "Empowering Women",
+  title: "Valuing Women Transforms Communities",
   category: "Gap Year",
   duration: "5-7 Days",
   season: "Year Round",
@@ -63,7 +64,7 @@ const ProgramsSection = () => {
               </div>
                 
               <CardContent className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-bold mb-3 text-dragon-dark">{program.title}</h3>
+                <h3 className="text-lg font-bold mb-3 text-dragon-dark truncate">{program.title}</h3>
                 <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
                 <div className="flex justify-between text-sm text-dragon-gray mb-4">
                   <div className="flex items-center">
