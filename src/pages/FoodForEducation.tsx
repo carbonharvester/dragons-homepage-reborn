@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -19,17 +20,6 @@ const FoodForEducation = () => {
           <div className="container-wide relative z-10 h-full flex flex-col justify-center text-white">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4">Food For Education</h1>
             <p className="text-xl md:text-2xl max-w-3xl">A permaculture farm project addressing food insecurity through sustainable agriculture and education programmes.</p>
-          </div>
-        </section>
-
-        {/* Map Section */}
-        <section className="py-8 bg-white">
-          <div className="container-wide">
-            <div className="flex items-center justify-center mb-4">
-              
-              
-            </div>
-            <KenyaMap />
           </div>
         </section>
 
@@ -66,6 +56,15 @@ const FoodForEducation = () => {
                 console.log("Failed to load Food For Education facility image, using fallback");
               }} />
               </div>
+            </div>
+            
+            {/* Map moved to the bottom of the project overview section */}
+            <div className="mt-12">
+              <h3 className="text-xl font-bold mb-4 text-dragon-dark">Project Location</h3>
+              <p className="text-lg text-dragon-gray mb-6">
+                The Food For Education project is located at Kirigu Primary School in Nairobi, Kenya. The map below shows the exact location of our project.
+              </p>
+              <KenyaMap />
             </div>
           </div>
         </section>
