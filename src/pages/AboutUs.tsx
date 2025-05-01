@@ -4,37 +4,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { MapPin, Calendar, Users, Globe } from 'lucide-react';
 
 const AboutUs = () => {
-  const teamMembers = [
-    {
-      name: "Sarah Johnson",
-      role: "Co-Founder & CEO",
-      bio: "Former international teacher with 15+ years of experience in educational leadership across Asia and Africa.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=500&h=500&auto=format&fit=crop"
-    },
-    {
-      name: "David Chen",
-      role: "Co-Founder & Program Director",
-      bio: "Conservation biologist with extensive field experience developing community-based sustainability initiatives.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&h=500&auto=format&fit=crop"
-    },
-    {
-      name: "Amina Osei",
-      role: "Community Partnerships Lead",
-      bio: "Social entrepreneur focused on developing ethical partnerships between schools and local communities.",
-      image: "https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?q=80&w=500&h=500&auto=format&fit=crop"
-    },
-    {
-      name: "Marcus Rivera",
-      role: "Educational Design Specialist",
-      bio: "Curriculum developer specializing in experiential learning methodologies and cross-cultural education.",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=500&h=500&auto=format&fit=crop"
-    }
-  ];
-
   const milestones = [
     {
       year: "2023",
@@ -160,38 +132,6 @@ const AboutUs = () => {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section className="py-20 bg-white">
-          <div className="container-wide">
-            <h2 className="section-heading text-center">Our Team</h2>
-            <p className="section-subheading text-center mx-auto">Meet the passionate educators and community builders behind Mission KAPES.</p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-              {teamMembers.map((member, index) => (
-                <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-square overflow-hidden">
-                    <Avatar className="h-full w-full rounded-none">
-                      <AvatarImage 
-                        src={member.image} 
-                        alt={member.name} 
-                        className="object-cover h-full w-full"
-                      />
-                      <AvatarFallback className="bg-dragon text-white text-2xl h-full w-full rounded-none">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </AvatarFallback>
-                    </Avatar>
-                  </div>
-                  <CardContent className="pt-6">
-                    <h3 className="text-xl font-bold text-dragon-dark">{member.name}</h3>
-                    <p className="text-dragon-light font-medium mb-2">{member.role}</p>
-                    <p className="text-dragon-gray text-sm">{member.bio}</p>
-                  </CardContent>
-                </Card>
-              ))}
             </div>
           </div>
         </section>
