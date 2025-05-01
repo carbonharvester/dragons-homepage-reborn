@@ -29,6 +29,18 @@ const Index = () => {
     
     return () => clearInterval(interval);
   }, [api]);
+
+  const schoolLogos = [
+    { src: "/lovable-uploads/0d2ee059-b425-4a7d-a8ba-3ee2cd8fdfc0.png", alt: "British International School of Jeddah" },
+    { src: "/lovable-uploads/38402d57-68c0-4b9b-9868-02bb45b85144.png", alt: "Arbor School" },
+    { src: "/lovable-uploads/5de3bb89-b98b-471d-b489-b486b74a96b8.png", alt: "Fairgreen International School" },
+    { src: "/lovable-uploads/e6394583-20d9-4609-8284-6ba2ca500c08.png", alt: "American Community School of Abu Dhabi" },
+    { src: "/lovable-uploads/2586ddf8-8a65-45ca-ac88-f21c4e930c03.png", alt: "North London Collegiate School Dubai" },
+    { src: "/lovable-uploads/f83bb6ef-1a09-47f6-9cee-60b23dd0823c.png", alt: "Cairo American College" },
+    // Repeat logos for continuous scrolling effect
+    { src: "/lovable-uploads/0d2ee059-b425-4a7d-a8ba-3ee2cd8fdfc0.png", alt: "British International School of Jeddah" },
+    { src: "/lovable-uploads/38402d57-68c0-4b9b-9868-02bb45b85144.png", alt: "Arbor School" },
+  ];
   
   return <div className="min-h-screen flex flex-col">
       <Header />
@@ -50,15 +62,16 @@ const Index = () => {
                 }}
               >
                 <CarouselContent className="-ml-2 md:-ml-4">
-                  {Array.from({ length: 8 }).map((_, index) => (
-                    <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/3 md:basis-1/4 lg:basis-1/5">
+                  {schoolLogos.map((logo, index) => (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/4 md:basis-1/5 lg:basis-1/6">
                       <div className="p-1">
-                        <Avatar className="h-20 w-20 mx-auto">
+                        <Avatar className="h-20 w-20 mx-auto rounded-none bg-transparent">
                           <AvatarImage 
-                            src={`https://images.unsplash.com/photo-${1486312338219 + index * 10000}-ce68d2c6f44d?q=80&w=200&auto=format`} 
-                            alt={`School logo ${index + 1}`} 
+                            src={logo.src} 
+                            alt={logo.alt} 
+                            className="object-contain h-full w-full"
                           />
-                          <AvatarFallback>
+                          <AvatarFallback className="bg-transparent">
                             <University className="h-10 w-10 text-dragon" />
                           </AvatarFallback>
                         </Avatar>
