@@ -11,6 +11,12 @@ const testimonials = [{
   videoUrl: "https://vimeo.com/1013651342?share=copy#t=0",
   vimeoId: "1013651342"
 }, {
+  quote: "My time in Kenya opened my eyes to new perspectives and ways of living. The connections I made with local communities will stay with me forever.",
+  author: "Yasma",
+  videoThumbnail: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=2071&auto=format",
+  videoUrl: "https://vimeo.com/1013709104",
+  vimeoId: "1013709104"
+}, {
   quote: "Dragons isn't a typical study abroad program—it's a transformative journey that pushed me out of my comfort zone in the best possible way. The mentorship from our instructors was invaluable.",
   author: "Michael T.",
   videoThumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2071&auto=format"
@@ -18,12 +24,6 @@ const testimonials = [{
   quote: "The combination of wilderness exploration, cultural immersion, and intentional reflection created a powerful learning environment unlike anything I've experienced before.",
   author: "Emma K.",
   videoThumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=2071&auto=format"
-}, {
-  quote: "My time in Kenya opened my eyes to new perspectives and ways of living. The connections I made with local communities will stay with me forever.",
-  author: "Yasma",
-  videoThumbnail: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=2071&auto=format",
-  videoUrl: "https://vimeo.com/1013709104",
-  vimeoId: "1013709104"
 }];
 
 const Testimonials = () => {
