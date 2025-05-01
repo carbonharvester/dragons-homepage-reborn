@@ -13,19 +13,19 @@ const FoodForEducation = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main>
-        {/* Hero Section with teenagers working on a farm */}
+        {/* Hero Section with students enjoying school meals */}
         <section className="relative h-[70vh] bg-dragon-beige overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80" 
-              alt="Teenagers working on a permaculture farm" 
+              src="/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png" 
+              alt="Kenyan students enjoying school meals" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           </div>
           <div className="container-wide relative z-10 h-full flex flex-col justify-center text-white">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4">Food For Education</h1>
-            <p className="text-xl md:text-2xl max-w-3xl">A permaculture farm project addressing food insecurity through sustainable agriculture and education</p>
+            <p className="text-xl md:text-2xl max-w-3xl">A permaculture farm project addressing food insecurity through sustainable agriculture and education programmes.</p>
           </div>
         </section>
 
