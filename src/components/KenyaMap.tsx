@@ -1,70 +1,85 @@
 
 import React from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { MapPin } from "lucide-react";
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+
+// Kenya's coordinates
+const center = {
+  lat: -1.2921,
+  lng: 36.8219 // Nairobi coordinates as center
+};
+
+// Map container style
+const containerStyle = {
+  width: '100%',
+  height: '100%'
+};
+
+// Map options
+const options = {
+  disableDefaultUI: true,
+  zoomControl: true,
+  mapTypeId: 'terrain'
+};
+
+// City coordinates
+const cities = [
+  { name: "Nairobi", position: { lat: -1.2921, lng: 36.8219 }, isPrimary: true },
+  { name: "Mombasa", position: { lat: -4.0435, lng: 39.6682 }, isPrimary: false },
+  { name: "Kisumu", position: { lat: -0.1022, lng: 34.7617 }, isPrimary: false }
+];
 
 const KenyaMap = () => {
+  // Load the Google Maps JavaScript API
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: "AIzaSyDHLg92xIJOAkp25amMXRRk83Wve2' + 'rFuR8" // This is a public API key for this demo
+  });
+
   return (
     <div className="rounded-lg overflow-hidden border border-gray-200 shadow-lg">
       <AspectRatio ratio={16/9} className="relative">
-        {/* Map background - actual map of Kenya */}
-        <div className="absolute inset-0">
-          <img 
-            src="https://i.imgur.com/RJnxSTO.png" 
-            alt="Map of Kenya"
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.currentTarget.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Kenya_relief_location_map.jpg/1200px-Kenya_relief_location_map.jpg";
-              console.log("Failed to load primary Kenya map, using fallback");
-            }}
-          />
-          
-          {/* Overlay for better text visibility */}
-          <div className="absolute inset-0 bg-black/5"></div>
-          
-          {/* Nairobi pin */}
-          <div className="absolute top-[60%] left-[58%] flex flex-col items-center">
-            <MapPin size={28} className="text-dragon animate-bounce" />
-            <div className="bg-white px-2 py-1 rounded-full shadow-md mt-1">
-              <span className="text-xs font-semibold text-dragon-dark">Nairobi</span>
-            </div>
+        {isLoaded ? (
+          <GoogleMap
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={6}
+            options={options}
+          >
+            {/* City Markers */}
+            {cities.map((city, index) => (
+              <Marker
+                key={index}
+                position={city.position}
+                title={city.name}
+                label={{
+                  text: city.name,
+                  className: `bg-white px-2 py-1 rounded-full shadow-md text-xs font-semibold ${
+                    city.isPrimary ? 'text-dragon' : 'text-dragon-dark'
+                  }`
+                }}
+                animation={city.isPrimary ? window.google.maps.Animation.BOUNCE : undefined}
+                icon={{
+                  path: window.google.maps.SymbolPath.CIRCLE,
+                  scale: city.isPrimary ? 8 : 6,
+                  fillColor: city.isPrimary ? '#245745' : '#224155',
+                  fillOpacity: 0.9,
+                  strokeWeight: 2,
+                  strokeColor: 'white',
+                }}
+              />
+            ))}
+            <></>
+          </GoogleMap>
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-gray-100">
+            <div className="text-dragon-dark">Loading map...</div>
           </div>
-          
-          {/* Mombasa pin */}
-          <div className="absolute top-[72%] left-[63%] flex flex-col items-center">
-            <MapPin size={24} className="text-dragon-dark" />
-            <div className="bg-white px-2 py-1 rounded-full shadow-md mt-1">
-              <span className="text-xs font-semibold text-dragon-dark">Mombasa</span>
-            </div>
-          </div>
-          
-          {/* Kisumu pin */}
-          <div className="absolute top-[52%] left-[32%] flex flex-col items-center">
-            <MapPin size={24} className="text-dragon-dark" />
-            <div className="bg-white px-2 py-1 rounded-full shadow-md mt-1">
-              <span className="text-xs font-semibold text-dragon-dark">Kisumu</span>
-            </div>
-          </div>
-          
-          {/* Compass */}
-          <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center">
-            <span className="text-xs font-serif font-bold">N</span>
-            <div className="absolute w-0.5 h-5 bg-dragon-dark top-1"></div>
-          </div>
-          
-          {/* Scale */}
-          <div className="absolute bottom-4 left-4 flex flex-col items-center">
-            <div className="flex items-center">
-              <div className="h-1 w-12 bg-dragon-dark"></div>
-              <div className="h-1 w-12 bg-dragon"></div>
-            </div>
-            <span className="text-xs text-dragon-dark mt-1 bg-white/80 px-2 py-1 rounded">0 500km</span>
-          </div>
-          
-          {/* Title */}
-          <div className="absolute top-4 left-4">
-            <h3 className="text-sm md:text-base font-serif font-semibold text-white bg-dragon-dark/70 px-3 py-1 rounded-md">Kenya, East Africa</h3>
-          </div>
+        )}
+
+        {/* Overlay title */}
+        <div className="absolute top-4 left-4 z-10">
+          <h3 className="text-sm md:text-base font-serif font-semibold text-white bg-dragon-dark/70 px-3 py-1 rounded-md">Kenya, East Africa</h3>
         </div>
       </AspectRatio>
     </div>
