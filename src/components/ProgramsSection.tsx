@@ -1,36 +1,36 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Clock, Calendar } from "lucide-react";
-const programs = [{
-  title: "Nepal Semester",
-  category: "Semester",
-  duration: "3 Months",
-  season: "Fall / Spring",
-  description: "Trek through the Himalayas, live with local families, and study traditional Buddhist practices.",
-  image: "https://images.unsplash.com/photo-1565073624497-7e274074d25c?q=80&w=2070&auto=format"
-}, {
-  title: "Peru Summer",
-  category: "Summer",
-  duration: "4 Weeks",
-  season: "Summer",
-  description: "Explore Andean villages, ancient Incan ruins, and vibrant cultural traditions.",
-  image: "https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=2070&auto=format"
-}, {
-  title: "Thailand Gap Year",
-  category: "Gap Year",
-  duration: "9 Months",
-  season: "Fall to Spring",
-  description: "Immerse yourself in Thai culture, learn sustainable agriculture practices, and study local language.",
-  image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=2139&auto=format"
-}, {
-  title: "Morocco Adventure",
-  category: "Summer",
-  duration: "3 Weeks",
-  season: "Summer",
-  description: "Journey through ancient medinas, the Atlas Mountains, and Sahara Desert.",
-  image: "https://images.unsplash.com/photo-1539020140153-e8c237112e3c?q=80&w=2070&auto=format"
-}];
+
+const programs = [
+  {
+    title: "Feeding the Future",
+    category: "Summer",
+    duration: "3 Weeks",
+    season: "Summer",
+    description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programs.",
+    image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format"
+  },
+  {
+    title: "Community Centred Conservation",
+    category: "Semester",
+    duration: "3 Months",
+    season: "Fall / Spring",
+    description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.",
+    image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=2139&auto=format"
+  },
+  {
+    title: "Empowering Women",
+    category: "Gap Year",
+    duration: "6 Months",
+    season: "Year-round",
+    description: "Support women-led initiatives focusing on education, entrepreneurship and leadership in communities working to achieve gender equity and economic independence.",
+    image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format"
+  }
+];
+
 const ProgramsSection = () => {
   return <section id="programs" className="py-20 bg-dragon-beige">
       <div className="container-wide">
@@ -51,7 +51,7 @@ const ProgramsSection = () => {
         </div>
 
         {/* Programs Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {programs.map((program, index) => <Card key={index} className="overflow-hidden border-none shadow-md h-full flex flex-col">
               <div className="relative h-56 overflow-hidden">
                 <img src={program.image} alt={program.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
@@ -85,4 +85,5 @@ const ProgramsSection = () => {
       </div>
     </section>;
 };
+
 export default ProgramsSection;
