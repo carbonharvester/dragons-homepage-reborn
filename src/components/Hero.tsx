@@ -29,9 +29,11 @@ const Hero = () => {
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">Experience transformative education through cultural immersion, wilderness exploration, and authentic engagement in Africa</p>
           <div className="flex flex-wrap gap-4">
             <Button className="btn-primary text-lg" onClick={scrollToPrograms}>Find Your Program</Button>
-            <Button className="bg-white text-dragon hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg">
-              Learn More
-            </Button>
+            <a href="/#programs">
+              <Button className="bg-white text-dragon hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg">
+                Learn More
+              </Button>
+            </a>
           </div>
         </div>
       </div>

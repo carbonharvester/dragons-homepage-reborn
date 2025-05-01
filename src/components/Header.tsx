@@ -22,10 +22,10 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
           <div className="flex space-x-6">
-            <Link to="/#programs" className="text-dragon-gray hover:text-dragon font-medium">Programs</Link>
+            <a href="/#programs" className="text-dragon-gray hover:text-dragon font-medium">Programs</a>
             <Link to="/about" className="text-dragon-gray hover:text-dragon font-medium">About Us</Link>
-            <Link to="/#why-us" className="text-dragon-gray hover:text-dragon font-medium">Why Choose Us</Link>
-            <Link to="/#stories" className="text-dragon-gray hover:text-dragon font-medium">Student Stories</Link>
+            <a href="/#why-us" className="text-dragon-gray hover:text-dragon font-medium">Why Choose Us</a>
+            <a href="/#stories" className="text-dragon-gray hover:text-dragon font-medium">Student Stories</a>
           </div>
           <Button className="btn-primary">Enrol Now</Button>
         </nav>
@@ -39,18 +39,18 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMenuOpen && <div className="lg:hidden bg-white w-full absolute top-full left-0 shadow-lg py-4 animate-fade-in">
           <div className="container-wide flex flex-col space-y-4">
-            <Link to="/#programs" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
+            <a href="/#programs" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
               Programmes
-            </Link>
+            </a>
             <Link to="/about" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
               About Us
             </Link>
-            <Link to="/#why-us" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
+            <a href="/#why-us" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
               Why Choose Us
-            </Link>
-            <Link to="/#stories" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
+            </a>
+            <a href="/#stories" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
               Student Stories
-            </Link>
+            </a>
             <Button className="btn-primary w-full">Apply Now</Button>
           </div>
         </div>}
