@@ -60,7 +60,8 @@ const ProgramsSection = () => {
                       console.log(`Failed to load image: ${program.image}, using fallback`);
                     }}
                   />
-                </div>
+                </AspectRatio>
+              </div>
                 
               <CardContent className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold mb-3 text-dragon-dark">{program.title}</h3>
