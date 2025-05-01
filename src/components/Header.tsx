@@ -44,7 +44,7 @@ const Header = () => {
       {isMenuOpen && <div className="lg:hidden bg-white w-full absolute top-full left-0 shadow-lg py-4 animate-fade-in">
           <div className="container-wide flex flex-col space-y-4">
             <a href="/#programs" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
-              Programmes
+              Programs
             </a>
             <Link to="/about" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
               About Us

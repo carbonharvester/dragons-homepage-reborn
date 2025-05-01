@@ -14,9 +14,6 @@ const Footer = () => {
                 alt="Kapes logo" 
                 className="h-7 mr-2 brightness-0 invert"
               />
-              <h3 className="text-lg font-bold">
-                Kapes Adventures
-              </h3>
             </div>
             <p className="text-gray-300 mb-6 text-sm">
               Facilitating meaningful cross-cultural experiences through immersive and responsible travel programs.
