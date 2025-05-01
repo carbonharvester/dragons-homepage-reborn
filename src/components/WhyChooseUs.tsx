@@ -2,8 +2,8 @@ import React from 'react';
 import { Shield, Users, Book, Globe, Heart, Award } from "lucide-react";
 const features = [{
   icon: <Shield className="h-10 w-10 text-dragon" />,
-  title: "Risk Management",
-  description: "Industry-leading safety protocols and 30+ years experience running programs in diverse locations."
+  title: "Tailored Itineraries",
+  description: "Customized program designs that balance cultural immersion, adventure, and service to meet your group's specific goals."
 }, {
   icon: <Users className="h-10 w-10 text-dragon" />,
   title: "Small Groups",
