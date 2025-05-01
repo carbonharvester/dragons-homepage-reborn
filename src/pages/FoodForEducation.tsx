@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,20 +6,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Leaf, Calendar, Clock, Droplet, TreeDeciduous, MapPin } from "lucide-react";
-
 const FoodForEducation = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Header />
       <main>
         {/* Hero Section with students enjoying school meals */}
         <section className="relative h-[70vh] bg-dragon-beige overflow-hidden">
           <div className="absolute inset-0">
-            <img 
-              src="/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png" 
-              alt="Kenyan students enjoying school meals" 
-              className="w-full h-full object-cover"
-            />
+            <img src="/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png" alt="Kenyan students enjoying school meals" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           </div>
           <div className="container-wide relative z-10 h-full flex flex-col justify-center text-white">
@@ -33,8 +26,8 @@ const FoodForEducation = () => {
         <section className="py-8 bg-white">
           <div className="container-wide">
             <div className="flex items-center justify-center mb-4">
-              <MapPin size={24} className="text-dragon mr-2" />
-              <h3 className="text-lg font-medium">Nairobi, Kenya</h3>
+              
+              
             </div>
             <KenyaMap />
           </div>
@@ -68,15 +61,10 @@ const FoodForEducation = () => {
                 </div>
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  src="/lovable-uploads/9754806b-a818-4c3f-bb62-aeffe98e97f5.png" 
-                  alt="Food For Education facility workers preparing meals" 
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1604014935903-c9920c277a2e?auto=format&fit=crop&q=80";
-                    console.log("Failed to load Food For Education facility image, using fallback");
-                  }}
-                />
+                <img src="/lovable-uploads/9754806b-a818-4c3f-bb62-aeffe98e97f5.png" alt="Food For Education facility workers preparing meals" className="w-full h-full object-cover" onError={e => {
+                e.currentTarget.src = "https://images.unsplash.com/photo-1604014935903-c9920c277a2e?auto=format&fit=crop&q=80";
+                console.log("Failed to load Food For Education facility image, using fallback");
+              }} />
               </div>
             </div>
           </div>
@@ -136,32 +124,16 @@ const FoodForEducation = () => {
             <h2 className="section-heading text-center mb-8">Experience the Journey</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80">
-                <img 
-                  src="https://images.unsplash.com/photo-1572078346996-eae6d0f2f0e1?auto=format&fit=crop&q=80" 
-                  alt="Permaculture garden beds with vegetables growing" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
+                <img src="https://images.unsplash.com/photo-1572078346996-eae6d0f2f0e1?auto=format&fit=crop&q=80" alt="Permaculture garden beds with vegetables growing" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80 lg:col-span-2">
-                <img 
-                  src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=1280" 
-                  alt="Students learning about sustainable farming techniques" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
+                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=1280" alt="Students learning about sustainable farming techniques" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80 lg:col-span-2">
-                <img 
-                  src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=1280" 
-                  alt="Close-up of hands planting seedlings in rich soil" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
+                <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=1280" alt="Close-up of hands planting seedlings in rich soil" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80">
-                <img 
-                  src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80" 
-                  alt="Sustainable composting system for permaculture farm" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
+                <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80" alt="Sustainable composting system for permaculture farm" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
           </div>
@@ -349,8 +321,6 @@ const FoodForEducation = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default FoodForEducation;
