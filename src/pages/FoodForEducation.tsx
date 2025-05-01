@@ -2,11 +2,11 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import KenyaMap from '@/components/KenyaMap';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Leaf, Calendar, Clock, Droplet, TreeDeciduous, MapPin } from "lucide-react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const FoodForEducation = () => {
   return (
@@ -17,8 +17,8 @@ const FoodForEducation = () => {
         <section className="relative h-[70vh] bg-dragon-beige overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80"
-              alt="Sunlight through trees at permaculture farm" 
+              src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&q=80"
+              alt="Permaculture garden with vegetables and sustainable farming techniques" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -36,21 +36,7 @@ const FoodForEducation = () => {
               <MapPin size={24} className="text-dragon mr-2" />
               <h3 className="text-lg font-medium">Nairobi, Kenya</h3>
             </div>
-            <div className="rounded-lg overflow-hidden border border-gray-200 shadow-lg">
-              <AspectRatio ratio={16/9} className="bg-gray-100">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.3582731551!2d36.70730845!3d-1.3033231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1651857927700!5m2!1sen!2sus"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Map of Nairobi, Kenya"
-                  className="w-full h-full"
-                ></iframe>
-              </AspectRatio>
-            </div>
+            <KenyaMap />
           </div>
         </section>
 
@@ -83,7 +69,7 @@ const FoodForEducation = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&q=80" 
+                  src="https://images.unsplash.com/photo-1604014935903-c9920c277a2e?auto=format&fit=crop&q=80" 
                   alt="Students working in permaculture garden" 
                   className="w-full h-full object-cover"
                 />
@@ -147,29 +133,29 @@ const FoodForEducation = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80">
                 <img 
-                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80" 
-                  alt="Beautiful Kenyan landscape" 
+                  src="https://images.unsplash.com/photo-1572078346996-eae6d0f2f0e1?auto=format&fit=crop&q=80" 
+                  alt="Permaculture garden beds with vegetables growing" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80 lg:col-span-2">
                 <img 
-                  src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&q=80&w=1280" 
-                  alt="Students learning about permaculture" 
+                  src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=1280" 
+                  alt="Students learning about sustainable farming techniques" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80 lg:col-span-2">
                 <img 
-                  src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=1280" 
-                  alt="Sunlight through plants at farm" 
+                  src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=1280" 
+                  alt="Close-up of hands planting seedlings in rich soil" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80">
                 <img 
-                  src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80" 
-                  alt="Farm field with vegetables" 
+                  src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80" 
+                  alt="Sustainable composting system for permaculture farm" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -205,41 +191,8 @@ const FoodForEducation = () => {
           </div>
         </section>
 
-        {/* Practical Details Section */}
-        <section className="py-16 bg-dragon-beige">
-          <div className="container-wide">
-            <div className="text-center mb-12">
-              <h2 className="section-heading">Practical Details</h2>
-              <p className="section-subheading mx-auto">Understanding the implementation and impact of the permaculture farm</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card className="bg-white border-none shadow-md h-full">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-4 text-dragon-dark">Scale</h3>
-                  <p className="text-dragon-gray">The 200 sq meter pilot (100 sq meters onions, 100 sq meters tomatoes) is the first phase, with potential to expand across the 1000 sq meter plot as the project grows.</p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white border-none shadow-md h-full">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-4 text-dragon-dark">Timeline</h3>
-                  <p className="text-dragon-gray">The farm will be established during the trip, with components like seedlings and compost maturing post-trip under the care of school staff.</p>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-white border-none shadow-md h-full">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-4 text-dragon-dark">Partnership</h3>
-                  <p className="text-dragon-gray">Food For Education will purchase the farm's produce, creating a sustainable cycle that directly impacts students' nutrition and educational outcomes.</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
         {/* Itinerary Section */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-dragon-beige">
           <div className="container-wide">
             <div className="text-center mb-12">
               <h2 className="section-heading">Program Itinerary</h2>
