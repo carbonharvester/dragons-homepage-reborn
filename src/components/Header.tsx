@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -10,7 +11,7 @@ const Header = () => {
       <div className="container-wide flex justify-between items-center py-4">
         <a href="/" className="flex items-center">
           <h1 className="text-xl md:text-2xl font-bold text-dragon">
-            <span className="font-serif italic">Where There Be</span> DRAGONS
+            <span className="font-serif italic">Mission</span> KAPES
           </h1>
         </a>
 

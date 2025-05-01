@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
 
@@ -9,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
             <h3 className="text-xl font-bold mb-6">
-              <span className="font-serif italic">Where There Be</span> DRAGONS
+              <span className="font-serif italic">Mission</span> KAPES
             </h3>
             <p className="text-gray-300 mb-6">
               Facilitating meaningful cross-cultural experiences through immersive and responsible travel programs since 1993.
@@ -69,8 +68,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-dragon-yellow" />
-                <a href="mailto:info@wheretherebedragons.com" className="text-gray-300 hover:text-white transition-colors">
-                  info@wheretherebedragons.com
+                <a href="mailto:info@missionkapes.com" className="text-gray-300 hover:text-white transition-colors">
+                  info@missionkapes.com
                 </a>
               </li>
             </ul>
@@ -78,7 +77,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 pt-8 mt-8 text-center text-gray-400 text-sm">
-          <p>© {new Date().getFullYear()} Where There Be Dragons. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} Mission Kapes. All Rights Reserved.</p>
           <div className="mt-2 flex justify-center space-x-4">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
