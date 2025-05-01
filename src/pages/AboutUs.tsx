@@ -9,24 +9,24 @@ import { MapPin, Calendar, Users, Globe } from 'lucide-react';
 const AboutUs = () => {
   const milestones = [
     {
-      year: "2023",
-      title: "Mission KAPES Founded",
-      description: "Launched with our first program in Kenya, partnering with 3 international schools."
+      year: "2020",
+      title: "Kapes Uniforms Founded",
+      description: "Matthew Benjamin founded Kapes Uniforms to empower students and provide free uniforms to children in need in Kenya."
+    },
+    {
+      year: "2021",
+      title: "Kasigau Corridor Visit",
+      description: "While searching for a sustainable factory in Kenya, Matthew visited a carbon offset project in Kasigau Corridor, inspiring the idea for educational trips."
+    },
+    {
+      year: "2022",
+      title: "Mission KAPES Born",
+      description: "Mission KAPES was officially launched to create transformative educational experiences connecting students with communities in Africa."
     },
     {
       year: "2023",
-      title: "Expanded to Tanzania",
-      description: "Developed our second program focused on conservation education and community engagement."
-    },
-    {
-      year: "2024",
-      title: "School Network Growth",
-      description: "Partnered with 10+ international schools across the Middle East and Asia."
-    },
-    {
-      year: "2025",
-      title: "Impact Measurement Framework",
-      description: "Developed comprehensive system to measure educational and community impact."
+      title: "Program Expansion",
+      description: "Expanded programs across multiple African countries, focusing on sustainable tourism and meaningful cultural exchange."
     }
   ];
 
@@ -48,23 +48,46 @@ const AboutUs = () => {
               Our Story
             </h1>
             <p className="text-lg md:text-xl text-dragon-gray max-w-3xl mx-auto mb-10">
-              We're on a mission to transform education through authentic cultural exchange and sustainable travel experiences that empower both students and communities.
+              From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters.
             </p>
           </div>
         </section>
 
-        {/* Mission & Vision Section */}
+        {/* Origin Story Section */}
         <section className="py-20 bg-white">
+          <div className="container-wide">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="section-heading">How It All Started</h2>
+              <div className="prose prose-lg text-dragon-gray">
+                <p className="mb-4">
+                  Our story began with <strong>Kapes Uniforms</strong>, founded by Matthew Benjamin to empower students to become changemakers and more conscious consumers. The mission was simple yet powerful: connect students to the people making their uniforms, the places where they're made, and understand the environmental and social impact of these connections.
+                </p>
+                <p className="mb-4">
+                  As part of Kapes Uniforms' mission to give back, we provide free school uniforms to children in need in Kenya, which has been shown to reduce absenteeism. That's how our name came about - we like to think our uniforms have superpowers by nature of the good that we do, and the changemakers that wear them are heroes. Hence, heroes wear Kapes.
+                </p>
+                <p className="mb-4">
+                  While searching for a sustainable factory to make these uniforms locally in Kenya, Matthew visited a carbon offset project in the Kasigau Corridor. During this factory visit, he was taken on a game drive, met social entrepreneurs working with the project, and learned about their initiatives. It became abundantly clear that bringing students here would be key to joining the dots - seeing the positive impact their uniforms can have while also providing a life-changing experience.
+                </p>
+                <p>
+                  This drive to build connection is what has and continues to inspire all of our trips. In 2022, <strong>Mission Kapes</strong> was born. While we have nothing against things like ski trips, we wanted to offer more. We focus on Africa because Africa has so much to offer students. Our trips are designed to change the lives of the students who participate just as much as, if not more than, the lives of the communities we visit in Africa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission & Vision Section */}
+        <section className="py-20 bg-dragon-beige">
           <div className="container-wide">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
                 <h2 className="section-heading">Our Mission</h2>
                 <p className="text-lg text-dragon-gray mb-8">
-                  To facilitate transformative educational experiences that connect students with communities around the world, fostering cultural understanding, environmental stewardship, and a commitment to responsible global citizenship.
+                  To reconnect young people with nature, communities, and what truly matters through transformative educational experiences that foster cultural understanding, environmental stewardship, and a commitment to becoming conscious global citizens.
                 </p>
                 <h2 className="section-heading mt-12">Our Vision</h2>
                 <p className="text-lg text-dragon-gray">
-                  A world where young people are equipped with the cross-cultural competence, ecological awareness, and ethical mindset needed to address global challenges collaboratively and compassionately.
+                  A world where young people are reconnected with nature and communities, equipped with the cross-cultural competence, ecological awareness, and ethical mindset needed to address global challenges collaboratively and compassionately.
                 </p>
               </div>
               <div className="bg-dragon-sand rounded-lg p-8 flex items-center justify-center">
@@ -107,7 +130,7 @@ const AboutUs = () => {
         </section>
 
         {/* Our Story Timeline */}
-        <section className="py-20 bg-dragon-beige">
+        <section className="py-20 bg-white">
           <div className="container-wide">
             <h2 className="section-heading text-center mb-16">Our Journey</h2>
             <div className="relative">
@@ -141,7 +164,7 @@ const AboutUs = () => {
           <div className="container-wide text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Our Impact</h2>
             <p className="text-lg md:text-xl text-gray-300 mb-16 max-w-2xl mx-auto">
-              Making a difference in communities and transforming student perspectives.
+              Making a difference in communities and transforming student perspectives through meaningful connections.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
