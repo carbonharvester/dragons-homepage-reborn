@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Leaf, Calendar, Clock, Water, TreeDeciduous } from "lucide-react";
+import { Leaf, Calendar, Clock, Droplet, TreeDeciduous } from "lucide-react";
 
 const FoodForEducation = () => {
   return (
@@ -84,7 +84,7 @@ const FoodForEducation = () => {
               <Card className="bg-white border-none shadow-md h-full">
                 <CardContent className="p-6 flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-full bg-dragon flex items-center justify-center mb-4">
-                    <Water size={32} className="text-white" />
+                    <Droplet size={32} className="text-white" />
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-dragon-dark">Supply Produce for Meals</h3>
                   <p className="text-dragon-gray">Partner with Food For Education to supply produce in exchange for school meals, enabling hungry children to learn and thrive.</p>
