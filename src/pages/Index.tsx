@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -33,19 +32,19 @@ const Index = () => {
   useEffect(() => {
     if (!isMobile || !carouselRef.current) return;
     
+    const scrollableDiv = carouselRef.current?.querySelector('.embla__container');
+    if (!scrollableDiv) return;
+    
     const interval = setInterval(() => {
-      const scrollableDiv = carouselRef.current?.querySelector('.embla__container');
-      if (!scrollableDiv) return;
-      
-      const currentScroll = scrollableDiv.scrollLeft;
       const itemWidth = scrollableDiv.querySelector('.embla__slide')?.clientWidth || 0;
+      const currentScroll = scrollableDiv.scrollLeft;
       const maxScroll = scrollableDiv.scrollWidth - scrollableDiv.clientWidth;
       
       // Calculate next scroll position
       let nextScroll = currentScroll + itemWidth;
       
       // Reset to beginning if at end
-      if (nextScroll >= maxScroll) {
+      if (nextScroll >= maxScroll - 10) {
         nextScroll = 0;
       }
       
@@ -57,6 +56,11 @@ const Index = () => {
     
     return () => clearInterval(interval);
   }, [isMobile]);
+  
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   return <div className="min-h-screen flex flex-col">
       <Header />

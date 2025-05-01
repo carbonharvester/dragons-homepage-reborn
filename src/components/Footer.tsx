@@ -12,34 +12,34 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png" 
                 alt="Kapes logo" 
-                className="h-8 mr-2 brightness-0 invert"
+                className="h-7 mr-2 brightness-0 invert"
               />
-              <h3 className="text-xl font-bold">
+              <h3 className="text-lg font-bold">
                 Kapes Adventures
               </h3>
             </div>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 mb-6 text-sm">
               Facilitating meaningful cross-cultural experiences through immersive and responsible travel programs.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="Facebook">
-                <Facebook size={20} />
+                <Facebook size={18} />
               </a>
               <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="Instagram">
-                <Instagram size={20} />
+                <Instagram size={18} />
               </a>
               <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="Twitter">
-                <Twitter size={20} />
+                <Twitter size={18} />
               </a>
               <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="YouTube">
-                <Youtube size={20} />
+                <Youtube size={18} />
               </a>
             </div>
           </div>
           
           <div>
-            <h4 className="text-lg font-bold mb-6">Travel With Us</h4>
-            <ul className="space-y-3">
+            <h4 className="text-base font-bold mb-4">Travel With Us</h4>
+            <ul className="space-y-2 text-sm">
               <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Food For Education</a></li>
               <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Community Centred Conservation</a></li>
               <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Empowering Women</a></li>
@@ -47,8 +47,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-bold mb-6">Resources</h4>
-            <ul className="space-y-3">
+            <h4 className="text-base font-bold mb-4">Resources</h4>
+            <ul className="space-y-2 text-sm">
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
               <li><Link to="/partner-with-us" className="text-gray-300 hover:text-white transition-colors">
@@ -58,10 +58,10 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-bold mb-6">Contact Us</h4>
-            <ul className="space-y-3">
+            <h4 className="text-base font-bold mb-4">Contact Us</h4>
+            <ul className="space-y-2 text-sm">
               <li className="flex items-center">
-                <Mail className="mr-3 h-5 w-5 text-dragon-yellow" />
+                <Mail className="mr-3 h-4 w-4 text-dragon-yellow" />
                 <a href="mailto:info@kapesadventures.com" className="text-gray-300 hover:text-white transition-colors">
                   info@kapesadventures.com
                 </a>
@@ -70,7 +70,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-700 pt-8 mt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-gray-700 pt-6 mt-6 text-center text-gray-400 text-xs">
           <p>© {new Date().getFullYear()} Kapes Adventures. All Rights Reserved.</p>
           <div className="mt-2 flex justify-center space-x-4">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

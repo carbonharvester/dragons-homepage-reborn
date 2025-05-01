@@ -20,9 +20,6 @@ const Header = () => {
               alt="Kapes logo" 
               className="h-8 mr-2"
             />
-            <h1 className="text-xl md:text-2xl font-bold">
-              <span className="text-dragon">Kapes</span> <span className="font-medium">Adventures</span>
-            </h1>
           </div>
         </Link>
 
