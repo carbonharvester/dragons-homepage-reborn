@@ -12,7 +12,7 @@ const Footer = () => {
               <span className="font-serif italic">Mission</span> KAPES
             </h3>
             <p className="text-gray-300 mb-6">
-              Facilitating meaningful cross-cultural experiences through immersive and responsible travel programs since 1993.
+              Creating transformative educational journeys that combine cultural immersion, environmental awareness, and community service since 1993.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="Facebook">
