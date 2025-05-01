@@ -8,10 +8,28 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { Card, CardContent } from '@/components/ui/card';
-import { GraduationCap, University } from 'lucide-react';
+import { University } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
+import { useEffect, useState } from 'react';
 
 const Index = () => {
+  const [api, setApi] = useState<any>(null);
+  
+  // Auto scrolling effect
+  useEffect(() => {
+    if (!api) return;
+    
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 2000); // Scroll every 2 seconds
+    
+    return () => clearInterval(interval);
+  }, [api]);
+  
   return <div className="min-h-screen flex flex-col">
       <Header />
       <main>
@@ -22,46 +40,33 @@ const Index = () => {
             <h2 className="section-heading">Experience Learning Through Adventure</h2>
             <p className="section-subheading mx-auto">Since 2023, we've specialised in immersive experiences that combine authentic cultural engagement, wilderness exploration, and transformative education, with social impact and sustainability.</p>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
-              <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-6 flex flex-col items-center">
-                  <Avatar className="h-16 w-16 mb-4">
-                    <AvatarImage src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=200&auto=format" alt="School logo" />
-                    <AvatarFallback><University className="h-8 w-8 text-dragon" /></AvatarFallback>
-                  </Avatar>
-                  <p className="text-dragon-gray text-center">Life Changing Experiences</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-6 flex flex-col items-center">
-                  <Avatar className="h-16 w-16 mb-4">
-                    <AvatarImage src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=200&auto=format" alt="School logo" />
-                    <AvatarFallback><GraduationCap className="h-8 w-8 text-dragon" /></AvatarFallback>
-                  </Avatar>
-                  <p className="text-dragon-gray text-center">Students</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-6 flex flex-col items-center">
-                  <Avatar className="h-16 w-16 mb-4">
-                    <AvatarImage src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=200&auto=format" alt="School logo" />
-                    <AvatarFallback><University className="h-8 w-8 text-dragon" /></AvatarFallback>
-                  </Avatar>
-                  <p className="text-dragon-gray text-center">Programme Leaders</p>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-white border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <CardContent className="p-6 flex flex-col items-center">
-                  <Avatar className="h-16 w-16 mb-4">
-                    <AvatarImage src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=200&auto=format" alt="School logo" />
-                    <AvatarFallback><GraduationCap className="h-8 w-8 text-dragon" /></AvatarFallback>
-                  </Avatar>
-                  <p className="text-dragon-gray text-center">Alumni Worldwide</p>
-                </CardContent>
-              </Card>
+            <div className="mt-12">
+              <Carousel
+                setApi={setApi}
+                className="w-full"
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+              >
+                <CarouselContent className="-ml-2 md:-ml-4">
+                  {Array.from({ length: 8 }).map((_, index) => (
+                    <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/3 md:basis-1/4 lg:basis-1/5">
+                      <div className="p-1">
+                        <Avatar className="h-20 w-20 mx-auto">
+                          <AvatarImage 
+                            src={`https://images.unsplash.com/photo-${1486312338219 + index * 10000}-ce68d2c6f44d?q=80&w=200&auto=format`} 
+                            alt={`School logo ${index + 1}`} 
+                          />
+                          <AvatarFallback>
+                            <University className="h-10 w-10 text-dragon" />
+                          </AvatarFallback>
+                        </Avatar>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+              </Carousel>
             </div>
           </div>
         </div>
