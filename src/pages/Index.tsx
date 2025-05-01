@@ -36,10 +36,10 @@ const Index = () => {
             <p className="section-subheading mx-auto">Since 2023, we've specialised in immersive experiences that combine authentic cultural engagement, wilderness exploration, and transformative education, with social impact and sustainability.</p>
             
             <div className="mt-12">
-              <div className="flex flex-wrap justify-center items-center gap-8">
+              <div className="flex flex-wrap justify-center items-center gap-16 px-6">
                 {schoolLogos.map((logo, index) => (
                   <div key={index} className="flex items-center justify-center">
-                    <Avatar className={`rounded-none bg-transparent ${logo.scale ? 'h-28 w-28' : 'h-20 w-20'}`}>
+                    <Avatar className={`rounded-none bg-transparent ${logo.scale ? 'h-36 w-36' : 'h-20 w-20'}`}>
                       <AvatarImage 
                         src={logo.src} 
                         alt={logo.alt} 
