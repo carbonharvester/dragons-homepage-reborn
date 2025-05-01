@@ -18,7 +18,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png" 
               alt="Kapes logo" 
-              className="h-8 mr-2"
+              className="h-8 mr-2 filter brightness-0 sepia(100%) hue-rotate(116deg) saturate(1000%) contrast(0.8)"
             />
           </div>
         </Link>
