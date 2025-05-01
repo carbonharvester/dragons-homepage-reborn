@@ -43,18 +43,10 @@ const ProgramsSection = () => {
 
         {/* Program Type Filters */}
         <div className="flex flex-wrap justify-center gap-3 mb-10">
-          <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white">
-            All Programs
-          </Button>
-          <Button variant="outline" className="border-dragon-gray text-dragon-gray hover:bg-dragon hover:text-white">
-            Semester
-          </Button>
-          <Button variant="outline" className="border-dragon-gray text-dragon-gray hover:bg-dragon hover:text-white">
-            Summer
-          </Button>
-          <Button variant="outline" className="border-dragon-gray text-dragon-gray hover:bg-dragon hover:text-white">
-            Gap Year
-          </Button>
+          
+          
+          
+          
           
         </div>
 
