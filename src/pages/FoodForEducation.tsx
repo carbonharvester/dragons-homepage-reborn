@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -16,7 +17,7 @@ const FoodForEducation = () => {
         <section className="relative h-[70vh] bg-dragon-beige overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80"
+              src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80" 
               alt="Teenagers working on a permaculture farm" 
               className="w-full h-full object-cover"
             />
@@ -114,7 +115,7 @@ const FoodForEducation = () => {
               
               <Card className="bg-white border-none shadow-md h-full">
                 <CardContent className="p-6 flex flex-col items-center text-center">
-                  <div className="w-16 h-16 rounded-full bg-dragon-yellow flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 rounded-full bg-dragon flex items-center justify-center mb-4">
                     <Calendar size={32} className="text-dragon-dark" />
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-dragon-dark">Educate & Empower</h3>
