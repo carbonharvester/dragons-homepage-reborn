@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -21,14 +22,6 @@ const testimonials = [{
   videoThumbnail: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?q=80&w=2071&auto=format",
   videoUrl: "https://vimeo.com/1013710646",
   vimeoId: "1013710646"
-}, {
-  quote: "Dragons isn't a typical study abroad program—it's a transformative journey that pushed me out of my comfort zone in the best possible way. The mentorship from our instructors was invaluable.",
-  author: "Michael T.",
-  videoThumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2071&auto=format"
-}, {
-  quote: "The combination of wilderness exploration, cultural immersion, and intentional reflection created a powerful learning environment unlike anything I've experienced before.",
-  author: "Emma K.",
-  videoThumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=2071&auto=format"
 }];
 
 const Testimonials = () => {
