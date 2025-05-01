@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -73,13 +74,13 @@ const Testimonials = () => {
           <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg">
             {/* Video Thumbnail or Embedded Video */}
             <div className="mb-8">
-              {showVideo && testimonials[currentIndex].videoUrl ? (
+              {showVideo && currentTestimonial.videoUrl ? (
                 <div style={{
                   padding: '56.25% 0 0 0',
                   position: 'relative'
                 }}>
                   <iframe 
-                    src={`https://player.vimeo.com/video/${testimonials[currentIndex].videoUrl.split('/').pop().split('?')[0]}?badge=0&autopause=0&player_id=0&app_id=58479`} 
+                    src={`https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479`} 
                     frameBorder="0" 
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
                     style={{
@@ -89,7 +90,7 @@ const Testimonials = () => {
                       width: '100%',
                       height: '100%'
                     }} 
-                    title={`${testimonials[currentIndex].author}'s story`}>
+                    title={`${currentTestimonial.author}'s story`}>
                   </iframe>
                 </div>
               ) : (
@@ -97,13 +98,13 @@ const Testimonials = () => {
                   <div className="relative w-full h-full">
                     <img 
                       src={vimeoThumbnail} 
-                      alt={`${testimonials[currentIndex].author}'s story`} 
+                      alt={`${currentTestimonial.author}'s story`} 
                       className="w-full h-full object-cover" 
                       onError={(e) => {
-                        e.currentTarget.src = testimonials[currentIndex].videoThumbnail;
+                        e.currentTarget.src = currentTestimonial.videoThumbnail;
                       }}
                     />
-                    {testimonials[currentIndex].videoUrl && (
+                    {currentTestimonial.videoUrl && (
                       <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20">
                         <Button 
                           className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark flex items-center justify-center" 
@@ -124,11 +125,11 @@ const Testimonials = () => {
             </div>
             <blockquote className="mb-8">
               <p className="text-xl md:text-2xl font-serif text-dragon-dark mb-6">
-                {testimonials[currentIndex].quote}
+                {currentTestimonial.quote}
               </p>
               <footer>
                 <p className="font-bold text-dragon">
-                  {testimonials[currentIndex].author}
+                  {currentTestimonial.author}
                 </p>
               </footer>
             </blockquote>
