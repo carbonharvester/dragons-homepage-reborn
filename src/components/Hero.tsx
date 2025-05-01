@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 const Hero = () => {
@@ -20,12 +19,12 @@ const Hero = () => {
       <div className="container-wide relative z-10 text-white">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
-            Authentic Immersion Programmes
-            <span className="block mt-2 text-dragon-yellow">For Future Changemakers</span>
+            Authentic Immersion Programs
+            <span className="block mt-2 text-dragon-yellow">For Future Changmakers</span>
           </h1>
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">Experience transformative education through cultural immersion, wilderness exploration, and authentic engagement in Africa</p>
           <div className="flex flex-wrap gap-4">
-            <Button className="btn-primary text-lg" onClick={scrollToPrograms}>Find Your Programme</Button>
+            <Button className="btn-primary text-lg" onClick={scrollToPrograms}>Find Your Program</Button>
             <Button className="bg-white text-dragon hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg">
               Learn More
             </Button>
