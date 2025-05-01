@@ -1,5 +1,7 @@
+
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Mail, Handshake } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
@@ -44,6 +46,9 @@ const Footer = () => {
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Financial Aid</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Health & Safety</a></li>
+              <li><Link to="/partner-with-us" className="text-gray-300 hover:text-white transition-colors flex items-center">
+                <Handshake size={16} className="mr-2 text-dragon-yellow" />Partner With Us
+              </Link></li>
             </ul>
           </div>
           
