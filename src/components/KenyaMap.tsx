@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { MapPin, School } from "lucide-react";
+import { MapPin, School, Navigation } from "lucide-react";
 
 // Kirigu Primary School coordinates (approximate based on Nairobi area)
 const kirigu = {
@@ -22,13 +23,13 @@ const KenyaMap = () => {
       <AspectRatio ratio={16/9} className="relative">
         {/* Static Map Image */}
         <div className="w-full h-full bg-dragon-beige/20 relative">
-          {/* Kenya Map Image */}
+          {/* Kenya Map Image - Using an actual map of Kenya */}
           <img 
-            src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?q=80&w=3087&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1538503657467-6ccca16dc10e?q=80&w=2070&auto=format&fit=crop"
             alt="Map of Kenya" 
             className="w-full h-full object-cover"
             onError={(e) => {
-              e.currentTarget.src = "https://images.unsplash.com/photo-1535911062114-764574491173?q=80&w=2070&auto=format&fit=crop";
+              e.currentTarget.src = "https://images.unsplash.com/photo-1526142684086-7ebd69df27a5?q=80&w=2070&auto=format&fit=crop";
               console.log("Failed to load Kenya map image, using fallback");
             }}
           />
@@ -73,6 +74,11 @@ const KenyaMap = () => {
               </div>
             </div>
           ))}
+
+          {/* Compass for map orientation */}
+          <div className="absolute bottom-3 right-3 bg-white/80 p-2 rounded-full shadow-md">
+            <Navigation size={24} className="text-dragon-dark" />
+          </div>
         </div>
 
         {/* Overlay title */}
