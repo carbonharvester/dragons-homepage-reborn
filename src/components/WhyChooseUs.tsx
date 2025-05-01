@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Shield, Users, Book, Globe, Heart, Award } from "lucide-react";
 const features = [{
@@ -48,7 +47,7 @@ const WhyChooseUs = () => {
 
         <div className="mt-16 bg-dragon-sand p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between">
           <div className="mb-6 md:mb-0 md:mr-6">
-            <h3 className="text-2xl font-bold text-dragon-dark mb-2">Tailored Itineraries</h3>
+            <h3 className="text-2xl font-bold text-dragon-dark mb-2">Read for your next mission?</h3>
             <p className="text-dragon-gray">Speak with a program coordinator about which journey is right for you.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
