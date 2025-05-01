@@ -8,7 +8,8 @@ const testimonials = [
     quote: "It was a once in a lifetime experience. I learned how to be grateful for the things I have and the things that are around me. because the people and the things we saw in Kenya, they didn't have too much, but they were still happy. And with the things that we have, we can still be happy even without wanting more.",
     author: "Loki",
     program: "Bolivia Semester Program",
-    videoThumbnail: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format"
+    videoThumbnail: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format",
+    videoUrl: "https://vimeo.com/1013651342"
   },
   {
     quote: "Dragons isn't a typical study abroad program—it's a transformative journey that pushed me out of my comfort zone in the best possible way. The mentorship from our instructors was invaluable.",
@@ -26,17 +27,26 @@ const testimonials = [
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
     );
+    setShowVideo(false);
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => 
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
     );
+    setShowVideo(false);
+  };
+
+  const handlePlayVideo = () => {
+    if (testimonials[currentIndex].videoUrl) {
+      setShowVideo(true);
+    }
   };
 
   return (
@@ -51,24 +61,36 @@ const Testimonials = () => {
 
         <div className="relative max-w-4xl mx-auto">
           <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg">
-            {/* Video Thumbnail */}
+            {/* Video Thumbnail or Embedded Video */}
             <div className="mb-8">
               <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg bg-gray-100">
-                <div className="relative w-full h-full">
-                  <img 
-                    src={testimonials[currentIndex].videoThumbnail} 
-                    alt={`${testimonials[currentIndex].author}'s story`} 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20">
-                    <button 
-                      className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark flex items-center justify-center"
-                      aria-label="Play video"
-                    >
-                      <Play className="h-8 w-8" />
-                    </button>
+                {showVideo && testimonials[currentIndex].videoUrl ? (
+                  <iframe 
+                    src={`${testimonials[currentIndex].videoUrl}?autoplay=1&title=0&byline=0&portrait=0`}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title={`${testimonials[currentIndex].author}'s story`}
+                  ></iframe>
+                ) : (
+                  <div className="relative w-full h-full">
+                    <img 
+                      src={testimonials[currentIndex].videoThumbnail} 
+                      alt={`${testimonials[currentIndex].author}'s story`} 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20">
+                      <button 
+                        className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark flex items-center justify-center"
+                        aria-label="Play video"
+                        onClick={handlePlayVideo}
+                      >
+                        <Play className="h-8 w-8" />
+                      </button>
+                    </div>
                   </div>
-                </div>
+                )}
               </AspectRatio>
             </div>
             
@@ -103,7 +125,10 @@ const Testimonials = () => {
               {testimonials.map((_, index) => (
                 <button
                   key={index}
-                  onClick={() => setCurrentIndex(index)}
+                  onClick={() => {
+                    setCurrentIndex(index);
+                    setShowVideo(false);
+                  }}
                   className={`w-3 h-3 rounded-full ${
                     currentIndex === index ? 'bg-white' : 'bg-white/40'
                   }`}
