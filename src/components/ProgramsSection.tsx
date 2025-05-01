@@ -25,7 +25,7 @@ const programs = [
     title: "Empowering Women",
     category: "Gap Year",
     duration: "6 Months",
-    season: "Year-round",
+    season: "Year Round",
     description: "Support women-led initiatives focusing on education, entrepreneurship and leadership in communities working to achieve gender equity and economic independence.",
     image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=2070&auto=format"
   }
