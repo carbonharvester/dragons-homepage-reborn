@@ -10,7 +10,7 @@ const KenyaMap = () => {
         {/* Map background - realistic map of Kenya */}
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1552189864-e144212f4bc0?auto=format&fit=crop&q=80" 
+            src="https://images.unsplash.com/photo-1552189864-e144212f4bc0?auto=format&fit=crop&q=80&w=1280" 
             alt="Realistic Map of Kenya"
             className="w-full h-full object-cover"
           />
