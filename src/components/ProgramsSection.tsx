@@ -64,7 +64,7 @@ const ProgramsSection = () => {
               </div>
                 
               <CardContent className="p-6 flex-grow flex flex-col">
-                <h3 className="text-lg font-bold mb-3 text-dragon-dark truncate">{program.title}</h3>
+                <h3 className="text-sm font-bold mb-3 text-dragon-dark">{program.title}</h3>
                 <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
                 <div className="flex justify-between text-sm text-dragon-gray mb-4">
                   <div className="flex items-center">
