@@ -7,20 +7,17 @@ const testimonials = [
   {
     quote: "It was a once in a lifetime experience. I learned how to be grateful for the things I have and the things that are around me. because the people and the things we saw in Kenya, they didn't have too much, but they were still happy. And with the things that we have, we can still be happy even without wanting more.",
     author: "Loki",
-    program: "Bolivia Semester Program",
     videoThumbnail: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format",
     videoUrl: "https://vimeo.com/1013651342"
   },
   {
     quote: "Dragons isn't a typical study abroad program—it's a transformative journey that pushed me out of my comfort zone in the best possible way. The mentorship from our instructors was invaluable.",
     author: "Michael T.",
-    program: "China Gap Year",
     videoThumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2071&auto=format"
   },
   {
     quote: "The combination of wilderness exploration, cultural immersion, and intentional reflection created a powerful learning environment unlike anything I've experienced before.",
     author: "Emma K.",
-    program: "Nepal Summer Program",
     videoThumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=2071&auto=format"
   }
 ];
@@ -119,9 +116,6 @@ const Testimonials = () => {
               <footer>
                 <p className="font-bold text-dragon">
                   {testimonials[currentIndex].author}
-                </p>
-                <p className="text-dragon-gray">
-                  {testimonials[currentIndex].program}
                 </p>
               </footer>
             </blockquote>
