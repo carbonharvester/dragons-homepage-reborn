@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -13,12 +12,12 @@ const FoodForEducation = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main>
-        {/* Hero Section */}
+        {/* Hero Section with teenagers working on a farm */}
         <section className="relative h-[70vh] bg-dragon-beige overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&q=80"
-              alt="Permaculture garden with vegetables and sustainable farming techniques" 
+              src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80"
+              alt="Teenagers working on a permaculture farm" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
