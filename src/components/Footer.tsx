@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -60,8 +60,7 @@ const Footer = () => {
           <div>
             <h4 className="text-base font-bold mb-4">Contact Us</h4>
             <ul className="space-y-2 text-sm">
-              <li className="flex items-center">
-                <Mail className="mr-3 h-4 w-4 text-dragon-yellow" />
+              <li>
                 <a href="mailto:info@kapesadventures.com" className="text-gray-300 hover:text-white transition-colors">
                   info@kapesadventures.com
                 </a>
