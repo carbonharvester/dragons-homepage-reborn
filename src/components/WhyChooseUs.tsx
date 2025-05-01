@@ -1,31 +1,44 @@
+
 import React from 'react';
-import { Shield, Users, Book, Globe, Heart, Award } from "lucide-react";
+import { MapPin, Users, BookOpen, Shield, LineChart, Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 const features = [{
-  icon: <Shield className="h-10 w-10 text-dragon" />,
+  icon: <MapPin className="h-10 w-10 text-dragon" />,
   title: "Tailored Itineraries",
-  description: "Customised program designs that balance cultural immersion, adventure, and service to meet your group's specific goals."
+  description: "Structured day-by-day programs that balance immersive learning, cultural exchange, and direct impact with clearly defined goals and activities."
 }, {
   icon: <Users className="h-10 w-10 text-dragon" />,
   title: "Small Groups",
   description: "Intimate group sizes of 12-16 students with 3 leaders for personalised attention and deeper experiences."
 }, {
-  icon: <Book className="h-10 w-10 text-dragon" />,
+  icon: <BookOpen className="h-10 w-10 text-dragon" />,
   title: "Educational Focus",
-  description: "Curriculum designed for meaningful cultural engagement, language learning, and personal growth."
+  description: "Hands-on permaculture education, sustainability principles, and social entrepreneurship through real-world projects with local experts."
 }, {
-  icon: <Globe className="h-10 w-10 text-dragon" />,
-  title: "Local Connections",
-  description: "Deep relationships with communities, homestay families, and local guides in each program location."
+  icon: <Shield className="h-10 w-10 text-dragon" />,
+  title: "Safety & Support",
+  description: "Comprehensive risk management, 24/7 local staff support, and experienced trip leaders ensure student wellbeing throughout the journey."
 }, {
-  icon: <Heart className="h-10 w-10 text-dragon" />,
-  title: "Responsible Travel",
-  description: "Commitment to ethical travel practices that benefit host communities and protect environments."
+  icon: <LineChart className="h-10 w-10 text-dragon" />,
+  title: "Measurable Impact",
+  description: "Concrete outcomes like feeding 300+ students daily, establishing sustainable gardens, and creating economic opportunities for local communities."
 }, {
-  icon: <Award className="h-10 w-10 text-dragon" />,
+  icon: <Star className="h-10 w-10 text-dragon" />,
   title: "Transformative Experiences",
-  description: "Programs that challenge perspectives, build leadership skills, and foster global citizenship."
+  description: "Life-changing journeys that foster leadership skills, cultural understanding, and a deep commitment to global citizenship."
 }];
+
 const WhyChooseUs = () => {
+  const scrollToPrograms = () => {
+    const programsSection = document.getElementById('programs');
+    if (programsSection) {
+      programsSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return <section id="why-us" className="py-20 bg-white">
       <div className="container-wide">
         <div className="text-center mb-16">
@@ -49,11 +62,12 @@ const WhyChooseUs = () => {
             <p className="text-dragon-gray">Speak with a program coordinator about which journey is right for you.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="btn-primary whitespace-nowrap">Find Your Program</button>
-            <button className="btn-secondary whitespace-nowrap">Contact Us</button>
+            <Button className="btn-primary whitespace-nowrap" onClick={scrollToPrograms}>Find Your Program</Button>
+            <Button className="btn-secondary whitespace-nowrap">Contact Us</Button>
           </div>
         </div>
       </div>
     </section>;
 };
+
 export default WhyChooseUs;
