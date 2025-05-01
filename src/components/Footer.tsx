@@ -1,10 +1,7 @@
-
 import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube, Mail } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-dragon-dark text-white pt-16 pb-8">
+  return <footer className="bg-dragon-dark text-white pt-16 pb-8">
       <div className="container-wide">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <div>
@@ -31,7 +28,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-bold mb-6">Programs</h4>
+            <h4 className="text-lg font-bold mb-6">Travel With Us</h4>
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Gap Year</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Summer Programs</a></li>
@@ -67,8 +64,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
