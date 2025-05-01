@@ -48,7 +48,7 @@ const Footer = () => {
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Financial Aid</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Health & Safety</a></li>
-              <li><a href="#" className="flex items-center">
+              <li className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-dragon-yellow" />
                 <a href="mailto:info@missionkapes.com" className="text-gray-300 hover:text-white transition-colors">
                   info@missionkapes.com
