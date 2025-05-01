@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -19,14 +18,14 @@ const programs = [{
   duration: "5-7 Days",
   season: "Year Round",
   description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.",
-  image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png" // Using the second uploaded image
+  image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png" // Swapped with Empowering Women image
 }, {
   title: "Empowering Women",
   category: "Gap Year",
   duration: "5-7 Days",
   season: "Year Round",
   description: "Support women-led initiatives focusing on education, entrepreneurship and leadership in communities working to achieve gender equity and economic independence.",
-  image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png" // Using the third uploaded image
+  image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png" // Swapped with Community Conservation image
 }];
 
 const ProgramsSection = () => {
