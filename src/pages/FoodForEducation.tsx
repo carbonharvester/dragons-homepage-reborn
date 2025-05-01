@@ -69,9 +69,13 @@ const FoodForEducation = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1604014935903-c9920c277a2e?auto=format&fit=crop&q=80" 
-                  alt="Students working in permaculture garden" 
+                  src="/lovable-uploads/9754806b-a818-4c3f-bb62-aeffe98e97f5.png" 
+                  alt="Food For Education facility workers preparing meals" 
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1604014935903-c9920c277a2e?auto=format&fit=crop&q=80";
+                    console.log("Failed to load Food For Education facility image, using fallback");
+                  }}
                 />
               </div>
             </div>
