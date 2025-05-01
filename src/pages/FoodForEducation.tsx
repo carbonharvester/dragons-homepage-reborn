@@ -20,6 +20,10 @@ const FoodForEducation = () => {
               src="/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png" 
               alt="Kenyan students enjoying school meals" 
               className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.src = "https://images.unsplash.com/photo-1604014935903-c9920c277a2e?auto=format&fit=crop&q=80";
+                console.log("Hero image failed to load, using fallback");
+              }}
             />
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
           </div>
@@ -69,9 +73,13 @@ const FoodForEducation = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1604014935903-c9920c277a2e?auto=format&fit=crop&q=80" 
+                  src="/lovable-uploads/38402d57-68c0-4b9b-9868-02bb45b85144.png" 
                   alt="Students working in permaculture garden" 
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1604014935903-c9920c277a2e?auto=format&fit=crop&q=80";
+                    console.log("Overview image failed to load, using fallback");
+                  }}
                 />
               </div>
             </div>
@@ -133,30 +141,46 @@ const FoodForEducation = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80">
                 <img 
-                  src="https://images.unsplash.com/photo-1572078346996-eae6d0f2f0e1?auto=format&fit=crop&q=80" 
+                  src="/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png" 
                   alt="Permaculture garden beds with vegetables growing" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1572078346996-eae6d0f2f0e1?auto=format&fit=crop&q=80";
+                    console.log("Gallery image 1 failed to load, using fallback");
+                  }}
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80 lg:col-span-2">
                 <img 
-                  src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=1280" 
+                  src="/lovable-uploads/5de3bb89-b98b-471d-b489-b486b74a96b8.png" 
                   alt="Students learning about sustainable farming techniques" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=1280";
+                    console.log("Gallery image 2 failed to load, using fallback");
+                  }}
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80 lg:col-span-2">
                 <img 
-                  src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=1280" 
+                  src="/lovable-uploads/e6394583-20d9-4609-8284-6ba2ca500c08.png" 
                   alt="Close-up of hands planting seedlings in rich soil" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&q=80&w=1280";
+                    console.log("Gallery image 3 failed to load, using fallback");
+                  }}
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80">
                 <img 
-                  src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80" 
+                  src="/lovable-uploads/fc764836-7162-400c-a486-00fe9d99f975.png" 
                   alt="Sustainable composting system for permaculture farm" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80";
+                    console.log("Gallery image 4 failed to load, using fallback");
+                  }}
                 />
               </div>
             </div>

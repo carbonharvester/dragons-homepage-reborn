@@ -59,8 +59,13 @@ const ProgramsSection = () => {
                     alt={program.title} 
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
                     onError={(e) => {
-                      // Fallback to placeholder if image fails to load
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format";
+                      // Fallback to appropriate placeholder based on program
+                      const fallbacks = [
+                        "https://images.unsplash.com/photo-1604014935903-c9920c277a2e?q=80&w=2071&auto=format", // Food For Education
+                        "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2071&auto=format", // Conservation
+                        "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format"  // Young Women
+                      ];
+                      e.currentTarget.src = fallbacks[index] || fallbacks[0];
                       console.log(`Failed to load image: ${program.image}, using fallback`);
                     }}
                   />
