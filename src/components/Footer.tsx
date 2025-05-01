@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube, Mail } from "lucide-react";
 
@@ -32,7 +31,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-6">Travel With Us</h4>
             <ul className="space-y-3">
-              <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Feeding the Future</a></li>
+              <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Food For Education</a></li>
               <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Community Centred Conservation</a></li>
               <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Empowering Women</a></li>
             </ul>

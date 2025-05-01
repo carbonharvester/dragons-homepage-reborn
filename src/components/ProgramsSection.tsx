@@ -5,7 +5,7 @@ import { Globe, Clock, Calendar } from "lucide-react";
 
 // Update all programs to have 5-7 Days duration and Year Round season
 const programs = [{
-  title: "Feeding the Future",
+  title: "Food For Education",
   category: "Summer",
   duration: "5-7 Days",
   season: "Year Round",
