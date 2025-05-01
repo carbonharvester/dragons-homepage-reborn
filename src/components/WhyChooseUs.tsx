@@ -9,8 +9,8 @@ const features = [{
   description: "Structured day-by-day programs that balance immersive learning, cultural exchange, and direct impact with clearly defined goals and activities."
 }, {
   icon: <Users className="h-10 w-10 text-dragon" />,
-  title: "Small Groups",
-  description: "Intimate group sizes of 12-16 students with 3 leaders for personalised attention and deeper experiences."
+  title: "Flexible Group Sizes",
+  description: "Accommodating groups from 10 to 30 students with bespoke options for larger groups, supported by 2 dedicated leaders and trained local rangers for personalized experiences."
 }, {
   icon: <BookOpen className="h-10 w-10 text-dragon" />,
   title: "Educational Focus",
