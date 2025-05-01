@@ -14,9 +14,16 @@ const Header = () => {
   return <header className="bg-white sticky top-0 z-50 shadow-sm">
       <div className="container-wide flex justify-between items-center py-4">
         <Link to="/" className="flex items-center">
-          <h1 className="text-xl md:text-2xl font-bold text-dragon">
-            <span className="font-serif italic">Mission</span> KAPES
-          </h1>
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png" 
+              alt="Kapes logo" 
+              className="h-8 mr-2"
+            />
+            <h1 className="text-xl md:text-2xl font-bold">
+              <span className="text-dragon">Kapes</span> <span className="font-medium">Adventures</span>
+            </h1>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

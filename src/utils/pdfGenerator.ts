@@ -18,10 +18,10 @@ export const generateProgramBrochure = (programName: string, programData: any) =
   pdf.setTextColor(primaryColor);
   pdf.text(programName, 20, 20);
   
-  // Add Mission Kapes logo text
+  // Add Kapes Adventures logo text
   pdf.setFontSize(16);
   pdf.setTextColor(primaryColor);
-  pdf.text('Mission Kapes', 20, 30);
+  pdf.text('Kapes Adventures', 20, 30);
   
   // Add divider
   pdf.setDrawColor(secondaryColor);
@@ -108,9 +108,9 @@ export const generateProgramBrochure = (programName: string, programData: any) =
   pdf.setTextColor(primaryColor);
   pdf.text('Contact us for more information:', 20, yPosition);
   yPosition += 7;
-  pdf.text('Email: info@missionkapes.com', 20, yPosition);
+  pdf.text('Email: info@kapesadventures.com', 20, yPosition);
   yPosition += 7;
-  pdf.text('Website: www.missionkapes.com', 20, yPosition);
+  pdf.text('Website: www.kapesadventures.com', 20, yPosition);
   
   // Add page number
   pdf.setFontSize(8);
