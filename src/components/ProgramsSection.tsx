@@ -10,7 +10,7 @@ const programs = [{
   category: "Summer",
   duration: "5-7 Days",
   season: "Year Round",
-  description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programs.",
+  description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.",
   image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format"
 }, {
   title: "Community Centred Conservation",
@@ -32,7 +32,7 @@ const ProgramsSection = () => {
   return <section id="programs" className="py-20 bg-dragon-beige">
       <div className="container-wide">
         <div className="text-center mb-12">
-          <h2 className="section-heading">Transformative Programs</h2>
+          <h2 className="section-heading">Transformative Programmes</h2>
           <p className="section-subheading mx-auto">
             Discover cultural immersion experiences designed to challenge, inspire, and transform.
           </p>

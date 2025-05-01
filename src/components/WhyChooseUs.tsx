@@ -1,13 +1,14 @@
+
 import React from 'react';
 import { Shield, Users, Book, Globe, Heart, Award } from "lucide-react";
 const features = [{
   icon: <Shield className="h-10 w-10 text-dragon" />,
   title: "Tailored Itineraries",
-  description: "Customized program designs that balance cultural immersion, adventure, and service to meet your group's specific goals."
+  description: "Customised programme designs that balance cultural immersion, adventure, and service to meet your group's specific goals."
 }, {
   icon: <Users className="h-10 w-10 text-dragon" />,
   title: "Small Groups",
-  description: "Intimate group sizes of 12-16 students with 3 leaders for personalized attention and deeper experiences."
+  description: "Intimate group sizes of 12-16 students with 3 leaders for personalised attention and deeper experiences."
 }, {
   icon: <Book className="h-10 w-10 text-dragon" />,
   title: "Educational Focus",
@@ -15,7 +16,7 @@ const features = [{
 }, {
   icon: <Globe className="h-10 w-10 text-dragon" />,
   title: "Local Connections",
-  description: "Deep relationships with communities, homestay families, and local guides in each program location."
+  description: "Deep relationships with communities, homestay families, and local guides in each programme location."
 }, {
   icon: <Heart className="h-10 w-10 text-dragon" />,
   title: "Responsible Travel",
@@ -23,7 +24,7 @@ const features = [{
 }, {
   icon: <Award className="h-10 w-10 text-dragon" />,
   title: "Transformative Experiences",
-  description: "Programs that challenge perspectives, build leadership skills, and foster global citizenship."
+  description: "Programmes that challenge perspectives, build leadership skills, and foster global citizenship."
 }];
 const WhyChooseUs = () => {
   return <section id="why-us" className="py-20 bg-white">
@@ -47,11 +48,11 @@ const WhyChooseUs = () => {
 
         <div className="mt-16 bg-dragon-sand p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between">
           <div className="mb-6 md:mb-0 md:mr-6">
-            <h3 className="text-2xl font-bold text-dragon-dark mb-2">Read for your next mission?</h3>
-            <p className="text-dragon-gray">Speak with a program coordinator about which journey is right for you.</p>
+            <h3 className="text-2xl font-bold text-dragon-dark mb-2">Ready for your next mission?</h3>
+            <p className="text-dragon-gray">Speak with a programme coordinator about which journey is right for you.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="btn-primary whitespace-nowrap">Find Your Program</button>
+            <button className="btn-primary whitespace-nowrap">Find Your Programme</button>
             <button className="btn-secondary whitespace-nowrap">Contact Us</button>
           </div>
         </div>

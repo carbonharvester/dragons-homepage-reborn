@@ -21,15 +21,15 @@ const Index = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
               <div className="flex flex-col items-center">
                 <p className="text-4xl font-bold text-dragon mb-2">5</p>
-                <p className="text-dragon-gray text-center">Life Changing EXperiences</p>
+                <p className="text-dragon-gray text-center">Life Changing Experiences</p>
               </div>
               <div className="flex flex-col items-center">
                 <p className="text-4xl font-bold text-dragon mb-2">70+</p>
-                <p className="text-dragon-gray text-center">Sudents</p>
+                <p className="text-dragon-gray text-center">Students</p>
               </div>
               <div className="flex flex-col items-center">
                 <p className="text-4xl font-bold text-dragon mb-2">100+</p>
-                <p className="text-dragon-gray text-center">Program Leaders</p>
+                <p className="text-dragon-gray text-center">Programme Leaders</p>
               </div>
               <div className="flex flex-col items-center">
                 <p className="text-4xl font-bold text-dragon mb-2">10,000+</p>
