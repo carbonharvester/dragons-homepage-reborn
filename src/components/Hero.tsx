@@ -1,6 +1,15 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
+
 const Hero = () => {
+  const scrollToPrograms = () => {
+    const programsSection = document.getElementById('programs');
+    if (programsSection) {
+      programsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return <section className="relative h-[80vh] min-h-[600px] flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1466721591366-2d5fba72006d?q=80&w=1500&auto=format')] bg-cover bg-center">
@@ -16,7 +25,7 @@ const Hero = () => {
           </h1>
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">Experience transformative education through cultural immersion, wilderness exploration, and authentic engagement in Africa</p>
           <div className="flex flex-wrap gap-4">
-            <Button className="btn-primary text-lg">Find Your Program</Button>
+            <Button className="btn-primary text-lg" onClick={scrollToPrograms}>Find Your Program</Button>
             <Button className="bg-white text-dragon hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg">
               Learn More
             </Button>
@@ -25,4 +34,5 @@ const Hero = () => {
       </div>
     </section>;
 };
+
 export default Hero;
