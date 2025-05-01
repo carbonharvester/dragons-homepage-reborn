@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube, Mail } from "lucide-react";
+
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
       <div className="container-wide">
@@ -30,16 +32,14 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-6">Travel With Us</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Gap Year</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Summer Programs</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Semester Programs</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Adult Programs</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Custom Programs</a></li>
+              <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Feeding the Future</a></li>
+              <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Community Centred Conservation</a></li>
+              <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Empowering Women</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-bold mb-6">Resources</h4>
+            <h4 className="text-lg font-bold mb-6">Contact Us</h4>
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
@@ -66,4 +66,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;
