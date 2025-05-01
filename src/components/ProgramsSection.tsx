@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Globe, Clock, Calendar } from "lucide-react";
@@ -32,13 +32,6 @@ const programs = [
 ];
 
 const ProgramsSection = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
-  const categories = ['All', ...new Set(programs.map(program => program.category))];
-  
-  const filteredPrograms = activeFilter === 'All' 
-    ? programs 
-    : programs.filter(program => program.category === activeFilter);
-
   return <section id="programs" className="py-20 bg-dragon-beige">
       <div className="container-wide">
         <div className="text-center mb-12">
@@ -50,21 +43,12 @@ const ProgramsSection = () => {
 
         {/* Program Type Filters */}
         <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {categories.map((category) => (
-            <Button 
-              key={category}
-              onClick={() => setActiveFilter(category)}
-              variant={activeFilter === category ? "default" : "outline"}
-              className={`${activeFilter === category ? 'bg-dragon text-white' : 'border-dragon text-dragon hover:bg-dragon hover:text-white'}`}
-            >
-              {category}
-            </Button>
-          ))}
+          
         </div>
 
         {/* Programs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {filteredPrograms.map((program, index) => <Card key={index} className="overflow-hidden border-none shadow-md h-full flex flex-col">
+          {programs.map((program, index) => <Card key={index} className="overflow-hidden border-none shadow-md h-full flex flex-col">
               <div className="relative h-56 overflow-hidden">
                 <img src={program.image} alt={program.title} className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
                 <div className="absolute top-3 left-3 bg-dragon-yellow text-dragon-dark text-sm font-semibold py-1 px-3 rounded-full">
