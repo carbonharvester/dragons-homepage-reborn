@@ -1,15 +1,19 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import VideoSection from '@/components/VideoSection';
 import ProgramsSection from '@/components/ProgramsSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
+
 const Index = () => {
   return <div className="min-h-screen flex flex-col">
       <Header />
       <main>
         <Hero />
+        <VideoSection />
         <div className="py-16 bg-white">
           <div className="container-wide text-center">
             <h2 className="section-heading">Experience Learning Through Adventure</h2>
@@ -41,4 +45,5 @@ const Index = () => {
       <Footer />
     </div>;
 };
+
 export default Index;
