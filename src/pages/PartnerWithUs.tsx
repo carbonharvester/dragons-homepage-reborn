@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Handshake, Briefcase, Users, Globe } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
 
 const PartnerWithUs = () => {
@@ -21,22 +21,22 @@ const PartnerWithUs = () => {
 
   const benefits = [
     {
-      icon: <Users className="h-12 w-12 text-[#9b87f5]" />,
+      icon: <Users className="h-12 w-12 text-dragon" />,
       title: "Expanded Offerings",
       description: "Diversify your travel programs with our unique, purpose-driven experiences in Africa."
     },
     {
-      icon: <Briefcase className="h-12 w-12 text-[#9b87f5]" />,
+      icon: <Briefcase className="h-12 w-12 text-dragon" />,
       title: "Revenue Sharing",
       description: "Benefit from our generous profit-sharing model designed to reward your contribution."
     },
     {
-      icon: <Globe className="h-12 w-12 text-[#9b87f5]" />,
+      icon: <Globe className="h-12 w-12 text-dragon" />,
       title: "Social Impact",
       description: "Make a meaningful difference while providing transformative experiences for your clients."
     },
     {
-      icon: <Handshake className="h-12 w-12 text-[#9b87f5]" />,
+      icon: <Handshake className="h-12 w-12 text-dragon" />,
       title: "Full Support",
       description: "Access our expertise, resources, and on-ground networks for seamless program execution."
     }
@@ -47,7 +47,7 @@ const PartnerWithUs = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-r from-[#1A1F2C] to-[#7E69AB] py-20 md:py-32">
+        <section className="bg-gradient-to-r from-dragon-dark to-dragon py-20 md:py-32">
           <div className="container-wide text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
               Partner With Mission KAPES
@@ -56,7 +56,7 @@ const PartnerWithUs = () => {
               Expand your offering with purpose-driven travel experiences while sharing in the success through our generous profit-sharing model.
             </p>
             <Button 
-              className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white px-8 py-6 text-lg rounded-md"
+              className="bg-dragon-yellow hover:bg-amber-400 text-dragon-dark px-8 py-6 text-lg rounded-md"
               onClick={() => document.getElementById('partnership-form')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Become a Partner
@@ -91,7 +91,7 @@ const PartnerWithUs = () => {
         </section>
 
         {/* How It Works */}
-        <section className="py-20 bg-[#F9F7F4]">
+        <section className="py-20 bg-dragon-beige">
           <div className="container-wide">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="section-heading">How Our Partnership Works</h2>
@@ -102,12 +102,12 @@ const PartnerWithUs = () => {
 
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-9 md:left-1/2 top-0 h-full w-1 bg-[#9b87f5] opacity-20 md:transform md:-translate-x-1/2"></div>
+              <div className="absolute left-9 md:left-1/2 top-0 h-full w-1 bg-dragon opacity-20 md:transform md:-translate-x-1/2"></div>
               
               <div className="space-y-12 md:space-y-24">
                 {/* Step 1 */}
                 <div className="relative flex flex-col md:flex-row">
-                  <div className="absolute left-4 md:left-1/2 top-4 md:transform md:-translate-x-1/2 bg-[#9b87f5] text-white rounded-full h-10 w-10 flex items-center justify-center z-10 font-bold">1</div>
+                  <div className="absolute left-4 md:left-1/2 top-4 md:transform md:-translate-x-1/2 bg-dragon text-white rounded-full h-10 w-10 min-w-6 flex items-center justify-center z-10 font-bold">1</div>
                   <div className="pl-20 md:w-1/2 md:pl-0 md:pr-16">
                     <h3 className="text-xl font-bold text-dragon-dark mb-2">Initial Consultation</h3>
                     <p className="text-dragon-gray">We'll meet to understand your business, clients, and how our experiences can complement your offerings.</p>
@@ -117,7 +117,7 @@ const PartnerWithUs = () => {
 
                 {/* Step 2 */}
                 <div className="relative flex flex-col md:flex-row">
-                  <div className="absolute left-4 md:left-1/2 top-4 md:transform md:-translate-x-1/2 bg-[#9b87f5] text-white rounded-full h-10 w-10 flex items-center justify-center z-10 font-bold">2</div>
+                  <div className="absolute left-4 md:left-1/2 top-4 md:transform md:-translate-x-1/2 bg-dragon text-white rounded-full h-10 w-10 min-w-6 flex items-center justify-center z-10 font-bold">2</div>
                   <div className="md:w-1/2 hidden md:block"></div>
                   <div className="pl-20 md:w-1/2 md:pl-16">
                     <h3 className="text-xl font-bold text-dragon-dark mb-2">Partnership Agreement</h3>
@@ -127,7 +127,7 @@ const PartnerWithUs = () => {
 
                 {/* Step 3 */}
                 <div className="relative flex flex-col md:flex-row">
-                  <div className="absolute left-4 md:left-1/2 top-4 md:transform md:-translate-x-1/2 bg-[#9b87f5] text-white rounded-full h-10 w-10 flex items-center justify-center z-10 font-bold">3</div>
+                  <div className="absolute left-4 md:left-1/2 top-4 md:transform md:-translate-x-1/2 bg-dragon text-white rounded-full h-10 w-10 min-w-6 flex items-center justify-center z-10 font-bold">3</div>
                   <div className="pl-20 md:w-1/2 md:pl-0 md:pr-16">
                     <h3 className="text-xl font-bold text-dragon-dark mb-2">Integration & Training</h3>
                     <p className="text-dragon-gray">We'll provide comprehensive training and marketing materials to help you promote our programs effectively.</p>
@@ -137,7 +137,7 @@ const PartnerWithUs = () => {
 
                 {/* Step 4 */}
                 <div className="relative flex flex-col md:flex-row">
-                  <div className="absolute left-4 md:left-1/2 top-4 md:transform md:-translate-x-1/2 bg-[#9b87f5] text-white rounded-full h-10 w-10 flex items-center justify-center z-10 font-bold">4</div>
+                  <div className="absolute left-4 md:left-1/2 top-4 md:transform md:-translate-x-1/2 bg-dragon text-white rounded-full h-10 w-10 min-w-6 flex items-center justify-center z-10 font-bold">4</div>
                   <div className="md:w-1/2 hidden md:block"></div>
                   <div className="pl-20 md:w-1/2 md:pl-16">
                     <h3 className="text-xl font-bold text-dragon-dark mb-2">Launch & Grow</h3>
@@ -150,7 +150,7 @@ const PartnerWithUs = () => {
         </section>
 
         {/* Contact Form */}
-        <section id="partnership-form" className="py-20 bg-[#1A1F2C] text-white">
+        <section id="partnership-form" className="py-20 bg-dragon-dark text-white">
           <div className="container-wide">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Become a Partner</h2>
@@ -168,7 +168,7 @@ const PartnerWithUs = () => {
                       type="text"
                       id="name"
                       required
-                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9b87f5] focus:border-transparent"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-dragon focus:border-transparent"
                     />
                   </div>
                   <div>
@@ -177,7 +177,7 @@ const PartnerWithUs = () => {
                       type="text"
                       id="organization"
                       required
-                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9b87f5] focus:border-transparent"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-dragon focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -189,7 +189,7 @@ const PartnerWithUs = () => {
                       type="email"
                       id="email"
                       required
-                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9b87f5] focus:border-transparent"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-dragon focus:border-transparent"
                     />
                   </div>
                   <div>
@@ -198,7 +198,7 @@ const PartnerWithUs = () => {
                       type="tel"
                       id="phone"
                       required
-                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9b87f5] focus:border-transparent"
+                      className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-dragon focus:border-transparent"
                     />
                   </div>
                 </div>
@@ -208,7 +208,7 @@ const PartnerWithUs = () => {
                   <input
                     type="url"
                     id="website"
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9b87f5] focus:border-transparent"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-dragon focus:border-transparent"
                   />
                 </div>
                 
@@ -218,7 +218,7 @@ const PartnerWithUs = () => {
                     id="message"
                     rows={4}
                     required
-                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#9b87f5] focus:border-transparent"
+                    className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-dragon focus:border-transparent"
                     placeholder="Please share details about your organization, the type of trips you currently offer, and what interests you about partnering with Mission KAPES."
                   ></textarea>
                 </div>
@@ -226,7 +226,7 @@ const PartnerWithUs = () => {
                 <div className="flex justify-center">
                   <Button 
                     type="submit"
-                    className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white px-8 py-3 text-lg rounded-md"
+                    className="bg-dragon hover:bg-dragon-dark text-white px-8 py-3 text-lg rounded-md"
                   >
                     Submit Partnership Request
                   </Button>
@@ -247,27 +247,27 @@ const PartnerWithUs = () => {
             </div>
 
             <div className="max-w-3xl mx-auto space-y-6">
-              <div className="bg-[#F9F7F4] p-6 rounded-lg">
+              <div className="bg-dragon-beige p-6 rounded-lg">
                 <h3 className="font-bold text-dragon-dark text-lg mb-2">What is the typical profit-sharing structure?</h3>
                 <p className="text-dragon-gray">Our profit-sharing model typically provides partners with 15-25% of the trip revenue, depending on the level of involvement and marketing contribution.</p>
               </div>
               
-              <div className="bg-[#F9F7F4] p-6 rounded-lg">
+              <div className="bg-dragon-beige p-6 rounded-lg">
                 <h3 className="font-bold text-dragon-dark text-lg mb-2">What kind of organizations do you partner with?</h3>
                 <p className="text-dragon-gray">We partner with a variety of organizations including educational institutions, travel agencies, study abroad programs, and corporate team-building providers who share our values.</p>
               </div>
               
-              <div className="bg-[#F9F7F4] p-6 rounded-lg">
+              <div className="bg-dragon-beige p-6 rounded-lg">
                 <h3 className="font-bold text-dragon-dark text-lg mb-2">Do partners need experience in African travel?</h3>
                 <p className="text-dragon-gray">No, we provide all necessary training, resources, and on-ground support. Your expertise in your client base is what matters most.</p>
               </div>
               
-              <div className="bg-[#F9F7F4] p-6 rounded-lg">
+              <div className="bg-dragon-beige p-6 rounded-lg">
                 <h3 className="font-bold text-dragon-dark text-lg mb-2">What marketing support do you provide?</h3>
                 <p className="text-dragon-gray">We provide partners with professionally designed marketing materials, images, videos, detailed program descriptions, and training on how to effectively promote our unique experiences.</p>
               </div>
               
-              <div className="bg-[#F9F7F4] p-6 rounded-lg">
+              <div className="bg-dragon-beige p-6 rounded-lg">
                 <h3 className="font-bold text-dragon-dark text-lg mb-2">Is there an exclusivity requirement?</h3>
                 <p className="text-dragon-gray">No, our partnerships are non-exclusive, allowing you to continue offering other travel programs. However, we do offer enhanced benefits for partners who choose exclusivity for African educational travel programs.</p>
               </div>
