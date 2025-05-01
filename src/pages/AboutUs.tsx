@@ -7,36 +7,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Calendar, Users, Globe } from 'lucide-react';
 
 const AboutUs = () => {
-  const milestones = [
-    {
-      year: "2020",
-      title: "Kapes Uniforms Founded",
-      description: "Matthew Benjamin founded Kapes Uniforms to empower students and provide free uniforms to children in need in Kenya."
-    },
-    {
-      year: "2021",
-      title: "Kasigau Corridor Visit",
-      description: "While searching for a sustainable factory in Kenya, Matthew visited a carbon offset project in Kasigau Corridor, inspiring the idea for educational trips."
-    },
-    {
-      year: "2022",
-      title: "Mission KAPES Born",
-      description: "Mission KAPES was officially launched to create transformative educational experiences connecting students with communities in Africa."
-    },
-    {
-      year: "2023",
-      title: "Program Expansion",
-      description: "Expanded programs across multiple African countries, focusing on sustainable tourism and meaningful cultural exchange."
-    }
-  ];
-
-  const impactStats = [
-    { icon: Users, value: "1,200+", label: "Students Engaged" },
-    { icon: Globe, value: "12", label: "Community Projects" },
-    { icon: MapPin, value: "5", label: "Countries" },
-    { icon: Calendar, value: "45+", label: "Programs Run" }
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -125,62 +95,6 @@ const AboutUs = () => {
                   </ul>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Story Timeline */}
-        <section className="py-20 bg-white">
-          <div className="container-wide">
-            <h2 className="section-heading text-center mb-16">Our Journey</h2>
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-dragon-dark opacity-20"></div>
-              
-              {/* Timeline items */}
-              <div className="space-y-24">
-                {milestones.map((milestone, index) => (
-                  <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                    {/* Year bubble */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 bg-dragon text-white rounded-full h-14 w-14 flex items-center justify-center z-10 font-bold">
-                      {milestone.year}
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="w-1/2"></div>
-                    <div className={`w-1/2 ${index % 2 === 0 ? 'pl-16' : 'pr-16'}`}>
-                      <h3 className="text-xl font-bold text-dragon-dark mb-2">{milestone.title}</h3>
-                      <p className="text-dragon-gray">{milestone.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Impact Section */}
-        <section className="py-20 bg-dragon-dark text-white">
-          <div className="container-wide text-center">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Our Impact</h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-16 max-w-2xl mx-auto">
-              Making a difference in communities and transforming student perspectives through meaningful connections.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-              {impactStats.map((stat, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className="bg-dragon-light/20 rounded-full p-4 mb-4">
-                    <stat.icon size={36} className="text-dragon-yellow" />
-                  </div>
-                  <h3 className="text-4xl font-bold text-dragon-yellow mb-2">{stat.value}</h3>
-                  <p className="text-gray-300">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-16">
-              <Button className="btn-secondary">Join Our Mission</Button>
             </div>
           </div>
         </section>
