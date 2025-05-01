@@ -5,7 +5,8 @@ import Footer from '@/components/Footer';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Leaf, Calendar, Clock, Droplet, TreeDeciduous } from "lucide-react";
+import { Leaf, Calendar, Clock, Droplet, TreeDeciduous, MapPin } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const FoodForEducation = () => {
   return (
@@ -13,11 +14,11 @@ const FoodForEducation = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[60vh] bg-dragon-beige overflow-hidden">
+        <section className="relative h-[70vh] bg-dragon-beige overflow-hidden">
           <div className="absolute inset-0">
             <img 
-              src="/lovable-uploads/fc764836-7162-400c-a486-00fe9d99f975.png"
-              alt="Permaculture farm project" 
+              src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80"
+              alt="Sunlight through trees at permaculture farm" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -28,6 +29,31 @@ const FoodForEducation = () => {
           </div>
         </section>
 
+        {/* Map Section */}
+        <section className="py-8 bg-white">
+          <div className="container-wide">
+            <div className="flex items-center justify-center mb-4">
+              <MapPin size={24} className="text-dragon mr-2" />
+              <h3 className="text-lg font-medium">Nairobi, Kenya</h3>
+            </div>
+            <div className="rounded-lg overflow-hidden border border-gray-200 shadow-lg">
+              <AspectRatio ratio={16/9} className="bg-gray-100">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.3582731551!2d36.70730845!3d-1.3033231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1651857927700!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Map of Nairobi, Kenya"
+                  className="w-full h-full"
+                ></iframe>
+              </AspectRatio>
+            </div>
+          </div>
+        </section>
+
         {/* Overview Section */}
         <section className="py-16 bg-white">
           <div className="container-wide">
@@ -35,7 +61,7 @@ const FoodForEducation = () => {
               <div>
                 <h2 className="section-heading">Project Overview</h2>
                 <p className="text-lg text-dragon-gray mb-6">
-                  This permaculture farm project transforms unused school land into a productive farm at Kirigu Primary School. In Kenya, where about 1 in 3 children suffer from stunted growth due to malnutrition, this initiative addresses critical food security challenges.
+                  This permaculture farm project transforms unused school land into a productive farm. In Kenya, where about 1 in 3 children suffer from stunted growth due to malnutrition, this initiative addresses critical food security challenges.
                 </p>
                 <p className="text-lg text-dragon-gray mb-6">
                   The farm will grow high-value onions and tomatoes, which will be purchased by Food For Education in exchange for meals for students in need. This sustainable model supports students, serves as a replicable solution for other schools, and offers participants hands-on experience with permaculture principles.
@@ -57,8 +83,8 @@ const FoodForEducation = () => {
               </div>
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png" 
-                  alt="Students working on permaculture project" 
+                  src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&q=80" 
+                  alt="Students working in permaculture garden" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -110,6 +136,43 @@ const FoodForEducation = () => {
                   <p className="text-dragon-gray">Foster changemakers who can address global challenges like food insecurity through hands-on education and practical experience.</p>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Photo Gallery */}
+        <section className="py-16 bg-white">
+          <div className="container-wide">
+            <h2 className="section-heading text-center mb-8">Experience the Journey</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80">
+                <img 
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&q=80" 
+                  alt="Beautiful Kenyan landscape" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80 lg:col-span-2">
+                <img 
+                  src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&q=80&w=1280" 
+                  alt="Students learning about permaculture" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80 lg:col-span-2">
+                <img 
+                  src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80&w=1280" 
+                  alt="Sunlight through plants at farm" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-lg h-64 md:h-80">
+                <img 
+                  src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&q=80" 
+                  alt="Farm field with vegetables" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
             </div>
           </div>
         </section>
