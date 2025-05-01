@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -58,7 +59,7 @@ const FoodForEducation = () => {
                   </div>
                   <div className="flex items-center bg-dragon-beige px-4 py-2 rounded-full">
                     <Calendar size={18} className="text-dragon mr-2" />
-                    <span className="text-dragon-dark">Year Round</span>
+                    <span className="text-dragon-dark">Jan-Nov</span>
                   </div>
                   <div className="flex items-center bg-dragon-beige px-4 py-2 rounded-full">
                     <Leaf size={18} className="text-dragon mr-2" />
@@ -115,7 +116,7 @@ const FoodForEducation = () => {
               <Card className="bg-white border-none shadow-md h-full">
                 <CardContent className="p-6 flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-full bg-dragon flex items-center justify-center mb-4">
-                    <Calendar size={32} className="text-dragon-dark" />
+                    <Calendar size={32} className="text-white" />
                   </div>
                   <h3 className="text-lg font-bold mb-3 text-dragon-dark">Educate & Empower</h3>
                   <p className="text-dragon-gray">Foster changemakers who can address global challenges like food insecurity through hands-on education and practical experience.</p>
