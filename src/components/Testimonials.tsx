@@ -1,22 +1,26 @@
 
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, Play } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const testimonials = [
   {
     quote: "It was a once in a lifetime experience. I learned how to be grateful for the things I have and the things that are around me. because the people and the things we saw in Kenya, they didn't have too much, but they were still happy. And with the things that we have, we can still be happy even without wanting more.",
     author: "Loki",
-    program: "Bolivia Semester Program"
+    program: "Bolivia Semester Program",
+    videoThumbnail: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format"
   },
   {
     quote: "Dragons isn't a typical study abroad program—it's a transformative journey that pushed me out of my comfort zone in the best possible way. The mentorship from our instructors was invaluable.",
     author: "Michael T.",
-    program: "China Gap Year"
+    program: "China Gap Year",
+    videoThumbnail: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2071&auto=format"
   },
   {
     quote: "The combination of wilderness exploration, cultural immersion, and intentional reflection created a powerful learning environment unlike anything I've experienced before.",
     author: "Emma K.",
-    program: "Nepal Summer Program"
+    program: "Nepal Summer Program",
+    videoThumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=2071&auto=format"
   }
 ];
 
@@ -47,6 +51,27 @@ const Testimonials = () => {
 
         <div className="relative max-w-4xl mx-auto">
           <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg">
+            {/* Video Thumbnail */}
+            <div className="mb-8">
+              <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg bg-gray-100">
+                <div className="relative w-full h-full">
+                  <img 
+                    src={testimonials[currentIndex].videoThumbnail} 
+                    alt={`${testimonials[currentIndex].author}'s story`} 
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20">
+                    <button 
+                      className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark flex items-center justify-center"
+                      aria-label="Play video"
+                    >
+                      <Play className="h-8 w-8" />
+                    </button>
+                  </div>
+                </div>
+              </AspectRatio>
+            </div>
+            
             <div className="text-dragon-yellow mb-6">
               <Quote size={48} />
             </div>
