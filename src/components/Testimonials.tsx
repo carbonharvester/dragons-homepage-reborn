@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -18,6 +17,12 @@ const testimonials = [{
   quote: "The combination of wilderness exploration, cultural immersion, and intentional reflection created a powerful learning environment unlike anything I've experienced before.",
   author: "Emma K.",
   videoThumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=2071&auto=format"
+}, {
+  quote: "My time in Kenya opened my eyes to new perspectives and ways of living. The connections I made with local communities will stay with me forever.",
+  author: "Yasma",
+  videoThumbnail: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=2071&auto=format",
+  videoUrl: "https://vimeo.com/1013709104",
+  vimeoId: "1013709104"
 }];
 
 const Testimonials = () => {
