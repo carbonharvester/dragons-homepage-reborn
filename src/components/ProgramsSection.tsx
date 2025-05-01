@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Globe, Clock, Calendar } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Programs data with updated image paths for all programs
 const programs = [{
@@ -12,21 +13,24 @@ const programs = [{
   duration: "5-7 Days",
   season: "Year Round",
   description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.",
-  image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png" // Using the first uploaded image
+  image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", // Using the first uploaded image
+  link: "/programs/food-for-education"
 }, {
   title: "Community Centred Conservation",
   category: "Semester",
   duration: "5-7 Days",
   season: "Year Round",
   description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.",
-  image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png" // Swapped with Empowering Women image
+  image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png", // Swapped with Empowering Women image
+  link: "#"
 }, {
   title: "Empowering Young Women",
   category: "Gap Year",
   duration: "5-7 Days",
   season: "Year Round",
   description: "Support women-led initiatives focusing on education, entrepreneurship and leadership in communities working to achieve gender equity and economic independence.",
-  image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png" // Swapped with Community Conservation image
+  image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png", // Swapped with Community Conservation image
+  link: "#"
 }];
 
 const ProgramsSection = () => {
@@ -76,8 +80,8 @@ const ProgramsSection = () => {
                     <span>{program.season}</span>
                   </div>
                 </div>
-                <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon hover:text-white">
-                  Learn More
+                <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
+                  <Link to={program.link}>Learn More</Link>
                 </Button>
               </CardContent>
             </Card>
@@ -91,4 +95,3 @@ const ProgramsSection = () => {
     </section>;
 };
 export default ProgramsSection;
-
