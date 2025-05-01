@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
@@ -28,6 +28,20 @@ const testimonials = [
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
+  
+  // Add effect to load Vimeo player script when needed
+  useEffect(() => {
+    if (showVideo && testimonials[currentIndex].videoUrl) {
+      const script = document.createElement('script');
+      script.src = 'https://player.vimeo.com/api/player.js';
+      script.async = true;
+      document.body.appendChild(script);
+      
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [showVideo, currentIndex]);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => 
@@ -63,17 +77,18 @@ const Testimonials = () => {
           <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg">
             {/* Video Thumbnail or Embedded Video */}
             <div className="mb-8">
-              <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg bg-gray-100">
-                {showVideo && testimonials[currentIndex].videoUrl ? (
+              {showVideo && testimonials[currentIndex].videoUrl ? (
+                <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                   <iframe 
-                    src={`${testimonials[currentIndex].videoUrl}?autoplay=1&title=0&byline=0&portrait=0`}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
+                    src={`https://player.vimeo.com/video/${testimonials[currentIndex].videoUrl.split('/').pop()}?badge=0&autopause=0&player_id=0&app_id=58479`}
+                    frameBorder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                     title={`${testimonials[currentIndex].author}'s story`}
                   ></iframe>
-                ) : (
+                </div>
+              ) : (
+                <AspectRatio ratio={16/9} className="overflow-hidden rounded-lg bg-gray-100">
                   <div className="relative w-full h-full">
                     <img 
                       src={testimonials[currentIndex].videoThumbnail} 
@@ -90,8 +105,8 @@ const Testimonials = () => {
                       </button>
                     </div>
                   </div>
-                )}
-              </AspectRatio>
+                </AspectRatio>
+              )}
             </div>
             
             <div className="text-dragon-yellow mb-6">
