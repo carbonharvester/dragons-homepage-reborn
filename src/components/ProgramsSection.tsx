@@ -21,7 +21,7 @@ const programs = [{
   description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.",
   image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png" // Swapped with Empowering Women image
 }, {
-  title: "Valuing Women Transforms Communities",
+  title: "Empowering Young Women",
   category: "Gap Year",
   duration: "5-7 Days",
   season: "Year Round",
