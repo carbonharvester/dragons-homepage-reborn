@@ -4,8 +4,8 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "My time in Bolivia with Dragons completely shifted my perspective on education, community, and my own role in the world. The homestay experience was incredibly rich and immersive.",
-    author: "Sarah J.",
+    quote: "It was a once in a lifetime experience. I learned how to be grateful for the things I have and the things that are around me. because the people and the things we saw in Kenya, they didn't have too much, but they were still happy. And with the things that we have, we can still be happy even without wanting more.",
+    author: "Loki",
     program: "Bolivia Semester Program"
   },
   {
