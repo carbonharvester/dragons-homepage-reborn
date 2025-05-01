@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Shield, Users, Book, Globe, Heart, Award } from "lucide-react";
 const features = [{
@@ -31,9 +30,7 @@ const WhyChooseUs = () => {
       <div className="container-wide">
         <div className="text-center mb-16">
           <h2 className="section-heading">Why Choose Kapes?</h2>
-          <p className="section-subheading mx-auto">
-            For over 30 years, we've been leaders in cross-cultural education. Here's what makes our approach different.
-          </p>
+          <p className="section-subheading mx-auto">We believe travel transforms lives and builds bridges between cultures. Here's what makes our approach different.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
