@@ -3,11 +3,28 @@ import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import KenyaMap from '@/components/KenyaMap';
+import ProgramBrochure from '@/components/ProgramBrochure';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Leaf, Calendar, Clock, Droplet, TreeDeciduous, MapPin } from "lucide-react";
+
 const FoodForEducation = () => {
+  // Program data for the brochure
+  const programData = {
+    title: "Food For Education",
+    description: "A permaculture farm project addressing food insecurity through sustainable agriculture and education programmes. This project transforms unused school land into a productive farm, growing high-value onions and tomatoes that will be purchased by Food For Education in exchange for meals for students in need.",
+    duration: "5-7 Days",
+    season: "Jan-Nov",
+    location: "Nairobi, Kenya",
+    goals: [
+      "Establish pilot farm focused on onions and tomatoes",
+      "Supply produce for school meals to address hunger",
+      "Create sustainable farming systems using permaculture",
+      "Educate and empower students to address food insecurity"
+    ]
+  };
+
   return <div className="min-h-screen flex flex-col">
       <Header />
       <main>
@@ -58,7 +75,12 @@ const FoodForEducation = () => {
               </div>
             </div>
             
-            {/* Map moved to the bottom of the project overview section */}
+            {/* Program Brochure */}
+            <div className="mt-12 mb-8">
+              <ProgramBrochure program={programData} />
+            </div>
+            
+            {/* Map */}
             <div className="mt-12">
               <h3 className="text-xl font-bold mb-4 text-dragon-dark">Project Location</h3>
               <p className="text-lg text-dragon-gray mb-6">
