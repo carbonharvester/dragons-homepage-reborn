@@ -5,14 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Globe, Clock, Calendar } from "lucide-react";
 
-// Programs data with image paths that will support uploaded images
+// Programs data with updated image path for the Food For Education program
 const programs = [{
   title: "Food For Education",
   category: "Summer",
   duration: "5-7 Days",
   season: "Year Round",
   description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.",
-  image: "/food-education.jpg" // Will be uploaded to public folder
+  image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png" // Using the uploaded image
 }, {
   title: "Community Centred Conservation",
   category: "Semester",
