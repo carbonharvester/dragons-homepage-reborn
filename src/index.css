@@ -73,3 +73,9 @@
     @apply text-lg md:text-xl text-dragon-gray mb-8 max-w-3xl;
   }
 }
+
+@layer utilities {
+  .min-w-6 {
+    min-width: 1.5rem;
+  }
+}

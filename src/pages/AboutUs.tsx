@@ -65,28 +65,28 @@ const AboutUs = () => {
                   <h3 className="text-2xl font-serif font-bold text-dragon-dark mb-4">Our Values</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start">
-                      <div className="bg-dragon rounded-full h-6 w-6 flex items-center justify-center text-white mr-3 mt-1">1</div>
+                      <div className="bg-dragon rounded-full h-6 w-6 min-w-6 flex items-center justify-center text-white mr-3 mt-1">1</div>
                       <div>
                         <h4 className="font-bold text-dragon-dark">Authenticity</h4>
                         <p className="text-dragon-gray">Creating genuine connections between students and communities.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <div className="bg-dragon rounded-full h-6 w-6 flex items-center justify-center text-white mr-3 mt-1">2</div>
+                      <div className="bg-dragon rounded-full h-6 w-6 min-w-6 flex items-center justify-center text-white mr-3 mt-1">2</div>
                       <div>
                         <h4 className="font-bold text-dragon-dark">Sustainability</h4>
                         <p className="text-dragon-gray">Ensuring our programs benefit local environments and economies.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <div className="bg-dragon rounded-full h-6 w-6 flex items-center justify-center text-white mr-3 mt-1">3</div>
+                      <div className="bg-dragon rounded-full h-6 w-6 min-w-6 flex items-center justify-center text-white mr-3 mt-1">3</div>
                       <div>
                         <h4 className="font-bold text-dragon-dark">Reciprocity</h4>
                         <p className="text-dragon-gray">Building mutually beneficial partnerships with host communities.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
-                      <div className="bg-dragon rounded-full h-6 w-6 flex items-center justify-center text-white mr-3 mt-1">4</div>
+                      <div className="bg-dragon rounded-full h-6 w-6 min-w-6 flex items-center justify-center text-white mr-3 mt-1">4</div>
                       <div>
                         <h4 className="font-bold text-dragon-dark">Transformation</h4>
                         <p className="text-dragon-gray">Facilitating deep learning experiences that change perspectives.</p>
