@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -12,7 +11,7 @@ const Footer = () => {
               <span className="font-serif italic">Mission</span> KAPES
             </h3>
             <p className="text-gray-300 mb-6">
-              Creating transformative educational journeys that combine cultural immersion, environmental awareness, and community service since 1993.
+              Facilitating meaningful cross-cultural experiences through immersive and responsible travel programs.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="Facebook">
