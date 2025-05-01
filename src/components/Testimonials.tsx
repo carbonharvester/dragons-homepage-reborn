@@ -11,13 +11,13 @@ const testimonials = [{
   videoUrl: "https://vimeo.com/1013651342?share=copy#t=0",
   vimeoId: "1013651342"
 }, {
-  quote: "My time in Kenya opened my eyes to new perspectives and ways of living. The connections I made with local communities will stay with me forever.",
+  quote: "Being in Kenya, it was an incredibly eye-opening experience. I'm very privileged to have been on this trip. I got to learn so much about different communities and different ways of living. I think my main takeaway was definitely that happiness can be found, regardless of what you have or don't have.",
   author: "Yasma",
   videoThumbnail: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=2071&auto=format",
   videoUrl: "https://vimeo.com/1013709104",
   vimeoId: "1013709104"
 }, {
-  quote: "The immersive experience in Kenya changed my perspective on what truly matters. Learning about different cultures and connecting with local people taught me lessons I couldn't have learned in any classroom.",
+  quote: "The biggest thing I've learned is that happiness doesn't come from what you have, it comes from connections with others and how you view the world. Seeing the Kenyan people being happy with so little made me realize that we take a lot of things for granted.",
   author: "Leon",
   videoThumbnail: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?q=80&w=2071&auto=format",
   videoUrl: "https://vimeo.com/1013710646",
