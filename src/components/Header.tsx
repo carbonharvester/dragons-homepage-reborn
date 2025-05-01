@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -18,7 +17,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
           <div className="flex space-x-6">
-            <a href="#programs" className="text-dragon-gray hover:text-dragon font-medium">Programmes</a>
+            <a href="#programs" className="text-dragon-gray hover:text-dragon font-medium">Programs</a>
             <a href="#about" className="text-dragon-gray hover:text-dragon font-medium">About Us</a>
             <a href="#why-us" className="text-dragon-gray hover:text-dragon font-medium">Why Choose Us</a>
             <a href="#stories" className="text-dragon-gray hover:text-dragon font-medium">Student Stories</a>
