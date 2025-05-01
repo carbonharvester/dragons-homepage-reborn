@@ -1,11 +1,12 @@
+
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-dragon-dark text-white pt-16 pb-8">
       <div className="container-wide">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <div>
             <h3 className="text-xl font-bold mb-6">
               <span className="font-serif italic">Mission</span> KAPES
@@ -43,30 +44,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-bold mb-6">Resources</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Program Catalog</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Financial Aid</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Health & Safety</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h4 className="text-lg font-bold mb-6">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin className="mr-3 h-5 w-5 text-dragon-yellow shrink-0 mt-0.5" />
-                <span className="text-gray-300">
-                  741 Pearl Street, Boulder, CO 80302
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone className="mr-3 h-5 w-5 text-dragon-yellow" />
-                <a href="tel:+13035460214" className="text-gray-300 hover:text-white transition-colors">
-                  (303) 546-0214
-                </a>
-              </li>
-              <li className="flex items-center">
+              <li><a href="#" className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-dragon-yellow" />
                 <a href="mailto:info@missionkapes.com" className="text-gray-300 hover:text-white transition-colors">
                   info@missionkapes.com
