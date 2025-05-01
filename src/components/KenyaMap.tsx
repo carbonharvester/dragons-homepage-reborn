@@ -10,13 +10,9 @@ const KenyaMap = () => {
         {/* Map background - realistic map of Kenya */}
         <div className="absolute inset-0">
           <img 
-            src="/lovable-uploads/f83bb6ef-1a09-47f6-9cee-60b23dd0823c.png" 
+            src="https://images.unsplash.com/photo-1552189864-e144212f4bc0?auto=format&fit=crop&q=80&w=1280" 
             alt="Realistic Map of Kenya"
             className="w-full h-full object-cover"
-            onError={(e) => {
-              e.currentTarget.src = "https://images.unsplash.com/photo-1552189864-e144212f4bc0?auto=format&fit=crop&q=80&w=1280";
-              console.log("Kenya map image failed to load, using fallback");
-            }}
           />
           
           {/* Overlay for better text visibility */}
