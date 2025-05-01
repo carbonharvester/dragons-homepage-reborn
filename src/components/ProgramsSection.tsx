@@ -8,7 +8,7 @@ const programs = [
   {
     title: "Feeding the Future",
     category: "Summer",
-    duration: "3 Weeks",
+    duration: "7 Days",
     season: "Summer",
     description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programs.",
     image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format"
