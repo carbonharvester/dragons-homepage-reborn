@@ -2,6 +2,7 @@
 import React from 'react';
 import { MapPin, Users, BookOpen, Shield, LineChart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import CalendlyEmbed from './CalendlyEmbed';
 
 const features = [{
   icon: <MapPin className="h-10 w-10 text-dragon" />,
@@ -63,7 +64,11 @@ const WhyChooseUs = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="btn-primary whitespace-nowrap" onClick={scrollToPrograms}>Find Your Program</Button>
-            <Button className="btn-secondary whitespace-nowrap">Contact Us</Button>
+            <CalendlyEmbed 
+              url="https://calendly.com/kapesuniforms/discoverymeeting"
+              text="Schedule Consultation"
+              className="btn-secondary whitespace-nowrap"
+            />
           </div>
         </div>
       </div>
