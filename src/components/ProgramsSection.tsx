@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Globe, Calendar, Route, School, GraduationCap, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Program categories
 const categories = [
@@ -30,6 +29,14 @@ const schoolTrips = [{
   description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.",
   image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png",
   link: "/programs/community-conservation",
+  icon: Globe
+}, {
+  title: "Safari Experience",
+  duration: "5-7 Days",
+  season: "Year Round",
+  description: "Embark on an educational safari experience that combines wildlife conservation with cultural immersion in local communities.",
+  image: "/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png",
+  link: "/programs/safari-sustainability",
   icon: Globe
 }];
 
@@ -90,87 +97,82 @@ const ProgramsSection = () => {
           </p>
         </div>
 
-        {/* Program Categories Tabs */}
-        <Tabs 
-          defaultValue="school-trips" 
-          value={activeCategory}
-          onValueChange={setActiveCategory}
-          className="w-full mb-12"
-        >
-          <div className="flex justify-center">
-            <TabsList className="bg-dragon-beige/50 border border-dragon/20">
-              {categories.map(category => (
-                <TabsTrigger 
-                  key={category.id} 
-                  value={category.id}
-                  className="data-[state=active]:bg-dragon data-[state=active]:text-white"
-                >
-                  {category.label}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+        {/* Program Category Buttons */}
+        <div className="flex flex-wrap justify-center gap-4 mb-10">
+          {categories.map((category) => (
+            <Button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`px-6 py-3 ${
+                activeCategory === category.id
+                  ? "bg-dragon text-white"
+                  : "bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white"
+              }`}
+            >
+              {category.label}
+            </Button>
+          ))}
+        </div>
+
+        {/* School Trips Content */}
+        <div className={`mt-8 ${activeCategory === "school-trips" ? "block" : "hidden"}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {schoolTrips.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
           </div>
+        </div>
 
-          {/* School Trips Content */}
-          <TabsContent value="school-trips" className="mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {schoolTrips.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
-            </div>
-          </TabsContent>
+        {/* Summer Abroad Content */}
+        <div className={`mt-8 ${activeCategory === "summer-abroad" ? "block" : "hidden"}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            {summerAbroad.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
+          </div>
+        </div>
 
-          {/* Summer Abroad Content */}
-          <TabsContent value="summer-abroad" className="mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-              {summerAbroad.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
-            </div>
-          </TabsContent>
-
-          {/* Multi-Year Curriculum Content */}
-          <TabsContent value="multi-year" className="mt-8">
-            <div className="max-w-4xl mx-auto">
-              <Card className="overflow-hidden border-none shadow-md">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-2 text-dragon-dark">{multiYearProgram.title}</h3>
-                  <h4 className="text-xl text-dragon mb-4">{multiYearProgram.subtitle}</h4>
-                  <p className="text-dragon-gray mb-8">{multiYearProgram.description}</p>
-                  
-                  <div className="space-y-6">
-                    {multiYearProgram.years.map((year, idx) => (
-                      <div key={idx} className="flex gap-4 border-l-4 border-dragon pl-4 py-2">
-                        <div className="bg-dragon text-white p-2 rounded-full shrink-0">
-                          <year.icon size={24} />
-                        </div>
-                        <div>
-                          <h5 className="text-lg font-bold text-dragon-dark">{year.title}</h5>
-                          <p className="text-sm text-dragon-gray mb-1">{year.ageRange}</p>
-                          <p>{year.description}</p>
-                        </div>
+        {/* Multi-Year Curriculum Content */}
+        <div className={`mt-8 ${activeCategory === "multi-year" ? "block" : "hidden"}`}>
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden border-none shadow-md">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-2 text-dragon-dark">{multiYearProgram.title}</h3>
+                <h4 className="text-xl text-dragon mb-4">{multiYearProgram.subtitle}</h4>
+                <p className="text-dragon-gray mb-8">{multiYearProgram.description}</p>
+                
+                <div className="space-y-6">
+                  {multiYearProgram.years.map((year, idx) => (
+                    <div key={idx} className="flex gap-4 border-l-4 border-dragon pl-4 py-2">
+                      <div className="bg-dragon text-white p-2 rounded-full shrink-0">
+                        <year.icon size={24} />
                       </div>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-8">
-                    <h5 className="text-lg font-bold text-dragon-dark mb-3">Customize Your Curriculum</h5>
-                    <p className="mb-6">We work with you to design a program that fits your school's curriculum, values, and goals. Whether it's STEM, arts, or social justice, your travel curriculum will be unique.</p>
-                    
-                    <div className="flex flex-wrap gap-4 mt-6">
-                      <Button className="btn-primary" asChild>
-                        <Link to="/curriculum-guide">Download Curriculum Guide</Link>
-                      </Button>
-                      <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                        <Link to="/partner-with-us">Schedule Consultation</Link>
-                      </Button>
+                      <div>
+                        <h5 className="text-lg font-bold text-dragon-dark">{year.title}</h5>
+                        <p className="text-sm text-dragon-gray mb-1">{year.ageRange}</p>
+                        <p>{year.description}</p>
+                      </div>
                     </div>
+                  ))}
+                </div>
+                
+                <div className="mt-8">
+                  <h5 className="text-lg font-bold text-dragon-dark mb-3">Customize Your Curriculum</h5>
+                  <p className="mb-6">We work with you to design a program that fits your school's curriculum, values, and goals. Whether it's STEM, arts, or social justice, your travel curriculum will be unique.</p>
+                  
+                  <div className="flex flex-wrap gap-4 mt-6">
+                    <Button className="btn-primary" asChild>
+                      <Link to="/curriculum-guide">Download Curriculum Guide</Link>
+                    </Button>
+                    <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
+                      <Link to="/partner-with-us">Schedule Consultation</Link>
+                    </Button>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-        </Tabs>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </section>
   );
