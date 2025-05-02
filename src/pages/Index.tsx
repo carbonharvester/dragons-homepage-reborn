@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import VideoSection from '@/components/VideoSection';
@@ -27,8 +27,52 @@ const Index = () => {
     { src: "/lovable-uploads/111df4fd-1e0e-41f8-af3c-7460449109f0.png", alt: "American School of Dubai", scale: true },
   ];
   
+  const [visibleLogos, setVisibleLogos] = useState<typeof schoolLogos>([]);
+  const logoDisplayCount = 5;
   const carouselRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  
+  // Function to shuffle the array using Fisher-Yates algorithm
+  const shuffleArray = (array: typeof schoolLogos) => {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+  };
+  
+  // Update visible logos periodically
+  useEffect(() => {
+    // Initialize with first set of logos
+    setVisibleLogos(schoolLogos.slice(0, logoDisplayCount));
+    
+    // Auto-rotate logos
+    const interval = setInterval(() => {
+      // Get the current visible logos
+      const currentLogos = [...visibleLogos];
+      
+      // Remove the first logo
+      currentLogos.shift();
+      
+      // Add a new logo that's not currently visible
+      const remainingLogos = schoolLogos.filter(
+        logo => !currentLogos.some(currentLogo => currentLogo.src === logo.src)
+      );
+      
+      // If we have remaining logos, add one; otherwise shuffle and restart
+      if (remainingLogos.length > 0) {
+        currentLogos.push(remainingLogos[0]);
+      } else {
+        const shuffled = shuffleArray(schoolLogos);
+        currentLogos.push(shuffled[0]);
+      }
+      
+      setVisibleLogos(currentLogos);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, [visibleLogos]);
   
   // Auto-scroll functionality for mobile
   useEffect(() => {
@@ -75,34 +119,11 @@ const Index = () => {
             <p className="section-subheading mx-auto">Since 2023, we've specialised in immersive experiences that combine authentic cultural engagement, wilderness exploration, and transformative education, with social impact and sustainability.</p>
             
             <div className="mt-12">
-              {isMobile ? (
-                <div className="px-4" ref={carouselRef}>
-                  <Carousel opts={{ align: 'start', loop: true }}>
-                    <CarouselContent>
-                      {schoolLogos.map((logo, index) => (
-                        <CarouselItem key={index} className="flex items-center justify-center">
-                          <div className="flex items-center justify-center w-full">
-                            <Avatar className={`rounded-none bg-transparent ${logo.scale ? 'h-36 w-36' : 'h-24 w-24'}`}>
-                              <AvatarImage 
-                                src={logo.src} 
-                                alt={logo.alt} 
-                                className="object-contain h-full w-full"
-                              />
-                              <AvatarFallback className="bg-transparent">
-                                <University className="h-10 w-10 text-dragon" />
-                              </AvatarFallback>
-                            </Avatar>
-                          </div>
-                        </CarouselItem>
-                      ))}
-                    </CarouselContent>
-                  </Carousel>
-                </div>
-              ) : (
-                <div className="flex flex-wrap justify-center items-center gap-16 px-6">
-                  {schoolLogos.map((logo, index) => (
-                    <div key={index} className="flex items-center justify-center">
-                      <Avatar className={`rounded-none bg-transparent ${logo.scale ? 'h-36 w-36' : 'h-20 w-20'}`}>
+              <div className="px-4" ref={carouselRef}>
+                <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
+                  {visibleLogos.map((logo, index) => (
+                    <div key={index} className="flex items-center justify-center animate-fade-in">
+                      <Avatar className={`rounded-none bg-transparent ${logo.scale ? 'h-28 w-28 md:h-36 md:w-36' : 'h-16 w-16 md:h-20 md:w-20'}`}>
                         <AvatarImage 
                           src={logo.src} 
                           alt={logo.alt} 
@@ -115,7 +136,7 @@ const Index = () => {
                     </div>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </div>
