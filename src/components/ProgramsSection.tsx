@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Globe, Calendar, Route, School, GraduationCap, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 // Program categories
 const categories = [
@@ -164,9 +164,12 @@ const ProgramsSection = () => {
                     <Button className="btn-primary" asChild>
                       <Link to="/curriculum-guide">Learn More</Link>
                     </Button>
-                    <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                      <Link to="/partner-with-us">Schedule Consultation</Link>
-                    </Button>
+                    <CalendlyEmbed 
+                      url="https://calendly.com/kapesuniforms/discoverymeeting"
+                      text="Schedule Consultation"
+                      variant="outline"
+                      className="border-dragon text-dragon hover:bg-dragon hover:text-white"
+                    />
                   </div>
                 </div>
               </CardContent>

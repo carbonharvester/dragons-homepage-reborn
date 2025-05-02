@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button, ButtonProps } from "@/components/ui/button";
@@ -51,7 +50,7 @@ const loadCalendlyScript = (() => {
   };
 })();
 
-const CalendlyEmbed = ({ url, text = "Schedule a Consultation", className, ...props }: CalendlyEmbedProps) => {
+const CalendlyEmbed = ({ url, text = "Schedule a Consultation", className, variant, ...props }: CalendlyEmbedProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Initialize Calendly when the dialog opens
@@ -77,7 +76,7 @@ const CalendlyEmbed = ({ url, text = "Schedule a Consultation", className, ...pr
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button className={className} {...props}>{text}</Button>
+        <Button variant={variant} className={className} {...props}>{text}</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[700px] lg:max-w-[900px] max-h-[90vh] overflow-hidden">
         <DialogHeader>
