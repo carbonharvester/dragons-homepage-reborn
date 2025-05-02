@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -161,7 +162,7 @@ const ProgramsSection = () => {
                   
                   <div className="flex flex-wrap gap-4 mt-6">
                     <Button className="btn-primary" asChild>
-                      <Link to="/curriculum-guide">Download Curriculum Guide</Link>
+                      <Link to="/curriculum-guide">Learn More</Link>
                     </Button>
                     <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
                       <Link to="/partner-with-us">Schedule Consultation</Link>
