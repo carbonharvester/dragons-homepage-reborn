@@ -9,6 +9,8 @@ import AboutUs from "./pages/AboutUs";
 import PartnerWithUs from "./pages/PartnerWithUs";
 import NotFound from "./pages/NotFound";
 import FoodForEducation from "./pages/FoodForEducation";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -25,6 +27,8 @@ const App = () => (
           <Route path="/about" element={<AboutUs />} />
           <Route path="/partner-with-us" element={<PartnerWithUs />} />
           <Route path="/programs/food-for-education" element={<FoodForEducation />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:postId" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
