@@ -37,9 +37,9 @@ const Footer = () => {
           <div>
             <h4 className="text-base font-bold mb-4">Travel With Us</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Food For Education</a></li>
-              <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Community Centred Conservation</a></li>
-              <li><a href="#programs" className="text-gray-300 hover:text-white transition-colors">Empowering Women</a></li>
+              <li><Link to="/programs/food-for-education" className="text-gray-300 hover:text-white transition-colors">Food For Education</Link></li>
+              <li><Link to="/programs/community-conservation" className="text-gray-300 hover:text-white transition-colors">Community Centred Conservation</Link></li>
+              <li><Link to="/programs/empowering-women" className="text-gray-300 hover:text-white transition-colors">Empowering Women</Link></li>
             </ul>
           </div>
           

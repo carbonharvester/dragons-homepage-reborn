@@ -22,7 +22,7 @@ const programs = [{
   season: "Year Round",
   description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.",
   image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png",
-  link: "/programs/food-for-education" // Using existing route
+  link: "/programs/community-conservation"
 }, {
   title: "Empowering Young Women",
   category: "Gap Year",
@@ -30,7 +30,7 @@ const programs = [{
   season: "Year Round",
   description: "Support women-led initiatives focusing on education, entrepreneurship and leadership in communities working to achieve gender equity and economic independence.",
   image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png",
-  link: "/programs/food-for-education" // Using existing route
+  link: "/programs/empowering-women"
 }];
 
 const ProgramsSection = () => {
