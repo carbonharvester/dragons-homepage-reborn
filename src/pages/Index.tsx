@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -23,6 +24,7 @@ const Index = () => {
     { src: "/lovable-uploads/e6394583-20d9-4609-8284-6ba2ca500c08.png", alt: "American Community School of Abu Dhabi", scale: true },
     { src: "/lovable-uploads/2586ddf8-8a65-45ca-ac88-f21c4e930c03.png", alt: "North London Collegiate School Dubai" },
     { src: "/lovable-uploads/f83bb6ef-1a09-47f6-9cee-60b23dd0823c.png", alt: "Cairo American College" },
+    { src: "/lovable-uploads/111df4fd-1e0e-41f8-af3c-7460449109f0.png", alt: "American School of Dubai", scale: true },
   ];
   
   const carouselRef = useRef<HTMLDivElement>(null);
