@@ -50,7 +50,7 @@ const PartnerWithUs = () => {
         <section className="bg-gradient-to-r from-dragon-dark to-dragon py-20 md:py-32">
           <div className="container-wide text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
-              Partner With Mission KAPES
+              Partner With Kapes Adventures
             </h1>
             <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto mb-10">
               Expand your offering with purpose-driven travel experiences while sharing in the success through our generous profit-sharing model.
@@ -70,7 +70,7 @@ const PartnerWithUs = () => {
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="section-heading">Why Partner With Us?</h2>
               <p className="text-lg text-dragon-gray">
-                Join forces with Mission KAPES to offer transformative travel experiences while building a sustainable business model that benefits all stakeholders.
+                Join forces with Kapes Adventures to offer transformative travel experiences while building a sustainable business model that benefits all stakeholders.
               </p>
             </div>
 
@@ -219,7 +219,7 @@ const PartnerWithUs = () => {
                     rows={4}
                     required
                     className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-dragon focus:border-transparent"
-                    placeholder="Please share details about your organization, the type of trips you currently offer, and what interests you about partnering with Mission KAPES."
+                    placeholder="Please share details about your organization, the type of trips you currently offer, and what interests you about partnering with Kapes Adventures."
                   ></textarea>
                 </div>
                 
