@@ -15,6 +15,7 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 const Index = () => {
   const schoolLogos = [
@@ -27,86 +28,39 @@ const Index = () => {
     { src: "/lovable-uploads/111df4fd-1e0e-41f8-af3c-7460449109f0.png", alt: "American School of Dubai", scale: true },
   ];
   
-  const [visibleLogos, setVisibleLogos] = useState<typeof schoolLogos>([]);
-  const logoDisplayCount = 5;
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
   
-  // Function to shuffle the array using Fisher-Yates algorithm
-  const shuffleArray = (array: typeof schoolLogos) => {
-    const newArray = [...array];
-    for (let i = newArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-    }
-    return newArray;
-  };
+  // Function to clone logos to ensure smooth infinite scrolling
+  const duplicatedLogos = [...schoolLogos, ...schoolLogos];
   
-  // Initialize visible logos
+  // Horizontal scrolling effect
   useEffect(() => {
-    // Initialize with first set of logos
-    setVisibleLogos(schoolLogos.slice(0, logoDisplayCount));
-  }, []);
-  
-  // Separate effect for logo rotation
-  useEffect(() => {
-    // Auto-rotate logos
-    const interval = setInterval(() => {
-      setVisibleLogos(currentLogos => {
-        // Make a copy of the current logos
-        const updatedLogos = [...currentLogos];
-        
-        // Remove the first logo
-        updatedLogos.shift();
-        
-        // Find logos that aren't currently visible
-        const remainingLogos = schoolLogos.filter(
-          logo => !updatedLogos.some(currentLogo => currentLogo.src === logo.src)
-        );
-        
-        // If we have remaining logos, add one; otherwise shuffle and restart
-        if (remainingLogos.length > 0) {
-          updatedLogos.push(remainingLogos[0]);
-        } else {
-          const shuffled = shuffleArray(schoolLogos);
-          updatedLogos.push(shuffled[0]);
-        }
-        
-        return updatedLogos;
-      });
-    }, 3000);
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
     
-    return () => clearInterval(interval);
-  }, []);
-  
-  // Auto-scroll functionality for mobile
-  useEffect(() => {
-    if (!isMobile || !carouselRef.current) return;
+    let scrollAmount = 0;
+    const speed = 0.5; // pixels per frame
+    let animationFrameId: number;
     
-    const scrollableDiv = carouselRef.current?.querySelector('.embla__container');
-    if (!scrollableDiv) return;
-    
-    const interval = setInterval(() => {
-      const itemWidth = scrollableDiv.querySelector('.embla__slide')?.clientWidth || 0;
-      const currentScroll = scrollableDiv.scrollLeft;
-      const maxScroll = scrollableDiv.scrollWidth - scrollableDiv.clientWidth;
+    const scroll = () => {
+      scrollAmount += speed;
       
-      // Calculate next scroll position
-      let nextScroll = currentScroll + itemWidth;
-      
-      // Reset to beginning if at end
-      if (nextScroll >= maxScroll - 10) {
-        nextScroll = 0;
+      // Reset when we've scrolled the width of the first set of logos
+      if (scrollAmount >= scrollContainer.scrollWidth / 2) {
+        scrollAmount = 0;
       }
       
-      scrollableDiv.scrollTo({
-        left: nextScroll,
-        behavior: 'smooth'
-      });
-    }, 3000); // Change logo every 3 seconds
+      scrollContainer.scrollLeft = scrollAmount;
+      animationFrameId = requestAnimationFrame(scroll);
+    };
     
-    return () => clearInterval(interval);
-  }, [isMobile]);
+    animationFrameId = requestAnimationFrame(scroll);
+    
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
   
   // Scroll to top on page load
   useEffect(() => {
@@ -123,11 +77,15 @@ const Index = () => {
             <h2 className="section-heading">Experience Learning Through Adventure</h2>
             <p className="section-subheading mx-auto">Since 2023, we've specialised in immersive experiences that combine authentic cultural engagement, wilderness exploration, and transformative education, with social impact and sustainability.</p>
             
-            <div className="mt-12">
-              <div className="px-4" ref={carouselRef}>
-                <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
-                  {visibleLogos.map((logo, index) => (
-                    <div key={index} className="flex items-center justify-center animate-fade-in">
+            <div className="mt-12 relative overflow-hidden">
+              <div className="w-full overflow-hidden">
+                <div 
+                  ref={scrollContainerRef}
+                  className="flex items-center gap-8 lg:gap-16 overflow-x-hidden whitespace-nowrap py-4 px-4"
+                  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                >
+                  {duplicatedLogos.map((logo, index) => (
+                    <div key={index} className="flex-shrink-0 flex items-center justify-center">
                       <Avatar className={`rounded-none bg-transparent ${logo.scale ? 'h-28 w-28 md:h-36 md:w-36' : 'h-16 w-16 md:h-20 md:w-20'}`}>
                         <AvatarImage 
                           src={logo.src} 
