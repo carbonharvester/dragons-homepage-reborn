@@ -23,7 +23,7 @@ const Hero = () => {
       {/* Content */}
       <div className="container-wide relative z-10 text-white">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
             Authentic Immersion Programs
             <span className="block mt-2 text-dragon-yellow">For Future Changmakers</span>
           </h1>

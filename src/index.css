@@ -1,6 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
+@font-face {
+  font-family: 'AcademySansExpanded-Black';
+  src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySansExpanded-Black.woff?v=1746173800') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -50,6 +58,10 @@
   body {
     @apply bg-background text-foreground font-sans;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'AcademySansExpanded-Black', sans-serif;
+  }
 }
 
 @layer components {
@@ -66,7 +78,7 @@
   }
   
   .section-heading {
-    @apply text-3xl md:text-4xl font-serif font-bold text-dragon-dark mb-4;
+    @apply text-3xl md:text-4xl font-bold text-dragon-dark mb-4;
   }
   
   .section-subheading {
