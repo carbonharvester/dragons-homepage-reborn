@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Globe, Calendar, Route, School, GraduationCap, Users } from "lucide-react";
+import { Globe, Calendar, Route, School, GraduationCap, Users, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
@@ -41,21 +42,21 @@ const schoolTrips = [{
 }];
 
 const summerAbroad = [{
-  title: "Empowering Young Women",
-  duration: "2-3 Weeks",
+  title: "Food For Education",
+  duration: "3 Weeks",
   season: "Jun-Aug",
-  description: "Support women-led initiatives focusing on education, entrepreneurship and leadership in communities working to achieve gender equity and economic independence.",
-  image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png",
-  link: "/programs/empowering-women",
+  description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.",
+  image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png",
+  link: "/programs/food-for-education",
   icon: Globe
 }, {
-  title: "Safari & Sustainability",
-  duration: "2-3 Weeks",
+  title: "Capturing Kenya",
+  duration: "3 Weeks",
   season: "Jun-Aug",
-  description: "Experience African wildlife conservation firsthand while learning about sustainable tourism practices that protect natural habitats.",
-  image: "/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png",
-  link: "/programs/safari-sustainability",
-  icon: Globe
+  description: "Develop your photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders across Kenya.",
+  image: "/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png",
+  link: "/programs/capturing-kenya",
+  icon: Camera
 }];
 
 const multiYearProgram = {
