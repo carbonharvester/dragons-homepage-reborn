@@ -29,6 +29,8 @@ const App = () => (
           <Route path="/programs/food-for-education" element={<FoodForEducation />} />
           <Route path="/programs/community-conservation" element={<FoodForEducation />} />
           <Route path="/programs/empowering-women" element={<FoodForEducation />} />
+          <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
+          <Route path="/curriculum-guide" element={<PartnerWithUs />} /> {/* Redirecting to Partner page for now */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:postId" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

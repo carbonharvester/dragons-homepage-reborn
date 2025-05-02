@@ -24,14 +24,14 @@ const Hero = () => {
       <div className="container-wide relative z-10 text-white">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-            Authentic Immersion Programs
-            <span className="block mt-2 text-dragon-yellow">For Future Changmakers</span>
+            Transformative Educational 
+            <span className="block mt-2 text-dragon-yellow">Travel Experiences</span>
           </h1>
-          <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">Experience transformative education through cultural immersion, wilderness exploration, and authentic engagement in Africa</p>
+          <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">School trips, summer programs, and multi-year curriculums that combine cultural immersion, wilderness exploration, and authentic engagement in Africa</p>
           <div className="flex flex-wrap gap-4">
-            <Button className="btn-primary text-lg" onClick={scrollToPrograms}>Find Your Program</Button>
+            <Button className="btn-primary text-lg" onClick={scrollToPrograms}>Explore Programs</Button>
             <Button className="bg-white text-dragon hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg" asChild>
-              <Link to="/about">Learn More</Link>
+              <Link to="/partner-with-us">Partner With Us</Link>
             </Button>
           </div>
         </div>
