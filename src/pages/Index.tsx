@@ -39,16 +39,16 @@ const Index = () => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
     
-    let scrollAmount = 0;
+    let scrollAmount = scrollContainer.scrollWidth / 2; // Start from the middle
     const speed = 0.5; // pixels per frame
     let animationFrameId: number;
     
     const scroll = () => {
-      scrollAmount += speed;
+      scrollAmount -= speed; // Decrease to scroll right to left
       
       // Reset when we've scrolled the width of the first set of logos
-      if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-        scrollAmount = 0;
+      if (scrollAmount <= 0) {
+        scrollAmount = scrollContainer.scrollWidth / 2;
       }
       
       scrollContainer.scrollLeft = scrollAmount;
