@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -31,12 +30,12 @@ const schoolTrips = [{
   link: "/programs/community-conservation",
   icon: Globe
 }, {
-  title: "Safari Experience",
+  title: "Empowering Young Women",
   duration: "5-7 Days",
   season: "Year Round",
-  description: "Embark on an educational safari experience that combines wildlife conservation with cultural immersion in local communities.",
-  image: "/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png",
-  link: "/programs/safari-sustainability",
+  description: "Support women-led initiatives focusing on education, entrepreneurship and leadership in communities working to achieve gender equity and economic independence.",
+  image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png",
+  link: "/programs/empowering-women",
   icon: Globe
 }];
 
