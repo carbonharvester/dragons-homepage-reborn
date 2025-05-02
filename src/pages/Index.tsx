@@ -42,37 +42,42 @@ const Index = () => {
     return newArray;
   };
   
-  // Update visible logos periodically
+  // Initialize visible logos
   useEffect(() => {
     // Initialize with first set of logos
     setVisibleLogos(schoolLogos.slice(0, logoDisplayCount));
-    
+  }, []);
+  
+  // Separate effect for logo rotation
+  useEffect(() => {
     // Auto-rotate logos
     const interval = setInterval(() => {
-      // Get the current visible logos
-      const currentLogos = [...visibleLogos];
-      
-      // Remove the first logo
-      currentLogos.shift();
-      
-      // Add a new logo that's not currently visible
-      const remainingLogos = schoolLogos.filter(
-        logo => !currentLogos.some(currentLogo => currentLogo.src === logo.src)
-      );
-      
-      // If we have remaining logos, add one; otherwise shuffle and restart
-      if (remainingLogos.length > 0) {
-        currentLogos.push(remainingLogos[0]);
-      } else {
-        const shuffled = shuffleArray(schoolLogos);
-        currentLogos.push(shuffled[0]);
-      }
-      
-      setVisibleLogos(currentLogos);
+      setVisibleLogos(currentLogos => {
+        // Make a copy of the current logos
+        const updatedLogos = [...currentLogos];
+        
+        // Remove the first logo
+        updatedLogos.shift();
+        
+        // Find logos that aren't currently visible
+        const remainingLogos = schoolLogos.filter(
+          logo => !updatedLogos.some(currentLogo => currentLogo.src === logo.src)
+        );
+        
+        // If we have remaining logos, add one; otherwise shuffle and restart
+        if (remainingLogos.length > 0) {
+          updatedLogos.push(remainingLogos[0]);
+        } else {
+          const shuffled = shuffleArray(schoolLogos);
+          updatedLogos.push(shuffled[0]);
+        }
+        
+        return updatedLogos;
+      });
     }, 3000);
     
     return () => clearInterval(interval);
-  }, [visibleLogos]);
+  }, []);
   
   // Auto-scroll functionality for mobile
   useEffect(() => {
