@@ -72,31 +72,31 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="gap-6">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-dragon-gray hover:text-dragon font-medium bg-transparent hover:bg-transparent">
+                <NavigationMenuTrigger className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent">
                   Programs
                 </NavigationMenuTrigger>
-                <NavigationMenuContent className="bg-white">
-                  <ul className="grid w-[500px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                <NavigationMenuContent className="bg-white shadow-lg rounded-md border-t border-gray-100 p-1">
+                  <ul className="grid w-[500px] gap-4 p-6 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {programCategories.map((category) => (
                       <li key={category.title} className="row-span-3">
                         <NavigationMenuLink asChild>
                           <Link
                             to={category.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-dragon-beige hover:text-dragon-dark focus:bg-dragon-beige focus:text-dragon-dark"
+                            className="block select-none space-y-2 rounded-md p-4 leading-none no-underline outline-none transition-colors hover:bg-dragon-beige hover:text-dragon-dark focus:bg-dragon-beige focus:text-dragon-dark"
                           >
-                            <div className="text-md font-medium leading-none text-dragon-dark">{category.title}</div>
-                            <p className="line-clamp-2 text-sm text-dragon-gray leading-snug">
+                            <div className="text-lg font-medium leading-none text-dragon-dark mb-2">{category.title}</div>
+                            <p className="line-clamp-2 text-sm text-dragon-gray leading-snug mb-3">
                               {category.description}
                             </p>
                             {category.programs.length > 0 && (
-                              <div className="mt-2 space-y-1">
+                              <div className="mt-3 space-y-2">
                                 {category.programs.map((program) => (
                                   <Link 
                                     key={program.name} 
                                     to={program.href}
-                                    className="block text-sm text-dragon hover:text-dragon-dark"
+                                    className="block text-sm text-dragon hover:text-dragon-dark py-1"
                                   >
                                     • {program.name}
                                   </Link>
@@ -111,17 +111,17 @@ const Header = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link to="/about" className="text-dragon-gray hover:text-dragon font-medium">
+                <Link to="/about" className="text-dragon-gray hover:text-dragon font-medium text-base px-3 py-2">
                   About Us
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link to="/blog" className="text-dragon-gray hover:text-dragon font-medium">
+                <Link to="/blog" className="text-dragon-gray hover:text-dragon font-medium text-base px-3 py-2">
                   Blog
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <a href="/#why-us" className="text-dragon-gray hover:text-dragon font-medium">
+                <a href="/#why-us" className="text-dragon-gray hover:text-dragon font-medium text-base px-3 py-2">
                   Why Choose Us
                 </a>
               </NavigationMenuItem>
@@ -141,27 +141,27 @@ const Header = () => {
         <div className="lg:hidden bg-white w-full absolute top-full left-0 shadow-lg py-4 animate-fade-in">
           <div className="container-wide flex flex-col space-y-4">
             <div className="border-b border-gray-200 pb-2">
-              <div className="flex items-center justify-between py-2">
-                <span className="font-medium">Programs</span>
+              <div className="flex items-center justify-between py-3">
+                <span className="font-medium text-base text-dragon-dark">Programs</span>
                 <ChevronDown size={16} className="text-dragon-gray" />
               </div>
-              <div className="pl-4 space-y-2 py-2">
+              <div className="pl-4 space-y-3 py-2">
                 {programCategories.map(category => (
-                  <div key={category.title} className="mb-3">
+                  <div key={category.title} className="mb-4">
                     <Link 
                       to={category.href}
-                      className="block text-dragon-dark font-medium py-1"
+                      className="block text-dragon-dark font-medium text-base py-2"
                       onClick={toggleMenu}
                     >
                       {category.title}
                     </Link>
                     {category.programs.length > 0 && (
-                      <div className="pl-3 space-y-1">
+                      <div className="pl-4 space-y-2 mt-1">
                         {category.programs.map(program => (
                           <Link 
                             key={program.name}
                             to={program.href}
-                            className="block text-sm text-dragon-gray py-1"
+                            className="block text-sm text-dragon-gray py-2"
                             onClick={toggleMenu}
                           >
                             {program.name}
@@ -173,16 +173,16 @@ const Header = () => {
                 ))}
               </div>
             </div>
-            <Link to="/about" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
+            <Link to="/about" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
               About Us
             </Link>
-            <Link to="/blog" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
+            <Link to="/blog" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
               Blog
             </Link>
-            <a href="/#why-us" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
+            <a href="/#why-us" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
               Why Choose Us
             </a>
-            <Button className="btn-primary w-full">Apply Now</Button>
+            <Button className="btn-primary w-full mt-2">Apply Now</Button>
           </div>
         </div>
       )}
