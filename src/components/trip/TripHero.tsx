@@ -1,0 +1,37 @@
+
+import React from 'react';
+
+interface TripHeroProps {
+  title: string;
+  subtitle: string;
+  category: string;
+  imagePath: string;
+}
+
+const TripHero = ({ title, subtitle, category, imagePath }: TripHeroProps) => {
+  return (
+    <div className="relative h-[60vh] overflow-hidden">
+      <div className="absolute inset-0">
+        <img 
+          src={imagePath} 
+          alt={`${title} project`} 
+          className="w-full h-full object-cover" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent"></div>
+      </div>
+      <div className="container relative z-10 h-full flex flex-col justify-center text-white pt-16">
+        <div className="inline-block bg-dragon px-4 py-1 rounded-full text-sm font-medium mb-4">
+          {category}
+        </div>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-4">
+          {title}
+        </h1>
+        <p className="text-xl md:text-2xl max-w-3xl">
+          {subtitle}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default TripHero;
