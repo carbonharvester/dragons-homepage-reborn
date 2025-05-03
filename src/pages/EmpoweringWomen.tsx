@@ -9,6 +9,10 @@ import { Route, Calendar, Map, Users } from "lucide-react";
 import ProgramBrochure from "@/components/ProgramBrochure";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import TripHero from "@/components/trip/TripHero";
+import TripGallery from "@/components/trip/TripGallery";
+import TripHighlights from "@/components/trip/TripHighlights";
+import TripItinerary from "@/components/trip/TripItinerary";
+import TripDetailsCard from "@/components/trip/TripDetails";
 
 const EmpoweringWomen = () => {
   // Define the program data according to the ProgramData interface
@@ -25,6 +29,138 @@ const EmpoweringWomen = () => {
       "Develop leadership skills through service learning"
     ]
   };
+  
+  const tripHighlights = [
+    {
+      icon: <div className="text-white text-2xl">👩‍🏫</div>,
+      title: "Women-Led Workshops",
+      description: "Participate in workshops led by successful female entrepreneurs who are breaking barriers in their communities."
+    },
+    {
+      icon: <div className="text-white text-2xl">📚</div>,
+      title: "Educational Initiatives",
+      description: "Collaborate with local schools on educational programs designed to keep girls in school and support their academic journeys."
+    },
+    {
+      icon: <div className="text-white text-2xl">💼</div>,
+      title: "Microfinance Support",
+      description: "Learn about and support women's microfinance programs that provide economic opportunities in underserved communities."
+    },
+    {
+      icon: <div className="text-white text-2xl">🧵</div>,
+      title: "Traditional Skills",
+      description: "Learn traditional crafts and skills from community artisans while supporting their businesses."
+    },
+    {
+      icon: <div className="text-white text-2xl">🌱</div>,
+      title: "Leadership Development",
+      description: "Develop leadership and collaboration skills through service-learning projects with tangible community impact."
+    },
+    {
+      icon: <div className="text-white text-2xl">🌍</div>,
+      title: "Cultural Exchange",
+      description: "Engage in meaningful cultural exchange while gaining global perspective on gender equity issues."
+    }
+  ];
+  
+  const tripItinerary = [
+    {
+      day: "Day 1",
+      title: "Arrival & Orientation",
+      activities: [
+        "Arrive in Nairobi and transfer to accommodation",
+        "Welcome dinner and program orientation",
+        "Introduction to Kenyan culture and gender dynamics"
+      ]
+    },
+    {
+      day: "Day 2",
+      title: "Women's Education Initiatives",
+      activities: [
+        "Visit to local girls' school to learn about education access",
+        "Participate in classroom activities and mentorship sessions",
+        "Discussion with school leaders about challenges and successes"
+      ]
+    },
+    {
+      day: "Day 3",
+      title: "Entrepreneurship Workshop",
+      activities: [
+        "Meet with women entrepreneurs from the community",
+        "Hands-on workshop on business development",
+        "Collaborative brainstorming session on sustainable business models"
+      ]
+    },
+    {
+      day: "Day 4",
+      title: "Microfinance & Economic Empowerment",
+      activities: [
+        "Visit to women's microfinance cooperative",
+        "Participate in a savings group meeting",
+        "Learn about financial literacy programs for women"
+      ]
+    },
+    {
+      day: "Day 5",
+      title: "Community Project & Reflection",
+      activities: [
+        "Collaborate on a community service project",
+        "Closing ceremony with community partners",
+        "Group reflection and action planning session"
+      ]
+    }
+  ];
+  
+  const galleryImages = [
+    {
+      src: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png",
+      alt: "Students discussing with women entrepreneurs", 
+      className: "col-span-12 md:col-span-6 h-64"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+      alt: "Women's leadership workshop", 
+      className: "col-span-12 md:col-span-6 h-64"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+      alt: "Students learning traditional crafts", 
+      className: "col-span-12 md:col-span-4 h-64"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1631&q=80",
+      alt: "Microfinance group meeting", 
+      className: "col-span-12 md:col-span-4 h-64"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1520&q=80",
+      alt: "Girls' education program", 
+      className: "col-span-12 md:col-span-4 h-64"
+    }
+  ];
+  
+  const tripDetails = [
+    {
+      label: "Duration",
+      value: "5-7 Days",
+      icon: <Calendar className="w-5 h-5 text-dragon" />
+    },
+    {
+      label: "Season",
+      value: "Year Round",
+      icon: <Route className="w-5 h-5 text-dragon" />
+    },
+    {
+      label: "Location",
+      value: "Various communities in Kenya",
+      icon: <Map className="w-5 h-5 text-dragon" />
+    },
+    {
+      label: "Group Size",
+      value: "12-15 Students / 2-3 Instructors",
+      icon: <Users className="w-5 h-5 text-dragon" />
+    }
+  ];
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -65,29 +201,13 @@ const EmpoweringWomen = () => {
                     <li>Entrepreneurship as a path to financial independence</li>
                     <li>Leadership development in challenging contexts</li>
                   </ul>
-                  
-                  <h2 className="text-2xl font-bold text-dragon-dark mt-8 mb-4">Program Highlights</h2>
-                  <ul className="list-disc pl-5 space-y-2">
-                    <li>Participate in workshops led by successful female entrepreneurs</li>
-                    <li>Collaborate on educational initiatives with girls' schools</li>
-                    <li>Support women's microfinance and business development programs</li>
-                    <li>Learn traditional crafts and skills from community artisans</li>
-                    <li>Develop leadership skills through service learning projects</li>
-                  </ul>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <img 
-                    src="/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png" 
-                    alt="Students working with women entrepreneurs" 
-                    className="rounded-lg w-full h-64 object-cover"
-                  />
-                  <img 
-                    src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" 
-                    alt="Women's leadership workshop" 
-                    className="rounded-lg w-full h-64 object-cover"
-                  />
-                </div>
+                <TripHighlights highlights={tripHighlights} />
+                
+                <TripItinerary itineraryDays={tripItinerary} />
+                
+                <TripGallery images={galleryImages} />
                 
                 <div className="border-t border-gray-200 pt-8 mt-8">
                   <h2 className="text-2xl font-bold text-dragon-dark mb-6">Ready to Join Us?</h2>
@@ -106,50 +226,7 @@ const EmpoweringWomen = () => {
               </div>
               
               <div className="lg:w-1/3">
-                <div className="bg-dragon-beige rounded-lg p-6 sticky top-24">
-                  <h3 className="text-xl font-bold text-dragon-dark mb-4">Program Details</h3>
-                  
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-center gap-3">
-                      <Calendar className="w-5 h-5 text-dragon" />
-                      <div>
-                        <p className="text-sm text-gray-500">Duration</p>
-                        <p className="font-medium">5-7 Days</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <Route className="w-5 h-5 text-dragon" />
-                      <div>
-                        <p className="text-sm text-gray-500">Season</p>
-                        <p className="font-medium">Year Round</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <Map className="w-5 h-5 text-dragon" />
-                      <div>
-                        <p className="text-sm text-gray-500">Location</p>
-                        <p className="font-medium">Various communities in Kenya</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3">
-                      <Users className="w-5 h-5 text-dragon" />
-                      <div>
-                        <p className="text-sm text-gray-500">Group Size</p>
-                        <p className="font-medium">12-15 Students / 2-3 Instructors</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <Button className="w-full">Apply Now</Button>
-                    <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                      <Link to="/school-trips">View All School Trips</Link>
-                    </Button>
-                  </div>
-                </div>
+                <TripDetailsCard tripDetails={tripDetails} />
               </div>
             </div>
           </div>
