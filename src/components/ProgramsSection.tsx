@@ -15,60 +15,21 @@ const categories = [
 ];
 
 // Programs data with updated image paths for all programs
-const schoolTrips = [{
-  title: "Food For Education",
-  duration: "5-7 Days",
-  season: "Jan-Nov", 
-  description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.",
-  image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", 
-  link: "/programs/food-for-education",
-  icon: Globe
-}, {
-  title: "Community Conservation",
-  duration: "5-7 Days",
-  season: "Year Round",
-  description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.",
-  image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png",
-  link: "/programs/community-conservation",
-  icon: Globe
-}, {
-  title: "Empowering Young Women",
-  duration: "5-7 Days",
-  season: "Year Round",
-  description: "Support women-led initiatives focusing on education, entrepreneurship and leadership in communities working to achieve gender equity and economic independence.",
-  image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png",
-  link: "/programs/empowering-women",
-  icon: Globe
-}];
+const schoolTrips = [
+  { title: "Food For Education", duration: "5-7 Days", season: "Jan-Nov", description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.", image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", link: "/programs/food-for-education", icon: Globe },
+  { title: "Community Conservation", duration: "5-7 Days", season: "Year Round", description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.", image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png", link: "/programs/community-conservation", icon: Globe },
+  { title: "Empowering Young Women", duration: "5-7 Days", season: "Year Round", description: "Support women-led initiatives focusing on education, entrepreneurship and leadership in communities working to achieve gender equity and economic independence.", image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png", link: "/programs/empowering-women", icon: Globe }
+];
 
-const summerAbroad = [{
-  title: "Food For Education",
-  duration: "3 Weeks",
-  season: "Jun-Aug",
-  description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.",
-  image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png",
-  link: "/programs/food-for-education",
-  icon: Globe
-}, {
-  title: "Capturing Kenya",
-  duration: "3 Weeks",
-  season: "Jun-Aug",
-  description: "Develop your photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders across Kenya.",
-  image: "/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png",
-  link: "/programs/capturing-kenya",
-  icon: Camera
-}];
+const summerAbroad = [
+  { title: "Food For Education", duration: "3 Weeks", season: "Jun-Aug", description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.", image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", link: "/programs/food-for-education", icon: Globe },
+  { title: "Capturing Kenya", duration: "3 Weeks", season: "Jun-Aug", description: "Develop your photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders across Kenya.", image: "/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png", link: "/programs/capturing-kenya", icon: Camera }
+];
 
 // New Adult Programs section
-const adultTrips = [{
-  title: "Permaculture Design Course",
-  duration: "10 Days",
-  season: "Year Round",
-  description: "Immerse yourself in permaculture principles while contributing to sustainable food systems in local Kenyan communities. Learn design techniques and practical skills with real-world impact.",
-  image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png",
-  link: "/programs/permaculture-design-course",
-  icon: Leaf
-}];
+const adultTrips = [
+  { title: "Permaculture Design Course", duration: "10 Days", season: "Year Round", description: "Immerse yourself in permaculture principles while contributing to sustainable food systems in local Kenyan communities. Learn design techniques and practical skills with real-world impact.", image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", link: "/programs/permaculture-design-course", icon: Leaf }
+];
 
 const multiYearProgram = {
   title: "Multi-Year Travel Curriculum",
@@ -221,7 +182,7 @@ const ProgramCard = ({ program }) => {
       </div>
           
       <CardContent className="p-6 flex-grow flex flex-col">
-        <h3 className="text-md font-bold mb-3 text-dragon-dark">{program.title}</h3>
+        <h3 className="text-xl md:text-md font-bold mb-3 text-dragon-dark">{program.title}</h3>
         <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
         <div className="flex justify-between text-sm text-dragon-gray mb-4">
           <div className="flex items-center">
