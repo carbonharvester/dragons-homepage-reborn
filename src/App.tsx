@@ -12,6 +12,8 @@ import NotFound from "./pages/NotFound";
 import FoodForEducation from "./pages/FoodForEducation";
 import PermacultureDesignCourse from "./pages/PermacultureDesignCourse";
 import SchoolTrips from "./pages/SchoolTrips";
+import SummerAbroad from "./pages/SummerAbroad";
+import MultiYearCurriculum from "./pages/MultiYearCurriculum";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import CapturingKenya from "./pages/CapturingKenya";
@@ -32,7 +34,8 @@ const AppRoutes = () => (
     <Route path="/about" element={<AboutUs />} />
     <Route path="/partner-with-us" element={<PartnerWithUs />} />
     <Route path="/school-trips" element={<SchoolTrips />} />
-    <Route path="/summer-abroad" element={<SchoolTrips />} />
+    <Route path="/summer-abroad" element={<SummerAbroad />} />
+    <Route path="/multi-year-curriculum" element={<MultiYearCurriculum />} />
     <Route path="/adult-programs" element={<AdultPrograms />} />
     <Route path="/programs/food-for-education" element={<FoodForEducation />} />
     <Route path="/programs/community-conservation" element={<CommunityConservation />} />

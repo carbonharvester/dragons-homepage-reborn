@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
 import SEO from '@/components/SEO';
+import TripCTA from '@/components/trip/TripCTA';
 
 const SchoolTrips = () => {
   // Scroll to top on page load
@@ -23,7 +24,7 @@ const SchoolTrips = () => {
         <section className="relative py-20 bg-white">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-serif font-bold text-dragon-dark mb-6">School Trips</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-dragon-dark mb-6">School Trips</h1>
               <p className="text-lg text-dragon-gray">
                 Immersive educational experiences that combine cultural engagement, wilderness exploration, and authentic learning opportunities for students.
               </p>
@@ -37,7 +38,7 @@ const SchoolTrips = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
-                  <h2 className="text-2xl font-serif font-bold text-dragon-dark mb-3">Custom School Expeditions</h2>
+                  <h2 className="text-2xl font-bold text-dragon-dark mb-3">Custom School Expeditions</h2>
                   <p className="text-dragon-gray mb-4">
                     Tailor-made educational journeys that align with your curriculum goals while providing students with transformative experiences in Africa.
                   </p>
@@ -65,7 +66,7 @@ const SchoolTrips = () => {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
-                  <h2 className="text-2xl font-serif font-bold text-dragon-dark mb-3">Educational Focus Areas</h2>
+                  <h2 className="text-2xl font-bold text-dragon-dark mb-3">Educational Focus Areas</h2>
                   <p className="text-dragon-gray mb-4">
                     Our school trips are designed around key educational themes that promote global citizenship and experiential learning.
                   </p>
@@ -86,6 +87,8 @@ const SchoolTrips = () => {
                 </div>
               </div>
             </div>
+            
+            <TripCTA />
           </div>
         </section>
         

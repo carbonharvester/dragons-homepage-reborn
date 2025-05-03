@@ -11,6 +11,11 @@ export const programCategories = [
     programs: [],
   },
   {
+    title: "Multi-Year Curriculum",
+    href: "/multi-year-curriculum",
+    programs: [],
+  },
+  {
     title: "Adult Programs",
     href: "/adult-programs",
     programs: [],

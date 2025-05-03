@@ -49,7 +49,7 @@ const PartnerWithUs = () => {
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-dragon-dark to-dragon py-20 md:py-32">
           <div className="container-wide text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 hero-heading">
               Partner With Kapes Adventures
             </h1>
             <p className="text-lg md:text-xl text-gray-100 max-w-3xl mx-auto mb-10">
@@ -153,7 +153,7 @@ const PartnerWithUs = () => {
         <section id="partnership-form" className="py-20 bg-dragon-dark text-white">
           <div className="container-wide">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Become a Partner</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Become a Partner</h2>
               <p className="text-lg text-gray-300">
                 Fill out the form below to start a conversation about our partnership opportunities.
               </p>
