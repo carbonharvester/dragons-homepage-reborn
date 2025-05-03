@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Testimonials from '@/components/Testimonials';
+import SEO from '@/components/SEO';
 
 const SchoolTrips = () => {
   // Scroll to top on page load
@@ -12,6 +13,11 @@ const SchoolTrips = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="School Trips"
+        description="Immersive educational experiences that combine cultural engagement, wilderness exploration, and authentic learning opportunities for students."
+        keywords="school trips, student travel, cultural engagement, wilderness exploration, educational travel, Africa, Kenya"
+      />
       <Header />
       <main>
         <section className="relative py-20 bg-white">

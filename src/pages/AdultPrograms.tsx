@@ -3,6 +3,7 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -37,6 +38,11 @@ const AdultPrograms = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Adult Programs"
+        description="Engage in transformative learning experiences that combine cultural immersion, skill development, and meaningful contribution to local communities."
+        keywords="adult programs, educational travel, cultural immersion, skill development, Kenya, Africa"
+      />
       <Header />
       <main>
         <section className="relative h-[60vh] min-h-[400px] flex items-center">

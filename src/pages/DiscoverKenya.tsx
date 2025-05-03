@@ -2,12 +2,18 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Earth, BookOpen } from "lucide-react";
 
 const DiscoverKenya = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Discover Kenya"
+        description="Explore the incredible diversity of landscapes, wildlife, cultures, and experiences that make Kenya a world-renowned destination for educational travel."
+        keywords="Kenya, safari, wildlife, landscapes, culture, travel, Africa"
+      />
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}

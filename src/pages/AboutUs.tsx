@@ -2,6 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Calendar, Users, Globe } from 'lucide-react';
@@ -9,6 +10,11 @@ import { MapPin, Calendar, Users, Globe } from 'lucide-react';
 const AboutUs = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="About Us"
+        description="From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters."
+        keywords="Mission Kapes, educational travel, student trips, sustainability, Africa, Kenya"
+      />
       <Header />
       <main>
         {/* Hero Section */}

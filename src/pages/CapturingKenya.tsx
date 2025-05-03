@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import Testimonials from '@/components/Testimonials';
 import ProgramBrochure from '@/components/ProgramBrochure';
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ import {
   Camera, Calendar, Users, Clock, MapPin, GraduationCap, 
   Award, Heart, ChevronDown, ChevronUp, Sun, Sunrise, Sunset, DollarSign
 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const CapturingKenya = () => {
   // Scroll to top on page load
@@ -452,6 +453,11 @@ const CapturingKenya = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Capturing Kenya Photography Program"
+        description="Develop your photography and videography skills while capturing Kenya's stunning landscapes, wildlife, and cultures in this immersive educational adventure."
+        keywords="photography, videography, Kenya, safari, wildlife photography, educational travel, creative program"
+      />
       <Header />
       <main>
         {/* Hero Section */}

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,6 +8,7 @@ import {
   ChevronDown, ChevronUp, ChevronLeft,
   Sun, Sunrise, Sunset, Calendar, Clock, MapPin
 } from "lucide-react";
+import SEO from '@/components/SEO';
 
 const CapturingKenyaItinerary = () => {
   // Scroll to top on page load
@@ -411,6 +411,11 @@ const CapturingKenyaItinerary = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Capturing Kenya Program Itinerary"
+        description="Detailed day-by-day itinerary for our 4-week photography and videography immersion program across Kenya's most stunning locations."
+        keywords="Kenya itinerary, photography program, wildlife photography, travel itinerary, educational program"
+      />
       <Header />
       <main>
         {/* Hero Section */}

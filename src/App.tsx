@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import PartnerWithUs from "./pages/PartnerWithUs";
@@ -27,37 +28,39 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/partner-with-us" element={<PartnerWithUs />} />
-          <Route path="/school-trips" element={<SchoolTrips />} />
-          <Route path="/summer-abroad" element={<SchoolTrips />} />
-          <Route path="/adult-programs" element={<AdultPrograms />} />
-          <Route path="/programs/food-for-education" element={<FoodForEducation />} />
-          <Route path="/programs/community-conservation" element={<CommunityConservation />} />
-          <Route path="/programs/empowering-women" element={<EmpoweringWomen />} />
-          <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
-          <Route path="/programs/capturing-kenya" element={<CapturingKenya />} />
-          <Route path="/programs/capturing-kenya/itinerary" element={<CapturingKenyaItinerary />} />
-          <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
-          <Route path="/curriculum-guide" element={<PartnerWithUs />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:postId" element={<BlogPost />} />
-          {/* New resource pages */}
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/health-and-safety" element={<HealthAndSafety />} />
-          <Route path="/discover-kenya" element={<DiscoverKenya />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <HelmetProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/partner-with-us" element={<PartnerWithUs />} />
+            <Route path="/school-trips" element={<SchoolTrips />} />
+            <Route path="/summer-abroad" element={<SchoolTrips />} />
+            <Route path="/adult-programs" element={<AdultPrograms />} />
+            <Route path="/programs/food-for-education" element={<FoodForEducation />} />
+            <Route path="/programs/community-conservation" element={<CommunityConservation />} />
+            <Route path="/programs/empowering-women" element={<EmpoweringWomen />} />
+            <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
+            <Route path="/programs/capturing-kenya" element={<CapturingKenya />} />
+            <Route path="/programs/capturing-kenya/itinerary" element={<CapturingKenyaItinerary />} />
+            <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
+            <Route path="/curriculum-guide" element={<PartnerWithUs />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:postId" element={<BlogPost />} />
+            {/* New resource pages */}
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/health-and-safety" element={<HealthAndSafety />} />
+            <Route path="/discover-kenya" element={<DiscoverKenya />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </HelmetProvider>
   </QueryClientProvider>
 );
 

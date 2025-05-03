@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Route, Calendar, Map, Users } from "lucide-react";
@@ -28,6 +29,11 @@ const CommunityConservation = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Community Conservation Program"
+        description="Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices."
+        keywords="conservation, ecological knowledge, sustainable practices, Kenya, educational travel, wildlife conservation"
+      />
       <Header />
       <main>
         <Hero />

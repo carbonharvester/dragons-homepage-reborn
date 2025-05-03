@@ -7,6 +7,7 @@ import ProgramsSection from '@/components/ProgramsSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import BlogSection from '@/components/BlogSection';
 import Footer from '@/components/Footer';
+import SEO from '@/components/SEO';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { University } from 'lucide-react';
 
@@ -60,6 +61,7 @@ const Index = () => {
   }, []);
   
   return <div className="min-h-screen flex flex-col">
+      <SEO />
       <Header />
       <main>
         <Hero />

@@ -2,11 +2,17 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const FAQ = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Frequently Asked Questions"
+        description="Find answers to the most common questions about our programs, travel logistics, and experiences in Kenya."
+        keywords="FAQ, travel questions, Kenya travel, educational programs, trip preparation"
+      />
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
