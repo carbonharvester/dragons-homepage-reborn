@@ -14,6 +14,7 @@ import SchoolTrips from "./pages/SchoolTrips";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import CapturingKenya from "./pages/CapturingKenya";
+import CapturingKenyaItinerary from "./pages/CapturingKenyaItinerary";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/programs/empowering-women" element={<FoodForEducation />} />
           <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
           <Route path="/programs/capturing-kenya" element={<CapturingKenya />} />
+          <Route path="/programs/capturing-kenya/itinerary" element={<CapturingKenyaItinerary />} />
           <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
           <Route path="/curriculum-guide" element={<PartnerWithUs />} /> {/* Redirecting to Partner page for now */}
           <Route path="/blog" element={<Blog />} />

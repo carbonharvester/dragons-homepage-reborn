@@ -8,6 +8,7 @@ import {
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
@@ -72,28 +73,40 @@ const Header = () => {
           <NavigationMenu>
             <NavigationMenuList className="gap-6">
               <NavigationMenuItem>
-                <div className="relative">
-                  <div className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent px-3 py-2 cursor-pointer">
-                    Programs
+                <NavigationMenuTrigger className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent px-3 py-2">
+                  Programs
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="z-50">
+                  <div className="p-4 grid w-[600px] gap-6 md:grid-cols-2">
+                    {programCategories.map((category) => (
+                      <div key={category.title} className="space-y-3">
+                        <Link
+                          to={category.href}
+                          className="block rounded-md transition-colors"
+                        >
+                          <h3 className="text-base font-bold text-dragon-dark">{category.title}</h3>
+                        </Link>
+                        <p className="text-xs text-dragon-gray mb-2 line-clamp-2">
+                          {category.description}
+                        </p>
+                        {category.programs.length > 0 && (
+                          <ul className="space-y-2">
+                            {category.programs.map(program => (
+                              <li key={program.name}>
+                                <Link
+                                  to={program.href}
+                                  className="text-sm text-dragon hover:underline"
+                                >
+                                  {program.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
                   </div>
-                  <div className="absolute top-full left-0 hidden hover:block z-50 shadow-lg rounded-md border-t border-gray-100 bg-white">
-                    <div className="p-4 grid w-[600px] gap-6 md:grid-cols-2">
-                      {programCategories.map((category) => (
-                        <div key={category.title} className="space-y-3">
-                          <Link
-                            to={category.href}
-                            className="block rounded-md transition-colors"
-                          >
-                            <h3 className="text-base font-bold text-dragon-dark">{category.title}</h3>
-                          </Link>
-                          <p className="text-xs text-dragon-gray mb-2 line-clamp-2">
-                            {category.description}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link to="/about" className="text-dragon-gray hover:text-dragon font-medium text-base px-3 py-2">
@@ -140,6 +153,21 @@ const Header = () => {
                     >
                       {category.title}
                     </Link>
+                    {category.programs.length > 0 && (
+                      <ul className="pl-4 mt-1 space-y-1">
+                        {category.programs.map(program => (
+                          <li key={program.name}>
+                            <Link 
+                              to={program.href}
+                              className="block text-dragon text-sm py-1"
+                              onClick={toggleMenu}
+                            >
+                              {program.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 ))}
               </div>
@@ -153,7 +181,9 @@ const Header = () => {
             <a href="/#why-us" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
               Why Choose Us
             </a>
-            <Button className="btn-primary w-full mt-2">Apply Now</Button>
+            <Button className="btn-primary w-full mt-2" asChild>
+              <Link to="/apply" onClick={toggleMenu}>Apply Now</Link>
+            </Button>
           </div>
         </div>
       )}
