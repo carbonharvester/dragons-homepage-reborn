@@ -1,47 +1,39 @@
 
 import React from 'react';
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
-import {
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import { programCategories } from '@/data/navigationData';
 
 const ProgramsMenu = () => {
-  // Use timestamp for cache busting
-  const timestamp = Date.now();
-  
   return (
-    <NavigationMenuItem>
-      <NavigationMenuTrigger className="text-dragon-gray font-medium text-base">
-        <span className="flex items-center">
-          Programs
-          <ChevronDown size={16} className="ml-1" />
-        </span>
-      </NavigationMenuTrigger>
-      <NavigationMenuContent className="bg-white p-4 shadow-lg rounded-lg">
-        <ul className="grid grid-cols-2 gap-3 w-[400px]">
-          {programCategories.map((category) => (
-            <li key={`${category.title}-${timestamp}`}>
-              <NavigationMenuLink asChild>
-                <Link 
-                  to={category.href}
-                  className="block p-2 hover:bg-gray-50 rounded text-dragon-dark hover:text-dragon"
-                >
-                  <div className="font-medium">{category.title}</div>
-                  {category.description && (
-                    <p className="text-xs text-gray-500 mt-1">{category.description}</p>
-                  )}
-                </Link>
-              </NavigationMenuLink>
-            </li>
-          ))}
-        </ul>
-      </NavigationMenuContent>
-    </NavigationMenuItem>
+    <div className="absolute left-0 top-full mt-2 w-screen bg-white border-t border-gray-100 shadow-lg py-6 z-50 hidden lg:block">
+      <div className="container-wide grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {programCategories.map((category) => (
+          <div key={category.title} className="p-4">
+            <Link 
+              to={category.href}
+              className="text-dragon-dark font-medium text-base hover:text-dragon block mb-2"
+            >
+              {category.title}
+            </Link>
+            <p className="text-sm text-gray-500 mb-4">{category.description}</p>
+            {category.programs && category.programs.length > 0 && (
+              <ul className="space-y-2">
+                {category.programs.map((program) => (
+                  <li key={program.title}>
+                    <Link 
+                      to={program.href}
+                      className="text-dragon-gray hover:text-dragon text-sm block"
+                    >
+                      {program.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
