@@ -15,7 +15,7 @@ const CultureSection = () => {
           <div className="flex flex-col md:flex-row gap-8 mb-12">
             <div className="md:w-1/2">
               <img 
-                src={`/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png?t=${imgTimestamp}`}
+                src={`https://images.unsplash.com/photo-1612371093327-05adefc95aab?q=80&w=2000&auto=format&fit=crop&t=${imgTimestamp}`}
                 alt="Cultural performance" 
                 className="rounded-lg w-full h-64 object-cover mb-4"
               />

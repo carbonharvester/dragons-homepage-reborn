@@ -27,8 +27,8 @@ const AboutKenya = () => {
             <div className="grid md:grid-cols-2 gap-8 my-12">
               <div>
                 <img 
-                  src={`/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png?t=${imgTimestamp}`}
-                  alt="Kenyan landscape" 
+                  src={`https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=2000&auto=format&fit=crop&t=${imgTimestamp}`}
+                  alt="Great Rift Valley landscape" 
                   className="rounded-lg shadow-md w-full h-64 object-cover"
                 />
                 <p className="text-sm text-dragon-gray mt-2 text-center italic">
@@ -37,7 +37,7 @@ const AboutKenya = () => {
               </div>
               <div>
                 <img 
-                  src={`/lovable-uploads/0d2ee059-b425-4a7d-a8ba-3ee2cd8fdfc0.png?t=${imgTimestamp}`}
+                  src={`https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?q=80&w=2000&auto=format&fit=crop&t=${imgTimestamp}`}
                   alt="Maasai cultural experience" 
                   className="rounded-lg shadow-md w-full h-64 object-cover"
                 />

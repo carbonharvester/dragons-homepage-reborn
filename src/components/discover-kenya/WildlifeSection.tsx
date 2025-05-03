@@ -19,7 +19,7 @@ const WildlifeSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <Card className="overflow-hidden">
               <img 
-                src={`/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png?t=${imgTimestamp}`}
+                src={`https://images.unsplash.com/photo-1564760055775-d63b17a55c44?q=80&w=1000&auto=format&fit=crop&t=${imgTimestamp}`}
                 alt="African elephants" 
                 className="w-full h-48 object-cover"
               />
@@ -33,7 +33,7 @@ const WildlifeSection = () => {
             
             <Card className="overflow-hidden">
               <img 
-                src={`/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png?t=${imgTimestamp}`}
+                src={`https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1000&auto=format&fit=crop&t=${imgTimestamp}`}
                 alt="Wildebeest migration" 
                 className="w-full h-48 object-cover"
               />
@@ -47,7 +47,7 @@ const WildlifeSection = () => {
             
             <Card className="overflow-hidden">
               <img 
-                src={`/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png?t=${imgTimestamp}`}
+                src={`https://images.unsplash.com/photo-1555791752-b2d0ab3c9956?q=80&w=1000&auto=format&fit=crop&t=${imgTimestamp}`}
                 alt="Conservation efforts" 
                 className="w-full h-48 object-cover"
               />

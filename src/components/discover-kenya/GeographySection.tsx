@@ -62,12 +62,12 @@ const GeographySection = () => {
           
           <div className="flex flex-wrap justify-center gap-8 mb-8">
             <img 
-              src={`/lovable-uploads/2586ddf8-8a65-45ca-ac88-f21c4e930c03.png?t=${imgTimestamp}`}
+              src={`https://images.unsplash.com/photo-1484442292461-bb347c2a216e?q=80&w=2000&auto=format&fit=crop&t=${imgTimestamp}`}
               alt="Savannah landscape" 
               className="rounded-lg shadow-md w-full md:w-[46%] h-64 object-cover"
             />
             <img 
-              src={`/lovable-uploads/38402d57-68c0-4b9b-9868-02bb45b85144.png?t=${imgTimestamp}`}
+              src={`https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?q=80&w=2000&auto=format&fit=crop&t=${imgTimestamp}`}
               alt="Coastal landscape" 
               className="rounded-lg shadow-md w-full md:w-[46%] h-64 object-cover"
             />
