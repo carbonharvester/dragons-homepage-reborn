@@ -71,11 +71,11 @@ const Header = () => {
         <nav className="hidden lg:flex items-center space-x-8">
           <NavigationMenu>
             <NavigationMenuList className="gap-6">
-              <NavigationMenuItem className="group">
+              <NavigationMenuItem className="relative group">
                 <div className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent px-3 py-2 cursor-pointer">
                   Programs
                 </div>
-                <NavigationMenuContent className="absolute top-full left-0 bg-white shadow-lg rounded-md border-t border-gray-100 p-1 group-hover:block hidden">
+                <div className="absolute top-full left-0 hidden group-hover:block shadow-lg rounded-md border-t border-gray-100 z-50 bg-white">
                   <div className="p-4 grid w-[600px] gap-6 md:grid-cols-2">
                     {programCategories.map((category) => (
                       <div key={category.title} className="space-y-3">
@@ -105,7 +105,7 @@ const Header = () => {
                       </div>
                     ))}
                   </div>
-                </NavigationMenuContent>
+                </div>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link to="/about" className="text-dragon-gray hover:text-dragon font-medium text-base px-3 py-2">
