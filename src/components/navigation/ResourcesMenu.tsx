@@ -23,7 +23,7 @@ const ResourcesMenu = () => {
         </span>
       </NavigationMenuTrigger>
       <NavigationMenuContent className="bg-white p-4 shadow-lg rounded-lg">
-        <ul className="grid gap-3">
+        <ul className="grid grid-cols-2 gap-3 w-[400px]">
           {resourcePages.map((resource) => (
             <li key={`${resource.title}-${timestamp}`}>
               <NavigationMenuLink asChild>
@@ -31,7 +31,10 @@ const ResourcesMenu = () => {
                   to={resource.href}
                   className="block p-2 hover:bg-gray-50 rounded text-dragon-dark hover:text-dragon"
                 >
-                  {resource.title}
+                  <div className="font-medium">{resource.title}</div>
+                  {resource.description && (
+                    <p className="text-xs text-gray-500 mt-1">{resource.description}</p>
+                  )}
                 </Link>
               </NavigationMenuLink>
             </li>
