@@ -2,6 +2,7 @@
 import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
+import CalendlyEmbed from './CalendlyEmbed';
 
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
@@ -37,9 +38,9 @@ const Footer = () => {
           <div>
             <h4 className="text-base font-bold mb-4">Travel With Us</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/programs/food-for-education" className="text-gray-300 hover:text-white transition-colors">Food For Education</Link></li>
-              <li><Link to="/programs/community-conservation" className="text-gray-300 hover:text-white transition-colors">Community Centred Conservation</Link></li>
-              <li><Link to="/programs/empowering-women" className="text-gray-300 hover:text-white transition-colors">Empowering Women</Link></li>
+              <li><Link to="/programs/capturing-kenya" className="text-gray-300 hover:text-white transition-colors">Capturing Kenya</Link></li>
+              <li><Link to="/programs/permaculture-design-course" className="text-gray-300 hover:text-white transition-colors">Permaculture Design Course</Link></li>
+              <li><Link to="/school-trips" className="text-gray-300 hover:text-white transition-colors">School Trips</Link></li>
             </ul>
           </div>
           
@@ -61,6 +62,19 @@ const Footer = () => {
                 <a href="mailto:info@kapesadventures.com" className="text-gray-300 hover:text-white transition-colors">
                   info@kapesadventures.com
                 </a>
+              </li>
+              <li>
+                <CalendlyEmbed 
+                  url="https://calendly.com/kapesuniforms/discoverymeeting" 
+                  text="Schedule Consultation" 
+                  className="text-gray-300 hover:text-white transition-colors p-0 h-auto bg-transparent justify-start"
+                  variant="ghost"
+                />
+              </li>
+              <li>
+                <Link to="/partner-with-us" className="text-gray-300 hover:text-white transition-colors">
+                  Apply Now
+                </Link>
               </li>
             </ul>
           </div>
