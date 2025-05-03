@@ -73,9 +73,19 @@ const resourcePages = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileProgramsExpanded, setMobileProgramsExpanded] = useState(false);
+  const [mobileResourcesExpanded, setMobileResourcesExpanded] = useState(false);
   
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleMobilePrograms = () => {
+    setMobileProgramsExpanded(!mobileProgramsExpanded);
+  };
+
+  const toggleMobileResources = () => {
+    setMobileResourcesExpanded(!mobileResourcesExpanded);
   };
   
   return (
@@ -182,59 +192,73 @@ const Header = () => {
       {isMenuOpen && (
         <div className="lg:hidden bg-white w-full absolute top-full left-0 shadow-lg py-4 animate-fade-in">
           <div className="container-wide flex flex-col space-y-4">
+            {/* Programs Section */}
             <div className="border-b border-gray-200 pb-2">
-              <div className="flex items-center justify-between py-3">
+              <button 
+                className="flex items-center justify-between py-3 w-full" 
+                onClick={toggleMobilePrograms}
+              >
                 <span className="font-medium text-base text-dragon-dark">Programs</span>
-                <ChevronDown size={16} className="text-dragon-gray" />
-              </div>
-              <div className="pl-4 space-y-3 py-2">
-                {programCategories.map(category => (
-                  <div key={category.title} className="mb-4">
-                    <Link 
-                      to={category.href}
-                      className="block text-dragon-dark font-medium text-base py-2"
-                      onClick={toggleMenu}
-                    >
-                      {category.title}
-                    </Link>
-                    
-                    {category.programs.length > 0 && (
-                      <ul className="pl-4 space-y-1">
-                        {category.programs.map((program) => (
-                          <li key={program.name}>
-                            <Link 
-                              to={program.href}
-                              className="block text-dragon text-sm py-1"
-                              onClick={toggleMenu}
-                            >
-                              {program.name}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                ))}
-              </div>
+                <ChevronDown size={16} className={`text-dragon-gray transform transition-transform ${mobileProgramsExpanded ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {mobileProgramsExpanded && (
+                <div className="pl-4 py-2 space-y-3">
+                  {programCategories.map(category => (
+                    <div key={category.title} className="mb-4">
+                      <Link 
+                        to={category.href}
+                        className="block text-dragon-dark font-medium text-base py-2"
+                        onClick={toggleMenu}
+                      >
+                        {category.title}
+                      </Link>
+                      
+                      {category.programs.length > 0 && (
+                        <ul className="pl-4 space-y-1">
+                          {category.programs.map((program) => (
+                            <li key={program.name}>
+                              <Link 
+                                to={program.href}
+                                className="block text-dragon text-sm py-1"
+                                onClick={toggleMenu}
+                              >
+                                {program.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
+            {/* Resources Section */}
             <div className="border-b border-gray-200 pb-2">
-              <div className="flex items-center justify-between py-3">
+              <button 
+                className="flex items-center justify-between py-3 w-full"
+                onClick={toggleMobileResources}
+              >
                 <span className="font-medium text-base text-dragon-dark">Resources</span>
-                <ChevronDown size={16} className="text-dragon-gray" />
-              </div>
-              <div className="pl-4 space-y-2 py-2">
-                {resourcePages.map(resource => (
-                  <Link 
-                    key={resource.title}
-                    to={resource.href}
-                    className="block text-dragon text-sm py-1"
-                    onClick={toggleMenu}
-                  >
-                    {resource.title}
-                  </Link>
-                ))}
-              </div>
+                <ChevronDown size={16} className={`text-dragon-gray transform transition-transform ${mobileResourcesExpanded ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {mobileResourcesExpanded && (
+                <div className="pl-4 space-y-2 py-2">
+                  {resourcePages.map(resource => (
+                    <Link 
+                      key={resource.title}
+                      to={resource.href}
+                      className="block text-dragon text-sm py-1"
+                      onClick={toggleMenu}
+                    >
+                      {resource.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             <Link to="/about" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
