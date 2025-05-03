@@ -13,6 +13,7 @@ import PermacultureDesignCourse from "./pages/PermacultureDesignCourse";
 import SchoolTrips from "./pages/SchoolTrips";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import CapturingKenya from "./pages/CapturingKenya";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -33,7 +34,7 @@ const App = () => (
           <Route path="/programs/community-conservation" element={<FoodForEducation />} />
           <Route path="/programs/empowering-women" element={<FoodForEducation />} />
           <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
-          <Route path="/programs/capturing-kenya" element={<FoodForEducation />} />
+          <Route path="/programs/capturing-kenya" element={<CapturingKenya />} />
           <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
           <Route path="/curriculum-guide" element={<PartnerWithUs />} /> {/* Redirecting to Partner page for now */}
           <Route path="/blog" element={<Blog />} />
