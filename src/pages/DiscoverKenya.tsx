@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Earth, BookOpen, Camera, Sun } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const DiscoverKenya = () => {
   // Add a random query parameter to force image reload
@@ -23,7 +24,7 @@ const DiscoverKenya = () => {
         <section 
           className="bg-cover bg-center py-32 relative"
           style={{ 
-            backgroundImage: `url('/lovable-uploads/fc764836-7162-400c-a486-00fe9d99f975.png?t=${imgTimestamp}')` 
+            backgroundImage: `url('https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2070&auto=format&fit=crop')` 
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
