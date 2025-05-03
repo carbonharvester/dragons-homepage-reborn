@@ -21,7 +21,7 @@ import EmpoweringWomen from "./pages/EmpoweringWomen";
 import AdultPrograms from "./pages/AdultPrograms";
 import FAQ from "./pages/FAQ";
 import HealthAndSafety from "./pages/HealthAndSafety";
-import DiscoverKenyaV2 from "./pages/DiscoverKenyaV2";
+import DiscoverKenya from "./pages/DiscoverKenya";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -47,7 +47,7 @@ const AppRoutes = () => (
     {/* Resource pages */}
     <Route path="/faq" element={<FAQ />} />
     <Route path="/health-and-safety" element={<HealthAndSafety />} />
-    <Route path="/discover-kenya" element={<DiscoverKenyaV2 />} />
+    <Route path="/discover-kenya" element={<DiscoverKenya />} />
     {/* Add explicit redirect for old route, if any */}
     <Route path="*" element={<NotFound />} />
   </Routes>

@@ -4,9 +4,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
-import { Earth, BookOpen } from "lucide-react";
+import { Earth, BookOpen, Camera, Sun } from "lucide-react";
 
 const DiscoverKenya = () => {
+  // Add a random query parameter to force image reload
+  const imgTimestamp = Date.now();
+  
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
@@ -16,10 +19,12 @@ const DiscoverKenya = () => {
       />
       <Header />
       <main className="flex-grow">
-        {/* Hero Section - Updated with more striking Kenya landscape image */}
+        {/* Hero Section */}
         <section 
           className="bg-cover bg-center py-32 relative"
-          style={{ backgroundImage: "url('/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png')" }}
+          style={{ 
+            backgroundImage: `url('/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png?t=${imgTimestamp}')` 
+          }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="container-wide relative z-10">
@@ -30,7 +35,7 @@ const DiscoverKenya = () => {
           </div>
         </section>
 
-        {/* About Kenya Section - Updated with more authentic Kenya images */}
+        {/* About Kenya Section */}
         <section className="py-16">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
@@ -51,7 +56,7 @@ const DiscoverKenya = () => {
                 <div className="grid md:grid-cols-2 gap-8 my-12">
                   <div>
                     <img 
-                      src="/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png" 
+                      src={`/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png?t=${imgTimestamp}`}
                       alt="Kenyan landscape" 
                       className="rounded-lg shadow-md w-full h-64 object-cover"
                     />
@@ -61,7 +66,7 @@ const DiscoverKenya = () => {
                   </div>
                   <div>
                     <img 
-                      src="/lovable-uploads/0d2ee059-b425-4a7d-a8ba-3ee2cd8fdfc0.png" 
+                      src={`/lovable-uploads/0d2ee059-b425-4a7d-a8ba-3ee2cd8fdfc0.png?t=${imgTimestamp}`}
                       alt="Maasai cultural experience" 
                       className="rounded-lg shadow-md w-full h-64 object-cover"
                     />
@@ -75,7 +80,7 @@ const DiscoverKenya = () => {
           </div>
         </section>
 
-        {/* Wildlife Section - Updated with more authentic Kenya wildlife images */}
+        {/* Wildlife Section */}
         <section className="py-16 bg-gray-50">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
@@ -85,10 +90,10 @@ const DiscoverKenya = () => {
                 Kenya is renowned for its wildlife conservation efforts and is home to some of the most spectacular animal species on the planet. The country boasts 24 national parks, 15 national reserves, and numerous private conservancies.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 <Card className="overflow-hidden">
                   <img 
-                    src="/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png" 
+                    src={`/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png?t=${imgTimestamp}`}
                     alt="African elephants" 
                     className="w-full h-48 object-cover"
                   />
@@ -102,7 +107,7 @@ const DiscoverKenya = () => {
                 
                 <Card className="overflow-hidden">
                   <img 
-                    src="/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png" 
+                    src={`/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png?t=${imgTimestamp}`}
                     alt="Wildebeest migration" 
                     className="w-full h-48 object-cover"
                   />
@@ -116,7 +121,7 @@ const DiscoverKenya = () => {
                 
                 <Card className="overflow-hidden">
                   <img 
-                    src="/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png" 
+                    src={`/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png?t=${imgTimestamp}`}
                     alt="Conservation efforts" 
                     className="w-full h-48 object-cover"
                   />
@@ -128,15 +133,11 @@ const DiscoverKenya = () => {
                   </CardContent>
                 </Card>
               </div>
-              
-              <p className="text-dragon-gray">
-                Our programs often include educational components about wildlife conservation, allowing participants to learn about and contribute to important preservation efforts.
-              </p>
             </div>
           </div>
         </section>
 
-        {/* Culture and People */}
+        {/* Culture Section */}
         <section className="py-16">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
@@ -145,7 +146,7 @@ const DiscoverKenya = () => {
               <div className="flex flex-col md:flex-row gap-8 mb-12">
                 <div className="md:w-1/2">
                   <img 
-                    src="/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png" 
+                    src={`/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png?t=${imgTimestamp}`}
                     alt="Cultural performance" 
                     className="rounded-lg w-full h-64 object-cover mb-4"
                   />
@@ -177,7 +178,7 @@ const DiscoverKenya = () => {
                 </div>
               </div>
               
-              <div className="bg-dragon-light p-6 rounded-lg mb-12">
+              <div className="bg-dragon-light p-6 rounded-lg mb-8">
                 <div className="flex items-center mb-4">
                   <BookOpen className="h-6 w-6 text-dragon mr-2" />
                   <h3 className="text-xl font-bold text-dragon-dark">Did you know?</h3>
@@ -190,7 +191,7 @@ const DiscoverKenya = () => {
           </div>
         </section>
 
-        {/* Geography and Climate - Updated with better geographic images */}
+        {/* Geography and Climate */}
         <section className="py-16 bg-gray-50">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
@@ -245,14 +246,14 @@ const DiscoverKenya = () => {
                 </div>
               </div>
               
-              <div className="flex flex-wrap justify-center gap-8 mb-12">
+              <div className="flex flex-wrap justify-center gap-8 mb-8">
                 <img 
-                  src="/lovable-uploads/2586ddf8-8a65-45ca-ac88-f21c4e930c03.png" 
+                  src={`/lovable-uploads/2586ddf8-8a65-45ca-ac88-f21c4e930c03.png?t=${imgTimestamp}`}
                   alt="Savannah landscape" 
                   className="rounded-lg shadow-md w-full md:w-[46%] h-64 object-cover"
                 />
                 <img 
-                  src="/lovable-uploads/38402d57-68c0-4b9b-9868-02bb45b85144.png" 
+                  src={`/lovable-uploads/38402d57-68c0-4b9b-9868-02bb45b85144.png?t=${imgTimestamp}`}
                   alt="Coastal landscape" 
                   className="rounded-lg shadow-md w-full md:w-[46%] h-64 object-cover"
                 />

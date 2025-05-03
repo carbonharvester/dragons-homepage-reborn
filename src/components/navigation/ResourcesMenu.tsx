@@ -11,8 +11,8 @@ import {
 import { resourcePages } from '@/data/navigationData';
 
 const ResourcesMenu = () => {
-  // Force re-render by using key with timestamp
-  const timestamp = new Date().getTime();
+  // Use timestamp for cache busting
+  const timestamp = Date.now();
   
   return (
     <NavigationMenuItem>
