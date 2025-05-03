@@ -17,7 +17,7 @@ export const schoolTrips = [
 ];
 
 export const summerAbroad = [
-  { title: "Food For Education", duration: "3 Weeks", season: "Jun-Aug", description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.", image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", link: "/programs/food-for-education", icon: Globe },
+  { title: "Roots of Change", duration: "3 Weeks", season: "Jun-Aug", description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.", image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", link: "/programs/food-for-education", icon: Globe },
   { title: "Capturing Kenya", duration: "3 Weeks", season: "Jun-Aug", description: "Develop your photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders across Kenya.", image: "/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png", link: "/programs/capturing-kenya", icon: Camera }
 ];
 
