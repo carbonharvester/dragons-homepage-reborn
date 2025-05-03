@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Users, DollarSign } from "lucide-react";
 
 const Hero = () => {
   const scrollToPrograms = () => {
@@ -28,6 +29,25 @@ const Hero = () => {
             <span className="block mt-2 text-dragon-yellow">Travel Experiences</span>
           </h1>
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">School trips, summer programs, and multi-year curriculums that combine cultural immersion, wilderness exploration, and authentic engagement in Africa</p>
+          
+          {/* Program Details - Added here */}
+          <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-3 rounded-md">
+              <Users className="h-5 w-5" />
+              <div>
+                <span className="block text-sm">Group Size</span>
+                <span className="font-medium">12 Students / 3 Instructors</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-3 rounded-md">
+              <DollarSign className="h-5 w-5" />
+              <div>
+                <span className="block text-sm">Tuition</span>
+                <span className="font-medium">$8,750 <span className="text-sm font-normal opacity-90">plus airfare & insurance</span></span>
+              </div>
+            </div>
+          </div>
+          
           <div className="flex flex-wrap gap-4">
             <Button className="btn-primary text-lg" onClick={scrollToPrograms}>Explore Programs</Button>
             <Button className="bg-white text-dragon hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg" asChild>

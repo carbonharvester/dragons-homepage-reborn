@@ -73,7 +73,7 @@ const Header = () => {
           <NavigationMenu>
             <NavigationMenuList className="gap-6">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent px-3 py-2">
+                <NavigationMenuTrigger className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent focus:bg-transparent px-3 py-2">
                   Programs
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="z-50">

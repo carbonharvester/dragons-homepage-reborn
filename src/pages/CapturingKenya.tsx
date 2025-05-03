@@ -467,6 +467,8 @@ const CapturingKenya = () => {
                 A 4-week creative adventure to photograph and film Kenya's stunning landscapes, 
                 wildlife, and cultures while developing professional skills.
               </p>
+              
+              {/* Program Details - Added here */}
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
                   <Calendar className="h-5 w-5" />
@@ -481,6 +483,25 @@ const CapturingKenya = () => {
                   <span>Kenya</span>
                 </div>
               </div>
+
+              {/* New Section for Group Size and Tuition */}
+              <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-3 rounded-md">
+                  <Users className="h-5 w-5" />
+                  <div>
+                    <span className="block text-sm">Group Size</span>
+                    <span className="font-medium">12 Students / 3 Instructors</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-3 rounded-md">
+                  <DollarSign className="h-5 w-5" />
+                  <div>
+                    <span className="block text-sm">Tuition</span>
+                    <span className="font-medium">$8,750 <span className="text-sm font-normal opacity-90">plus airfare & insurance</span></span>
+                  </div>
+                </div>
+              </div>
+              
               <div className="flex flex-wrap gap-4">
                 <Button className="btn-primary" asChild>
                   <Link to="/programs/capturing-kenya/itinerary">Explore Full Itinerary</Link>
@@ -546,25 +567,8 @@ const CapturingKenya = () => {
                     difference while creating your portfolio.
                   </p>
                 </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                  <div className="bg-dragon-beige/30 p-4 rounded-lg">
-                    <div className="flex items-center mb-2">
-                      <Users className="h-5 w-5 text-dragon mr-2" />
-                      <h4 className="font-bold text-dragon-dark">Group Size</h4>
-                    </div>
-                    <p>12 Students</p>
-                    <p>3 Instructors</p>
-                  </div>
-                  <div className="bg-dragon-beige/30 p-4 rounded-lg">
-                    <div className="flex items-center mb-2">
-                      <DollarSign className="h-5 w-5 text-dragon mr-2" />
-                      <h4 className="font-bold text-dragon-dark">Tuition</h4>
-                    </div>
-                    <p>$8,750</p>
-                    <p className="text-sm text-dragon-gray">plus airfare & insurance</p>
-                  </div>
-                </div>
+                
+                {/* Removing the group size and tuition section from here as it's moved to the hero */}
               </div>
             </div>
           </div>
