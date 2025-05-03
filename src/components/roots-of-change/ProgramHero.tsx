@@ -3,12 +3,11 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
-import { Calendar, Users, MapPin, DollarSign } from "lucide-react";
 import { programData } from './ProgramData';
 
 const ProgramHero = () => {
   return (
-    <section className="relative h-[70vh] min-h-[500px] flex items-center">
+    <section className="relative h-[60vh] min-h-[400px] flex items-center">
       <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1531303435785-3853ba035cda?q=80&w=2070&auto=format')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
@@ -20,42 +19,8 @@ const ProgramHero = () => {
             {programData.description}
           </p>
           
-          {/* Program Details */}
-          <div className="flex flex-wrap gap-4 mb-8">
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
-              <Calendar className="h-5 w-5" />
-              <span>{programData.duration}</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
-              <Users className="h-5 w-5" />
-              <span>Ages {programData.ages}</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
-              <MapPin className="h-5 w-5" />
-              <span>{programData.location}</span>
-            </div>
-          </div>
-
-          {/* Group Size and Tuition */}
-          <div className="flex flex-wrap gap-4 mb-8">
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-3 rounded-md">
-              <Users className="h-5 w-5" />
-              <div>
-                <span className="block text-sm">Group Size</span>
-                <span className="font-medium">12 Students / 3 Instructors</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-3 rounded-md">
-              <DollarSign className="h-5 w-5" />
-              <div>
-                <span className="block text-sm">Tuition</span>
-                <span className="font-medium">$7,950 <span className="text-sm font-normal opacity-90">plus airfare & insurance</span></span>
-              </div>
-            </div>
-          </div>
-          
           <div className="flex flex-wrap gap-4">
-            <Button className="btn-primary">
+            <Button className="btn-primary" asChild>
               <Link to="/programs/roots-of-change/itinerary">Explore Full Itinerary</Link>
             </Button>
             <CalendlyEmbed 

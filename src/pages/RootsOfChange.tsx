@@ -7,6 +7,7 @@ import SEO from '@/components/SEO';
 
 // Import modular components
 import ProgramHero from '@/components/roots-of-change/ProgramHero';
+import ProgramSummary from '@/components/roots-of-change/ProgramSummary';
 import ProgramOverview from '@/components/capturing-kenya/ProgramOverview';
 import ProgramOutcomes from '@/components/capturing-kenya/ProgramOutcomes';
 import ProgramCTA from '@/components/capturing-kenya/ProgramCTA';
@@ -31,6 +32,9 @@ const RootsOfChange = () => {
       <main>
         {/* Hero Section */}
         <ProgramHero />
+
+        {/* Program Summary - New section with details moved from hero */}
+        <ProgramSummary />
 
         {/* Program Overview */}
         <ProgramOverview programData={programData} />
