@@ -1,8 +1,53 @@
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+
+const programCategories = [
+  {
+    title: "School Trips",
+    href: "/school-trips",
+    description: "Educational trips for schools focusing on immersive learning experiences.",
+    programs: [
+      { name: "Food For Education", href: "/programs/food-for-education" },
+      { name: "Community Conservation", href: "/programs/community-conservation" },
+      { name: "Empowering Young Women", href: "/programs/empowering-women" },
+    ]
+  },
+  {
+    title: "Summer Abroad",
+    href: "/summer-abroad",
+    description: "Summer programs abroad for students looking for adventure and education.",
+    programs: [
+      { name: "Food For Education", href: "/programs/food-for-education" },
+      { name: "Capturing Kenya", href: "/programs/capturing-kenya" },
+    ]
+  },
+  {
+    title: "Multi-Year Curriculum",
+    href: "/curriculum-guide",
+    description: "Progressive multi-year educational travel curriculum for schools.",
+    programs: []
+  },
+  {
+    title: "Adult Programs",
+    href: "/adult-programs",
+    description: "Educational and immersive experiences designed for adults.",
+    programs: [
+      { name: "Permaculture Design Course", href: "/programs/permaculture-design-course" },
+    ]
+  }
+];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,7 +56,8 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   
-  return <header className="bg-white sticky top-0 z-50 shadow-sm">
+  return (
+    <header className="bg-white sticky top-0 z-50 shadow-sm">
       <div className="container-wide flex justify-between items-center py-4">
         <Link to="/" className="flex items-center">
           <div className="flex items-center">
@@ -25,13 +71,62 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
-          <div className="flex space-x-6">
-            <Link to="/school-trips" className="text-dragon-gray hover:text-dragon font-medium">School Trips</Link>
-            <a href="/#programs" className="text-dragon-gray hover:text-dragon font-medium">Programs</a>
-            <Link to="/about" className="text-dragon-gray hover:text-dragon font-medium">About Us</Link>
-            <Link to="/blog" className="text-dragon-gray hover:text-dragon font-medium">Blog</Link>
-            <a href="/#why-us" className="text-dragon-gray hover:text-dragon font-medium">Why Choose Us</a>
-          </div>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-dragon-gray hover:text-dragon font-medium bg-transparent hover:bg-transparent">
+                  Programs
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="bg-white">
+                  <ul className="grid w-[500px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    {programCategories.map((category) => (
+                      <li key={category.title} className="row-span-3">
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to={category.href}
+                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-dragon-beige hover:text-dragon-dark focus:bg-dragon-beige focus:text-dragon-dark"
+                          >
+                            <div className="text-md font-medium leading-none text-dragon-dark">{category.title}</div>
+                            <p className="line-clamp-2 text-sm text-dragon-gray leading-snug">
+                              {category.description}
+                            </p>
+                            {category.programs.length > 0 && (
+                              <div className="mt-2 space-y-1">
+                                {category.programs.map((program) => (
+                                  <Link 
+                                    key={program.name} 
+                                    to={program.href}
+                                    className="block text-sm text-dragon hover:text-dragon-dark"
+                                  >
+                                    • {program.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link to="/about" className="text-dragon-gray hover:text-dragon font-medium">
+                  About Us
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link to="/blog" className="text-dragon-gray hover:text-dragon font-medium">
+                  Blog
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <a href="/#why-us" className="text-dragon-gray hover:text-dragon font-medium">
+                  Why Choose Us
+                </a>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
           <Button className="btn-primary">Enrol Now</Button>
         </nav>
 
@@ -42,14 +137,42 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && <div className="lg:hidden bg-white w-full absolute top-full left-0 shadow-lg py-4 animate-fade-in">
+      {isMenuOpen && (
+        <div className="lg:hidden bg-white w-full absolute top-full left-0 shadow-lg py-4 animate-fade-in">
           <div className="container-wide flex flex-col space-y-4">
-            <Link to="/school-trips" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
-              School Trips
-            </Link>
-            <a href="/#programs" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
-              Programs
-            </a>
+            <div className="border-b border-gray-200 pb-2">
+              <div className="flex items-center justify-between py-2">
+                <span className="font-medium">Programs</span>
+                <ChevronDown size={16} className="text-dragon-gray" />
+              </div>
+              <div className="pl-4 space-y-2 py-2">
+                {programCategories.map(category => (
+                  <div key={category.title} className="mb-3">
+                    <Link 
+                      to={category.href}
+                      className="block text-dragon-dark font-medium py-1"
+                      onClick={toggleMenu}
+                    >
+                      {category.title}
+                    </Link>
+                    {category.programs.length > 0 && (
+                      <div className="pl-3 space-y-1">
+                        {category.programs.map(program => (
+                          <Link 
+                            key={program.name}
+                            to={program.href}
+                            className="block text-sm text-dragon-gray py-1"
+                            onClick={toggleMenu}
+                          >
+                            {program.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
             <Link to="/about" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
               About Us
             </Link>
@@ -61,8 +184,10 @@ const Header = () => {
             </a>
             <Button className="btn-primary w-full">Apply Now</Button>
           </div>
-        </div>}
-    </header>;
+        </div>
+      )}
+    </header>
+  );
 };
 
 export default Header;
