@@ -114,8 +114,10 @@ export default {
 				'fade-in': 'fade-in 0.8s ease-out'
 			},
 			fontFamily: {
-				sans: ['Montserrat', 'sans-serif'],
+				sans: ['Proxima Nova', 'Montserrat', 'sans-serif'],
 				serif: ['Libre Baskerville', 'serif'],
+				gothic: ['League Gothic', 'sans-serif'],
+				academy: ['AcademySansExpanded-Black', 'sans-serif'],
 			}
 		}
 	},

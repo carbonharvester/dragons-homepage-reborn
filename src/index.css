@@ -1,6 +1,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
+/* Import Proxima Nova */
+@import url('https://use.typekit.net/jss4vcb.css');
+
+/* Import League Gothic */
+@font-face {
+  font-family: 'League Gothic';
+  src: url('https://cdn.jsdelivr.net/gh/theleagueof/league-gothic/webfonts/LeagueGothic-Regular.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/theleagueof/league-gothic/webfonts/LeagueGothic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'AcademySansExpanded-Black';
   src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySansExpanded-Black.woff?v=1746173800') format('woff');
@@ -60,7 +73,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'AcademySansExpanded-Black', sans-serif;
+    font-family: 'AcademySansExpanded-Black', 'League Gothic', sans-serif;
   }
 }
 
@@ -78,11 +91,15 @@
   }
   
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold text-dragon-dark mb-4;
+    @apply text-3xl md:text-4xl font-bold text-dragon-dark mb-4 font-academy;
   }
   
   .section-subheading {
     @apply text-lg md:text-xl text-dragon-gray mb-8 max-w-3xl;
+  }
+  
+  .heading-gothic {
+    @apply font-gothic uppercase tracking-wide;
   }
 }
 

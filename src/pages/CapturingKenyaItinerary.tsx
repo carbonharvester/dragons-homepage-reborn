@@ -16,22 +16,13 @@ const CapturingKenyaItinerary = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // State for expanded day details
-  const [expandedDays, setExpandedDays] = useState<Record<string, boolean>>({});
+  // State for expanded weeks
   const [expandedWeeks, setExpandedWeeks] = useState<Record<string, boolean>>({
     'week1': true, // First week expanded by default
     'week2': false,
     'week3': false,
     'week4': false
   });
-
-  // Toggle day details
-  const toggleDayDetails = (dayId: string) => {
-    setExpandedDays(prev => ({
-      ...prev,
-      [dayId]: !prev[dayId]
-    }));
-  };
 
   // Toggle week details
   const toggleWeekDetails = (weekId: string) => {
@@ -62,9 +53,9 @@ const CapturingKenyaItinerary = () => {
           day: 1,
           title: "Arrival in Nairobi",
           activities: [
-            "Arrive at Jomo Kenyatta International Airport, transfer to a Nairobi guesthouse",
-            "Welcome dinner and orientation with the expert photographer/videographer",
-            "Workshop: Introduction to storytelling through photography/videography",
+            "Morning: Arrive at Jomo Kenyatta International Airport, transfer to a Nairobi guesthouse",
+            "Afternoon: Welcome dinner and orientation with the expert photographer/videographer",
+            "Evening: Workshop: Introduction to storytelling through photography/videography",
             "Creative Task: Capture first impressions of Nairobi",
             "Accommodation: Guesthouse in Nairobi"
           ]
@@ -106,7 +97,7 @@ const CapturingKenyaItinerary = () => {
           day: 5,
           title: "Amboseli – Hot Air Balloon and Cultural Introduction",
           activities: [
-            "Early Morning: Hot air balloon ride over Amboseli at sunrise",
+            "Morning: Hot air balloon ride over Amboseli at sunrise",
             "Afternoon: Visit a Maasai village to photograph cultural practices",
             "Evening: Workshop on portrait photography and cultural sensitivity",
             "Creative Task: Develop a portrait series or interview video with Maasai",
@@ -438,8 +429,8 @@ const CapturingKenyaItinerary = () => {
                   </Link>
                 </Button>
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl mb-2">Capturing Kenya</h1>
-              <h2 className="text-xl md:text-2xl opacity-90 mb-6">Full Program Itinerary</h2>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl mb-2 font-academy">Capturing Kenya</h1>
+              <h2 className="text-xl md:text-2xl opacity-90 mb-6 font-gothic uppercase tracking-wider">Full Program Itinerary</h2>
               <div className="flex flex-wrap gap-4 mb-3">
                 <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
                   <Calendar className="h-5 w-5" />
@@ -462,7 +453,7 @@ const CapturingKenyaItinerary = () => {
         <section className="py-12 bg-white">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold text-dragon-dark mb-4">Detailed Program Itinerary</h2>
+              <h2 className="text-3xl font-bold text-dragon-dark mb-4 font-academy">Detailed Program Itinerary</h2>
               <p className="text-lg text-dragon-gray">
                 Our 4-week Capturing Kenya program takes you through stunning landscapes, wildlife encounters, and cultural 
                 immersion while developing your photography and videography skills. Below is our comprehensive day-by-day itinerary.
@@ -477,8 +468,8 @@ const CapturingKenyaItinerary = () => {
                     onClick={() => toggleWeekDetails(`week${week.number}`)}
                   >
                     <div>
-                      <h3 className="text-2xl font-bold text-left">Week {week.number}: {week.title}</h3>
-                      <p className="opacity-90 text-left">{week.subtitle}</p>
+                      <h3 className="text-2xl font-bold text-left font-academy">Week {week.number}: {week.title}</h3>
+                      <p className="opacity-90 text-left font-gothic uppercase tracking-wide">{week.subtitle}</p>
                     </div>
                     {expandedWeeks[`week${week.number}`] ? 
                       <ChevronUp className="h-6 w-6" /> : 
@@ -498,21 +489,21 @@ const CapturingKenyaItinerary = () => {
                         </div>
                         <div className="space-y-4">
                           <div>
-                            <h4 className="font-bold text-lg text-dragon-dark mb-1">Week Overview</h4>
+                            <h4 className="font-bold text-lg text-dragon-dark mb-1 font-gothic uppercase tracking-wide">Week Overview</h4>
                             <p className="text-dragon-gray">{week.description}</p>
                           </div>
                           <div>
-                            <h4 className="font-bold text-lg text-dragon-dark mb-1">Base Location</h4>
+                            <h4 className="font-bold text-lg text-dragon-dark mb-1 font-gothic uppercase tracking-wide">Base Location</h4>
                             <p className="text-dragon-gray">{week.base}</p>
                           </div>
                           <div>
-                            <h4 className="font-bold text-lg text-dragon-dark mb-1">Community Impact</h4>
+                            <h4 className="font-bold text-lg text-dragon-dark mb-1 font-gothic uppercase tracking-wide">Community Impact</h4>
                             <p className="text-dragon-gray">{week.impact}</p>
                           </div>
                         </div>
                       </div>
                       
-                      <h4 className="font-bold text-lg text-dragon-dark mb-4">Week {week.number} Highlights</h4>
+                      <h4 className="font-bold text-lg text-dragon-dark mb-4 font-gothic uppercase tracking-wide">Week {week.number} Highlights</h4>
                       <ul className="grid md:grid-cols-2 gap-3 mb-8">
                         {week.highlights.map((highlight, index) => (
                           <li key={index} className="flex items-center">
@@ -522,80 +513,83 @@ const CapturingKenyaItinerary = () => {
                         ))}
                       </ul>
                       
-                      <h4 className="font-bold text-lg text-dragon-dark mb-4">Daily Schedule</h4>
-                      <div className="divide-y divide-gray-100">
-                        {week.days.map((day) => (
-                          <div key={day.day} className="p-0">
-                            <button 
-                              className="w-full p-4 flex justify-between items-start hover:bg-gray-50 transition-colors text-left"
-                              onClick={() => toggleDayDetails(`week${week.number}-day${day.day}`)}
-                            >
-                              <div>
-                                <div className="flex items-center gap-2 mb-1 flex-wrap">
-                                  <span className="bg-dragon-beige rounded-full px-3 py-1 text-sm font-medium text-dragon">
-                                    Day {day.day}
-                                  </span>
-                                  {day.day === 1 || day.day === 8 || day.day === 15 || day.day === 22 ? 
-                                    <span className="text-xs bg-blue-100 text-blue-800 rounded-full px-2 py-0.5">Start</span> : null
-                                  }
-                                  {day.day === 7 || day.day === 14 || day.day === 21 || day.day === 28 ? 
-                                    <span className="text-xs bg-amber-100 text-amber-800 rounded-full px-2 py-0.5">Travel</span> : null
-                                  }
-                                </div>
-                                <h5 className="font-bold text-base">{day.title}</h5>
-                              </div>
-                              {expandedDays[`week${week.number}-day${day.day}`] ? 
-                                <ChevronUp className="h-5 w-5 text-gray-400 shrink-0 mt-1" /> : 
-                                <ChevronDown className="h-5 w-5 text-gray-400 shrink-0 mt-1" />
-                              }
-                            </button>
-                            
-                            {expandedDays[`week${week.number}-day${day.day}`] && (
-                              <div className="px-6 pb-6 pt-0 bg-gray-50">
-                                <div className="space-y-4">
-                                  {day.activities.map((activity, i) => {
-                                    // Parse the activity to extract time of day if present
-                                    const isMorning = activity.includes("Morning:");
-                                    const isAfternoon = activity.includes("Afternoon:");
-                                    const isEvening = activity.includes("Evening:");
-                                    
-                                    // Choose icon based on time of day
-                                    let Icon = null;
-                                    if (isMorning) Icon = Sunrise;
-                                    else if (isAfternoon) Icon = Sun;
-                                    else if (isEvening) Icon = Sunset;
-                                    
-                                    // Format activity text, removing time prefix if present
-                                    let activityText = activity;
-                                    if (isMorning) activityText = activity.replace("Morning:", "");
-                                    if (isAfternoon) activityText = activity.replace("Afternoon:", "");
-                                    if (isEvening) activityText = activity.replace("Evening:", "");
-                                    
-                                    return (
-                                      <div key={i} className="flex items-start gap-3">
-                                        {Icon ? (
-                                          <div className="bg-dragon-beige/50 rounded-full p-1.5 text-dragon shrink-0 mt-0.5">
-                                            <Icon className="h-4 w-4" />
-                                          </div>
-                                        ) : (
-                                          <div className="bg-dragon-beige/50 rounded-full w-2 h-2 shrink-0 mt-2.5"></div>
-                                        )}
-                                        <div>
-                                          {(isMorning || isAfternoon || isEvening) && (
-                                            <span className="font-medium text-sm">
-                                              {isMorning ? "Morning: " : isAfternoon ? "Afternoon: " : "Evening: "}
-                                            </span>
+                      <h4 className="font-bold text-lg text-dragon-dark mb-4 font-gothic uppercase tracking-wide">Daily Schedule</h4>
+                      
+                      {/* New tabular format for daily schedule - no more dropdown for each day */}
+                      <div className="overflow-x-auto">
+                        <table className="w-full border-collapse">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Day</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Title</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b">Activities</th>
+                            </tr>
+                          </thead>
+                          <tbody className="bg-white divide-y divide-gray-200">
+                            {week.days.map((day) => (
+                              <tr key={day.day} className="hover:bg-gray-50">
+                                <td className="px-4 py-4 whitespace-nowrap">
+                                  <div className="flex items-center">
+                                    <div className="bg-dragon-beige text-dragon font-medium rounded-full w-8 h-8 flex items-center justify-center">
+                                      {day.day}
+                                    </div>
+                                    {day.day === 1 || day.day === 8 || day.day === 15 || day.day === 22 ? 
+                                      <span className="ml-2 text-xs bg-blue-100 text-blue-800 rounded-full px-2 py-0.5">Start</span> : null
+                                    }
+                                    {day.day === 7 || day.day === 14 || day.day === 21 || day.day === 28 ? 
+                                      <span className="ml-2 text-xs bg-amber-100 text-amber-800 rounded-full px-2 py-0.5">Travel</span> : null
+                                    }
+                                  </div>
+                                </td>
+                                <td className="px-4 py-4 font-medium">
+                                  {day.title}
+                                </td>
+                                <td className="px-4 py-4">
+                                  <ul className="space-y-3">
+                                    {day.activities.map((activity, i) => {
+                                      // Parse the activity to extract time of day if present
+                                      const isMorning = activity.includes("Morning:");
+                                      const isAfternoon = activity.includes("Afternoon:");
+                                      const isEvening = activity.includes("Evening:");
+                                      
+                                      // Choose icon based on time of day
+                                      let Icon = null;
+                                      if (isMorning) Icon = Sunrise;
+                                      else if (isAfternoon) Icon = Sun;
+                                      else if (isEvening) Icon = Sunset;
+                                      
+                                      // Format activity text, removing time prefix if present
+                                      let activityText = activity;
+                                      if (isMorning) activityText = activity.replace("Morning:", "");
+                                      if (isAfternoon) activityText = activity.replace("Afternoon:", "");
+                                      if (isEvening) activityText = activity.replace("Evening:", "");
+                                      
+                                      return (
+                                        <li key={i} className="flex items-start gap-2">
+                                          {Icon ? (
+                                            <div className="bg-dragon-beige/50 rounded-full p-1 text-dragon shrink-0 mt-0.5">
+                                              <Icon className="h-3 w-3" />
+                                            </div>
+                                          ) : (
+                                            <div className="bg-dragon-beige/50 rounded-full w-2 h-2 shrink-0 mt-2"></div>
                                           )}
-                                          {activityText}
-                                        </div>
-                                      </div>
-                                    );
-                                  })}
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        ))}
+                                          <div className="text-sm">
+                                            {(isMorning || isAfternoon || isEvening) && (
+                                              <span className="font-medium">
+                                                {isMorning ? "Morning: " : isAfternoon ? "Afternoon: " : "Evening: "}
+                                              </span>
+                                            )}
+                                            {activityText}
+                                          </div>
+                                        </li>
+                                      );
+                                    })}
+                                  </ul>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   )}
@@ -609,14 +603,14 @@ const CapturingKenyaItinerary = () => {
                 Each day is designed to build your skills while immersing you in Kenya's diverse environments and cultures.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button className="btn-primary" asChild>
+                <Button className="btn-primary font-gothic uppercase tracking-wide text-lg" asChild>
                   <Link to="/apply">Apply Now</Link>
                 </Button>
                 <CalendlyEmbed 
                   url="https://calendly.com/kapesuniforms/discoverymeeting"
                   text="Schedule Consultation"
                   variant="outline"
-                  className="border-dragon text-dragon hover:bg-dragon hover:text-white"
+                  className="border-dragon text-dragon hover:bg-dragon hover:text-white font-gothic uppercase tracking-wide"
                 />
               </div>
             </div>
