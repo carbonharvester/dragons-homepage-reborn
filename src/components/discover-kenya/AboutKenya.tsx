@@ -1,0 +1,56 @@
+
+import React from "react";
+import { Earth } from "lucide-react";
+
+const AboutKenya = () => {
+  // Add a random query parameter to force image reload
+  const imgTimestamp = Date.now();
+  
+  return (
+    <section className="py-16">
+      <div className="container-wide">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center mb-8">
+            <Earth className="h-8 w-8 text-dragon mr-3" />
+            <h2 className="text-3xl font-bold text-dragon-dark">About Kenya</h2>
+          </div>
+          
+          <div className="prose max-w-none text-dragon-gray">
+            <p>
+              Located in East Africa, Kenya straddles the equator and borders Somalia, Ethiopia, South Sudan, Uganda, Tanzania, and the Indian Ocean. It's a country of extraordinary geographical diversity, from coral reefs and tropical beaches to savannah grasslands, highland plateaus, and snow-capped mountains.
+            </p>
+            
+            <p>
+              With a population of approximately 54 million people, Kenya is home to more than 40 different ethnic groups, each with their own language and cultural traditions. This rich cultural tapestry, combined with breathtaking landscapes and incredible wildlife, makes Kenya an unparalleled destination for educational travel.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8 my-12">
+              <div>
+                <img 
+                  src={`/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png?t=${imgTimestamp}`}
+                  alt="Kenyan landscape" 
+                  className="rounded-lg shadow-md w-full h-64 object-cover"
+                />
+                <p className="text-sm text-dragon-gray mt-2 text-center italic">
+                  The Great Rift Valley, Kenya
+                </p>
+              </div>
+              <div>
+                <img 
+                  src={`/lovable-uploads/0d2ee059-b425-4a7d-a8ba-3ee2cd8fdfc0.png?t=${imgTimestamp}`}
+                  alt="Maasai cultural experience" 
+                  className="rounded-lg shadow-md w-full h-64 object-cover"
+                />
+                <p className="text-sm text-dragon-gray mt-2 text-center italic">
+                  Traditional Maasai cultural experience
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutKenya;
