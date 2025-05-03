@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -75,34 +76,35 @@ const Header = () => {
                   Programs
                 </div>
                 <NavigationMenuContent className="absolute top-full left-0 bg-white shadow-lg rounded-md border-t border-gray-100 p-1 group-hover:block hidden">
-                  <ul className="grid w-[500px] gap-4 p-6 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <div className="p-4 grid w-[600px] gap-6 md:grid-cols-2">
                     {programCategories.map((category) => (
-                      <li key={category.title} className="row-span-3">
+                      <div key={category.title} className="space-y-3">
                         <Link
                           to={category.href}
-                          className="block select-none space-y-2 rounded-md p-4 leading-none no-underline outline-none transition-colors hover:bg-dragon-beige hover:text-dragon-dark focus:bg-dragon-beige focus:text-dragon-dark"
+                          className="block rounded-md transition-colors"
                         >
-                          <div className="text-lg font-medium leading-none text-dragon-dark mb-2">{category.title}</div>
-                          <p className="line-clamp-2 text-sm text-dragon-gray leading-snug mb-3">
-                            {category.description}
-                          </p>
-                          {category.programs.length > 0 && (
-                            <div className="mt-3 space-y-2">
-                              {category.programs.map((program) => (
-                                <Link 
-                                  key={program.name} 
-                                  to={program.href}
-                                  className="block text-sm text-dragon hover:text-dragon-dark py-1"
-                                >
-                                  • {program.name}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
+                          <h3 className="text-base font-bold text-dragon-dark">{category.title}</h3>
                         </Link>
-                      </li>
+                        <p className="text-xs text-dragon-gray mb-2 line-clamp-2">
+                          {category.description}
+                        </p>
+                        {category.programs.length > 0 && (
+                          <ul className="space-y-1 border-t border-dragon-beige/40 pt-2">
+                            {category.programs.map((program) => (
+                              <li key={program.name}>
+                                <Link 
+                                  to={program.href}
+                                  className="text-xs font-medium text-dragon hover:text-dragon-dark block py-1 px-1 rounded hover:bg-dragon-beige/30 transition-colors"
+                                >
+                                  {program.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
