@@ -56,7 +56,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-4">
             <Button className="btn-primary text-lg" onClick={scrollToPrograms}>Explore Programs</Button>
             <Button className="bg-white text-dragon hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg" asChild>
-              <Link to="/partner-with-us">Learn More</Link>
+              <Link to="/about">Learn More</Link>
             </Button>
           </div>
         </div>
