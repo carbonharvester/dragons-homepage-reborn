@@ -38,9 +38,10 @@ const Footer = () => {
           <div>
             <h4 className="text-base font-bold mb-4">Travel With Us</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/programs/capturing-kenya" className="text-gray-300 hover:text-white transition-colors">Capturing Kenya</Link></li>
-              <li><Link to="/programs/permaculture-design-course" className="text-gray-300 hover:text-white transition-colors">Permaculture Design Course</Link></li>
               <li><Link to="/school-trips" className="text-gray-300 hover:text-white transition-colors">School Trips</Link></li>
+              <li><Link to="/summer-abroad" className="text-gray-300 hover:text-white transition-colors">Summer Abroad</Link></li>
+              <li><Link to="/curriculum-guide" className="text-gray-300 hover:text-white transition-colors">Multi-Year Curriculum</Link></li>
+              <li><Link to="/adult-programs" className="text-gray-300 hover:text-white transition-colors">Adult Programs</Link></li>
             </ul>
           </div>
           
