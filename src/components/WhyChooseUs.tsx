@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MapPin, Users, BookOpen, Shield, LineChart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -39,7 +40,7 @@ const WhyChooseUs = () => {
   return <section id="why-us" className="py-20 bg-white">
       <div className="container-wide">
         <div className="text-center mb-16">
-          <h2 className="section-heading">Why Choose Kapes?</h2>
+          <h2 className="section-heading hero-heading">Why Choose Kapes?</h2>
           <p className="section-subheading mx-auto">We believe travel transforms lives and builds bridges between cultures. Here's what makes our approach different.</p>
         </div>
 
@@ -55,7 +56,7 @@ const WhyChooseUs = () => {
 
         <div className="mt-16 bg-dragon-sand p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between">
           <div className="mb-6 md:mb-0 md:mr-6">
-            <h3 className="text-2xl text-dragon-dark mb-2 font-extrabold">Ready for your next adventure?</h3>
+            <h3 className="text-2xl text-dragon-dark mb-2 font-extrabold hero-heading">Ready for your next adventure?</h3>
             <p className="text-dragon-gray">Speak with a program coordinator about which journey is right for you.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">

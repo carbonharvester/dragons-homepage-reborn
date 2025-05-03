@@ -462,7 +462,7 @@ const CapturingKenya = () => {
           
           <div className="container-wide relative z-10 text-white">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4">Capturing Kenya</h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">Capturing Kenya</h1>
               <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">
                 A 4-week creative adventure to photograph and film Kenya's stunning landscapes, 
                 wildlife, and cultures while developing professional skills.
