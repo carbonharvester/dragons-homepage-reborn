@@ -10,6 +10,7 @@ import PartnerWithUs from "./pages/PartnerWithUs";
 import NotFound from "./pages/NotFound";
 import FoodForEducation from "./pages/FoodForEducation";
 import PermacultureDesignCourse from "./pages/PermacultureDesignCourse";
+import SchoolTrips from "./pages/SchoolTrips";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import ScrollToTop from "./components/ScrollToTop";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/partner-with-us" element={<PartnerWithUs />} />
+          <Route path="/school-trips" element={<SchoolTrips />} />
           <Route path="/programs/food-for-education" element={<FoodForEducation />} />
           <Route path="/programs/community-conservation" element={<FoodForEducation />} />
           <Route path="/programs/empowering-women" element={<FoodForEducation />} />

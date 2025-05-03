@@ -26,11 +26,11 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center space-x-8">
           <div className="flex space-x-6">
+            <Link to="/school-trips" className="text-dragon-gray hover:text-dragon font-medium">School Trips</Link>
             <a href="/#programs" className="text-dragon-gray hover:text-dragon font-medium">Programs</a>
             <Link to="/about" className="text-dragon-gray hover:text-dragon font-medium">About Us</Link>
             <Link to="/blog" className="text-dragon-gray hover:text-dragon font-medium">Blog</Link>
             <a href="/#why-us" className="text-dragon-gray hover:text-dragon font-medium">Why Choose Us</a>
-            <a href="/#stories" className="text-dragon-gray hover:text-dragon font-medium">Student Stories</a>
           </div>
           <Button className="btn-primary">Enrol Now</Button>
         </nav>
@@ -44,6 +44,9 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMenuOpen && <div className="lg:hidden bg-white w-full absolute top-full left-0 shadow-lg py-4 animate-fade-in">
           <div className="container-wide flex flex-col space-y-4">
+            <Link to="/school-trips" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
+              School Trips
+            </Link>
             <a href="/#programs" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
               Programs
             </a>
@@ -55,9 +58,6 @@ const Header = () => {
             </Link>
             <a href="/#why-us" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
               Why Choose Us
-            </a>
-            <a href="/#stories" className="text-dragon-gray hover:text-dragon py-2 font-medium" onClick={toggleMenu}>
-              Student Stories
             </a>
             <Button className="btn-primary w-full">Apply Now</Button>
           </div>

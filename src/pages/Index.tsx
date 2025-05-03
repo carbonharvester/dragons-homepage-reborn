@@ -1,21 +1,13 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import VideoSection from '@/components/VideoSection';
 import ProgramsSection from '@/components/ProgramsSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
-import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { University } from 'lucide-react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from '@/components/ui/carousel';
-import { useIsMobile } from '@/hooks/use-mobile';
-import { ScrollArea } from '@/components/ui/scroll-area';
 
 const Index = () => {
   const schoolLogos = [
@@ -29,7 +21,6 @@ const Index = () => {
   ];
   
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const isMobile = useIsMobile();
   
   // Function to clone logos to ensure smooth infinite scrolling
   const duplicatedLogos = [...schoolLogos, ...schoolLogos];
@@ -105,7 +96,6 @@ const Index = () => {
         </div>
         <ProgramsSection />
         <WhyChooseUs />
-        <Testimonials />
       </main>
       <Footer />
     </div>;
