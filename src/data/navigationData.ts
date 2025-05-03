@@ -3,21 +3,25 @@ export const programCategories = [
   {
     title: "School Trips",
     href: "/school-trips",
+    description: "Experiential learning trips for K-12 schools.",
     programs: [],
   },
   {
     title: "Summer Abroad",
     href: "/summer-abroad",
+    description: "Immersive summer programs in Kenya for students.",
     programs: [],
   },
   {
     title: "Multi-Year Curriculum",
     href: "/multi-year-curriculum",
+    description: "Comprehensive educational programs spanning multiple years.",
     programs: [],
   },
   {
     title: "Adult Programs",
     href: "/adult-programs",
+    description: "Educational travel experiences designed for adults.",
     programs: [],
   },
 ];

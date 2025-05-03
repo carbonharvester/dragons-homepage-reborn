@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import {
   NavigationMenuContent,
   NavigationMenuItem,
+  NavigationMenuLink,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { programCategories } from '@/data/navigationData';
@@ -22,18 +23,23 @@ const ProgramsMenu = () => {
         </span>
       </NavigationMenuTrigger>
       <NavigationMenuContent className="bg-white p-4 shadow-lg rounded-lg">
-        <div className="grid grid-cols-2 gap-3 w-[400px]">
+        <ul className="grid grid-cols-2 gap-3 w-[400px]">
           {programCategories.map((category) => (
-            <div key={`${category.title}-${timestamp}`}>
-              <Link
-                to={category.href}
-                className="block p-2 hover:bg-gray-50 rounded text-dragon-dark hover:text-dragon"
-              >
-                <div className="font-medium">{category.title}</div>
-              </Link>
-            </div>
+            <li key={`${category.title}-${timestamp}`}>
+              <NavigationMenuLink asChild>
+                <Link 
+                  to={category.href}
+                  className="block p-2 hover:bg-gray-50 rounded text-dragon-dark hover:text-dragon"
+                >
+                  <div className="font-medium">{category.title}</div>
+                  {category.description && (
+                    <p className="text-xs text-gray-500 mt-1">{category.description}</p>
+                  )}
+                </Link>
+              </NavigationMenuLink>
+            </li>
           ))}
-        </div>
+        </ul>
       </NavigationMenuContent>
     </NavigationMenuItem>
   );
