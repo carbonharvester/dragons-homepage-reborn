@@ -24,9 +24,6 @@ const ProgramsMenu = () => {
               >
                 <h3 className="text-base font-bold text-dragon-dark">{category.title}</h3>
               </Link>
-              <p className="text-xs text-dragon-gray mb-2 line-clamp-2">
-                {category.description}
-              </p>
               
               {category.programs.length > 0 && (
                 <ul className="text-sm space-y-1">
