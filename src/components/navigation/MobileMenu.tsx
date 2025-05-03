@@ -43,26 +43,13 @@ const MobileMenu = ({
                 <div key={category.title} className="mb-4">
                   <Link 
                     to={category.href}
-                    className="block text-dragon-dark font-medium text-base py-2"
+                    className="block text-dragon-dark font-medium text-sm py-1"
                     onClick={toggleMenu}
                   >
                     {category.title}
                   </Link>
-                  
-                  {category.programs.length > 0 && (
-                    <ul className="pl-4 space-y-1">
-                      {category.programs.map((program) => (
-                        <li key={program.name}>
-                          <Link 
-                            to={program.href}
-                            className="block text-dragon text-sm py-1"
-                            onClick={toggleMenu}
-                          >
-                            {program.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+                  {category.description && (
+                    <p className="text-xs text-gray-500 mt-1">{category.description}</p>
                   )}
                 </div>
               ))}
@@ -83,22 +70,23 @@ const MobileMenu = ({
           {mobileResourcesExpanded && (
             <div className="pl-4 space-y-2 py-2">
               {resourcePages.map(resource => (
-                <Link 
-                  key={resource.title}
-                  to={resource.href}
-                  className="block text-dragon text-sm py-1"
-                  onClick={toggleMenu}
-                >
-                  {resource.title}
-                </Link>
+                <div key={resource.title} className="mb-2">
+                  <Link 
+                    to={resource.href}
+                    className="block text-dragon-dark font-medium text-sm py-1"
+                    onClick={toggleMenu}
+                  >
+                    {resource.title}
+                  </Link>
+                  {resource.description && (
+                    <p className="text-xs text-gray-500 mt-1">{resource.description}</p>
+                  )}
+                </div>
               ))}
             </div>
           )}
         </div>
 
-        <Link to="/about" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
-          About Us
-        </Link>
         <a href="/#why-us" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
           Why Kapes?
         </a>
