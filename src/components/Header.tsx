@@ -71,25 +71,27 @@ const Header = () => {
         <nav className="hidden lg:flex items-center space-x-8">
           <NavigationMenu>
             <NavigationMenuList className="gap-6">
-              <NavigationMenuItem className="relative group">
-                <div className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent px-3 py-2 cursor-pointer">
-                  Programs
-                </div>
-                <div className="absolute top-full left-0 hidden group-hover:block shadow-lg rounded-md border-t border-gray-100 z-50 bg-white">
-                  <div className="p-4 grid w-[600px] gap-6 md:grid-cols-2">
-                    {programCategories.map((category) => (
-                      <div key={category.title} className="space-y-3">
-                        <Link
-                          to={category.href}
-                          className="block rounded-md transition-colors"
-                        >
-                          <h3 className="text-base font-bold text-dragon-dark">{category.title}</h3>
-                        </Link>
-                        <p className="text-xs text-dragon-gray mb-2 line-clamp-2">
-                          {category.description}
-                        </p>
-                      </div>
-                    ))}
+              <NavigationMenuItem>
+                <div className="relative">
+                  <div className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent px-3 py-2 cursor-pointer">
+                    Programs
+                  </div>
+                  <div className="absolute top-full left-0 hidden hover:block z-50 shadow-lg rounded-md border-t border-gray-100 bg-white">
+                    <div className="p-4 grid w-[600px] gap-6 md:grid-cols-2">
+                      {programCategories.map((category) => (
+                        <div key={category.title} className="space-y-3">
+                          <Link
+                            to={category.href}
+                            className="block rounded-md transition-colors"
+                          >
+                            <h3 className="text-base font-bold text-dragon-dark">{category.title}</h3>
+                          </Link>
+                          <p className="text-xs text-dragon-gray mb-2 line-clamp-2">
+                            {category.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </NavigationMenuItem>
