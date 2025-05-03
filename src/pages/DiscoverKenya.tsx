@@ -16,10 +16,10 @@ const DiscoverKenya = () => {
       />
       <Header />
       <main className="flex-grow">
-        {/* Hero Section */}
+        {/* Hero Section - Updated with more striking Kenya landscape image */}
         <section 
           className="bg-cover bg-center py-32 relative"
-          style={{ backgroundImage: "url('/lovable-uploads/111df4fd-1e0e-41f8-af3c-7460449109f0.png')" }}
+          style={{ backgroundImage: "url('/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png')" }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="container-wide relative z-10">
@@ -30,7 +30,7 @@ const DiscoverKenya = () => {
           </div>
         </section>
 
-        {/* About Kenya Section */}
+        {/* About Kenya Section - Updated with more authentic Kenya images */}
         <section className="py-16">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
@@ -51,7 +51,7 @@ const DiscoverKenya = () => {
                 <div className="grid md:grid-cols-2 gap-8 my-12">
                   <div>
                     <img 
-                      src="/lovable-uploads/5de3bb89-b98b-471d-b489-b486b74a96b8.png" 
+                      src="/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png" 
                       alt="Kenyan landscape" 
                       className="rounded-lg shadow-md w-full h-64 object-cover"
                     />
@@ -61,7 +61,7 @@ const DiscoverKenya = () => {
                   </div>
                   <div>
                     <img 
-                      src="/lovable-uploads/e6394583-20d9-4609-8284-6ba2ca500c08.png" 
+                      src="/lovable-uploads/0d2ee059-b425-4a7d-a8ba-3ee2cd8fdfc0.png" 
                       alt="Maasai cultural experience" 
                       className="rounded-lg shadow-md w-full h-64 object-cover"
                     />
@@ -75,7 +75,7 @@ const DiscoverKenya = () => {
           </div>
         </section>
 
-        {/* Wildlife Section */}
+        {/* Wildlife Section - Updated with more authentic Kenya wildlife images */}
         <section className="py-16 bg-gray-50">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
@@ -88,7 +88,7 @@ const DiscoverKenya = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 <Card className="overflow-hidden">
                   <img 
-                    src="/lovable-uploads/f83bb6ef-1a09-47f6-9cee-60b23dd0823c.png" 
+                    src="/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png" 
                     alt="African elephants" 
                     className="w-full h-48 object-cover"
                   />
@@ -102,7 +102,7 @@ const DiscoverKenya = () => {
                 
                 <Card className="overflow-hidden">
                   <img 
-                    src="/lovable-uploads/9754806b-a818-4c3f-bb62-aeffe98e97f5.png" 
+                    src="/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png" 
                     alt="Wildebeest migration" 
                     className="w-full h-48 object-cover"
                   />
@@ -116,7 +116,7 @@ const DiscoverKenya = () => {
                 
                 <Card className="overflow-hidden">
                   <img 
-                    src="/lovable-uploads/fc764836-7162-400c-a486-00fe9d99f975.png" 
+                    src="/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png" 
                     alt="Conservation efforts" 
                     className="w-full h-48 object-cover"
                   />
@@ -190,7 +190,7 @@ const DiscoverKenya = () => {
           </div>
         </section>
 
-        {/* Geography and Climate */}
+        {/* Geography and Climate - Updated with better geographic images */}
         <section className="py-16 bg-gray-50">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
