@@ -10,7 +10,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
 import { 
   Camera, Calendar, Users, Clock, MapPin, GraduationCap, 
-  Award, Heart, ChevronDown, ChevronUp, Sun, Sunrise, Sunset
+  Award, Heart, ChevronDown, ChevronUp, Sun, Sunrise, Sunset, DollarSign
 } from "lucide-react";
 
 const CapturingKenya = () => {
@@ -545,6 +545,25 @@ const CapturingKenya = () => {
                     local communities, and supports a community art exhibit in Nairobi. Make a lasting 
                     difference while creating your portfolio.
                   </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                  <div className="bg-dragon-beige/30 p-4 rounded-lg">
+                    <div className="flex items-center mb-2">
+                      <Users className="h-5 w-5 text-dragon mr-2" />
+                      <h4 className="font-bold text-dragon-dark">Group Size</h4>
+                    </div>
+                    <p>12 Students</p>
+                    <p>3 Instructors</p>
+                  </div>
+                  <div className="bg-dragon-beige/30 p-4 rounded-lg">
+                    <div className="flex items-center mb-2">
+                      <DollarSign className="h-5 w-5 text-dragon mr-2" />
+                      <h4 className="font-bold text-dragon-dark">Tuition</h4>
+                    </div>
+                    <p>$8,750</p>
+                    <p className="text-sm text-dragon-gray">plus airfare & insurance</p>
+                  </div>
                 </div>
               </div>
             </div>
