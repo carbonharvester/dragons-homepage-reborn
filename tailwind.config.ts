@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -117,6 +118,7 @@ export default {
 				serif: ['Libre Baskerville', 'serif'],
 				gothic: ['League Gothic', 'sans-serif'],
 				academy: ['AcademySansExpanded-Black', 'sans-serif'],
+				'academy-bold': ['AcademySansExpanded-Bold', 'AcademySansExpanded-Black', 'sans-serif'],
 			}
 		}
 	},
