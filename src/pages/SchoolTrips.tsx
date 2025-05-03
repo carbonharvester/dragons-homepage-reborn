@@ -33,13 +33,6 @@ const SchoolTrips = () => {
               </p>
             </div>
             
-            {/* Display School Trip Programs */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-              {schoolTrips.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
-            </div>
-            
             <div className="grid md:grid-cols-2 gap-8 mb-20">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <img 
@@ -96,6 +89,14 @@ const SchoolTrips = () => {
                   </ul>
                 </div>
               </div>
+            </div>
+            
+            {/* Display School Trip Programs - MOVED BELOW EDUCATIONAL FOCUS */}
+            <h2 className="text-3xl font-academy text-dragon-dark text-center mb-8">Our School Trip Programs</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+              {schoolTrips.map((program, index) => (
+                <ProgramCard key={index} program={program} />
+              ))}
             </div>
             
             <TripCTA />
