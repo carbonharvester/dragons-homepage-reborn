@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
     <section id="why-us" className="py-20 bg-white">
       <div className="container-wide">
         <div className="text-center mb-16">
-          <h2 className="section-heading hero-heading">Why Choose Kapes?</h2>
+          <h2 className="section-heading">Why Choose Kapes?</h2>
           <p className="section-subheading mx-auto">We believe travel transforms lives and builds bridges between cultures. Here's what makes our approach different.</p>
         </div>
 
