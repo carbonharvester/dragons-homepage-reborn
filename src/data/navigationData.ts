@@ -39,11 +39,6 @@ export const resourcePages = [
     description: "Explore the incredible diversity of landscapes, wildlife, and culture in Kenya."
   },
   {
-    title: "About Us",
-    href: "/about",
-    description: "Learn about our mission, vision, and team."
-  },
-  {
     title: "Blog",
     href: "/blog",
     description: "Read our latest articles and insights about travel and education in Kenya."
