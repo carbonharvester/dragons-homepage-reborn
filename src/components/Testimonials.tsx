@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -64,7 +63,7 @@ const Testimonials = () => {
   return <section id="stories" className="py-20 bg-dragon">
       <div className="container-wide">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Student Stories</h2>
+          <h2 className="text-3xl md:text-4xl font-academy font-bold text-white mb-4">Student Stories</h2>
           <p className="text-lg md:text-xl text-white opacity-80 max-w-3xl mx-auto">Hear directly from past participants about their transformative experiences in Africa.</p>
         </div>
 
