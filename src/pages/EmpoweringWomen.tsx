@@ -11,6 +11,21 @@ import ProgramBrochure from "@/components/ProgramBrochure";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 const EmpoweringWomen = () => {
+  // Define the program data according to the ProgramData interface
+  const programData = {
+    title: "Empowering Young Women Program",
+    description: "Support women-led initiatives focusing on education, entrepreneurship, and leadership in communities working to achieve gender equity and economic independence.",
+    duration: "5-7 Days",
+    season: "Year Round",
+    location: "Various communities in Kenya",
+    goals: [
+      "Advance gender equity through education",
+      "Promote economic empowerment strategies",
+      "Support women's entrepreneurship initiatives",
+      "Develop leadership skills through service learning"
+    ]
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -73,8 +88,7 @@ const EmpoweringWomen = () => {
                   <h2 className="text-2xl font-bold text-dragon-dark mb-6">Ready to Join Us?</h2>
                   <div className="flex flex-wrap gap-4">
                     <ProgramBrochure
-                      programTitle="Empowering Young Women Program"
-                      programImage="/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png"
+                      program={programData}
                     />
                     <CalendlyEmbed
                       url="https://calendly.com/kapesuniforms/discoverymeeting"

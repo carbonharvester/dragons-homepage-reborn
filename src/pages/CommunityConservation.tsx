@@ -11,6 +11,21 @@ import ProgramBrochure from "@/components/ProgramBrochure";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 const CommunityConservation = () => {
+  // Define the program data according to the ProgramData interface
+  const programData = {
+    title: "Community Conservation Program",
+    description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.",
+    duration: "5-7 Days",
+    season: "Year Round",
+    location: "Various conservation areas in Kenya",
+    goals: [
+      "Learn traditional conservation practices",
+      "Contribute to ecosystem management",
+      "Develop human-wildlife conflict solutions",
+      "Implement sustainable resource management"
+    ]
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -73,8 +88,7 @@ const CommunityConservation = () => {
                   <h2 className="text-2xl font-bold text-dragon-dark mb-6">Ready to Join Us?</h2>
                   <div className="flex flex-wrap gap-4">
                     <ProgramBrochure
-                      programTitle="Community Conservation Program"
-                      programImage="/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png"
+                      program={programData}
                     />
                     <CalendlyEmbed
                       url="https://calendly.com/kapesuniforms/discoverymeeting"
