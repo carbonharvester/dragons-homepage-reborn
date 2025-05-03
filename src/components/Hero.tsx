@@ -28,7 +28,7 @@ const Hero = () => {
       <div className="container-wide relative z-10 text-white">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-            Transformative Educational 
+            <span className="font-academy">Transformative Educational</span>
             <span className="block mt-2 text-dragon-yellow">Travel Experiences</span>
           </h1>
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">School trips, summer programs, and multi-year curriculums that combine cultural immersion, wilderness exploration, and authentic engagement in Africa</p>
