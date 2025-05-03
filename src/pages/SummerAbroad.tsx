@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Testimonials from '@/components/Testimonials';
 import SEO from '@/components/SEO';
 import TripCTA from '@/components/trip/TripCTA';
 import { Link } from 'react-router-dom';
@@ -195,7 +194,6 @@ const SummerAbroad = () => {
         </section>
         
         <TripCTA />
-        <Testimonials />
       </main>
       <Footer />
     </div>
