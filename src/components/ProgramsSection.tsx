@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Globe, Calendar, Route, School, GraduationCap, Users, Camera } from "lucide-react";
+import { Globe, Calendar, Route, School, GraduationCap, Users, Camera, Leaf } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
@@ -11,6 +10,7 @@ import CalendlyEmbed from "@/components/CalendlyEmbed";
 const categories = [
   { id: "school-trips", label: "School Trips" },
   { id: "summer-abroad", label: "Summer Abroad" },
+  { id: "adult-trips", label: "Adult Programs" },
   { id: "multi-year", label: "Multi-Year Curriculum" },
 ];
 
@@ -57,6 +57,17 @@ const summerAbroad = [{
   image: "/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png",
   link: "/programs/capturing-kenya",
   icon: Camera
+}];
+
+// New Adult Programs section
+const adultTrips = [{
+  title: "Permaculture Design Course",
+  duration: "10 Days",
+  season: "Year Round",
+  description: "Immerse yourself in permaculture principles while contributing to sustainable food systems in local Kenyan communities. Learn design techniques and practical skills with real-world impact.",
+  image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png",
+  link: "/programs/permaculture-design-course",
+  icon: Leaf
 }];
 
 const multiYearProgram = {
@@ -128,6 +139,15 @@ const ProgramsSection = () => {
         <div className={`mt-8 ${activeCategory === "summer-abroad" ? "block" : "hidden"}`}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {summerAbroad.map((program, index) => (
+              <ProgramCard key={index} program={program} />
+            ))}
+          </div>
+        </div>
+
+        {/* Adult Trips Content */}
+        <div className={`mt-8 ${activeCategory === "adult-trips" ? "block" : "hidden"}`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            {adultTrips.map((program, index) => (
               <ProgramCard key={index} program={program} />
             ))}
           </div>

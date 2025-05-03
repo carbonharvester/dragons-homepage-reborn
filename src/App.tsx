@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import PartnerWithUs from "./pages/PartnerWithUs";
 import NotFound from "./pages/NotFound";
 import FoodForEducation from "./pages/FoodForEducation";
+import PermacultureDesignCourse from "./pages/PermacultureDesignCourse";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import ScrollToTop from "./components/ScrollToTop";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/programs/empowering-women" element={<FoodForEducation />} />
           <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
           <Route path="/programs/capturing-kenya" element={<FoodForEducation />} />
+          <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
           <Route path="/curriculum-guide" element={<PartnerWithUs />} /> {/* Redirecting to Partner page for now */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:postId" element={<BlogPost />} />
