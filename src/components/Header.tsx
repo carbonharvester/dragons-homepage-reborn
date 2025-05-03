@@ -1,75 +1,9 @@
 
 import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-
-const programCategories = [
-  {
-    title: "School Trips",
-    href: "/school-trips",
-    description: "Educational trips for schools focusing on immersive learning experiences.",
-    programs: [
-      { name: "Food For Education", href: "/programs/food-for-education" },
-      { name: "Community Conservation", href: "/programs/community-conservation" },
-      { name: "Empowering Young Women", href: "/programs/empowering-women" },
-    ]
-  },
-  {
-    title: "Summer Abroad",
-    href: "/summer-abroad",
-    description: "Summer programs abroad for students looking for adventure and education.",
-    programs: [
-      { name: "Capturing Kenya", href: "/programs/capturing-kenya" },
-      { name: "Food For Education", href: "/programs/food-for-education" },
-    ]
-  },
-  {
-    title: "Multi-Year Curriculum",
-    href: "/curriculum-guide",
-    description: "Progressive multi-year educational travel curriculum for schools.",
-    programs: []
-  },
-  {
-    title: "Adult Programs",
-    href: "/adult-programs",
-    description: "Educational and immersive experiences designed for adults.",
-    programs: [
-      { name: "Permaculture Design Course", href: "/programs/permaculture-design-course" },
-      { name: "Safari & Conservation", href: "/programs/safari-sustainability" },
-    ]
-  }
-];
-
-const resourcePages = [
-  {
-    title: "FAQ",
-    href: "/faq",
-    description: "Find answers to common questions about our programs and travel logistics."
-  },
-  {
-    title: "Health & Safety",
-    href: "/health-and-safety",
-    description: "Learn about our comprehensive health and safety protocols for travelers."
-  },
-  {
-    title: "Discover Kenya",
-    href: "/discover-kenya",
-    description: "Explore Kenya's diverse landscapes, wildlife, cultures, and more."
-  },
-  {
-    title: "Blog",
-    href: "/blog",
-    description: "Stories, insights, and updates from our programs and communities."
-  }
-];
+import { Menu, X } from "lucide-react";
+import DesktopNavigation from './navigation/DesktopNavigation';
+import MobileMenu from './navigation/MobileMenu';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -102,85 +36,7 @@ const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8">
-          <NavigationMenu>
-            <NavigationMenuList className="gap-6">
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent focus:bg-transparent px-3 py-2">
-                  Programs
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="z-50">
-                  <div className="p-4 grid w-[600px] gap-6 md:grid-cols-2">
-                    {programCategories.map((category) => (
-                      <div key={category.title} className="space-y-3">
-                        <Link
-                          to={category.href}
-                          className="block rounded-md transition-colors"
-                        >
-                          <h3 className="text-base font-bold text-dragon-dark">{category.title}</h3>
-                        </Link>
-                        <p className="text-xs text-dragon-gray mb-2 line-clamp-2">
-                          {category.description}
-                        </p>
-                        
-                        {category.programs.length > 0 && (
-                          <ul className="text-sm space-y-1">
-                            {category.programs.map((program) => (
-                              <li key={program.name}>
-                                <Link 
-                                  to={program.href}
-                                  className="text-dragon hover:text-dragon-dark transition-colors"
-                                >
-                                  {program.name}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent focus:bg-transparent px-3 py-2">
-                  Resources
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="z-50">
-                  <div className="p-4 grid w-[500px] gap-4 md:grid-cols-2">
-                    {resourcePages.map((resource) => (
-                      <Link
-                        key={resource.title}
-                        to={resource.href}
-                        className="block p-3 rounded-md hover:bg-gray-50 transition-colors"
-                      >
-                        <h3 className="text-base font-bold text-dragon-dark mb-1">{resource.title}</h3>
-                        <p className="text-xs text-dragon-gray line-clamp-2">
-                          {resource.description}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              
-              <NavigationMenuItem>
-                <Link to="/about" className="text-dragon-gray hover:text-dragon font-medium text-base px-3 py-2">
-                  About Us
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <a href="/#why-us" className="text-dragon-gray hover:text-dragon font-medium text-base px-3 py-2">
-                  Why Kapes?
-                </a>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-          <Button className="btn-primary" asChild>
-            <Link to="/partner-with-us">Apply Now</Link>
-          </Button>
-        </nav>
+        <DesktopNavigation />
 
         {/* Mobile Menu Button */}
         <button className="lg:hidden text-dragon p-2" onClick={toggleMenu} aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}>
@@ -189,90 +45,14 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-white w-full absolute top-full left-0 shadow-lg py-4 animate-fade-in">
-          <div className="container-wide flex flex-col space-y-4">
-            {/* Programs Section */}
-            <div className="border-b border-gray-200 pb-2">
-              <button 
-                className="flex items-center justify-between py-3 w-full" 
-                onClick={toggleMobilePrograms}
-              >
-                <span className="font-medium text-base text-dragon-dark">Programs</span>
-                <ChevronDown size={16} className={`text-dragon-gray transform transition-transform ${mobileProgramsExpanded ? 'rotate-180' : ''}`} />
-              </button>
-              
-              {mobileProgramsExpanded && (
-                <div className="pl-4 py-2 space-y-3">
-                  {programCategories.map(category => (
-                    <div key={category.title} className="mb-4">
-                      <Link 
-                        to={category.href}
-                        className="block text-dragon-dark font-medium text-base py-2"
-                        onClick={toggleMenu}
-                      >
-                        {category.title}
-                      </Link>
-                      
-                      {category.programs.length > 0 && (
-                        <ul className="pl-4 space-y-1">
-                          {category.programs.map((program) => (
-                            <li key={program.name}>
-                              <Link 
-                                to={program.href}
-                                className="block text-dragon text-sm py-1"
-                                onClick={toggleMenu}
-                              >
-                                {program.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Resources Section */}
-            <div className="border-b border-gray-200 pb-2">
-              <button 
-                className="flex items-center justify-between py-3 w-full"
-                onClick={toggleMobileResources}
-              >
-                <span className="font-medium text-base text-dragon-dark">Resources</span>
-                <ChevronDown size={16} className={`text-dragon-gray transform transition-transform ${mobileResourcesExpanded ? 'rotate-180' : ''}`} />
-              </button>
-              
-              {mobileResourcesExpanded && (
-                <div className="pl-4 space-y-2 py-2">
-                  {resourcePages.map(resource => (
-                    <Link 
-                      key={resource.title}
-                      to={resource.href}
-                      className="block text-dragon text-sm py-1"
-                      onClick={toggleMenu}
-                    >
-                      {resource.title}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <Link to="/about" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
-              About Us
-            </Link>
-            <a href="/#why-us" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
-              Why Kapes?
-            </a>
-            <Button className="btn-primary w-full mt-2" asChild>
-              <Link to="/partner-with-us" onClick={toggleMenu}>Apply Now</Link>
-            </Button>
-          </div>
-        </div>
-      )}
+      <MobileMenu 
+        isMenuOpen={isMenuOpen}
+        mobileProgramsExpanded={mobileProgramsExpanded}
+        mobileResourcesExpanded={mobileResourcesExpanded}
+        toggleMobilePrograms={toggleMobilePrograms}
+        toggleMobileResources={toggleMobileResources}
+        toggleMenu={toggleMenu}
+      />
     </header>
   );
 };
