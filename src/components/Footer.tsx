@@ -46,13 +46,13 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-base font-bold mb-4">Resources</h4>
+            <h4 className="text-base font-bold mb-4">Our Programs</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
-              <li><Link to="/partner-with-us" className="text-gray-300 hover:text-white transition-colors">
-                Partner With Us
-              </Link></li>
+              <li><Link to="/programs/food-for-education" className="text-gray-300 hover:text-white transition-colors">Food For Education</Link></li>
+              <li><Link to="/programs/community-conservation" className="text-gray-300 hover:text-white transition-colors">Community Conservation</Link></li>
+              <li><Link to="/programs/empowering-women" className="text-gray-300 hover:text-white transition-colors">Empowering Young Women</Link></li>
+              <li><Link to="/programs/capturing-kenya" className="text-gray-300 hover:text-white transition-colors">Capturing Kenya</Link></li>
+              <li><Link to="/programs/permaculture-design-course" className="text-gray-300 hover:text-white transition-colors">Permaculture Design</Link></li>
             </ul>
           </div>
           

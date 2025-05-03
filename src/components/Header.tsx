@@ -10,28 +10,41 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
 
 const programCategories = [
   {
     title: "School Trips",
     href: "/school-trips",
     description: "Educational trips for schools focusing on immersive learning experiences.",
+    programs: [
+      { name: "Food For Education", href: "/programs/food-for-education" },
+      { name: "Community Conservation", href: "/programs/community-conservation" },
+      { name: "Empowering Young Women", href: "/programs/empowering-women" },
+    ]
   },
   {
     title: "Summer Abroad",
     href: "/summer-abroad",
     description: "Summer programs abroad for students looking for adventure and education.",
+    programs: [
+      { name: "Capturing Kenya", href: "/programs/capturing-kenya" },
+      { name: "Food For Education", href: "/programs/food-for-education" },
+    ]
   },
   {
     title: "Multi-Year Curriculum",
     href: "/curriculum-guide",
     description: "Progressive multi-year educational travel curriculum for schools.",
+    programs: []
   },
   {
     title: "Adult Programs",
     href: "/adult-programs",
     description: "Educational and immersive experiences designed for adults.",
+    programs: [
+      { name: "Permaculture Design Course", href: "/programs/permaculture-design-course" },
+      { name: "Safari & Conservation", href: "/programs/safari-sustainability" },
+    ]
   }
 ];
 
@@ -76,6 +89,21 @@ const Header = () => {
                         <p className="text-xs text-dragon-gray mb-2 line-clamp-2">
                           {category.description}
                         </p>
+                        
+                        {category.programs.length > 0 && (
+                          <ul className="text-sm space-y-1">
+                            {category.programs.map((program) => (
+                              <li key={program.name}>
+                                <Link 
+                                  to={program.href}
+                                  className="text-dragon hover:text-dragon-dark transition-colors"
+                                >
+                                  {program.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -93,7 +121,9 @@ const Header = () => {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Button className="btn-primary">Enrol Now</Button>
+          <Button className="btn-primary" asChild>
+            <Link to="/partner-with-us">Apply Now</Link>
+          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -121,6 +151,22 @@ const Header = () => {
                     >
                       {category.title}
                     </Link>
+                    
+                    {category.programs.length > 0 && (
+                      <ul className="pl-4 space-y-1">
+                        {category.programs.map((program) => (
+                          <li key={program.name}>
+                            <Link 
+                              to={program.href}
+                              className="block text-dragon text-sm py-1"
+                              onClick={toggleMenu}
+                            >
+                              {program.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 ))}
               </div>
@@ -132,7 +178,7 @@ const Header = () => {
               Why Kapes?
             </a>
             <Button className="btn-primary w-full mt-2" asChild>
-              <Link to="/apply" onClick={toggleMenu}>Apply Now</Link>
+              <Link to="/partner-with-us" onClick={toggleMenu}>Apply Now</Link>
             </Button>
           </div>
         </div>

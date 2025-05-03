@@ -28,7 +28,8 @@ const summerAbroad = [
 
 // New Adult Programs section
 const adultTrips = [
-  { title: "Permaculture Design Course", duration: "10 Days", season: "Year Round", description: "Immerse yourself in permaculture principles while contributing to sustainable food systems in local Kenyan communities. Learn design techniques and practical skills with real-world impact.", image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", link: "/programs/permaculture-design-course", icon: Leaf }
+  { title: "Permaculture Design Course", duration: "10 Days", season: "Year Round", description: "Immerse yourself in permaculture principles while contributing to sustainable food systems in local Kenyan communities. Learn design techniques and practical skills with real-world impact.", image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", link: "/programs/permaculture-design-course", icon: Leaf },
+  { title: "Safari & Conservation", duration: "7 Days", season: "Year Round", description: "Combine the classic safari experience with hands-on conservation work. Learn from wildlife experts while contributing to animal protection and habitat restoration initiatives.", image: "/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png", link: "/programs/safari-sustainability", icon: Leaf }
 ];
 
 const multiYearProgram = {
@@ -112,6 +113,11 @@ const ProgramsSection = () => {
               <ProgramCard key={index} program={program} />
             ))}
           </div>
+          <div className="text-center mt-8">
+            <Button className="btn-primary" asChild>
+              <Link to="/adult-programs">View All Adult Programs</Link>
+            </Button>
+          </div>
         </div>
 
         {/* Multi-Year Curriculum Content */}
@@ -182,7 +188,7 @@ const ProgramCard = ({ program }) => {
       </div>
           
       <CardContent className="p-6 flex-grow flex flex-col">
-        <h3 className="text-xl md:text-md font-bold mb-3 text-dragon-dark">{program.title}</h3>
+        <h3 className="text-xl md:text-xl font-bold mb-3 text-dragon-dark">{program.title}</h3>
         <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
         <div className="flex justify-between text-sm text-dragon-gray mb-4">
           <div className="flex items-center">

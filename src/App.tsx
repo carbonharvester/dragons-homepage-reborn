@@ -15,6 +15,9 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import CapturingKenya from "./pages/CapturingKenya";
 import CapturingKenyaItinerary from "./pages/CapturingKenyaItinerary";
+import CommunityConservation from "./pages/CommunityConservation";
+import EmpoweringWomen from "./pages/EmpoweringWomen";
+import AdultPrograms from "./pages/AdultPrograms";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -31,15 +34,16 @@ const App = () => (
           <Route path="/about" element={<AboutUs />} />
           <Route path="/partner-with-us" element={<PartnerWithUs />} />
           <Route path="/school-trips" element={<SchoolTrips />} />
-          <Route path="/summer-abroad" element={<SchoolTrips />} /> {/* Added Summer Abroad route */}
+          <Route path="/summer-abroad" element={<SchoolTrips />} />
+          <Route path="/adult-programs" element={<AdultPrograms />} />
           <Route path="/programs/food-for-education" element={<FoodForEducation />} />
-          <Route path="/programs/community-conservation" element={<FoodForEducation />} />
-          <Route path="/programs/empowering-women" element={<FoodForEducation />} />
+          <Route path="/programs/community-conservation" element={<CommunityConservation />} />
+          <Route path="/programs/empowering-women" element={<EmpoweringWomen />} />
           <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
           <Route path="/programs/capturing-kenya" element={<CapturingKenya />} />
           <Route path="/programs/capturing-kenya/itinerary" element={<CapturingKenyaItinerary />} />
           <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
-          <Route path="/curriculum-guide" element={<PartnerWithUs />} /> {/* Redirecting to Partner page for now */}
+          <Route path="/curriculum-guide" element={<PartnerWithUs />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:postId" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
