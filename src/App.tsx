@@ -44,11 +44,11 @@ const AppRoutes = () => (
     <Route path="/curriculum-guide" element={<PartnerWithUs />} />
     <Route path="/blog" element={<Blog />} />
     <Route path="/blog/:postId" element={<BlogPost />} />
-    {/* New resource pages */}
+    {/* Resource pages */}
     <Route path="/faq" element={<FAQ />} />
     <Route path="/health-and-safety" element={<HealthAndSafety />} />
     <Route path="/discover-kenya" element={<DiscoverKenyaV2 />} />
-    {/* For backward compatibility, add a redirect for any old DiscoverKenya route */}
+    {/* Add explicit redirect for old route, if any */}
     <Route path="*" element={<NotFound />} />
   </Routes>
 );

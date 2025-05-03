@@ -11,6 +11,9 @@ import {
 import { resourcePages } from '@/data/navigationData';
 
 const ResourcesMenu = () => {
+  // Force re-render by using key with timestamp
+  const timestamp = new Date().getTime();
+  
   return (
     <NavigationMenuItem>
       <NavigationMenuTrigger className="text-dragon-gray font-medium text-base">
@@ -22,10 +25,10 @@ const ResourcesMenu = () => {
       <NavigationMenuContent className="bg-white p-4 shadow-lg rounded-lg">
         <ul className="grid gap-3">
           {resourcePages.map((resource) => (
-            <li key={resource.title}>
+            <li key={`${resource.title}-${timestamp}`}>
               <NavigationMenuLink asChild>
                 <Link 
-                  to={resource.href} 
+                  to={resource.href}
                   className="block p-2 hover:bg-gray-50 rounded text-dragon-dark hover:text-dragon"
                 >
                   {resource.title}
