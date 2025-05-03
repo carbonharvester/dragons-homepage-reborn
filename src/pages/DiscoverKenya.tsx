@@ -23,7 +23,7 @@ const DiscoverKenya = () => {
         <section 
           className="bg-cover bg-center py-32 relative"
           style={{ 
-            backgroundImage: `url('/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png?t=${imgTimestamp}')` 
+            backgroundImage: `url('/lovable-uploads/5de3bb89-b98b-471d-b489-b486b74a96b8.png?t=${imgTimestamp}')` 
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
