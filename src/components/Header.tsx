@@ -88,20 +88,6 @@ const Header = () => {
                         <p className="text-xs text-dragon-gray mb-2 line-clamp-2">
                           {category.description}
                         </p>
-                        {category.programs.length > 0 && (
-                          <ul className="space-y-1 border-t border-dragon-beige/40 pt-2">
-                            {category.programs.map((program) => (
-                              <li key={program.name}>
-                                <Link 
-                                  to={program.href}
-                                  className="text-xs font-medium text-dragon hover:text-dragon-dark block py-1 px-1 rounded hover:bg-dragon-beige/30 transition-colors"
-                                >
-                                  {program.name}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
                       </div>
                     ))}
                   </div>
@@ -152,20 +138,6 @@ const Header = () => {
                     >
                       {category.title}
                     </Link>
-                    {category.programs.length > 0 && (
-                      <div className="pl-4 space-y-2 mt-1">
-                        {category.programs.map(program => (
-                          <Link 
-                            key={program.name}
-                            to={program.href}
-                            className="block text-sm text-dragon-gray py-2"
-                            onClick={toggleMenu}
-                          >
-                            {program.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>
