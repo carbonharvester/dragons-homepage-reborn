@@ -20,48 +20,6 @@ export const programCategories = [
     href: "/adult-programs",
     programs: [],
   },
-  {
-    title: "Community Impact",
-    href: "#",
-    programs: [
-      {
-        name: "Food For Education",
-        href: "/programs/food-for-education",
-      },
-      {
-        name: "Community Conservation",
-        href: "/programs/community-conservation",
-      },
-      {
-        name: "Empowering Women",
-        href: "/programs/empowering-women",
-      },
-      {
-        name: "Safari Sustainability",
-        href: "/programs/safari-sustainability",
-      },
-    ],
-  },
-  {
-    title: "Photography Expeditions",
-    href: "#",
-    programs: [
-      {
-        name: "Capturing Kenya",
-        href: "/programs/capturing-kenya",
-      },
-    ],
-  },
-  {
-    title: "Permaculture",
-    href: "#",
-    programs: [
-      {
-        name: "Permaculture Design Course",
-        href: "/programs/permaculture-design-course",
-      },
-    ],
-  },
 ];
 
 export const resourcePages = [
