@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const TripCTA = () => {
   return (
     <div className="bg-dragon text-white rounded-lg p-8 md:p-12 text-center">
-      <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Ready to Make an Impact?</h2>
+      <h2 className="text-3xl md:text-4xl font-academy font-bold mb-4">Ready to Make an Impact?</h2>
       <p className="text-xl max-w-3xl mx-auto mb-8">
         Join us on this transformative journey to address food insecurity through 
         sustainable permaculture practices while providing your students with an 
