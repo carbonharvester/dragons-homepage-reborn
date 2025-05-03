@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import VideoSection from '@/components/VideoSection';
 import ProgramsSection from '@/components/ProgramsSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import BlogSection from '@/components/BlogSection';
 import Footer from '@/components/Footer';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { University } from 'lucide-react';
@@ -96,6 +97,7 @@ const Index = () => {
         </div>
         <ProgramsSection />
         <WhyChooseUs />
+        <BlogSection />
       </main>
       <Footer />
     </div>;

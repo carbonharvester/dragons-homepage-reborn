@@ -87,13 +87,8 @@ const Header = () => {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link to="/blog" className="text-dragon-gray hover:text-dragon font-medium text-base px-3 py-2">
-                  Blog
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
                 <a href="/#why-us" className="text-dragon-gray hover:text-dragon font-medium text-base px-3 py-2">
-                  Why Choose Us
+                  Why Kapes?
                 </a>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -133,11 +128,8 @@ const Header = () => {
             <Link to="/about" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
               About Us
             </Link>
-            <Link to="/blog" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
-              Blog
-            </Link>
             <a href="/#why-us" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
-              Why Choose Us
+              Why Kapes?
             </a>
             <Button className="btn-primary w-full mt-2" asChild>
               <Link to="/apply" onClick={toggleMenu}>Apply Now</Link>
