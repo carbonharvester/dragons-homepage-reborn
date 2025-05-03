@@ -2,11 +2,14 @@
 import React from "react";
 
 const HeroSection = () => {
+  // Add a random query parameter to force image reload
+  const imgTimestamp = Date.now();
+  
   return (
     <section 
       className="bg-cover bg-center py-32 relative"
       style={{ 
-        backgroundImage: `url('https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2070&auto=format&fit=crop')` 
+        backgroundImage: `url('https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2070&auto=format&fit=crop&t=${imgTimestamp}')` 
       }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
