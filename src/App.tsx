@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
@@ -48,7 +48,7 @@ const AppRoutes = () => (
     <Route path="/faq" element={<FAQ />} />
     <Route path="/health-and-safety" element={<HealthAndSafety />} />
     <Route path="/discover-kenya" element={<DiscoverKenyaV2 />} />
-    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+    {/* For backward compatibility, add a redirect for any old DiscoverKenya route */}
     <Route path="*" element={<NotFound />} />
   </Routes>
 );

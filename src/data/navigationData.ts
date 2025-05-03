@@ -1,60 +1,77 @@
-
 export const programCategories = [
   {
     title: "School Trips",
     href: "/school-trips",
-    description: "Educational trips for schools focusing on immersive learning experiences.",
-    programs: [
-      { name: "Food For Education", href: "/programs/food-for-education" },
-      { name: "Community Conservation", href: "/programs/community-conservation" },
-      { name: "Empowering Young Women", href: "/programs/empowering-women" },
-    ]
+    programs: [],
   },
   {
     title: "Summer Abroad",
     href: "/summer-abroad",
-    description: "Summer programs abroad for students looking for adventure and education.",
-    programs: [
-      { name: "Capturing Kenya", href: "/programs/capturing-kenya" },
-      { name: "Food For Education", href: "/programs/food-for-education" },
-    ]
-  },
-  {
-    title: "Multi-Year Curriculum",
-    href: "/curriculum-guide",
-    description: "Progressive multi-year educational travel curriculum for schools.",
-    programs: []
+    programs: [],
   },
   {
     title: "Adult Programs",
     href: "/adult-programs",
-    description: "Educational and immersive experiences designed for adults.",
+    programs: [],
+  },
+  {
+    title: "Community Impact",
+    href: "#",
     programs: [
-      { name: "Permaculture Design Course", href: "/programs/permaculture-design-course" },
-      { name: "Safari & Conservation", href: "/programs/safari-sustainability" },
-    ]
-  }
+      {
+        name: "Food For Education",
+        href: "/programs/food-for-education",
+      },
+      {
+        name: "Community Conservation",
+        href: "/programs/community-conservation",
+      },
+      {
+        name: "Empowering Women",
+        href: "/programs/empowering-women",
+      },
+      {
+        name: "Safari Sustainability",
+        href: "/programs/safari-sustainability",
+      },
+    ],
+  },
+  {
+    title: "Photography Expeditions",
+    href: "#",
+    programs: [
+      {
+        name: "Capturing Kenya",
+        href: "/programs/capturing-kenya",
+      },
+    ],
+  },
+  {
+    title: "Permaculture",
+    href: "#",
+    programs: [
+      {
+        name: "Permaculture Design Course",
+        href: "/programs/permaculture-design-course",
+      },
+    ],
+  },
 ];
 
 export const resourcePages = [
   {
     title: "FAQ",
     href: "/faq",
-    description: "Find answers to common questions about our programs and travel logistics."
+    description: "Find answers to your questions about our programs and services."
   },
   {
     title: "Health & Safety",
     href: "/health-and-safety",
-    description: "Learn about our comprehensive health and safety protocols for travelers."
+    description: "Learn about our comprehensive health and safety protocols."
   },
   {
     title: "Discover Kenya",
     href: "/discover-kenya",
-    description: "Explore Kenya's diverse landscapes, wildlife, cultures, and more."
+    description: "Explore the incredible diversity of landscapes, wildlife, and culture in Kenya."
   },
-  {
-    title: "Blog",
-    href: "/blog",
-    description: "Stories, insights, and updates from our programs and communities."
-  }
 ];

@@ -1,9 +1,11 @@
 
 import React from 'react';
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 import {
-  NavigationMenuContent,
   NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuContent,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { resourcePages } from '@/data/navigationData';
@@ -11,24 +13,27 @@ import { resourcePages } from '@/data/navigationData';
 const ResourcesMenu = () => {
   return (
     <NavigationMenuItem>
-      <NavigationMenuTrigger className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent focus:bg-transparent px-3 py-2">
-        Resources
+      <NavigationMenuTrigger className="text-dragon-gray font-medium text-base">
+        <span className="flex items-center">
+          Resources
+          <ChevronDown size={16} className="ml-1" />
+        </span>
       </NavigationMenuTrigger>
-      <NavigationMenuContent className="z-50">
-        <div className="p-4 grid w-[500px] gap-4 md:grid-cols-2">
+      <NavigationMenuContent className="bg-white p-4 shadow-lg rounded-lg">
+        <ul className="grid gap-3">
           {resourcePages.map((resource) => (
-            <Link
-              key={resource.title}
-              to={resource.href}
-              className="block p-3 rounded-md hover:bg-gray-50 transition-colors"
-            >
-              <h3 className="text-base font-bold text-dragon-dark mb-1">{resource.title}</h3>
-              <p className="text-xs text-dragon-gray line-clamp-2">
-                {resource.description}
-              </p>
-            </Link>
+            <li key={resource.title}>
+              <NavigationMenuLink asChild>
+                <Link 
+                  to={resource.href} 
+                  className="block p-2 hover:bg-gray-50 rounded text-dragon-dark hover:text-dragon"
+                >
+                  {resource.title}
+                </Link>
+              </NavigationMenuLink>
+            </li>
           ))}
-        </div>
+        </ul>
       </NavigationMenuContent>
     </NavigationMenuItem>
   );
