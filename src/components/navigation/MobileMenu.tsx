@@ -51,21 +51,6 @@ const MobileMenu = ({
                   {category.description && (
                     <p className="text-xs text-gray-500 mt-1">{category.description}</p>
                   )}
-                  {category.programs && category.programs.length > 0 && (
-                    <ul className="pl-3 mt-2 space-y-1">
-                      {category.programs.map(program => (
-                        <li key={program.title}>
-                          <Link 
-                            to={program.href}
-                            className="block text-sm text-dragon-gray hover:text-dragon py-1"
-                            onClick={toggleMenu}
-                          >
-                            {program.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </div>
               ))}
             </div>

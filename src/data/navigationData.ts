@@ -1,23 +1,15 @@
-
 export const programCategories = [
   {
     title: "School Trips",
     href: "/school-trips",
     description: "Experiential learning trips for K-12 schools.",
-    programs: [
-      { title: "Food For Education", href: "/programs/food-for-education" },
-      { title: "Community Conservation", href: "/programs/community-conservation" },
-      { title: "Empowering Young Women", href: "/programs/empowering-women" }
-    ],
+    programs: [],
   },
   {
     title: "Summer Abroad",
     href: "/summer-abroad",
     description: "Immersive summer programs in Kenya for students.",
-    programs: [
-      { title: "Food For Education", href: "/programs/food-for-education" },
-      { title: "Capturing Kenya", href: "/programs/capturing-kenya" }
-    ],
+    programs: [],
   },
   {
     title: "Multi-Year Curriculum",
@@ -29,10 +21,7 @@ export const programCategories = [
     title: "Adult Programs",
     href: "/adult-programs",
     description: "Educational travel experiences designed for adults.",
-    programs: [
-      { title: "Permaculture Design Course", href: "/programs/permaculture-design-course" },
-      { title: "Safari & Conservation", href: "/programs/safari-sustainability" }
-    ],
+    programs: [],
   },
 ];
 

@@ -16,20 +16,6 @@ const ProgramsMenu = () => {
               {category.title}
             </Link>
             <p className="text-sm text-gray-500 mb-4">{category.description}</p>
-            {category.programs && category.programs.length > 0 && (
-              <ul className="space-y-2">
-                {category.programs.map((program) => (
-                  <li key={program.title}>
-                    <Link 
-                      to={program.href}
-                      className="text-dragon-gray hover:text-dragon text-sm block"
-                    >
-                      {program.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
           </div>
         ))}
       </div>
