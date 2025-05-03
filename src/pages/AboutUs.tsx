@@ -20,7 +20,7 @@ const AboutUs = () => {
         {/* Hero Section */}
         <section className="bg-dragon-beige py-20 md:py-32">
           <div className="container-wide text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-dragon-dark mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-academy font-bold text-dragon-dark mb-6">
               Our Story
             </h1>
             <p className="text-lg md:text-xl text-dragon-gray max-w-3xl mx-auto mb-10">
