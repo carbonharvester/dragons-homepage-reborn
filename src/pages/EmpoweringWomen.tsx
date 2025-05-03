@@ -2,13 +2,13 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Route, Calendar, Map, Users } from "lucide-react";
 import ProgramBrochure from "@/components/ProgramBrochure";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
+import TripHero from "@/components/trip/TripHero";
 
 const EmpoweringWomen = () => {
   // Define the program data according to the ProgramData interface
@@ -30,7 +30,12 @@ const EmpoweringWomen = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main>
-        <Hero />
+        <TripHero 
+          title="Empowering Young Women"
+          subtitle="Support women-led initiatives focusing on education, entrepreneurship, and leadership in communities working to achieve gender equity and economic independence."
+          category="School Trip"
+          imagePath="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+        />
         
         <section className="py-16 bg-white">
           <div className="container-wide">
