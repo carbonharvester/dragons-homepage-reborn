@@ -49,11 +49,12 @@ const Footer = () => {
           <div>
             <h4 className="text-base font-bold mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/faq" className="text-gray-300 hover:text-white transition-colors">FAQ</Link></li>
-              <li><Link to="/health-and-safety" className="text-gray-300 hover:text-white transition-colors">Health & Safety</Link></li>
-              <li><Link to="/discover-kenya" className="text-gray-300 hover:text-white transition-colors">Discover Kenya</Link></li>
-              <li><Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link></li>
               <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link to="/discover-kenya" className="text-gray-300 hover:text-white transition-colors">Discover Kenya</Link></li>
+              <li><Link to="/health-and-safety" className="text-gray-300 hover:text-white transition-colors">Health & Safety</Link></li>
+              <li><Link to="/partner-with-us" className="text-gray-300 hover:text-white transition-colors">Partner with Us</Link></li>
+              <li><Link to="/faq" className="text-gray-300 hover:text-white transition-colors">FAQ</Link></li>
             </ul>
           </div>
           
@@ -72,7 +73,7 @@ const Footer = () => {
               <li className="mt-2">
                 <a 
                   href="https://form.typeform.com/to/example" 
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white text-dragon-dark h-10 px-4 py-2"
+                  className="text-gray-300 hover:text-white transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
