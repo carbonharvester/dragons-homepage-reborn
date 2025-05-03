@@ -10,8 +10,8 @@ import CalendlyEmbed from "@/components/CalendlyEmbed";
 const categories = [
   { id: "school-trips", label: "School Trips" },
   { id: "summer-abroad", label: "Summer Abroad" },
-  { id: "adult-trips", label: "Adult Programs" },
   { id: "multi-year", label: "Multi-Year Curriculum" },
+  { id: "adult-trips", label: "Adult Programs" },
 ];
 
 // Programs data with updated image paths for all programs
