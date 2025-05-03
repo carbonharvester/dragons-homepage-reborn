@@ -3,6 +3,7 @@ import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendlyEmbed from './CalendlyEmbed';
+import { Button } from './ui/button';
 
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
@@ -59,26 +60,25 @@ const Footer = () => {
           <div>
             <h4 className="text-base font-bold mb-4">Get in touch</h4>
             <ul className="space-y-2 text-sm">
-              <li className="text-gray-300">Email: info@kapesadventures.com</li>
+              <li className="text-gray-300">info@kapesadventures.com</li>
               <li className="mt-4">
-                <CalendlyEmbed 
-                  url="https://calendly.com/kapes-adventures/30min"
-                  text="Schedule Consultation"
-                  variant="outline"
-                  className="text-white border-white hover:bg-white hover:text-dragon-dark"
-                />
+                <a 
+                  href="https://calendly.com/kapes-adventures/30min"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Schedule Consultation
+                </a>
               </li>
               <li className="mt-2">
                 <a 
                   href="https://form.typeform.com/to/example" 
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-white text-white hover:bg-white hover:text-dragon-dark h-10 px-4 py-2"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-white text-dragon-dark h-10 px-4 py-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Apply Now
                 </a>
               </li>
-              <li><Link to="/partner-with-us" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
