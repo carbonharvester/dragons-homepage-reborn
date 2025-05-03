@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
               <div className="mb-4 p-3 bg-dragon-beige rounded-lg">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-2 text-dragon-dark hero-heading">{feature.title}</h3>
+              <h3 className="text-xl font-bold mb-2 text-dragon-dark">{feature.title}</h3>
               <p className="text-dragon-gray">{feature.description}</p>
             </div>
           ))}
@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
 
         <div className="mt-16 bg-dragon-sand p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between">
           <div className="mb-6 md:mb-0 md:mr-6">
-            <h3 className="text-2xl text-dragon-dark mb-2 font-extrabold hero-heading">Ready for your next adventure?</h3>
+            <h3 className="text-2xl text-dragon-dark mb-2 font-extrabold">Ready for your next adventure?</h3>
             <p className="text-dragon-gray">Speak with a program coordinator about which journey is right for you.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
