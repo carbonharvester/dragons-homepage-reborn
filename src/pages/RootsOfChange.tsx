@@ -44,10 +44,6 @@ const RootsOfChange = () => {
 
         {/* Brochure Section */}
         <ProgramCTA programData={programData} />
-
-        {/* Testimonials */}
-        <Testimonials />
-        
       </main>
       <Footer />
     </div>
