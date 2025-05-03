@@ -48,6 +48,29 @@ const programCategories = [
   }
 ];
 
+const resourcePages = [
+  {
+    title: "FAQ",
+    href: "/faq",
+    description: "Find answers to common questions about our programs and travel logistics."
+  },
+  {
+    title: "Health & Safety",
+    href: "/health-and-safety",
+    description: "Learn about our comprehensive health and safety protocols for travelers."
+  },
+  {
+    title: "Discover Kenya",
+    href: "/discover-kenya",
+    description: "Explore Kenya's diverse landscapes, wildlife, cultures, and more."
+  },
+  {
+    title: "Blog",
+    href: "/blog",
+    description: "Stories, insights, and updates from our programs and communities."
+  }
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
@@ -109,6 +132,29 @@ const Header = () => {
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-dragon-gray hover:text-dragon font-medium text-base bg-transparent hover:bg-transparent focus:bg-transparent px-3 py-2">
+                  Resources
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="z-50">
+                  <div className="p-4 grid w-[500px] gap-4 md:grid-cols-2">
+                    {resourcePages.map((resource) => (
+                      <Link
+                        key={resource.title}
+                        to={resource.href}
+                        className="block p-3 rounded-md hover:bg-gray-50 transition-colors"
+                      >
+                        <h3 className="text-base font-bold text-dragon-dark mb-1">{resource.title}</h3>
+                        <p className="text-xs text-dragon-gray line-clamp-2">
+                          {resource.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              
               <NavigationMenuItem>
                 <Link to="/about" className="text-dragon-gray hover:text-dragon font-medium text-base px-3 py-2">
                   About Us
@@ -171,6 +217,26 @@ const Header = () => {
                 ))}
               </div>
             </div>
+
+            <div className="border-b border-gray-200 pb-2">
+              <div className="flex items-center justify-between py-3">
+                <span className="font-medium text-base text-dragon-dark">Resources</span>
+                <ChevronDown size={16} className="text-dragon-gray" />
+              </div>
+              <div className="pl-4 space-y-2 py-2">
+                {resourcePages.map(resource => (
+                  <Link 
+                    key={resource.title}
+                    to={resource.href}
+                    className="block text-dragon text-sm py-1"
+                    onClick={toggleMenu}
+                  >
+                    {resource.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <Link to="/about" className="text-dragon-gray hover:text-dragon py-3 font-medium text-base" onClick={toggleMenu}>
               About Us
             </Link>

@@ -7,8 +7,8 @@ import CalendlyEmbed from './CalendlyEmbed';
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
       <div className="container-wide">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
               <img 
                 src="/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png" 
@@ -57,26 +57,14 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-base font-bold mb-4">Contact Us</h4>
+            <h4 className="text-base font-bold mb-4">Resources</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a href="mailto:info@kapesadventures.com" className="text-gray-300 hover:text-white transition-colors">
-                  info@kapesadventures.com
-                </a>
-              </li>
-              <li>
-                <CalendlyEmbed 
-                  url="https://calendly.com/kapesuniforms/discoverymeeting" 
-                  text="Schedule Consultation" 
-                  className="text-gray-300 hover:text-white transition-colors p-0 h-auto bg-transparent justify-start"
-                  variant="ghost"
-                />
-              </li>
-              <li>
-                <Link to="/partner-with-us" className="text-gray-300 hover:text-white transition-colors">
-                  Apply Now
-                </Link>
-              </li>
+              <li><Link to="/faq" className="text-gray-300 hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link to="/health-and-safety" className="text-gray-300 hover:text-white transition-colors">Health & Safety</Link></li>
+              <li><Link to="/discover-kenya" className="text-gray-300 hover:text-white transition-colors">Discover Kenya</Link></li>
+              <li><Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/partner-with-us" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>

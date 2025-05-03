@@ -18,6 +18,9 @@ import CapturingKenyaItinerary from "./pages/CapturingKenyaItinerary";
 import CommunityConservation from "./pages/CommunityConservation";
 import EmpoweringWomen from "./pages/EmpoweringWomen";
 import AdultPrograms from "./pages/AdultPrograms";
+import FAQ from "./pages/FAQ";
+import HealthAndSafety from "./pages/HealthAndSafety";
+import DiscoverKenya from "./pages/DiscoverKenya";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -46,6 +49,10 @@ const App = () => (
           <Route path="/curriculum-guide" element={<PartnerWithUs />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:postId" element={<BlogPost />} />
+          {/* New resource pages */}
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/health-and-safety" element={<HealthAndSafety />} />
+          <Route path="/discover-kenya" element={<DiscoverKenya />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
