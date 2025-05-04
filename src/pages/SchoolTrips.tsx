@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,11 +8,13 @@ import TripCTA from '@/components/trip/TripCTA';
 import { schoolTrips } from '@/data/programsData';
 import ProgramCard from '@/components/programs/ProgramCard';
 import { Button } from '@/components/ui/button';
+
 const SchoolTrips = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return <div className="min-h-screen flex flex-col">
       <SEO title="School Trips" description="Immersive educational experiences that combine cultural engagement, wilderness exploration, and authentic learning opportunities for students." keywords="school trips, student travel, cultural engagement, wilderness exploration, educational travel, Africa, Kenya" />
       <Header />
@@ -29,9 +32,9 @@ const SchoolTrips = () => {
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
                 <img src="https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=2070&auto=format" alt="Students on a field trip" className="w-full h-64 object-cover" />
                 <div className="p-6">
-                  <h2 className="text-2xl font-academy text-dragon-dark mb-3">Custom School Expeditions</h2>
+                  <h2 className="text-2xl font-academy text-dragon-dark mb-3">Service-Led Experiences</h2>
                   <p className="text-dragon-gray mb-4">
-                    Tailor-made educational journeys that align with your curriculum goals while providing students with transformative experiences in Africa.
+                    Immersive service-learning journeys where students collaborate with local communities on meaningful projects that create lasting positive impact while developing critical global competencies.
                   </p>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center">
@@ -104,4 +107,5 @@ const SchoolTrips = () => {
       <Footer />
     </div>;
 };
+
 export default SchoolTrips;
