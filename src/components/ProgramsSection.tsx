@@ -31,7 +31,7 @@ const ProgramsSection = () => {
             <Button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`px-6 py-3 ${
+              className={`px-6 py-3 whitespace-normal h-auto ${
                 activeCategory === category.id
                   ? "bg-dragon text-white"
                   : "bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white"

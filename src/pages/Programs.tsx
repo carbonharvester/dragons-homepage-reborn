@@ -55,7 +55,7 @@ const Programs = () => {
             </div>
 
             <Tabs defaultValue="school-trips" className="w-full">
-              <TabsList className="flex flex-wrap justify-center gap-4 mb-10 bg-transparent">
+              <TabsList className="flex flex-wrap justify-center gap-4 mb-10 bg-transparent h-auto">
                 {programCategories.map((category) => (
                   <TabsTrigger 
                     key={category.id} 
