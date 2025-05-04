@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 
 const FAQ = () => {
   return (
@@ -130,9 +131,14 @@ const FAQ = () => {
                 Contact us directly and our team will be happy to help you.
               </p>
               <div className="flex justify-center">
-                <a href="mailto:info@kapesadventures.com" className="btn-secondary">
-                  Email Us
-                </a>
+                <Button 
+                  className="bg-dragon text-white hover:bg-dragon-dark"
+                  asChild
+                >
+                  <a href="mailto:info@kapesadventures.com">
+                    Email Us
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
