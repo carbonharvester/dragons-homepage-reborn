@@ -1,8 +1,8 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
+import VideoSection from '@/components/VideoSection';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Calendar, Users, Globe } from 'lucide-react';
@@ -79,6 +79,13 @@ const AboutUs = () => {
             </div>
           </div>
         </section>
+
+        {/* Video Section */}
+        <VideoSection 
+          videoId="922795693" 
+          title="Camp Kapes: Our Journey"
+          description="Experience the inspiring journey of Camp Kapes and how we're making a difference in communities across Kenya."
+        />
 
         {/* Mission & Vision Section */}
         <section className="py-20 bg-dragon-beige">
