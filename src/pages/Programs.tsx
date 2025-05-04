@@ -7,20 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ProgramsSection from '@/components/ProgramsSection';
-
 const Programs = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      <SEO 
-        title="Our Programs"
-        description="Explore our transformative educational programs including School Trips, Summer Abroad, Multi-Year Curriculum, and Adult Programs."
-        keywords="educational programs, school trips, summer abroad, multi-year curriculum, adult programs, Kenya, educational travel"
-      />
+  return <div className="min-h-screen flex flex-col">
+      <SEO title="Our Programs" description="Explore our transformative educational programs including School Trips, Summer Abroad, Multi-Year Curriculum, and Adult Programs." keywords="educational programs, school trips, summer abroad, multi-year curriculum, adult programs, Kenya, educational travel" />
       <Header />
       <main>
         {/* Hero Section */}
@@ -54,9 +47,7 @@ const Programs = () => {
               
               {/* Enhanced introduction */}
               <div className="mt-8 mb-12 bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto text-left">
-                <p className="mb-4">
-                  At Kapes, we believe that educational travel should be transformative, ethical, and impactful. Our programs in Africa aren't just trips—they're life-changing journeys that connect students with the continent's rich cultures, resilient communities, and pressing global challenges.
-                </p>
+                <p className="mb-4">At Kapes Adventures, we believe that educational travel should be transformative, ethical, and impactful. Our programs in Africa aren't just trips—they're life-changing journeys that connect students with the continent's rich cultures, resilient communities, and pressing global challenges.</p>
                 
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div>
@@ -90,32 +81,21 @@ const Programs = () => {
                   </div>
                 </div>
                 
-                <p className="text-dragon-dark font-medium">
-                  Whether you're a student seeking a transformative summer experience, a teacher looking for impactful school trips, or an adult pursuing meaningful travel, our programs provide the perfect balance of learning, cultural exchange, and purposeful engagement.
-                </p>
+                <p className="text-dragon-dark font-medium">Whether you're a a teacher looking for impactful school trips, a student seeking a transformative summer experience, or an adult pursuing meaningful travel, our programs provide the perfect balance of learning, cultural exchange, and purposeful engagement.</p>
               </div>
             </div>
 
             <Tabs defaultValue="school-trips" className="w-full">
               <TabsList className="flex flex-wrap justify-center gap-4 mb-10 bg-transparent h-auto">
-                {programCategories.map((category) => (
-                  <TabsTrigger 
-                    key={category.id} 
-                    value={category.id}
-                    className="px-6 py-3 data-[state=active]:bg-dragon data-[state=active]:text-white bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white"
-                  >
+                {programCategories.map(category => <TabsTrigger key={category.id} value={category.id} className="px-6 py-3 data-[state=active]:bg-dragon data-[state=active]:text-white bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white">
                     {category.label}
-                  </TabsTrigger>
-                ))}
+                  </TabsTrigger>)}
               </TabsList>
 
               <TabsContent value="school-trips" className="mt-8">
                 <div className="max-w-4xl mx-auto">
                   <h3 className="text-2xl font-bold mb-4 text-dragon-dark">School Trips</h3>
-                  <p className="mb-6 text-lg">
-                    Our school trips offer 5-7 day immersive experiences designed to complement your curriculum 
-                    and provide students with hands-on learning opportunities focused on specific themes and projects.
-                  </p>
+                  <p className="mb-6 text-lg">Our school trips offer 7/8 day immersive experiences designed to complement your curriculum and provide students with hands-on learning opportunities focused on specific themes and projects.</p>
                   
                   <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
                     <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
@@ -136,7 +116,7 @@ const Programs = () => {
                   
                   <div className="text-center mt-8">
                     <Button className="btn-primary" asChild>
-                      <Link to="/school-trips">Learn More About School Trips</Link>
+                      <Link to="/school-trips">Explore School Trips</Link>
                     </Button>
                   </div>
                 </div>
@@ -169,7 +149,7 @@ const Programs = () => {
                   
                   <div className="text-center mt-8">
                     <Button className="btn-primary" asChild>
-                      <Link to="/summer-abroad">Learn More About Summer Programs</Link>
+                      <Link to="/summer-abroad">Explore Summer Programs</Link>
                     </Button>
                   </div>
                 </div>
@@ -204,7 +184,7 @@ const Programs = () => {
                   
                   <div className="text-center mt-8">
                     <Button className="btn-primary" asChild>
-                      <Link to="/multi-year-curriculum">Learn More About Multi-Year Curriculum</Link>
+                      <Link to="/multi-year-curriculum">Explore Multi-Year Curriculums</Link>
                     </Button>
                   </div>
                 </div>
@@ -259,20 +239,16 @@ const Programs = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button className="btn-primary" asChild>
-                <a href="https://form.typeform.com/to/example" target="_blank" rel="noopener noreferrer">
-                  Apply Now
-                </a>
+                
               </Button>
               <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                <Link to="/partner-with-us">Partner With Us</Link>
+                <Link to="/partner-with-us">Schedule Consultation</Link>
               </Button>
             </div>
           </div>
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Programs;
