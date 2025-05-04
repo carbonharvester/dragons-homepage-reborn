@@ -12,8 +12,8 @@ const AboutUs = () => {
       <SEO title="About Us" description="From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters." keywords="Mission Kapes, educational travel, student trips, sustainability, Africa, Kenya" />
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="bg-dragon-beige py-20 md:py-32">
+        {/* Hero Section with Image */}
+        <section className="bg-dragon-beige py-20 md:py-32 relative">
           <div className="container-wide text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-academy font-bold text-dragon-dark mb-6">
               Our Story
@@ -22,22 +22,22 @@ const AboutUs = () => {
               From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters.
             </p>
           </div>
-        </section>
-
-        {/* Image Banner Section with Updated Caption */}
-        <section className="relative w-full overflow-hidden">
-          <div className="aspect-[16/9] md:aspect-[21/9] w-full">
-            <img 
-              src="/lovable-uploads/f40a88d4-343d-483d-a375-0f63c5154294.png" 
-              alt="Students in Kenya celebrating together" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full py-6">
-            <div className="container-wide">
-              <p className="text-white text-sm md:text-base font-medium">
-                These are some of the students from Kirigu Primary School who received free school uniforms
-              </p>
+          
+          {/* Added Image to Hero Section */}
+          <div className="w-full overflow-hidden mt-6">
+            <div className="aspect-[16/9] md:aspect-[21/9] w-full">
+              <img 
+                src="/lovable-uploads/f40a88d4-343d-483d-a375-0f63c5154294.png" 
+                alt="Students in Kenya celebrating together" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="bg-gradient-to-t from-black/70 to-transparent w-full py-6">
+              <div className="container-wide">
+                <p className="text-white text-sm md:text-base font-medium">
+                  These are some of the students from Kirigu Primary School who received free school uniforms
+                </p>
+              </div>
             </div>
           </div>
         </section>
