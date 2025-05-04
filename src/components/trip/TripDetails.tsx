@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ReactNode } from 'react';
 
@@ -47,7 +46,7 @@ const TripDetailsCard = ({ tripDetails, isSchoolTrip = false }: TripDetailsCardP
         )}
         <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon-beige" asChild>
           <a 
-            href="https://calendly.com/kapes-adventures/30min" 
+            href="https://calendly.com/kapesuniforms/discoverymeeting" 
             target="_blank" 
             rel="noopener noreferrer"
           >

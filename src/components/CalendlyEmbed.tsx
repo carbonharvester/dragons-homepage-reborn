@@ -1,9 +1,10 @@
+
 import React, { useEffect, useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button, ButtonProps } from "@/components/ui/button";
 
 interface CalendlyEmbedProps extends ButtonProps {
-  url: string;
+  url?: string;
   text?: string;
 }
 
@@ -50,7 +51,13 @@ const loadCalendlyScript = (() => {
   };
 })();
 
-const CalendlyEmbed = ({ url, text = "Schedule a Consultation", className, variant, ...props }: CalendlyEmbedProps) => {
+const CalendlyEmbed = ({ 
+  url = "https://calendly.com/kapesuniforms/discoverymeeting", 
+  text = "Schedule a Consultation", 
+  className, 
+  variant, 
+  ...props 
+}: CalendlyEmbedProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Initialize Calendly when the dialog opens

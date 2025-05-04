@@ -36,7 +36,7 @@ const TripCTA = ({ isSchoolTrip = false }: TripCTAProps) => {
           asChild
         >
           <a
-            href="https://calendly.com/kapes-adventures/30min"
+            href="https://calendly.com/kapesuniforms/discoverymeeting"
             target="_blank"
             rel="noopener noreferrer"
           >
