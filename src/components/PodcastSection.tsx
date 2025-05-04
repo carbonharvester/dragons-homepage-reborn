@@ -1,12 +1,66 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Play } from "lucide-react";
 import { Button } from '@/components/ui/button';
-import { podcastEpisodes } from '@/data/podcastData';
+import { getAllPodcastEpisodes, ContentfulPodcastEpisode } from '@/services/contentful';
+import { useQuery } from '@tanstack/react-query';
+import { PodcastEpisode } from '@/data/podcastData';
+
+// Helper function to convert Contentful episode to our app's format
+const mapContentfulToPodcastEpisode = (contentfulEpisode: ContentfulPodcastEpisode): PodcastEpisode => {
+  const imageUrl = contentfulEpisode.fields.image?.fields?.file?.url || '';
+  return {
+    id: contentfulEpisode.sys.id,
+    title: contentfulEpisode.fields.title,
+    description: contentfulEpisode.fields.description,
+    audioUrl: contentfulEpisode.fields.audioUrl,
+    duration: contentfulEpisode.fields.duration,
+    date: contentfulEpisode.fields.date,
+    image: imageUrl.startsWith('//') ? `https:${imageUrl}` : imageUrl,
+    host: contentfulEpisode.fields.host,
+    guests: contentfulEpisode.fields.guests || [],
+  };
+};
 
 const PodcastSection = () => {
-  const featuredEpisode = podcastEpisodes[0];
+  const { data: contentfulEpisodes, isLoading, error } = useQuery({
+    queryKey: ['podcastEpisodes'],
+    queryFn: getAllPodcastEpisodes,
+  });
+  
+  const [episodes, setEpisodes] = useState<PodcastEpisode[]>([]);
+  
+  // Convert Contentful episodes to our format
+  useEffect(() => {
+    if (contentfulEpisodes && contentfulEpisodes.length > 0) {
+      const mappedEpisodes = contentfulEpisodes.map(mapContentfulToPodcastEpisode);
+      setEpisodes(mappedEpisodes);
+    }
+  }, [contentfulEpisodes]);
+
+  // If loading, show minimal content
+  if (isLoading || error || episodes.length === 0) {
+    return (
+      <section className="py-20 bg-white">
+        <div className="container-wide">
+          <div className="text-center mb-12">
+            <h2 className="section-heading">Listen to Our Podcast</h2>
+            <p className="section-subheading mx-auto">
+              Tune in for inspiring conversations about educational travel, sustainability, and community impact in Kenya.
+            </p>
+          </div>
+          <div className="text-center">
+            <Button asChild className="bg-dragon hover:bg-dragon-dark text-white">
+              <Link to="/podcast">Check Out Our Podcast</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    );
+  }
+  
+  const featuredEpisode = episodes[0];
   
   return (
     <section className="py-20 bg-white">
@@ -52,7 +106,7 @@ const PodcastSection = () => {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold mb-2 text-dragon-dark">Recent Episodes</h3>
             
-            {podcastEpisodes.slice(1, 3).map(episode => (
+            {episodes.slice(1, 3).map(episode => (
               <div key={episode.id} className="flex bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-20 h-20 rounded overflow-hidden mr-4 flex-shrink-0">
                   <img
