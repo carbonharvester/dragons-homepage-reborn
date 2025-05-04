@@ -3,12 +3,11 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
-import { programCategories, schoolTrips, summerAbroad, adultTrips, multiYearProgram } from '@/data/programsData';
+import { programCategories } from '@/data/programsData';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ProgramCard from '@/components/programs/ProgramCard';
-import MultiYearCurriculum from '@/components/programs/MultiYearCurriculum';
+import ProgramsSection from '@/components/ProgramsSection';
 
 const Programs = () => {
   // Scroll to top on page load
@@ -50,8 +49,8 @@ const Programs = () => {
                 Explore Our Programs
               </h2>
               <p className="text-lg text-dragon-gray max-w-3xl mx-auto">
-                From weeklong school trips to comprehensive multi-year curriculums, 
-                our programs offer meaningful experiences that combine education, adventure, and impact.
+                Our programs are designed to create meaningful educational experiences through a combination 
+                of cultural immersion, service learning, and authentic engagement with local communities.
               </p>
             </div>
 
@@ -69,50 +68,137 @@ const Programs = () => {
               </TabsList>
 
               <TabsContent value="school-trips" className="mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {schoolTrips.map((program, index) => (
-                    <ProgramCard key={index} program={program} />
-                  ))}
-                </div>
-                <div className="text-center mt-8">
-                  <Button className="btn-primary" asChild>
-                    <Link to="/school-trips">Learn More About School Trips</Link>
-                  </Button>
+                <div className="max-w-4xl mx-auto">
+                  <h3 className="text-2xl font-bold mb-4 text-dragon-dark">School Trips</h3>
+                  <p className="mb-6 text-lg">
+                    Our school trips offer 5-7 day immersive experiences designed to complement your curriculum 
+                    and provide students with hands-on learning opportunities focused on specific themes and projects.
+                  </p>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
+                    <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
+                    <ul className="list-disc pl-5 space-y-2 mb-6">
+                      <li>Curriculum-aligned experiences with pre and post-trip resources</li>
+                      <li>Project-based learning opportunities with measurable impact</li>
+                      <li>Collaborative work with local communities and experts</li>
+                      <li>Comprehensive risk management and 24/7 support</li>
+                      <li>Customizable itineraries based on your school's needs</li>
+                    </ul>
+                    
+                    <p className="mb-6">
+                      Each school trip focuses on a specific project theme, allowing students to engage 
+                      deeply with important global issues while developing practical skills and cross-cultural 
+                      understanding.
+                    </p>
+                  </div>
+                  
+                  <div className="text-center mt-8">
+                    <Button className="btn-primary" asChild>
+                      <Link to="/school-trips">Learn More About School Trips</Link>
+                    </Button>
+                  </div>
                 </div>
               </TabsContent>
 
               <TabsContent value="summer-abroad" className="mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mx-auto max-w-4xl">
-                  {summerAbroad.map((program, index) => (
-                    <ProgramCard key={index} program={program} />
-                  ))}
-                </div>
-                <div className="text-center mt-8">
-                  <Button className="btn-primary" asChild>
-                    <Link to="/summer-abroad">Learn More About Summer Programs</Link>
-                  </Button>
+                <div className="max-w-4xl mx-auto">
+                  <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Summer Abroad</h3>
+                  <p className="mb-6 text-lg">
+                    Our summer programs offer 3-4 week immersive experiences for students seeking to develop 
+                    new skills, explore career interests, and make meaningful contributions to communities in Kenya.
+                  </p>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
+                    <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
+                    <ul className="list-disc pl-5 space-y-2 mb-6">
+                      <li>Intensive skill-building with expert mentors and practitioners</li>
+                      <li>Project-based learning with real-world applications</li>
+                      <li>Cultural immersion and language exposure</li>
+                      <li>Leadership development and global citizenship education</li>
+                      <li>College-ready portfolio development and reflection</li>
+                    </ul>
+                    
+                    <p className="mb-6">
+                      Summer programs are designed for students who want to go deeper into specific interests 
+                      while experiencing the rich culture and landscapes of Kenya. These programs provide valuable 
+                      experience for college applications and future careers.
+                    </p>
+                  </div>
+                  
+                  <div className="text-center mt-8">
+                    <Button className="btn-primary" asChild>
+                      <Link to="/summer-abroad">Learn More About Summer Programs</Link>
+                    </Button>
+                  </div>
                 </div>
               </TabsContent>
 
               <TabsContent value="multi-year" className="mt-8">
-                <MultiYearCurriculum data={multiYearProgram} />
-                <div className="text-center mt-8">
-                  <Button className="btn-primary" asChild>
-                    <Link to="/multi-year-curriculum">Learn More About Multi-Year Curriculum</Link>
-                  </Button>
+                <div className="max-w-4xl mx-auto">
+                  <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Multi-Year Curriculum</h3>
+                  <p className="mb-6 text-lg">
+                    Our Multi-Year Curriculum provides a comprehensive educational journey that builds upon itself 
+                    year after year, creating a cohesive learning experience that develops students' skills, knowledge, 
+                    and global perspective over time.
+                  </p>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
+                    <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
+                    <ul className="list-disc pl-5 space-y-2 mb-6">
+                      <li>Progressive skill development across multiple years</li>
+                      <li>Curriculum integration with school standards and frameworks</li>
+                      <li>Scaffolded leadership opportunities and responsibilities</li>
+                      <li>Long-term relationship building with partner communities</li>
+                      <li>Comprehensive documentation for college applications</li>
+                      <li>Compatible with IB CAS requirements and Duke of Edinburgh Awards</li>
+                    </ul>
+                    
+                    <p className="mb-6">
+                      The Multi-Year Curriculum is designed for schools seeking to build global education into their 
+                      core programming, providing students with a developmental journey that prepares them for future 
+                      academic and professional success.
+                    </p>
+                  </div>
+                  
+                  <div className="text-center mt-8">
+                    <Button className="btn-primary" asChild>
+                      <Link to="/multi-year-curriculum">Learn More About Multi-Year Curriculum</Link>
+                    </Button>
+                  </div>
                 </div>
               </TabsContent>
 
               <TabsContent value="adult-trips" className="mt-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mx-auto max-w-4xl">
-                  {adultTrips.map((program, index) => (
-                    <ProgramCard key={index} program={program} />
-                  ))}
-                </div>
-                <div className="text-center mt-8">
-                  <Button className="btn-primary" asChild>
-                    <Link to="/adult-programs">Learn More About Adult Programs</Link>
-                  </Button>
+                <div className="max-w-4xl mx-auto">
+                  <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Adult Programs</h3>
+                  <p className="mb-6 text-lg">
+                    Our Adult Programs offer immersive learning experiences designed for professionals, educators, 
+                    and lifelong learners seeking to develop new skills, engage with global issues, and make 
+                    meaningful connections with communities in Kenya.
+                  </p>
+                  
+                  <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
+                    <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
+                    <ul className="list-disc pl-5 space-y-2 mb-6">
+                      <li>Expert-led workshops and hands-on learning experiences</li>
+                      <li>Professional development opportunities with certification</li>
+                      <li>Authentic cultural exchange and community engagement</li>
+                      <li>Connections with local experts and practitioners</li>
+                      <li>Comfortable accommodations and thoughtful logistics</li>
+                    </ul>
+                    
+                    <p className="mb-6">
+                      Adult Programs are perfect for individuals or groups looking to combine purposeful travel 
+                      with personal or professional development. Programs can be customized for specific groups, 
+                      organizations, or interests.
+                    </p>
+                  </div>
+                  
+                  <div className="text-center mt-8">
+                    <Button className="btn-primary" asChild>
+                      <Link to="/adult-programs">Learn More About Adult Programs</Link>
+                    </Button>
+                  </div>
                 </div>
               </TabsContent>
             </Tabs>
