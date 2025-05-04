@@ -6,11 +6,28 @@ import { resourcePages } from '@/data/navigationData';
 const ResourcesMenu = () => {
   // Filter out the "All Programs" item from the resources menu
   const filteredResources = resourcePages.filter(resource => resource.title !== "All Programs");
+  
+  // Define the order to match the footer
+  const orderedResourceTitles = [
+    "Blog", 
+    "Podcast", 
+    "Discover Kenya",
+    "Health & Safety",
+    "Partner with Us",
+    "FAQ"
+  ];
+  
+  // Sort the resources according to the order in the footer
+  const sortedResources = [...filteredResources].sort((a, b) => {
+    const indexA = orderedResourceTitles.indexOf(a.title);
+    const indexB = orderedResourceTitles.indexOf(b.title);
+    return indexA - indexB;
+  });
 
   return (
     <div className="absolute left-0 top-[calc(100%+4px)] w-64 bg-white border border-gray-200 rounded-md shadow-lg py-2 z-50">
       <div className="flex flex-col">
-        {filteredResources.map((resource, index) => (
+        {sortedResources.map((resource, index) => (
           <div key={resource.title} className="py-2 px-4">
             <Link 
               to={resource.href}

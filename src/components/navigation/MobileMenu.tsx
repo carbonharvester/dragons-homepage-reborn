@@ -73,23 +73,23 @@ const MobileMenu = ({
             
             {mobileResourcesExpanded && (
               <div className="pl-4 mt-2 space-y-2 border-l-2 border-dragon-beige">
+                <Link to="/blog" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
+                  Blog
+                </Link>
+                <Link to="/podcast" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
+                  Podcast
+                </Link>
                 <Link to="/discover-kenya" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
                   Discover Kenya
                 </Link>
                 <Link to="/health-and-safety" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
                   Health & Safety
                 </Link>
-                <Link to="/faq" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  FAQ
-                </Link>
-                <Link to="/podcast" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Podcast
-                </Link>
-                <Link to="/blog" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Blog
-                </Link>
                 <Link to="/partner-with-us" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
                   Partner With Us
+                </Link>
+                <Link to="/faq" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
+                  FAQ
                 </Link>
               </div>
             )}
