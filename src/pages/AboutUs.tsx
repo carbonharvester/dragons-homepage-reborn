@@ -33,9 +33,9 @@ const AboutUs = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full py-8">
+          <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full py-6">
             <div className="container-wide">
-              <p className="text-white text-lg md:text-xl font-medium">
+              <p className="text-white text-sm md:text-base font-medium">
                 These are some of the students from Kirigu Primary School who received free school uniforms
               </p>
             </div>
@@ -96,7 +96,7 @@ const AboutUs = () => {
               </div>
               <div className="bg-dragon-sand rounded-lg p-8 flex items-center justify-center">
                 <div className="max-w-md">
-                  <h3 className="text-2xl font-academy font-bold text-dragon-dark mb-4">Our Values</h3>
+                  <h3 className="text-2xl font-bold text-dragon-dark mb-4">Our Values</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start">
                       <div className="bg-dragon rounded-full h-6 w-6 min-w-6 flex items-center justify-center text-white mr-3 mt-1">1</div>
