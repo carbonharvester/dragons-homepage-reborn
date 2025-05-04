@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ReactNode } from 'react';
+import CalendlyEmbed from '../CalendlyEmbed';
 
 interface TripDetailProps {
   label: string;
@@ -44,15 +45,12 @@ const TripDetailsCard = ({ tripDetails, isSchoolTrip = false }: TripDetailsCardP
             </a>
           </Button>
         )}
-        <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon-beige" asChild>
-          <a 
-            href="https://calendly.com/kapesuniforms/discoverymeeting" 
-            target="_blank" 
-            rel="noopener noreferrer"
-          >
-            Schedule Consultation
-          </a>
-        </Button>
+        <CalendlyEmbed 
+          url="https://calendly.com/kapesuniforms/discoverymeeting"
+          text="Schedule Consultation"
+          variant="outline"
+          className="w-full border-dragon text-dragon hover:bg-dragon-beige"
+        />
       </div>
     </div>
   );

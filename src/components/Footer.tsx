@@ -64,14 +64,12 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li className="text-gray-300">info@kapesadventures.com</li>
               <li className="mt-4">
-                <a 
-                  href="https://calendly.com/kapesuniforms/discoverymeeting"
-                  className="text-gray-300 hover:text-white transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Schedule Consultation
-                </a>
+                <CalendlyEmbed 
+                  url="https://calendly.com/kapesuniforms/discoverymeeting"
+                  text="Schedule Consultation"
+                  variant="link"
+                  className="text-gray-300 hover:text-white transition-colors p-0 h-auto"
+                />
               </li>
               <li className="mt-2">
                 <a 

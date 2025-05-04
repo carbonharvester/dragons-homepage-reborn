@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import CalendlyEmbed from '../CalendlyEmbed';
 
 interface TripCTAProps {
   isSchoolTrip?: boolean;
@@ -29,20 +30,13 @@ const TripCTA = ({ isSchoolTrip = false }: TripCTAProps) => {
             </a>
           </Button>
         )}
-        <Button 
-          variant={isSchoolTrip ? "secondary" : "outline"} 
-          size="lg" 
-          className={isSchoolTrip ? "text-dragon-dark hover:bg-secondary/90" : "bg-transparent border-white text-white hover:bg-white hover:text-dragon"} 
-          asChild
-        >
-          <a
-            href="https://calendly.com/kapesuniforms/discoverymeeting"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Schedule Consultation
-          </a>
-        </Button>
+        <CalendlyEmbed 
+          url="https://calendly.com/kapesuniforms/discoverymeeting"
+          text="Schedule Consultation"
+          variant={isSchoolTrip ? "secondary" : "outline"}
+          size="lg"
+          className={isSchoolTrip ? "text-dragon-dark hover:bg-secondary/90" : "bg-transparent border-white text-white hover:bg-white hover:text-dragon"}
+        />
       </div>
     </div>
   );
