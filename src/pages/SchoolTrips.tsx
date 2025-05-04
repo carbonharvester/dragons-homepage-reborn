@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -39,15 +38,15 @@ const SchoolTrips = () => {
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-center">
                       <span className="bg-dragon-beige rounded-full p-1 mr-2"></span>
-                      <span>Customizable itineraries based on educational objectives</span>
+                      <span>Community-identified projects with measurable outcomes</span>
                     </li>
                     <li className="flex items-center">
                       <span className="bg-dragon-beige rounded-full p-1 mr-2"></span>
-                      <span>Expert guides and facilitators</span>
+                      <span>Cultural immersion and authentic connections</span>
                     </li>
                     <li className="flex items-center">
                       <span className="bg-dragon-beige rounded-full p-1 mr-2"></span>
-                      <span>Comprehensive safety and logistics planning</span>
+                      <span>Curriculum-linked learning and reflection</span>
                     </li>
                   </ul>
                 </div>
@@ -78,13 +77,11 @@ const SchoolTrips = () => {
               </div>
             </div>
             
-            {/* Display School Trip Programs - MOVED BELOW EDUCATIONAL FOCUS */}
             <h2 className="text-3xl font-academy text-dragon-dark text-center mb-8">Our School Trips</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
               {schoolTrips.map((program, index) => <ProgramCard key={index} program={program} />)}
             </div>
             
-            {/* Updated TripCTA without apply buttons */}
             <div className="bg-dragon text-white rounded-lg p-8 md:p-12 text-center">
               <h2 className="text-3xl md:text-4xl font-academy font-bold mb-4">Ready to Plan Your School Trip?</h2>
               <p className="text-xl max-w-3xl mx-auto mb-8">
