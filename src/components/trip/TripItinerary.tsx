@@ -14,7 +14,7 @@ interface TripItineraryProps {
 const TripItinerary = ({ itineraryDays }: TripItineraryProps) => {
   return (
     <div className="mb-16">
-      <h2 className="text-3xl font-serif font-bold mb-8 text-dragon-dark text-center">Sample Itinerary</h2>
+      <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Sample Itinerary</h2>
       <div className="space-y-6">
         {itineraryDays.map((day, index) => (
           <div key={index} className="border-l-4 border-dragon pl-6">
