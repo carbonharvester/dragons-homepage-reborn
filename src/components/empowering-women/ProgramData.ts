@@ -1,4 +1,6 @@
 
+import { Calendar, Route, Map, Users, GraduationCap, Award } from 'lucide-react';
+
 export const programData = {
   title: "Kapes Zawadisha Immersion",
   description: "An 8-day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program.",
@@ -16,42 +18,42 @@ export const programData = {
 
 export const tripHighlights = [
   {
-    icon: <div className="text-white text-2xl">💧</div>,
+    icon: "💧",
     title: "Water Walk Experience",
     description: "Carry jerry cans alongside local women to understand water collection challenges before rainwater tanks."
   },
   {
-    icon: <div className="text-white text-2xl">🏠</div>,
+    icon: "🏠",
     title: "Home Visits",
     description: "Visit women's homes to see Zawadisha products in action and hear stories of transformation."
   },
   {
-    icon: <div className="text-white text-2xl">🧶</div>,
+    icon: "🧶",
     title: "Cultural Crafting",
     description: "Create elephant dung paper, beaded bracelets, and woven baskets with the Neema Women's Group."
   },
   {
-    icon: <div className="text-white text-2xl">🍲</div>,
+    icon: "🍲",
     title: "Traditional Cooking",
     description: "Learn to cook authentic Kenyan dishes with local women using fresh, local ingredients."
   },
   {
-    icon: <div className="text-white text-2xl">🦁</div>,
+    icon: "🦁",
     title: "Tsavo Safari",
     description: "Experience Kenya's magnificent wildlife while learning about human-wildlife coexistence challenges."
   },
   {
-    icon: <div className="text-white text-2xl">🛡️</div>,
+    icon: "🛡️",
     title: "Kasaine Fence Project",
     description: "Create and install metal sheet noise deterrents on farm fences to help local farmers protect crops from elephants."
   },
   {
-    icon: <div className="text-white text-2xl">🌱</div>,
+    icon: "🌱",
     title: "Microloan Impact",
     description: "Each trip directly funds a microloan for solar lamps, rainwater tanks, or clean cookstoves for rural women."
   },
   {
-    icon: <div className="text-white text-2xl">🏆</div>,
+    icon: "🏆",
     title: "Educational Credits",
     description: "Earn CAS points and credits toward Duke of Edinburgh's Award while making a real difference."
   }
@@ -172,31 +174,31 @@ export const tripDetails = [
   {
     label: "Duration",
     value: "8 Days (Friday to Friday)",
-    icon: <Calendar className="w-5 h-5 text-dragon" />
+    icon: null // Will be populated in the component
   },
   {
     label: "Season",
     value: "Year Round",
-    icon: <Route className="w-5 h-5 text-dragon" />
+    icon: null // Will be populated in the component
   },
   {
     label: "Location",
     value: "Tsavo, Kenya (Rukinga Camp)",
-    icon: <Map className="w-5 h-5 text-dragon" />
+    icon: null // Will be populated in the component
   },
   {
     label: "Group Size",
     value: "10-15 Students",
-    icon: <Users className="w-5 h-5 text-dragon" />
+    icon: null // Will be populated in the component
   },
   {
     label: "Educational Credits",
     value: "CAS Points, Duke of Edinburgh",
-    icon: <GraduationCap className="w-5 h-5 text-dragon" />
+    icon: null // Will be populated in the component
   },
   {
     label: "Certificate",
     value: "Kapes Cultural Impact Certificate",
-    icon: <Award className="w-5 h-5 text-dragon" />
+    icon: null // Will be populated in the component
   }
 ];

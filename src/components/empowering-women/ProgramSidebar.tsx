@@ -1,20 +1,41 @@
 
 import React from 'react';
-import { Users, GraduationCap, Award, Heart } from 'lucide-react';
+import { Users, GraduationCap, Award, Heart, Calendar, Route, Map } from 'lucide-react';
 import TripDetailsCard from '@/components/trip/TripDetails';
+import { tripDetails } from './ProgramData';
 
-interface ProgramSidebarProps {
-  tripDetails: Array<{
-    label: string;
-    value: string;
-    icon: React.ReactNode;
-  }>;
-}
+const ProgramSidebar = () => {
+  // Add icons to tripDetails
+  const detailsWithIcons = tripDetails.map((detail, index) => {
+    let icon;
+    switch(index) {
+      case 0:
+        icon = <Calendar className="w-5 h-5 text-dragon" />;
+        break;
+      case 1:
+        icon = <Route className="w-5 h-5 text-dragon" />;
+        break;
+      case 2:
+        icon = <Map className="w-5 h-5 text-dragon" />;
+        break;
+      case 3:
+        icon = <Users className="w-5 h-5 text-dragon" />;
+        break;
+      case 4:
+        icon = <GraduationCap className="w-5 h-5 text-dragon" />;
+        break;
+      case 5:
+        icon = <Award className="w-5 h-5 text-dragon" />;
+        break;
+      default:
+        icon = null;
+    }
+    return { ...detail, icon };
+  });
 
-const ProgramSidebar = ({ tripDetails }: ProgramSidebarProps) => {
   return (
     <div className="lg:w-1/3">
-      <TripDetailsCard tripDetails={tripDetails} isSchoolTrip={true} />
+      <TripDetailsCard tripDetails={detailsWithIcons} isSchoolTrip={true} />
 
       <div className="bg-dragon-beige p-8 rounded-lg shadow-md mt-8">
         <h3 className="text-xl font-bold text-dragon-dark mb-4">Perfect For</h3>

@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import Testimonials from "@/components/Testimonials";
 import SEO from "@/components/SEO";
 import TripHero from "@/components/trip/TripHero";
-import TripHighlights from "@/components/trip/TripHighlights";
 import TripItinerary from "@/components/trip/TripItinerary";
 import TripGallery from "@/components/trip/TripGallery";
 
@@ -14,14 +13,12 @@ import ProgramIntro from "@/components/empowering-women/ProgramIntro";
 import Accommodation from "@/components/empowering-women/Accommodation";
 import ProgramSidebar from "@/components/empowering-women/ProgramSidebar";
 import ProgramCTA from "@/components/empowering-women/ProgramCTA";
+import TripHighlightsWrapper from "@/components/empowering-women/TripHighlightsWrapper";
 
 // Import data
 import { 
-  programData, 
-  tripHighlights, 
   tripItinerary, 
-  galleryImages, 
-  tripDetails 
+  galleryImages 
 } from "@/components/empowering-women/ProgramData";
 
 const EmpoweringWomen = () => {
@@ -49,7 +46,7 @@ const EmpoweringWomen = () => {
                 
                 <ProgramIntro />
                 
-                <TripHighlights highlights={tripHighlights} />
+                <TripHighlightsWrapper />
                 
                 <TripItinerary itineraryDays={tripItinerary} />
                 
@@ -60,7 +57,7 @@ const EmpoweringWomen = () => {
                 <ProgramCTA />
               </div>
               
-              <ProgramSidebar tripDetails={tripDetails} />
+              <ProgramSidebar />
             </div>
           </div>
         </section>
