@@ -4,11 +4,13 @@ import TripHighlights from '@/components/trip/TripHighlights';
 import { tripHighlights } from './data';
 
 const TripHighlightsWrapper = () => {
-  // Convert the simple string emoji icons to JSX elements
+  // Convert the Lucide icon components to JSX elements
   const highlightsWithJSX = tripHighlights.map(highlight => ({
     ...highlight,
     icon: (
-      <div className="text-white text-2xl">{highlight.icon}</div>
+      <div className="text-white">
+        {React.createElement(highlight.icon, { className: "h-8 w-8" })}
+      </div>
     )
   }));
 
