@@ -7,7 +7,7 @@ import ProgramItinerary from '@/components/roots-of-change/ProgramItinerary';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
-const RootsOfChangeItinerary = () => {
+const FeedingTheFutureItinerary = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -16,7 +16,7 @@ const RootsOfChangeItinerary = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Roots of Change: Program Itinerary"
+        title="Feeding the Future: Program Itinerary"
         description="Detailed 4-week itinerary for our sustainable agriculture and food security program across Kenya."
         keywords="itinerary, program schedule, Kenya, sustainable agriculture, educational travel, summer program"
       />
@@ -26,7 +26,7 @@ const RootsOfChangeItinerary = () => {
         <section className="py-16 bg-dragon-beige">
           <div className="container-wide">
             <h1 className="text-4xl md:text-5xl font-academy text-dragon-dark text-center mb-6">
-              Roots of Change: Full Itinerary
+              Feeding the Future: Full Itinerary
             </h1>
             <p className="text-center text-dragon-gray max-w-3xl mx-auto mb-8">
               Our immersive 28-day journey across Kenya focuses on sustainable agriculture, 
@@ -35,7 +35,7 @@ const RootsOfChangeItinerary = () => {
             
             <div className="flex justify-center">
               <Button asChild className="bg-dragon hover:bg-dragon-dark">
-                <Link to="/programs/roots-of-change">Back to Program Overview</Link>
+                <Link to="/programs/feeding-the-future">Back to Program Overview</Link>
               </Button>
             </div>
           </div>
@@ -49,4 +49,4 @@ const RootsOfChangeItinerary = () => {
   );
 };
 
-export default RootsOfChangeItinerary;
+export default FeedingTheFutureItinerary;

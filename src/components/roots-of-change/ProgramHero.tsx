@@ -14,14 +14,14 @@ const ProgramHero = () => {
       
       <div className="container-wide relative z-10 text-white">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">Roots of Change</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">Feeding the Future</h1>
           <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">
             {programData.description}
           </p>
           
           <div className="flex flex-wrap gap-4">
             <Button className="btn-primary" asChild>
-              <Link to="/programs/roots-of-change/itinerary">Explore Full Itinerary</Link>
+              <Link to="/programs/feeding-the-future/itinerary">Explore Full Itinerary</Link>
             </Button>
             <CalendlyEmbed 
               url="https://calendly.com/kapesuniforms/discoverymeeting"

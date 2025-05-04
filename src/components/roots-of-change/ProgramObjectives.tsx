@@ -34,7 +34,7 @@ const ProgramObjectives = () => {
         </h2>
         
         <p className="text-center text-dragon-gray max-w-3xl mx-auto mb-12">
-          Our Roots of Change program is designed to create lasting impact through sustainable agriculture 
+          Our Feeding the Future program is designed to create lasting impact through sustainable agriculture 
           while providing students with transformative learning experiences.
         </p>
         

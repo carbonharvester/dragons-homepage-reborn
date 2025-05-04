@@ -1,4 +1,3 @@
-
 import { Globe, School, Users, GraduationCap, Camera, Leaf } from "lucide-react";
 
 // Program categories
@@ -17,7 +16,7 @@ export const schoolTrips = [
 ];
 
 export const summerAbroad = [
-  { title: "Roots of Change", duration: "4 Weeks", season: "Jun-Aug", description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.", image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", link: "/programs/roots-of-change", icon: Globe },
+  { title: "Feeding the Future", duration: "4 Weeks", season: "Jun-Aug", description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.", image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", link: "/programs/feeding-the-future", icon: Globe },
   { title: "Capturing Kenya", duration: "3 Weeks", season: "Jun-Aug", description: "Develop your photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders across Kenya.", image: "/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png", link: "/programs/capturing-kenya", icon: Camera }
 ];
 

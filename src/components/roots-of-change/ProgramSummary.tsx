@@ -28,7 +28,7 @@ const ProgramSummary = () => {
             </div>
             
             <p className="text-dragon-gray mb-6">
-              Our Roots of Change program is designed for students passionate about sustainable agriculture
+              Our Feeding the Future program is designed for students passionate about sustainable agriculture
               and food security. This immersive experience takes you across Kenya to learn from farmers, 
               conservation experts, and community leaders.
             </p>
