@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -6,15 +5,9 @@ import SEO from '@/components/SEO';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Calendar, Users, Globe } from 'lucide-react';
-
 const AboutUs = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
-      <SEO 
-        title="About Us"
-        description="From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters."
-        keywords="Mission Kapes, educational travel, student trips, sustainability, Africa, Kenya"
-      />
+  return <div className="min-h-screen flex flex-col">
+      <SEO title="About Us" description="From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters." keywords="Mission Kapes, educational travel, student trips, sustainability, Africa, Kenya" />
       <Header />
       <main>
         {/* Hero Section */}
@@ -45,7 +38,7 @@ const AboutUs = () => {
                   While searching for a sustainable factory to make these uniforms locally in Kenya, Matthew visited a carbon offset project in the Kasigau Corridor. During this factory visit, he was taken on a game drive, met social entrepreneurs working with the project, and learned about their initiatives. It became abundantly clear that bringing students here would be key to joining the dots - seeing the positive impact their uniforms can have while also providing a life-changing experience.
                 </p>
                 <p>
-                  This drive to build connection is what has and continues to inspire all of our trips. In 2022, <strong>Mission Kapes</strong> was born. While we have nothing against things like ski trips, we wanted to offer more. We focus on Africa because Africa has so much to offer students. Our trips are designed to change the lives of the students who participate just as much as, if not more than, the lives of the communities we visit in Africa.
+                  This drive to build connection is what has and continues to inspire all of our trips. In 2022, <strong>Kapes Adventures</strong> was born. While we have nothing against things like ski trips, we wanted to offer more. We focus on Africa because Africa has so much to offer students. Our trips are designed to change the lives of the students who participate just as much as, if not more than, the lives of the communities we visit in Africa.
                 </p>
               </div>
             </div>
@@ -106,8 +99,6 @@ const AboutUs = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default AboutUs;
