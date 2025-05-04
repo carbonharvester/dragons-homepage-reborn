@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -49,11 +50,14 @@ const EmpoweringWomen = () => {
                 <TripGallery images={galleryImages} />
 
                 <Accommodation />
-                
-                <ProgramCTA />
               </div>
               
               <ProgramSidebar />
+            </div>
+            
+            {/* Move the ProgramCTA component outside and below the flex container */}
+            <div className="mt-12">
+              <ProgramCTA />
             </div>
           </div>
         </section>
