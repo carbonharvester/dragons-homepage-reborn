@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import { resourcePages } from '@/data/navigationData';
 
 const ResourcesMenu = () => {
+  // Filter out the "All Programs" item from the resources menu
+  const filteredResources = resourcePages.filter(resource => resource.title !== "All Programs");
+
   return (
     <div className="absolute left-0 top-[calc(100%+4px)] w-64 bg-white border border-gray-200 rounded-md shadow-lg py-2 z-50">
       <div className="flex flex-col">
-        {resourcePages.map((resource, index) => (
+        {filteredResources.map((resource, index) => (
           <div key={resource.title} className="py-2 px-4">
             <Link 
               to={resource.href}
