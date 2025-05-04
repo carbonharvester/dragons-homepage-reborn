@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,20 +7,13 @@ import TripCTA from '@/components/trip/TripCTA';
 import { schoolTrips } from '@/data/programsData';
 import ProgramCard from '@/components/programs/ProgramCard';
 import { Button } from '@/components/ui/button';
-
 const SchoolTrips = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      <SEO 
-        title="School Trips"
-        description="Immersive educational experiences that combine cultural engagement, wilderness exploration, and authentic learning opportunities for students."
-        keywords="school trips, student travel, cultural engagement, wilderness exploration, educational travel, Africa, Kenya"
-      />
+  return <div className="min-h-screen flex flex-col">
+      <SEO title="School Trips" description="Immersive educational experiences that combine cultural engagement, wilderness exploration, and authentic learning opportunities for students." keywords="school trips, student travel, cultural engagement, wilderness exploration, educational travel, Africa, Kenya" />
       <Header />
       <main>
         <section className="relative py-20 bg-white">
@@ -35,11 +27,7 @@ const SchoolTrips = () => {
             
             <div className="grid md:grid-cols-2 gap-8 mb-20">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=2070&auto=format" 
-                  alt="Students on a field trip" 
-                  className="w-full h-64 object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=2070&auto=format" alt="Students on a field trip" className="w-full h-64 object-cover" />
                 <div className="p-6">
                   <h2 className="text-2xl font-academy text-dragon-dark mb-3">Custom School Expeditions</h2>
                   <p className="text-dragon-gray mb-4">
@@ -63,11 +51,7 @@ const SchoolTrips = () => {
               </div>
               
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format" 
-                  alt="Students working together" 
-                  className="w-full h-64 object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format" alt="Students working together" className="w-full h-64 object-cover" />
                 <div className="p-6">
                   <h2 className="text-2xl font-academy text-dragon-dark mb-3">Educational Focus Areas</h2>
                   <p className="text-dragon-gray mb-4">
@@ -92,11 +76,9 @@ const SchoolTrips = () => {
             </div>
             
             {/* Display School Trip Programs - MOVED BELOW EDUCATIONAL FOCUS */}
-            <h2 className="text-3xl font-academy text-dragon-dark text-center mb-8">Our School Trip Programs</h2>
+            <h2 className="text-3xl font-academy text-dragon-dark text-center mb-8">Our School Trips</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-              {schoolTrips.map((program, index) => (
-                <ProgramCard key={index} program={program} />
-              ))}
+              {schoolTrips.map((program, index) => <ProgramCard key={index} program={program} />)}
             </div>
             
             {/* Updated TripCTA without apply buttons */}
@@ -108,11 +90,7 @@ const SchoolTrips = () => {
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Button variant="secondary" size="lg" className="text-dragon-dark hover:bg-secondary/90" asChild>
-                  <a
-                    href="https://calendly.com/kapes-adventures/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href="https://calendly.com/kapes-adventures/30min" target="_blank" rel="noopener noreferrer">
                     Schedule Consultation
                   </a>
                 </Button>
@@ -124,8 +102,6 @@ const SchoolTrips = () => {
         <Testimonials />
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default SchoolTrips;
