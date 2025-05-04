@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Calendar, Clock, MapPin, Users, Tree, Leaf, Plant, Droplet, Handshake, School, Park, Mountain, Museum, Earth } from "lucide-react";
+import { Calendar, Clock, MapPin, Users, Trees, Leaf, LucideIcon, Droplet, Handshake, School, Mountain, LandPlot, Building, MapPinned } from "lucide-react";
 
 interface WeekProps {
   title: string;
@@ -33,7 +32,7 @@ const ProgramItinerary = () => {
             "Welcome dinner with traditional Kenyan dishes",
             "Program orientation and team assignments",
           ],
-          icon: Earth
+          icon: MapPinned
         },
         {
           day: "Tuesday",
@@ -57,7 +56,7 @@ const ProgramItinerary = () => {
             "Produce 40-60 liters of biochar",
             "Evening workshop on soil fertility"
           ],
-          icon: Plant
+          icon: LandPlot
         },
         {
           day: "Thursday",
@@ -93,7 +92,7 @@ const ProgramItinerary = () => {
             "Picnic lunch in the park",
             "Optional visit to animal orphanage"
           ],
-          icon: Park
+          icon: Trees
         },
         {
           day: "Sunday",

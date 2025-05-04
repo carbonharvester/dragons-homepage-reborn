@@ -25,6 +25,7 @@ import FAQ from "./pages/FAQ";
 import HealthAndSafety from "./pages/HealthAndSafety";
 import DiscoverKenya from "./pages/DiscoverKenya";
 import RootsOfChange from "./pages/RootsOfChange";
+import RootsOfChangeItinerary from "./pages/RootsOfChangeItinerary";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const AppRoutes = () => (
     <Route path="/programs/capturing-kenya/itinerary" element={<CapturingKenyaItinerary />} />
     <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
     <Route path="/programs/roots-of-change" element={<RootsOfChange />} />
+    <Route path="/programs/roots-of-change/itinerary" element={<RootsOfChangeItinerary />} />
     <Route path="/curriculum-guide" element={<PartnerWithUs />} />
     <Route path="/blog" element={<Blog />} />
     <Route path="/blog/:postId" element={<BlogPost />} />
