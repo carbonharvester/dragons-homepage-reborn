@@ -52,6 +52,51 @@ const Programs = () => {
                 Our programs are designed to create meaningful educational experiences through a combination 
                 of cultural immersion, service learning, and authentic engagement with local communities.
               </p>
+              
+              {/* Enhanced introduction */}
+              <div className="mt-8 mb-12 bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto text-left">
+                <h3 className="text-2xl font-bold text-dragon-dark mb-4">Why Our African Programs Are Different</h3>
+                
+                <p className="mb-4">
+                  At Kapes, we believe that educational travel should be transformative, ethical, and impactful. Our programs in Africa aren't just trips—they're life-changing journeys that connect students with the continent's rich cultures, resilient communities, and pressing global challenges.
+                </p>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <h4 className="font-bold text-dragon mb-2">Beyond Tourism</h4>
+                    <p className="text-dragon-gray">
+                      Unlike conventional educational tours, our programs focus on deep cultural immersion and meaningful contribution. Students don't just visit communities—they live and work alongside them, developing authentic relationships that transcend the typical tourist experience.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-bold text-dragon mb-2">Measurable Impact</h4>
+                    <p className="text-dragon-gray">
+                      Each program is designed with specific community-identified needs in mind. From supporting women's microfinance initiatives to implementing sustainable agricultural practices, our work creates tangible, lasting change that continues long after students return home.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <h4 className="font-bold text-dragon mb-2">African-Centered</h4>
+                    <p className="text-dragon-gray">
+                      Our programs challenge dominant narratives about Africa by highlighting local innovation, expertise, and leadership. We partner with African educators, entrepreneurs, and changemakers who serve as mentors and guides, ensuring authentic perspectives shape the learning experience.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-bold text-dragon mb-2">Personal Transformation</h4>
+                    <p className="text-dragon-gray">
+                      Students return from our programs with more than photos and souvenirs—they develop critical thinking skills, cross-cultural competence, and a sense of global citizenship that shapes their academic pursuits and career choices for years to come.
+                    </p>
+                  </div>
+                </div>
+                
+                <p className="text-dragon-dark font-medium">
+                  Whether you're a student seeking a transformative summer experience, a teacher looking for impactful school trips, or an adult pursuing meaningful travel, our programs provide the perfect balance of learning, cultural exchange, and purposeful engagement.
+                </p>
+              </div>
             </div>
 
             <Tabs defaultValue="school-trips" className="w-full">
