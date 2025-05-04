@@ -18,8 +18,6 @@ const mapContentfulToPodcastEpisode = (contentfulEpisode: ContentfulPodcastEpiso
     duration: contentfulEpisode.fields.duration,
     date: contentfulEpisode.fields.date,
     image: imageUrl.startsWith('//') ? `https:${imageUrl}` : imageUrl,
-    host: contentfulEpisode.fields.host,
-    guests: contentfulEpisode.fields.guests || [],
   };
 };
 

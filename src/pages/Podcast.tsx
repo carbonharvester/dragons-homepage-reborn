@@ -20,8 +20,6 @@ const mapContentfulToPodcastEpisode = (contentfulEpisode: ContentfulPodcastEpiso
     duration: contentfulEpisode.fields.duration,
     date: contentfulEpisode.fields.date,
     image: imageUrl.startsWith('//') ? `https:${imageUrl}` : imageUrl,
-    host: contentfulEpisode.fields.host,
-    guests: contentfulEpisode.fields.guests || [],
   };
 };
 
@@ -84,17 +82,6 @@ const Podcast = () => {
                     <span>{currentEpisode.duration}</span>
                   </div>
                   <p className="text-dragon-gray mb-4">{currentEpisode.description}</p>
-                  
-                  {currentEpisode.guests && currentEpisode.guests.length > 0 && (
-                    <div>
-                      <h3 className="text-lg font-semibold mb-2">Guests</h3>
-                      <ul className="list-disc list-inside text-dragon-gray">
-                        {currentEpisode.guests.map((guest, index) => (
-                          <li key={index}>{guest}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
                 </div>
               </div>
               

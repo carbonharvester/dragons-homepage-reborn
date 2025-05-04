@@ -84,7 +84,6 @@ const PodcastPlayer: React.FC<PodcastPlayerProps> = ({ episode }) => {
         </div>
         <div>
           <h3 className="text-lg font-bold text-dragon-dark">{episode.title}</h3>
-          <p className="text-sm text-dragon-gray">{episode.host}</p>
         </div>
       </div>
       

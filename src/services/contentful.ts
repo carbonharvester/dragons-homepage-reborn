@@ -1,4 +1,3 @@
-
 import { createClient } from 'contentful';
 
 // Contentful client setup
@@ -57,8 +56,6 @@ export interface ContentfulPodcastEpisode {
         };
       };
     };
-    host: string;
-    guests?: string[];
   };
 }
 

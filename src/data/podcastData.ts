@@ -7,8 +7,6 @@ export interface PodcastEpisode {
   duration: string;
   date: string;
   image: string;
-  host: string;
-  guests?: string[];
 }
 
 export const podcastEpisodes: PodcastEpisode[] = [
@@ -19,9 +17,7 @@ export const podcastEpisodes: PodcastEpisode[] = [
     audioUrl: "https://example.com/podcast/ep1.mp3",
     duration: "45:32",
     date: "April 15, 2025",
-    image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png",
-    host: "Sarah Johnson",
-    guests: ["David Mwangi", "Elizabeth Wanjiru"]
+    image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png"
   },
   {
     id: "ep2",
@@ -30,9 +26,7 @@ export const podcastEpisodes: PodcastEpisode[] = [
     audioUrl: "https://example.com/podcast/ep2.mp3",
     duration: "38:45",
     date: "March 28, 2025",
-    image: "/lovable-uploads/9754806b-a818-4c3f-bb62-aeffe98e97f5.png",
-    host: "Sarah Johnson",
-    guests: ["Maya Thompson", "Alex Rodriguez", "Sophia Chen"]
+    image: "/lovable-uploads/9754806b-a818-4c3f-bb62-aeffe98e97f5.png"
   },
   {
     id: "ep3",
@@ -41,8 +35,6 @@ export const podcastEpisodes: PodcastEpisode[] = [
     audioUrl: "https://example.com/podcast/ep3.mp3",
     duration: "52:18",
     date: "March 10, 2025",
-    image: "/lovable-uploads/fc764836-7162-400c-a486-00fe9d99f975.png",
-    host: "Sarah Johnson",
-    guests: ["Dr. James Kariuki", "Wildlife Conservationist"]
+    image: "/lovable-uploads/fc764836-7162-400c-a486-00fe9d99f975.png"
   }
 ];
