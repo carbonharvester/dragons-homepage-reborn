@@ -14,15 +14,14 @@ const DesktopNavigation = () => {
     <nav className="hidden lg:flex items-center space-x-1">
       {/* Main navigation items */}
       <div className="relative group">
-        <Link 
-          to="/programs" 
+        <button
           className="flex items-center py-2 px-3 text-dragon-dark hover:text-dragon transition-colors"
           onMouseEnter={() => setProgramsMenuOpen(true)}
           onMouseLeave={() => setProgramsMenuOpen(false)}
         >
           <span>Programs</span>
           <ChevronDown size={16} className="ml-1" />
-        </Link>
+        </button>
         {programsMenuOpen && <ProgramsMenu />}
       </div>
       

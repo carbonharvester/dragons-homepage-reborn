@@ -5,10 +5,10 @@ import { programCategories } from '@/data/navigationData';
 
 const ProgramsMenu = () => {
   return (
-    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-screen max-w-7xl bg-white border-t border-gray-100 shadow-lg py-4 z-50 hidden lg:block">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="p-3">
+    <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-screen max-w-md bg-white border border-gray-200 rounded-md shadow-lg py-3 z-50 hidden lg:block">
+      <div className="px-4">
+        <div className="flex flex-col space-y-2">
+          <div className="py-2 border-b border-gray-100">
             <Link 
               to="/programs"
               className="text-dragon-dark font-medium text-base hover:text-dragon block"
@@ -16,8 +16,8 @@ const ProgramsMenu = () => {
               All Programs
             </Link>
           </div>
-          {programCategories.map((category) => (
-            <div key={category.title} className="p-3">
+          {programCategories.map((category, index) => (
+            <div key={category.title} className="py-2">
               <Link 
                 to={category.href}
                 className="text-dragon-dark font-medium text-base hover:text-dragon block"
