@@ -2,7 +2,7 @@
 import { WeekProps } from "./types";
 import { 
   MapPinned, Droplet, LandPlot, Leaf, School, Trees, 
-  Mountain, Handshake, Users, Building
+  Mountain, Handshake, Users, Building, TreeDeciduous
 } from "lucide-react";
 
 export const weeksData: WeekProps[] = [
@@ -262,7 +262,7 @@ export const weeksData: WeekProps[] = [
           "Learn about savanna ecosystems",
           "Evening stargazing activity"
         ],
-        icon: Trees
+        icon: TreeDeciduous
       },
       {
         day: "Sunday",
