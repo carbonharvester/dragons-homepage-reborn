@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -55,8 +54,6 @@ const Programs = () => {
               
               {/* Enhanced introduction */}
               <div className="mt-8 mb-12 bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto text-left">
-                <h3 className="text-2xl font-bold text-dragon-dark mb-4">Why Our African Programs Are Different</h3>
-                
                 <p className="mb-4">
                   At Kapes, we believe that educational travel should be transformative, ethical, and impactful. Our programs in Africa aren't just trips—they're life-changing journeys that connect students with the continent's rich cultures, resilient communities, and pressing global challenges.
                 </p>
