@@ -2,7 +2,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { CarouselContext, type CarouselProps } from "./carousel-context";
-import useEmblaCarousel, { type EmblaCarouselType } from "embla-carousel-react";
+import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
 
 const Carousel = React.forwardRef<
   HTMLDivElement,
@@ -30,7 +30,7 @@ const Carousel = React.forwardRef<
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
 
-    const onSelect = React.useCallback((api: EmblaCarouselType) => {
+    const onSelect = React.useCallback((api: NonNullable<typeof api>) => {
       if (!api) {
         return;
       }
