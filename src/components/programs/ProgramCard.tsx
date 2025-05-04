@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Route, Calendar } from "lucide-react";
+import { Route, Calendar, Users, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface ProgramCardProps {
@@ -15,6 +15,8 @@ interface ProgramCardProps {
     image: string;
     link: string;
     icon: React.ElementType;
+    ageGroup?: string; // Added optional age group property
+    location?: string; // Added optional location property
   };
 }
 
@@ -38,7 +40,7 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
       <CardContent className="p-6 flex-grow flex flex-col">
         <h3 className="text-xl md:text-xl font-bold mb-3 text-dragon-dark">{program.title}</h3>
         <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
-        <div className="flex justify-between text-sm text-dragon-gray mb-4">
+        <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2">
           <div className="flex items-center">
             <Route size={16} className="mr-1" />
             <span>{program.duration}</span>
@@ -47,6 +49,18 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
             <Calendar size={16} className="mr-1" />
             <span>{program.season}</span>
           </div>
+          {program.ageGroup && (
+            <div className="flex items-center">
+              <Users size={16} className="mr-1" />
+              <span>{program.ageGroup}</span>
+            </div>
+          )}
+          {program.location && (
+            <div className="flex items-center">
+              <MapPin size={16} className="mr-1" />
+              <span>{program.location}</span>
+            </div>
+          )}
         </div>
         <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
           <Link to={program.link}>Learn More</Link>
