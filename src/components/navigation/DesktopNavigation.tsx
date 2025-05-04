@@ -13,11 +13,13 @@ const DesktopNavigation = () => {
   return (
     <nav className="hidden lg:flex items-center space-x-1">
       {/* Main navigation items */}
-      <div className="relative group">
+      <div 
+        className="relative group"
+        onMouseEnter={() => setProgramsMenuOpen(true)}
+        onMouseLeave={() => setProgramsMenuOpen(false)}
+      >
         <button
           className="flex items-center py-2 px-3 text-dragon-dark hover:text-dragon transition-colors"
-          onMouseEnter={() => setProgramsMenuOpen(true)}
-          onMouseLeave={() => setProgramsMenuOpen(false)}
         >
           <span>Programs</span>
           <ChevronDown size={16} className="ml-1" />
@@ -29,11 +31,13 @@ const DesktopNavigation = () => {
         About Us
       </Link>
       
-      <div className="relative group">
+      <div 
+        className="relative group"
+        onMouseEnter={() => setResourcesMenuOpen(true)}
+        onMouseLeave={() => setResourcesMenuOpen(false)}
+      >
         <button
           className="flex items-center py-2 px-3 text-dragon-dark hover:text-dragon transition-colors"
-          onMouseEnter={() => setResourcesMenuOpen(true)}
-          onMouseLeave={() => setResourcesMenuOpen(false)}
         >
           <span>Resources</span>
           <ChevronDown size={16} className="ml-1" />
