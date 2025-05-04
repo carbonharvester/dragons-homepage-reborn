@@ -19,7 +19,7 @@ export const tripDetails = [
   },
   {
     label: "Group Size",
-    value: "10-15 Students",
+    value: "12-28 Students",
     icon: Users
   },
   {
