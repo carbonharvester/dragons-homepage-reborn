@@ -4,7 +4,7 @@ import { createClient } from 'contentful';
 // Contentful client setup
 export const contentfulClient = createClient({
   space: process.env.CONTENTFUL_SPACE_ID || 'qz62f406e9mz',
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || 'YOUR_ACCESS_TOKEN',
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || 'CFPAT-PwZhyp7T2W3Q4qcJ1zGOxl0-hKs-NVP9MgIzxDV2Kvw',
 });
 
 // Blog post type definition matching Contentful content model
