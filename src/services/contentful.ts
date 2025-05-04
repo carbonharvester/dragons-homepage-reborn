@@ -3,7 +3,7 @@ import { createClient } from 'contentful';
 
 // Contentful client setup
 export const contentfulClient = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID || 'YOUR_SPACE_ID',
+  space: process.env.CONTENTFUL_SPACE_ID || 'qz62f406e9mz',
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN || 'YOUR_ACCESS_TOKEN',
 });
 
@@ -67,7 +67,7 @@ export const getAllBlogPosts = async (): Promise<ContentfulBlogPost[]> => {
   try {
     const entries = await contentfulClient.getEntries({
       content_type: 'blogPost',
-      order: '-fields.date',
+      order: ['-fields.date'],
     });
     return entries.items as unknown as ContentfulBlogPost[];
   } catch (error) {
@@ -101,7 +101,7 @@ export const getAllPodcastEpisodes = async (): Promise<ContentfulPodcastEpisode[
   try {
     const entries = await contentfulClient.getEntries({
       content_type: 'podcastEpisode',
-      order: '-fields.date',
+      order: ['-fields.date'],
     });
     return entries.items as unknown as ContentfulPodcastEpisode[];
   } catch (error) {
