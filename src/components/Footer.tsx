@@ -65,15 +65,17 @@ const Footer = () => {
               <li className="text-gray-300">info@kapesadventures.com</li>
               <li className="mt-4">
                 <a 
-                  href="https://calendly.com/kapes-adventures/30min"
+                  href="https://calendly.com/kapesuniforms/discoverymeeting"
                   className="text-gray-300 hover:text-white transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Schedule Consultation
                 </a>
               </li>
               <li className="mt-2">
                 <a 
-                  href="https://form.typeform.com/to/example" 
+                  href="https://form.typeform.com/to/rtxmvp4L" 
                   className="text-gray-300 hover:text-white transition-colors"
                   target="_blank"
                   rel="noopener noreferrer"
