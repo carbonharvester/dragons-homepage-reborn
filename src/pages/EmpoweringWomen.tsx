@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,7 +6,6 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Route, Calendar, Map, Users, GraduationCap, Award, Heart } from "lucide-react";
-import ProgramBrochure from "@/components/ProgramBrochure";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import TripHero from "@/components/trip/TripHero";
 import TripGallery from "@/components/trip/TripGallery";
@@ -312,9 +310,6 @@ const EmpoweringWomen = () => {
                 <div className="border-t border-gray-200 pt-8 mt-8">
                   <h2 className="text-2xl font-bold text-dragon-dark mb-6">Ready to Make a Difference?</h2>
                   <div className="flex flex-wrap gap-4">
-                    <ProgramBrochure
-                      program={programData}
-                    />
                     <CalendlyEmbed
                       url="https://calendly.com/kapesuniforms/discoverymeeting"
                       text="Schedule a Consultation"
