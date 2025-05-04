@@ -16,9 +16,9 @@ const FAQ = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-dragon-light py-16">
+        <section className="bg-dragon-beige py-16">
           <div className="container-wide">
-            <h1 className="text-4xl md:text-5xl font-bold text-dragon-dark mb-4">Frequently Asked Questions</h1>
+            <h1 className="text-4xl md:text-5xl font-academy text-dragon-dark mb-4">Frequently Asked Questions</h1>
             <p className="text-lg text-dragon-gray max-w-3xl">
               Find answers to the most common questions about our programs, travel logistics, and experiences.
             </p>
@@ -29,7 +29,7 @@ const FAQ = () => {
         <section className="py-16">
           <div className="container-wide max-w-4xl">
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-dragon-dark mb-6">Program Questions</h2>
+              <h2 className="text-2xl font-academy text-dragon-dark mb-6">Program Questions</h2>
               <Accordion type="single" collapsible className="w-full space-y-4">
                 <AccordionItem value="item-1" className="border rounded-lg p-2">
                   <AccordionTrigger className="text-left font-medium text-dragon-dark">
@@ -61,7 +61,7 @@ const FAQ = () => {
             </div>
             
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-dragon-dark mb-6">Travel & Logistics</h2>
+              <h2 className="text-2xl font-academy text-dragon-dark mb-6">Travel & Logistics</h2>
               <Accordion type="single" collapsible className="w-full space-y-4">
                 <AccordionItem value="item-4" className="border rounded-lg p-2">
                   <AccordionTrigger className="text-left font-medium text-dragon-dark">
@@ -93,7 +93,7 @@ const FAQ = () => {
             </div>
             
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-dragon-dark mb-6">Program Details</h2>
+              <h2 className="text-2xl font-academy text-dragon-dark mb-6">Program Details</h2>
               <Accordion type="single" collapsible className="w-full space-y-4">
                 <AccordionItem value="item-7" className="border rounded-lg p-2">
                   <AccordionTrigger className="text-left font-medium text-dragon-dark">
@@ -125,16 +125,13 @@ const FAQ = () => {
             </div>
             
             <div className="text-center mt-16">
-              <h3 className="text-xl font-bold text-dragon-dark mb-4">Still have questions?</h3>
+              <h3 className="text-xl font-academy text-dragon-dark mb-4">Still have questions?</h3>
               <p className="text-dragon-gray mb-6">
                 Contact us directly and our team will be happy to help you.
               </p>
-              <div className="flex justify-center gap-4">
+              <div className="flex justify-center">
                 <a href="mailto:info@kapesadventures.com" className="btn-secondary">
                   Email Us
-                </a>
-                <a href="https://calendly.com/kapesuniforms/discoverymeeting" className="btn-primary" target="_blank" rel="noopener noreferrer">
-                  Schedule a Call
                 </a>
               </div>
             </div>

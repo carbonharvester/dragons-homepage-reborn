@@ -10,7 +10,7 @@ const CultureSection = () => {
     <section className="py-16">
       <div className="container-wide">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-dragon-dark mb-8">Rich Cultural Heritage</h2>
+          <h2 className="text-3xl font-bold text-dragon-dark mb-8 font-academy">Rich Cultural Heritage</h2>
           
           <div className="flex flex-col md:flex-row gap-8 mb-12">
             <div className="md:w-1/2">
@@ -25,7 +25,7 @@ const CultureSection = () => {
             </div>
             
             <div className="md:w-1/2 space-y-4 text-dragon-gray">
-              <h3 className="text-xl font-bold text-dragon-dark">Cultural Highlights</h3>
+              <h3 className="text-xl font-bold text-dragon-dark font-academy">Cultural Highlights</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-dragon mr-2">•</span>
@@ -47,10 +47,10 @@ const CultureSection = () => {
             </div>
           </div>
           
-          <div className="bg-dragon-light p-6 rounded-lg mb-8">
+          <div className="bg-dragon-beige p-6 rounded-lg mb-8 border border-dragon-sand">
             <div className="flex items-center mb-4">
               <BookOpen className="h-6 w-6 text-dragon mr-2" />
-              <h3 className="text-xl font-bold text-dragon-dark">Did you know?</h3>
+              <h3 className="text-xl font-bold text-dragon-dark font-academy">Did you know?</h3>
             </div>
             <p className="text-dragon-gray">
               Kenya's official languages are English and Swahili, but over 60 languages are spoken throughout the country. Many Kenyans speak at least three languages: their native ethnic language, Swahili, and English.

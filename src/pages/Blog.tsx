@@ -36,7 +36,7 @@ const BlogHome = () => {
         <section className="bg-dragon-beige py-12 mb-16">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-serif font-bold text-dragon-dark mb-6">
+              <h1 className="text-4xl md:text-5xl font-academy text-dragon-dark mb-6">
                 Kapes Adventures Blog
               </h1>
               <p className="text-lg text-dragon-gray mb-6">
@@ -59,7 +59,7 @@ const BlogHome = () => {
             {/* Featured post */}
             {featuredPost && (
               <section className="container-wide mb-16">
-                <h2 className="text-2xl font-serif font-bold text-dragon-dark mb-8 border-b border-dragon-sand pb-4">
+                <h2 className="text-2xl font-academy text-dragon-dark mb-8 border-b border-dragon-sand pb-4">
                   Featured Article
                 </h2>
                 <div className="bg-white rounded-lg overflow-hidden shadow-md">
@@ -81,7 +81,7 @@ const BlogHome = () => {
                           <span>{featuredPost.fields.date}</span>
                         </div>
                       </div>
-                      <h3 className="text-2xl md:text-3xl font-serif font-bold text-dragon-dark mb-4">
+                      <h3 className="text-2xl md:text-3xl font-academy text-dragon-dark mb-4">
                         {featuredPost.fields.title}
                       </h3>
                       <p className="text-dragon-gray mb-6">
@@ -103,7 +103,7 @@ const BlogHome = () => {
             {/* Recent posts */}
             {recentPosts.length > 0 && (
               <section className="container-wide mb-16">
-                <h2 className="text-2xl font-serif font-bold text-dragon-dark mb-8 border-b border-dragon-sand pb-4">
+                <h2 className="text-2xl font-academy text-dragon-dark mb-8 border-b border-dragon-sand pb-4">
                   Recent Articles
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -123,7 +123,7 @@ const BlogHome = () => {
                           </span>
                           <span className="text-dragon-gray text-sm">{post.fields.readTime || "5 min read"}</span>
                         </div>
-                        <h3 className="text-xl font-serif font-bold text-dragon-dark mb-3">
+                        <h3 className="text-xl font-academy text-dragon-dark mb-3">
                           {post.fields.title}
                         </h3>
                         <p className="text-dragon-gray text-sm mb-4 line-clamp-3">
@@ -150,7 +150,7 @@ const BlogHome = () => {
         {/* Newsletter subscription */}
         <section className="bg-dragon-beige py-12">
           <div className="container-wide max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-dragon-dark mb-4">
+            <h2 className="text-2xl md:text-3xl font-academy text-dragon-dark mb-4">
               Subscribe to Our Newsletter
             </h2>
             <p className="text-dragon-gray mb-8 max-w-2xl mx-auto">
