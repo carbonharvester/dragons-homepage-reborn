@@ -14,11 +14,8 @@ import ProgramSidebar from "@/components/empowering-women/ProgramSidebar";
 import ProgramCTA from "@/components/empowering-women/ProgramCTA";
 import TripHighlightsWrapper from "@/components/empowering-women/TripHighlightsWrapper";
 
-// Import data
-import { 
-  tripItinerary, 
-  galleryImages 
-} from "@/components/empowering-women/ProgramData";
+// Import data from new location
+import { tripItinerary, galleryImages } from "@/components/empowering-women/data";
 
 const EmpoweringWomen = () => {
   return (

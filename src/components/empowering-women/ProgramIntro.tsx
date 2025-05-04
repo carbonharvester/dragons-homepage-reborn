@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Heart } from 'lucide-react';
+import { programData } from './data';
 
 const ProgramIntro = () => {
   return (
@@ -19,12 +20,9 @@ const ProgramIntro = () => {
       
       <h2 className="text-2xl font-bold text-dragon-dark mt-8 mb-4">Program Objectives</h2>
       <ul className="list-disc pl-5 space-y-2">
-        <li>Experience the daily challenges of rural Kenyan women (e.g., water walks) to build empathy and global awareness</li>
-        <li>Learn about Zawadisha's microloan program and its impact through home visits and storytelling</li>
-        <li>Engage in cultural activities like crafting and dancing to understand local traditions</li>
-        <li>Support human-wildlife coexistence through practical conservation projects</li>
-        <li>Contribute to community projects, reinforcing Kapes' commitment to impact</li>
-        <li>Participate in a safari and hike to connect with Kenya's natural beauty</li>
+        {programData.goals.map((goal, index) => (
+          <li key={index}>{goal}</li>
+        ))}
       </ul>
 
       <div className="bg-dragon-beige p-6 rounded-lg my-8">

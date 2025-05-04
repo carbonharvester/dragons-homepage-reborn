@@ -1,7 +1,7 @@
 
 import React from 'react';
 import TripHighlights from '@/components/trip/TripHighlights';
-import { tripHighlights } from './ProgramData';
+import { tripHighlights } from './data';
 
 const TripHighlightsWrapper = () => {
   // Convert the simple string emoji icons to JSX elements
