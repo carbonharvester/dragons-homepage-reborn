@@ -95,7 +95,7 @@ const Programs = () => {
               <TabsContent value="school-trips" className="mt-8">
                 <div className="max-w-4xl mx-auto">
                   <h3 className="text-2xl font-bold mb-4 text-dragon-dark">School Trips</h3>
-                  <p className="mb-6 text-lg">Our school trips offer 7/8 day immersive experiences designed to complement your curriculum and provide students with hands-on learning opportunities focused on specific themes and projects.</p>
+                  <p className="mb-6 text-lg">Our school trips offer 7-8 day immersive experiences designed to complement your curriculum and provide students with hands-on learning opportunities focused on specific themes and projects.</p>
                   
                   <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
                     <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
