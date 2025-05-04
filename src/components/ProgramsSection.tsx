@@ -72,9 +72,14 @@ const ProgramsSection = () => {
               Our Summer Abroad programs offer 3-4 week immersive experiences for students seeking 
               to develop skills, explore interests, and make meaningful contributions.
             </p>
-            <Button className="btn-primary" asChild>
-              <Link to="/summer-abroad">View All Summer Programs</Link>
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button className="btn-primary" asChild>
+                <Link to="/summer-abroad">View All Summer Programs</Link>
+              </Button>
+              <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
+                <Link to="/partner-with-us">Apply Now</Link>
+              </Button>
+            </div>
           </div>
         </div>
 
@@ -90,9 +95,14 @@ const ProgramsSection = () => {
               Adult Programs are perfect for individuals or groups looking to combine purposeful 
               travel with personal or professional development in Kenya.
             </p>
-            <Button className="btn-primary" asChild>
-              <Link to="/adult-programs">View All Adult Programs</Link>
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button className="btn-primary" asChild>
+                <Link to="/adult-programs">View All Adult Programs</Link>
+              </Button>
+              <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
+                <Link to="/partner-with-us">Apply Now</Link>
+              </Button>
+            </div>
           </div>
         </div>
 

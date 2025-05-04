@@ -12,9 +12,10 @@ interface TripDetailProps {
 
 interface TripDetailsCardProps {
   tripDetails: TripDetailProps[];
+  isSchoolTrip?: boolean;
 }
 
-const TripDetailsCard = ({ tripDetails }: TripDetailsCardProps) => {
+const TripDetailsCard = ({ tripDetails, isSchoolTrip = false }: TripDetailsCardProps) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 h-fit">
       <h3 className="text-xl font-bold mb-4 text-dragon-dark border-b border-gray-200 pb-2">Trip Details</h3>
@@ -33,9 +34,11 @@ const TripDetailsCard = ({ tripDetails }: TripDetailsCardProps) => {
       </div>
       
       <div className="mt-6 space-y-4">
-        <Button className="w-full bg-dragon hover:bg-dragon-dark" asChild>
-          <Link to="/partner-with-us">Apply Now</Link>
-        </Button>
+        {!isSchoolTrip && (
+          <Button className="w-full bg-dragon hover:bg-dragon-dark" asChild>
+            <Link to="/partner-with-us">Apply Now</Link>
+          </Button>
+        )}
         <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon-beige" asChild>
           <a 
             href="https://calendly.com/kapes-adventures/30min" 
