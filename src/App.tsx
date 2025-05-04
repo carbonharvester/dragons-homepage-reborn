@@ -26,6 +26,7 @@ import HealthAndSafety from "./pages/HealthAndSafety";
 import DiscoverKenya from "./pages/DiscoverKenya";
 import FeedingTheFuture from "./pages/FeedingTheFuture";
 import FeedingTheFutureItinerary from "./pages/FeedingTheFutureItinerary";
+import Programs from "./pages/Programs";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const AppRoutes = () => (
     <Route path="/summer-abroad" element={<SummerAbroad />} />
     <Route path="/multi-year-curriculum" element={<MultiYearCurriculum />} />
     <Route path="/adult-programs" element={<AdultPrograms />} />
+    <Route path="/programs" element={<Programs />} />
     <Route path="/programs/food-for-education" element={<FoodForEducation />} />
     <Route path="/programs/community-conservation" element={<CommunityConservation />} />
     <Route path="/programs/empowering-women" element={<EmpoweringWomen />} />
