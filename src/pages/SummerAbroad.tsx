@@ -158,13 +158,13 @@ const SummerAbroad = () => {
                   <p>Work alongside experts in fields like conservation, education, and creative media.</p>
                 </div>
               </div>
-              <Button className="btn-primary" asChild>
+              <Button className="bg-dragon hover:bg-dragon-dark text-white" asChild>
                 <a 
                   href="https://form.typeform.com/to/rtxmvp4L" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  Apply Now
+                  Join Our Next Adventure
                 </a>
               </Button>
             </div>
