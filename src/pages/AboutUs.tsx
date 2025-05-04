@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -5,6 +6,7 @@ import SEO from '@/components/SEO';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Calendar, Users, Globe } from 'lucide-react';
+
 const AboutUs = () => {
   return <div className="min-h-screen flex flex-col">
       <SEO title="About Us" description="From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters." keywords="Mission Kapes, educational travel, student trips, sustainability, Africa, Kenya" />
@@ -19,6 +21,24 @@ const AboutUs = () => {
             <p className="text-lg md:text-xl text-dragon-gray max-w-3xl mx-auto mb-10">
               From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters.
             </p>
+          </div>
+        </section>
+
+        {/* Image Banner Section */}
+        <section className="relative w-full overflow-hidden">
+          <div className="aspect-[16/9] md:aspect-[21/9] w-full">
+            <img 
+              src="/lovable-uploads/f40a88d4-343d-483d-a375-0f63c5154294.png" 
+              alt="Students in Kenya celebrating together" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full py-8">
+            <div className="container-wide">
+              <p className="text-white text-lg md:text-xl font-medium">
+                Connecting students with communities and making a difference
+              </p>
+            </div>
           </div>
         </section>
 
