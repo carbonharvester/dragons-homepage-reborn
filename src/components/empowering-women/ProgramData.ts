@@ -1,8 +1,7 @@
-
 import { Calendar, Route, Map, Users, GraduationCap, Award } from 'lucide-react';
 
 export const programData = {
-  title: "Kapes Zawadisha Immersion",
+  title: "Exploring Women's Empowerment",
   description: "An 8-day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program.",
   duration: "8 Days",
   season: "Year Round",
