@@ -43,7 +43,6 @@ const Footer = () => {
               <li><Link to="/summer-abroad" className="text-gray-300 hover:text-white transition-colors">Summer Abroad</Link></li>
               <li><Link to="/multi-year-curriculum" className="text-gray-300 hover:text-white transition-colors">Multi-Year Curriculum</Link></li>
               <li><Link to="/adult-programs" className="text-gray-300 hover:text-white transition-colors">Adult Programs</Link></li>
-              <li><Link to="/podcast" className="text-gray-300 hover:text-white transition-colors">Podcast</Link></li>
             </ul>
           </div>
           
@@ -52,6 +51,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link></li>
+              <li><Link to="/podcast" className="text-gray-300 hover:text-white transition-colors">Podcast</Link></li>
               <li><Link to="/discover-kenya" className="text-gray-300 hover:text-white transition-colors">Discover Kenya</Link></li>
               <li><Link to="/health-and-safety" className="text-gray-300 hover:text-white transition-colors">Health & Safety</Link></li>
               <li><Link to="/partner-with-us" className="text-gray-300 hover:text-white transition-colors">Partner with Us</Link></li>
