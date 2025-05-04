@@ -21,7 +21,7 @@ const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
       {isPlaying ? (
         <div className="aspect-video w-full">
           <iframe 
-            src={`https://player.vimeo.com/video/${videoId}?h=c4bc497777&autoplay=1`} 
+            src={`https://player.vimeo.com/video/${videoId}?autoplay=1`} 
             className="w-full h-full" 
             frameBorder="0" 
             allow="autoplay; fullscreen; picture-in-picture" 
@@ -43,7 +43,7 @@ const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
                 </Button>
               </div>
               <iframe 
-                src={`https://player.vimeo.com/video/${videoId}?h=c4bc497777&background=1`} 
+                src={`https://player.vimeo.com/video/${videoId}?background=1`} 
                 className="w-full h-full pointer-events-none" 
                 frameBorder="0" 
                 title={`${title} background video`}

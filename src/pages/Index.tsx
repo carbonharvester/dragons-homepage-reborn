@@ -66,7 +66,11 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <VideoSection />
+        <VideoSection 
+          videoId="922795693" 
+          title="Camp Kapes: Our Journey"
+          description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences."
+        />
         <div className="py-16 bg-white">
           <div className="container-wide text-center">
             <h2 className="section-heading">Experience Learning Through Adventure</h2>
