@@ -1,5 +1,5 @@
 
-import { Droplets, Home, Paintbrush, Utensils, Paw, Shield, Sprout, Award } from 'lucide-react';
+import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield, Sprout, Award } from 'lucide-react';
 
 export const tripHighlights = [
   {
@@ -23,7 +23,7 @@ export const tripHighlights = [
     description: "Learn to cook authentic Kenyan dishes with local women using fresh, local ingredients."
   },
   {
-    icon: Paw,
+    icon: Mountain,
     title: "Tsavo Safari",
     description: "Experience Kenya's magnificent wildlife while learning about human-wildlife coexistence challenges."
   },
