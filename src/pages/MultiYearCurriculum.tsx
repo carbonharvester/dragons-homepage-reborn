@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,7 +8,6 @@ import { multiYearProgram } from '@/data/programsData';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { School, Users, GraduationCap } from 'lucide-react';
-
 const MultiYearCurriculumPage = () => {
   // Scroll to top on page load
   useEffect(() => {
@@ -18,23 +16,14 @@ const MultiYearCurriculumPage = () => {
 
   // Add a random query parameter to force image reload
   const imgTimestamp = Date.now();
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      <SEO 
-        title="Multi-Year Curriculum"
-        description="A progressive three-year educational travel program that builds global citizenship skills through immersive experiences in Africa."
-        keywords="multi-year curriculum, educational travel, global citizenship, student development, progressive learning, africa travel"
-      />
+  return <div className="min-h-screen flex flex-col">
+      <SEO title="Multi-Year Curriculum" description="A progressive three-year educational travel program that builds global citizenship skills through immersive experiences in Africa." keywords="multi-year curriculum, educational travel, global citizenship, student development, progressive learning, africa travel" />
       <Header />
       <main>
         {/* Hero Section */}
-        <section 
-          className="relative bg-cover bg-center py-32"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop&t=${imgTimestamp}')`
-          }}
-        >
+        <section className="relative bg-cover bg-center py-32" style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop&t=${imgTimestamp}')`
+      }}>
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
           <div className="container-wide relative z-10">
             <div className="max-w-3xl text-white">
@@ -42,11 +31,7 @@ const MultiYearCurriculumPage = () => {
               <p className="text-xl mb-8">
                 A progressive educational journey that builds skills, confidence, and global citizenship over three transformative years.
               </p>
-              <Button className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400 px-6 py-3 text-lg">
-                <Link to="/partner-with-us" className="flex items-center">
-                  Partner With Us
-                </Link>
-              </Button>
+              
             </div>
           </div>
         </section>
@@ -210,8 +195,6 @@ const MultiYearCurriculumPage = () => {
         <TripCTA />
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default MultiYearCurriculumPage;
