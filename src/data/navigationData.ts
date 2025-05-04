@@ -4,13 +4,40 @@ export const programCategories = [
     title: "School Trips",
     href: "/school-trips",
     description: "Experiential learning trips for K-12 schools.",
-    programs: [],
+    programs: [
+      {
+        title: "Food For Education",
+        href: "/programs/food-for-education",
+        description: "Address food security challenges through sustainable agriculture initiatives.",
+      },
+      {
+        title: "Community Conservation",
+        href: "/programs/community-conservation",
+        description: "Protect endangered ecosystems with local conservation experts.",
+      },
+      {
+        title: "Empowering Young Women",
+        href: "/programs/empowering-women",
+        description: "Support women-led initiatives focusing on education and leadership.",
+      },
+    ],
   },
   {
     title: "Summer Abroad",
     href: "/summer-abroad",
     description: "Immersive summer programs in Kenya for students.",
-    programs: [],
+    programs: [
+      {
+        title: "Feeding the Future",
+        href: "/programs/feeding-the-future",
+        description: "Address food security through sustainable agriculture in rural communities.",
+      },
+      {
+        title: "Capturing Kenya",
+        href: "/programs/capturing-kenya",
+        description: "Develop photography skills while documenting Kenya's landscapes and cultures.",
+      },
+    ],
   },
   {
     title: "Multi-Year Curriculum",
@@ -22,7 +49,18 @@ export const programCategories = [
     title: "Adult Programs",
     href: "/adult-programs",
     description: "Educational travel experiences designed for adults.",
-    programs: [],
+    programs: [
+      {
+        title: "Permaculture Design Course",
+        href: "/programs/permaculture-design-course",
+        description: "Learn permaculture principles while contributing to sustainable food systems.",
+      },
+      {
+        title: "Safari & Conservation",
+        href: "/programs/safari-sustainability",
+        description: "Combine classic safari experiences with hands-on conservation work.",
+      },
+    ],
   },
 ];
 
