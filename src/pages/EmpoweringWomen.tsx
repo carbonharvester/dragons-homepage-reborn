@@ -49,6 +49,11 @@ const EmpoweringWomen = () => {
       description: "Create elephant dung paper, beaded bracelets, and woven baskets with the Neema Women's Group."
     },
     {
+      icon: <div className="text-white text-2xl">🍲</div>,
+      title: "Traditional Cooking",
+      description: "Learn to cook authentic Kenyan dishes with local women using fresh, local ingredients."
+    },
+    {
       icon: <div className="text-white text-2xl">🦁</div>,
       title: "Tsavo Safari",
       description: "Experience Kenya's magnificent wildlife while learning about human-wildlife coexistence challenges."
@@ -117,8 +122,8 @@ const EmpoweringWomen = () => {
       activities: [
         "Learn traditional Taita or Duruma dance with the Neema Women's Group",
         "Create elephant dung paper, beaded bracelets from recycled magazines, and woven baskets",
-        "Understand the role of crafts in income generation and Zawadisha's Social Good Marketplace",
-        "Evening preparation for community showcase presentations"
+        "Traditional cooking lesson with local ingredients and preparation methods",
+        "Enjoy self-prepared dinner with the Neema Women's Group"
       ]
     },
     {
@@ -133,9 +138,9 @@ const EmpoweringWomen = () => {
     },
     {
       day: "Day 7 (Thursday)",
-      title: "Community Showcase",
+      title: "Reflection & Farewell",
       activities: [
-        "Host community showcase presenting learnings and performing learned dances",
+        "Morning cooking class to learn traditional Kenyan recipes",
         "Receive Kapes Cultural Impact Certificate during farewell ceremony",
         "Farewell dinner with the Neema Women's Group",
         "Final evening reflection and journaling on the trip experience"
@@ -266,8 +271,7 @@ const EmpoweringWomen = () => {
                       <p className="text-dragon-gray m-0">
                         Each student's trip fee directly funds a Zawadisha microloan for a woman in the Tsavo community. 
                         Your participation provides items like solar lamps, rainwater tanks, or clean cookstoves, 
-                        creating immediate positive change. We maintain full transparency with 80% of fees funding community 
-                        projects and program operations.
+                        creating immediate positive change.
                       </p>
                     </div>
                   </div>
