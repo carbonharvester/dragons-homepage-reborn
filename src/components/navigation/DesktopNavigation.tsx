@@ -14,7 +14,7 @@ const DesktopNavigation = () => {
     <nav className="hidden lg:flex items-center space-x-1">
       {/* Main navigation items */}
       <div 
-        className="relative group"
+        className="relative"
         onMouseEnter={() => setProgramsMenuOpen(true)}
         onMouseLeave={() => setProgramsMenuOpen(false)}
       >
@@ -24,6 +24,8 @@ const DesktopNavigation = () => {
           <span>Programs</span>
           <ChevronDown size={16} className="ml-1" />
         </button>
+        {/* Invisible bridge to prevent gap between button and menu */}
+        <div className="absolute h-4 w-full left-0 top-full"></div>
         {programsMenuOpen && <ProgramsMenu />}
       </div>
       
@@ -32,7 +34,7 @@ const DesktopNavigation = () => {
       </Link>
       
       <div 
-        className="relative group"
+        className="relative"
         onMouseEnter={() => setResourcesMenuOpen(true)}
         onMouseLeave={() => setResourcesMenuOpen(false)}
       >
@@ -42,6 +44,8 @@ const DesktopNavigation = () => {
           <span>Resources</span>
           <ChevronDown size={16} className="ml-1" />
         </button>
+        {/* Invisible bridge to prevent gap between button and menu */}
+        <div className="absolute h-4 w-full left-0 top-full"></div>
         {resourcesMenuOpen && <ResourcesMenu />}
       </div>
       
