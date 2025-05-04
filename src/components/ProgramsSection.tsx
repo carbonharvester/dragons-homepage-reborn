@@ -4,6 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ProgramCard from './programs/ProgramCard';
 import MultiYearCurriculum from './programs/MultiYearCurriculum';
+import { useIsMobile } from "@/hooks/use-mobile";
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext
+} from "@/components/ui/carousel";
 import { 
   programCategories, 
   schoolTrips, 
@@ -14,6 +22,38 @@ import {
 
 const ProgramsSection = () => {
   const [activeCategory, setActiveCategory] = useState("school-trips");
+  const isMobile = useIsMobile();
+  
+  // Helper function to render program cards in either grid or carousel
+  const renderProgramCards = (programs) => {
+    if (isMobile) {
+      return (
+        <Carousel className="w-full px-4">
+          <CarouselContent>
+            {programs.map((program, index) => (
+              <CarouselItem key={index} className="basis-full">
+                <div className="p-1">
+                  <ProgramCard program={program} />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex items-center justify-center mt-4">
+            <CarouselPrevious className="static mr-2 translate-y-0" />
+            <CarouselNext className="static ml-2 translate-y-0" />
+          </div>
+        </Carousel>
+      );
+    } else {
+      return (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {programs.map((program, index) => (
+            <ProgramCard key={index} program={program} />
+          ))}
+        </div>
+      );
+    }
+  };
   
   return (
     <section id="programs" className="py-20 bg-dragon-beige">
@@ -44,11 +84,7 @@ const ProgramsSection = () => {
 
         {/* School Trips Content */}
         <div className={`mt-8 ${activeCategory === "school-trips" ? "block" : "hidden"}`}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {schoolTrips.map((program, index) => (
-              <ProgramCard key={index} program={program} />
-            ))}
-          </div>
+          {renderProgramCards(schoolTrips)}
           <div className="text-center mt-8">
             <p className="max-w-3xl mx-auto mb-6 text-dragon-gray">
               Our School Trips program offers 5-7 day immersive experiences designed to complement your curriculum 
@@ -62,11 +98,7 @@ const ProgramsSection = () => {
 
         {/* Summer Abroad Content */}
         <div className={`mt-8 ${activeCategory === "summer-abroad" ? "block" : "hidden"}`}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-            {summerAbroad.map((program, index) => (
-              <ProgramCard key={index} program={program} />
-            ))}
-          </div>
+          {renderProgramCards(summerAbroad)}
           <div className="text-center mt-8">
             <p className="max-w-3xl mx-auto mb-6 text-dragon-gray">
               Our Summer Abroad programs offer 3-4 week immersive experiences for students seeking 
@@ -91,11 +123,7 @@ const ProgramsSection = () => {
 
         {/* Adult Programs Content */}
         <div className={`mt-8 ${activeCategory === "adult-trips" ? "block" : "hidden"}`}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-            {adultTrips.map((program, index) => (
-              <ProgramCard key={index} program={program} />
-            ))}
-          </div>
+          {renderProgramCards(adultTrips)}
           <div className="text-center mt-8">
             <p className="max-w-3xl mx-auto mb-6 text-dragon-gray">
               Adult Programs are perfect for individuals or groups looking to combine purposeful 
