@@ -25,7 +25,7 @@ const TripHero = ({ title, subtitle, category, imagePath }: TripHeroProps) => {
             {category}
           </div>
         </div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-academy-bold hero-heading mb-8">
           {title}
         </h1>
         <p className="text-xl md:text-2xl max-w-3xl mb-12">
