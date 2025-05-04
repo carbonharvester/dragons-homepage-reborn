@@ -1,9 +1,6 @@
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
-import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 interface YearData {
   title: string;
@@ -48,18 +45,6 @@ const MultiYearCurriculum = ({ data }: MultiYearCurriculumProps) => {
           <div className="mt-8">
             <h5 className="text-lg font-bold text-dragon-dark mb-3">Customize Your Curriculum</h5>
             <p className="mb-6">We work with you to design a program that fits your school's curriculum, values, and goals. Whether it's STEM, arts, or social justice, your travel curriculum will be unique.</p>
-            
-            <div className="flex flex-wrap gap-4 mt-6">
-              <Button className="btn-primary" asChild>
-                <Link to="/curriculum-guide">Learn More</Link>
-              </Button>
-              <CalendlyEmbed 
-                url="https://calendly.com/kapesuniforms/discoverymeeting"
-                text="Schedule Consultation"
-                variant="outline"
-                className="border-dragon text-dragon hover:bg-dragon hover:text-white"
-              />
-            </div>
           </div>
         </CardContent>
       </Card>

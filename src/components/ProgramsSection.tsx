@@ -149,11 +149,6 @@ const ProgramsSection = () => {
         {/* Multi-Year Curriculum Content */}
         <div className={`mt-8 ${activeCategory === "multi-year" ? "block" : "hidden"}`}>
           <MultiYearCurriculum data={multiYearProgram} />
-          <div className="text-center mt-8">
-            <Button className="btn-primary" asChild>
-              <Link to="/multi-year-curriculum">Learn More About Multi-Year Curriculum</Link>
-            </Button>
-          </div>
         </div>
       </div>
     </section>
