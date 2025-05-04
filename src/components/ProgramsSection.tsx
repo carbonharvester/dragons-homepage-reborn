@@ -77,7 +77,13 @@ const ProgramsSection = () => {
                 <Link to="/summer-abroad">View All Summer Programs</Link>
               </Button>
               <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                <Link to="/partner-with-us">Apply Now</Link>
+                <a 
+                  href="https://form.typeform.com/to/rtxmvp4L" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Apply Now
+                </a>
               </Button>
             </div>
           </div>
@@ -100,7 +106,13 @@ const ProgramsSection = () => {
                 <Link to="/adult-programs">View All Adult Programs</Link>
               </Button>
               <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                <Link to="/partner-with-us">Apply Now</Link>
+                <a 
+                  href="https://form.typeform.com/to/rtxmvp4L" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Apply Now
+                </a>
               </Button>
             </div>
           </div>

@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 interface TripCTAProps {
@@ -21,7 +20,13 @@ const TripCTA = ({ isSchoolTrip = false }: TripCTAProps) => {
       <div className="flex flex-wrap justify-center gap-4">
         {!isSchoolTrip && (
           <Button variant="secondary" size="lg" className="text-dragon-dark hover:bg-secondary/90" asChild>
-            <Link to="/partner-with-us">Apply Now</Link>
+            <a 
+              href="https://form.typeform.com/to/rtxmvp4L" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Apply Now
+            </a>
           </Button>
         )}
         <Button 

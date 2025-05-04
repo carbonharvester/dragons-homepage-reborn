@@ -36,7 +36,13 @@ const TripDetailsCard = ({ tripDetails, isSchoolTrip = false }: TripDetailsCardP
       <div className="mt-6 space-y-4">
         {!isSchoolTrip && (
           <Button className="w-full bg-dragon hover:bg-dragon-dark" asChild>
-            <Link to="/partner-with-us">Apply Now</Link>
+            <a 
+              href="https://form.typeform.com/to/rtxmvp4L" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Apply Now
+            </a>
           </Button>
         )}
         <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon-beige" asChild>

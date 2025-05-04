@@ -6,7 +6,6 @@ import SEO from '@/components/SEO';
 import { summerAbroad } from '@/data/programsData';
 import ProgramCard from '@/components/programs/ProgramCard';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import { Calendar, Users, MapPin } from "lucide-react";
 
@@ -98,7 +97,13 @@ const SummerAbroad = () => {
                 </div>
               </div>
               <Button className="btn-primary" asChild>
-                <Link to="/partner-with-us">Apply Now</Link>
+                <a 
+                  href="https://form.typeform.com/to/rtxmvp4L" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Apply Now
+                </a>
               </Button>
             </div>
           </div>

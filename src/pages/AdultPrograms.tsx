@@ -133,7 +133,13 @@ const AdultPrograms = () => {
                   className="btn-primary"
                 />
                 <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                  <Link to="/partner-with-us">Partner With Us</Link>
+                  <a 
+                    href="https://form.typeform.com/to/rtxmvp4L" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Apply Now
+                  </a>
                 </Button>
               </div>
             </div>
