@@ -26,10 +26,6 @@ const MobileMenu = ({
     }`}>
       <div className="container-wide py-4">
         <nav className="flex flex-col space-y-4">
-          <Link to="/programs" className="py-2 text-dragon-dark" onClick={toggleMenu}>
-            All Programs
-          </Link>
-          
           <div>
             <button 
               className="flex items-center justify-between w-full py-2 text-dragon-dark"
@@ -42,6 +38,9 @@ const MobileMenu = ({
             
             {mobileProgramsExpanded && (
               <div className="pl-4 mt-2 space-y-2 border-l-2 border-dragon-beige">
+                <Link to="/programs" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
+                  All Programs
+                </Link>
                 <Link to="/school-trips" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
                   School Trips
                 </Link>
@@ -86,17 +85,15 @@ const MobileMenu = ({
                 <Link to="/podcast" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
                   Podcast
                 </Link>
+                <Link to="/blog" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
+                  Blog
+                </Link>
+                <Link to="/partner-with-us" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
+                  Partner With Us
+                </Link>
               </div>
             )}
           </div>
-          
-          <Link to="/blog" className="py-2 text-dragon-dark" onClick={toggleMenu}>
-            Blog
-          </Link>
-          
-          <Link to="/partner-with-us" className="py-2 text-dragon-dark" onClick={toggleMenu}>
-            Partner With Us
-          </Link>
           
           <a 
             href="https://form.typeform.com/to/example" 

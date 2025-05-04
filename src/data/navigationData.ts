@@ -28,6 +28,11 @@ export const programCategories = [
 
 export const resourcePages = [
   {
+    title: "All Programs",
+    href: "/programs",
+    description: "Explore our full range of educational programs."
+  },
+  {
     title: "FAQ",
     href: "/faq",
     description: "Find answers to your questions about our programs and services."
