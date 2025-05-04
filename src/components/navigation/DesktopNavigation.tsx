@@ -26,6 +26,10 @@ const DesktopNavigation = () => {
         {programsMenuOpen && <ProgramsMenu />}
       </div>
       
+      <Link to="/podcast" className="py-2 px-3 text-dragon-dark hover:text-dragon transition-colors">
+        Podcast
+      </Link>
+      
       <Link to="/about" className="py-2 px-3 text-dragon-dark hover:text-dragon transition-colors">
         About Us
       </Link>

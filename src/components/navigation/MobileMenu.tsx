@@ -58,6 +58,10 @@ const MobileMenu = ({
             )}
           </div>
           
+          <Link to="/podcast" className="py-2 text-dragon-dark" onClick={toggleMenu}>
+            Podcast
+          </Link>
+          
           <Link to="/about" className="py-2 text-dragon-dark" onClick={toggleMenu}>
             About Us
           </Link>

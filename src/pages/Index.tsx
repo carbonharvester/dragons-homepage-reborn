@@ -6,6 +6,7 @@ import VideoSection from '@/components/VideoSection';
 import ProgramsSection from '@/components/ProgramsSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import BlogSection from '@/components/BlogSection';
+import PodcastSection from '@/components/PodcastSection';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -99,6 +100,7 @@ const Index = () => {
         </div>
         <ProgramsSection />
         <WhyChooseUs />
+        <PodcastSection />
         <BlogSection />
       </main>
       <Footer />
