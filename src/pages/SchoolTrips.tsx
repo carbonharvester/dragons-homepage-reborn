@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -18,7 +19,34 @@ const SchoolTrips = () => {
       <SEO title="School Trips" description="Immersive educational experiences that combine cultural engagement, wilderness exploration, and authentic learning opportunities for students." keywords="school trips, student travel, cultural engagement, wilderness exploration, educational travel, Africa, Kenya" />
       <Header />
       <main>
-        <section className="relative py-20 bg-white">
+        {/* Added hero section */}
+        <section className="relative h-[70vh] min-h-[500px] flex items-center">
+          <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format')] bg-cover bg-center">
+            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          </div>
+          
+          <div className="container-wide relative z-10 text-white">
+            <div className="max-w-3xl">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">School Trips</h1>
+              <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">
+                Transformative educational journeys designed for schools worldwide, offering students genuine cultural immersion, meaningful community engagement, and life-changing experiences beyond traditional tourism.
+              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <Button className="bg-dragon hover:bg-dragon-dark text-white" asChild>
+                  <a href="#programs">Explore Our Trips</a>
+                </Button>
+                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-dragon" asChild>
+                  <a href="https://calendly.com/kapesuniforms/discoverymeeting" target="_blank" rel="noopener noreferrer">
+                    Schedule a Consultation
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section className="py-12 bg-white">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center mb-16">
               <h1 className="text-4xl md:text-5xl font-academy text-dragon-dark mb-6">School Trips</h1>
@@ -77,7 +105,7 @@ const SchoolTrips = () => {
               </div>
             </div>
             
-            <h2 className="text-3xl font-academy text-dragon-dark text-center mb-8">Our School Trips</h2>
+            <h2 id="programs" className="text-3xl font-academy text-dragon-dark text-center mb-8">Our School Trips</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
               {schoolTrips.map((program, index) => <ProgramCard key={index} program={program} />)}
             </div>
