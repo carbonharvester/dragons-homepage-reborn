@@ -12,33 +12,23 @@ const AboutUs = () => {
       <SEO title="About Us" description="From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters." keywords="Mission Kapes, educational travel, student trips, sustainability, Africa, Kenya" />
       <Header />
       <main>
-        {/* Hero Section with Image */}
-        <section className="bg-dragon-beige py-20 md:py-32 relative">
-          <div className="container-wide text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-academy font-bold text-dragon-dark mb-6">
+        {/* Hero Section with Background Image */}
+        <section 
+          className="bg-dragon-dark py-20 md:py-32 relative bg-cover bg-center"
+          style={{ 
+            backgroundImage: `url('/lovable-uploads/f40a88d4-343d-483d-a375-0f63c5154294.png')`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+          }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+          <div className="container-wide text-center relative z-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-academy font-bold text-white mb-6">
               Our Story
             </h1>
-            <p className="text-lg md:text-xl text-dragon-gray max-w-3xl mx-auto mb-10">
+            <p className="text-lg md:text-xl text-white max-w-3xl mx-auto mb-10">
               From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters.
             </p>
-          </div>
-          
-          {/* Added Image to Hero Section */}
-          <div className="w-full overflow-hidden mt-6">
-            <div className="aspect-[16/9] md:aspect-[21/9] w-full">
-              <img 
-                src="/lovable-uploads/f40a88d4-343d-483d-a375-0f63c5154294.png" 
-                alt="Students in Kenya celebrating together" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="bg-gradient-to-t from-black/70 to-transparent w-full py-6">
-              <div className="container-wide">
-                <p className="text-white text-sm md:text-base font-medium">
-                  These are some of the students from Kirigu Primary School who received free school uniforms
-                </p>
-              </div>
-            </div>
           </div>
         </section>
 
