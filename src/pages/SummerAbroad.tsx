@@ -63,6 +63,68 @@ const SummerAbroad = () => {
           </div>
         </section>
 
+        {/* Enhanced Introduction Section */}
+        <section className="py-12 bg-dragon-beige">
+          <div className="container-wide">
+            <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-sm">
+              <h2 className="text-2xl md:text-3xl font-academy text-dragon-dark mb-4 text-center">
+                Transform Your Summer into an Adventure of a Lifetime
+              </h2>
+              
+              <p className="mb-6 text-dragon-gray">
+                Imagine waking up to the sounds of Kenya's wildlife, spending your days working alongside local communities on meaningful projects, and developing skills that will last a lifetime. Our summer programs aren't just trips—they're transformative journeys designed to challenge you, inspire you, and change the way you see the world.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div className="bg-dragon-beige p-6 rounded-lg">
+                  <h3 className="text-xl font-bold text-dragon mb-3">Not Your Average Summer Break</h3>
+                  <p>
+                    Forget about typical tourist experiences. You'll be fully immersed in Kenyan culture—living in local communities, learning from expert mentors, and contributing to projects with real-world impact. Whether you're helping implement sustainable farming techniques or documenting wildlife conservation efforts through photography, every day brings new challenges and discoveries.
+                  </p>
+                </div>
+                
+                <div className="bg-dragon-beige p-6 rounded-lg">
+                  <h3 className="text-xl font-bold text-dragon mb-3">Skills That Stand Out</h3>
+                  <p>
+                    Universities and employers are looking for more than just good grades. They want to see initiative, cross-cultural competence, and real-world problem-solving skills—exactly what you'll develop during our programs. You'll return home with a portfolio of work, leadership experience, and stories that will make your college applications and résumés truly stand out.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div className="bg-dragon-beige p-6 rounded-lg">
+                  <h3 className="text-xl font-bold text-dragon mb-3">Friends Across Continents</h3>
+                  <p>
+                    The bonds you'll form during these intense shared experiences don't end when the summer does. You'll connect with like-minded peers from around the world and build relationships with Kenyan community members that often last for years. Many of our alumni maintain these global friendships well into their university years and beyond.
+                  </p>
+                </div>
+                
+                <div className="bg-dragon-beige p-6 rounded-lg">
+                  <h3 className="text-xl font-bold text-dragon mb-3">Safety & Support</h3>
+                  <p>
+                    Adventure doesn't mean unnecessary risk. Our programs feature comprehensive safety protocols, 24/7 staff support, and carefully vetted accommodations. Parents can rest easy knowing that while you're pushing your boundaries, you're doing so within a framework designed with your wellbeing as the top priority.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <p className="font-bold text-dragon-dark text-lg mb-4">
+                  Ready to make this summer count? Explore our programs below and take the first step toward an experience that will change how you see yourself—and the world.
+                </p>
+                <Button className="btn-primary" asChild>
+                  <a 
+                    href="https://form.typeform.com/to/rtxmvp4L" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Apply Now
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="py-16 bg-white">
           <div className="container-wide">
             <div className="max-w-3xl mx-auto text-center mb-12">
