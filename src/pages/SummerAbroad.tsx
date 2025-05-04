@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Testimonials from '@/components/Testimonials';
 import SEO from '@/components/SEO';
 import { summerAbroad } from '@/data/programsData';
 import ProgramCard from '@/components/programs/ProgramCard';
@@ -104,8 +103,6 @@ const SummerAbroad = () => {
             </div>
           </div>
         </section>
-        
-        <Testimonials />
       </main>
       <Footer />
     </div>
