@@ -91,7 +91,7 @@ const ProgramsSection = () => {
               and provide students with hands-on learning focused on specific themes and projects.
             </p>
             <Button className="btn-primary" asChild>
-              <Link to="/school-trips">View All School Trip Programs</Link>
+              <Link to="/programs">Learn More About Our Programs</Link>
             </Button>
           </div>
         </div>
