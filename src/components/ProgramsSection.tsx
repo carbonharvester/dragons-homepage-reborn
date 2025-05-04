@@ -150,10 +150,6 @@ const ProgramsSection = () => {
         <div className={`mt-8 ${activeCategory === "multi-year" ? "block" : "hidden"}`}>
           <MultiYearCurriculum data={multiYearProgram} />
           <div className="text-center mt-8">
-            <p className="max-w-3xl mx-auto mb-6 text-dragon-gray">
-              Our Multi-Year Curriculum provides a comprehensive educational journey that builds upon 
-              itself year after year, creating a cohesive learning experience.
-            </p>
             <Button className="btn-primary" asChild>
               <Link to="/multi-year-curriculum">Learn More About Multi-Year Curriculum</Link>
             </Button>
