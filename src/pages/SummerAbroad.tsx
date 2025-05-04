@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -33,7 +32,7 @@ const SummerAbroad = () => {
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">Summer Abroad Programs</h1>
               <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">
-                Unforgettable summer experiences that combine adventure, learning, and positive impact in the beautiful landscapes of Kenya.
+                Unforgettable summer experiences that combine adventure, learning, and positive impact in the beautiful landscapes of Africa.
               </p>
               
               {/* Program Details - Similar to Capturing Kenya */}
