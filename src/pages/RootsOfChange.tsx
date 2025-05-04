@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Testimonials from '@/components/Testimonials';
 import SEO from '@/components/SEO';
 
 // Import modular components
@@ -11,6 +10,9 @@ import ProgramSummary from '@/components/roots-of-change/ProgramSummary';
 import ProgramOverview from '@/components/capturing-kenya/ProgramOverview';
 import ProgramOutcomes from '@/components/capturing-kenya/ProgramOutcomes';
 import ProgramCTA from '@/components/capturing-kenya/ProgramCTA';
+import ProgramObjectives from '@/components/roots-of-change/ProgramObjectives';
+import ProgramLocations from '@/components/roots-of-change/ProgramLocations';
+import ProgramItinerary from '@/components/roots-of-change/ProgramItinerary';
 
 // Import data
 import { programData, outcomes } from '@/components/roots-of-change/ProgramData';
@@ -35,6 +37,15 @@ const RootsOfChange = () => {
 
         {/* Program Summary - New section with details moved from hero */}
         <ProgramSummary />
+
+        {/* Program Objectives */}
+        <ProgramObjectives />
+        
+        {/* Program Locations */}
+        <ProgramLocations />
+        
+        {/* Program Itinerary */}
+        <ProgramItinerary />
 
         {/* Program Overview */}
         <ProgramOverview programData={programData} />
