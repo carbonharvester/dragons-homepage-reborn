@@ -82,8 +82,8 @@ const AboutUs = () => {
 
         {/* Video Section */}
         <VideoSection 
-          videoId="922795693" 
-          title="Camp Kapes: Our Journey"
+          videoId="720192915" 
+          title="Kapes Impact Adventures"
           description="Experience the inspiring journey of Camp Kapes and how we're making a difference in communities across Kenya."
         />
 
