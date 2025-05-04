@@ -54,6 +54,21 @@ const AboutUs = () => {
                 <p className="mb-4">
                   As part of Kapes Uniforms' mission to give back, we provide free school uniforms to children in need in Kenya, which has been shown to reduce absenteeism. That's how our name came about - we like to think our uniforms have superpowers by nature of the good that we do, and the changemakers that wear them are heroes. Hence, heroes wear Kapes.
                 </p>
+                
+                {/* New image from first sponsored trip */}
+                <div className="my-8 relative rounded-lg overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/c0bdd0e5-7b79-492d-8c2d-d91d5b892cee.png" 
+                    alt="Children from a local Kenyan school wearing Kapes uniforms during our first sponsored trip" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                    <p className="text-white text-sm md:text-base font-medium">
+                      Children from a local school in Kenya during our first sponsored trip
+                    </p>
+                  </div>
+                </div>
+                
                 <p className="mb-4">
                   While searching for a sustainable factory to make these uniforms locally in Kenya, Matthew visited a carbon offset project in the Kasigau Corridor. During this factory visit, he was taken on a game drive, met social entrepreneurs working with the project, and learned about their initiatives. It became abundantly clear that bringing students here would be key to joining the dots - seeing the positive impact their uniforms can have while also providing a life-changing experience.
                 </p>
