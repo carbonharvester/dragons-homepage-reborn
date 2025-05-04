@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -19,8 +18,8 @@ const EmpoweringWomen = () => {
   // Define the program data according to the ProgramData interface
   const programData = {
     title: "Kapes Zawadisha Immersion",
-    description: "A 7-day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program.",
-    duration: "7 Days",
+    description: "An 8-day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program.",
+    duration: "8 Days",
     season: "Year Round",
     location: "Tsavo, Kenya",
     goals: [
@@ -128,11 +127,21 @@ const EmpoweringWomen = () => {
     },
     {
       day: "Day 7 (Thursday)",
-      title: "Community Showcase & Return to Nairobi",
+      title: "Community Showcase",
       activities: [
         "Host community showcase presenting learnings and performing learned dances",
         "Receive Kapes Cultural Impact Certificate during farewell ceremony",
+        "Farewell dinner with the Neema Women's Group",
+        "Final evening reflection and journaling on the trip experience"
+      ]
+    },
+    {
+      day: "Day 8 (Friday)",
+      title: "Return to Nairobi & Departure",
+      activities: [
+        "Morning breakfast and final packing at Rukinga Camp",
         "Board the Voi-Nairobi train with final group reflection on the journey",
+        "Arrive in Nairobi for lunch and brief city tour if time allows",
         "Transfer to Jomo Kenyatta International Airport for evening flights"
       ]
     }
@@ -169,7 +178,7 @@ const EmpoweringWomen = () => {
   const tripDetails = [
     {
       label: "Duration",
-      value: "7 Days (Friday to Friday)",
+      value: "8 Days (Friday to Friday)",
       icon: <Calendar className="w-5 h-5 text-dragon" />
     },
     {
@@ -203,14 +212,14 @@ const EmpoweringWomen = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Kapes Zawadisha Immersion: Tsavo Women's Empowerment Journey"
-        description="A 7-day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program for solar lamps, rainwater tanks, and clean cookstoves."
+        description="An 8-day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program for solar lamps, rainwater tanks, and clean cookstoves."
         keywords="women empowerment, Zawadisha, microloan, Tsavo, Kenya, water walk, cultural immersion, educational travel"
       />
       <Header />
       <main>
         <TripHero 
           title="Kapes Zawadisha Immersion"
-          subtitle="Empower Women, Transform Lives through a 7-day journey in Tsavo, Kenya"
+          subtitle="Empower Women, Transform Lives through an 8-day journey in Tsavo, Kenya"
           category="School Trip"
           imagePath="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
         />
