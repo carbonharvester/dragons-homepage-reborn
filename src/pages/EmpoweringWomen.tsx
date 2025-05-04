@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -51,6 +52,11 @@ const EmpoweringWomen = () => {
       icon: <div className="text-white text-2xl">🦁</div>,
       title: "Tsavo Safari",
       description: "Experience Kenya's magnificent wildlife while learning about human-wildlife coexistence challenges."
+    },
+    {
+      icon: <div className="text-white text-2xl">🛡️</div>,
+      title: "Kasaine Fence Project",
+      description: "Create and install metal sheet noise deterrents on farm fences to help local farmers protect crops from elephants."
     },
     {
       icon: <div className="text-white text-2xl">🌱</div>,
@@ -117,12 +123,12 @@ const EmpoweringWomen = () => {
     },
     {
       day: "Day 6 (Wednesday)",
-      title: "Community Engagement & Storytelling",
+      title: "Kasaine Fence Project",
       activities: [
-        "Attend a Zawadisha Peer Education workshop on financial literacy or entrepreneurship",
-        "Visit and contribute to a community project funded by Zawadisha (tree-planting, water tank installation)",
-        "Document experiences through photos and journaling",
-        "Finalize group presentations and practice dances for farewell performance"
+        "Visit a local farm to learn about human-wildlife conflict from farmers",
+        "Workshop on creating Kasaine fences using metal sheets as elephant deterrents",
+        "Work alongside farmers to install metal sheets on farm perimeters",
+        "Discuss sustainable solutions for human-wildlife coexistence and conservation"
       ]
     },
     {
@@ -248,6 +254,7 @@ const EmpoweringWomen = () => {
                     <li>Experience the daily challenges of rural Kenyan women (e.g., water walks) to build empathy and global awareness</li>
                     <li>Learn about Zawadisha's microloan program and its impact through home visits and storytelling</li>
                     <li>Engage in cultural activities like crafting and dancing to understand local traditions</li>
+                    <li>Support human-wildlife coexistence through practical conservation projects</li>
                     <li>Contribute to community projects, reinforcing Kapes' commitment to impact</li>
                     <li>Participate in a safari and hike to connect with Kenya's natural beauty</li>
                   </ul>
