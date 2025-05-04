@@ -5,9 +5,15 @@ import TripDetailsCard from '@/components/trip/TripDetails';
 import { tripDetails } from './data';
 
 const ProgramSidebar = () => {
+  // Convert Lucide icon components to ReactNode for TripDetailsCard
+  const formattedDetails = tripDetails.map(detail => ({
+    ...detail,
+    icon: React.createElement(detail.icon) // Convert component to ReactNode
+  }));
+
   return (
     <div className="lg:w-1/3">
-      <TripDetailsCard tripDetails={tripDetails} isSchoolTrip={true} />
+      <TripDetailsCard tripDetails={formattedDetails} isSchoolTrip={true} />
 
       <div className="bg-dragon-beige p-8 rounded-lg shadow-md mt-8">
         <h3 className="text-xl font-bold text-dragon-dark mb-4">Perfect For</h3>
