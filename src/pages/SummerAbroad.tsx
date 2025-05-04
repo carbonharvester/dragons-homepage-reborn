@@ -30,18 +30,9 @@ const SummerAbroad = () => {
               
               {/* Program Details - Similar to Capturing Kenya */}
               <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
-                  <Calendar className="h-5 w-5" />
-                  <span>3-4 Week Programs</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
-                  <Users className="h-5 w-5" />
-                  <span>Ages 17-21</span>
-                </div>
-                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
-                  <MapPin className="h-5 w-5" />
-                  <span>Kenya</span>
-                </div>
+                
+                
+                
               </div>
               
               <div className="flex flex-wrap gap-4">
