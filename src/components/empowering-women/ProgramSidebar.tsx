@@ -8,7 +8,7 @@ const ProgramSidebar = () => {
   // Convert Lucide icon components to ReactNode for TripDetailsCard
   const formattedDetails = tripDetails.map(detail => ({
     ...detail,
-    icon: React.createElement(detail.icon) // Convert component to ReactNode
+    icon: <detail.icon className="h-5 w-5 text-dragon" />
   }));
 
   return (
