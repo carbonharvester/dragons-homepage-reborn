@@ -157,12 +157,8 @@ const Programs = () => {
 
               <TabsContent value="multi-year" className="mt-8">
                 <div className="max-w-4xl mx-auto">
-                  <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Multi-Year Curriculum</h3>
-                  <p className="mb-6 text-lg">
-                    Our Multi-Year Curriculum provides a comprehensive educational journey that builds upon itself 
-                    year after year, creating a cohesive learning experience that develops students' skills, knowledge, 
-                    and global perspective over time.
-                  </p>
+                  <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Multi-Year Curriculums</h3>
+                  <p className="mb-6 text-lg">Our Multi-Year Curriculums provides a comprehensive educational journey that builds upon itself year after year, creating a cohesive learning experience that develops students' skills, knowledge, and global perspective over time.</p>
                   
                   <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
                     <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
