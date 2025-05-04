@@ -24,7 +24,7 @@ const AboutUs = () => {
           </div>
         </section>
 
-        {/* Image Banner Section - Caption Removed */}
+        {/* Image Banner Section with Updated Caption */}
         <section className="relative w-full overflow-hidden">
           <div className="aspect-[16/9] md:aspect-[21/9] w-full">
             <img 
@@ -32,6 +32,13 @@ const AboutUs = () => {
               alt="Students in Kenya celebrating together" 
               className="w-full h-full object-cover"
             />
+          </div>
+          <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full py-8">
+            <div className="container-wide">
+              <p className="text-white text-lg md:text-xl font-medium">
+                These are some of the students from Kirigu Primary School who received free school uniforms
+              </p>
+            </div>
           </div>
         </section>
 
