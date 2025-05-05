@@ -42,8 +42,8 @@ const VideoSection = ({
               <Quote size={36} />
             </div>
             
-            <blockquote className="text-xl md:text-2xl font-serif text-[#004d31] mb-4 italic">
-              "{quote.text}"
+            <blockquote className="text-lg md:text-xl font-serif text-[#004d31] mb-4 italic">
+              "The activities we've been doing is a sort of pathway to bring our children here to. And that's really important because experiential learning helps them to bring to real life the things that we can only do in theory, in the classrooms. Seeing these small enterprises firsthand, understanding how they contribute to a better world in the future, the children can only do that firsthand, and it will change them as much as it's changed me in this short trip."
             </blockquote>
             
             {quote.author && (
