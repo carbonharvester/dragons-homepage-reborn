@@ -6,7 +6,7 @@ export const schoolTrips = [
     title: "Food For Education", 
     duration: "7-8 Days", 
     season: "Jan-Oct", 
-    description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.", 
+    description: "Experience sustainable agriculture initiatives that address food security in rural communities through hands-on farming, school garden development, and nutrition education programs.", 
     image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", 
     link: "/programs/food-for-education", 
     icon: Globe 
@@ -15,7 +15,7 @@ export const schoolTrips = [
     title: "Community Conservation", 
     duration: "7-8 Days", 
     season: "Year Round", 
-    description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.", 
+    description: "Partner with local conservation experts to protect vital ecosystems through reforestation, wildlife monitoring, and sustainable resource management while learning traditional ecological knowledge.", 
     image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png", 
     link: "/programs/community-conservation", 
     icon: Globe 
