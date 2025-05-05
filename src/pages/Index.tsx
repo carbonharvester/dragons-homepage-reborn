@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { University } from 'lucide-react';
+
 const Index = () => {
   const schoolLogos = [{
     src: "/lovable-uploads/0d2ee059-b425-4a7d-a8ba-3ee2cd8fdfc0.png",
@@ -74,7 +75,11 @@ const Index = () => {
       
       <main>
         <Hero />
-        <HomeVideoSection videoId="675826299" title="Kapes Impact Adventures" description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences." />
+        <HomeVideoSection 
+          videoId="922795693" 
+          title="Kapes Impact Adventures - Kenya (ASD 2024)" 
+          description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences." 
+        />
         <div className="py-16 bg-white">
           <div className="container-wide text-center">
             <h2 className="section-heading">Experience Learning Through Adventure</h2>

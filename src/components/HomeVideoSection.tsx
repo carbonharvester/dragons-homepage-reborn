@@ -1,16 +1,20 @@
+
 import React from 'react';
 import VideoPlayer from './video/VideoPlayer';
+
 interface HomeVideoSectionProps {
   videoId: string;
   title: string;
   description?: string;
 }
+
 const HomeVideoSection = ({
   videoId,
   title,
   description
 }: HomeVideoSectionProps) => {
-  return <section className="py-16 bg-slate-50">
+  return (
+    <section className="py-16 bg-slate-50">
       <div className="container-wide">
         <div className="text-center mb-10">
           <h2 className="section-heading">Experience Our Journey</h2>
@@ -19,6 +23,8 @@ const HomeVideoSection = ({
         
         <VideoPlayer videoId={videoId} title={title} />
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HomeVideoSection;
