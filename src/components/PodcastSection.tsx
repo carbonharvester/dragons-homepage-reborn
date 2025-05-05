@@ -50,7 +50,7 @@ const PodcastSection = () => {
           </div>
           <div className="text-center">
             <Button asChild className="bg-dragon hover:bg-dragon-dark text-white">
-              <Link to="/podcast">Check Out Our Podcast</Link>
+              <Link to="/podcast">Listen to Our Podcast</Link>
             </Button>
           </div>
         </div>
