@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,13 +7,11 @@ import TripCTA from '@/components/trip/TripCTA';
 import { schoolTrips } from '@/data/programsData';
 import ProgramCard from '@/components/programs/ProgramCard';
 import { Button } from '@/components/ui/button';
-
 const SchoolTrips = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return <div className="min-h-screen flex flex-col">
       <SEO title="School Trips" description="Immersive educational experiences that combine cultural engagement, wilderness exploration, and authentic learning opportunities for students." keywords="school trips, student travel, cultural engagement, wilderness exploration, educational travel, Africa, Kenya" />
       <Header />
@@ -34,12 +31,10 @@ const SchoolTrips = () => {
               
               <div className="flex flex-wrap gap-4">
                 <Button className="bg-dragon hover:bg-dragon-dark text-white" asChild>
-                  <a href="#programs">Explore Our Trips</a>
+                  <a href="#programs">Schedule Consultation </a>
                 </Button>
                 <Button variant="outline" className="border-white text-white hover:bg-white hover:text-dragon" asChild>
-                  <a href="https://calendly.com/kapesuniforms/discoverymeeting" target="_blank" rel="noopener noreferrer">
-                    Schedule a Consultation
-                  </a>
+                  
                 </Button>
               </div>
             </div>
@@ -132,5 +127,4 @@ const SchoolTrips = () => {
       <Footer />
     </div>;
 };
-
 export default SchoolTrips;
