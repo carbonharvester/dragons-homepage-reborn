@@ -24,7 +24,7 @@ export const schoolTrips = [
     title: "Exploring Women's Empowerment", 
     duration: "7-8 Days", 
     season: "Year Round", 
-    description: "A transformative journey to support microloan programs for rural women while experiencing water walks, crafting workshops, and Tsavo's wildlife.", 
+    description: "Students will engage directly with rural women entrepreneurs, participate in traditional craft workshops, and help with community water projects. They'll learn about microfinance principles, sustainable development, and gender equity while experiencing authentic cultural exchange and Tsavo's stunning wildlife.", 
     image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png", 
     link: "/programs/empowering-women", 
     icon: Globe 
