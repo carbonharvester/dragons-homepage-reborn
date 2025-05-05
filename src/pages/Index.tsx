@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import HomeVideoSection from '@/components/HomeVideoSection';
@@ -9,9 +9,18 @@ import PodcastSection from '@/components/PodcastSection';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 import { University } from 'lucide-react';
 
 const Index = () => {
+  // State for editable mode
+  const [editMode, setEditMode] = useState(false);
+  
+  // Toggle edit mode
+  const toggleEditMode = () => {
+    setEditMode(!editMode);
+  };
+  
   const schoolLogos = [
     { src: "/lovable-uploads/0d2ee059-b425-4a7d-a8ba-3ee2cd8fdfc0.png", alt: "British International School of Jeddah" },
     { src: "/lovable-uploads/38402d57-68c0-4b9b-9868-02bb45b85144.png", alt: "Arbor School" },
@@ -63,12 +72,25 @@ const Index = () => {
   return <div className="min-h-screen flex flex-col">
       <SEO />
       <Header />
+      
+      {/* Admin controls - only visible in development or for admins */}
+      <div className="bg-slate-800 text-white py-2 px-4 flex justify-end">
+        <Button 
+          variant={editMode ? "destructive" : "default"}
+          onClick={toggleEditMode}
+          size="sm"
+        >
+          {editMode ? "Exit Edit Mode" : "Edit Content"}
+        </Button>
+      </div>
+      
       <main>
         <Hero />
         <HomeVideoSection 
           videoId="720192915" 
           title="Kapes Impact Adventures"
           description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences."
+          editable={editMode}
         />
         <div className="py-16 bg-white">
           <div className="container-wide text-center">
