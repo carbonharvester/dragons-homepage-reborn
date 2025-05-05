@@ -37,7 +37,7 @@ const TripBrochure = () => {
   // Trip details
   const tripDetails: TripDetail[] = [
     { label: "Duration", value: "5-7 Days", icon: <Clock className="h-5 w-5 text-dragon" /> },
-    { label: "Season", value: "Jan-Nov", icon: <Calendar className="h-5 w-5 text-dragon" /> },
+    { label: "Season", value: "Jan-Oct", icon: <Calendar className="h-5 w-5 text-dragon" /> },
     { label: "Location", value: "Nairobi, Kenya", icon: <MapPin className="h-5 w-5 text-dragon" /> },
     { label: "Age Group", value: "12-18 years", icon: <Users className="h-5 w-5 text-dragon" /> },
     { label: "Group Size", value: "10-30 students", icon: <School className="h-5 w-5 text-dragon" /> },
@@ -164,7 +164,7 @@ const TripBrochure = () => {
     title: "Food For Education",
     description: "Transform unused school land into productive gardens while addressing food insecurity through sustainable agriculture.",
     duration: "5-7 Days",
-    season: "Jan-Nov",
+    season: "Jan-Oct",
     location: "Nairobi, Kenya",
     goals: [
       "Establish pilot farm focused on onions and tomatoes",
