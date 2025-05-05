@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -11,7 +10,6 @@ import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { University } from 'lucide-react';
-
 const Index = () => {
   const schoolLogos = [{
     src: "/lovable-uploads/0d2ee059-b425-4a7d-a8ba-3ee2cd8fdfc0.png",
@@ -70,22 +68,17 @@ const Index = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return <div className="min-h-screen flex flex-col">
       <SEO />
       <Header />
       
       <main>
         <Hero />
-        <HomeVideoSection 
-          videoId="720192915" 
-          title="Kapes Impact Adventures" 
-          description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences." 
-        />
+        <HomeVideoSection videoId="720192915" title="Kapes Impact Adventures" description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences." />
         <div className="py-16 bg-white">
           <div className="container-wide text-center">
             <h2 className="section-heading">Experience Learning Through Adventure</h2>
-            <p className="section-subheading mx-auto">Since 2023, we've specialised in immersive experiences that combine authentic cultural engagement, wilderness exploration, and transformative education, with social impact and sustainability. During this time we have created life changing experiences for students at several top international schools.</p>
+            <p className="section-subheading mx-auto">Since 2023, we’ve specialised in immersive experiences that blend authentic cultural engagement, wilderness exploration, and transformative education—empowering students at top international schools while driving social impact and sustainability in African communities.</p>
             
             <div className="mt-12 relative overflow-hidden">
               <div className="w-full overflow-hidden">
