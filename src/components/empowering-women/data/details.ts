@@ -4,7 +4,7 @@ import { Calendar, Route, Map, Users, GraduationCap, Award } from 'lucide-react'
 export const tripDetails = [
   {
     label: "Duration",
-    value: "7-8 Days (Friday to Friday)",
+    value: "7-8 Days",
     icon: Calendar
   },
   {
