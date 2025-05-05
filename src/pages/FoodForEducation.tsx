@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TripBrochure from '@/components/TripBrochure';
 import SEO from '@/components/SEO';
-import { EditableText } from '@/components/ui/editable-text';
 
 const FoodForEducation = () => {
   return (
