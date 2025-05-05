@@ -48,7 +48,7 @@ const VideoSection = ({
             
             {quote.author && (
               <p className="font-medium text-[#F97316]">
-                — {quote.author}
+                — Former Principal
               </p>
             )}
           </div>
