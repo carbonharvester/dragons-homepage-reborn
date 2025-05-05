@@ -18,11 +18,9 @@ const HomeVideoSection = ({
       <div className="container-wide">
         <div className="text-center mb-10">
           <h2 className="section-heading">Experience Our Journey</h2>
-          {description && (
-            <p className="section-subheading mx-auto">
-              {description}
-            </p>
-          )}
+          <p className="section-subheading mx-auto">
+            Watch how our immersive programs transform students into global citizens through cultural exchange and authentic experiences in Africa - while empowering communities with lasting impact
+          </p>
         </div>
         
         <VideoPlayer 
