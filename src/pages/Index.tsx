@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import VideoSection from '@/components/VideoSection';
+import HomeVideoSection from '@/components/HomeVideoSection';
 import ProgramsSection from '@/components/ProgramsSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import BlogSection from '@/components/BlogSection';
@@ -65,14 +65,10 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <VideoSection 
+        <HomeVideoSection 
           videoId="720192915" 
           title="Kapes Impact Adventures"
           description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences."
-          quote={{
-            text: "These experiences change perspectives, build connections, and inspire students to become more conscious global citizens who understand their role in creating a sustainable future.",
-            author: "Kapes Impact Adventures"
-          }}
         />
         <div className="py-16 bg-white">
           <div className="container-wide text-center">
