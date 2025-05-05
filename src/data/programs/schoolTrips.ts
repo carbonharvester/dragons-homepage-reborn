@@ -24,7 +24,7 @@ export const schoolTrips = [
     title: "Exploring Women's Empowerment", 
     duration: "7-8 Days", 
     season: "Year Round", 
-    description: "A transformative journey to support Zawadisha's microloan program for rural women while experiencing water walks, crafting workshops, and Tsavo's wildlife.", 
+    description: "A transformative journey to support microloan programs for rural women while experiencing water walks, crafting workshops, and Tsavo's wildlife.", 
     image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png", 
     link: "/programs/empowering-women", 
     icon: Globe 

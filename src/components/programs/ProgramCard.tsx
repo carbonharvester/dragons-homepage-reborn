@@ -42,22 +42,22 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
         <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
         <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2">
           <div className="flex items-center">
-            <Route size={16} className="mr-1 text-dragon" />
+            <Route size={16} className="mr-1" />
             <span>{program.duration}</span>
           </div>
           <div className="flex items-center">
-            <Calendar size={16} className="mr-1 text-dragon" />
+            <Calendar size={16} className="mr-1" />
             <span>{program.season}</span>
           </div>
           {program.ageGroup && (
             <div className="flex items-center">
-              <Users size={16} className="mr-1 text-dragon" />
+              <Users size={16} className="mr-1" />
               <span>{program.ageGroup}</span>
             </div>
           )}
           {program.location && (
             <div className="flex items-center">
-              <MapPin size={16} className="mr-1 text-dragon" />
+              <MapPin size={16} className="mr-1" />
               <span>{program.location}</span>
             </div>
           )}
