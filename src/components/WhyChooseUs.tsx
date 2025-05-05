@@ -21,7 +21,7 @@ const features = [{
 }, {
   icon: <LineChart className="h-10 w-10 text-dragon" />,
   title: "Measurable Impact",
-  description: "Concrete outcomes like feeding 300+ students daily, establishing sustainable gardens, and creating economic opportunities for local communities."
+  description: "Concrete outcomes like providing daily meals to hundreds of students, establishing sustainable community gardens, and creating economic opportunities that foster long-term prosperity in local communities."
 }, {
   icon: <Star className="h-10 w-10 text-dragon" />,
   title: "Transformative Experiences",
