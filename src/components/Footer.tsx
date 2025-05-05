@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="mb-4">
               <img 
-                src="/lovable-uploads/0e7af589-2cae-4099-8c34-d20f4dc82ed3.png" 
+                src="/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png" 
                 alt="Kapes Adventures - Travel That Transforms" 
                 className="h-20 brightness-0 invert"
               />
