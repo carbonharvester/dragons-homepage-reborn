@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import MultiYearCurriculum from './programs/MultiYearCurriculum';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { programCategories, schoolTrips, summerAbroad, adultTrips, multiYearProgram } from '@/data/programsData';
+
 const ProgramsSection = () => {
   const [activeCategory, setActiveCategory] = useState("school-trips");
   const isMobile = useIsMobile();
@@ -32,6 +34,7 @@ const ProgramsSection = () => {
         </div>;
     }
   };
+
   return <section id="programs" className="py-20 bg-dragon-beige">
       <div className="container-wide">
         <div className="text-center mb-12">
@@ -52,7 +55,6 @@ const ProgramsSection = () => {
         <div className={`mt-8 ${activeCategory === "school-trips" ? "block" : "hidden"}`}>
           {renderProgramCards(schoolTrips)}
           <div className="text-center mt-8">
-            
             <Button className="btn-primary" asChild>
               <Link to="/programs">Learn More About Our Programs</Link>
             </Button>
@@ -63,20 +65,9 @@ const ProgramsSection = () => {
         <div className={`mt-8 ${activeCategory === "summer-abroad" ? "block" : "hidden"}`}>
           {renderProgramCards(summerAbroad)}
           <div className="text-center mt-8">
-            <p className="max-w-3xl mx-auto mb-6 text-dragon-gray">
-              Our Summer Abroad programs offer 3-4 week immersive experiences for students seeking 
-              to develop skills, explore interests, and make meaningful contributions.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button className="btn-primary" asChild>
-                <Link to="/summer-abroad">View All Summer Programs</Link>
-              </Button>
-              <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                <a href="https://form.typeform.com/to/rtxmvp4L" target="_blank" rel="noopener noreferrer">
-                  Apply Now
-                </a>
-              </Button>
-            </div>
+            <Button className="btn-primary" asChild>
+              <Link to="/programs">Learn More About Our Programs</Link>
+            </Button>
           </div>
         </div>
 
@@ -84,28 +75,23 @@ const ProgramsSection = () => {
         <div className={`mt-8 ${activeCategory === "adult-trips" ? "block" : "hidden"}`}>
           {renderProgramCards(adultTrips)}
           <div className="text-center mt-8">
-            <p className="max-w-3xl mx-auto mb-6 text-dragon-gray">
-              Adult Programs are perfect for individuals or groups looking to combine purposeful 
-              travel with personal or professional development in Kenya.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button className="btn-primary" asChild>
-                <Link to="/adult-programs">View All Adult Programs</Link>
-              </Button>
-              <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                <a href="https://form.typeform.com/to/rtxmvp4L" target="_blank" rel="noopener noreferrer">
-                  Apply Now
-                </a>
-              </Button>
-            </div>
+            <Button className="btn-primary" asChild>
+              <Link to="/programs">Learn More About Our Programs</Link>
+            </Button>
           </div>
         </div>
 
         {/* Multi-Year Curriculum Content */}
         <div className={`mt-8 ${activeCategory === "multi-year" ? "block" : "hidden"}`}>
           <MultiYearCurriculum data={multiYearProgram} />
+          <div className="text-center mt-8">
+            <Button className="btn-primary" asChild>
+              <Link to="/programs">Learn More About Our Programs</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>;
 };
+
 export default ProgramsSection;
