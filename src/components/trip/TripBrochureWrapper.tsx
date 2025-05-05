@@ -53,16 +53,16 @@ const TripBrochureWrapper = () => {
     }
   ];
 
-  // Sample itinerary
+  // Sample itinerary - Updated to 8-day itinerary
   const tripItinerary = [
     {
       day: "Day 1",
-      title: "Arrival & Orientation",
+      title: "Arrival in Nairobi & Train to Voi",
       activities: [
-        "Arrive at Jomo Kenyatta International Airport",
-        "Transfer to accommodation and check-in",
-        "Welcome dinner with traditional Kenyan dishes",
-        "Project orientation and introduction to Food For Education"
+        "Arrive at Jomo Kenyatta International Airport, meet Kapes staff and Food For Education representatives",
+        "Board the Nairobi-Voi train (4 hours) with journaling about first impressions",
+        "Arrive at accommodation for welcome dinner featuring traditional Kenyan dishes",
+        "Evening introduction to the Food For Education program and its impact"
       ]
     },
     {
@@ -103,6 +103,36 @@ const TripBrochureWrapper = () => {
         "Install drip irrigation system for vegetable beds",
         "Create garden beds for onions and tomatoes",
         "Plant seeds in nursery pots"
+      ]
+    },
+    {
+      day: "Day 6",
+      title: "Community Engagement",
+      activities: [
+        "Cultural exchange with local students",
+        "Teach and learn about food traditions and cooking methods",
+        "Collaborative art project on food security themes",
+        "Evening reflection and discussion on global food systems"
+      ]
+    },
+    {
+      day: "Day 7",
+      title: "Project Completion",
+      activities: [
+        "Finalize all farm installations and plantings",
+        "Create educational signage for the garden",
+        "Document the project through photos and video",
+        "Prepare for handover ceremony to school staff"
+      ]
+    },
+    {
+      day: "Day 8",
+      title: "Celebration & Departure",
+      activities: [
+        "Morning handover ceremony with school community",
+        "Celebration lunch with traditional foods",
+        "Final reflections and future action planning",
+        "Transfer to Nairobi for evening departures"
       ]
     }
   ];
