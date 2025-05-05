@@ -29,7 +29,7 @@ const MultiYearCurriculum = ({ data }: MultiYearCurriculumProps) => {
           
           <div className="space-y-6">
             {data.years.map((year, idx) => (
-              <div key={idx} className="flex gap-4 border-l-4 border-dragon-light pl-4 py-2">
+              <div key={idx} className="flex gap-4 border-l-4 border-dragon pl-4 py-2">
                 <div className="bg-dragon text-white p-2 rounded-full shrink-0">
                   <year.icon size={24} />
                 </div>
@@ -42,7 +42,7 @@ const MultiYearCurriculum = ({ data }: MultiYearCurriculumProps) => {
             ))}
           </div>
           
-          <div className="mt-8 p-4 bg-dragon-beige/30 rounded-lg border border-dragon-light/30">
+          <div className="mt-8">
             <h5 className="text-lg font-bold text-dragon-dark mb-3">Customize Your Curriculum</h5>
             <p className="mb-6">We work with you to design a program that fits your school's curriculum, values, and goals. Whether it's STEM, arts, or social justice, your travel curriculum will be unique.</p>
           </div>

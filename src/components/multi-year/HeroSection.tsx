@@ -13,12 +13,7 @@ const HeroSection = ({ imgTimestamp }: HeroSectionProps) => {
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       <div className="container-wide relative z-10">
         <div className="max-w-3xl text-white">
-          <div className="inline-block bg-dragon text-white px-4 py-1 rounded-full text-sm font-medium mb-4">
-            Educational Program
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 hero-heading">
-            Multi-Year <span className="text-dragon-yellow">Curriculum</span>
-          </h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 hero-heading">Multi-Year Curriculum</h1>
           <p className="text-xl mb-8">
             A progressive educational journey that builds skills, confidence, and global citizenship over three transformative years.
           </p>
