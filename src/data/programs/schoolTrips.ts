@@ -6,7 +6,7 @@ export const schoolTrips = [
     title: "Food For Education", 
     duration: "7-8 Days", 
     season: "Jan-Oct", 
-    description: "Experience sustainable agriculture initiatives that address food security in rural communities through hands-on farming, school garden development, and nutrition education programs.", 
+    description: "Transform unused school land into productive gardens through hands-on permaculture farming. Students will establish sustainable agricultural systems that provide ongoing meals for local students, creating lasting food security solutions.", 
     image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", 
     link: "/programs/food-for-education", 
     icon: Globe 
