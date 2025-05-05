@@ -25,7 +25,7 @@ const features = [{
 }, {
   icon: <Star className="h-10 w-10 text-dragon" />,
   title: "Transformative Experiences",
-  description: "Life-changing journeys that foster leadership skills, cultural understanding, and a deep commitment to global citizenship."
+  description: "Life-changing journeys that foster leadership, cultural understanding, and a deep commitment to global citizenship, while empowering communities through sustainable impact."
 }];
 const WhyChooseUs = () => {
   const scrollToPrograms = () => {
