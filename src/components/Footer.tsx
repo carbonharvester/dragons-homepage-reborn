@@ -17,7 +17,7 @@ const Footer = () => {
                 className="h-20 brightness-0 invert"
               />
             </div>
-            <p className="text-gray-300 mb-6 text-sm">
+            <p className="text-gray-300 mb-6 text-sm pl-[5px]">
               Facilitating meaningful cross-cultural experiences through immersive and responsible travel programs.
             </p>
             <div className="flex space-x-4">
