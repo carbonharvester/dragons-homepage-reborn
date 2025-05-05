@@ -24,7 +24,7 @@ export const schoolTrips = [
     title: "Exploring Women's Empowerment", 
     duration: "7-8 Days", 
     season: "Year Round", 
-    description: "Students will engage with rural women entrepreneurs, join craft workshops, and support water projects. They'll learn microfinance, sustainability, and gender equity while experiencing cultural exchange and Tsavo's stunning wildlife in Kenya.", 
+    description: "Students will engage with rural women entrepreneurs, participate in traditional craft workshops, and experience a day in the life of local women. They'll learn about microfinance, sustainability initiatives, and gender equity while experiencing cultural exchange and Tsavo's stunning wildlife in Kenya.", 
     image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png", 
     link: "/programs/empowering-women", 
     icon: Globe 
