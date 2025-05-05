@@ -21,7 +21,7 @@ const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
       {isPlaying ? (
         <div className="aspect-video w-full">
           <iframe 
-            src={`https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&title=0&byline=0&portrait=0`}
+            src={`https://player.vimeo.com/video/${videoId}?h=c4bc497777&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1`}
             className="w-full h-full" 
             frameBorder="0" 
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
@@ -42,11 +42,13 @@ const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
                   <Play className="h-8 w-8" />
                 </Button>
               </div>
-              <img 
-                src={`https://vumbnail.com/${videoId}.jpg`} 
-                alt={`${title} thumbnail`}
-                className="w-full h-full object-cover"
-              />
+              <iframe 
+                src={`https://player.vimeo.com/video/${videoId}?h=c4bc497777&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&background=1&muted=1`}
+                className="w-full h-full pointer-events-none" 
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                title={`${title} background preview`}
+              ></iframe>
             </div>
           </AspectRatio>
         </div>
