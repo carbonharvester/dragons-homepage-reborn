@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -6,7 +5,6 @@ import SEO from '@/components/SEO';
 import VideoSection from '@/components/VideoSection';
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Calendar, Users, Globe } from 'lucide-react';
-
 const AboutUs = () => {
   return <div className="min-h-screen flex flex-col">
       <SEO title="About Us" description="From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters." keywords="Mission Kapes, educational travel, student trips, sustainability, Africa, Kenya" />
@@ -14,14 +12,11 @@ const AboutUs = () => {
       
       <main>
         {/* Hero Section with Background Image */}
-        <section 
-          className="bg-dragon-dark py-20 md:py-32 relative bg-cover bg-center"
-          style={{ 
-            backgroundImage: `url('/lovable-uploads/f40a88d4-343d-483d-a375-0f63c5154294.png')`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-          }}
-        >
+        <section className="bg-dragon-dark py-20 md:py-32 relative bg-cover bg-center" style={{
+        backgroundImage: `url('/lovable-uploads/f40a88d4-343d-483d-a375-0f63c5154294.png')`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+      }}>
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           <div className="container-wide text-center relative z-10">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-academy font-bold text-white mb-6">
@@ -50,15 +45,9 @@ const AboutUs = () => {
                 
                 {/* New image from first sponsored trip */}
                 <div className="my-8 relative rounded-lg overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/c0bdd0e5-7b79-492d-8c2d-d91d5b892cee.png" 
-                    alt="Children from a local Kenyan school wearing Kapes uniforms during our first sponsored trip" 
-                    className="w-full h-auto rounded-lg"
-                  />
+                  <img src="/lovable-uploads/c0bdd0e5-7b79-492d-8c2d-d91d5b892cee.png" alt="Children from a local Kenyan school wearing Kapes uniforms during our first sponsored trip" className="w-full h-auto rounded-lg" />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                    <p className="text-white text-sm md:text-base font-medium">
-                      Children from a local school in Kenya during our first sponsored trip
-                    </p>
+                    <p className="text-white text-sm md:text-base font-medium">Our Founder Matthew Benjamin and students from Marasi Primary School in Kenya during our first sponsored trip in 2022.</p>
                   </div>
                 </div>
                 
@@ -132,15 +121,10 @@ const AboutUs = () => {
         </section>
 
         {/* Video Section */}
-        <VideoSection 
-          videoId="720192915" 
-          title="Kapes Impact Adventures"
-          description="Experience the inspiring journey of Camp Kapes and how we're making a difference in communities across Kenya."
-          quote={{
-            text: "These experiences change perspectives, build connections, and inspire students to become more conscious global citizens who understand their role in creating a sustainable future.",
-            author: "Brett Girven, Former-Principal at The Arbor School"
-          }}
-        />
+        <VideoSection videoId="720192915" title="Kapes Impact Adventures" description="Experience the inspiring journey of Camp Kapes and how we're making a difference in communities across Kenya." quote={{
+        text: "These experiences change perspectives, build connections, and inspire students to become more conscious global citizens who understand their role in creating a sustainable future.",
+        author: "Brett Girven, Former-Principal at The Arbor School"
+      }} />
       </main>
       <Footer />
     </div>;
