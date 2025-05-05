@@ -3,8 +3,8 @@ import { Heart } from 'lucide-react';
 
 export const programData = {
   title: "Exploring Women's Empowerment",
-  description: "An 8-day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program.",
-  duration: "8 Days",
+  description: "A 7-8 day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program.",
+  duration: "7-8 Days",
   season: "Year Round",
   location: "Tsavo, Kenya",
   goals: [
