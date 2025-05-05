@@ -17,7 +17,7 @@ const features = [{
 }, {
   icon: <Shield className="h-10 w-10 text-dragon" />,
   title: "Safety & Support",
-  description: "Comprehensive risk management, 24/7 local staff support, and experienced trip leaders ensure student wellbeing throughout the journey."
+  description: "Comprehensive risk management, 24/7 local staff support, and experienced trip leaders ensure student wellbeing, so they can fully embrace their transformative journey in Africa."
 }, {
   icon: <LineChart className="h-10 w-10 text-dragon" />,
   title: "Measurable Impact",
