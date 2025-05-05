@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Users, BookOpen, Shield, LineChart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,7 @@ const features = [{
 }, {
   icon: <BookOpen className="h-10 w-10 text-dragon" />,
   title: "Educational Focus",
-  description: "Hands-on permaculture education, sustainability principles, and social entrepreneurship through real-world projects with local experts."
+  description: "Hands-on permaculture education, sustainability principles, and social entrepreneurship through real-world projects with local African experts, inspiring students to become global change-makers."
 }, {
   icon: <Shield className="h-10 w-10 text-dragon" />,
   title: "Safety & Support",
