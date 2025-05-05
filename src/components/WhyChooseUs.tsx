@@ -9,7 +9,7 @@ const features = [{
 }, {
   icon: <Users className="h-10 w-10 text-dragon" />,
   title: "Flexible Group Sizes",
-  description: "Accommodating groups from 10 to 30 students with bespoke options for larger groups, supported by 2 dedicated leaders and trained local rangers for personalized experiences."
+  description: "We accommodate groups of 10 to 30 students, with tailored options for larger groups, guided by 2 dedicated leaders and trained local rangers to ensure personalised, transformative experiences."
 }, {
   icon: <BookOpen className="h-10 w-10 text-dragon" />,
   title: "Educational Focus",
