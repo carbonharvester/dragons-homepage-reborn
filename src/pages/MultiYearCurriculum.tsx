@@ -10,7 +10,7 @@ import HeroSection from '@/components/multi-year/HeroSection';
 import OverviewSection from '@/components/multi-year/OverviewSection';
 import ProgramStructureSection from '@/components/multi-year/ProgramStructureSection';
 import { Button } from '@/components/ui/button';
-import { EditText, pencil } from 'lucide-react';
+import { Pencil } from 'lucide-react';
 import { EditableText } from '@/components/ui/editable-text';
 
 const MultiYearCurriculumPage = () => {
@@ -57,12 +57,12 @@ const MultiYearCurriculumPage = () => {
               onClick={() => setIsEditing(!isEditing)}
               className="flex items-center gap-2"
             >
-              <pencil size={16} /> {isEditing ? "Save Changes" : "Edit Content"}
+              <Pencil size={16} /> {isEditing ? "Save Changes" : "Edit Content"}
             </Button>
           </div>
           
           {isEditing && (
-            <div className="bg-gray-50 p-6 rounded-lg mb-8">
+            <div className="bg-gray-50 p-6 rounded-lg mb-8 border-l-4 border-dragon-yellow">
               <h3 className="font-bold text-xl mb-4">Edit Program Details</h3>
               <div className="space-y-4">
                 <EditableText 

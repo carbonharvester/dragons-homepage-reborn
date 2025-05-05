@@ -1,94 +1,37 @@
 
 import React from 'react';
-import { BookOpen, Calendar, Globe } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
 
 const OverviewSection = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 bg-white">
       <div className="container-wide">
         <div className="max-w-4xl mx-auto">
-          <h2 className="section-heading text-center">Multi-Year Travel Curriculum</h2>
-          <p className="text-xl text-dragon-gray text-center mb-8">
-            Transform your school's global education with our three-year travel curriculum tailored to your educational objectives. Our progressive trips build student skills while creating lasting impact.
+          <h2 className="section-heading mb-2">Program Overview</h2>
+          <div className="w-20 h-1 bg-dragon-yellow mb-6"></div>
+          <p className="text-lg text-dragon-gray mb-8">
+            Our Multi-Year Curriculum is designed to provide students with a progressive educational journey that builds skills, 
+            confidence, and global citizenship over three transformative years. Each year, students engage in increasingly complex 
+            challenges and experiences that deepen their understanding of global issues and their capacity to make a difference.
           </p>
-
-          <div className="bg-dragon-beige/30 p-8 rounded-xl mb-12">
-            <h3 className="text-2xl font-bold text-dragon-dark mb-4">A Comprehensive Approach to Global Education</h3>
-            <p className="mb-6">
-              Our Multi-Year Curriculum offers schools a strategic, scaffolded approach to experiential education that aligns with academic goals while nurturing global citizenship. This carefully designed program builds upon itself year after year, allowing students to develop deeper connections with communities, enhance their leadership capabilities, and gain a nuanced understanding of global challenges.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="flex items-center mb-3 text-dragon">
-                  <BookOpen className="h-5 w-5 mr-2" />
-                  <h4 className="font-bold">Curriculum Integration</h4>
-                </div>
-                <p className="text-sm">Seamlessly connects with IB, A-Level, IGCSE, AP, and national curriculums, providing real-world context to classroom learning.</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="flex items-center mb-3 text-dragon">
-                  <Calendar className="h-5 w-5 mr-2" />
-                  <h4 className="font-bold">Long-term Planning</h4>
-                </div>
-                <p className="text-sm">Simplifies logistics with consistent programming over three years, allowing for focused relationship building with communities.</p>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-sm">
-                <div className="flex items-center mb-3 text-dragon">
-                  <Globe className="h-5 w-5 mr-2" />
-                  <h4 className="font-bold">Measurable Impact</h4>
-                </div>
-                <p className="text-sm">Demonstrates your school's commitment to global education with trackable student growth and community development metrics.</p>
-              </div>
-            </div>
-          </div>
           
-          <div className="bg-dragon-beige p-8 md:p-12 rounded-xl mb-16">
-            <h3 className="text-2xl font-bold text-dragon-dark mb-6">Why Choose a Multi-Year Approach?</h3>
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-dragon-yellow">
+              <Badge className="mb-3 bg-dragon-yellow text-dragon-dark">Year 1</Badge>
+              <h3 className="text-xl font-bold mb-2">Foundation</h3>
+              <p>Students build fundamental skills in cross-cultural communication, team collaboration, and basic project management.</p>
+            </div>
             
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h4 className="font-bold text-dragon-dark mb-3">For Students</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="bg-dragon rounded-full p-1 mt-1 mr-3"></span>
-                    <span>Progressive skill development over multiple years</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-dragon rounded-full p-1 mt-1 mr-3"></span>
-                    <span>Deeper cultural understanding and connection</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-dragon rounded-full p-1 mt-1 mr-3"></span>
-                    <span>CAS and Duke of Edinburgh's Award credits</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-dragon rounded-full p-1 mt-1 mr-3"></span>
-                    <span>Enhanced university and career applications</span>
-                  </li>
-                </ul>
-              </div>
-              
-              <div>
-                <h4 className="font-bold text-dragon-dark mb-3">For Schools</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="bg-dragon rounded-full p-1 mt-1 mr-3"></span>
-                    <span>Alignment with curriculum and educational goals</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-dragon rounded-full p-1 mt-1 mr-3"></span>
-                    <span>Differentiated educational offering</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-dragon rounded-full p-1 mt-1 mr-3"></span>
-                    <span>Long-term community partnerships and impact</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-dragon rounded-full p-1 mt-1 mr-3"></span>
-                    <span>Simplified planning with consistent provider</span>
-                  </li>
-                </ul>
-              </div>
+            <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-dragon-yellow">
+              <Badge className="mb-3 bg-dragon-yellow text-dragon-dark">Year 2</Badge>
+              <h3 className="text-xl font-bold mb-2">Development</h3>
+              <p>Building on foundational knowledge, students engage in more complex projects and develop leadership capabilities.</p>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-md border-t-4 border-dragon-yellow">
+              <Badge className="mb-3 bg-dragon-yellow text-dragon-dark">Year 3</Badge>
+              <h3 className="text-xl font-bold mb-2">Mastery</h3>
+              <p>Students lead initiatives, mentor younger participants, and implement advanced solutions to real-world challenges.</p>
             </div>
           </div>
         </div>

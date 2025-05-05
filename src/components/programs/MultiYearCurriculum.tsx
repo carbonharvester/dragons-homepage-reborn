@@ -24,12 +24,12 @@ const MultiYearCurriculum = ({ data }: MultiYearCurriculumProps) => {
       <Card className="overflow-hidden border-none shadow-md">
         <CardContent className="p-8">
           <h3 className="text-2xl font-bold mb-2 text-dragon-dark">{data.title}</h3>
-          <h4 className="text-xl text-dragon mb-4">{data.subtitle}</h4>
+          <h4 className="text-xl text-dragon-yellow mb-4">{data.subtitle}</h4>
           <p className="text-dragon-gray mb-8">{data.description}</p>
           
           <div className="space-y-6">
             {data.years.map((year, idx) => (
-              <div key={idx} className="flex gap-4 border-l-4 border-dragon pl-4 py-2">
+              <div key={idx} className="flex gap-4 border-l-4 border-dragon-yellow pl-4 py-2">
                 <div className="bg-dragon text-white p-2 rounded-full shrink-0">
                   <year.icon size={24} />
                 </div>
@@ -42,7 +42,7 @@ const MultiYearCurriculum = ({ data }: MultiYearCurriculumProps) => {
             ))}
           </div>
           
-          <div className="mt-8">
+          <div className="mt-8 p-4 bg-dragon-sand/30 rounded-lg border border-dragon-yellow/30">
             <h5 className="text-lg font-bold text-dragon-dark mb-3">Customize Your Curriculum</h5>
             <p className="mb-6">We work with you to design a program that fits your school's curriculum, values, and goals. Whether it's STEM, arts, or social justice, your travel curriculum will be unique.</p>
           </div>
