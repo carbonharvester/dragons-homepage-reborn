@@ -87,10 +87,10 @@ const Programs = () => {
                     <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
                     <ul className="list-disc pl-5 space-y-2 mb-6">
                       <li>Curriculum-aligned experiences with pre and post-trip resources</li>
-                      <li>Project-based learning opportunities with measurable impact</li>
+                      <li>Project-based learning opportunities with measurable community impact</li>
                       <li>Collaborative work with local communities and experts</li>
                       <li>Comprehensive risk management and 24/7 support</li>
-                      <li>Customizable itineraries based on your school's needs</li>
+                      <li>Customisable itineraries based on your school's needs</li>
                     </ul>
                     
                     <p className="mb-6">
