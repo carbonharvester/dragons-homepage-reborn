@@ -42,7 +42,7 @@ const VideoSection = ({ videoId, title, description, quote }: VideoSectionProps)
             </blockquote>
             {quote.author && (
               <p className="font-medium text-[#F97316]">
-                — {quote.author}
+                — Brett Girven, {quote.author}
               </p>
             )}
           </div>
