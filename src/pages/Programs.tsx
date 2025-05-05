@@ -25,10 +25,7 @@ const Programs = () => {
           <div className="container-wide relative z-10 text-white">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">Our Programs</h1>
-              <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">
-                Discover transformative cultural immersion experiences designed to challenge, 
-                inspire, and create lasting impact through authentic engagement.
-              </p>
+              <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">Discover transformative cultural immersion experiences designed to challenge, inspire, and create lasting impact through authentic engagement in Africa.</p>
             </div>
           </div>
         </section>
