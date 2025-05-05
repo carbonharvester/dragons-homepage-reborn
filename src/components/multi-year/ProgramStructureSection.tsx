@@ -7,11 +7,11 @@ const ProgramStructureSection = () => {
       <div className="container-wide">
         <div className="max-w-4xl mx-auto">
           <h2 className="section-heading text-center mb-2">Program Structure</h2>
-          <div className="w-20 h-1 bg-dragon-yellow mx-auto mb-10"></div>
+          <div className="w-20 h-1 bg-dragon mx-auto mb-10"></div>
           
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute h-full w-1 bg-dragon-yellow/50 left-1/2 transform -translate-x-1/2"></div>
+            <div className="absolute h-full w-1 bg-dragon-light/50 left-1/2 transform -translate-x-1/2"></div>
             
             {/* Year 1 */}
             <div className="relative mb-16">
@@ -21,12 +21,12 @@ const ProgramStructureSection = () => {
                   <p className="text-dragon-gray">Students are introduced to the fundamentals of global citizenship, cultural immersion, and basic field research techniques. The focus is on observation, reflection, and building foundational skills.</p>
                 </div>
                 
-                <div className="absolute left-1/2 transform -translate-x-1/2 bg-white border-4 border-dragon-yellow rounded-full w-10 h-10 flex items-center justify-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 bg-white border-4 border-dragon rounded-full w-10 h-10 flex items-center justify-center">
                   <span className="text-dragon-dark font-bold">1</span>
                 </div>
                 
                 <div className="md:w-1/2 md:pl-12">
-                  <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-dragon-yellow">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-dragon">
                     <h4 className="text-lg font-bold mb-2">Key Outcomes</h4>
                     <ul className="list-disc pl-5 space-y-1">
                       <li>Development of observation skills</li>
@@ -43,7 +43,7 @@ const ProgramStructureSection = () => {
             <div className="relative mb-16">
               <div className="flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right order-1 md:order-1">
-                  <div className="bg-white p-6 rounded-lg shadow-md border-r-4 border-dragon-yellow">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-r-4 border-dragon">
                     <h4 className="text-lg font-bold mb-2">Key Outcomes</h4>
                     <ul className="list-disc pl-5 space-y-1">
                       <li>Project design and management</li>
@@ -54,7 +54,7 @@ const ProgramStructureSection = () => {
                   </div>
                 </div>
                 
-                <div className="absolute left-1/2 transform -translate-x-1/2 bg-white border-4 border-dragon-yellow rounded-full w-10 h-10 flex items-center justify-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 bg-white border-4 border-dragon rounded-full w-10 h-10 flex items-center justify-center">
                   <span className="text-dragon-dark font-bold">2</span>
                 </div>
                 
@@ -73,12 +73,12 @@ const ProgramStructureSection = () => {
                   <p className="text-dragon-gray">Students take on leadership roles, designing and implementing their own projects. They mentor younger students and develop advanced skills in project management, leadership, and impact assessment.</p>
                 </div>
                 
-                <div className="absolute left-1/2 transform -translate-x-1/2 bg-white border-4 border-dragon-yellow rounded-full w-10 h-10 flex items-center justify-center">
+                <div className="absolute left-1/2 transform -translate-x-1/2 bg-white border-4 border-dragon rounded-full w-10 h-10 flex items-center justify-center">
                   <span className="text-dragon-dark font-bold">3</span>
                 </div>
                 
                 <div className="md:w-1/2 md:pl-12">
-                  <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-dragon-yellow">
+                  <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-dragon">
                     <h4 className="text-lg font-bold mb-2">Key Outcomes</h4>
                     <ul className="list-disc pl-5 space-y-1">
                       <li>Advanced project implementation</li>
