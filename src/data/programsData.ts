@@ -1,3 +1,4 @@
+
 import { Globe, School, Users, GraduationCap, Camera, Leaf } from "lucide-react";
 
 // Program categories
@@ -31,7 +32,7 @@ export const multiYearProgram = {
   years: [
     {
       title: "Year 1: Foundation Trip",
-      ageRange: "Ages 12–13",
+      ageRange: "Ages 11–13",
       description: "Discover Kenya through tree planting, safaris, and cultural workshops. Earn CAS points and a Kapes Foundation Certificate.",
       icon: School
     },

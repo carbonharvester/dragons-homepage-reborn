@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -140,7 +141,7 @@ const MultiYearCurriculumPage = () => {
                   <School className="h-16 w-16 text-dragon" />
                 </div>
                 <h3 className="text-2xl font-bold text-dragon-dark text-center mb-4">Year 1: Foundation</h3>
-                <p className="text-lg text-center text-dragon-gray mb-4">Ages 11-12</p>
+                <p className="text-lg text-center text-dragon-gray mb-4">Ages 11-13</p>
                 <ul className="space-y-3 mb-6">
                   <li className="flex items-start">
                     <span className="bg-dragon-beige rounded-full p-1 mt-1 mr-3"></span>
