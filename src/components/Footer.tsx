@@ -1,25 +1,17 @@
-
 import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendlyEmbed from './CalendlyEmbed';
 import { Button } from './ui/button';
-
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
       <div className="container-wide">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <img 
-                src="/lovable-uploads/9cdd3641-0b63-46d4-9b2d-9e6d3a85f70e.png" 
-                alt="Kapes Adventures - Travel That Transforms" 
-                className="h-10 brightness-0 invert"
-              />
+              <img src="/lovable-uploads/9cdd3641-0b63-46d4-9b2d-9e6d3a85f70e.png" alt="Kapes Adventures - Travel That Transforms" className="h-10 brightness-0 invert" />
             </div>
-            <p className="text-gray-300 mb-6 text-sm pl-[5px]">
-              Facilitating meaningful cross-cultural experiences through immersive and responsible travel programs.
-            </p>
+            <p className="text-gray-300 mb-6 text-sm pl-[5px]">We create immersive, responsible travel programs that connect students with communities, fostering transformation through authentic cultural exchange.</p>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="Facebook">
                 <Facebook size={18} />
@@ -64,20 +56,10 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li className="text-gray-300">info@kapesadventures.com</li>
               <li className="mt-4">
-                <CalendlyEmbed 
-                  url="https://calendly.com/kapesuniforms/discoverymeeting"
-                  text="Schedule Consultation"
-                  variant="link"
-                  className="text-gray-300 hover:text-white transition-colors p-0 h-auto"
-                />
+                <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="link" className="text-gray-300 hover:text-white transition-colors p-0 h-auto" />
               </li>
               <li className="mt-2">
-                <a 
-                  href="https://form.typeform.com/to/rtxmvp4L" 
-                  className="text-gray-300 hover:text-white transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://form.typeform.com/to/rtxmvp4L" className="text-gray-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                   Apply Now
                 </a>
               </li>
@@ -96,5 +78,4 @@ const Footer = () => {
       </div>
     </footer>;
 };
-
 export default Footer;
