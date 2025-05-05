@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -12,9 +11,9 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center mb-4">
               <img 
-                src="/lovable-uploads/112da32d-2905-42eb-9b60-624e1e17abad.png" 
+                src="/lovable-uploads/96effa49-c024-4cd9-b30f-6c134559f932.png" 
                 alt="Kapes Adventures - Travel That Transforms" 
-                className="h-16 brightness-0 invert"
+                className="h-20 brightness-0 invert"
               />
             </div>
             <p className="text-gray-300 mb-6 text-sm">
