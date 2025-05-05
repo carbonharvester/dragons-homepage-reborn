@@ -150,11 +150,7 @@ const Programs = () => {
                       <li>Compatible with IB CAS requirements and Duke of Edinburgh Awards</li>
                     </ul>
                     
-                    <p className="mb-6">
-                      The Multi-Year Curriculum is designed for schools seeking to build global education into their 
-                      core programming, providing students with a developmental journey that prepares them for future 
-                      academic and professional success.
-                    </p>
+                    <p className="mb-6">The Multi-Year Curriculum is designed for schools eager to weave global education into their core programming, empowering students with a transformative journey that prepares them for academic and professional success.</p>
                   </div>
                   
                   <div className="text-center mt-8">
