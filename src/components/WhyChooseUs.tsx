@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, Users, BookOpen, Shield, LineChart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from './CalendlyEmbed';
+
 const features = [{
   icon: <MapPin className="h-10 w-10 text-dragon" />,
   title: "Tailored Itineraries",
@@ -21,12 +22,13 @@ const features = [{
 }, {
   icon: <LineChart className="h-10 w-10 text-dragon" />,
   title: "Measurable Impact",
-  description: "Concrete outcomes like providing daily meals to hundreds of students, establishing sustainable community gardens, and creating economic opportunities that foster long-term prosperity in local communities."
+  description: "Concrete outcomes like establishing sustainable community gardens, reducing school absenteeism, providing daily meals to students, and creating economic opportunities that foster long-term prosperity in local communities."
 }, {
   icon: <Star className="h-10 w-10 text-dragon" />,
   title: "Transformative Experiences",
   description: "Life-changing journeys that foster leadership, cultural understanding, and a deep commitment to global citizenship, while empowering communities through sustainable impact."
 }];
+
 const WhyChooseUs = () => {
   const scrollToPrograms = () => {
     const programsSection = document.getElementById('programs');
