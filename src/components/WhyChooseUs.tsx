@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MapPin, Users, BookOpen, Shield, LineChart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -5,7 +6,7 @@ import CalendlyEmbed from './CalendlyEmbed';
 const features = [{
   icon: <MapPin className="h-10 w-10 text-dragon" />,
   title: "Tailored Itineraries",
-  description: "Structured day-by-day programs that balance immersive learning, cultural exchange, and direct impact with clearly defined goals and activities."
+  description: "Structured day-by-day programs that balance immersive learning, cultural exchange, and direct community impact, with clear goals and activities designed to inspire students and empower African communities."
 }, {
   icon: <Users className="h-10 w-10 text-dragon" />,
   title: "Flexible Group Sizes",
