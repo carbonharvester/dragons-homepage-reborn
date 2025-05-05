@@ -34,7 +34,7 @@ const VideoSection = ({ videoId, title, description, quote }: VideoSectionProps)
 
         {quote && (
           <div className="max-w-3xl mx-auto mt-12 text-center">
-            <div className="flex justify-center text-dragon-yellow mb-4">
+            <div className="flex justify-center text-dragon mb-4">
               <Quote size={36} />
             </div>
             <blockquote className="text-xl md:text-2xl font-serif text-dragon-dark mb-4 italic">
