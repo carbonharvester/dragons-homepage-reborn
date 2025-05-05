@@ -124,14 +124,14 @@ const AboutUs = () => {
           </div>
         </section>
 
-        {/* Video Section - Moved here from above */}
+        {/* Video Section */}
         <VideoSection 
           videoId="720192915" 
           title="Kapes Impact Adventures"
           description="Experience the inspiring journey of Camp Kapes and how we're making a difference in communities across Kenya."
           quote={{
-            text: "We believe in creating experiences that reconnect students with nature, communities, and what truly matters. Our programs transform not only the students who join us, but also the communities we visit.",
-            author: "Kapes Impact Adventures"
+            text: "These experiences change perspectives, build connections, and inspire students to become more conscious global citizens who understand their role in creating a sustainable future.",
+            author: "Brett Girven, Former-Principal at The Arbor School"
           }}
         />
       </main>

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -72,7 +71,7 @@ const Index = () => {
           description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences."
           quote={{
             text: "These experiences change perspectives, build connections, and inspire students to become more conscious global citizens who understand their role in creating a sustainable future.",
-            author: "Brett Girven, Former-Principal at The Arbor School"
+            author: "Kapes Impact Adventures"
           }}
         />
         <div className="py-16 bg-white">
