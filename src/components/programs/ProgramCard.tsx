@@ -38,7 +38,7 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
       </div>
           
       <CardContent className="p-6 flex-grow flex flex-col">
-        <h3 className="text-xl md:text-xl font-bold mb-3 text-dragon-dark">{program.title}</h3>
+        <h3 className="text-lg md:text-lg font-bold mb-3 text-dragon-dark">{program.title}</h3>
         <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
         <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2">
           <div className="flex items-center">
