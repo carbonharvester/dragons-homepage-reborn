@@ -30,7 +30,7 @@ const Header = () => {
             <img 
               src="/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png" 
               alt="Kapes Adventures - Travel That Transforms" 
-              className="h-16"
+              className="h-12 brightness-[0.8] contrast-[1.2] hue-rotate-[-10deg]"
             />
           </div>
         </Link>

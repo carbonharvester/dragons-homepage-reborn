@@ -14,7 +14,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png" 
                 alt="Kapes Adventures - Travel That Transforms" 
-                className="h-16 brightness-0 invert"
+                className="h-12 brightness-0 invert"
               />
             </div>
             <p className="text-gray-300 mb-6 text-sm pl-[5px]">
