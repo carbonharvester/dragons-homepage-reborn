@@ -56,7 +56,7 @@ const DesktopNavigation = () => {
           rel="noopener noreferrer"
           className="ml-2"
         >
-          Apply Now
+          Apply for Summer/Adult
         </a>
       </Button>
     </nav>

@@ -102,7 +102,7 @@ const MobileMenu = ({
             className="bg-dragon text-white py-2 px-4 rounded text-center"
             onClick={toggleMenu}
           >
-            Apply Now
+            Apply for Summer/Adult Programs
           </a>
         </nav>
       </div>
