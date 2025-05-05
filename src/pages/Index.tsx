@@ -74,7 +74,7 @@ const Index = () => {
       
       <main>
         <Hero />
-        <HomeVideoSection videoId="720192915" title="Kapes Impact Adventures" description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences." />
+        <HomeVideoSection videoId="675826299" title="Kapes Impact Adventures" description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences." />
         <div className="py-16 bg-white">
           <div className="container-wide text-center">
             <h2 className="section-heading">Experience Learning Through Adventure</h2>
