@@ -60,7 +60,7 @@ const Footer = () => {
               </li>
               <li className="mt-2">
                 <a href="https://form.typeform.com/to/rtxmvp4L" className="text-gray-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
-                  Apply for Summer/Adult Programs
+                  Apply Now
                 </a>
               </li>
               <li className="text-gray-300 mt-2">info@kapesadventures.com</li>

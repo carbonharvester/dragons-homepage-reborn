@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import CalendlyEmbed from '../CalendlyEmbed';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -95,15 +96,13 @@ const MobileMenu = ({
             )}
           </div>
           
-          <a 
-            href="https://form.typeform.com/to/example" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <CalendlyEmbed 
+            url="https://calendly.com/kapesuniforms/discoverymeeting"
+            text="Schedule Consultation"
+            variant="default" 
             className="bg-dragon text-white py-2 px-4 rounded text-center"
             onClick={toggleMenu}
-          >
-            Apply for Summer/Adult Programs
-          </a>
+          />
         </nav>
       </div>
     </div>

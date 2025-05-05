@@ -5,6 +5,7 @@ import ProgramsMenu from './ProgramsMenu';
 import ResourcesMenu from './ResourcesMenu';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
+import CalendlyEmbed from '../CalendlyEmbed';
 
 const DesktopNavigation = () => {
   const [programsMenuOpen, setProgramsMenuOpen] = useState(false);
@@ -49,16 +50,13 @@ const DesktopNavigation = () => {
         {resourcesMenuOpen && <ResourcesMenu />}
       </div>
       
-      <Button size="sm" asChild>
-        <a 
-          href="https://form.typeform.com/to/example" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="ml-2"
-        >
-          Apply for Summer/Adult
-        </a>
-      </Button>
+      <CalendlyEmbed 
+        url="https://calendly.com/kapesuniforms/discoverymeeting"
+        text="Schedule Consultation"
+        variant="default"
+        size="sm"
+        className="ml-2 bg-dragon hover:bg-dragon-dark"
+      />
     </nav>
   );
 };

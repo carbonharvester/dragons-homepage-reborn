@@ -41,7 +41,7 @@ const TripDetailsCard = ({ tripDetails, isSchoolTrip = false }: TripDetailsCardP
               target="_blank" 
               rel="noopener noreferrer"
             >
-              Apply for This Program
+              Apply Now
             </a>
           </Button>
         )}
