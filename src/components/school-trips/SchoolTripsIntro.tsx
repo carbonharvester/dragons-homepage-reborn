@@ -46,9 +46,9 @@ const SchoolTripsIntro = () => {
       </div>
       
       <div className="mt-16 bg-white p-6 rounded-lg shadow-sm">
-        <h3 className="text-2xl font-academy text-dragon-dark mb-4">Trusted by Schools Worldwide</h3>
+        <h3 className="text-2xl font-academy text-dragon-dark mb-4">Global Education Network</h3>
         <p className="text-dragon-gray mb-2">
-          Join over 50 international schools who trust Kapes Adventures to deliver transformative experiences with lasting impact.
+          Kapes Adventures designs educational journeys implemented through our network of trusted partners, ensuring authentic and impactful experiences for students worldwide.
         </p>
       </div>
       
