@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -122,7 +121,7 @@ const SummerAbroad = () => {
             </div>
 
             {/* A Day in the Life Section */}
-            <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden">
+            <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden bg-black">
               {/* Using the external image URL provided by the user */}
               <div 
                 className="absolute inset-0 z-0" 
@@ -131,11 +130,10 @@ const SummerAbroad = () => {
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
                   backgroundRepeat: 'no-repeat',
-                  opacity: 0.3,  // Making the image more subtle
-                  filter: 'blur(1px)'  // Adding a slight blur effect
+                  opacity: 0.2  // Reduced opacity further
                 }}
               >
-                <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+                {/* Removed the additional black overlay as we already have a black background */}
               </div>
               
               {/* Content */}
