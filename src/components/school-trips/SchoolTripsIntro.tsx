@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
@@ -25,13 +26,13 @@ const SchoolTripsIntro = () => {
       </p>
       
       <div className="mt-12">
-        <h3 className="text-2xl font-academy text-dragon-dark mb-8">Key Benefits</h3>
+        <h3 className="text-3xl md:text-4xl font-academy font-bold text-dragon-dark mb-8">Key Benefits</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {keyBenefits.map((benefit, index) => (
             <Card 
               key={index} 
-              className="bg-dragon-beige overflow-hidden transition-all group text-left"
+              className="bg-dragon-beige overflow-hidden transition-all group text-left hover:scale-[1.02] transform transition-transform"
             >
               <CardContent className="p-6">
                 <div className="flex items-start mb-3">
