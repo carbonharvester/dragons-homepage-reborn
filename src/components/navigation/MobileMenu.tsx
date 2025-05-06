@@ -1,8 +1,9 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import CalendlyEmbed from '../CalendlyEmbed';
+import { programCategories } from '@/data/navigationData';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -21,6 +22,15 @@ const MobileMenu = ({
   toggleMobileResources,
   toggleMenu
 }: MobileMenuProps) => {
+  const [expandedCategories, setExpandedCategories] = useState<{[key: string]: boolean}>({});
+
+  const toggleCategory = (categoryTitle: string) => {
+    setExpandedCategories(prev => ({
+      ...prev,
+      [categoryTitle]: !prev[categoryTitle]
+    }));
+  };
+
   return (
     <div className={`lg:hidden bg-white overflow-hidden transition-all duration-300 ${
       isMenuOpen ? "max-h-[1000px] border-t border-gray-100" : "max-h-0"
@@ -42,18 +52,49 @@ const MobileMenu = ({
                 <Link to="/programs" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
                   All Programs
                 </Link>
-                <Link to="/school-trips" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  School Trips
-                </Link>
-                <Link to="/summer-abroad" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Summer Abroad
-                </Link>
-                <Link to="/multi-year-curriculum" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Multi-Year Curriculum
-                </Link>
-                <Link to="/adult-programs" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Adult Programs
-                </Link>
+                
+                {programCategories.map((category) => (
+                  <div key={category.title} className="py-1">
+                    <div className="flex items-center justify-between">
+                      <Link 
+                        to={category.href} 
+                        className="block py-1 text-dragon-dark"
+                        onClick={toggleMenu}
+                      >
+                        {category.title}
+                      </Link>
+                      {category.programs && category.programs.length > 0 && (
+                        <button 
+                          onClick={(e) => {
+                            e.preventDefault();
+                            toggleCategory(category.title);
+                          }}
+                          className="p-1"
+                        >
+                          {expandedCategories[category.title] ? 
+                            <ChevronUp size={16} /> : 
+                            <ChevronDown size={16} />
+                          }
+                        </button>
+                      )}
+                    </div>
+                    
+                    {expandedCategories[category.title] && category.programs && (
+                      <div className="pl-3 mt-1 space-y-1 border-l border-dragon-beige">
+                        {category.programs.map((program) => (
+                          <Link 
+                            key={program.title}
+                            to={program.href}
+                            className="block py-1 text-sm text-dragon-dark"
+                            onClick={toggleMenu}
+                          >
+                            {program.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             )}
           </div>
