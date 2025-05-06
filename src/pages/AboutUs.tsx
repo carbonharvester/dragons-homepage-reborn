@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -5,6 +6,7 @@ import SEO from '@/components/SEO';
 import VideoSection from '@/components/VideoSection';
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Calendar, Users, Globe } from 'lucide-react';
+
 const AboutUs = () => {
   return <div className="min-h-screen flex flex-col">
       <SEO title="About Us" description="From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters." keywords="Mission Kapes, educational travel, student trips, sustainability, Africa, Kenya" />
@@ -37,10 +39,10 @@ const AboutUs = () => {
               
               <div className="prose prose-lg text-dragon-gray">
                 <p className="mb-4">
-                  Our story began with <strong>Kapes Uniforms</strong>, founded by Matthew Benjamin to empower students to become changemakers and more conscious consumers. The mission was simple yet powerful: connect students to the people making their uniforms, the places where they're made, and understand the environmental and social impact of these connections.
+                  Our story began with <strong>Kapes Uniforms</strong>, founded by Matthew Benjamin to empower students as changemakers and conscious consumers. The mission was simple yet powerful: connect students to the people making their uniforms, the places they're made, and the environmental and social impact of these connections.
                 </p>
                 <p className="mb-4">
-                  As part of Kapes Uniforms' mission to give back, we provide free school uniforms to children in need in Kenya, which has been shown to reduce absenteeism. That's how our name came about - we like to think our uniforms have superpowers by nature of the good that we do, and the changemakers that wear them are heroes. Hence, heroes wear Kapes.
+                  As part of Kapes Uniforms' mission to give back, we provide free school uniforms to children in need in Kenya, reducing absenteeism. That's how our name came about—we believe our uniforms have superpowers through the good they do, and the changemakers who wear them are heroes. Hence, heroes wear Kapes.
                 </p>
                 
                 {/* New image from first sponsored trip */}
@@ -52,10 +54,10 @@ const AboutUs = () => {
                 </div>
                 
                 <p className="mb-4">
-                  While searching for a sustainable factory to make these uniforms locally in Kenya, Matthew visited a carbon offset project in the Kasigau Corridor. During this factory visit, he was taken on a game drive, met social entrepreneurs working with the project, and learned about their initiatives. It became abundantly clear that bringing students here would be key to joining the dots - seeing the positive impact their uniforms can have while also providing a life-changing experience.
+                  While searching for a sustainable factory in Kenya, Matthew visited a carbon offset project in the Kasigau Corridor. On a game drive, he met social entrepreneurs and learned about their initiatives. It became clear that bringing students here would connect the dots—showing the impact of their uniforms while providing a life-changing experience.
                 </p>
                 <p>
-                  This drive to build connection is what has and continues to inspire all of our trips. In 2022, <strong>Kapes Adventures</strong> was born. While we have nothing against things like ski trips, we wanted to offer more. We focus on Africa because Africa has so much to offer students. Our trips are designed to change the lives of the students who participate just as much as, if not more than, the lives of the communities we visit in Africa.
+                  This drive to build connections inspires all our trips. In 2022, <strong>Kapes Adventures</strong> was born. While we have nothing against ski trips, we wanted to offer more. We focus on Africa because it offers so much to students—our trips transform the lives of participants as much as the communities we partner with.
                 </p>
               </div>
             </div>
@@ -129,4 +131,5 @@ const AboutUs = () => {
       <Footer />
     </div>;
 };
+
 export default AboutUs;
