@@ -5,7 +5,7 @@ import { Camera, Award, HandHelping } from "lucide-react";
 const SchoolTripsFeatures = () => {
   const features = [
     {
-      title: "Creative",
+      title: "Documentary & Cultural Expression",
       icon: Camera,
       description: "Photography, storytelling, and artistic expression that connects students with local culture and develops their creative mindset.",
       points: [
@@ -15,7 +15,7 @@ const SchoolTripsFeatures = () => {
       ]
     },
     {
-      title: "Activity",
+      title: "Adventure & Exploration",
       icon: Award,
       description: "Immersive adventures that challenge students physically while exploring Kenya's diverse landscapes and ecosystems.",
       points: [
@@ -25,7 +25,7 @@ const SchoolTripsFeatures = () => {
       ]
     },
     {
-      title: "Service",
+      title: "Community Engagement",
       icon: HandHelping,
       description: "Meaningful community engagement projects that create lasting positive impact while developing global citizenship.",
       points: [
@@ -39,7 +39,7 @@ const SchoolTripsFeatures = () => {
   return (
     <div className="mb-20">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-academy text-dragon-dark mb-4">Creative, Activity, Service</h2>
+        <h2 className="text-3xl md:text-4xl font-academy text-dragon-dark mb-4">Educational Focus Areas</h2>
         <p className="max-w-3xl mx-auto text-dragon-gray">
           Our trips are designed to develop students in three key areas that foster global citizenship and personal growth.
         </p>
