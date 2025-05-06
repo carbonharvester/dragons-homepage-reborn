@@ -2,21 +2,8 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Testimonials from "@/components/Testimonials";
 import SEO from "@/components/SEO";
-import TripHero from "@/components/trip/TripHero";
-import TripItinerary from "@/components/trip/TripItinerary";
-import TripGallery from "@/components/trip/TripGallery";
-
-// Import refactored components
-import ProgramIntro from "@/components/empowering-women/ProgramIntro";
-import Accommodation from "@/components/empowering-women/Accommodation";
-import ProgramSidebar from "@/components/empowering-women/ProgramSidebar";
-import ProgramCTA from "@/components/empowering-women/ProgramCTA";
-import TripHighlightsWrapper from "@/components/empowering-women/TripHighlightsWrapper";
-
-// Import data from new location
-import { tripItinerary, galleryImages } from "@/components/empowering-women/data";
+import TripBrochureWrapper from "@/components/trip/TripBrochureWrapper";
 
 const EmpoweringWomen = () => {
   return (
@@ -27,46 +14,9 @@ const EmpoweringWomen = () => {
         keywords="women empowerment, Zawadisha, microloan, Tsavo, Kenya, water walk, cultural immersion, educational travel"
       />
       <Header />
+      
       <main>
-        <TripHero 
-          title="Exploring Women's Empowerment"
-          subtitle="Empower Women, Transform Lives through an 8-day journey in Tsavo, Kenya"
-          category="School Trip"
-          imagePath="https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-        />
-        
-        <section className="py-16 bg-white">
-          <div className="container-wide">
-            <div className="flex flex-col lg:flex-row gap-12">
-              <div className="lg:w-2/3">
-                <h1 className="text-3xl md:text-4xl font-bold text-dragon-dark mb-6">Live, Learn, and Empower in Tsavo</h1>
-                
-                <ProgramIntro />
-                
-                <TripHighlightsWrapper />
-                
-                <div className="mb-16">
-                  <TripItinerary itineraryDays={tripItinerary} />
-                </div>
-                
-                <div className="mb-16">
-                  <TripGallery images={galleryImages} />
-                </div>
-
-                <Accommodation />
-              </div>
-              
-              <ProgramSidebar />
-            </div>
-            
-            {/* Move the ProgramCTA component outside and below the flex container */}
-            <div className="mt-12">
-              <ProgramCTA />
-            </div>
-          </div>
-        </section>
-        
-        <Testimonials />
+        <TripBrochureWrapper tripType="empowering-women" />
       </main>
       <Footer />
     </div>

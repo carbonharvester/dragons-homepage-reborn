@@ -1,13 +1,17 @@
 
 import React from 'react';
-import TripBrochureContent from './TripBrochureContent';
-import TripHero from './TripHero';
 import FoodForEducationData from '../food-for-education/FoodForEducationData';
+import EmpoweringWomenData from '../empowering-women/EmpoweringWomenData';
 
-const TripBrochureWrapper = () => {
+interface TripBrochureWrapperProps {
+  tripType?: 'food-for-education' | 'empowering-women';
+}
+
+const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({ tripType = 'food-for-education' }) => {
   return (
     <div className="bg-white">
-      <FoodForEducationData />
+      {tripType === 'food-for-education' && <FoodForEducationData />}
+      {tripType === 'empowering-women' && <EmpoweringWomenData />}
     </div>
   );
 };
