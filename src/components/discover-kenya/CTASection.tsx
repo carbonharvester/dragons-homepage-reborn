@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
-    <section className="py-16 bg-dragon-dark text-white">
+    <section className="py-16 mb-12 bg-dragon-sand text-dragon-dark rounded-lg shadow-sm">
       <div className="container-wide">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Experience Kenya with Kapes Adventures</h2>
