@@ -1,5 +1,5 @@
 
-import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield, Sprout, Award } from 'lucide-react';
+import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield, Sprout } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 interface TripHighlight {
@@ -43,10 +43,5 @@ export const tripHighlights: TripHighlight[] = [
     icon: Sprout,
     title: "Microloan Impact",
     description: "Each trip directly funds a microloan for solar lamps, rainwater tanks, or clean cookstoves for rural women."
-  },
-  {
-    icon: Award,
-    title: "Educational Credits",
-    description: "Earn CAS points and credits toward Duke of Edinburgh's Award while making a real difference."
   }
 ];
