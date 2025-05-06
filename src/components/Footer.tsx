@@ -4,7 +4,6 @@ import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendlyEmbed from './CalendlyEmbed';
 import { Button } from './ui/button';
-import { Separator } from './ui/separator';
 
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
@@ -70,14 +69,12 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="bg-dragon-dark/80 rounded-lg py-6 px-4 mt-8 shadow-inner">
-          <div className="text-center text-gray-400 text-xs">
-            <p>© {new Date().getFullYear()} Kapes Adventures. All Rights Reserved.</p>
-            <div className="mt-2 flex justify-center space-x-4">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-white transition-colors">Sitemap</a>
-            </div>
+        <div className="border-t border-gray-700 pt-6 mt-6 text-center text-gray-400 text-xs">
+          <p>© {new Date().getFullYear()} Kapes Adventures. All Rights Reserved.</p>
+          <div className="mt-2 flex justify-center space-x-4">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Sitemap</a>
           </div>
         </div>
       </div>
