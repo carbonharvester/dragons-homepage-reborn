@@ -1,6 +1,5 @@
 
 import React from 'react';
-import BulletList from '@/components/ui/BulletList';
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 
@@ -24,12 +23,7 @@ const SchoolTripsIntro = () => {
       </p>
       
       <div className="mt-12">
-        <div className="relative mb-12">
-          <h3 className="text-2xl font-academy text-dragon-dark mb-6 inline-block relative">
-            <span className="relative z-10">Key Benefits</span>
-            <span className="absolute bottom-0 left-0 w-full h-3 bg-dragon-beige/50 -z-0"></span>
-          </h3>
-        </div>
+        <h3 className="text-2xl font-academy text-dragon-dark mb-8">Key Benefits</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {keyBenefits.map((benefit, index) => (
