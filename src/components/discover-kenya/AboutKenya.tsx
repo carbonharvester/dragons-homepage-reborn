@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Earth } from "lucide-react";
 const AboutKenya = () => {
