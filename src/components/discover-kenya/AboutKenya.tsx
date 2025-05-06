@@ -17,11 +17,11 @@ const AboutKenya = () => {
           
           <div className="prose max-w-none text-dragon-gray">
             <p>
-              Located in East Africa, Kenya straddles the equator and borders Somalia, Ethiopia, South Sudan, Uganda, Tanzania, and the Indian Ocean. It's a country of extraordinary geographical diversity, from coral reefs and tropical beaches to savannah grasslands, highland plateaus, and snow-capped mountains.
+              Located in East Africa, Kenya straddles the equator, bordering Somalia, Ethiopia, South Sudan, Uganda, Tanzania, and the Indian Ocean. It's a land of extraordinary diversity, from coral reefs and tropical beaches to savannah grasslands, highland plateaus, and snow-capped mountains.
             </p>
             
             <p>
-              With a population of approximately 54 million people, Kenya is home to more than 40 different ethnic groups, each with their own language and cultural traditions. This rich cultural tapestry, combined with breathtaking landscapes and incredible wildlife, makes Kenya an unparalleled destination for educational travel.
+              With a population of about 54 million, Kenya is home to over 40 ethnic groups, each with unique languages and traditions. This rich cultural tapestry, paired with stunning landscapes and wildlife, makes Kenya an unparalleled destination for educational travel.
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 my-12">
@@ -42,7 +42,7 @@ const AboutKenya = () => {
                   className="rounded-lg shadow-md w-full h-64 object-cover"
                 />
                 <p className="text-sm text-dragon-gray mt-2 text-center italic">
-                  Traditional Maasai cultural experience
+                  Traditional Maasai Cultural Experience
                 </p>
               </div>
             </div>

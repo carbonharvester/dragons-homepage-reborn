@@ -19,14 +19,14 @@ const GeographySection = () => {
                   <span className="text-dragon mr-2">•</span>
                   <div>
                     <strong>Great Rift Valley</strong>
-                    <p className="mt-1">A dramatic geological feature with lakes, volcanoes, and diverse ecosystems</p>
+                    <p className="mt-1">A dramatic feature with lakes, volcanoes, and diverse ecosystems</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <span className="text-dragon mr-2">•</span>
                   <div>
                     <strong>Mount Kenya</strong>
-                    <p className="mt-1">Africa's second-highest mountain at 5,199 meters (17,057 ft)</p>
+                    <p className="mt-1">Africa's second-highest peak at 5,199 meters (17,057 ft)</p>
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -40,7 +40,7 @@ const GeographySection = () => {
                   <span className="text-dragon mr-2">•</span>
                   <div>
                     <strong>Savannahs</strong>
-                    <p className="mt-1">Expansive grasslands that host abundant wildlife</p>
+                    <p className="mt-1">Expansive grasslands hosting abundant wildlife</p>
                   </div>
                 </li>
               </ul>
@@ -49,7 +49,7 @@ const GeographySection = () => {
             <div>
               <h3 className="text-xl font-bold text-dragon-dark mb-4">Climate</h3>
               <p className="text-dragon-gray mb-4">
-                Despite being on the equator, Kenya's climate varies significantly due to differences in elevation and proximity to large bodies of water.
+                Despite being on the equator, Kenya's climate varies due to elevation and proximity to large bodies of water.
               </p>
               <ul className="space-y-2 text-dragon-gray">
                 <li><strong>Highland areas</strong>: Cooler temperatures and moderate rainfall</li>

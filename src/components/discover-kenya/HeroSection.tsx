@@ -16,7 +16,7 @@ const HeroSection = () => {
       <div className="container-wide relative z-10">
         <h1 className="text-4xl md:text-5xl font-academy text-white mb-4">Discover Kenya</h1>
         <p className="text-lg text-white max-w-3xl">
-          Explore the incredible diversity of landscapes, wildlife, cultures, and experiences that make Kenya a world-renowned destination for educational travel.
+          Explore the incredible diversity of landscapes, wildlife, and cultures that make Kenya a world-renowned destination for transformative educational travel.
         </p>
       </div>
     </section>

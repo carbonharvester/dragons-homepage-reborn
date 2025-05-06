@@ -13,7 +13,7 @@ const WildlifeSection = () => {
           <h2 className="text-3xl font-bold text-dragon-dark mb-8">Extraordinary Wildlife</h2>
           
           <p className="text-dragon-gray mb-8">
-            Kenya is renowned for its wildlife conservation efforts and is home to some of the most spectacular animal species on the planet. The country boasts 24 national parks, 15 national reserves, and numerous private conservancies.
+            Kenya is renowned for its wildlife conservation and is home to some of the planet's most spectacular species. The country boasts 24 national parks, 15 national reserves, and numerous private conservancies.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
@@ -26,7 +26,7 @@ const WildlifeSection = () => {
               <CardContent className="p-4">
                 <h3 className="font-bold text-dragon-dark">The Big Five</h3>
                 <p className="text-sm text-dragon-gray mt-1">
-                  Kenya is home to the "Big Five": lions, elephants, buffalos, leopards, and rhinos, making it a premier safari destination.
+                  Kenya is home to the "Big Five"—lions, elephants, buffalos, leopards, and rhinos—making it a premier safari destination.
                 </p>
               </CardContent>
             </Card>
@@ -54,7 +54,7 @@ const WildlifeSection = () => {
               <CardContent className="p-4">
                 <h3 className="font-bold text-dragon-dark">Conservation</h3>
                 <p className="text-sm text-dragon-gray mt-1">
-                  Kenya is a leader in wildlife conservation, with numerous sanctuaries and programs dedicated to protecting endangered species.
+                  Kenya leads in wildlife conservation, with sanctuaries and programs dedicated to protecting endangered species.
                 </p>
               </CardContent>
             </Card>

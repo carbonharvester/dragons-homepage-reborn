@@ -20,7 +20,7 @@ const CultureSection = () => {
                 className="rounded-lg w-full h-64 object-cover mb-4"
               />
               <p className="text-dragon-gray">
-                Kenya's cultural landscape is incredibly diverse, with more than 40 distinct ethnic groups, each with their own languages, traditions, and customs. From the iconic Maasai and Samburu peoples to the coastal Swahili communities, Kenya offers visitors a rich tapestry of cultural experiences.
+                Kenya's cultural landscape is incredibly diverse, with over 40 distinct ethnic groups, each with unique languages, traditions, and customs. From the iconic Maasai and Samburu to the coastal Swahili, Kenya offers a rich tapestry of cultural experiences.
               </p>
             </div>
             
@@ -29,19 +29,19 @@ const CultureSection = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <span className="text-dragon mr-2">•</span>
-                  <span><strong>Traditional Music and Dance</strong> - Experience vibrant performances that tell stories of heritage and celebration</span>
+                  <span><strong>Traditional Music and Dance</strong> - Vibrant performances that tell stories of heritage</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-dragon mr-2">•</span>
-                  <span><strong>Artistic Traditions</strong> - From intricate beadwork to woodcarving, Kenya's artisans preserve ancient techniques</span>
+                  <span><strong>Artistic Traditions</strong> - From intricate beadwork to woodcarving, artisans preserve ancient techniques</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-dragon mr-2">•</span>
-                  <span><strong>Cuisine</strong> - Sample traditional dishes like ugali, nyama choma, and sukuma wiki</span>
+                  <span><strong>Cuisine</strong> - Sample dishes like ugali, nyama choma, and sukuma wiki</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-dragon mr-2">•</span>
-                  <span><strong>Community Life</strong> - Learn about traditional social structures and how communities are adapting to modern challenges</span>
+                  <span><strong>Community Life</strong> - Learn about traditional social structures and modern adaptations</span>
                 </li>
               </ul>
             </div>
@@ -53,7 +53,7 @@ const CultureSection = () => {
               <h3 className="text-xl font-bold text-dragon-dark font-academy">Did you know?</h3>
             </div>
             <p className="text-dragon-gray">
-              Kenya's official languages are English and Swahili, but over 60 languages are spoken throughout the country. Many Kenyans speak at least three languages: their native ethnic language, Swahili, and English.
+              Kenya's official languages are English and Swahili, but over 60 languages are spoken. Many Kenyans speak at least three languages: their ethnic language, Swahili, and English.
             </p>
           </div>
         </div>
