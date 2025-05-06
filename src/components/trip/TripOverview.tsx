@@ -20,7 +20,7 @@ const TripOverview = ({ tripDetails, projectGoals, description }: TripOverviewPr
     <div className="mb-16">
       <h2 className="text-3xl font-academy mb-6 text-dragon-dark">Trip Overview</h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
+        <div className="lg:col-span-2 flex flex-col">
           {description ? (
             description.map((paragraph, index) => (
               <p key={index} className="text-lg text-dragon-gray mb-6">
@@ -42,7 +42,7 @@ const TripOverview = ({ tripDetails, projectGoals, description }: TripOverviewPr
             </>
           )}
           
-          <div className="bg-dragon-beige p-8 rounded-lg mt-8 h-full flex flex-col">
+          <div className="bg-dragon-beige p-8 rounded-lg mt-auto flex-grow flex flex-col">
             <h3 className="text-2xl font-bold mb-6 text-dragon-dark">Project Goals</h3>
             <ul className="list-disc pl-5 space-y-4 text-dragon-gray text-lg">
               {projectGoals ? (
