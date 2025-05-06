@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Testimonials from '@/components/Testimonials';
 import SEO from '@/components/SEO';
 
 // Import modular components
@@ -49,9 +48,6 @@ const CapturingKenya = () => {
 
         {/* Brochure Section */}
         <ProgramCTA programData={programData} />
-
-        {/* Testimonials */}
-        <Testimonials />
         
       </main>
       <Footer />

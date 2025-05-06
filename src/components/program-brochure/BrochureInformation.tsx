@@ -17,11 +17,11 @@ const BrochureInformation = () => {
       <div>
         <h4 className="font-bold text-dragon-dark mb-2">Perfect For:</h4>
         <ul className="list-disc list-inside text-dragon-gray space-y-1">
-          <li>School administrators</li>
-          <li>Teachers planning field trips</li>
+          <li>Students ages 12-18</li>
+          <li>School groups focusing on experiential learning</li>
           <li>Students interested in sustainable agriculture</li>
-          <li>Parents wanting to learn more</li>
-          <li>Partner organizations</li>
+          <li>Classes studying environmental science</li>
+          <li>Groups wanting hands-on impact projects</li>
         </ul>
       </div>
     </div>
