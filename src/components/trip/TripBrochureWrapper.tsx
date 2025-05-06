@@ -1,3 +1,4 @@
+
 import React from 'react';
 import TripBrochureContent from './TripBrochureContent';
 import TripHero from './TripHero';
@@ -101,7 +102,7 @@ const TripBrochureWrapper = () => {
     },
     {
       day: "Day 5",
-      title: "Permaculture Project - Day 1",
+      title: "Permaculture Project - Water Harvesting and Composting Setup",
       activities: [
         "Install water harvesting system with two 10,000-liter water tanks",
         "Attach PVC gutters to school roof, adding leaf excluder and first flush system",
@@ -113,7 +114,7 @@ const TripBrochureWrapper = () => {
     },
     {
       day: "Day 6",
-      title: "Permaculture Project - Day 2",
+      title: "Permaculture Project - Compost Processing and Vetiver Planting",
       activities: [
         "Build compost pile using pre-collected food waste, green and brown materials",
         "Produce biochar to add to compost and drum",
@@ -125,7 +126,7 @@ const TripBrochureWrapper = () => {
     },
     {
       day: "Day 7",
-      title: "Permaculture Project - Day 3",
+      title: "Permaculture Project - Nursery Setup and Irrigation",
       activities: [
         "Build a nursery table with wooden posts, metal roofing, and shade cloth",
         "Prepare compost with biochar and fill reusable pots for onions and tomatoes",
