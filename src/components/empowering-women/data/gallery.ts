@@ -6,12 +6,12 @@ export const galleryImages = [
     className: "col-span-12 md:col-span-6 h-64"
   },
   {
-    src: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/IMG-20250504-WA0018.jpg?v=1746513625",
     alt: "Women's leadership workshop", 
     className: "col-span-12 md:col-span-6 h-64"
   },
   {
-    src: "https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/IMG-20250504-WA0013.jpg?v=1746513592",
     alt: "Students learning traditional crafts", 
     className: "col-span-12 md:col-span-4 h-64"
   },
