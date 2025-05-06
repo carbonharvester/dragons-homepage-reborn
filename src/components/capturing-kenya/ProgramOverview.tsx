@@ -36,6 +36,14 @@ const ProgramOverview = ({ programData }: ProgramOverviewProps) => {
       alt: "Photography student with camera in Kenya"
     },
     {
+      src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/1e93affc-4105-40dd-aa24-f5fd875d2fd5_d59babc0-95fd-4333-b3b9-754cd20f3610.jpg?v=1746515665",
+      alt: "Students photographing wildlife in Kenya"
+    },
+    {
+      src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404516.jpg?v=1746515670",
+      alt: "Student with camera in natural setting"
+    },
+    {
       src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/55a9f399-0214-46a2-99d2-25dbc2cba06f.jpg?v=1746515494",
       alt: "Students working on photography project"
     },
