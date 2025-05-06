@@ -1,10 +1,11 @@
+
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import VideoSection from '@/components/VideoSection';
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Calendar, Users, Globe } from 'lucide-react';
+import { MapPin, Calendar, Users, Globe, Equal } from 'lucide-react';
 
 const AboutUs = () => {
   return <div className="min-h-screen flex flex-col">
@@ -112,6 +113,13 @@ const AboutUs = () => {
                       <div>
                         <h4 className="font-bold text-dragon-dark">Transformation</h4>
                         <p className="text-dragon-gray">Facilitating deep learning that changes perspectives.</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="bg-dragon rounded-full h-6 w-6 min-w-6 flex items-center justify-center text-white mr-3 mt-1">5</div>
+                      <div>
+                        <h4 className="font-bold text-dragon-dark">Equality</h4>
+                        <p className="text-dragon-gray">Promoting fairness and inclusion, ensuring every voice is valued in the journey of cultural exchange and community empowerment.</p>
                       </div>
                     </li>
                   </ul>
