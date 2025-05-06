@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -129,7 +130,9 @@ const SummerAbroad = () => {
                   backgroundImage: "url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/african_savannah_banner_768px.jpg?v=1746502451')",
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat'
+                  backgroundRepeat: 'no-repeat',
+                  opacity: 0.3,  // Making the image more subtle
+                  filter: 'blur(1px)'  // Adding a slight blur effect
                 }}
               >
                 <div className="absolute inset-0 bg-black bg-opacity-30"></div>
