@@ -10,7 +10,7 @@ const HealthAndSafety = () => {
       <Header />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-dragon-beige py-16">
+        <section className="bg-dragon-beige py-12">
           <div className="container-wide">
             <h1 className="text-4xl md:text-5xl font-academy text-dragon-dark mb-4">Health and Safety</h1>
             <p className="text-lg text-dragon-gray max-w-3xl">
@@ -20,19 +20,19 @@ const HealthAndSafety = () => {
         </section>
 
         {/* Safety Approach */}
-        <section className="py-16">
+        <section className="py-12">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
-              <div className="flex items-center mb-8">
+              <div className="flex items-center mb-6">
                 <ShieldCheck className="h-8 w-8 text-dragon mr-3" />
                 <h2 className="text-3xl font-academy text-dragon-dark">Our Safety Approach</h2>
               </div>
               
-              <p className="text-dragon-gray mb-8">
+              <p className="text-dragon-gray mb-6">
                 At Kapes Adventures, safety is at the heart of everything we do. We follow international best practices in educational travel to ensure all participants enjoy a secure, meaningful experience.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-8 mb-16">
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                   <h3 className="text-xl font-bold text-dragon-dark mb-4 font-academy">Pre-Departure Preparation</h3>
                   <ul className="space-y-3 text-dragon-gray">
@@ -82,21 +82,21 @@ const HealthAndSafety = () => {
         </section>
 
         {/* Health Information */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-12 bg-gray-50">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
-              <div className="flex items-center mb-8">
+              <div className="flex items-center mb-6">
                 <Info className="h-8 w-8 text-dragon mr-3" />
                 <h2 className="text-3xl font-academy text-dragon-dark">Health Information</h2>
               </div>
               
-              <div className="mb-12">
+              <div className="mb-8">
                 <h3 className="text-2xl font-academy text-dragon-dark mb-4">Vaccinations and Medications</h3>
-                <p className="text-dragon-gray mb-6">
+                <p className="text-dragon-gray mb-5">
                   We recommend consulting a travel health specialist or physician at least 8 weeks before departure to discuss vaccinations and medications for travel to Kenya. Common requirements and recommendations include:
                 </p>
                 
-                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-6">
                   <ul className="space-y-3 text-dragon-gray">
                     <li className="flex items-start">
                       <span className="text-dragon mr-2">•</span>
@@ -122,16 +122,16 @@ const HealthAndSafety = () => {
                 </p>
               </div>
               
-              <div className="mb-12">
+              <div className="mb-8">
                 <h3 className="text-2xl font-academy text-dragon-dark mb-4">Medical Facilities</h3>
                 <p className="text-dragon-gray">
                   Quality medical facilities are available in major urban centers like Nairobi. Our programs ensure access to trusted medical providers throughout the journey, and all participants must have comprehensive travel insurance, including emergency medical and evacuation coverage.
                 </p>
               </div>
               
-              <div className="mb-12">
+              <div className="mb-8">
                 <h3 className="text-2xl font-academy text-dragon-dark mb-4">Special Health Considerations</h3>
-                <p className="text-dragon-gray mb-6">
+                <p className="text-dragon-gray mb-5">
                   We support participants with various health needs. Please inform us during registration about:
                 </p>
                 
@@ -165,18 +165,18 @@ const HealthAndSafety = () => {
         </section>
 
         {/* Safety Guidelines */}
-        <section className="py-16">
+        <section className="py-12">
           <div className="container-wide">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-academy text-dragon-dark mb-8">Safety Guidelines</h2>
+              <h2 className="text-3xl font-academy text-dragon-dark mb-6">Safety Guidelines</h2>
               
-              <div className="mb-12">
+              <div className="mb-8">
                 <h3 className="text-2xl font-academy text-dragon-dark mb-4">General Safety Practices</h3>
-                <p className="text-dragon-gray mb-6">
+                <p className="text-dragon-gray mb-5">
                   Our programs prioritize these essential safety practices:
                 </p>
                 
-                <div className="space-y-6">
+                <div className="space-y-5">
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                     <h4 className="font-bold text-dragon-dark mb-2 font-academy">Group Travel</h4>
                     <p className="text-dragon-gray">
@@ -207,9 +207,9 @@ const HealthAndSafety = () => {
                 </div>
               </div>
               
-              <div className="text-center mt-16">
+              <div className="text-center mt-12">
                 <h3 className="text-xl font-academy text-dragon-dark mb-4">Have More Questions About Health and Safety?</h3>
-                <p className="text-dragon-gray mb-6">
+                <p className="text-dragon-gray mb-5">
                   Our team is ready to address any concerns about our programs.
                 </p>
                 <div className="flex justify-center">
