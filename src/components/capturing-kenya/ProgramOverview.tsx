@@ -32,7 +32,7 @@ const ProgramOverview = ({ programData }: ProgramOverviewProps) => {
         <div className="grid md:grid-cols-2 gap-10">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=2070&auto=format" 
+              src="https://cdn.shopify.com/s/files/1/0777/3326/5724/files/DSC_0177.jpg?v=1746513529" 
               alt="Student photographer capturing wildlife in Kenya" 
               className="w-full h-[400px] object-cover rounded-lg shadow-md"
             />

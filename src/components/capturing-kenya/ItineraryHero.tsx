@@ -15,7 +15,7 @@ interface ItineraryHeroProps {
 const ItineraryHero = ({ title, subtitle, duration, days, location }: ItineraryHeroProps) => {
   return (
     <section className="relative h-[40vh] min-h-[300px] flex items-center">
-      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?q=80&w=2070&auto=format')] bg-cover bg-center">
+      <div className="absolute inset-0 z-0 bg-[url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/DSC_0177.jpg?v=1746513529')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black bg-opacity-60"></div>
       </div>
       
