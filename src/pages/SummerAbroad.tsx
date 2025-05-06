@@ -121,13 +121,16 @@ const SummerAbroad = () => {
             }} />
             </div>
 
-            {/* A Day in the Life Section with new African sunset image */}
+            {/* A Day in the Life Section */}
             <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden">
-              {/* African sunset background */}
+              {/* Ensure image is displaying with full coverage */}
               <div 
-                className="absolute inset-0 z-0 bg-cover bg-center" 
+                className="absolute inset-0 z-0" 
                 style={{ 
-                  backgroundImage: "url('/lovable-uploads/ed25bd56-e9fa-4137-b59b-3f41aa1e0f1e.png')"
+                  backgroundImage: "url('https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&fit=crop&w=1200')",
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat'
                 }}
               >
                 <div className="absolute inset-0 bg-black bg-opacity-30"></div>
