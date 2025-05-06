@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
-
 const SchoolTripsHero = () => {
-  return (
-    <section className="relative h-[70vh] min-h-[500px] flex items-center">
+  return <section className="relative h-[70vh] min-h-[500px] flex items-center">
       <div className="absolute inset-0 z-0 bg-[url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404093_2.jpg?v=1746502728')] bg-cover bg-center">
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/40 to-transparent"></div>
       </div>
@@ -14,12 +11,12 @@ const SchoolTripsHero = () => {
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading animate-fade-in">School Trips</h1>
           <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl animate-fade-in" style={{
-            animationDelay: "0.2s"
-          }}>Inspiring 7–8-day journeys that take students beyond the classroom to engage with communities and grow as global citizens, designed for schools worldwide.</p>
+          animationDelay: "0.2s"
+        }}>Inspiring 7-8 day journeys that take students beyond the classroom to engage with communities and grow as global citizens, designed for schools worldwide.</p>
           
           <div className="flex flex-wrap gap-4 animate-fade-in" style={{
-            animationDelay: "0.4s"
-          }}>
+          animationDelay: "0.4s"
+        }}>
             <Button variant="outline" className="bg-white text-dragon border-white hover:bg-transparent hover:text-white hover:border-white transition-colors" asChild>
               <a href="#programs">Explore Our Trips</a>
             </Button>
@@ -29,8 +26,6 @@ const SchoolTripsHero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SchoolTripsHero;
