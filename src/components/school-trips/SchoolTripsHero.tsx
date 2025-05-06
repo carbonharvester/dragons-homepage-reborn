@@ -23,7 +23,7 @@ const SchoolTripsHero = () => {
             <Button variant="outline" className="bg-white text-dragon border-white hover:bg-transparent hover:text-white hover:border-white transition-colors" asChild>
               <a href="#programs">Explore Our Trips</a>
             </Button>
-            <Button className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400 shadow-lg" asChild>
+            <Button variant="secondary" className="shadow-lg" asChild>
               <a href="#programs">Schedule a Consultation</a>
             </Button>
           </div>

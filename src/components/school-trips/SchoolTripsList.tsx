@@ -15,7 +15,7 @@ const SchoolTripsList = () => {
           <div key={index} className="transform transition-all hover:-translate-y-2">
             <ProgramCard 
               program={program} 
-              buttonClassName="bg-dragon-yellow text-dragon-dark hover:bg-amber-400 hover:text-dragon-dark border-dragon-yellow"
+              buttonClassName="bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:text-secondary-foreground border-secondary"
             />
           </div>
         ))}
