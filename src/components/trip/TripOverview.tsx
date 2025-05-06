@@ -20,7 +20,7 @@ const TripOverview = ({ tripDetails }: TripOverviewProps) => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           <p className="text-lg text-dragon-gray mb-6">
-            This immersive 5-7 day program transforms unused school land into a productive
+            This immersive 7-8 day program transforms unused school land into a productive
             permaculture farm. In Kenya, where about 1 in 3 children suffer from stunted growth 
             due to malnutrition, this initiative addresses critical food security challenges.
           </p>

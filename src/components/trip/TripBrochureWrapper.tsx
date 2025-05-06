@@ -1,4 +1,3 @@
-
 import React from 'react';
 import TripBrochureContent from './TripBrochureContent';
 import TripHero from './TripHero';
@@ -7,10 +6,10 @@ import { Clock, Calendar, MapPin, Users, School, Leaf } from "lucide-react";
 const TripBrochureWrapper = () => {
   // Trip details
   const tripDetails = [
-    { label: "Duration", value: "5-7 Days", icon: <Clock className="h-5 w-5 text-dragon" /> },
+    { label: "Duration", value: "7-8 Days", icon: <Clock className="h-5 w-5 text-dragon" /> },
     { label: "Season", value: "Jan-Oct", icon: <Calendar className="h-5 w-5 text-dragon" /> },
     { label: "Location", value: "Nairobi, Kenya", icon: <MapPin className="h-5 w-5 text-dragon" /> },
-    { label: "Age Group", value: "12-18 years", icon: <Users className="h-5 w-5 text-dragon" /> },
+    { label: "Age Group", value: "15-18 years", icon: <Users className="h-5 w-5 text-dragon" /> },
     { label: "Group Size", value: "10-30 students", icon: <School className="h-5 w-5 text-dragon" /> },
   ];
 
@@ -176,7 +175,7 @@ const TripBrochureWrapper = () => {
   const programData = {
     title: "Food For Education",
     description: "Transform unused school land into productive gardens while addressing food insecurity through sustainable agriculture.",
-    duration: "5-7 Days",
+    duration: "7-8 Days",
     season: "Jan-Oct",
     location: "Nairobi, Kenya",
     goals: [
