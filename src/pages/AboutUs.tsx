@@ -72,7 +72,7 @@ const AboutUs = () => {
                 <h2 className="section-heading">Our Mission</h2>
                 
                 <p className="text-lg text-dragon-gray mb-8">
-                  To reconnect young people with nature, communities, and what truly matters through transformative experiences that foster cultural understanding, environmental stewardship, and a commitment to global citizenship.
+                  To reconnect young people with nature, communities, and purpose through transformative experiences that cultivate cultural understanding, environmental stewardship, and global citizenship—while breaking down barriers to education across Africa.
                 </p>
                 
                 <h2 className="section-heading mt-12">Our Vision</h2>
@@ -133,3 +133,4 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
