@@ -1,8 +1,29 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import BulletList from "@/components/ui/BulletList";
+import { Card, CardContent } from "@/components/ui/card";
 
 const SafetyGuidelines = () => {
+  const safetyPractices = [
+    {
+      title: "Group Travel",
+      content: "Participants travel in groups supervised by experienced staff familiar with the local area and culture."
+    },
+    {
+      title: "Communication",
+      content: "All groups have access to reliable communication methods, including local phones and satellite communication in remote areas."
+    },
+    {
+      title: "Accommodations",
+      content: "We use vetted accommodations that meet our safety, cleanliness, and security standards."
+    },
+    {
+      title: "Transportation",
+      content: "All transportation providers and vehicles are carefully selected and maintained to ensure safety and reliability."
+    }
+  ];
+
   return (
     <section className="py-12">
       <div className="container-wide">
@@ -16,33 +37,14 @@ const SafetyGuidelines = () => {
             </p>
             
             <div className="space-y-5">
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <h4 className="font-bold text-dragon-dark mb-2 font-academy">Group Travel</h4>
-                <p className="text-dragon-gray">
-                  Participants travel in groups supervised by experienced staff familiar with the local area and culture.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <h4 className="font-bold text-dragon-dark mb-2 font-academy">Communication</h4>
-                <p className="text-dragon-gray">
-                  All groups have access to reliable communication methods, including local phones and satellite communication in remote areas.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <h4 className="font-bold text-dragon-dark mb-2 font-academy">Accommodations</h4>
-                <p className="text-dragon-gray">
-                  We use vetted accommodations that meet our safety, cleanliness, and security standards.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-                <h4 className="font-bold text-dragon-dark mb-2 font-academy">Transportation</h4>
-                <p className="text-dragon-gray">
-                  All transportation providers and vehicles are carefully selected and maintained to ensure safety and reliability.
-                </p>
-              </div>
+              {safetyPractices.map((practice, index) => (
+                <Card key={index} className="border border-gray-100">
+                  <CardContent className="p-6">
+                    <h4 className="font-bold text-dragon-dark mb-2 font-academy">{practice.title}</h4>
+                    <p className="text-dragon-gray">{practice.content}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
           

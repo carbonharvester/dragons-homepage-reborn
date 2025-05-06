@@ -1,8 +1,23 @@
 
 import React from "react";
 import { ShieldCheck } from "lucide-react";
+import BulletList from "@/components/ui/BulletList";
 
 const SafetyApproach = () => {
+  const preDepartureItems = [
+    { content: "Comprehensive pre-departure orientation sessions" },
+    { content: "Detailed health and safety information packets" },
+    { content: "Access to travel health resources and advice" },
+    { content: "Guidance on required documents and preparations" },
+  ];
+
+  const onProgramItems = [
+    { content: "Experienced guides and educators with safety training" },
+    { content: "24/7 emergency support system" },
+    { content: "Vetted accommodations and transportation providers" },
+    { content: "Ongoing risk assessment and management" },
+  ];
+
   return (
     <section className="py-12">
       <div className="container-wide">
@@ -19,46 +34,12 @@ const SafetyApproach = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h3 className="text-xl font-bold text-dragon-dark mb-4 font-academy">Pre-Departure Preparation</h3>
-              <ul className="space-y-3 text-dragon-gray">
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Comprehensive pre-departure orientation sessions</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Detailed health and safety information packets</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Access to travel health resources and advice</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Guidance on required documents and preparations</span>
-                </li>
-              </ul>
+              <BulletList items={preDepartureItems} />
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h3 className="text-xl font-bold text-dragon-dark mb-4 font-academy">On-Program Support</h3>
-              <ul className="space-y-3 text-dragon-gray">
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Experienced guides and educators with safety training</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>24/7 emergency support system</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Vetted accommodations and transportation providers</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Ongoing risk assessment and management</span>
-                </li>
-              </ul>
+              <BulletList items={onProgramItems} />
             </div>
           </div>
         </div>

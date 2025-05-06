@@ -1,8 +1,24 @@
 
 import React from "react";
 import { Info } from "lucide-react";
+import BulletList from "@/components/ui/BulletList";
 
 const HealthInformation = () => {
+  const vaccinationItems = [
+    { content: "<strong>Yellow Fever:</strong> Required for entry for many travelers" },
+    { content: "<strong>Malaria Prevention:</strong> Medication is often recommended" },
+    { content: "<strong>Routine Vaccinations:</strong> Ensure they're up-to-date (MMR, DPT, etc.)" },
+    { content: "<strong>Additional Recommendations:</strong> Hepatitis A, Hepatitis B, Typhoid, and others based on individual factors" },
+  ];
+
+  const healthConsiderationItems = [
+    { content: "Allergies (food, environmental, medications)" },
+    { content: "Dietary restrictions and requirements" },
+    { content: "Chronic health conditions" },
+    { content: "Mobility limitations" },
+    { content: "Medications" },
+  ];
+
   return (
     <section className="py-12 bg-gray-50">
       <div className="container-wide">
@@ -19,24 +35,10 @@ const HealthInformation = () => {
             </p>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-6">
-              <ul className="space-y-3 text-dragon-gray">
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span><strong>Yellow Fever:</strong> Required for entry for many travelers</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span><strong>Malaria Prevention:</strong> Medication is often recommended</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span><strong>Routine Vaccinations:</strong> Ensure they're up-to-date (MMR, DPT, etc.)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span><strong>Additional Recommendations:</strong> Hepatitis A, Hepatitis B, Typhoid, and others based on individual factors</span>
-                </li>
-              </ul>
+              <BulletList 
+                items={vaccinationItems} 
+                contentClassName="text-dragon-gray"
+              />
             </div>
             
             <p className="text-dragon-gray">
@@ -58,28 +60,7 @@ const HealthInformation = () => {
             </p>
             
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <ul className="space-y-3 text-dragon-gray">
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Allergies (food, environmental, medications)</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Dietary restrictions and requirements</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Chronic health conditions</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Mobility limitations</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-dragon mr-2">•</span>
-                  <span>Medications</span>
-                </li>
-              </ul>
+              <BulletList items={healthConsiderationItems} />
             </div>
           </div>
         </div>
