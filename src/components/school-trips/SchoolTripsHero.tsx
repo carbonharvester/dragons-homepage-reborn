@@ -6,7 +6,7 @@ import CalendlyEmbed from "@/components/CalendlyEmbed";
 const SchoolTripsHero = () => {
   return (
     <section className="relative h-[70vh] min-h-[500px] flex items-center">
-      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format')] bg-cover bg-center">
+      <div className="absolute inset-0 z-0 bg-[url('/lovable-uploads/f0e5c00f-e271-4297-8922-22ee9e014299.png')] bg-cover bg-center">
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
       </div>
       
