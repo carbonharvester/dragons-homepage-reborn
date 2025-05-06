@@ -122,11 +122,11 @@ const SummerAbroad = () => {
 
             {/* A Day in the Life Section */}
             <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden">
-              {/* Using the user's uploaded image */}
+              {/* Using the external image URL provided by the user */}
               <div 
                 className="absolute inset-0 z-0" 
                 style={{ 
-                  backgroundImage: "url('/lovable-uploads/ed25bd56-e9fa-4137-b59b-3f41aa1e0f1e.png')",
+                  backgroundImage: "url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/african_savannah_banner_768px.jpg?v=1746502451')",
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
                   backgroundRepeat: 'no-repeat'
