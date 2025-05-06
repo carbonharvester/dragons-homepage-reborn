@@ -14,7 +14,7 @@ const HealthAndSafety = () => {
           <div className="container-wide">
             <h1 className="text-4xl md:text-5xl font-academy text-dragon-dark mb-4">Health and Safety</h1>
             <p className="text-lg text-dragon-gray max-w-3xl">
-              Your wellbeing is our highest priority. Learn about our comprehensive approach to health and safety during our educational travel programs.
+              Your wellbeing is our top priority. Learn how we ensure a safe, transformative experience during our educational travel programs.
             </p>
           </div>
         </section>
@@ -29,7 +29,7 @@ const HealthAndSafety = () => {
               </div>
               
               <p className="text-dragon-gray mb-8">
-                At Kapes Adventures, safety is at the core of everything we do. We have developed comprehensive protocols based on international best practices in educational travel to ensure all participants have a secure and positive experience.
+                At Kapes Adventures, safety is at the heart of everything we do. We follow international best practices in educational travel to ensure all participants enjoy a secure, meaningful experience.
               </p>
               
               <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -72,7 +72,7 @@ const HealthAndSafety = () => {
                     </li>
                     <li className="flex items-start">
                       <span className="text-dragon mr-2">•</span>
-                      <span>Regular risk assessment and management</span>
+                      <span>Ongoing risk assessment and management</span>
                     </li>
                   </ul>
                 </div>
@@ -93,14 +93,14 @@ const HealthAndSafety = () => {
               <div className="mb-12">
                 <h3 className="text-2xl font-academy text-dragon-dark mb-4">Vaccinations and Medications</h3>
                 <p className="text-dragon-gray mb-6">
-                  We recommend consulting with a travel health specialist or your physician at least 8 weeks before departure to discuss vaccinations and medications for travel to Kenya. Common requirements and recommendations include:
+                  We recommend consulting a travel health specialist or physician at least 8 weeks before departure to discuss vaccinations and medications for travel to Kenya. Common requirements and recommendations include:
                 </p>
                 
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
                   <ul className="space-y-3 text-dragon-gray">
                     <li className="flex items-start">
                       <span className="text-dragon mr-2">•</span>
-                      <span><strong>Yellow Fever:</strong> Required for entry to Kenya for many travelers</span>
+                      <span><strong>Yellow Fever:</strong> Required for entry for many travelers</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-dragon mr-2">•</span>
@@ -112,7 +112,7 @@ const HealthAndSafety = () => {
                     </li>
                     <li className="flex items-start">
                       <span className="text-dragon mr-2">•</span>
-                      <span><strong>Additional Recommended:</strong> Hepatitis A, Hepatitis B, Typhoid, and others based on individual factors</span>
+                      <span><strong>Additional Recommendations:</strong> Hepatitis A, Hepatitis B, Typhoid, and others based on individual factors</span>
                     </li>
                   </ul>
                 </div>
@@ -124,18 +124,15 @@ const HealthAndSafety = () => {
               
               <div className="mb-12">
                 <h3 className="text-2xl font-academy text-dragon-dark mb-4">Medical Facilities</h3>
-                <p className="text-dragon-gray mb-4">
-                  Kenya has quality medical facilities in major urban centers, particularly in Nairobi. Our programs have been designed with access to medical care in mind, and we maintain relationships with trusted medical providers throughout the country.
-                </p>
                 <p className="text-dragon-gray">
-                  All participants are required to have comprehensive travel insurance that includes emergency medical coverage and emergency evacuation services.
+                  Quality medical facilities are available in major urban centers like Nairobi. Our programs ensure access to trusted medical providers throughout the journey, and all participants must have comprehensive travel insurance, including emergency medical and evacuation coverage.
                 </p>
               </div>
               
               <div className="mb-12">
                 <h3 className="text-2xl font-academy text-dragon-dark mb-4">Special Health Considerations</h3>
                 <p className="text-dragon-gray mb-6">
-                  We accommodate participants with various health conditions and needs. Please inform us during registration about:
+                  We support participants with various health needs. Please inform us during registration about:
                 </p>
                 
                 <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
@@ -158,7 +155,7 @@ const HealthAndSafety = () => {
                     </li>
                     <li className="flex items-start">
                       <span className="text-dragon mr-2">•</span>
-                      <span>Medications being taken</span>
+                      <span>Medications</span>
                     </li>
                   </ul>
                 </div>
@@ -176,44 +173,44 @@ const HealthAndSafety = () => {
               <div className="mb-12">
                 <h3 className="text-2xl font-academy text-dragon-dark mb-4">General Safety Practices</h3>
                 <p className="text-dragon-gray mb-6">
-                  Our programs promote these essential safety practices:
+                  Our programs prioritize these essential safety practices:
                 </p>
                 
                 <div className="space-y-6">
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                     <h4 className="font-bold text-dragon-dark mb-2 font-academy">Group Travel</h4>
                     <p className="text-dragon-gray">
-                      Participants travel in groups supervised by experienced staff members who are familiar with the local area and culture.
+                      Participants travel in groups supervised by experienced staff familiar with the local area and culture.
                     </p>
                   </div>
                   
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                     <h4 className="font-bold text-dragon-dark mb-2 font-academy">Communication</h4>
                     <p className="text-dragon-gray">
-                      All groups have access to reliable communication methods, including local phones and/or satellite communication when traveling to remote areas.
+                      All groups have access to reliable communication methods, including local phones and satellite communication in remote areas.
                     </p>
                   </div>
                   
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                     <h4 className="font-bold text-dragon-dark mb-2 font-academy">Accommodations</h4>
                     <p className="text-dragon-gray">
-                      We only use vetted accommodations that meet our safety, cleanliness, and security standards.
+                      We use vetted accommodations that meet our safety, cleanliness, and security standards.
                     </p>
                   </div>
                   
                   <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
                     <h4 className="font-bold text-dragon-dark mb-2 font-academy">Transportation</h4>
                     <p className="text-dragon-gray">
-                      All transportation providers and vehicles are carefully selected and regularly maintained to ensure safety and reliability.
+                      All transportation providers and vehicles are carefully selected and maintained to ensure safety and reliability.
                     </p>
                   </div>
                 </div>
               </div>
               
               <div className="text-center mt-16">
-                <h3 className="text-xl font-academy text-dragon-dark mb-4">Have more questions about health and safety?</h3>
+                <h3 className="text-xl font-academy text-dragon-dark mb-4">Have More Questions About Health and Safety?</h3>
                 <p className="text-dragon-gray mb-6">
-                  Our team is happy to discuss specific concerns about any of our programs.
+                  Our team is ready to address any concerns about our programs.
                 </p>
                 <div className="flex justify-center">
                   <a href="/faq" className="btn-secondary">
