@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -121,17 +120,12 @@ const SummerAbroad = () => {
             }} />
             </div>
 
-            {/* A Day in the Life Section - Updated with African savanna design */}
+            {/* A Day in the Life Section - Updated with stencilled African savanna design */}
             <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden">
-              {/* African savanna background */}
-              <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1469041797191-50ace28483c3?q=80&w=2071&auto=format')] bg-cover bg-center opacity-30">
-                <div className="absolute inset-0 bg-dragon bg-opacity-50"></div>
+              {/* African savanna stencilled background */}
+              <div className="absolute inset-0 z-0 bg-[url('/lovable-uploads/a7fe0df2-0132-4003-b9cd-b4727938d90f.png')] bg-cover bg-center">
+                <div className="absolute inset-0 bg-black bg-opacity-70"></div>
               </div>
-              
-              {/* Dragon yellow sun */}
-              <div className="absolute top-0 right-5 w-16 h-16 rounded-full bg-dragon-yellow z-10 shadow-lg translate-y-[-30%]" style={{
-                boxShadow: '0 0 30px rgba(244, 185, 66, 0.6)'
-              }}></div>
               
               {/* Content */}
               <div className="relative z-20">
