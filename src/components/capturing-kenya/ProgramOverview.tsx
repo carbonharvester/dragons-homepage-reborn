@@ -29,6 +29,24 @@ const ProgramOverview = ({ programData }: ProgramOverviewProps) => {
           </p>
         </div>
 
+        {/* Program Details Box - Moved from hero */}
+        <div className="flex flex-wrap gap-4 mb-10 justify-center">
+          <div className="flex items-center gap-2 bg-dragon-beige px-4 py-3 rounded-md">
+            <Users className="h-5 w-5 text-dragon" />
+            <div>
+              <span className="block text-sm text-gray-600">Group Size</span>
+              <span className="font-medium text-dragon-dark">12 Students / 3 Instructors</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 bg-dragon-beige px-4 py-3 rounded-md">
+            <DollarSign className="h-5 w-5 text-dragon" />
+            <div>
+              <span className="block text-sm text-gray-600">Tuition</span>
+              <span className="font-medium text-dragon-dark">$8,750 <span className="text-sm font-normal text-gray-600">plus airfare & insurance</span></span>
+            </div>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-10">
           <div>
             <img 
