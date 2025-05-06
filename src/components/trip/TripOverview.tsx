@@ -42,19 +42,19 @@ const TripOverview = ({ tripDetails, projectGoals, description }: TripOverviewPr
             </>
           )}
           
-          <div className="bg-dragon-beige p-6 rounded-lg mt-8">
-            <h3 className="text-xl font-bold mb-4 text-dragon-dark">Project Goals</h3>
-            <ul className="list-disc pl-5 space-y-3 text-dragon-gray">
+          <div className="bg-dragon-beige p-8 rounded-lg mt-8 h-full flex flex-col">
+            <h3 className="text-2xl font-bold mb-6 text-dragon-dark">Project Goals</h3>
+            <ul className="list-disc pl-5 space-y-4 text-dragon-gray text-lg">
               {projectGoals ? (
                 projectGoals.map((goal, index) => (
-                  <li key={index}>{goal}</li>
+                  <li key={index} className="pb-1">{goal}</li>
                 ))
               ) : (
                 <>
-                  <li>Experience the daily challenges faced by rural Kenyan women</li>
-                  <li>Support Zawadisha's microloan program for life-changing products</li>
-                  <li>Learn about sustainable solutions for water and energy access</li>
-                  <li>Engage in cultural exchange through crafts and traditional cooking</li>
+                  <li className="pb-1">Experience the daily challenges faced by rural Kenyan women</li>
+                  <li className="pb-1">Support Zawadisha's microloan program for life-changing products</li>
+                  <li className="pb-1">Learn about sustainable solutions for water and energy access</li>
+                  <li className="pb-1">Engage in cultural exchange through crafts and traditional cooking</li>
                 </>
               )}
             </ul>
