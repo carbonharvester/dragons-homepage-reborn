@@ -1,7 +1,14 @@
 
 import { Calendar, Route, Map, Users, GraduationCap, Award } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 
-export const tripDetails = [
+interface TripDetail {
+  label: string;
+  value: string;
+  icon: LucideIcon;
+}
+
+export const tripDetails: TripDetail[] = [
   {
     label: "Duration",
     value: "7-8 Days",

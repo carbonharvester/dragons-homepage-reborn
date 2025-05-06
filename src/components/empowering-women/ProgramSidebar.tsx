@@ -1,14 +1,14 @@
 
 import React from 'react';
 import { Users, GraduationCap, Award, Heart } from 'lucide-react';
-import TripDetailsCard from '@/components/trip/TripDetails';
+import TripDetailsCard from '@/components/trip/TripDetailsCard';
 import { tripDetails } from './data';
 
 const ProgramSidebar = () => {
   // Convert Lucide icon components to ReactNode for TripDetailsCard
   const formattedDetails = tripDetails.map(detail => ({
     ...detail,
-    icon: <detail.icon className="h-5 w-5 text-dragon" />
+    icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
   }));
 
   return (
