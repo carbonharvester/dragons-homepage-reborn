@@ -2,17 +2,18 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
+import BulletList from '@/components/ui/BulletList';
 
 const SchoolTripsIntro = () => {
   const keyBenefits = [{
     title: "Authentic Cultural Engagement",
-    content: "Students connect with communities, building genuine cross-cultural understanding"
+    content: "Students connect with communities, building genuine cross-cultural understanding through homestays and collaborative projects."
   }, {
     title: "Curriculum Integration",
-    content: "Programs that align with your educational goals and learning outcomes"
+    content: "Programs align with IB, Common Core, and national standards, integrating with subjects like geography, history, and science."
   }, {
     title: "Transformative Impact",
-    content: "Projects that empower communities while expanding students' global perspective"
+    content: "Projects empower communities—like building classrooms for 50 students or planting 300 trees—while expanding students' global perspective."
   }];
 
   return (
@@ -20,7 +21,7 @@ const SchoolTripsIntro = () => {
       
       <h2 className="text-4xl md:text-5xl font-academy text-dragon-dark mb-6">Educational Journeys with Purpose</h2>
       <p className="text-lg text-dragon-gray mb-12">
-        Our expert-led school trips connect curriculum to real-world challenges, fostering global citizenship while ensuring the highest standards of safety and support. Each program inspires and educates through meaningful experiences.
+        Our expert-led school trips for ages 12–18 connect curriculum to real-world challenges, fostering global citizenship while ensuring the highest standards of safety and support. Each program inspires and educates through meaningful experiences, with comprehensive pre- and post-trip resources.
       </p>
       
       <div className="mt-12">
@@ -42,6 +43,20 @@ const SchoolTripsIntro = () => {
             </Card>
           ))}
         </div>
+      </div>
+      
+      <div className="mt-16 bg-white p-6 rounded-lg shadow-sm">
+        <h3 className="text-2xl font-academy text-dragon-dark mb-4">Trusted by Schools Worldwide</h3>
+        <p className="text-dragon-gray mb-2">
+          Join over 50 international schools who trust Kapes Adventures to deliver transformative experiences with lasting impact.
+        </p>
+      </div>
+      
+      <div className="mt-16 bg-white p-6 rounded-lg shadow-sm">
+        <h3 className="text-2xl font-academy text-dragon-dark mb-4">Safety and Support</h3>
+        <p className="text-dragon-gray mb-2">
+          We prioritize safety with 24/7 support, experienced guides trained in first aid, vetted accommodations, and a robust emergency response system.
+        </p>
       </div>
     </div>
   );

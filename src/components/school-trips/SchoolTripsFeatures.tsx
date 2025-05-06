@@ -7,17 +7,17 @@ const SchoolTripsFeatures = () => {
     {
       title: "Creativity",
       icon: Camera,
-      description: "Photography, storytelling, and artistic expression that connects students with local culture and develops their creative mindset.",
+      description: "Photography, storytelling, and artistic expression that connect students with local culture and spark a creative mindset.",
       points: [
         "Documentary photography and storytelling",
-        "Collaborative art projects with local communities",
+        "Collaborative art projects with communities",
         "Cultural immersion through creative expression"
       ]
     },
     {
       title: "Activity",
       icon: Award,
-      description: "Immersive adventures that challenge students physically while exploring Kenya's diverse landscapes and ecosystems.",
+      description: "Immersive adventures that challenge students physically while exploring diverse landscapes and ecosystems.",
       points: [
         "Wildlife conservation activities",
         "Adventure challenges in natural environments",
@@ -27,10 +27,10 @@ const SchoolTripsFeatures = () => {
     {
       title: "Service",
       icon: HandHelping,
-      description: "Meaningful community engagement projects that create lasting positive impact while developing global citizenship.",
+      description: "Meaningful community projects that create lasting impact while fostering global citizenship, leadership, and teamwork.",
       points: [
-        "Community-identified projects with measurable outcomes",
-        "Sustainable development initiatives",
+        "Community-identified projects with measurable outcomes, like clean water access for 100 people",
+        "Sustainable development initiatives, such as solar energy projects",
         "Cross-cultural collaboration and exchange"
       ]
     }
@@ -41,7 +41,7 @@ const SchoolTripsFeatures = () => {
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-academy text-dragon-dark mb-4">Educational Focus Areas</h2>
         <p className="max-w-3xl mx-auto text-dragon-gray">
-          Our trips are designed to foster global citizenship and personal growth in three key areas.
+          Our trips are designed to foster global citizenship and personal growth in three key areas, with outcomes documented for college applications.
         </p>
       </div>
       
