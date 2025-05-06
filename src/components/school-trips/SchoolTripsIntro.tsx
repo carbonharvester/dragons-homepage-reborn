@@ -55,7 +55,7 @@ const SchoolTripsIntro = () => {
       <div className="mt-16 bg-white p-6 rounded-lg shadow-sm">
         <h3 className="text-2xl font-academy text-dragon-dark mb-4">Safety and Support</h3>
         <p className="text-dragon-gray mb-2">
-          We prioritize safety with 24/7 support, experienced guides trained in first aid, vetted accommodations, and a robust emergency response system.
+          We prioritise safety with 24/7 support, experienced guides trained in first aid, vetted accommodations, and a robust emergency response system.
         </p>
       </div>
     </div>

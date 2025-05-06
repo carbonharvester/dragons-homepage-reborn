@@ -19,7 +19,7 @@ const TripBrochureWrapper = () => {
     {
       icon: <Leaf className="h-8 w-8 text-white" />,
       title: "Hands-On Permaculture",
-      description: "Create sustainable farming systems using permaculture principles that regenerate soil and maximize yields."
+      description: "Create sustainable farming systems using permaculture principles that regenerate soil and maximise yields."
     },
     {
       icon: <School className="h-8 w-8 text-white" />,
@@ -119,7 +119,7 @@ const TripBrochureWrapper = () => {
       day: "Day 7",
       title: "Project Completion",
       activities: [
-        "Finalize all farm installations and plantings",
+        "Finalise all farm installations and plantings",
         "Create educational signage for the garden",
         "Document the project through photos and video",
         "Prepare for handover ceremony to school staff"
