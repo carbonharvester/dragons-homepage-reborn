@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,13 +8,20 @@ import ProgramCard from '@/components/programs/ProgramCard';
 import { Button } from '@/components/ui/button';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import { Calendar, Users, MapPin } from "lucide-react";
+
 const SummerAbroad = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  return <div className="min-h-screen flex flex-col">
-      <SEO title="Summer Abroad Programs" description="Immersive summer programs in Kenya for students looking to expand their horizons through cultural experiences and educational adventures." keywords="summer abroad, student travel, Kenya, cultural immersion, educational travel, summer programs" />
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Summer Abroad Programs" 
+        description="Immersive summer programs in Kenya for students looking to expand their horizons through cultural experiences and educational adventures." 
+        keywords="summer abroad, student travel, Kenya, cultural immersion, educational travel, summer programs" 
+      />
       <Header />
       <main>
         <section className="relative h-[70vh] min-h-[500px] flex items-center">
@@ -25,15 +33,8 @@ const SummerAbroad = () => {
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">Summer Abroad Programs</h1>
               <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">
-                Unforgettable summer experiences that combine adventure, learning, and positive impact in the beautiful landscapes of Africa.
+                Unforgettable 3–4-week summer experiences for ages 17–21, combining adventure, learning, and positive impact in Africa's stunning landscapes.
               </p>
-              
-              {/* Program Details - Similar to Capturing Kenya */}
-              <div className="flex flex-wrap gap-4 mb-8">
-                
-                
-                
-              </div>
               
               <div className="flex flex-wrap gap-4">
                 <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule a Consultation" className="btn-primary" />
@@ -51,21 +52,21 @@ const SummerAbroad = () => {
               </h2>
               
               <p className="mb-6 text-dragon-gray">
-                Imagine waking up to the sounds of Kenya's wildlife, spending your days working alongside local communities on meaningful projects, and developing skills that will last a lifetime. Our summer programs aren't just trips—they're transformative journeys designed to challenge you, inspire you, and change the way you see the world.
+                Picture waking up to wildlife calls, planting crops with farmers by day, and making ugali with locals by night—while developing skills that last a lifetime. Our summer programs aren't just trips—they're transformative journeys that challenge, inspire, and change how you see the world.
               </p>
               
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div className="bg-dragon-beige p-6 rounded-lg">
                   <h3 className="text-xl font-bold text-dragon mb-3">Not Your Average Summer Break</h3>
                   <p>
-                    Forget about typical tourist experiences. You'll be fully immersed in Kenyan culture—living in local communities, learning from expert mentors, and contributing to projects with real-world impact. Whether you're helping implement sustainable farming techniques or documenting wildlife conservation efforts through photography, every day brings new challenges and discoveries.
+                    Forget tourist traps. You'll dive into culture—living with communities, learning from mentors, and tackling projects with real impact. Whether you're farming sustainably with locals or capturing wildlife conservation through photography, every day brings new adventures and discoveries.
                   </p>
                 </div>
                 
                 <div className="bg-dragon-beige p-6 rounded-lg">
                   <h3 className="text-xl font-bold text-dragon mb-3">Skills That Stand Out</h3>
                   <p>
-                    Universities and employers are looking for more than just good grades. They want to see initiative, cross-cultural competence, and real-world problem-solving skills—exactly what you'll develop during our programs. You'll return home with a portfolio of work, leadership experience, and stories that will make your college applications and résumés truly stand out.
+                    Universities and employers want initiative, cross-cultural competence, and problem-solving—skills you'll gain here. You'll build confidence speaking in groups, adapt to new challenges, and return with a portfolio, leadership experience, and stories that make your college apps and résumés shine.
                   </p>
                 </div>
               </div>
@@ -74,21 +75,33 @@ const SummerAbroad = () => {
                 <div className="bg-dragon-beige p-6 rounded-lg">
                   <h3 className="text-xl font-bold text-dragon mb-3">Friends Across Continents</h3>
                   <p>
-                    The bonds you'll form during these intense shared experiences don't end when the summer does. You'll connect with like-minded peers from around the world and build relationships with Kenyan community members that often last for years. Many of our alumni maintain these global friendships well into their university years and beyond.
+                    The bonds you'll form during these shared experiences last beyond summer. You'll connect with peers from around the world and build lasting friendships with community members—relationships our alumni often carry into university and beyond.
                   </p>
                 </div>
                 
                 <div className="bg-dragon-beige p-6 rounded-lg">
                   <h3 className="text-xl font-bold text-dragon mb-3">Safety & Support</h3>
                   <p>
-                    Adventure doesn't mean unnecessary risk. Our programs feature comprehensive safety protocols, 24/7 staff support, and carefully vetted accommodations. Parents can rest easy knowing that while you're pushing your boundaries, you're doing so within a framework designed with your wellbeing as the top priority.
+                    Adventure doesn't mean risk. With 24/7 support, guides trained in first aid, vetted homestays, and access to medical facilities in urban centers like Nairobi, you'll push your boundaries safely. Comprehensive travel insurance with emergency evacuation is required.
                   </p>
                 </div>
               </div>
               
+              {/* Student Testimonial */}
+              <div className="bg-dragon/10 p-6 rounded-lg mb-8">
+                <h3 className="text-xl font-bold text-dragon mb-3 text-center">What Students Are Saying</h3>
+                <blockquote className="italic text-dragon-dark text-center">
+                  "This trip showed me I can make a difference—I'm more confident and ready for university!"
+                </blockquote>
+                <p className="text-right text-dragon-gray mt-2">—Sarah, 18</p>
+              </div>
+              
               <div className="text-center">
                 <p className="font-bold text-dragon-dark text-lg mb-4">
-                  Ready to make this summer count? Explore our programs below and take the first step toward an experience that will change how you see yourself—and the world.
+                  Ready to Make This Summer Count?
+                </p>
+                <p className="text-dragon-gray mb-4">
+                  Don't miss out—spots are limited! Explore our programs and take the first step toward an experience that will change how you see yourself—and the world.
                 </p>
                 <Button className="btn-primary" asChild>
                   <a href="https://form.typeform.com/to/rtxmvp4L" target="_blank" rel="noopener noreferrer">
@@ -105,14 +118,32 @@ const SummerAbroad = () => {
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="section-heading font-academy">Our Summer Programs</h2>
               <p className="section-subheading">
-                Explore our diverse range of summer programs designed to provide transformative experiences
-                for students in the beautiful landscapes of Kenya.
+                Explore our diverse summer programs designed to provide transformative experiences in stunning landscapes.
               </p>
             </div>
             
             {/* Display Summer Abroad Programs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {summerAbroad.map((program, index) => <ProgramCard key={index} program={program} />)}
+              <ProgramCard 
+                program={{
+                  ...summerAbroad[0],
+                  description: "Perfect for future environmentalists: Join sustainable agriculture initiatives to tackle food security in rural communities through hands-on farming and education, feeding 200 children daily."
+                }} 
+              />
+              <ProgramCard 
+                program={{
+                  ...summerAbroad[1],
+                  description: "Ideal for aspiring photographers: Develop photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders, creating a short film for a conservation NGO."
+                }} 
+              />
+            </div>
+
+            {/* A Day in the Life Section */}
+            <div className="max-w-3xl mx-auto bg-dragon-beige rounded-lg p-8 text-center mb-16">
+              <h3 className="text-2xl font-academy text-dragon-dark mb-4">A Day in the Life</h3>
+              <p className="text-dragon-gray mb-4">
+                Start with a sunrise safari, learn Swahili phrases over breakfast, work on your project with locals, then join a cultural workshop—every moment is a chance to grow and connect.
+              </p>
             </div>
 
             <div className="bg-dragon-beige rounded-lg p-8 text-center">
@@ -120,15 +151,15 @@ const SummerAbroad = () => {
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="p-4">
                   <h4 className="text-xl font-bold text-dragon mb-2">Experiential Learning</h4>
-                  <p>Learn through direct experiences and hands-on projects that make a real difference.</p>
+                  <p>Learn through hands-on projects that make a real difference, building skills you'll use for life.</p>
                 </div>
                 <div className="p-4">
                   <h4 className="text-xl font-bold text-dragon mb-2">Cultural Immersion</h4>
-                  <p>Engage with local communities and traditions in meaningful and respectful ways.</p>
+                  <p>Engage with communities and traditions in meaningful, respectful ways, gaining a global perspective.</p>
                 </div>
                 <div className="p-4">
                   <h4 className="text-xl font-bold text-dragon mb-2">Professional Guidance</h4>
-                  <p>Work alongside experts in fields like conservation, education, and creative media.</p>
+                  <p>Work with experts in conservation, education, and creative media, guiding you to create impactful work.</p>
                 </div>
               </div>
               <Button className="bg-dragon hover:bg-dragon-dark text-white" asChild>
@@ -141,6 +172,8 @@ const SummerAbroad = () => {
         </section>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default SummerAbroad;
