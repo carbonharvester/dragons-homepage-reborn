@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
-
 const SchoolTripsHero = () => {
-  return (
-    <section className="relative h-[70vh] min-h-[500px] flex items-center">
+  return <section className="relative h-[70vh] min-h-[500px] flex items-center">
       <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format')] bg-cover bg-center">
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
       </div>
@@ -13,11 +10,13 @@ const SchoolTripsHero = () => {
       <div className="container-wide relative z-10 text-white">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading animate-fade-in">School Trips</h1>
-          <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl animate-fade-in" style={{animationDelay: "0.2s"}}>
-            Inspiring journeys that take students beyond the classroom walls to engage with global communities and develop as conscious global citizens.
-          </p>
+          <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl animate-fade-in" style={{
+          animationDelay: "0.2s"
+        }}>Inspiring journeys that take students beyond the classroom walls to engage with African communities and develop as conscious global citizens.</p>
           
-          <div className="flex flex-wrap gap-4 animate-fade-in" style={{animationDelay: "0.4s"}}>
+          <div className="flex flex-wrap gap-4 animate-fade-in" style={{
+          animationDelay: "0.4s"
+        }}>
             <Button variant="outline" className="bg-white text-dragon border-white hover:bg-transparent hover:text-white hover:border-white transition-colors" asChild>
               <a href="#programs">Explore Our Trips</a>
             </Button>
@@ -27,8 +26,6 @@ const SchoolTripsHero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SchoolTripsHero;
