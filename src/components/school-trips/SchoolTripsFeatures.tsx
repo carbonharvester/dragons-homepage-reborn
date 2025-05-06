@@ -1,59 +1,84 @@
+
 import React from 'react';
+import { Camera, Award, HandHelping } from "lucide-react";
+
 const SchoolTripsFeatures = () => {
-  return <div className="grid md:grid-cols-2 gap-8 mb-20">
-      <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-[1.02] border-t-4 border-dragon-yellow">
-        <img src="https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=2070&auto=format" alt="Students on a field trip" className="w-full h-64 object-cover" />
-        <div className="p-6">
-          <h2 className="text-2xl font-academy text-dragon-dark mb-3 flex items-center">
-            
-            Service-Led Experiences
-          </h2>
-          <p className="text-dragon-gray mb-4">
-            Immersive service-learning journeys where students collaborate with local communities on meaningful projects that create lasting positive impact while developing critical global competencies.
-          </p>
-          <ul className="space-y-2 mb-6">
-            <li className="flex items-center">
-              <span className="bg-dragon-beige text-dragon-rust rounded-full p-1 mr-2 flex items-center justify-center w-6 h-6 text-xs">01</span>
-              <span>Community-identified projects with measurable outcomes</span>
-            </li>
-            <li className="flex items-center">
-              <span className="bg-dragon-beige text-dragon-rust rounded-full p-1 mr-2 flex items-center justify-center w-6 h-6 text-xs">02</span>
-              <span>Cultural immersion and authentic connections</span>
-            </li>
-            <li className="flex items-center">
-              <span className="bg-dragon-beige text-dragon-rust rounded-full p-1 mr-2 flex items-center justify-center w-6 h-6 text-xs">03</span>
-              <span>Curriculum-linked learning and reflection</span>
-            </li>
-          </ul>
-        </div>
+  const features = [
+    {
+      title: "Creative",
+      icon: Camera,
+      description: "Photography, storytelling, and artistic expression that connects students with local culture and develops their creative mindset.",
+      points: [
+        "Documentary photography and storytelling",
+        "Collaborative art projects with local communities",
+        "Cultural immersion through creative expression"
+      ],
+      color: "dragon-yellow"
+    },
+    {
+      title: "Activity",
+      icon: Award,
+      description: "Immersive adventures that challenge students physically while exploring Kenya's diverse landscapes and ecosystems.",
+      points: [
+        "Wildlife conservation activities",
+        "Adventure challenges in natural environments",
+        "Team-building through outdoor exploration"
+      ],
+      color: "dragon"
+    },
+    {
+      title: "Service",
+      icon: HandHelping,
+      description: "Meaningful community engagement projects that create lasting positive impact while developing global citizenship.",
+      points: [
+        "Community-identified projects with measurable outcomes",
+        "Sustainable development initiatives",
+        "Cross-cultural collaboration and exchange"
+      ],
+      color: "dragon-navy"
+    }
+  ];
+
+  return (
+    <div className="mb-20">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-academy text-dragon-dark mb-4">Creative, Activity, Service</h2>
+        <p className="max-w-3xl mx-auto text-dragon-gray">
+          Our trips are designed to develop students in three key areas that foster global citizenship and personal growth.
+        </p>
       </div>
       
-      <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-[1.02] border-t-4 border-dragon-navy">
-        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format" alt="Students working together" className="w-full h-64 object-cover" />
-        <div className="p-6">
-          <h2 className="text-2xl font-academy text-dragon-dark mb-3 flex items-center">
-            
-            Educational Focus Areas
-          </h2>
-          <p className="text-dragon-gray mb-4">
-            Our school trips are designed around key educational themes that promote global citizenship and experiential learning.
-          </p>
-          <ul className="space-y-2 mb-6">
-            <li className="flex items-center">
-              <span className="bg-dragon-beige text-dragon-navy rounded-full p-1 mr-2 flex items-center justify-center w-6 h-6 text-xs">01</span>
-              <span>Environmental conservation and sustainability</span>
-            </li>
-            <li className="flex items-center">
-              <span className="bg-dragon-beige text-dragon-navy rounded-full p-1 mr-2 flex items-center justify-center w-6 h-6 text-xs">02</span>
-              <span>Cultural immersion and community engagement</span>
-            </li>
-            <li className="flex items-center">
-              <span className="bg-dragon-beige text-dragon-navy rounded-full p-1 mr-2 flex items-center justify-center w-6 h-6 text-xs">03</span>
-              <span>Adventure and personal growth</span>
-            </li>
-          </ul>
-        </div>
+      <div className="grid md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} className={`bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-[1.02] border-t-4 border-${feature.color}`}>
+            <div className="p-6">
+              <div className="flex items-center justify-center mb-4">
+                <span className={`bg-${feature.color}/10 text-${feature.color} rounded-full p-3 flex items-center justify-center w-14 h-14`}>
+                  <feature.icon className="w-7 h-7" />
+                </span>
+              </div>
+              <h2 className="text-2xl font-academy text-dragon-dark mb-3 text-center">
+                {feature.title}
+              </h2>
+              <p className="text-dragon-gray mb-4 text-center">
+                {feature.description}
+              </p>
+              <ul className="space-y-2 mb-6">
+                {feature.points.map((point, pointIndex) => (
+                  <li key={pointIndex} className="flex items-start">
+                    <span className={`bg-${feature.color}/10 text-${feature.color} rounded-full p-1 mr-2 flex items-center justify-center w-6 h-6 text-xs mt-1`}>
+                      {pointIndex + 1}
+                    </span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default SchoolTripsFeatures;
