@@ -78,13 +78,7 @@ const SummerAbroad = () => {
               </div>
               
               {/* Student Testimonial */}
-              <div className="bg-dragon/10 p-6 rounded-lg mb-8">
-                <h3 className="text-xl font-bold text-dragon mb-3 text-center">What Students Are Saying</h3>
-                <blockquote className="italic text-dragon-dark text-center">
-                  "This trip showed me I can make a difference—I'm more confident and ready for university!"
-                </blockquote>
-                <p className="text-right text-dragon-gray mt-2">—Sarah, 18</p>
-              </div>
+              
               
               <div className="text-center">
                 <p className="font-bold text-dragon-dark text-lg mb-4">
