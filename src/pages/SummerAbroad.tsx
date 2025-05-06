@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,11 +8,13 @@ import ProgramCard from '@/components/programs/ProgramCard';
 import { Button } from '@/components/ui/button';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import { Calendar, Users, MapPin } from "lucide-react";
+
 const SummerAbroad = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return <div className="min-h-screen flex flex-col">
       <SEO title="Summer Abroad Programs" description="Immersive summer programs in Kenya for students looking to expand their horizons through cultural experiences and educational adventures." keywords="summer abroad, student travel, Kenya, cultural immersion, educational travel, summer programs" />
       <Header />
@@ -118,10 +121,10 @@ const SummerAbroad = () => {
             }} />
             </div>
 
-            {/* A Day in the Life Section */}
-            <div className="max-w-3xl mx-auto bg-dragon-beige rounded-lg p-8 text-center mb-16">
-              <h3 className="text-2xl font-academy text-dragon-dark mb-4">A Day in the Life</h3>
-              <p className="text-dragon-gray mb-4">
+            {/* A Day in the Life Section - Updated with green background */}
+            <div className="max-w-3xl mx-auto bg-dragon text-white rounded-lg p-8 text-center mb-16">
+              <h3 className="text-2xl font-academy text-white mb-4">A Day in the Life</h3>
+              <p className="text-white mb-4">
                 Start with a sunrise safari, learn Swahili phrases over breakfast, work on your project with locals, then join a cultural workshop—every moment is a chance to grow and connect.
               </p>
             </div>
@@ -154,4 +157,5 @@ const SummerAbroad = () => {
       <Footer />
     </div>;
 };
+
 export default SummerAbroad;
