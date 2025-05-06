@@ -48,7 +48,7 @@ const VideoSection = ({
             
             {quote.author && (
               <p className="font-medium text-[#F97316]">
-                — Brett Girven, Former Principal at The Arbor School
+                Brett Girven, Former Principal at The Arbor School
               </p>
             )}
           </div>
