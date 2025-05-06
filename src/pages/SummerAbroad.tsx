@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -120,12 +121,25 @@ const SummerAbroad = () => {
             }} />
             </div>
 
-            {/* A Day in the Life Section - Updated with green background */}
-            <div className="max-w-3xl mx-auto bg-dragon text-white rounded-lg p-8 text-center mb-16">
-              <h3 className="text-2xl font-academy text-white mb-4">A Day in the Life</h3>
-              <p className="text-white mb-4">
-                Start with a sunrise safari, learn Swahili phrases over breakfast, work on your project with locals, then join a cultural workshop—every moment is a chance to grow and connect.
-              </p>
+            {/* A Day in the Life Section - Updated with African savanna design */}
+            <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden">
+              {/* African savanna background */}
+              <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1469041797191-50ace28483c3?q=80&w=2071&auto=format')] bg-cover bg-center opacity-30">
+                <div className="absolute inset-0 bg-dragon bg-opacity-50"></div>
+              </div>
+              
+              {/* Dragon yellow sun */}
+              <div className="absolute top-0 right-5 w-16 h-16 rounded-full bg-dragon-yellow z-10 shadow-lg translate-y-[-30%]" style={{
+                boxShadow: '0 0 30px rgba(244, 185, 66, 0.6)'
+              }}></div>
+              
+              {/* Content */}
+              <div className="relative z-20">
+                <h3 className="text-2xl font-academy text-white mb-4">A Day in the Life</h3>
+                <p className="text-white mb-4">
+                  Start with a sunrise safari, learn Swahili phrases over breakfast, work on your project with locals, then join a cultural workshop—every moment is a chance to grow and connect.
+                </p>
+              </div>
             </div>
 
             <div className="bg-dragon-beige rounded-lg p-8 text-center">
