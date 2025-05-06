@@ -5,9 +5,7 @@ const CTASection = () => {
       <div className="container-wide">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">Experience Kenya with Kapes Adventures</h2>
-          <p className="text-lg mb-8">
-            Discover this incredible country through our immersive educational programs, designed to connect you with Kenya's landscapes, wildlife, and cultures in meaningful ways.
-          </p>
+          <p className="text-lg mb-8">Discover this incredible country through our immersive programs, designed to connect you with its landscapes, wildlife, and cultures—while creating lasting impact for communities.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/programs/food-for-education" className="btn-primary">
               Explore Our Programs
