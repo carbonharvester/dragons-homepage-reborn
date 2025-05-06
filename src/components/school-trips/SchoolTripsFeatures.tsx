@@ -1,14 +1,11 @@
-
 import React from 'react';
-
 const SchoolTripsFeatures = () => {
-  return (
-    <div className="grid md:grid-cols-2 gap-8 mb-20">
+  return <div className="grid md:grid-cols-2 gap-8 mb-20">
       <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-[1.02] border-t-4 border-dragon-yellow">
         <img src="https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=2070&auto=format" alt="Students on a field trip" className="w-full h-64 object-cover" />
         <div className="p-6">
           <h2 className="text-2xl font-academy text-dragon-dark mb-3 flex items-center">
-            <span className="w-3 h-3 rounded-full bg-dragon-rust mr-2"></span>
+            
             Service-Led Experiences
           </h2>
           <p className="text-dragon-gray mb-4">
@@ -35,7 +32,7 @@ const SchoolTripsFeatures = () => {
         <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format" alt="Students working together" className="w-full h-64 object-cover" />
         <div className="p-6">
           <h2 className="text-2xl font-academy text-dragon-dark mb-3 flex items-center">
-            <span className="w-3 h-3 rounded-full bg-dragon-navy mr-2"></span>
+            
             Educational Focus Areas
           </h2>
           <p className="text-dragon-gray mb-4">
@@ -57,8 +54,6 @@ const SchoolTripsFeatures = () => {
           </ul>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default SchoolTripsFeatures;
