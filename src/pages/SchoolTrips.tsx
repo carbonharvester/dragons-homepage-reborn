@@ -27,7 +27,7 @@ const SchoolTrips = () => {
       <main>
         <SchoolTripsHero />
         
-        <section className="py-12 bg-white">
+        <section className="py-16 bg-gradient-to-b from-white to-dragon-beige/20">
           <div className="container-wide">
             <SchoolTripsIntro />
             <SchoolTripsFeatures />
