@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="bg-dragon-dark text-white py-16">
       <div className="container-wide">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-16">
           {/* Logo and description */}
           <div className="lg:col-span-1">
             <div className="mb-5">
@@ -41,7 +41,7 @@ const Footer = () => {
           {/* Travel With Us column */}
           <div>
             <h4 className="text-base font-bold mb-5 uppercase tracking-wide">Travel With Us</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               <li><Link to="/school-trips" className="text-gray-300 hover:text-white transition-colors">School Trips</Link></li>
               <li><Link to="/summer-abroad" className="text-gray-300 hover:text-white transition-colors">Summer Abroad</Link></li>
               <li><Link to="/multi-year-curriculum" className="text-gray-300 hover:text-white transition-colors">Multi-Year Curriculum</Link></li>
@@ -52,7 +52,7 @@ const Footer = () => {
           {/* Resources column */}
           <div>
             <h4 className="text-base font-bold mb-5 uppercase tracking-wide">Resources</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link></li>
               <li><Link to="/podcast" className="text-gray-300 hover:text-white transition-colors">Podcast</Link></li>
@@ -66,7 +66,7 @@ const Footer = () => {
           {/* Get in touch column */}
           <div>
             <h4 className="text-base font-bold mb-5 uppercase tracking-wide">Get in touch</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               <li>
                 <CalendlyEmbed 
                   url="https://calendly.com/kapesuniforms/discoverymeeting" 
