@@ -1,4 +1,3 @@
-
 import React from 'react';
 import TripBrochureContent from './TripBrochureContent';
 import TripHero from './TripHero';
@@ -151,18 +150,18 @@ const TripBrochureWrapper = () => {
   
   const galleryImages = [
     {
-      src: "/lovable-uploads/9754806b-a818-4c3f-bb62-aeffe98e97f5.png",
-      alt: "Students working in garden",
+      src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/55a9f399-0214-46a2-99d2-25dbc2cba06f.jpg?v=1746515494",
+      alt: "Students working on sustainable farming project",
       className: "col-span-12 md:col-span-8 h-64 md:h-80 overflow-hidden rounded-lg"
     },
     {
-      src: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=1280",
-      alt: "Students learning about sustainable farming",
+      src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/8aea54cf-37c5-43f0-8665-b4259a4acc7f.jpg?v=1746515558",
+      alt: "Students learning about permaculture techniques",
       className: "col-span-12 md:col-span-4 h-64 md:h-80 overflow-hidden rounded-lg"
     },
     {
-      src: "https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?auto=format&fit=crop&q=80",
-      alt: "Sustainable composting system",
+      src: "/lovable-uploads/9754806b-a818-4c3f-bb62-aeffe98e97f5.png",
+      alt: "Students working in garden",
       className: "col-span-12 md:col-span-4 h-64 overflow-hidden rounded-lg"
     },
     {
