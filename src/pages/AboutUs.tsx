@@ -72,13 +72,13 @@ const AboutUs = () => {
                 <h2 className="section-heading">Our Mission</h2>
                 
                 <p className="text-lg text-dragon-gray mb-8">
-                  To reconnect young people with nature, communities, and what truly matters through transformative educational experiences that foster cultural understanding, environmental stewardship, and a commitment to becoming conscious global citizens.
+                  To reconnect young people with nature, communities, and what truly matters through transformative experiences that foster cultural understanding, environmental stewardship, and a commitment to global citizenship.
                 </p>
                 
                 <h2 className="section-heading mt-12">Our Vision</h2>
                 
                 <p className="text-lg text-dragon-gray">
-                  A world where young people are reconnected with nature and communities, equipped with the cross-cultural competence, ecological awareness, and ethical mindset needed to address global challenges collaboratively and compassionately.
+                  A world where young people are reconnected with nature and communities, equipped with cross-cultural competence, ecological awareness, and an ethical mindset to address global challenges collaboratively.
                 </p>
               </div>
               <div className="bg-dragon-sand rounded-lg p-8 flex items-center justify-center">
@@ -105,14 +105,14 @@ const AboutUs = () => {
                       <div className="bg-dragon rounded-full h-6 w-6 min-w-6 flex items-center justify-center text-white mr-3 mt-1">3</div>
                       <div>
                         <h4 className="font-bold text-dragon-dark">Reciprocity</h4>
-                        <p className="text-dragon-gray">Building mutually beneficial partnerships with host communities.</p>
+                        <p className="text-dragon-gray">Building mutually beneficial partnerships with communities.</p>
                       </div>
                     </li>
                     <li className="flex items-start">
                       <div className="bg-dragon rounded-full h-6 w-6 min-w-6 flex items-center justify-center text-white mr-3 mt-1">4</div>
                       <div>
                         <h4 className="font-bold text-dragon-dark">Transformation</h4>
-                        <p className="text-dragon-gray">Facilitating deep learning experiences that change perspectives.</p>
+                        <p className="text-dragon-gray">Facilitating deep learning that changes perspectives.</p>
                       </div>
                     </li>
                   </ul>
