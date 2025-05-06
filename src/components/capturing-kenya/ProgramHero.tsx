@@ -8,7 +8,7 @@ import { Calendar, Users, MapPin, DollarSign } from "lucide-react";
 const ProgramHero = () => {
   return (
     <section className="relative h-[70vh] min-h-[500px] flex items-center">
-      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2070&auto=format')] bg-cover bg-center">
+      <div className="absolute inset-0 z-0 bg-[url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404062.jpg?v=1746502708')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
       
