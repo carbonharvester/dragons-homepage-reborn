@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -123,11 +122,11 @@ const SummerAbroad = () => {
 
             {/* A Day in the Life Section */}
             <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden">
-              {/* Ensure image is displaying with full coverage */}
+              {/* Using the user's uploaded image */}
               <div 
                 className="absolute inset-0 z-0" 
                 style={{ 
-                  backgroundImage: "url('https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&fit=crop&w=1200')",
+                  backgroundImage: "url('/lovable-uploads/ed25bd56-e9fa-4137-b59b-3f41aa1e0f1e.png')",
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
                   backgroundRepeat: 'no-repeat'
