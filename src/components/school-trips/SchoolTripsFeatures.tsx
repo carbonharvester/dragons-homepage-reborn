@@ -50,7 +50,7 @@ const SchoolTripsFeatures = () => {
           <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:scale-[1.02]">
             <div className="p-6">
               <div className="flex items-center justify-center mb-4">
-                <span className="bg-dragon-yellow/10 text-dragon-yellow rounded-full p-3 flex items-center justify-center w-14 h-14">
+                <span className="bg-dragon/10 text-dragon rounded-full p-3 flex items-center justify-center w-14 h-14">
                   <feature.icon className="w-7 h-7" />
                 </span>
               </div>
@@ -63,7 +63,7 @@ const SchoolTripsFeatures = () => {
               <ul className="space-y-2 mb-6">
                 {feature.points.map((point, pointIndex) => (
                   <li key={pointIndex} className="flex items-start">
-                    <span className="bg-dragon-yellow/10 text-dragon-yellow rounded-full p-1 mr-2 flex items-center justify-center w-6 h-6 text-xs mt-1">
+                    <span className="bg-dragon/10 text-dragon rounded-full p-1 mr-2 flex items-center justify-center w-6 h-6 text-xs mt-1">
                       {pointIndex + 1}
                     </span>
                     <span>{point}</span>
