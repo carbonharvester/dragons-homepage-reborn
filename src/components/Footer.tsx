@@ -8,7 +8,7 @@ import { Button } from './ui/button';
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
       <div className="container-wide">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16 mb-12">
           <div className="lg:col-span-1">
             <div className="mb-4">
               <img src="/lovable-uploads/9cdd3641-0b63-46d4-9b2d-9e6d3a85f70e.png" alt="Kapes Adventures - Travel That Transforms" className="h-10 brightness-0 invert" />
@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
           </div>
           
-          <div className="lg:ml-8">
+          <div>
             <h4 className="text-base font-bold mb-4">Travel With Us</h4>
             <ul className="space-y-2.5 text-sm">
               <li><Link to="/school-trips" className="text-gray-300 hover:text-white transition-colors">School Trips</Link></li>
