@@ -4,6 +4,13 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import { DollarSign, Users } from "lucide-react";
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselPrevious, 
+  CarouselNext 
+} from "@/components/ui/carousel";
 
 interface ProgramOverviewProps {
   programData: {
@@ -18,6 +25,26 @@ interface ProgramOverviewProps {
 }
 
 const ProgramOverview = ({ programData }: ProgramOverviewProps) => {
+  // Gallery images
+  const galleryImages = [
+    {
+      src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/DSC_0177.jpg?v=1746513529",
+      alt: "Student photographer capturing wildlife in Kenya"
+    },
+    {
+      src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404062.jpg?v=1746502708",
+      alt: "Photography student with camera in Kenya"
+    },
+    {
+      src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/55a9f399-0214-46a2-99d2-25dbc2cba06f.jpg?v=1746515494",
+      alt: "Students working on photography project"
+    },
+    {
+      src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/8aea54cf-37c5-43f0-8665-b4259a4acc7f.jpg?v=1746515558",
+      alt: "Student learning photography techniques"
+    }
+  ];
+
   return (
     <section className="py-16 bg-white">
       <div className="container-wide">
@@ -48,12 +75,26 @@ const ProgramOverview = ({ programData }: ProgramOverviewProps) => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-10">
-          <div>
-            <img 
-              src="https://cdn.shopify.com/s/files/1/0777/3326/5724/files/DSC_0177.jpg?v=1746513529" 
-              alt="Student photographer capturing wildlife in Kenya" 
-              className="w-full h-[400px] object-cover rounded-lg shadow-md"
-            />
+          <div className="relative">
+            <Carousel className="w-full" opts={{ loop: true }}>
+              <CarouselContent>
+                {galleryImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="w-full h-[400px] overflow-hidden rounded-lg shadow-md">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex items-center justify-center mt-4">
+                <CarouselPrevious className="static translate-y-0 mr-2" />
+                <CarouselNext className="static translate-y-0 ml-2" />
+              </div>
+            </Carousel>
           </div>
           
           <div className="space-y-6">
