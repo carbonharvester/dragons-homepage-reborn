@@ -14,7 +14,12 @@ const TripHighlightsWrapper = () => {
     )
   }));
 
-  return <TripHighlights highlights={highlightsWithJSX} />;
+  return (
+    <div className="mb-16">
+      <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Trip Highlights</h2>
+      <TripHighlights highlights={highlightsWithJSX} />
+    </div>
+  );
 };
 
 export default TripHighlightsWrapper;

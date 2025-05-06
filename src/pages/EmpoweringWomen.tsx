@@ -45,9 +45,13 @@ const EmpoweringWomen = () => {
                 
                 <TripHighlightsWrapper />
                 
-                <TripItinerary itineraryDays={tripItinerary} />
+                <div className="mb-16">
+                  <TripItinerary itineraryDays={tripItinerary} />
+                </div>
                 
-                <TripGallery images={galleryImages} />
+                <div className="mb-16">
+                  <TripGallery images={galleryImages} />
+                </div>
 
                 <Accommodation />
               </div>
