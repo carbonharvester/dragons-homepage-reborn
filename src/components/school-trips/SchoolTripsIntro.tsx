@@ -45,18 +45,20 @@ const SchoolTripsIntro = () => {
         </div>
       </div>
       
-      <div className="mt-16 bg-white p-6 rounded-lg shadow-sm">
-        <h3 className="text-2xl font-academy text-dragon-dark mb-4">Global Education Network</h3>
-        <p className="text-dragon-gray mb-2">
-          Kapes Adventures has delivered and designed educational journeys implemented through our network of trusted partners for several leading international schools, ensuring authentic and impactful experiences for students worldwide.
-        </p>
-      </div>
-      
-      <div className="mt-16 bg-white p-6 rounded-lg shadow-sm">
-        <h3 className="text-2xl font-academy text-dragon-dark mb-4">Safety and Support</h3>
-        <p className="text-dragon-gray mb-2">
-          We prioritise safety with 24/7 support, experienced guides trained in first aid, vetted accommodations, and a robust emergency response system.
-        </p>
+      <div className="mt-8 flex flex-col md:flex-row gap-6">
+        <div className="bg-white p-6 rounded-lg shadow-sm flex-1">
+          <h3 className="text-2xl font-academy text-dragon-dark mb-4">Global Education Network</h3>
+          <p className="text-dragon-gray">
+            Kapes Adventures has delivered and designed educational journeys implemented through our network of trusted partners for several leading international schools, ensuring authentic and impactful experiences for students worldwide.
+          </p>
+        </div>
+        
+        <div className="bg-white p-6 rounded-lg shadow-sm flex-1">
+          <h3 className="text-2xl font-academy text-dragon-dark mb-4">Safety and Support</h3>
+          <p className="text-dragon-gray">
+            We prioritise safety with 24/7 support, experienced guides trained in first aid, vetted accommodations, and a robust emergency response system.
+          </p>
+        </div>
       </div>
     </div>
   );
