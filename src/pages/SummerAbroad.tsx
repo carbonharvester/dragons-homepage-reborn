@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,20 +7,13 @@ import ProgramCard from '@/components/programs/ProgramCard';
 import { Button } from '@/components/ui/button';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import { Calendar, Users, MapPin } from "lucide-react";
-
 const SummerAbroad = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      <SEO 
-        title="Summer Abroad Programs" 
-        description="Immersive summer programs in Kenya for students looking to expand their horizons through cultural experiences and educational adventures." 
-        keywords="summer abroad, student travel, Kenya, cultural immersion, educational travel, summer programs" 
-      />
+  return <div className="min-h-screen flex flex-col">
+      <SEO title="Summer Abroad Programs" description="Immersive summer programs in Kenya for students looking to expand their horizons through cultural experiences and educational adventures." keywords="summer abroad, student travel, Kenya, cultural immersion, educational travel, summer programs" />
       <Header />
       <main>
         <section className="relative h-[70vh] min-h-[500px] flex items-center">
@@ -32,9 +24,7 @@ const SummerAbroad = () => {
           <div className="container-wide relative z-10 text-white">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">Summer Abroad Programs</h1>
-              <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">
-                Unforgettable 3–4-week summer experiences for ages 17–21, combining adventure, learning, and positive impact in Africa's stunning landscapes.
-              </p>
+              <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">Unforgettable 3-4 week summer experiences for ages 17–21, combining adventure, learning, and positive impact in Africa's stunning landscapes.</p>
               
               <div className="flex flex-wrap gap-4">
                 <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule a Consultation" className="btn-primary" />
@@ -124,18 +114,14 @@ const SummerAbroad = () => {
             
             {/* Display Summer Abroad Programs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              <ProgramCard 
-                program={{
-                  ...summerAbroad[0],
-                  description: "Perfect for future environmentalists: Join sustainable agriculture initiatives to tackle food security in rural communities through hands-on farming and education, feeding 200 children daily."
-                }} 
-              />
-              <ProgramCard 
-                program={{
-                  ...summerAbroad[1],
-                  description: "Ideal for aspiring photographers: Develop photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders, creating a short film for a conservation NGO."
-                }} 
-              />
+              <ProgramCard program={{
+              ...summerAbroad[0],
+              description: "Perfect for future environmentalists: Join sustainable agriculture initiatives to tackle food security in rural communities through hands-on farming and education, feeding 200 children daily."
+            }} />
+              <ProgramCard program={{
+              ...summerAbroad[1],
+              description: "Ideal for aspiring photographers: Develop photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders, creating a short film for a conservation NGO."
+            }} />
             </div>
 
             {/* A Day in the Life Section */}
@@ -172,8 +158,6 @@ const SummerAbroad = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default SummerAbroad;
