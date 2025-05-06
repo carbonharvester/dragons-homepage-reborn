@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 const SchoolTripsHero = () => {
   return (
@@ -17,11 +18,11 @@ const SchoolTripsHero = () => {
           </p>
           
           <div className="flex flex-wrap gap-4 animate-fade-in" style={{animationDelay: "0.4s"}}>
-            <Button className="bg-dragon hover:bg-dragon-dark text-white shadow-lg" asChild>
-              <a href="#programs">Schedule Consultation</a>
-            </Button>
             <Button variant="outline" className="bg-white text-dragon border-white hover:bg-transparent hover:text-white hover:border-white transition-colors" asChild>
               <a href="#programs">Explore Our Trips</a>
+            </Button>
+            <Button className="bg-dragon hover:bg-dragon-dark text-white shadow-lg" asChild>
+              <a href="#programs">Schedule Consultation</a>
             </Button>
           </div>
         </div>
