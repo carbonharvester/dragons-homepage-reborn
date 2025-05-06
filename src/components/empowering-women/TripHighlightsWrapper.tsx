@@ -1,7 +1,7 @@
 
 import React from 'react';
 import TripHighlights from '@/components/trip/TripHighlights';
-import { tripHighlights } from './data';
+import { tripHighlights } from './data/highlights';
 
 const TripHighlightsWrapper = () => {
   // Convert the Lucide icon components to JSX elements

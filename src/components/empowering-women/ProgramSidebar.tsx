@@ -2,7 +2,7 @@
 import React from 'react';
 import { Users, GraduationCap, Award, Heart } from 'lucide-react';
 import TripDetailsCard from '@/components/trip/TripDetailsCard';
-import { tripDetails } from './data';
+import { tripDetails } from './data/details';
 
 const ProgramSidebar = () => {
   // Convert Lucide icon components to ReactNode for TripDetailsCard
