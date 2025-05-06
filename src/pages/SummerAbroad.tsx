@@ -123,8 +123,8 @@ const SummerAbroad = () => {
             {/* A Day in the Life Section - Updated with stencilled African savanna design */}
             <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden">
               {/* African savanna stencilled background */}
-              <div className="absolute inset-0 z-0 bg-[url('/lovable-uploads/a7fe0df2-0132-4003-b9cd-b4727938d90f.png')] bg-cover bg-center">
-                <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+              <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1466721591366-2d5fba72006d?q=80&w=3000&auto=format')] bg-cover bg-center">
+                <div className="absolute inset-0 bg-black bg-opacity-80"></div>
               </div>
               
               {/* Content */}
