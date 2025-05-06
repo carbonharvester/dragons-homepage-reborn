@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -39,10 +38,10 @@ const AboutUs = () => {
               
               <div className="prose prose-lg text-dragon-gray">
                 <p className="mb-4">
-                  Our story began with <strong>Kapes Uniforms</strong>, founded by Matthew Benjamin to empower students as changemakers and conscious consumers. The mission was simple yet powerful: connect students to the people making their uniforms, the places they're made, and the environmental and social impact of these connections.
+                  Our story began with <strong>Kapes Uniforms</strong>, founded by Matthew Benjamin in 2020 with a dual purpose: to transform the uniform industry through sustainable practices and to break down barriers to education for children in need across Africa.
                 </p>
                 <p className="mb-4">
-                  As part of Kapes Uniforms' mission to give back, we provide free school uniforms to children in need in Kenya, reducing absenteeism. That's how our name came about—we believe our uniforms have superpowers through the good they do, and the changemakers who wear them are heroes. Hence, heroes wear Kapes.
+                  Through Kapes Uniforms, we address a critical barrier to education—many children miss school simply because they cannot afford required uniforms. That's how our name emerged—we believe our uniforms have superpowers through the good they do, and those who wear them are heroes. Hence, heroes wear Kapes.
                 </p>
                 
                 {/* New image from first sponsored trip */}
@@ -54,10 +53,10 @@ const AboutUs = () => {
                 </div>
                 
                 <p className="mb-4">
-                  While searching for a sustainable factory in Kenya, Matthew visited a carbon offset project in the Kasigau Corridor. On a game drive, he met social entrepreneurs and learned about their initiatives. It became clear that bringing students here would connect the dots—showing the impact of their uniforms while providing a life-changing experience.
+                  In 2021 Matthew's journey led him to a revolutionary carbon offset project in Kenya's Kasigau Corridor where the world's first carbon neutral factory is based. This innovative initiative protects vital forest ecosystems and wildlife by creating alternative livelihoods for local communities—including l garment manufacturing. While there, Matthew was inspired by how environmental conservation and community development could work hand in hand, and a seed was planted. 
                 </p>
                 <p>
-                  This drive to build connections inspires all our trips. In 2022, <strong>Kapes Adventures</strong> was born. While we have nothing against ski trips, we wanted to offer more. We focus on Africa because it offers so much to students—our trips transform the lives of participants as much as the communities we partner with.
+                  A year later, <strong>Kapes Adventures</strong> was born. While traditional school trips have their place, we wanted to offer something deeper. We focus on Africa because it offers profound learning opportunities—our trips transform both participants and the communities we partner with, while showcasing the innovation, resilience, and rich cultural heritage that defines the continent beyond outdated stereotypes.
                 </p>
               </div>
             </div>
@@ -133,4 +132,3 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
-
