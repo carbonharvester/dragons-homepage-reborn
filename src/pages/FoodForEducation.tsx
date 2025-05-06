@@ -2,7 +2,7 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import TripBrochure from '@/components/TripBrochure';
+import TripBrochureWrapper from '@/components/trip/TripBrochureWrapper';
 import SEO from '@/components/SEO';
 
 const FoodForEducation = () => {
@@ -16,7 +16,7 @@ const FoodForEducation = () => {
       <Header />
       
       <main>
-        <TripBrochure />
+        <TripBrochureWrapper />
       </main>
       <Footer />
     </div>

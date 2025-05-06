@@ -53,86 +53,98 @@ const TripBrochureWrapper = () => {
     }
   ];
 
-  // Sample itinerary - Updated to 8-day itinerary
+  // Sample itinerary - Updated with correct information
   const tripItinerary = [
     {
       day: "Day 1",
-      title: "Arrival in Nairobi & Train to Voi",
+      title: "Arrival in Nairobi",
       activities: [
-        "Arrive at Jomo Kenyatta International Airport, meet Kapes staff and Food For Education representatives",
-        "Board the Nairobi-Voi train (4 hours) with journaling about first impressions",
-        "Arrive at accommodation for welcome dinner featuring traditional Kenyan dishes",
-        "Evening introduction to the Food For Education program and its impact"
+        "Arrive at Jomo Kenyatta International Airport, Nairobi",
+        "Clear customs and meet the trip leader and local guide",
+        "Transfer by coach to accommodation and check-in",
+        "Welcome dinner with traditional Kenyan dishes",
+        "Orientation: Introduction to the permaculture project, Kapes' mission, and Food For Education's role in addressing food insecurity for 250 Kirigu students"
       ]
     },
     {
       day: "Day 2",
-      title: "Food For Education Visit",
+      title: "Nairobi National Park",
       activities: [
-        "Visit Food For Education facilities",
-        "Meet with program coordinators and local staff",
-        "Learn about school meal programs and their impact",
-        "Tour the project site and understand current challenges"
+        "Breakfast at the camp",
+        "Guided game drive in Nairobi National Park",
+        "Explore wildlife with Nairobi's skyline as backdrop",
+        "Learn about conservation and Kenya's ecosystems",
+        "Picnic lunch in the park",
+        "Return to accommodation for dinner and optional group activities"
       ]
     },
     {
       day: "Day 3",
-      title: "Permaculture Project - Day 1",
+      title: "Ngong Hills Hike",
       activities: [
-        "Install water harvesting system with 10,000-liter tanks",
-        "Set up gutters and filtration systems",
-        "Construct compost bins for the farm",
-        "Workshop on water conservation techniques"
+        "Guided hike in Ngong Hills",
+        "Trek across 7 hills, enjoying views of the Great Rift Valley and Nairobi",
+        "Learn about local flora, fauna, and Maasai culture from guides",
+        "Picnic lunch at Ngong Hills",
+        "Workshop on Kenya's ecosystems and permaculture led by a local expert"
       ]
     },
     {
       day: "Day 4",
-      title: "Permaculture Project - Day 2",
+      title: "Food For Education Visit",
       activities: [
-        "Build compost piles using food waste and local materials",
-        "Plant vetiver hedgerows for sustainable mulch",
-        "Set up erosion control systems",
-        "Workshop on soil health and fertility"
+        "Visit to Food For Education facilities",
+        "Introduction to their mission to provide school meals using locally sourced produce",
+        "Tour facilities to understand the link to Kirigu's farm project",
+        "Discuss Kapes' mission to empower changemakers and combat food insecurity",
+        "Orientation for the permaculture project and the farm's onion and tomato focus"
       ]
     },
     {
       day: "Day 5",
-      title: "Permaculture Project - Day 3",
+      title: "Permaculture Project - Day 1",
       activities: [
-        "Construct nursery tables with shade cloth",
-        "Install drip irrigation system for vegetable beds",
-        "Create garden beds for onions and tomatoes",
-        "Plant seeds in nursery pots"
+        "Install water harvesting system with two 10,000-liter water tanks",
+        "Attach PVC gutters to school roof, adding leaf excluder and first flush system",
+        "Lunch at the school with Kirigu students",
+        "Construct three compost bins using concrete posts, metal roofing, and wire",
+        "Set up a 200-liter drum for ongoing kitchen waste",
+        "Workshop on water harvesting and composting"
       ]
     },
     {
       day: "Day 6",
-      title: "Community Engagement",
+      title: "Permaculture Project - Day 2",
       activities: [
-        "Cultural exchange with local students",
-        "Teach and learn about food traditions and cooking methods",
-        "Collaborative art project on food security themes",
-        "Evening reflection and discussion on global food systems"
+        "Build compost pile using pre-collected food waste, green and brown materials",
+        "Produce biochar to add to compost and drum",
+        "Lunch with Kirigu students",
+        "Plant 500 vetiver slips along a 50-meter contour line",
+        "Mulch with grass clippings and water with harvested rainwater",
+        "Cultural activity: Visit a local market or attend a traditional cooking class"
       ]
     },
     {
       day: "Day 7",
-      title: "Project Completion",
+      title: "Permaculture Project - Day 3",
       activities: [
-        "Finalise all farm installations and plantings",
-        "Create educational signage for the garden",
-        "Document the project through photos and video",
-        "Prepare for handover ceremony to school staff"
+        "Build a nursery table with wooden posts, metal roofing, and shade cloth",
+        "Prepare compost with biochar and fill reusable pots for onions and tomatoes",
+        "Lunch at the school with Kirigu students",
+        "Install drip irrigation for vegetable beds and test with rainwater",
+        "Workshop on nursery management and irrigation led by a local expert"
       ]
     },
     {
       day: "Day 8",
-      title: "Celebration & Departure",
+      title: "Project Completion & Departure",
       activities: [
-        "Morning handover ceremony with school community",
-        "Celebration lunch with traditional foods",
-        "Final reflections and future action planning",
-        "Transfer to Nairobi for evening departures"
+        "Build vegetable beds and plant nursery seeds",
+        "Apply grass clippings or wood chips to beds",
+        "Handover ceremony with instructions for school staff on maintenance",
+        "Celebrate the farm's role in addressing food insecurity",
+        "Final lunch with Kirigu students",
+        "Transfer to airport for departure"
       ]
     }
   ];
