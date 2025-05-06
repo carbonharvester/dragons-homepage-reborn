@@ -4,10 +4,11 @@ import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendlyEmbed from './CalendlyEmbed';
 import { Button } from './ui/button';
+
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
       <div className="container-wide">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           <div className="lg:col-span-1">
             <div className="mb-4">
               <img src="/lovable-uploads/9cdd3641-0b63-46d4-9b2d-9e6d3a85f70e.png" alt="Kapes Adventures - Travel That Transforms" className="h-10 brightness-0 invert" />
@@ -29,9 +30,9 @@ const Footer = () => {
             </div>
           </div>
           
-          <div>
+          <div className="lg:ml-8">
             <h4 className="text-base font-bold mb-4">Travel With Us</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2.5 text-sm">
               <li><Link to="/school-trips" className="text-gray-300 hover:text-white transition-colors">School Trips</Link></li>
               <li><Link to="/summer-abroad" className="text-gray-300 hover:text-white transition-colors">Summer Abroad</Link></li>
               <li><Link to="/multi-year-curriculum" className="text-gray-300 hover:text-white transition-colors">Multi-Year Curriculum</Link></li>
@@ -41,7 +42,7 @@ const Footer = () => {
           
           <div>
             <h4 className="text-base font-bold mb-4">Resources</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2.5 text-sm">
               <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/blog" className="text-gray-300 hover:text-white transition-colors">Blog</Link></li>
               <li><Link to="/podcast" className="text-gray-300 hover:text-white transition-colors">Podcast</Link></li>
@@ -54,7 +55,7 @@ const Footer = () => {
           
           <div>
             <h4 className="text-base font-bold mb-4">Get in touch</h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2.5 text-sm">
               <li className="mt-0">
                 <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="link" className="text-gray-300 hover:text-white transition-colors p-0 h-auto" />
               </li>
@@ -79,4 +80,5 @@ const Footer = () => {
       </div>
     </footer>;
 };
+
 export default Footer;
