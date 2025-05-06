@@ -120,18 +120,16 @@ const SummerAbroad = () => {
             }} />
             </div>
 
-            {/* A Day in the Life Section - Using uploaded silhouette image with improved visibility */}
-            <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden" style={{ minHeight: "250px" }}>
+            {/* A Day in the Life Section - Reverting to original size with fixed image display */}
+            <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden">
               {/* African savanna silhouette background */}
               <div 
-                className="absolute inset-0 z-0" 
+                className="absolute inset-0 z-0 bg-cover bg-center" 
                 style={{ 
-                  backgroundImage: `url('/lovable-uploads/50bcaaa4-3766-4b25-a57a-7c0834decaf7.png')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center'
+                  backgroundImage: "url('/lovable-uploads/50bcaaa4-3766-4b25-a57a-7c0834decaf7.png')"
                 }}
               >
-                <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-30"></div>
               </div>
               
               {/* Content */}
