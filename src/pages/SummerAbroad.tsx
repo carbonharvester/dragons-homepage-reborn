@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -30,7 +29,7 @@ const SummerAbroad = () => {
               <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">Unforgettable 3-4 week summer experiences for ages 17–21, combining adventure, learning, and positive impact in Africa's stunning landscapes.</p>
               
               <div className="flex flex-wrap gap-4">
-                <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule a Consultation" className="btn-primary" />
+                <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule a Consultation" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400 px-6 py-3 rounded-md font-medium transition-colors duration-200" />
               </div>
             </div>
           </div>
@@ -145,7 +144,7 @@ const SummerAbroad = () => {
                   <p>Work with experts in conservation, education, and creative media, guiding you to create impactful work.</p>
                 </div>
               </div>
-              <Button className="bg-dragon hover:bg-dragon-dark text-white" asChild>
+              <Button className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400" asChild>
                 <a href="https://form.typeform.com/to/rtxmvp4L" target="_blank" rel="noopener noreferrer">
                   Join Our Next Adventure
                 </a>
