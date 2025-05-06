@@ -41,7 +41,7 @@ const SchoolTripsFeatures = () => {
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-academy text-dragon-dark mb-4">Educational Focus Areas</h2>
         <p className="max-w-3xl mx-auto text-dragon-gray">
-          Our trips are designed to develop students in three key areas that foster global citizenship and personal growth.
+          Our trips are designed to foster global citizenship and personal growth in three key areas.
         </p>
       </div>
       

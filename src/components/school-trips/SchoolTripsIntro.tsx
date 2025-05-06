@@ -6,13 +6,13 @@ import { CheckCircle } from "lucide-react";
 const SchoolTripsIntro = () => {
   const keyBenefits = [{
     title: "Authentic Cultural Engagement",
-    content: "Students connect with local communities and develop genuine cross-cultural understanding"
+    content: "Students connect with communities, building genuine cross-cultural understanding"
   }, {
     title: "Curriculum Integration",
     content: "Programs that align with your educational goals and learning outcomes"
   }, {
     title: "Transformative Impact",
-    content: "Projects that benefit communities while developing students' global perspective"
+    content: "Projects that empower communities while expanding students' global perspective"
   }];
 
   return (
@@ -20,7 +20,7 @@ const SchoolTripsIntro = () => {
       
       <h2 className="text-4xl md:text-5xl font-academy text-dragon-dark mb-6">Educational Journeys with Purpose</h2>
       <p className="text-lg text-dragon-gray mb-12">
-        Our expert-led school trips connect curriculum to real-world challenges in Africa, developing global citizenship while ensuring the highest standards of safety and support. Each program is designed to create meaningful experiences that inspire and educate.
+        Our expert-led school trips connect curriculum to real-world challenges, fostering global citizenship while ensuring the highest standards of safety and support. Each program inspires and educates through meaningful experiences.
       </p>
       
       <div className="mt-12">

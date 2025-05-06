@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
@@ -12,7 +13,7 @@ const SchoolTripsHero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading animate-fade-in">School Trips</h1>
           <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl animate-fade-in" style={{
           animationDelay: "0.2s"
-        }}>Inspiring journeys that take students beyond the classroom walls to engage with African communities and develop as conscious global citizens.</p>
+        }}>Inspiring journeys that take students beyond the classroom to engage with African communities and grow as global citizens.</p>
           
           <div className="flex flex-wrap gap-4 animate-fade-in" style={{
           animationDelay: "0.4s"
@@ -21,7 +22,7 @@ const SchoolTripsHero = () => {
               <a href="#programs">Explore Our Trips</a>
             </Button>
             <Button className="bg-dragon hover:bg-dragon-dark text-white shadow-lg" asChild>
-              <a href="#programs">Schedule Consultation</a>
+              <a href="#programs">Schedule a Consultation</a>
             </Button>
           </div>
         </div>
