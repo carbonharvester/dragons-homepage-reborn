@@ -18,8 +18,9 @@ const SchoolTripsCTA = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button 
+            variant="secondary" 
             size="lg" 
-            className="bg-dragon-yellow text-dragon-dark hover:bg-dragon-yellow/90 shadow-lg group" 
+            className="text-dragon-dark hover:bg-secondary/90 shadow-lg group" 
             asChild
           >
             <a 
