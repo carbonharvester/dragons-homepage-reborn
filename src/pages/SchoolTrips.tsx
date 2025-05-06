@@ -30,18 +30,13 @@ const SchoolTrips = () => {
         <section className="py-16 bg-gradient-to-b from-white to-dragon-beige/20">
           <div className="container-wide">
             <SchoolTripsIntro />
-          </div>
-        </section>
-        
-        <Testimonials />
-        
-        <section className="py-16 bg-gradient-to-b from-white to-dragon-beige/20">
-          <div className="container-wide">
             <SchoolTripsFeatures />
             <SchoolTripsList />
             <SchoolTripsCTA />
           </div>
         </section>
+        
+        <Testimonials />
       </main>
       <Footer />
     </div>
