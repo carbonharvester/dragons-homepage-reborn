@@ -13,15 +13,15 @@ const SchoolTripsHero = () => {
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">School Trips</h1>
           <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">
-            Transformative educational journeys designed for schools worldwide, offering students genuine cultural immersion, meaningful community engagement, and life-changing experiences beyond traditional tourism.
+            Inspiring journeys that take students beyond the classroom walls to engage with global communities and develop as conscious global citizens.
           </p>
           
           <div className="flex flex-wrap gap-4">
             <Button className="bg-dragon hover:bg-dragon-dark text-white" asChild>
-              <a href="#programs">Schedule Consultation </a>
+              <a href="#programs">Schedule Consultation</a>
             </Button>
             <Button variant="outline" className="border-white text-white hover:bg-white hover:text-dragon" asChild>
-              
+              <a href="#programs">Explore Our Trips</a>
             </Button>
           </div>
         </div>
