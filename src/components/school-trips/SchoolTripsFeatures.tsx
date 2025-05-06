@@ -5,7 +5,7 @@ import { Camera, Award, HandHelping } from "lucide-react";
 const SchoolTripsFeatures = () => {
   const features = [
     {
-      title: "Cultural Expression",
+      title: "Creativity",
       icon: Camera,
       description: "Photography, storytelling, and artistic expression that connects students with local culture and develops their creative mindset.",
       points: [
@@ -15,7 +15,7 @@ const SchoolTripsFeatures = () => {
       ]
     },
     {
-      title: "Adventure & Exploration",
+      title: "Activity",
       icon: Award,
       description: "Immersive adventures that challenge students physically while exploring Kenya's diverse landscapes and ecosystems.",
       points: [
@@ -25,7 +25,7 @@ const SchoolTripsFeatures = () => {
       ]
     },
     {
-      title: "Community Engagement",
+      title: "Service",
       icon: HandHelping,
       description: "Meaningful community engagement projects that create lasting positive impact while developing global citizenship.",
       points: [
