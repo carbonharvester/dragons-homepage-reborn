@@ -63,7 +63,7 @@ const TripBrochureWrapper = () => {
         "Clear customs and meet the trip leader and local guide",
         "Transfer by coach to accommodation and check-in",
         "Welcome dinner with traditional Kenyan dishes",
-        "Orientation: Introduction to the permaculture project, Kapes' mission, and Food For Education's role in addressing food insecurity for 250 Kirigu students"
+        "Orientation: Introduction to the permaculture project, Kapes' mission, and Food For Education's role in addressing food insecurity for 250 local students"
       ]
     },
     {
@@ -95,7 +95,7 @@ const TripBrochureWrapper = () => {
       activities: [
         "Visit to Food For Education facilities",
         "Introduction to their mission to provide school meals using locally sourced produce",
-        "Tour facilities to understand the link to Kirigu's farm project",
+        "Tour facilities to understand the link to the farm project",
         "Discuss Kapes' mission to empower changemakers and combat food insecurity",
         "Orientation for the permaculture project and the farm's onion and tomato focus"
       ]
@@ -106,7 +106,7 @@ const TripBrochureWrapper = () => {
       activities: [
         "Install water harvesting system with two 10,000-liter water tanks",
         "Attach PVC gutters to school roof, adding leaf excluder and first flush system",
-        "Lunch at the school with Kirigu students",
+        "Lunch at the school with local students",
         "Construct three compost bins using concrete posts, metal roofing, and wire",
         "Set up a 200-liter drum for ongoing kitchen waste",
         "Workshop on water harvesting and composting"
@@ -118,7 +118,7 @@ const TripBrochureWrapper = () => {
       activities: [
         "Build compost pile using pre-collected food waste, green and brown materials",
         "Produce biochar to add to compost and drum",
-        "Lunch with Kirigu students",
+        "Lunch with local students",
         "Plant 500 vetiver slips along a 50-meter contour line",
         "Mulch with grass clippings and water with harvested rainwater",
         "Cultural activity: Visit a local market or attend a traditional cooking class"
@@ -130,7 +130,7 @@ const TripBrochureWrapper = () => {
       activities: [
         "Build a nursery table with wooden posts, metal roofing, and shade cloth",
         "Prepare compost with biochar and fill reusable pots for onions and tomatoes",
-        "Lunch at the school with Kirigu students",
+        "Lunch at the school with local students",
         "Install drip irrigation for vegetable beds and test with rainwater",
         "Workshop on nursery management and irrigation led by a local expert"
       ]
@@ -143,7 +143,7 @@ const TripBrochureWrapper = () => {
         "Apply grass clippings or wood chips to beds",
         "Handover ceremony with instructions for school staff on maintenance",
         "Celebrate the farm's role in addressing food insecurity",
-        "Final lunch with Kirigu students",
+        "Final lunch with local students",
         "Transfer to airport for departure"
       ]
     }
