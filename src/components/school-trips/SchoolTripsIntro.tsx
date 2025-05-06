@@ -1,5 +1,9 @@
+
 import React from 'react';
 import BulletList from '@/components/ui/BulletList';
+import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle } from "lucide-react";
+
 const SchoolTripsIntro = () => {
   const keyBenefits = [{
     title: "Authentic Cultural Engagement",
@@ -11,6 +15,7 @@ const SchoolTripsIntro = () => {
     title: "Transformative Impact",
     content: "Projects that benefit communities while developing students' global perspective"
   }];
+  
   return <div className="max-w-3xl mx-auto text-center mb-16 mt-8">
       <div className="bg-gradient-to-r from-dragon-beige to-white p-1 w-24 h-1 mx-auto mb-6"></div>
       <h2 className="text-4xl md:text-5xl font-academy text-dragon-dark mb-6">Educational Journeys with Purpose</h2>
@@ -18,13 +23,29 @@ const SchoolTripsIntro = () => {
         Our expert-led school trips connect curriculum to real-world challenges in Africa, developing global citizenship while ensuring the highest standards of safety and support. Each program is designed to create meaningful experiences that inspire and educate.
       </p>
       
-      <div className="mt-12 p-8 bg-gradient-to-br from-dragon-beige/30 to-transparent rounded-lg shadow-sm">
-        <h3 className="text-2xl font-academy text-dragon-dark mb-6 text-center relative">
-          
-          Key Benefits
-        </h3>
-        <BulletList items={keyBenefits} bulletColor="text-dragon" titleClassName="font-bold text-dragon-dark" contentClassName="text-dragon-gray" className="space-y-4" listItemClassName="flex items-start rounded-md p-3 transition-colors hover:bg-dragon-beige/40" />
+      <div className="mt-12">
+        <div className="relative mb-12">
+          <h3 className="text-2xl font-academy text-dragon-dark mb-6 inline-block relative">
+            <span className="relative z-10">Key Benefits</span>
+            <span className="absolute bottom-0 left-0 w-full h-3 bg-dragon-beige/50 -z-0"></span>
+          </h3>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {keyBenefits.map((benefit, index) => (
+            <Card key={index} className="border-t-4 border-dragon overflow-hidden transition-all hover:shadow-lg group text-left">
+              <CardContent className="p-6">
+                <div className="flex items-start mb-3">
+                  <CheckCircle className="text-dragon mt-1 mr-3 h-5 w-5 flex-shrink-0" />
+                  <h4 className="font-bold text-dragon-dark">{benefit.title}</h4>
+                </div>
+                <p className="text-dragon-gray pl-8">{benefit.content}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>;
 };
+
 export default SchoolTripsIntro;
