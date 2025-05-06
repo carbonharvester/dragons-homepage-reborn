@@ -30,7 +30,7 @@ const SchoolTripsIntro = () => {
           {keyBenefits.map((benefit, index) => (
             <Card 
               key={index} 
-              className="border-t-4 border-dragon bg-dragon-beige overflow-hidden transition-all group text-left"
+              className="bg-dragon-beige overflow-hidden transition-all group text-left"
             >
               <CardContent className="p-6">
                 <div className="flex items-start mb-3">
