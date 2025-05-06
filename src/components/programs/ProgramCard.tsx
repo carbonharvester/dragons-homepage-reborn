@@ -15,12 +15,13 @@ interface ProgramCardProps {
     image: string;
     link: string;
     icon: React.ElementType;
-    ageGroup?: string; // Added optional age group property
-    location?: string; // Added optional location property
+    ageGroup?: string;
+    location?: string;
   };
+  buttonClassName?: string;
 }
 
-const ProgramCard = ({ program }: ProgramCardProps) => {
+const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
   return (
     <Card className="overflow-hidden border-none shadow-md h-full flex flex-col">
       <div className="relative h-56 overflow-hidden">
@@ -62,7 +63,11 @@ const ProgramCard = ({ program }: ProgramCardProps) => {
             </div>
           )}
         </div>
-        <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
+        <Button 
+          variant="outline" 
+          className={buttonClassName || "w-full border-dragon text-dragon hover:bg-dragon hover:text-white"} 
+          asChild
+        >
           <Link to={program.link}>Learn More</Link>
         </Button>
       </CardContent>
