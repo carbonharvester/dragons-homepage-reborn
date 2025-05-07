@@ -13,9 +13,10 @@ interface TripDetailProps {
 interface TripDetailsCardProps {
   tripDetails: TripDetailProps[];
   isSchoolTrip?: boolean;
+  perfectFor?: string;
 }
 
-const TripDetailsCard = ({ tripDetails, isSchoolTrip = false }: TripDetailsCardProps) => {
+const TripDetailsCard = ({ tripDetails, isSchoolTrip = false, perfectFor }: TripDetailsCardProps) => {
   return (
     <div className="bg-white rounded-lg shadow-md p-6 h-fit">
       <h3 className="text-xl font-bold mb-4 text-dragon-dark border-b border-gray-200 pb-2">Trip Details</h3>
@@ -32,6 +33,13 @@ const TripDetailsCard = ({ tripDetails, isSchoolTrip = false }: TripDetailsCardP
           </div>
         ))}
       </div>
+      
+      {perfectFor && (
+        <div className="mt-4 pt-4 border-t border-gray-200">
+          <h4 className="font-bold text-dragon-dark mb-2">Perfect For</h4>
+          <p className="font-medium text-dragon-dark">{perfectFor}</p>
+        </div>
+      )}
       
       <div className="mt-6 space-y-4">
         {!isSchoolTrip && (

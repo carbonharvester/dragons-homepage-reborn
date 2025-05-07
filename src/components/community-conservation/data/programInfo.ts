@@ -2,7 +2,7 @@
 export const programData = {
   title: "Community Conservation Program",
   description: "Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices.",
-  duration: "7-8 Days",
+  duration: "8 Days",
   season: "Year Round",
   location: "Tsavo, Kenya",
   goals: [

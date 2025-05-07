@@ -9,7 +9,8 @@ import {
   galleryImages, 
   learningOutcomes, 
   tripItinerary, 
-  programData 
+  programData,
+  perfectFor
 } from './data';
 
 interface EmpoweringWomenDataProps {
@@ -49,6 +50,7 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
           learningOutcomes={learningOutcomes}
           tripItinerary={tripItinerary}
           programData={programData}
+          perfectFor={perfectFor}
         />
       )}
     </>

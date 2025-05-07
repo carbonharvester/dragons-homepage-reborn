@@ -26,7 +26,7 @@ export const tripDetails: TripDetail[] = [
   },
   {
     label: "Group Size",
-    value: "12-28 Students",
+    value: "10-28 Students / 2-4 Instructors and Rangers",
     icon: Users
   },
   {
@@ -40,3 +40,5 @@ export const tripDetails: TripDetail[] = [
     icon: Award
   }
 ];
+
+export const perfectFor = "Ages 12-16";

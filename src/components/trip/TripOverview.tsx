@@ -13,9 +13,10 @@ interface TripOverviewProps {
   tripDetails: TripDetailProps[];
   projectGoals?: string[];
   description?: string[];
+  perfectFor?: string;
 }
 
-const TripOverview = ({ tripDetails, projectGoals, description }: TripOverviewProps) => {
+const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: TripOverviewProps) => {
   return (
     <div className="mb-16 mt-2">
       <h2 className="text-3xl font-academy mb-6 text-dragon-dark">Trip Overview</h2>
@@ -61,7 +62,7 @@ const TripOverview = ({ tripDetails, projectGoals, description }: TripOverviewPr
           </div>
         </div>
         
-        <TripDetailsCard tripDetails={tripDetails} />
+        <TripDetailsCard tripDetails={tripDetails} perfectFor={perfectFor} />
       </div>
     </div>
   );

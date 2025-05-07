@@ -9,7 +9,8 @@ import {
   galleryImages, 
   learningOutcomes, 
   tripItinerary, 
-  programData 
+  programData,
+  perfectFor
 } from './data';
 
 interface CommunityConservationDataProps {
@@ -25,7 +26,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
 }) => {
   // Define custom trip description for the overview section
   const tripDescription = [
-    "This 7-8 day journey to Tsavo, Kenya immerses students in practical conservation work with Wildlife Works while exploring the magnificent Tsavo East National Park.",
+    "This 8 day journey to Tsavo, Kenya immerses students in practical conservation work with Wildlife Works while exploring the magnificent Tsavo East National Park.",
     "Students will experience wildlife monitoring, carbon cycle management, and traditional craft-making while developing outdoor skills through hiking and ranger-led activities. The program provides hands-on engagement with conservation enterprises and social initiatives that balance ecosystem protection with community development."
   ];
 
@@ -73,6 +74,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
           programData={programData}
           description={tripDescription}
           projectGoals={projectGoals}
+          perfectFor={perfectFor}
         />
       )}
     </>

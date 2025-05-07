@@ -13,7 +13,7 @@ export const schoolTrips = [
   },
   { 
     title: "Community Conservation", 
-    duration: "7-8 Days", 
+    duration: "8 Days", 
     season: "Year Round", 
     description: "Join forces with local experts to protect ecosystems through reforestation, wildlife monitoring, and sustainable practices. Students will explore carbon offsetting and engage with social enterprises that empower communities while preserving wildlife.", 
     image: "/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png", 

@@ -54,6 +54,7 @@ interface TripBrochureContentProps {
   programData: ProgramData;
   description?: string[];
   projectGoals?: string[];
+  perfectFor?: string;
 }
 
 const TripBrochureContent = ({
@@ -64,11 +65,12 @@ const TripBrochureContent = ({
   tripItinerary,
   programData,
   description,
-  projectGoals
+  projectGoals,
+  perfectFor
 }: TripBrochureContentProps) => {
   return <div className="container py-[6px]">
       {/* Trip Overview */}
-      <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} />
+      <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />
       
       {/* Trip Highlights */}
       <TripHighlights highlights={tripHighlights} />

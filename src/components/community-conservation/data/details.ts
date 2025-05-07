@@ -11,7 +11,7 @@ interface TripDetail {
 export const tripDetails: TripDetail[] = [
   {
     label: "Duration",
-    value: "7-8 Days",
+    value: "8 Days",
     icon: Clock
   },
   {
@@ -26,7 +26,9 @@ export const tripDetails: TripDetail[] = [
   },
   {
     label: "Group Size",
-    value: "12-15 Students / 2-3 Instructors",
+    value: "10-28 Students / 2-4 Instructors and Rangers",
     icon: Users
   }
 ];
+
+export const perfectFor = "Ages 12-16";
