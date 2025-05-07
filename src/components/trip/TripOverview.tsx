@@ -61,25 +61,25 @@ const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: Tr
               )}
             </ul>
           </div>
-          
-          {perfectFor && (
-            <div className="mb-8">
-              <h3 className="text-2xl font-academy text-dragon-dark mb-6">Perfect For</h3>
-              
-              <div className="flex flex-wrap gap-4">
-                {perfectFor.split(', ').map((item, index) => (
-                  <div key={index} className="flex items-center gap-2 bg-dragon-beige px-4 py-2 rounded-full">
-                    <Users className="h-5 w-5 text-dragon" />
-                    <span>{item.trim()}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
         
         <TripDetailsCard tripDetails={tripDetails} />
       </div>
+      
+      {perfectFor && (
+        <div className="mt-8 w-full">
+          <h3 className="text-2xl font-academy text-dragon-dark mb-6">Perfect For</h3>
+          
+          <div className="flex flex-wrap gap-4">
+            {perfectFor.split(', ').map((item, index) => (
+              <div key={index} className="flex items-center gap-2 bg-dragon-beige px-4 py-2 rounded-full">
+                <Users className="h-5 w-5 text-dragon" />
+                <span>{item.trim()}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
