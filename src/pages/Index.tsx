@@ -76,8 +76,8 @@ const Index = () => {
       <main>
         <Hero />
         <HomeVideoSection 
-          videoId="922795693" 
-          title="Kapes Impact Adventures - Kenya (ASD 2024)" 
+          videoId="44b5817ef9b647a5a68e4ffd1c092f05" 
+          title="Food For Education - Kenya" 
           description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences." 
         />
         <div className="py-16 bg-white">
