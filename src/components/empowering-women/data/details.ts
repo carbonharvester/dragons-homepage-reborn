@@ -21,7 +21,7 @@ export const tripDetails: TripDetail[] = [
   },
   {
     label: "Location",
-    value: "Tsavo, Kenya (Rukinga Camp)",
+    value: "Tsavo, Kenya",
     icon: Map
   },
   {
