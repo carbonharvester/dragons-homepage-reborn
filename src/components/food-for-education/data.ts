@@ -1,4 +1,4 @@
-import { Clock, Calendar, MapPin, Users, School, Leaf } from "lucide-react";
+import { Clock, Calendar, MapPin, Users, School, Leaf, Park, Camera, Globe } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 // Trip highlights with raw icon components
@@ -21,6 +21,21 @@ export const tripHighlights: {
     icon: Users,
     title: "Cultural Exchange",
     description: "Engage with local students, educators and community members while learning about Kenyan culture and cuisine."
+  },
+  {
+    icon: Park,
+    title: "Nairobi National Park",
+    description: "Explore Kenya's unique wildlife sanctuary with Nairobi's skyline as backdrop, learning about conservation efforts and ecosystems."
+  },
+  {
+    icon: Camera,
+    title: "Document Your Journey",
+    description: "Capture and share your experiences through photography and storytelling to inspire sustainable action back home."
+  },
+  {
+    icon: Globe,
+    title: "Global Food Systems",
+    description: "Gain insights into global food security challenges and discover how local solutions can have worldwide impact."
   }
 ];
 
