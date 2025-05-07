@@ -1,5 +1,5 @@
 
-import { Calendar, Route, Map, Users, GraduationCap, Award } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, School } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 interface TripDetail {
@@ -12,7 +12,7 @@ export const tripDetails: TripDetail[] = [
   {
     label: "Duration",
     value: "7-8 Days",
-    icon: Calendar
+    icon: Clock
   },
   {
     label: "Season",
@@ -21,19 +21,19 @@ export const tripDetails: TripDetail[] = [
   },
   {
     label: "Location",
-    value: "Tsavo, Kenya",
-    icon: Map
+    value: "Nairobi, Kenya",
+    icon: MapPin
   },
   {
     label: "Group Size",
-    value: "10-28 Students / 2-4 Instructors and Rangers",
+    value: "10-30 students",
     icon: Users
   },
   {
-    label: "Educational Credits (Optional)",
+    label: "Educational Credits",
     value: "CAS Points, Duke of Edinburgh",
-    icon: GraduationCap
+    icon: School
   }
 ];
 
-export const perfectFor = "Students ages 12-16, Environmental enthusiasts, Food sustainability advocates";
+export const perfectFor = "Students ages 15-18, Food sustainability advocates, Schools with service-learning programs";

@@ -1,33 +1,24 @@
-
 import { Clock, Calendar, MapPin, Users, School, Leaf } from "lucide-react";
-import React from "react";
+import { LucideIcon } from "lucide-react";
 
-// Trip details
-export const tripDetails = [
-  { label: "Duration", value: "7-8 Days", icon: React.createElement(Clock, { className: "h-5 w-5 text-dragon" }) },
-  { label: "Season", value: "Jan-Oct", icon: React.createElement(Calendar, { className: "h-5 w-5 text-dragon" }) },
-  { label: "Location", value: "Nairobi, Kenya", icon: React.createElement(MapPin, { className: "h-5 w-5 text-dragon" }) },
-  { label: "Age Group", value: "15-18 years", icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" }) },
-  { label: "Group Size", value: "10-30 students", icon: React.createElement(School, { className: "h-5 w-5 text-dragon" }) },
-];
-
-// Added perfectFor export
-export const perfectFor = "Students ages 15-18, Food sustainability advocates, Schools with service-learning programs";
-
-// Trip highlights
-export const tripHighlights = [
+// Trip highlights with raw icon components
+export const tripHighlights: {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}[] = [
   {
-    icon: React.createElement(Leaf, { className: "h-8 w-8 text-white" }),
+    icon: Leaf,
     title: "Hands-On Permaculture",
     description: "Create sustainable farming systems using permaculture principles that regenerate soil and maximise yields."
   },
   {
-    icon: React.createElement(School, { className: "h-8 w-8 text-white" }),
+    icon: School,
     title: "Meaningful Impact",
     description: "Directly contribute to a project that provides meals for up to 300 students, improving nutrition and learning outcomes."
   },
   {
-    icon: React.createElement(Users, { className: "h-8 w-8 text-white" }),
+    icon: Users,
     title: "Cultural Exchange",
     description: "Engage with local students, educators and community members while learning about Kenyan culture and cuisine."
   }
@@ -53,7 +44,7 @@ export const learningOutcomes = [
   }
 ];
 
-// Sample itinerary - Updated with correct information
+// Sample itinerary
 export const tripItinerary = [
   {
     day: "Day 1",
@@ -186,3 +177,6 @@ export const programData = {
     "Educate and empower students to address food insecurity"
   ]
 };
+
+// Re-export the trip details from the separate file
+export * from './data/details';

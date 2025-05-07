@@ -31,7 +31,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
     ...detail,
     icon: (
       <div className="text-dragon">
-        {React.createElement(detail.icon, { className: "h-5 w-5" })}
+        <detail.icon className="h-5 w-5" />
       </div>
     )
   }));
@@ -41,7 +41,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
     ...highlight,
     icon: (
       <div className="text-white">
-        {React.createElement(highlight.icon, { className: "h-8 w-8" })}
+        <highlight.icon className="h-8 w-8" />
       </div>
     )
   }));
