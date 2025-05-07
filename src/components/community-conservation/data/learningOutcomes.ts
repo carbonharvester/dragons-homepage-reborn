@@ -1,23 +1,23 @@
 
 export const learningOutcomes = [
   {
-    title: "Traditional Conservation Practices",
-    description: "Learn about indigenous conservation techniques and their modern applications"
+    title: "Conservation Enterprise",
+    description: "Learn how social enterprises like Wildlife Works combine conservation with community development"
   },
   {
-    title: "Ecosystem Management",
-    description: "Understand biodiversity protection strategies and ecosystem services"
+    title: "Carbon Cycle Management",
+    description: "Understand REDD+ initiatives and how carbon data collection supports conservation"
   },
   {
-    title: "Human-Wildlife Conflict",
-    description: "Explore resolution strategies for conflicts between wildlife and communities"
+    title: "Wildlife Monitoring",
+    description: "Practice GPS skills and wildlife observation techniques in Tsavo East National Park"
   },
   {
-    title: "Sustainable Resource Management",
-    description: "Learn techniques for managing natural resources sustainably"
+    title: "Traditional Crafts",
+    description: "Learn sustainable craft-making including elephant dung paper, basket weaving, and t-shirt printing"
   },
   {
-    title: "Community-Based Conservation",
-    description: "Develop projects that integrate community needs with conservation goals"
+    title: "Outdoor Adventure Skills",
+    description: "Develop hiking and bushcraft skills with experienced rangers in the Marungu Hills"
   }
 ];
