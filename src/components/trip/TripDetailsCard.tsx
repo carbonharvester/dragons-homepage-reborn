@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ReactNode } from 'react';
@@ -13,13 +12,11 @@ interface TripDetailProps {
 interface TripDetailsCardProps {
   tripDetails: TripDetailProps[];
   isSchoolTrip?: boolean;
-  perfectFor?: string;
 }
 
 const TripDetailsCard = ({
   tripDetails,
-  isSchoolTrip = false,
-  perfectFor
+  isSchoolTrip = false
 }: TripDetailsCardProps) => {
   return <div className="bg-white rounded-lg shadow-md p-6 h-fit">
       <h3 className="text-xl font-bold mb-4 text-dragon-dark border-b border-gray-200 pb-2">Trip Details</h3>
@@ -33,16 +30,6 @@ const TripDetailsCard = ({
               <p className="font-medium text-dragon-dark">{detail.value}</p>
             </div>
           </div>)}
-          
-        {perfectFor && <div className="flex items-center">
-            <div className="mr-3">
-              {/* We're not including an icon here to match other entries */}
-            </div>
-            <div>
-              <p className="text-sm text-gray-500">Perfect For</p>
-              <p className="font-medium text-dragon-dark">{perfectFor}</p>
-            </div>
-          </div>}
       </div>
       
       <div className="mt-6 space-y-4">

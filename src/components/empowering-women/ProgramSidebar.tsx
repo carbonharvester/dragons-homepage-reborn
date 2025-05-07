@@ -2,7 +2,7 @@
 import React from 'react';
 import { Users, GraduationCap, Award, Heart } from 'lucide-react';
 import TripDetailsCard from '@/components/trip/TripDetailsCard';
-import { tripDetails, perfectFor } from './data/details';
+import { tripDetails } from './data/details';
 
 const ProgramSidebar = () => {
   // Convert Lucide icon components to ReactNode for TripDetailsCard
@@ -13,7 +13,7 @@ const ProgramSidebar = () => {
 
   return (
     <div className="lg:w-1/3">
-      <TripDetailsCard tripDetails={formattedDetails} isSchoolTrip={true} perfectFor={perfectFor} />
+      <TripDetailsCard tripDetails={formattedDetails} isSchoolTrip={true} />
     </div>
   );
 };
