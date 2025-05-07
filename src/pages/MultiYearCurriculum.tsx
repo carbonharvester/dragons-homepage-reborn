@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,6 +9,7 @@ import { multiYearProgram } from '@/data/programsData';
 import HeroSection from '@/components/multi-year/HeroSection';
 import OverviewSection from '@/components/multi-year/OverviewSection';
 import ProgramStructureSection from '@/components/multi-year/ProgramStructureSection';
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 const MultiYearCurriculumPage = () => {
   // Scroll to top on page load
@@ -28,6 +30,11 @@ const MultiYearCurriculumPage = () => {
       <Header />
       <main>
         <HeroSection imgTimestamp={imgTimestamp} />
+        
+        <div className="container-wide py-8">
+          <ParentPageNavigation parentPath="/programs" parentName="Programs" />
+        </div>
+        
         <OverviewSection />
         <ProgramStructureSection />
         

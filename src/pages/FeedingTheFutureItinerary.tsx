@@ -6,6 +6,7 @@ import SEO from '@/components/SEO';
 import ProgramItinerary from '@/components/roots-of-change/ProgramItinerary';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 const FeedingTheFutureItinerary = () => {
   // Scroll to top on page load
@@ -40,6 +41,10 @@ const FeedingTheFutureItinerary = () => {
             </div>
           </div>
         </section>
+
+        <div className="container-wide py-8">
+          <ParentPageNavigation parentPath="/programs/feeding-the-future" parentName="Feeding the Future" />
+        </div>
 
         {/* Full Itinerary */}
         <ProgramItinerary />

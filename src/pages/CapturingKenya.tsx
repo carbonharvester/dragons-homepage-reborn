@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 // Import modular components
 import ProgramHero from '@/components/capturing-kenya/ProgramHero';
@@ -33,6 +34,10 @@ const CapturingKenya = () => {
       <main>
         {/* Hero Section */}
         <ProgramHero />
+
+        <div className="container-wide py-8">
+          <ParentPageNavigation parentPath="/summer-abroad" parentName="Summer Abroad" />
+        </div>
 
         {/* Program Overview */}
         <ProgramOverview programData={programData} />

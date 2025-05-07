@@ -7,6 +7,7 @@ import ProgramCard from '@/components/programs/ProgramCard';
 import { Button } from '@/components/ui/button';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import { Calendar, Users, MapPin } from "lucide-react";
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 const SummerAbroad = () => {
   // Scroll to top on page load
@@ -34,6 +35,11 @@ const SummerAbroad = () => {
             </div>
           </div>
         </section>
+
+        {/* Back to Programs Navigation */}
+        <div className="container-wide py-8">
+          <ParentPageNavigation parentPath="/programs" parentName="Programs" />
+        </div>
 
         {/* Enhanced Introduction Section */}
         <section className="py-12 bg-dragon-beige">

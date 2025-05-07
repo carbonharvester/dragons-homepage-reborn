@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 // Import modular components
 import ProgramHero from '@/components/roots-of-change/ProgramHero';
@@ -34,6 +35,10 @@ const FeedingTheFuture = () => {
       <main>
         {/* Hero Section */}
         <ProgramHero />
+
+        <div className="container-wide py-8">
+          <ParentPageNavigation parentPath="/summer-abroad" parentName="Summer Abroad" />
+        </div>
 
         {/* Program Summary - New section with details moved from hero */}
         <ProgramSummary />

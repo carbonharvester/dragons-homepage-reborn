@@ -8,6 +8,7 @@ import ItineraryHero from '@/components/capturing-kenya/ItineraryHero';
 import ItineraryIntro from '@/components/capturing-kenya/ItineraryIntro';
 import WeekToggleList from '@/components/capturing-kenya/WeekToggleList';
 import ItineraryCTA from '@/components/capturing-kenya/ItineraryCTA';
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 const CapturingKenyaItinerary = () => {
   // Scroll to top on page load
@@ -47,6 +48,10 @@ const CapturingKenyaItinerary = () => {
           days={28}
           location="Kenya"
         />
+
+        <div className="container-wide py-8">
+          <ParentPageNavigation parentPath="/programs/capturing-kenya" parentName="Capturing Kenya" />
+        </div>
 
         <section className="py-12 bg-white">
           <div className="container-wide">

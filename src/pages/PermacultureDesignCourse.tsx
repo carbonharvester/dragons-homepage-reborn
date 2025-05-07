@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Leaf, Calendar, Clock, Users, TreeDeciduous, GraduationCap, BookOpen } from "lucide-react";
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 const PermacultureDesignCourse = () => {
   // Program data for the brochure
@@ -40,6 +41,10 @@ const PermacultureDesignCourse = () => {
             <p className="text-xl md:text-2xl max-w-3xl">Learn, design, and implement sustainable food systems while making a positive impact on Kenyan communities.</p>
           </div>
         </section>
+        
+        <div className="container-wide py-8">
+          <ParentPageNavigation parentPath="/adult-programs" parentName="Adult Programs" />
+        </div>
 
         {/* Overview Section */}
         <section className="py-16 bg-white">

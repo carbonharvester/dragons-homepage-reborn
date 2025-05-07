@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TripBrochureWrapper from '@/components/trip/TripBrochureWrapper';
 import SEO from '@/components/SEO';
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 const FoodForEducation = () => {
   return (
@@ -17,6 +18,9 @@ const FoodForEducation = () => {
       
       <main>
         <TripBrochureWrapper />
+        <div className="container-wide py-8">
+          <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
+        </div>
       </main>
       <Footer />
     </div>
