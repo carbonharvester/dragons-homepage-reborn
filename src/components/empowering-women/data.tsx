@@ -36,7 +36,7 @@ export const tripDetails = [
   },
   {
     label: "Educational Credits",
-    value: "CAS Points, Duke of Edinburgh",
+    value: "Optional",
     icon: React.createElement(GraduationCap, { className: "h-5 w-5 text-dragon" })
   },
   {
