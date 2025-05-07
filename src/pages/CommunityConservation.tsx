@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { Route, Calendar, Map, Users } from "lucide-react";
 import ProgramBrochure from "@/components/ProgramBrochure";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 const CommunityConservation = () => {
   // Define the program data according to the ProgramData interface
@@ -60,6 +61,10 @@ const CommunityConservation = () => {
             </div>
           </div>
         </section>
+        
+        <div className="container-wide py-8">
+          <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
+        </div>
         
         <section className="py-16 bg-white">
           <div className="container-wide">
