@@ -9,6 +9,7 @@ import SchoolTripsIntro from '@/components/school-trips/SchoolTripsIntro';
 import SchoolTripsFeatures from '@/components/school-trips/SchoolTripsFeatures';
 import SchoolTripsList from '@/components/school-trips/SchoolTripsList';
 import SchoolTripsCTA from '@/components/school-trips/SchoolTripsCTA';
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 const SchoolTrips = () => {
   // Scroll to top on page load
@@ -25,6 +26,7 @@ const SchoolTrips = () => {
       />
       <Header />
       <main>
+        <ParentPageNavigation parentPath="/programs" parentName="Programs" />
         <SchoolTripsHero />
         
         <section className="py-16 bg-gradient-to-b from-white to-dragon-beige/20">
