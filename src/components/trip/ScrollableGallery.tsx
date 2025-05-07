@@ -4,14 +4,21 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-interface ScrollableGalleryProps {
-  images: {
-    src: string;
-    alt: string;
-  }[];
+interface GalleryItem {
+  src: string;
+  alt: string;
+  type?: 'image' | 'video';
 }
 
-const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
+interface ScrollableGalleryProps {
+  images: GalleryItem[];
+  video?: {
+    src: string;
+    poster?: string;
+  };
+}
+
+const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images, video }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
@@ -29,6 +36,20 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
   return (
     <div className="mt-24 mb-16">
       <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Photo Gallery</h2>
+      
+      {/* Video Section (if provided) */}
+      {video && (
+        <div className="mb-8 max-w-4xl mx-auto">
+          <video 
+            controls 
+            className="w-full h-auto rounded-lg shadow-lg"
+            poster={video.poster}
+          >
+            <source src={video.src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      )}
       
       <div className="relative">
         {/* Navigation buttons */}
@@ -59,17 +80,26 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
             className="flex space-x-4 pb-4 px-8 overflow-x-auto scrollbar-hide"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {images.map((image, index) => (
+            {images.map((item, index) => (
               <div 
                 key={index} 
                 className="flex-none relative"
               >
                 <div className="rounded-lg overflow-hidden h-80 w-80">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
+                  {item.type === 'video' ? (
+                    <video
+                      src={item.src}
+                      className="w-full h-full object-cover"
+                      controls
+                      muted
+                    />
+                  ) : (
+                    <img
+                      src={item.src}
+                      alt={item.alt}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  )}
                 </div>
               </div>
             ))}

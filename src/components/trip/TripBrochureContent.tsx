@@ -1,3 +1,4 @@
+
 import React from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
@@ -43,6 +44,10 @@ interface TripBrochureContentProps {
     alt: string;
     className: string;
   }[];
+  galleryVideo?: {
+    src: string;
+    poster?: string;
+  };
   learningOutcomes: TripLearningOutcome[];
   tripItinerary: TripItineraryDay[];
   programData: ProgramData;
@@ -57,6 +62,7 @@ const TripBrochureContent = ({
   tripDetails,
   tripHighlights,
   galleryImages,
+  galleryVideo,
   learningOutcomes,
   tripItinerary,
   programData,
@@ -77,7 +83,10 @@ const TripBrochureContent = ({
         </div>}
       
       {/* Photo Gallery - now using the new ScrollableGallery component */}
-      <ScrollableGallery images={galleryImages} />
+      <ScrollableGallery 
+        images={galleryImages} 
+        video={galleryVideo}
+      />
       
       {/* Learning Outcomes */}
       <TripLearningOutcomes outcomes={learningOutcomes} />

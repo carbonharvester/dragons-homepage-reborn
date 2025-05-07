@@ -60,6 +60,11 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
     "Create measurable impact that continues to provide nutritious food for schoolchildren"
   ];
 
+  // Video for the gallery
+  const galleryVideo = {
+    src: "https://cdn.shopify.com/videos/c/o/v/44b5817ef9b647a5a68e4ffd1c092f05.mp4"
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -96,6 +101,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               tripDetails={tripDetails}
               tripHighlights={tripHighlights}
               galleryImages={galleryImages}
+              galleryVideo={galleryVideo}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}
               programData={programData}
