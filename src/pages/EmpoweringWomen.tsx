@@ -9,9 +9,9 @@ const EmpoweringWomen = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Empowering Women Program"
-        description="Partner with Zawadisha and engage with rural Kenyan women through microfinance initiatives that provide life-changing clean technologies."
-        keywords="women empowerment, microfinance, educational travel, Kenya, social entrepreneurship"
+        title="Water Empowering Women Program"
+        description="Partner with local communities and engage with rural Kenyan women through water access initiatives that provide life-changing clean water solutions."
+        keywords="women empowerment, water access, educational travel, Kenya, social impact"
       />
       <Header />
       

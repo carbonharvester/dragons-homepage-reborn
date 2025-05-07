@@ -16,7 +16,7 @@ export const programCategories = [
         description: "Protect endangered ecosystems with local conservation experts.",
       },
       {
-        title: "Empowering Young Women",
+        title: "Water Empowering Women",
         href: "/programs/empowering-women",
         description: "Support women-led initiatives focusing on education and leadership.",
       },
