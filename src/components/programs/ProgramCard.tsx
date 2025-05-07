@@ -24,12 +24,12 @@ interface ProgramCardProps {
 const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
   return (
     <Card className="overflow-hidden border-none shadow-md h-full flex flex-col">
-      <div className="relative h-56 overflow-hidden">
+      <div className="relative h-48 overflow-hidden">
         <AspectRatio ratio={16/9} className="bg-muted">
           <img 
             src={program.image} 
             alt={program.title} 
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
+            className="w-full h-full object-contain transition-transform duration-300 hover:scale-105" 
             onError={(e) => {
               e.currentTarget.src = "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format";
               console.log(`Failed to load image: ${program.image}, using fallback`);
