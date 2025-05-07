@@ -3,6 +3,7 @@ import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
+import TripHighlightsWrapper from './TripHighlightsWrapper';
 import { 
   tripDetails, 
   tripHighlights, 
@@ -27,7 +28,7 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
   // Custom description and project goals specific to the Water Empowering Women program
   const waterDescription = [
     "In rural Kenyan communities near Tsavo, women and their families often face significant barriers to accessing clean water. Women and girls typically bear the responsibility of fetching water, walking long distances (sometimes 5–10 km daily) to rivers or unreliable sources.",
-    "This burden limits their time for education, income-generating activities, or family care, perpetuating cycles of poverty and gender inequality. Through this immersive 7-8 day journey, students will experience firsthand the water challenges faced by rural Kenyan women and contribute to sustainable water access solutions."
+    "This burden limits their time for education, income-generating activities, or family care, perpetuating cycles of poverty and gender inequality. Through this immersive 8 day journey, students will experience firsthand the water challenges faced by rural Kenyan women and contribute to sustainable water access solutions."
   ];
   
   const waterProjectGoals = [
@@ -57,17 +58,34 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
 
       {/* Main content */}
       {(contentOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
-        <TripBrochureContent 
-          tripDetails={tripDetails}
-          tripHighlights={tripHighlights}
-          galleryImages={galleryImages}
-          learningOutcomes={learningOutcomes}
-          tripItinerary={tripItinerary}
-          programData={programData}
-          perfectFor={perfectFor}
-          description={waterDescription}
-          projectGoals={waterProjectGoals}
-        />
+        <>
+          <div className="container py-[6px]">
+            <TripOverview 
+              tripDetails={tripDetails}
+              perfectFor={perfectFor}
+              description={waterDescription}
+              projectGoals={waterProjectGoals}
+            />
+            
+            {/* Trip Highlights with explicit heading */}
+            <TripHighlightsWrapper />
+            
+            {/* Continue with other components */}
+            <TripBrochureContent 
+              tripDetails={tripDetails}
+              tripHighlights={tripHighlights}
+              galleryImages={galleryImages}
+              learningOutcomes={learningOutcomes}
+              tripItinerary={tripItinerary}
+              programData={programData}
+              perfectFor={perfectFor}
+              description={waterDescription}
+              projectGoals={waterProjectGoals}
+              hideOverview={true}
+              hideHighlights={true}
+            />
+          </div>
+        </>
       )}
     </>
   );

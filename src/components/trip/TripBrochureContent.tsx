@@ -55,6 +55,8 @@ interface TripBrochureContentProps {
   description?: string[];
   projectGoals?: string[];
   perfectFor?: string;
+  hideOverview?: boolean;
+  hideHighlights?: boolean;
 }
 
 const TripBrochureContent = ({
@@ -66,14 +68,23 @@ const TripBrochureContent = ({
   programData,
   description,
   projectGoals,
-  perfectFor
+  perfectFor,
+  hideOverview = false,
+  hideHighlights = false
 }: TripBrochureContentProps) => {
   return <div className="container py-[6px]">
       {/* Trip Overview */}
-      <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />
+      {!hideOverview && (
+        <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />
+      )}
       
       {/* Trip Highlights */}
-      <TripHighlights highlights={tripHighlights} />
+      {!hideHighlights && (
+        <div className="mb-16">
+          <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Trip Highlights</h2>
+          <TripHighlights highlights={tripHighlights} />
+        </div>
+      )}
       
       {/* Photo Gallery */}
       <TripGallery images={galleryImages} />
