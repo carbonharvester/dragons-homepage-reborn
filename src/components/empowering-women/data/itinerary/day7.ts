@@ -6,6 +6,6 @@ export const day7 = {
     "Afternoon cooking class to learn traditional Kenyan recipes",
     "Receive Kapes Cultural Impact Certificate during farewell ceremony",
     "Farewell dinner with the Neema Women's Group",
-    "Final evening reflection and journaling on the trip experience"
+    "Final evening reflection and sharing on the trip experience at fire pit"
   ]
 };
