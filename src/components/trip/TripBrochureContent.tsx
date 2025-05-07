@@ -1,12 +1,13 @@
 import React from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
-import TripGallery from './TripGallery';
+import ScrollableGallery from './ScrollableGallery';
 import TripLearningOutcomes from './TripLearningOutcomes';
 import TripItinerary from './TripItinerary';
 import TripCTA from './TripCTA';
 import ProgramBrochure from '../ProgramBrochure';
 import Testimonials from '../Testimonials';
+
 interface TripDetail {
   label: string;
   value: string;
@@ -51,6 +52,7 @@ interface TripBrochureContentProps {
   hideOverview?: boolean;
   hideHighlights?: boolean;
 }
+
 const TripBrochureContent = ({
   tripDetails,
   tripHighlights,
@@ -74,8 +76,8 @@ const TripBrochureContent = ({
           <TripHighlights highlights={tripHighlights} />
         </div>}
       
-      {/* Photo Gallery */}
-      <TripGallery images={galleryImages} />
+      {/* Photo Gallery - now using the new ScrollableGallery component */}
+      <ScrollableGallery images={galleryImages} />
       
       {/* Learning Outcomes */}
       <TripLearningOutcomes outcomes={learningOutcomes} />
@@ -93,4 +95,5 @@ const TripBrochureContent = ({
       <TripCTA isSchoolTrip={true} />
     </div>;
 };
+
 export default TripBrochureContent;
