@@ -20,7 +20,7 @@ const TripHero = ({ title, subtitle, category, imagePath }: TripHeroProps) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent"></div>
       </div>
       <div className="container relative z-10 h-full flex flex-col justify-center text-white pt-16">
-        <div className="mb-8 flex justify-end">
+        <div className="mb-8">
           <div className="inline-block bg-dragon px-4 py-1 rounded-full text-sm font-medium">
             {category}
           </div>
