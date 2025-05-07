@@ -1,5 +1,5 @@
 
-import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield, WaterTank } from 'lucide-react';
+import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield, Droplet } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 interface TripHighlight {
@@ -25,7 +25,7 @@ export const tripHighlights: TripHighlight[] = [
     description: "Create a colorful mural on a water tank that will serve the community for years to come."
   },
   {
-    icon: WaterTank,
+    icon: Droplet,
     title: "Water Tank Installation",
     description: "Work alongside local technicians to install a water tank that will provide clean water to the community."
   },

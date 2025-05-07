@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { WaterTank } from 'lucide-react';
+import { Droplet } from 'lucide-react';
 import { programData } from './data';
 
 const ProgramIntro = () => {
@@ -39,7 +39,7 @@ const ProgramIntro = () => {
       <div className="bg-dragon-beige p-6 rounded-lg my-8">
         <h3 className="text-xl font-bold text-dragon-dark mb-3">Direct Community Impact</h3>
         <div className="flex items-start gap-3">
-          <WaterTank className="w-6 h-6 text-dragon mt-1 flex-shrink-0" />
+          <Droplet className="w-6 h-6 text-dragon mt-1 flex-shrink-0" />
           <p className="text-dragon-gray m-0">
             Each student's trip directly contributes to the installation of water tanks in the local community. 
             Your participation helps create immediate positive change by providing reliable access to clean water, 
