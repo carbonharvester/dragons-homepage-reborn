@@ -1,8 +1,8 @@
 
 export const programData = {
   title: "Water Empowering Women",
-  description: "A 7-8 day journey to Tsavo, Kenya, to learn from rural women and support life-changing water access initiatives.",
-  duration: "7-8 Days",
+  description: "A 8 day journey to Tsavo, Kenya, to learn from rural women and support life-changing water access initiatives.",
+  duration: "8 Days",
   season: "Year Round",
   location: "Tsavo, Kenya",
   goals: [

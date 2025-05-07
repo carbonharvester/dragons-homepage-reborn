@@ -11,7 +11,7 @@ interface TripDetail {
 export const tripDetails: TripDetail[] = [
   {
     label: "Duration",
-    value: "7-8 Days",
+    value: "8 Days",
     icon: Calendar
   },
   {

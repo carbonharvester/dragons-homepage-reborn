@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield, Sprout, Award } from 'lucide-react';
 import { Calendar, Route, Map, Users, GraduationCap, Heart } from 'lucide-react';
@@ -16,7 +15,7 @@ export { perfectFor };
 export const tripDetails = [
   {
     label: "Duration",
-    value: "7-8 Days",
+    value: "8 Days",
     icon: React.createElement(Calendar, { className: "h-5 w-5 text-dragon" })
   },
   {
@@ -103,8 +102,8 @@ export const learningOutcomes = [
 // Program data for brochure download
 export const programData = {
   title: "Exploring Women's Empowerment",
-  description: "A 7-8 day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program.",
-  duration: "7-8 Days",
+  description: "A 8 day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program.",
+  duration: "8 Days",
   season: "Year Round",
   location: "Tsavo, Kenya",
   goals: [
