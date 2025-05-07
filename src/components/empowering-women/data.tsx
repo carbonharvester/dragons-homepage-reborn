@@ -26,7 +26,7 @@ export const tripDetails = [
   },
   {
     label: "Location",
-    value: "Tsavo, Kenya (Rukinga Camp)",
+    value: "Tsavo, Kenya",
     icon: React.createElement(Map, { className: "h-5 w-5 text-dragon" })
   },
   {

@@ -44,10 +44,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
       {/* Main content */}
       {(contentOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripBrochureContent 
-          tripDetails={tripDetails.map(detail => ({
-            ...detail,
-            icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
-          }))}
+          tripDetails={tripDetails}
           tripHighlights={tripHighlights}
           galleryImages={galleryImages}
           learningOutcomes={learningOutcomes}
