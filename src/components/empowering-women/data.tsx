@@ -2,10 +2,15 @@
 import React from 'react';
 import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield, Sprout, Award } from 'lucide-react';
 import { Calendar, Route, Map, Users, GraduationCap, Heart } from 'lucide-react';
+import { perfectFor } from './data/details';
 
 // Export all data from separate files (maintaining imports)
 export * from './data/itinerary/index';
 export * from './data/gallery';
+export * from './data/details';
+
+// Export perfectFor explicitly to ensure it's available
+export { perfectFor };
 
 // Trip details
 export const tripDetails = [

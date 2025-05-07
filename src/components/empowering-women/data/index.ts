@@ -6,4 +6,3 @@ export * from './itinerary/index';
 export * from './gallery';
 export * from './details';
 export * from './learningOutcomes';
-
