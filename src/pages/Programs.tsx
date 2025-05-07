@@ -8,18 +8,20 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ProgramsSection from '@/components/ProgramsSection';
+
 const Programs = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return <div className="min-h-screen flex flex-col">
       <SEO title="Our Programs" description="Explore our transformative educational programs including School Trips, Summer Abroad, Multi-Year Curriculum, and Adult Programs." keywords="educational programs, school trips, summer abroad, multi-year curriculum, adult programs, Kenya, educational travel" />
       <Header />
       <main>
         {/* Hero Section */}
         <section className="relative h-[60vh] min-h-[500px] flex items-center">
-          <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop')] bg-cover bg-center">
+          <div className="absolute inset-0 z-0 bg-[url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404516.jpg?v=1746515670')] bg-cover bg-center">
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           </div>
           
@@ -220,4 +222,5 @@ const Programs = () => {
       <Footer />
     </div>;
 };
+
 export default Programs;
