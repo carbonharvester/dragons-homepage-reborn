@@ -10,7 +10,7 @@ interface BlogPostHeroProps {
 
 const BlogPostHero: React.FC<BlogPostHeroProps> = ({ post }) => {
   return (
-    <div className="w-full bg-gray-200 relative mb-8">
+    <div className="container-wide max-w-4xl mx-auto mb-8">
       <AspectRatio ratio={16 / 9} className="bg-muted">
         <img 
           src={getImageUrl(post.fields.featuredImage)} 
