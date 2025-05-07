@@ -1,7 +1,6 @@
 
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -14,14 +13,14 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
-        <TooltipProvider>
+        <div> {/* Replaced TooltipProvider with a simple div */}
           <Toaster />
           <Sonner />
           <BrowserRouter>
             <ScrollToTop />
             <MainRoutes />
           </BrowserRouter>
-        </TooltipProvider>
+        </div>
       </HelmetProvider>
     </QueryClientProvider>
   );
