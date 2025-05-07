@@ -2,7 +2,7 @@
 export const programData = {
   title: "Food For Education",
   description: "Transform unused school land into productive gardens while addressing food insecurity through sustainable agriculture.",
-  duration: "7-8 Days",
+  duration: "8 Days",
   season: "Jan-Oct",
   location: "Nairobi, Kenya",
   goals: [

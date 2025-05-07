@@ -4,7 +4,7 @@ import { Globe } from "lucide-react";
 export const schoolTrips = [
   { 
     title: "Food For Education", 
-    duration: "7-8 Days", 
+    duration: "8 Days", 
     season: "Jan-Oct", 
     description: "Transform unused school land into thriving gardens through hands-on permaculture farming. Students will build sustainable agricultural systems that provide ongoing meals for local children, ensuring lasting food security and resilience for communities.", 
     image: "/lovable-uploads/3a363a5f-b4be-477f-aea7-e36861d4faf4.png", 

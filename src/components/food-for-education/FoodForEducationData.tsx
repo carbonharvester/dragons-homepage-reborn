@@ -49,7 +49,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
   // Custom description and project goals specific to the Food For Education program
   const foodDescription = [
     "In many rural Kenyan schools, inconsistent access to nutritious food impacts student attendance and academic performance. This collaborative program transforms unused school land into productive food gardens through sustainable permaculture practices.",
-    "During this immersive 7-8 day journey, students will work alongside local communities to establish gardens that provide ongoing meals for schoolchildren while learning about food security challenges and solutions that protect both people and ecosystems."
+    "During this immersive 8 day journey, students will work alongside local communities to establish gardens that provide ongoing meals for schoolchildren while learning about food security challenges and solutions that protect both people and ecosystems."
   ];
   
   const foodProjectGoals = [
