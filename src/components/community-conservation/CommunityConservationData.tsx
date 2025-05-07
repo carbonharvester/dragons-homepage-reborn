@@ -5,6 +5,7 @@ import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
+import TripGalleryCarousel from './TripGalleryCarousel';
 import { 
   tripDetails as rawTripDetails, 
   tripHighlights, 
@@ -78,23 +79,29 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
             {/* Trip Highlights with explicit heading */}
             <TripHighlightsWrapper />
             
-            {/* Continue with other components */}
-            <TripBrochureContent 
-              tripDetails={tripDetails}
-              tripHighlights={tripHighlights.map(highlight => ({
-                ...highlight,
-                icon: React.createElement(highlight.icon, { className: "h-8 w-8 text-white" })
-              }))}
-              galleryImages={galleryImages}
-              learningOutcomes={learningOutcomes}
-              tripItinerary={tripItinerary}
-              programData={programData}
-              perfectFor={perfectFor}
-              description={conservationDescription}
-              projectGoals={conservationProjectGoals}
-              hideOverview={true}
-              hideHighlights={true}
-            />
+            {/* Custom Gallery Carousel */}
+            <TripGalleryCarousel />
+            
+            {/* Continue with other components but without the gallery */}
+            <div className="mt-16">
+              <TripBrochureContent 
+                tripDetails={tripDetails}
+                tripHighlights={tripHighlights.map(highlight => ({
+                  ...highlight,
+                  icon: React.createElement(highlight.icon, { className: "h-8 w-8 text-white" })
+                }))}
+                galleryImages={galleryImages}
+                learningOutcomes={learningOutcomes}
+                tripItinerary={tripItinerary}
+                programData={programData}
+                perfectFor={perfectFor}
+                description={conservationDescription}
+                projectGoals={conservationProjectGoals}
+                hideOverview={true}
+                hideHighlights={true}
+                hideGallery={true} // Add this prop to hide the default gallery
+              />
+            </div>
           </div>
         </>
       )}

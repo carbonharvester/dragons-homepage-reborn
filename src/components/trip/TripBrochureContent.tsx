@@ -1,3 +1,4 @@
+
 import React from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
@@ -50,6 +51,7 @@ interface TripBrochureContentProps {
   perfectFor?: string;
   hideOverview?: boolean;
   hideHighlights?: boolean;
+  hideGallery?: boolean;
 }
 const TripBrochureContent = ({
   tripDetails,
@@ -62,7 +64,8 @@ const TripBrochureContent = ({
   projectGoals,
   perfectFor,
   hideOverview = false,
-  hideHighlights = false
+  hideHighlights = false,
+  hideGallery = false
 }: TripBrochureContentProps) => {
   return <div className="container py-0">
       {/* Trip Overview */}
@@ -75,7 +78,7 @@ const TripBrochureContent = ({
         </div>}
       
       {/* Photo Gallery */}
-      <TripGallery images={galleryImages} />
+      {!hideGallery && <TripGallery images={galleryImages} />}
       
       {/* Learning Outcomes */}
       <TripLearningOutcomes outcomes={learningOutcomes} />
