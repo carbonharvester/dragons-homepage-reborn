@@ -41,4 +41,4 @@ export const tripDetails: TripDetail[] = [
   }
 ];
 
-export const perfectFor = "Students ages 12-15, students wanting hands-on impact projects, environmental science students, CAS & Duke of Edinburgh students";
+export const perfectFor = "Students ages 12-15, Students wanting hands-on impact projects, Environmental science students, CAS & Duke of Edinburgh students";

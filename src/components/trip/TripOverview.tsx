@@ -63,9 +63,19 @@ const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: Tr
           </div>
           
           {perfectFor && (
-            <div className="bg-dragon-beige p-8 rounded-lg flex flex-col">
-              <h3 className="text-2xl font-bold mb-6 text-dragon-dark">Perfect For</h3>
-              <p className="text-lg text-dragon-gray">{perfectFor}</p>
+            <div className="bg-dragon-beige rounded-lg p-8">
+              <h3 className="text-2xl font-academy text-dragon-dark mb-6">Perfect For</h3>
+              
+              <div className="space-y-6">
+                {perfectFor.split(', ').map((item, index) => (
+                  <div key={index} className="flex items-start gap-4 border-b border-dragon-sand pb-4 last:border-0">
+                    <Users className="h-6 w-6 text-dragon mt-1" />
+                    <div>
+                      <p className="font-medium text-dragon-dark">{item.trim()}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
