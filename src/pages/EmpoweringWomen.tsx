@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TripBrochureWrapper from '@/components/trip/TripBrochureWrapper';
 import SEO from '@/components/SEO';
-import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 const EmpoweringWomen = () => {
   return (
@@ -20,13 +19,16 @@ const EmpoweringWomen = () => {
         {/* Hero section is part of TripBrochureWrapper */}
         <TripBrochureWrapper tripType="empowering-women" heroOnly={true} />
         
-        {/* Navigation positioned directly after the hero, with minimal padding */}
-        <div className="container-wide py-4 bg-white">
-          <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
+        {/* Navigation and content in a continuous section */}
+        <div className="bg-white">
+          {/* Navigation section */}
+          <div className="container-wide py-4">
+            <TripBrochureWrapper tripType="empowering-women" navigationOnly={true} />
+          </div>
+          
+          {/* Content section with no top padding */}
+          <TripBrochureWrapper tripType="empowering-women" contentOnly={true} />
         </div>
-        
-        {/* Content section directly after navigation with no top margin */}
-        <TripBrochureWrapper tripType="empowering-women" contentOnly={true} />
       </main>
       <Footer />
     </div>

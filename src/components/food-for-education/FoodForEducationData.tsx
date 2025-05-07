@@ -2,6 +2,7 @@
 import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 import { 
   tripDetails, 
   tripHighlights, 
@@ -14,16 +15,18 @@ import {
 interface FoodForEducationDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
+  navigationOnly?: boolean;
 }
 
 const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({ 
   heroOnly = false, 
-  contentOnly = false 
+  contentOnly = false,
+  navigationOnly = false
 }) => {
   return (
     <>
-      {/* Hero Section - only render if heroOnly is true or neither heroOnly nor contentOnly is true */}
-      {(heroOnly || (!heroOnly && !contentOnly)) && (
+      {/* Hero Section */}
+      {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Food For Education"
           subtitle="Transform unused school land into productive gardens while addressing food insecurity through sustainable agriculture."
@@ -32,8 +35,13 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
         />
       )}
 
-      {/* Main content - only render if contentOnly is true or neither heroOnly nor contentOnly is true */}
-      {(contentOnly || (!heroOnly && !contentOnly)) && (
+      {/* Navigation Section */}
+      {(navigationOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
+        <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
+      )}
+
+      {/* Main content */}
+      {(contentOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripBrochureContent 
           tripDetails={tripDetails}
           tripHighlights={tripHighlights}

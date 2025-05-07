@@ -2,6 +2,7 @@
 import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
+import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 import { 
   tripDetails, 
   tripHighlights, 
@@ -9,46 +10,41 @@ import {
   learningOutcomes, 
   tripItinerary, 
   programData 
-} from './data/index';
+} from './data';
 
 interface EmpoweringWomenDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
+  navigationOnly?: boolean;
 }
 
 const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({ 
-  heroOnly = false,
-  contentOnly = false
+  heroOnly = false, 
+  contentOnly = false,
+  navigationOnly = false
 }) => {
-  // Convert Lucide icons to ReactNode for tripDetails
-  const formattedTripDetails = tripDetails.map(detail => ({
-    ...detail,
-    icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
-  }));
-
-  // Convert Lucide icons to ReactNode for tripHighlights
-  const formattedTripHighlights = tripHighlights.map(highlight => ({
-    ...highlight,
-    icon: React.createElement(highlight.icon, { className: "h-8 w-8 text-white" })
-  }));
-
   return (
     <>
-      {/* Hero Section - only render if heroOnly is true or neither heroOnly nor contentOnly is true */}
-      {(heroOnly || (!heroOnly && !contentOnly)) && (
+      {/* Hero Section */}
+      {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
-          title="Exploring Women's Empowerment"
+          title="Empowering Young Women"
           subtitle="Partner with Zawadisha and engage with rural Kenyan women through microfinance initiatives that provide life-changing clean technologies."
           category="School Trip"
-          imagePath="/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png"
+          imagePath="/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png"
         />
       )}
 
-      {/* Main content - only render if contentOnly is true or neither heroOnly nor contentOnly is true */}
-      {(contentOnly || (!heroOnly && !contentOnly)) && (
+      {/* Navigation Section */}
+      {(navigationOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
+        <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
+      )}
+
+      {/* Main content */}
+      {(contentOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripBrochureContent 
-          tripDetails={formattedTripDetails}
-          tripHighlights={formattedTripHighlights}
+          tripDetails={tripDetails}
+          tripHighlights={tripHighlights}
           galleryImages={galleryImages}
           learningOutcomes={learningOutcomes}
           tripItinerary={tripItinerary}
