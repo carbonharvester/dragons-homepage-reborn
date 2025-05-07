@@ -1,5 +1,5 @@
 
-import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield, Droplet } from 'lucide-react';
+import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 interface TripHighlight {
@@ -25,7 +25,7 @@ export const tripHighlights: TripHighlight[] = [
     description: "Create a colorful mural on a water tank that will serve the community for years to come."
   },
   {
-    icon: Droplet,
+    icon: Shield,
     title: "Water Tank Installation",
     description: "Work alongside local technicians to install a water tank that will provide clean water to the community."
   },
@@ -33,11 +33,6 @@ export const tripHighlights: TripHighlight[] = [
     icon: Mountain,
     title: "Tsavo Safari",
     description: "Experience Kenya's magnificent wildlife while learning about human-wildlife coexistence challenges."
-  },
-  {
-    icon: Shield,
-    title: "Water Security Project",
-    description: "Contribute to long-term water security by installing infrastructure that helps protect women and families."
   },
   {
     icon: Utensils,
