@@ -3,30 +3,11 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
 import { ContentfulBlogPost } from '@/services/contentful';
-import { format, parseISO } from 'date-fns';
+import { getImageUrl, formatDate } from '@/components/blog/blogUtils';
 
 interface BlogCardProps {
   post: ContentfulBlogPost;
 }
-
-// Helper functions
-const getImageUrl = (imageField: any) => {
-  if (!imageField || !imageField.fields || !imageField.fields.file) {
-    return "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png"; // Fallback image
-  }
-  return imageField.fields.file.url.startsWith('//') 
-    ? `https:${imageField.fields.file.url}` 
-    : imageField.fields.file.url;
-};
-
-const formatDate = (dateString: string) => {
-  try {
-    const date = parseISO(dateString);
-    return format(date, 'd MMM yyyy');
-  } catch (error) {
-    return dateString;
-  }
-};
 
 const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   return (
