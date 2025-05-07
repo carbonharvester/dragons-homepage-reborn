@@ -1,171 +1,51 @@
 
 import React from 'react';
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { Calendar, ArrowLeft, Share, Facebook, Twitter, Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getBlogPostBySlug, ContentfulBlogPost } from '@/services/contentful';
+import { getBlogPostBySlug } from '@/services/contentful';
 import { useQuery } from '@tanstack/react-query';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { getImageUrl, formatDate, getRichTextRenderOptions, getAuthorImageUrl } from '@/components/blog/blogUtils';
+
+// Import our new components
+import BlogPostHero from '@/components/blog/BlogPostHero';
+import BlogPostHeader from '@/components/blog/BlogPostHeader';
+import BlogPostContent from '@/components/blog/BlogPostContent';
+import BlogPostShareLinks from '@/components/blog/BlogPostShareLinks';
+import RelatedPosts from '@/components/blog/RelatedPosts';
+import BlogPostNavigation from '@/components/blog/BlogPostNavigation';
+import BlogPostLoading from '@/components/blog/BlogPostLoading';
+import BlogPostError from '@/components/blog/BlogPostError';
 
 const BlogPost = () => {
   const { postId } = useParams();
-  const navigate = useNavigate();
 
   const { data: post, isLoading, error } = useQuery({
     queryKey: ['blogPost', postId],
     queryFn: () => getBlogPostBySlug(postId || ''),
   });
 
-  // If post is loading, show loading message
+  // If post is loading, show loading component
   if (isLoading) {
-    return (
-      <>
-        <Header />
-        <main className="py-16">
-          <div className="container-wide text-center">
-            <p>Loading blog post...</p>
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
+    return <BlogPostLoading />;
   }
 
-  // If post doesn't exist or there's an error, show not found message
+  // If post doesn't exist or there's an error, show error component
   if (error || !post) {
-    return (
-      <>
-        <Header />
-        <main className="py-16">
-          <div className="container-wide text-center">
-            <h1 className="text-3xl font-serif font-bold text-dragon-dark mb-6">
-              Blog Post Not Found
-            </h1>
-            <p className="text-dragon-gray mb-8">
-              The blog post you're looking for doesn't exist or has been moved.
-            </p>
-            <Button asChild className="bg-dragon hover:bg-dragon-dark text-white">
-              <Link to="/blog">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Blog
-              </Link>
-            </Button>
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
+    return <BlogPostError />;
   }
 
   return (
     <>
       <Header />
       <main className="pb-16">
-        {/* Hero section */}
-        <div className="w-full h-64 md:h-96 bg-gray-200 relative">
-          <img 
-            src={getImageUrl(post.fields.featuredImage)} 
-            alt={post.fields.title} 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-        </div>
+        <BlogPostHero post={post} />
 
         <div className="container-wide max-w-4xl">
-          {/* Back to blog */}
-          <div className="my-6">
-            <Button 
-              variant="ghost" 
-              asChild 
-              className="text-dragon hover:text-dragon-dark hover:bg-dragon-beige"
-            >
-              <Link to="/blog">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Blog
-              </Link>
-            </Button>
-          </div>
-
-          {/* Article header */}
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="bg-dragon-light/10 text-dragon text-sm font-medium px-3 py-1 rounded-full">
-                {post.fields.category}
-              </span>
-              <div className="flex items-center text-dragon-gray text-sm">
-                <Calendar className="h-4 w-4 mr-1" />
-                <span>{formatDate(post.fields.date)}</span>
-              </div>
-              <span className="text-dragon-gray text-sm">
-                {post.fields.readTime || "5 min read"}
-              </span>
-            </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-academy text-dragon-dark mb-6">
-              {post.fields.title}
-            </h1>
-            
-            {/* Author info */}
-            <div className="flex items-center mb-8">
-              <img 
-                src={getAuthorImageUrl(post.fields.authorImage)} 
-                alt={post.fields.author || "Author"}
-                className="w-12 h-12 rounded-full object-cover mr-4" 
-              />
-              <div>
-                <h3 className="font-medium text-dragon-dark">{post.fields.author}</h3>
-                <p className="text-sm text-dragon-gray">{post.fields.authorTitle || "Author"}</p>
-              </div>
-            </div>
-          </div>
-          
-          {/* Article content - uses rich text renderer */}
-          <article className="prose prose-lg max-w-none prose-headings:font-academy prose-headings:text-dragon-dark prose-p:text-dragon-gray prose-li:text-dragon-gray prose-blockquote:text-dragon prose-blockquote:border-dragon-light">
-            {post.fields.content ? (
-              documentToReactComponents(post.fields.content, getRichTextRenderOptions())
-            ) : (
-              <p className="text-dragon-gray">This article has no content.</p>
-            )}
-          </article>
-          
-          {/* Share links */}
-          <div className="mt-12 pt-6 border-t border-dragon-sand">
-            <div className="flex items-center gap-4">
-              <span className="font-medium text-dragon-dark flex items-center">
-                <Share className="h-4 w-4 mr-2" />
-                Share this article:
-              </span>
-              <div className="flex gap-2">
-                <Button variant="outline" size="icon" className="rounded-full h-8 w-8 p-0">
-                  <Facebook className="h-4 w-4 text-dragon" />
-                  <span className="sr-only">Share on Facebook</span>
-                </Button>
-                <Button variant="outline" size="icon" className="rounded-full h-8 w-8 p-0">
-                  <Twitter className="h-4 w-4 text-dragon" />
-                  <span className="sr-only">Share on Twitter</span>
-                </Button>
-                <Button variant="outline" size="icon" className="rounded-full h-8 w-8 p-0">
-                  <Linkedin className="h-4 w-4 text-dragon" />
-                  <span className="sr-only">Share on LinkedIn</span>
-                </Button>
-              </div>
-            </div>
-          </div>
-          
-          {/* Related posts - placeholder for future expansion */}
-          <div className="mt-16">
-            <h2 className="text-2xl font-academy text-dragon-dark mb-6">
-              You might also like
-            </h2>
-            <div className="bg-dragon-beige p-8 text-center rounded-lg">
-              <p className="text-dragon-dark mb-4">More blog posts coming soon!</p>
-              <Button asChild className="bg-dragon hover:bg-dragon-dark text-white">
-                <Link to="/blog">Return to Blog Home</Link>
-              </Button>
-            </div>
-          </div>
+          <BlogPostNavigation />
+          <BlogPostHeader post={post} />
+          <BlogPostContent content={post.fields.content} />
+          <BlogPostShareLinks />
+          <RelatedPosts />
         </div>
       </main>
       <Footer />
