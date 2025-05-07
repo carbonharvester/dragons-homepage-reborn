@@ -7,7 +7,7 @@ import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { 
   tripDetails as rawTripDetails, 
-  tripHighlights, 
+  tripHighlights as rawTripHighlights, 
   galleryImages, 
   learningOutcomes, 
   tripItinerary, 
@@ -29,7 +29,13 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
   // Transform Lucide icons to React elements for compatibility
   const tripDetails = rawTripDetails.map(detail => ({
     ...detail,
-    icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
+    icon: <span className="text-dragon">{React.createElement(detail.icon, { className: "h-5 w-5" })}</span>
+  }));
+
+  // Transform highlights with JSX elements
+  const tripHighlights = rawTripHighlights.map(highlight => ({
+    ...highlight,
+    icon: <span className="text-white">{React.createElement(highlight.icon, { className: "h-8 w-8" })}</span>
   }));
 
   // Custom description and project goals specific to the Food For Education program
@@ -80,14 +86,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              tripHighlights={tripHighlights.map(highlight => ({
-                ...highlight,
-                icon: (
-                  <div className="text-white">
-                    {React.createElement(highlight.icon, { className: "h-8 w-8 text-white" })}
-                  </div>
-                )
-              }))}
+              tripHighlights={tripHighlights}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}
