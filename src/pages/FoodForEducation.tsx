@@ -17,10 +17,16 @@ const FoodForEducation = () => {
       <Header />
       
       <main>
-        <TripBrochureWrapper />
+        {/* Hero section is part of TripBrochureWrapper */}
+        <TripBrochureWrapper tripType="food-for-education" heroOnly={true} />
+        
+        {/* Navigation positioned directly after the hero */}
         <div className="container-wide py-8">
           <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
         </div>
+        
+        {/* Main content after the navigation */}
+        <TripBrochureWrapper tripType="food-for-education" contentOnly={true} />
       </main>
       <Footer />
     </div>
