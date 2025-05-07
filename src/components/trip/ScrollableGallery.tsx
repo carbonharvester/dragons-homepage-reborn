@@ -12,13 +12,9 @@ interface GalleryItem {
 
 interface ScrollableGalleryProps {
   images: GalleryItem[];
-  video?: {
-    src: string;
-    poster?: string;
-  };
 }
 
-const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images, video }) => {
+const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const scrollLeft = () => {
@@ -36,20 +32,6 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images, video }) 
   return (
     <div className="mt-24 mb-16">
       <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Photo Gallery</h2>
-      
-      {/* Video Section (if provided) */}
-      {video && (
-        <div className="mb-8 max-w-4xl mx-auto">
-          <video 
-            controls 
-            className="w-full h-auto rounded-lg shadow-lg"
-            poster={video.poster}
-          >
-            <source src={video.src} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      )}
       
       <div className="relative">
         {/* Navigation buttons */}

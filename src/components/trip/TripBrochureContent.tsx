@@ -44,10 +44,6 @@ interface TripBrochureContentProps {
     alt: string;
     className: string;
   }[];
-  galleryVideo?: {
-    src: string;
-    poster?: string;
-  };
   learningOutcomes: TripLearningOutcome[];
   tripItinerary: TripItineraryDay[];
   programData: ProgramData;
@@ -62,7 +58,6 @@ const TripBrochureContent = ({
   tripDetails,
   tripHighlights,
   galleryImages,
-  galleryVideo,
   learningOutcomes,
   tripItinerary,
   programData,
@@ -82,10 +77,9 @@ const TripBrochureContent = ({
           <TripHighlights highlights={tripHighlights} />
         </div>}
       
-      {/* Photo Gallery - now using the new ScrollableGallery component */}
+      {/* Photo Gallery - using ScrollableGallery component */}
       <ScrollableGallery 
         images={galleryImages} 
-        video={galleryVideo}
       />
       
       {/* Learning Outcomes */}
