@@ -84,7 +84,7 @@ const BlogHome = () => {
                       <h3 className="text-2xl md:text-3xl font-academy text-dragon-dark mb-4">
                         {featuredPost.fields.title}
                       </h3>
-                      <p className="text-dragon-gray mb-6">
+                      <p className="text-dragon-gray mb-6 line-clamp-3">
                         {featuredPost.fields.excerpt}
                       </p>
                       <div className="mt-auto">
