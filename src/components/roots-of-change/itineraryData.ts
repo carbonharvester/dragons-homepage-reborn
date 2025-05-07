@@ -8,12 +8,12 @@ import {
 export const weeksData: WeekProps[] = [
   {
     title: "Week 1",
-    dates: "June 28 - July 4, 2026",
+    dates: "July 28 - August 4, 2026",
     focus: "Farm Establishment and Community Building",
     days: [
       {
         day: "Monday",
-        date: "June 28",
+        date: "July 28",
         title: "Arrival and Orientation",
         activities: [
           "Arrive in Nairobi, transfer to Wildebeest Eco Camp",
@@ -24,7 +24,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Tuesday",
-        date: "June 29",
+        date: "July 29",
         title: "School A - Farm Assessment and Water Harvesting",
         activities: [
           "Assess existing farm with School A staff",
@@ -36,7 +36,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Wednesday",
-        date: "June 30",
+        date: "July 30",
         title: "School B - Composting and Biochar",
         activities: [
           "Assess School B farm",
@@ -48,7 +48,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Thursday",
-        date: "July 1",
+        date: "July 31",
         title: "School A - Vetiver and Nursery Setup",
         activities: [
           "Plant 50-meter vetiver hedgerow",
@@ -60,7 +60,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Friday",
-        date: "July 2",
+        date: "August 1",
         title: "School B - Vegetable Beds and Community Engagement",
         activities: [
           "Clear 200 sq meter plot for raised beds",
@@ -72,7 +72,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Saturday",
-        date: "July 3",
+        date: "August 2",
         title: "Nairobi National Park",
         activities: [
           "Guided game drive in Nairobi National Park",
@@ -84,7 +84,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Sunday",
-        date: "July 4",
+        date: "August 3",
         title: "Ngong Hills Hike",
         activities: [
           "Guided hike across Ngong Hills",
@@ -98,12 +98,12 @@ export const weeksData: WeekProps[] = [
   },
   {
     title: "Week 2",
-    dates: "July 5 - July 11, 2026",
+    dates: "August 4 - August 11, 2026",
     focus: "Farm Expansion and Community Workshops",
     days: [
       {
         day: "Monday",
-        date: "July 5",
+        date: "August 4",
         title: "School A - Greywater System and Bed Expansion",
         activities: [
           "Install greywater recycling system",
@@ -115,7 +115,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Tuesday",
-        date: "July 6",
+        date: "August 5",
         title: "School B - Greywater System and Crop Diversification",
         activities: [
           "Install greywater system tailored to School B",
@@ -127,7 +127,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Wednesday",
-        date: "July 7",
+        date: "August 6",
         title: "School A - Student-Led Workshop",
         activities: [
           "Teach School A students about composting and planting",
@@ -139,7 +139,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Thursday",
-        date: "July 8",
+        date: "August 7",
         title: "School B - Student-Led Workshop and Farm Maintenance",
         activities: [
           "Teach School B students about water harvesting",
@@ -151,7 +151,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Friday",
-        date: "July 9",
+        date: "August 8",
         title: "Food For Education and Community Celebration",
         activities: [
           "Visit Food For Education facilities",
@@ -163,7 +163,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Saturday",
-        date: "July 10",
+        date: "August 9",
         title: "Nairobi National Museum and Maasai Market",
         activities: [
           "Explore exhibits on Kenyan history and culture",
@@ -175,7 +175,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Sunday",
-        date: "July 11",
+        date: "August 10",
         title: "Travel to Tsavo and Wildlife Works Orientation",
         activities: [
           "Travel to Wildlife Works, Rukinga Sanctuary",
@@ -189,12 +189,12 @@ export const weeksData: WeekProps[] = [
   },
   {
     title: "Week 3",
-    dates: "July 12 - July 18, 2026",
+    dates: "August 11 - August 18, 2026",
     focus: "Agroforestry and Greenhouse Work",
     days: [
       {
         day: "Monday",
-        date: "July 12",
+        date: "August 11",
         title: "Agroforestry - Tree Planting",
         activities: [
           "Plant 500 native trees for carbon credits",
@@ -206,7 +206,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Tuesday",
-        date: "July 13",
+        date: "August 12",
         title: "Greenhouse - Seedling Propagation",
         activities: [
           "Prepare 200 pots with compost",
@@ -218,7 +218,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Wednesday",
-        date: "July 14",
+        date: "August 13",
         title: "Community Engagement and Workshop Preparation",
         activities: [
           "Join local youth in agroforestry tasks",
@@ -230,7 +230,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Thursday",
-        date: "July 15",
+        date: "August 14",
         title: "Student-Led Workshop for Tsavo Youth",
         activities: [
           "Teach local youth about permaculture principles",
@@ -242,7 +242,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Friday",
-        date: "July 16",
+        date: "August 15",
         title: "Agroforestry Maintenance and Data Collection",
         activities: [
           "Weed around trees and apply mulch",
@@ -254,7 +254,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Saturday",
-        date: "July 17",
+        date: "August 16",
         title: "Tsavo East National Park",
         activities: [
           "Guided game drive in Tsavo East",
@@ -266,7 +266,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Sunday",
-        date: "July 18",
+        date: "August 17",
         title: "Rest and Community Cultural Day",
         activities: [
           "Morning rest and journaling time",
@@ -280,12 +280,12 @@ export const weeksData: WeekProps[] = [
   },
   {
     title: "Week 4",
-    dates: "July 19 - July 25, 2026",
+    dates: "August 18 - August 25, 2026",
     focus: "Sustainability and Program Wrap-Up",
     days: [
       {
         day: "Monday",
-        date: "July 19",
+        date: "August 18",
         title: "Greenhouse Sustainability",
         activities: [
           "Install drip irrigation for seedlings",
@@ -297,7 +297,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Tuesday",
-        date: "July 20",
+        date: "August 19",
         title: "Agroforestry Finalization",
         activities: [
           "Apply compost to tree bases",
@@ -309,7 +309,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Wednesday",
-        date: "July 21",
+        date: "August 20",
         title: "Community Presentation and Feedback",
         activities: [
           "Present project contributions to community leaders",
@@ -321,7 +321,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Thursday",
-        date: "July 22",
+        date: "August 21",
         title: "Final Community Celebration",
         activities: [
           "Showcase agroforestry plots and greenhouse",
@@ -333,7 +333,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Friday",
-        date: "July 23",
+        date: "August 22",
         title: "Travel to Nairobi and Cultural Day",
         activities: [
           "Travel back to Nairobi",
@@ -345,7 +345,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Saturday",
-        date: "July 24",
+        date: "August 23",
         title: "Karura Forest Hike and Final Reflection",
         activities: [
           "Guided hike exploring Karura Forest trails",
@@ -357,7 +357,7 @@ export const weeksData: WeekProps[] = [
       },
       {
         day: "Sunday",
-        date: "July 25",
+        date: "August 24",
         title: "Departure",
         activities: [
           "Final breakfast and check-out",
