@@ -1,5 +1,5 @@
 
-import { Globe, Camera } from "lucide-react";
+import { Globe, Camera, Leaf } from "lucide-react";
 
 export const summerAbroad = [
   { 
@@ -21,6 +21,17 @@ export const summerAbroad = [
     image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404062.jpg?v=1746502708", 
     link: "/programs/capturing-kenya", 
     icon: Camera, 
+    ageGroup: "17-21", 
+    location: "Kenya" 
+  },
+  {
+    title: "Permaculture Design", 
+    duration: "3 Weeks", 
+    season: "Jul 3 - Jul 24 2025", 
+    description: "Learn sustainable agricultural practices and ecological design principles while working with local communities to develop regenerative farming systems.", 
+    image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/1e93affc-4105-40dd-aa24-f5fd875d2fd5_d59babc0-95fd-4333-b3b9-754cd20f3610.jpg?v=1746515665", 
+    link: "/programs/permaculture-design", 
+    icon: Leaf, 
     ageGroup: "17-21", 
     location: "Kenya" 
   }
