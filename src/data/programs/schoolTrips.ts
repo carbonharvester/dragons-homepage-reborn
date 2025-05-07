@@ -24,7 +24,7 @@ export const schoolTrips = [
     title: "Water Empowering Women", 
     duration: "7-8 Days", 
     season: "Year Round", 
-    description: "Students will engage with rural women entrepreneurs, participate in water access projects, and experience the daily water challenges local women face. They'll learn about sustainable water solutions, gender equity, and make a lasting impact by installing water tanks while experiencing Tsavo's stunning wildlife in Kenya.", 
+    description: "Students will engage with rural women, participate in water projects with Kenyan counterparts, and experience the daily water challenges local women face. They'll learn about sustainable water solutions, gender equity, and make a lasting impact by installing water tanks while experiencing Tsavo's stunning wildlife in Kenya.", 
     image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png", 
     link: "/programs/empowering-women", 
     icon: Globe 
