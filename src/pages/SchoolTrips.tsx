@@ -26,11 +26,11 @@ const SchoolTrips = () => {
       />
       <Header />
       <main>
-        <ParentPageNavigation parentPath="/programs" parentName="Programs" />
         <SchoolTripsHero />
         
         <section className="py-16 bg-gradient-to-b from-white to-dragon-beige/20">
           <div className="container-wide">
+            <ParentPageNavigation parentPath="/programs" parentName="Programs" />
             <SchoolTripsIntro />
             <SchoolTripsFeatures />
             <SchoolTripsList />

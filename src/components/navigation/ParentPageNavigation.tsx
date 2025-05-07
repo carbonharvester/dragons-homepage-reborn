@@ -14,11 +14,11 @@ const ParentPageNavigation: React.FC<ParentPageNavigationProps> = ({
   parentName 
 }) => {
   return (
-    <div className="container-wide my-6">
+    <div className="mb-8">
       <Button 
         variant="ghost" 
         asChild 
-        className="text-dragon hover:text-dragon-dark hover:bg-dragon-beige"
+        className="text-dragon hover:text-dragon-dark hover:bg-dragon-beige pl-2"
       >
         <Link to={parentPath}>
           <ArrowLeft className="mr-2 h-4 w-4" />
