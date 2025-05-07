@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Calendar } from "lucide-react";
 import { ContentfulBlogPost } from '@/services/contentful';
 import { getImageUrl, formatDate } from '@/components/blog/blogUtils';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface RecentPostsProps {
   posts: ContentfulBlogPost[];
@@ -22,12 +23,14 @@ const RecentPosts: React.FC<RecentPostsProps> = ({ posts }) => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <div key={post.sys.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-            <div className="h-48 overflow-hidden">
-              <img 
-                src={getImageUrl(post.fields.featuredImage)} 
-                alt={post.fields.title}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
-              />
+            <div className="overflow-hidden">
+              <AspectRatio ratio={16 / 9} className="bg-muted">
+                <img 
+                  src={getImageUrl(post.fields.featuredImage)} 
+                  alt={post.fields.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                />
+              </AspectRatio>
             </div>
             <div className="p-6">
               <div className="flex items-center mb-3">
