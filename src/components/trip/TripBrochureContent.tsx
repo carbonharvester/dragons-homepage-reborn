@@ -1,4 +1,3 @@
-
 import React from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
@@ -7,30 +6,25 @@ import TripLearningOutcomes from './TripLearningOutcomes';
 import TripItinerary from './TripItinerary';
 import TripCTA from './TripCTA';
 import ProgramBrochure from '../ProgramBrochure';
-
 interface TripDetail {
   label: string;
   value: string;
   icon: React.ReactNode;
 }
-
 interface TripHighlight {
   icon: React.ReactNode;
   title: string;
   description: string;
 }
-
 interface TripLearningOutcome {
   title: string;
   description: string;
 }
-
 interface TripItineraryDay {
   day: string;
   title: string;
   activities: string[];
 }
-
 interface ProgramData {
   title: string;
   description: string;
@@ -39,7 +33,6 @@ interface ProgramData {
   location: string;
   goals: string[];
 }
-
 interface TripBrochureContentProps {
   tripDetails: TripDetail[];
   tripHighlights: TripHighlight[];
@@ -52,7 +45,6 @@ interface TripBrochureContentProps {
   tripItinerary: TripItineraryDay[];
   programData: ProgramData;
 }
-
 const TripBrochureContent = ({
   tripDetails,
   tripHighlights,
@@ -61,8 +53,7 @@ const TripBrochureContent = ({
   tripItinerary,
   programData
 }: TripBrochureContentProps) => {
-  return (
-    <div className="container py-16">
+  return <div className="container py-[6px]">
       {/* Trip Overview */}
       <TripOverview tripDetails={tripDetails} />
       
@@ -83,8 +74,6 @@ const TripBrochureContent = ({
       
       {/* CTA Section */}
       <TripCTA />
-    </div>
-  );
+    </div>;
 };
-
 export default TripBrochureContent;
