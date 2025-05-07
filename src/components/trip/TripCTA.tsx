@@ -20,7 +20,7 @@ const TripCTA = ({
           : "Join us on this transformative journey to address food insecurity through sustainable permaculture practices while providing your students with an unforgettable educational experience."}
       </p>
       <div className="flex flex-wrap justify-center gap-4">
-        <Button variant="secondary" size="lg" className="text-dragon-dark hover:bg-secondary/90" asChild>
+        <Button variant="secondary" size="lg" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400" asChild>
           <a href="https://calendly.com/kapes-adventures/30min" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
         </Button>
       </div>

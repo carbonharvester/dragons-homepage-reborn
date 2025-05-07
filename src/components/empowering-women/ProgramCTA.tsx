@@ -11,7 +11,7 @@ const ProgramCTA = () => {
           url="https://calendly.com/kapesuniforms/discoverymeeting"
           text="Schedule a Consultation"
           variant="default"
-          className="bg-dragon hover:bg-dragon-dark text-white"
+          className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400"
         />
       </div>
     </div>

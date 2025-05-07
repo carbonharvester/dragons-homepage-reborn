@@ -49,7 +49,7 @@ const TripDetailsCard = ({ tripDetails, isSchoolTrip = false }: TripDetailsCardP
           url="https://calendly.com/kapesuniforms/discoverymeeting"
           text="Schedule Consultation"
           variant="outline"
-          className="w-full border-dragon text-dragon hover:bg-dragon-beige"
+          className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow"
         />
       </div>
     </div>

@@ -1,16 +1,20 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ReactNode } from 'react';
 import CalendlyEmbed from '../CalendlyEmbed';
+
 interface TripDetailProps {
   label: string;
   value: string;
   icon: ReactNode;
 }
+
 interface TripDetailsCardProps {
   tripDetails: TripDetailProps[];
   isSchoolTrip?: boolean;
 }
+
 const TripDetailsCard = ({
   tripDetails,
   isSchoolTrip = false
@@ -31,10 +35,22 @@ const TripDetailsCard = ({
       
       <div className="mt-6 space-y-4">
         {!isSchoolTrip && <Button className="w-full bg-dragon hover:bg-dragon-dark" asChild>
-            
+            <a 
+              href="https://form.typeform.com/to/rtxmvp4L" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              Apply Now
+            </a>
           </Button>}
-        <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon-beige" />
+        <CalendlyEmbed 
+          url="https://calendly.com/kapesuniforms/discoverymeeting"
+          text="Schedule Consultation"
+          variant="outline"
+          className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow"
+        />
       </div>
     </div>;
 };
+
 export default TripDetailsCard;

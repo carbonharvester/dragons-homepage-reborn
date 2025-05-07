@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MapPin, Users, BookOpen, Shield, LineChart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -56,11 +57,11 @@ const WhyChooseUs = () => {
         <div className="mt-16 bg-dragon-sand p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between">
           <div className="mb-6 md:mb-0 md:mr-6">
             <h3 className="text-2xl text-dragon-dark mb-2 font-extrabold">Ready for your next adventure?</h3>
-            <p className="text-dragon-gray">Connect with a program coordinator to find the transformative journey that’s right for your school.</p>
+            <p className="text-dragon-gray">Connect with a program coordinator to find the transformative journey that's right for your school.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="btn-primary whitespace-nowrap" onClick={scrollToPrograms}>Find Your Program</Button>
-            <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" className="btn-secondary whitespace-nowrap" />
+            <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400 whitespace-nowrap" />
           </div>
         </div>
       </div>
