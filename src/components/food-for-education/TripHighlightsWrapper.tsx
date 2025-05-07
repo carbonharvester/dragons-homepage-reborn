@@ -7,8 +7,11 @@ const TripHighlightsWrapper = () => {
   // Convert the Lucide icon components to JSX elements
   const highlightsWithJSX = rawTripHighlights.map(highlight => ({
     ...highlight,
-    icon: React.createElement('span', { className: "text-white" }, 
-          React.createElement(highlight.icon, { className: "h-8 w-8" }))
+    icon: (
+      <div className="text-white">
+        {React.createElement(highlight.icon, { className: "h-8 w-8" })}
+      </div>
+    )
   }));
 
   return (

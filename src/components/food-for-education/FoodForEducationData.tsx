@@ -29,15 +29,21 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
   // Transform Lucide icons to React elements for compatibility
   const tripDetails = rawTripDetails.map(detail => ({
     ...detail,
-    icon: React.createElement('span', { className: "text-dragon" }, 
-          React.createElement(detail.icon, { className: "h-5 w-5" }))
+    icon: (
+      <div className="text-dragon">
+        {React.createElement(detail.icon, { className: "h-5 w-5" })}
+      </div>
+    )
   }));
 
   // Transform highlights with JSX elements
   const tripHighlights = rawTripHighlights.map(highlight => ({
     ...highlight,
-    icon: React.createElement('span', { className: "text-white" },
-          React.createElement(highlight.icon, { className: "h-8 w-8" }))
+    icon: (
+      <div className="text-white">
+        {React.createElement(highlight.icon, { className: "h-8 w-8" })}
+      </div>
+    )
   }));
 
   // Custom description and project goals specific to the Food For Education program
