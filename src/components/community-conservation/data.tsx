@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Calendar, Map, Users, Clock } from 'lucide-react';
+import { Calendar, Map, Users, Clock, Sprout, Search, Shield, Leaf, Book } from 'lucide-react';
 
 // Trip Details
 export const tripDetails = [
@@ -29,36 +29,36 @@ export const tripDetails = [
 // Trip Highlights
 export const tripHighlights = [
   {
-    icon: <div className="w-12 h-12 rounded-full bg-dragon-beige flex items-center justify-center">
-      <Users className="h-6 w-6 text-dragon" />
+    icon: <div className="text-white">
+      <Users className="h-8 w-8" />
     </div>,
     title: "Local Expertise",
     description: "Work alongside local conservation rangers in protected areas"
   },
   {
-    icon: <div className="w-12 h-12 rounded-full bg-dragon-beige flex items-center justify-center">
-      <Users className="h-6 w-6 text-dragon" />
+    icon: <div className="text-white">
+      <Search className="h-8 w-8" />
     </div>,
     title: "Wildlife Monitoring",
     description: "Participate in wildlife monitoring and data collection"
   },
   {
-    icon: <div className="w-12 h-12 rounded-full bg-dragon-beige flex items-center justify-center">
-      <Users className="h-6 w-6 text-dragon" />
+    icon: <div className="text-white">
+      <Book className="h-8 w-8" />
     </div>,
     title: "Traditional Skills",
     description: "Learn traditional skills from community elders"
   },
   {
-    icon: <div className="w-12 h-12 rounded-full bg-dragon-beige flex items-center justify-center">
-      <Users className="h-6 w-6 text-dragon" />
+    icon: <div className="text-white">
+      <Sprout className="h-8 w-8" />
     </div>,
     title: "Conservation Initiatives",
     description: "Contribute to ongoing conservation initiatives"
   },
   {
-    icon: <div className="w-12 h-12 rounded-full bg-dragon-beige flex items-center justify-center">
-      <Users className="h-6 w-6 text-dragon" />
+    icon: <div className="text-white">
+      <Shield className="h-8 w-8" />
     </div>,
     title: "Project Implementation",
     description: "Develop and implement a sustainable conservation project"
