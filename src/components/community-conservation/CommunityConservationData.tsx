@@ -3,6 +3,8 @@ import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
+import TripHighlightsWrapper from './TripHighlightsWrapper';
+import TripOverview from '../trip/TripOverview';
 import { 
   tripDetails, 
   tripHighlights, 
@@ -25,17 +27,18 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
   navigationOnly = false
 }) => {
   // Define custom trip description for the overview section
-  const tripDescription = [
+  const conservationDescription = [
     "This 8 day journey to Tsavo, Kenya immerses students in practical conservation work with Wildlife Works while exploring the magnificent Tsavo East National Park.",
     "Students will experience wildlife monitoring, carbon cycle management, and traditional craft-making while developing outdoor skills through hiking and ranger-led activities. The program provides hands-on engagement with conservation enterprises and social initiatives that balance ecosystem protection with community development."
   ];
 
   // Define custom project goals
-  const projectGoals = [
+  const conservationProjectGoals = [
     "Experience conservation in action at Wildlife Works and Tsavo East National Park",
     "Learn about carbon cycle management and REDD+ conservation initiatives",
     "Engage with local communities and learn traditional craft-making skills",
-    "Develop outdoor adventure skills including hiking and bush survival techniques"
+    "Develop outdoor adventure skills including hiking and bush survival techniques",
+    "Contribute to real conservation projects with measurable environmental impact"
   ];
 
   return (
@@ -57,25 +60,34 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
 
       {/* Main content */}
       {(contentOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
-        <TripBrochureContent 
-          tripDetails={tripDetails.map(detail => ({
-            ...detail,
-            icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
-          }))}
-          tripHighlights={tripHighlights.map(highlight => ({
-            ...highlight,
-            icon: <div className="text-white">
-              {React.createElement(highlight.icon, { className: "h-8 w-8" })}
-            </div>
-          }))}
-          galleryImages={galleryImages}
-          learningOutcomes={learningOutcomes}
-          tripItinerary={tripItinerary}
-          programData={programData}
-          description={tripDescription}
-          projectGoals={projectGoals}
-          perfectFor={perfectFor}
-        />
+        <>
+          <div className="container py-[6px]">
+            <TripOverview 
+              tripDetails={tripDetails}
+              perfectFor={perfectFor}
+              description={conservationDescription}
+              projectGoals={conservationProjectGoals}
+            />
+            
+            {/* Trip Highlights with explicit heading */}
+            <TripHighlightsWrapper />
+            
+            {/* Continue with other components */}
+            <TripBrochureContent 
+              tripDetails={tripDetails}
+              tripHighlights={tripHighlights}
+              galleryImages={galleryImages}
+              learningOutcomes={learningOutcomes}
+              tripItinerary={tripItinerary}
+              programData={programData}
+              perfectFor={perfectFor}
+              description={conservationDescription}
+              projectGoals={conservationProjectGoals}
+              hideOverview={true}
+              hideHighlights={true}
+            />
+          </div>
+        </>
       )}
     </>
   );

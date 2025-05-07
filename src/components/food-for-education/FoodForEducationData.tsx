@@ -3,15 +3,17 @@ import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
+import TripHighlightsWrapper from './TripHighlightsWrapper';
+import TripOverview from '../trip/TripOverview';
 import { 
   tripDetails, 
   tripHighlights, 
   galleryImages, 
   learningOutcomes, 
   tripItinerary, 
-  programData 
+  programData,
+  perfectFor
 } from './data';
-import { perfectFor } from './data/details';
 
 interface FoodForEducationDataProps {
   heroOnly?: boolean;
@@ -24,6 +26,20 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
   contentOnly = false,
   navigationOnly = false
 }) => {
+  // Custom description and project goals specific to the Food For Education program
+  const foodDescription = [
+    "In many rural Kenyan schools, inconsistent access to nutritious food impacts student attendance and academic performance. This collaborative program transforms unused school land into productive food gardens through sustainable permaculture practices.",
+    "During this immersive 7-8 day journey, students will work alongside local communities to establish gardens that provide ongoing meals for schoolchildren while learning about food security challenges and solutions that protect both people and ecosystems."
+  ];
+  
+  const foodProjectGoals = [
+    "Design and establish permaculture food gardens at local schools using sustainable techniques",
+    "Learn practical gardening skills including composting, water conservation, and planting methods",
+    "Understand the relationship between food security, education, and community development",
+    "Connect with Kenya's natural environment through wildlife experiences and cultural immersion",
+    "Create measurable impact that continues to provide nutritious food for schoolchildren"
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -43,15 +59,34 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
 
       {/* Main content */}
       {(contentOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
-        <TripBrochureContent 
-          tripDetails={tripDetails}
-          tripHighlights={tripHighlights}
-          galleryImages={galleryImages}
-          learningOutcomes={learningOutcomes}
-          tripItinerary={tripItinerary}
-          programData={programData}
-          perfectFor={perfectFor}
-        />
+        <>
+          <div className="container py-[6px]">
+            <TripOverview 
+              tripDetails={tripDetails}
+              perfectFor={perfectFor}
+              description={foodDescription}
+              projectGoals={foodProjectGoals}
+            />
+            
+            {/* Trip Highlights with explicit heading */}
+            <TripHighlightsWrapper />
+            
+            {/* Continue with other components */}
+            <TripBrochureContent 
+              tripDetails={tripDetails}
+              tripHighlights={tripHighlights}
+              galleryImages={galleryImages}
+              learningOutcomes={learningOutcomes}
+              tripItinerary={tripItinerary}
+              programData={programData}
+              perfectFor={perfectFor}
+              description={foodDescription}
+              projectGoals={foodProjectGoals}
+              hideOverview={true}
+              hideHighlights={true}
+            />
+          </div>
+        </>
       )}
     </>
   );
