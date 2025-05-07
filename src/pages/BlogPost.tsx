@@ -8,8 +8,7 @@ import Footer from "@/components/Footer";
 import { getBlogPostBySlug, ContentfulBlogPost } from '@/services/contentful';
 import { useQuery } from '@tanstack/react-query';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { format, parseISO } from 'date-fns';
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+import { getImageUrl, formatDate, getRichTextRenderOptions, getAuthorImageUrl } from '@/components/blog/blogUtils';
 
 const BlogPost = () => {
   const { postId } = useParams();
@@ -19,68 +18,6 @@ const BlogPost = () => {
     queryKey: ['blogPost', postId],
     queryFn: () => getBlogPostBySlug(postId || ''),
   });
-
-  // Format image URL for Contentful images
-  const getImageUrl = (imageField: any) => {
-    if (!imageField || !imageField.fields || !imageField.fields.file) {
-      return "https://images.unsplash.com/photo-1500673922987-e212871fec22"; // Fallback image
-    }
-    return imageField.fields.file.url.startsWith('//') 
-      ? `https:${imageField.fields.file.url}` 
-      : imageField.fields.file.url;
-  };
-
-  // Format date to d MMM yyyy format
-  const formatDate = (dateString: string) => {
-    try {
-      // Try parsing the date string
-      const date = parseISO(dateString);
-      return format(date, 'd MMM yyyy');
-    } catch (error) {
-      // If parsing fails, return the original date string
-      return dateString;
-    }
-  };
-
-  // Rich text rendering options
-  const richTextOptions = {
-    renderNode: {
-      [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
-        <p className="mb-6">{children}</p>
-      ),
-      [BLOCKS.HEADING_1]: (node: any, children: any) => (
-        <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>
-      ),
-      [BLOCKS.HEADING_2]: (node: any, children: any) => (
-        <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>
-      ),
-      [BLOCKS.HEADING_3]: (node: any, children: any) => (
-        <h3 className="text-xl font-bold mt-6 mb-3">{children}</h3>
-      ),
-      [BLOCKS.UL_LIST]: (node: any, children: any) => (
-        <ul className="list-disc pl-6 mb-6">{children}</ul>
-      ),
-      [BLOCKS.OL_LIST]: (node: any, children: any) => (
-        <ol className="list-decimal pl-6 mb-6">{children}</ol>
-      ),
-      [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
-        <li className="mb-1">{children}</li>
-      ),
-      [BLOCKS.QUOTE]: (node: any, children: any) => (
-        <blockquote className="border-l-4 border-dragon pl-4 italic my-6">{children}</blockquote>
-      ),
-      [INLINES.HYPERLINK]: (node: any, children: any) => (
-        <a 
-          href={node.data.uri} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="text-dragon hover:underline"
-        >
-          {children}
-        </a>
-      ),
-    },
-  };
 
   // If post is loading, show loading message
   if (isLoading) {
@@ -166,15 +103,15 @@ const BlogPost = () => {
                 {post.fields.readTime || "5 min read"}
               </span>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dragon-dark mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-academy text-dragon-dark mb-6">
               {post.fields.title}
             </h1>
             
             {/* Author info */}
             <div className="flex items-center mb-8">
               <img 
-                src={post.fields.authorImage ? getImageUrl(post.fields.authorImage) : "/lovable-uploads/5de3bb89-b98b-471d-b489-b486b74a96b8.png"} 
-                alt={post.fields.author}
+                src={getAuthorImageUrl(post.fields.authorImage)} 
+                alt={post.fields.author || "Author"}
                 className="w-12 h-12 rounded-full object-cover mr-4" 
               />
               <div>
@@ -184,10 +121,10 @@ const BlogPost = () => {
             </div>
           </div>
           
-          {/* Article content - updated to use rich text renderer */}
-          <article className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-dragon-dark prose-p:text-dragon-gray prose-li:text-dragon-gray prose-blockquote:text-dragon prose-blockquote:border-dragon-light">
+          {/* Article content - uses rich text renderer */}
+          <article className="prose prose-lg max-w-none prose-headings:font-academy prose-headings:text-dragon-dark prose-p:text-dragon-gray prose-li:text-dragon-gray prose-blockquote:text-dragon prose-blockquote:border-dragon-light">
             {post.fields.content ? (
-              documentToReactComponents(post.fields.content, richTextOptions)
+              documentToReactComponents(post.fields.content, getRichTextRenderOptions())
             ) : (
               <p className="text-dragon-gray">This article has no content.</p>
             )}
@@ -219,7 +156,7 @@ const BlogPost = () => {
           
           {/* Related posts - placeholder for future expansion */}
           <div className="mt-16">
-            <h2 className="text-2xl font-serif font-bold text-dragon-dark mb-6">
+            <h2 className="text-2xl font-academy text-dragon-dark mb-6">
               You might also like
             </h2>
             <div className="bg-dragon-beige p-8 text-center rounded-lg">

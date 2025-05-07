@@ -68,11 +68,10 @@ export const getRichTextRenderOptions = (): Options => {
   };
 };
 
-// Get fallback author image
+// Get author image URL with fallback
 export const getAuthorImageUrl = (authorImageField: any) => {
   if (authorImageField && authorImageField.fields && authorImageField.fields.file) {
     return getImageUrl(authorImageField);
   }
   return "/lovable-uploads/5de3bb89-b98b-471d-b489-b486b74a96b8.png"; // Default author image
 };
-
