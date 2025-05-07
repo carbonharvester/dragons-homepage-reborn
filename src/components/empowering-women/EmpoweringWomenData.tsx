@@ -20,6 +20,18 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
   heroOnly = false,
   contentOnly = false
 }) => {
+  // Convert Lucide icons to ReactNode for tripDetails
+  const formattedTripDetails = tripDetails.map(detail => ({
+    ...detail,
+    icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
+  }));
+
+  // Convert Lucide icons to ReactNode for tripHighlights
+  const formattedTripHighlights = tripHighlights.map(highlight => ({
+    ...highlight,
+    icon: React.createElement(highlight.icon, { className: "h-8 w-8 text-white" })
+  }));
+
   return (
     <>
       {/* Hero Section - only render if heroOnly is true or neither heroOnly nor contentOnly is true */}
@@ -35,8 +47,8 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
       {/* Main content - only render if contentOnly is true or neither heroOnly nor contentOnly is true */}
       {(contentOnly || (!heroOnly && !contentOnly)) && (
         <TripBrochureContent 
-          tripDetails={tripDetails}
-          tripHighlights={tripHighlights}
+          tripDetails={formattedTripDetails}
+          tripHighlights={formattedTripHighlights}
           galleryImages={galleryImages}
           learningOutcomes={learningOutcomes}
           tripItinerary={tripItinerary}
