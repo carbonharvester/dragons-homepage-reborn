@@ -1,26 +1,32 @@
 
-import React from "react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import SEO from "@/components/SEO";
-import TripBrochureWrapper from "@/components/trip/TripBrochureWrapper";
+import React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import TripBrochureWrapper from '@/components/trip/TripBrochureWrapper';
+import SEO from '@/components/SEO';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
 const EmpoweringWomen = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Exploring Women's Empowerment: Tsavo Women's Empowerment Journey"
-        description="An 8-day journey to Tsavo, Kenya, to learn from rural women and support Zawadisha's life-changing microloan program for solar lamps, rainwater tanks, and clean cookstoves."
-        keywords="women empowerment, Zawadisha, microloan, Tsavo, Kenya, water walk, cultural immersion, educational travel"
+        title="Empowering Women Program"
+        description="Partner with Zawadisha and engage with rural Kenyan women through microfinance initiatives that provide life-changing clean technologies."
+        keywords="women empowerment, microfinance, educational travel, Kenya, social entrepreneurship"
       />
       <Header />
       
       <main>
+        {/* Hero section is part of TripBrochureWrapper */}
+        <TripBrochureWrapper tripType="empowering-women" heroOnly={true} />
+        
+        {/* Navigation positioned directly after the hero, with proper padding */}
         <div className="container-wide py-8">
           <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
         </div>
-        <TripBrochureWrapper tripType="empowering-women" />
+        
+        {/* Main content after the navigation */}
+        <TripBrochureWrapper tripType="empowering-women" contentOnly={true} />
       </main>
       <Footer />
     </div>
