@@ -31,11 +31,11 @@ export const tripDetails = [
   },
   {
     label: "Group Size",
-    value: "12-28 Students",
+    value: "10-28 Students / 2-4 Instructors and Rangers",
     icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" })
   },
   {
-    label: "Educational Credits",
+    label: "Educational Credits (Optional)",
     value: "CAS Points, Duke of Edinburgh",
     icon: React.createElement(GraduationCap, { className: "h-5 w-5 text-dragon" })
   },
