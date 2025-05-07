@@ -1,5 +1,5 @@
 
-import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield, Sprout } from 'lucide-react';
+import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield, WaterTank } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 interface TripHighlight {
@@ -12,22 +12,22 @@ export const tripHighlights: TripHighlight[] = [
   {
     icon: Droplets,
     title: "Water Walk Experience",
-    description: "Carry jerry cans alongside local women to understand water collection challenges before rainwater tanks."
+    description: "Carry jerry cans alongside local women to understand water collection challenges and the impact of water tanks."
   },
   {
     icon: Home,
-    title: "Home Visits",
-    description: "Visit women's homes to see Zawadisha products in action and hear stories of transformation."
+    title: "Community Visits",
+    description: "Visit local homes to witness how water scarcity affects daily life and hear stories of transformation."
   },
   {
     icon: Paintbrush,
-    title: "Cultural Crafting",
-    description: "Create elephant dung paper, beaded bracelets, and woven baskets with the Neema Women's Group."
+    title: "Tank Mural Painting",
+    description: "Create a colorful mural on a water tank that will serve the community for years to come."
   },
   {
-    icon: Utensils,
-    title: "Traditional Cooking",
-    description: "Learn to cook authentic Kenyan dishes with local women using fresh, local ingredients."
+    icon: WaterTank,
+    title: "Water Tank Installation",
+    description: "Work alongside local technicians to install a water tank that will provide clean water to the community."
   },
   {
     icon: Mountain,
@@ -36,12 +36,12 @@ export const tripHighlights: TripHighlight[] = [
   },
   {
     icon: Shield,
-    title: "Kasaine Fence Project",
-    description: "Create and install metal sheet noise deterrents on farm fences to help local farmers protect crops from elephants."
+    title: "Water Security Project",
+    description: "Contribute to long-term water security by installing infrastructure that helps protect women and families."
   },
   {
-    icon: Sprout,
-    title: "Microloan Impact",
-    description: "Each trip directly funds a microloan for solar lamps, rainwater tanks, or clean cookstoves for rural women."
+    icon: Utensils,
+    title: "Cultural Immersion",
+    description: "Create traditional crafts with the Neema Women's Group and share meals to build cross-cultural connections."
   }
 ];

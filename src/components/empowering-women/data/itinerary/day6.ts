@@ -1,11 +1,11 @@
 
 export const day6 = {
   day: "Day 6 (Wednesday)",
-  title: "Kasaine Fence Project",
+  title: "Water Tank Installation & Celebration",
   activities: [
-    "Visit a local farm to learn about human-wildlife conflict from farmers",
-    "Workshop on creating Kasaine fences using metal sheets as elephant deterrents",
-    "Work alongside farmers to install metal sheets on farm perimeters",
-    "Discuss sustainable solutions for human-wildlife coexistence and conservation"
+    "Work alongside local technicians to install the painted water tank in the community",
+    "Learn about rainwater harvesting techniques and maintenance of water systems",
+    "Handover ceremony where the community takes ownership of the water tank",
+    "Celebration dinner with traditional food, music, and dancing with community members"
   ]
 };

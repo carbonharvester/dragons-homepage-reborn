@@ -1,9 +1,11 @@
+
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import { DollarSign, Users } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+
 interface ProgramOverviewProps {
   programData: {
     title: string;
@@ -15,6 +17,7 @@ interface ProgramOverviewProps {
     goals: string[];
   };
 }
+
 const ProgramOverview = ({
   programData
 }: ProgramOverviewProps) => {
@@ -38,6 +41,13 @@ const ProgramOverview = ({
     src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/8aea54cf-37c5-43f0-8665-b4259a4acc7f.jpg?v=1746515558",
     alt: "Student learning photography techniques"
   }];
-  return;
+  
+  return (
+    <div className="mb-16">
+      {/* Content will go here */}
+      <p>Program overview content</p>
+    </div>
+  );
 };
+
 export default ProgramOverview;

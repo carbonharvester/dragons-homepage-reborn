@@ -1,11 +1,11 @@
 
 export const day4 = {
   day: "Day 4 (Monday)",
-  title: "Water Walk & Home Visits",
+  title: "Community Visit & Water Walk",
   activities: [
-    "Participate in a water walk with Neema Women's Group carrying 10-20 liter jerry cans",
-    "Visit women's homes to see Zawadisha products in action (solar lamps, cookstoves)",
-    "Interview women about life changes due to these innovations",
-    "Evening reflective discussion on privilege and resilience with Kapes staff"
+    "Visit the local community to meet families and hear about water access challenges",
+    "Interactive session with community leaders about the impact of water scarcity on education and health",
+    "Participate in a water walk with local women carrying 10-20 liter jerry cans to experience their daily journey",
+    "Evening reflection on the day's experiences and planning for the water tank installation"
   ]
 };

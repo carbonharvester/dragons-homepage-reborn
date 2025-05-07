@@ -1,11 +1,11 @@
 
 export const day3 = {
   day: "Day 3 (Sunday)",
-  title: "Hike in Murangu Hills",
+  title: "Murangu Hills Hike & Cultural Crafting",
   activities: [
-    "Guided hike carrying light jerry cans to simulate women's daily water collection",
-    "Picnic lunch at the summit with storytelling by a Zawadisha Peer Educator",
-    "Learn about local flora used by women for fuel and medicine",
-    "Evening workshop on Zawadisha's microloan model with examples of positive impacts"
+    "Guided morning hike in Murangu Hills carrying light jerry cans to simulate women's daily water collection",
+    "Picnic lunch with the Neema Women's Group after the hike",
+    "Afternoon cultural workshops: learning to make elephant dung paper, basket weaving, and bead making",
+    "Dinner and storytelling session with the Neema Women's Group about daily life and challenges"
   ]
 };

@@ -1,11 +1,11 @@
 
 export const day5 = {
   day: "Day 5 (Tuesday)",
-  title: "Cultural Immersion & Crafting",
+  title: "Water Tank Mural Painting",
   activities: [
-    "Learn traditional Taita or Duruma dance with the Neema Women's Group",
-    "Create elephant dung paper, beaded bracelets from recycled magazines, and woven baskets",
-    "Traditional cooking lesson with local ingredients and preparation methods",
-    "Enjoy self-prepared dinner with the Neema Women's Group"
+    "Learn about the importance of water tanks in rural communities with a local engineer",
+    "Design planning session for creating a mural that represents water conservation and community values",
+    "Spend the day painting a colorful, meaningful mural on the water tank that will be installed",
+    "Evening presentation on sustainable water solutions implemented across Kenya"
   ]
 };

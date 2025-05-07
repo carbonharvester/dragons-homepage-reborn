@@ -28,8 +28,8 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
       {/* Hero Section */}
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
-          title="Empowering Young Women"
-          subtitle="Partner with Zawadisha and engage with rural Kenyan women through microfinance initiatives that provide life-changing clean technologies."
+          title="Water Empowering Women"
+          subtitle="Partner with local communities and engage with rural Kenyan women through water access initiatives that provide life-changing clean water solutions."
           category="School Trip"
           imagePath="/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png"
         />
