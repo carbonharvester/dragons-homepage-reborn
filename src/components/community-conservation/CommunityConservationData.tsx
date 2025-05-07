@@ -43,8 +43,16 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
       {/* Main content */}
       {(contentOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripBrochureContent 
-          tripDetails={tripDetails}
-          tripHighlights={tripHighlights}
+          tripDetails={tripDetails.map(detail => ({
+            ...detail,
+            icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
+          }))}
+          tripHighlights={tripHighlights.map(highlight => ({
+            ...highlight,
+            icon: <div className="text-white">
+              {React.createElement(highlight.icon, { className: "h-8 w-8" })}
+            </div>
+          }))}
           galleryImages={galleryImages}
           learningOutcomes={learningOutcomes}
           tripItinerary={tripItinerary}
