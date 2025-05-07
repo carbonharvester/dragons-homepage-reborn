@@ -1,5 +1,7 @@
+
 import React from 'react';
 import { Book, GraduationCap, School } from "lucide-react";
+
 const SchoolTripsFeatures = () => {
   const features = [{
     title: "Creativity",
@@ -17,6 +19,7 @@ const SchoolTripsFeatures = () => {
     description: "Meaningful community projects that create lasting impact while fostering global citizenship, leadership, and teamwork.",
     points: ["Community-identified projects with measurable outcomes, like clean water access for 100 people", "Sustainable development initiatives, such as solar energy projects", "Cross-cultural collaboration and exchange"]
   }];
+
   return <section className="py-20 bg-dragon my-16 rounded-lg overflow-hidden">
       <div className="container-wide">
         <div className="text-center mb-16">
@@ -54,11 +57,17 @@ const SchoolTripsFeatures = () => {
           {/* Navigation dots - similar to testimonials */}
           <div className="flex justify-center mt-8">
             <div className="flex items-center gap-2">
-              {features.map((_, index) => {})}
+              {features.map((_, index) => (
+                <div 
+                  key={index}
+                  className={`w-3 h-3 rounded-full bg-white opacity-60 hover:opacity-100 transition-opacity cursor-pointer`}
+                />
+              ))}
             </div>
           </div>
         </div>
       </div>
     </section>;
 };
+
 export default SchoolTripsFeatures;
