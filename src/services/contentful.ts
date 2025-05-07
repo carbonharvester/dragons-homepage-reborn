@@ -1,4 +1,6 @@
+
 import { createClient } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
 
 // Contentful client setup
 export const contentfulClient = createClient({
@@ -16,7 +18,7 @@ export interface ContentfulBlogPost {
     slug: string;
     date: string;
     excerpt: string;
-    content: string;
+    content: Document; // Changed from string to Document type
     featuredImage: {
       fields: {
         file: {

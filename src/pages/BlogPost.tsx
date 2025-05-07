@@ -7,6 +7,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getBlogPostBySlug, ContentfulBlogPost } from '@/services/contentful';
 import { useQuery } from '@tanstack/react-query';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { format, parseISO } from 'date-fns';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 
 const BlogPost = () => {
   const { postId } = useParams();
@@ -25,6 +28,58 @@ const BlogPost = () => {
     return imageField.fields.file.url.startsWith('//') 
       ? `https:${imageField.fields.file.url}` 
       : imageField.fields.file.url;
+  };
+
+  // Format date to d MMM yyyy format
+  const formatDate = (dateString: string) => {
+    try {
+      // Try parsing the date string
+      const date = parseISO(dateString);
+      return format(date, 'd MMM yyyy');
+    } catch (error) {
+      // If parsing fails, return the original date string
+      return dateString;
+    }
+  };
+
+  // Rich text rendering options
+  const richTextOptions = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
+        <p className="mb-6">{children}</p>
+      ),
+      [BLOCKS.HEADING_1]: (node: any, children: any) => (
+        <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>
+      ),
+      [BLOCKS.HEADING_2]: (node: any, children: any) => (
+        <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>
+      ),
+      [BLOCKS.HEADING_3]: (node: any, children: any) => (
+        <h3 className="text-xl font-bold mt-6 mb-3">{children}</h3>
+      ),
+      [BLOCKS.UL_LIST]: (node: any, children: any) => (
+        <ul className="list-disc pl-6 mb-6">{children}</ul>
+      ),
+      [BLOCKS.OL_LIST]: (node: any, children: any) => (
+        <ol className="list-decimal pl-6 mb-6">{children}</ol>
+      ),
+      [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
+        <li className="mb-1">{children}</li>
+      ),
+      [BLOCKS.QUOTE]: (node: any, children: any) => (
+        <blockquote className="border-l-4 border-dragon pl-4 italic my-6">{children}</blockquote>
+      ),
+      [INLINES.HYPERLINK]: (node: any, children: any) => (
+        <a 
+          href={node.data.uri} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-dragon hover:underline"
+        >
+          {children}
+        </a>
+      ),
+    },
   };
 
   // If post is loading, show loading message
@@ -105,7 +160,7 @@ const BlogPost = () => {
               </span>
               <div className="flex items-center text-dragon-gray text-sm">
                 <Calendar className="h-4 w-4 mr-1" />
-                <span>{post.fields.date}</span>
+                <span>{formatDate(post.fields.date)}</span>
               </div>
               <span className="text-dragon-gray text-sm">
                 {post.fields.readTime || "5 min read"}
@@ -129,9 +184,13 @@ const BlogPost = () => {
             </div>
           </div>
           
-          {/* Article content */}
+          {/* Article content - updated to use rich text renderer */}
           <article className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-dragon-dark prose-p:text-dragon-gray prose-li:text-dragon-gray prose-blockquote:text-dragon prose-blockquote:border-dragon-light">
-            <div dangerouslySetInnerHTML={{ __html: post.fields.content }} />
+            {post.fields.content ? (
+              documentToReactComponents(post.fields.content, richTextOptions)
+            ) : (
+              <p className="text-dragon-gray">This article has no content.</p>
+            )}
           </article>
           
           {/* Share links */}
