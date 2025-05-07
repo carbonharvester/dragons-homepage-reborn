@@ -1,5 +1,4 @@
-
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
@@ -27,24 +26,19 @@ const testimonials = [{
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
-  const videoRef = useRef<HTMLIFrameElement>(null);
-  const vimeoScriptLoaded = useRef(false);
-  
-  // Load Vimeo player script when needed
-  const loadVimeoScript = useCallback(() => {
-    if (vimeoScriptLoaded.current) return Promise.resolve();
-    
-    return new Promise<void>((resolve) => {
+
+  // Add effect to load Vimeo player script when needed
+  useEffect(() => {
+    if (showVideo && testimonials[currentIndex].videoUrl) {
       const script = document.createElement('script');
       script.src = 'https://player.vimeo.com/api/player.js';
       script.async = true;
-      script.onload = () => {
-        vimeoScriptLoaded.current = true;
-        resolve();
-      };
       document.body.appendChild(script);
-    });
-  }, []);
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [showVideo, currentIndex]);
   
   const handlePrev = () => {
     setCurrentIndex(prevIndex => prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1);
@@ -56,20 +50,17 @@ const Testimonials = () => {
     setShowVideo(false);
   };
   
-  const handlePlayVideo = async () => {
+  const handlePlayVideo = () => {
     if (testimonials[currentIndex].videoUrl) {
-      await loadVimeoScript();
       setShowVideo(true);
     }
   };
   
   const currentTestimonial = testimonials[currentIndex];
   const vimeoId = currentTestimonial.vimeoId;
-  // Use optimized thumbnails from Vumbnail service
-  const vimeoThumbnail = vimeoId ? `https://vumbnail.com/${vimeoId}_large.jpg` : currentTestimonial.videoThumbnail;
+  const vimeoThumbnail = vimeoId ? `https://vumbnail.com/${vimeoId}.jpg` : currentTestimonial.videoThumbnail;
   
-  return (
-    <section id="stories" className="py-20 bg-dragon">
+  return <section id="stories" className="py-20 bg-dragon">
       <div className="container-wide">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-academy font-bold text-white mb-4">Student Stories</h2>
@@ -86,7 +77,6 @@ const Testimonials = () => {
                   position: 'relative'
                 }}>
                   <iframe 
-                    ref={videoRef}
                     src={`https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479`} 
                     frameBorder="0" 
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
@@ -107,8 +97,6 @@ const Testimonials = () => {
                       src={vimeoThumbnail} 
                       alt={`${currentTestimonial.author}'s story`} 
                       className="w-full h-full object-cover" 
-                      loading="lazy"
-                      decoding="async"
                       onError={(e) => {
                         e.currentTarget.src = currentTestimonial.videoThumbnail;
                       }}
@@ -168,8 +156,7 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 
 export default Testimonials;

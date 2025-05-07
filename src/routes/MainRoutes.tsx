@@ -1,85 +1,86 @@
 
-import React, { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { Skeleton } from '@/components/ui/skeleton';
+import React from 'react';
+import { Route, Routes, Navigate } from "react-router-dom";
 
-// Loading component to show while lazy loading routes
-const RouteLoading = () => (
-  <div className="min-h-screen flex items-center justify-center">
-    <div className="w-full max-w-md p-8">
-      <Skeleton className="h-12 w-3/4 mb-4" />
-      <Skeleton className="h-32 w-full mb-6" />
-      <div className="space-y-2">
-        <Skeleton className="h-4 w-full" />
-        <Skeleton className="h-4 w-5/6" />
-        <Skeleton className="h-4 w-4/6" />
-      </div>
-    </div>
-  </div>
-);
+// Main Pages
+import Index from "@/pages/Index";
+import AboutUs from "@/pages/AboutUs";
+import PartnerWithUs from "@/pages/PartnerWithUs";
+import NotFound from "@/pages/NotFound";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
+import Podcast from "@/pages/Podcast";
 
-// Lazily loaded pages
-const Index = lazy(() => import('@/pages/Index'));
-const SchoolTrips = lazy(() => import('@/pages/SchoolTrips'));
-const SummerAbroad = lazy(() => import('@/pages/SummerAbroad'));
-const MultiYearCurriculum = lazy(() => import('@/pages/MultiYearCurriculum'));
-const AdultPrograms = lazy(() => import('@/pages/AdultPrograms'));
-const Programs = lazy(() => import('@/pages/Programs'));
-const EmpoweringWomen = lazy(() => import('@/pages/EmpoweringWomen'));
-const FoodForEducation = lazy(() => import('@/pages/FoodForEducation'));
-const CommunityConservation = lazy(() => import('@/pages/CommunityConservation'));
-const CapturingKenya = lazy(() => import('@/pages/CapturingKenya'));
-const CapturingKenyaItinerary = lazy(() => import('@/pages/CapturingKenyaItinerary'));
-const FeedingTheFuture = lazy(() => import('@/pages/FeedingTheFuture'));
-const FeedingTheFutureItinerary = lazy(() => import('@/pages/FeedingTheFutureItinerary'));
-const PermacultureDesignCourse = lazy(() => import('@/pages/PermacultureDesignCourse'));
-const AboutUs = lazy(() => import('@/pages/AboutUs'));
-const DiscoverKenya = lazy(() => import('@/pages/DiscoverKenya'));
-const FAQ = lazy(() => import('@/pages/FAQ'));
-const Blog = lazy(() => import('@/pages/Blog'));
-const BlogPost = lazy(() => import('@/pages/BlogPost'));
-const Podcast = lazy(() => import('@/pages/Podcast'));
-const HealthAndSafety = lazy(() => import('@/pages/HealthAndSafety'));
-const PartnerWithUs = lazy(() => import('@/pages/PartnerWithUs'));
-const NotFound = lazy(() => import('@/pages/NotFound'));
+// Program Categories
+import Programs from "@/pages/Programs";
+import SchoolTrips from "@/pages/SchoolTrips";
+import SummerAbroad from "@/pages/SummerAbroad";
+import MultiYearCurriculum from "@/pages/MultiYearCurriculum";
+import AdultPrograms from "@/pages/AdultPrograms";
+
+// School Trip Programs
+import FoodForEducation from "@/pages/FoodForEducation";
+import CommunityConservation from "@/pages/CommunityConservation";
+import EmpoweringWomen from "@/pages/EmpoweringWomen";
+
+// Summer Programs
+import CapturingKenya from "@/pages/CapturingKenya";
+import CapturingKenyaItinerary from "@/pages/CapturingKenyaItinerary";
+import FeedingTheFuture from "@/pages/FeedingTheFuture";
+import FeedingTheFutureItinerary from "@/pages/FeedingTheFutureItinerary";
+
+// Adult Programs
+import PermacultureDesignCourse from "@/pages/PermacultureDesignCourse";
+
+// Resources
+import FAQ from "@/pages/FAQ";
+import HealthAndSafety from "@/pages/HealthAndSafety";
+import DiscoverKenya from "@/pages/DiscoverKenya";
 
 const MainRoutes = () => {
   return (
-    <Suspense fallback={<RouteLoading />}>
-      <Routes>
-        <Route path="/" element={<Index />} />
-        
-        {/* Program Routes */}
-        <Route path="/programs/school-trips" element={<SchoolTrips />} />
-        <Route path="/programs/summer-abroad" element={<SummerAbroad />} />
-        <Route path="/programs/multi-year-curriculum" element={<MultiYearCurriculum />} />
-        <Route path="/programs/adult-programs" element={<AdultPrograms />} />
-        <Route path="/programs" element={<Programs />} />
-        
-        {/* Trip Routes */}
-        <Route path="/programs/empowering-women" element={<EmpoweringWomen />} />
-        <Route path="/programs/food-for-education" element={<FoodForEducation />} />
-        <Route path="/programs/community-conservation" element={<CommunityConservation />} />
-        <Route path="/programs/capturing-kenya" element={<CapturingKenya />} />
-        <Route path="/programs/capturing-kenya/itinerary" element={<CapturingKenyaItinerary />} />
-        <Route path="/programs/feeding-the-future" element={<FeedingTheFuture />} />
-        <Route path="/programs/feeding-the-future/itinerary" element={<FeedingTheFutureItinerary />} />
-        <Route path="/programs/permaculture-design" element={<PermacultureDesignCourse />} />
-        
-        {/* Main Pages */}
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/discover/kenya" element={<DiscoverKenya />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:slug" element={<BlogPost />} />
-        <Route path="/podcast" element={<Podcast />} />
-        <Route path="/health-safety" element={<HealthAndSafety />} />
-        <Route path="/partner" element={<PartnerWithUs />} />
-        
-        {/* 404 */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
+    <Routes>
+      {/* Main Pages */}
+      <Route path="/" element={<Index />} />
+      <Route path="/about" element={<AboutUs />} />
+      <Route path="/partner-with-us" element={<PartnerWithUs />} />
+      <Route path="/curriculum-guide" element={<PartnerWithUs />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:postId" element={<BlogPost />} />
+      <Route path="/podcast" element={<Podcast />} />
+      
+      {/* Program Categories */}
+      <Route path="/programs" element={<Programs />} />
+      <Route path="/school-trips" element={<SchoolTrips />} />
+      <Route path="/summer-abroad" element={<SummerAbroad />} />
+      <Route path="/multi-year-curriculum" element={<MultiYearCurriculum />} />
+      <Route path="/adult-programs" element={<AdultPrograms />} />
+      
+      {/* School Trip Programs */}
+      <Route path="/programs/food-for-education" element={<FoodForEducation />} />
+      <Route path="/programs/community-conservation" element={<CommunityConservation />} />
+      <Route path="/programs/empowering-women" element={<EmpoweringWomen />} />
+      <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
+      
+      {/* Summer Programs */}
+      <Route path="/programs/capturing-kenya" element={<CapturingKenya />} />
+      <Route path="/programs/capturing-kenya/itinerary" element={<CapturingKenyaItinerary />} />
+      <Route path="/programs/feeding-the-future" element={<FeedingTheFuture />} />
+      <Route path="/programs/feeding-the-future/itinerary" element={<FeedingTheFutureItinerary />} />
+      <Route path="/programs/roots-of-change" element={<Navigate to="/programs/feeding-the-future" replace />} />
+      <Route path="/programs/roots-of-change/itinerary" element={<Navigate to="/programs/feeding-the-future/itinerary" replace />} />
+      
+      {/* Adult Programs */}
+      <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
+      
+      {/* Resource Pages */}
+      <Route path="/faq" element={<FAQ />} />
+      <Route path="/health-and-safety" element={<HealthAndSafety />} />
+      <Route path="/discover-kenya" element={<DiscoverKenya />} />
+      
+      {/* 404 Catch All */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 };
 
