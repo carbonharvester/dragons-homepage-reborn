@@ -17,10 +17,10 @@ const FoodForEducation = () => {
       <Header />
       
       <main>
+        <TripBrochureWrapper />
         <div className="container-wide py-8">
           <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
         </div>
-        <TripBrochureWrapper />
       </main>
       <Footer />
     </div>
