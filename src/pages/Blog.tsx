@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { getAllBlogPosts, ContentfulBlogPost } from '@/services/contentful';
 import { useQuery } from '@tanstack/react-query';
+import { format, parseISO } from 'date-fns';
 
 const BlogHome = () => {
   const { data: allPosts, isLoading, error } = useQuery({
@@ -26,6 +27,18 @@ const BlogHome = () => {
     return imageField.fields.file.url.startsWith('//') 
       ? `https:${imageField.fields.file.url}` 
       : imageField.fields.file.url;
+  };
+
+  // Format date to d MMM yyyy format
+  const formatDate = (dateString: string) => {
+    try {
+      // Try parsing the date string
+      const date = parseISO(dateString);
+      return format(date, 'd MMM yyyy');
+    } catch (error) {
+      // If parsing fails, return the original date string
+      return dateString;
+    }
   };
 
   return (
@@ -78,7 +91,7 @@ const BlogHome = () => {
                         </span>
                         <div className="flex items-center text-dragon-gray text-sm ml-4">
                           <Calendar className="h-4 w-4 mr-1" />
-                          <span>{featuredPost.fields.date}</span>
+                          <span>{formatDate(featuredPost.fields.date)}</span>
                         </div>
                       </div>
                       <h3 className="text-2xl md:text-3xl font-academy text-dragon-dark mb-4">
@@ -132,7 +145,7 @@ const BlogHome = () => {
                         <div className="flex items-center justify-between mt-4">
                           <div className="flex items-center text-dragon-gray text-sm">
                             <Calendar className="h-4 w-4 mr-1" />
-                            <span>{post.fields.date}</span>
+                            <span>{formatDate(post.fields.date)}</span>
                           </div>
                           <Link to={`/blog/${post.fields.slug}`} className="text-dragon font-medium hover:text-dragon-dark transition-colors">
                             Read more

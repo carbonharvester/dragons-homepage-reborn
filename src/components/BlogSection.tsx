@@ -1,10 +1,11 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Calendar, User } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { getAllBlogPosts, ContentfulBlogPost } from '@/services/contentful';
 import { useQuery } from '@tanstack/react-query';
+import { format, parseISO } from 'date-fns';
 
 const BlogSection = () => {
   const { data: blogPosts, isLoading, error } = useQuery({
@@ -20,6 +21,18 @@ const BlogSection = () => {
     return imageField.fields.file.url.startsWith('//') 
       ? `https:${imageField.fields.file.url}` 
       : imageField.fields.file.url;
+  };
+
+  // Format date to d MMM yyyy format
+  const formatDate = (dateString: string) => {
+    try {
+      // Try parsing the date string
+      const date = parseISO(dateString);
+      return format(date, 'd MMM yyyy');
+    } catch (error) {
+      // If parsing fails, return the original date string
+      return dateString;
+    }
   };
 
   // Get the first 3 blog posts to display
@@ -66,14 +79,10 @@ const BlogSection = () => {
                 </div>
               </div>
               <div className="p-6">
-                <div className="flex items-center text-sm text-dragon-gray mb-3 space-x-4">
+                <div className="flex items-center text-sm text-dragon-gray mb-3">
                   <div className="flex items-center">
                     <Calendar className="h-4 w-4 mr-1" />
-                    <span>{post.fields.date}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <User className="h-4 w-4 mr-1" />
-                    <span>{post.fields.author}</span>
+                    <span>{formatDate(post.fields.date)}</span>
                   </div>
                 </div>
                 <Link to={`/blog/${post.fields.slug}`}>
