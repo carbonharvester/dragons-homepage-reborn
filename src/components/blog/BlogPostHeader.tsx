@@ -19,9 +19,6 @@ const BlogPostHeader: React.FC<BlogPostHeaderProps> = ({ post }) => {
           <Calendar className="h-4 w-4 mr-1" />
           <span>{formatDate(post.fields.date)}</span>
         </div>
-        <span className="text-dragon-gray text-sm">
-          {post.fields.readTime || "5 min read"}
-        </span>
       </div>
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-academy text-dragon-dark mb-6">
         {post.fields.title}

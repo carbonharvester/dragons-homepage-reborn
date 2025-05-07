@@ -30,11 +30,10 @@ const RecentPosts: React.FC<RecentPostsProps> = ({ posts }) => {
               />
             </div>
             <div className="p-6">
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center mb-3">
                 <span className="bg-dragon-light/10 text-dragon text-xs font-medium px-3 py-1 rounded-full">
                   {post.fields.category}
                 </span>
-                <span className="text-dragon-gray text-sm">{post.fields.readTime || "5 min read"}</span>
               </div>
               <h3 className="text-xl font-academy text-dragon-dark mb-3">
                 {post.fields.title}
