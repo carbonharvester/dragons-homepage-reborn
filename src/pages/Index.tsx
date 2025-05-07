@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -84,7 +83,7 @@ const Index = () => {
         <div className="py-16 bg-white">
           <div className="container-wide text-center">
             <h2 className="section-heading">Experience Learning Through Adventure</h2>
-            <p className="section-subheading mx-auto">Since 2023, we've specialised in immersive experiences that blend authentic cultural engagement, wilderness exploration, and transformative education—empowering students at top international schools while driving social impact and sustainability in African communities.</p>
+            <p className="section-subheading mx-auto">Since 2023, we’ve specialised in immersive experiences that blend authentic cultural engagement, wilderness exploration, and transformative education—empowering students at top international schools while driving social impact and sustainability in African communities.</p>
             
             <div className="mt-12 relative overflow-hidden">
               <div className="w-full overflow-hidden">
@@ -107,15 +106,10 @@ const Index = () => {
         </div>
         <ProgramsSection />
         <WhyChooseUs />
-        
-        {/* Blog and Podcast sections in a grid layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <BlogSection />
-          <PodcastSection />
-        </div>
+        <PodcastSection />
+        <BlogSection />
       </main>
       <Footer />
     </div>;
 };
 export default Index;
-
