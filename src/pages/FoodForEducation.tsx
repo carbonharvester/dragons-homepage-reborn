@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TripBrochureWrapper from '@/components/trip/TripBrochureWrapper';
 import SEO from '@/components/SEO';
-import Testimonials from '@/components/Testimonials';
 
 const FoodForEducation = () => {
   return (
@@ -30,9 +29,6 @@ const FoodForEducation = () => {
           {/* Content section with no top padding */}
           <TripBrochureWrapper tripType="food-for-education" contentOnly={true} />
         </div>
-        
-        {/* Student Stories (Testimonials) Section */}
-        <Testimonials />
       </main>
       <Footer />
     </div>

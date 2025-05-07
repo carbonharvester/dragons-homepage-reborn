@@ -2,7 +2,6 @@
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Testimonials from "@/components/Testimonials";
 import SEO from "@/components/SEO";
 import TripBrochureWrapper from "@/components/trip/TripBrochureWrapper";
 
@@ -30,9 +29,6 @@ const CommunityConservation = () => {
           {/* Content section with no top padding */}
           <TripBrochureWrapper tripType="community-conservation" contentOnly={true} />
         </div>
-
-        {/* Student Stories (Testimonials) Section */}
-        <Testimonials />
       </main>
       <Footer />
     </div>

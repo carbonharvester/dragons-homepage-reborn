@@ -7,6 +7,7 @@ import TripLearningOutcomes from './TripLearningOutcomes';
 import TripItinerary from './TripItinerary';
 import TripCTA from './TripCTA';
 import ProgramBrochure from '../ProgramBrochure';
+import Testimonials from '../Testimonials';
 
 interface TripDetail {
   label: string;
@@ -79,6 +80,9 @@ const TripBrochureContent = ({
       
       {/* Program Brochure */}
       <ProgramBrochure program={programData} />
+      
+      {/* Student Stories Section - Moved above CTA */}
+      <Testimonials />
       
       {/* CTA Section - always using isSchoolTrip=true since these are all school trips */}
       <TripCTA isSchoolTrip={true} />
