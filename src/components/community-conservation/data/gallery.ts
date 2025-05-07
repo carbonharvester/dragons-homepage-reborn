@@ -6,18 +6,23 @@ export const galleryImages = [
     className: "col-span-12 md:col-span-8 h-80 rounded-lg overflow-hidden"
   },
   {
-    src: "https://images.unsplash.com/photo-1516426122078-c23e76319801",
-    alt: "Wildlife conservation",
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404451.jpg?v=1746614612",
+    alt: "Conservation activities with local community",
     className: "col-span-12 md:col-span-4 h-80 rounded-lg overflow-hidden"
   },
   {
-    src: "https://images.unsplash.com/photo-1610555356070-d0efb6505f81",
-    alt: "Conservation area",
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/DSC_4591.jpg?v=1746614560",
+    alt: "Conservation project in action",
     className: "col-span-12 md:col-span-4 h-80 rounded-lg overflow-hidden"
   },
   {
-    src: "https://images.unsplash.com/photo-1609151376730-f246ec8f9e65",
-    alt: "Local conservation methods",
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/DSC_4706_1.jpg?v=1746614531",
+    alt: "Wildlife conservation efforts",
+    className: "col-span-12 md:col-span-4 h-80 rounded-lg overflow-hidden"
+  },
+  {
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7405579.jpg?v=1746515670",
+    alt: "Students engaged in environmental conservation",
     className: "col-span-12 md:col-span-8 h-80 rounded-lg overflow-hidden"
   }
 ];
