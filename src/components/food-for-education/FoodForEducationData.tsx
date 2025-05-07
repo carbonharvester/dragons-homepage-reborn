@@ -11,6 +11,7 @@ import {
   tripItinerary, 
   programData 
 } from './data';
+import { perfectFor } from './data/details';
 
 interface FoodForEducationDataProps {
   heroOnly?: boolean;
@@ -43,12 +44,16 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
       {/* Main content */}
       {(contentOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripBrochureContent 
-          tripDetails={tripDetails}
+          tripDetails={tripDetails.map(detail => ({
+            ...detail,
+            icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
+          }))}
           tripHighlights={tripHighlights}
           galleryImages={galleryImages}
           learningOutcomes={learningOutcomes}
           tripItinerary={tripItinerary}
           programData={programData}
+          perfectFor={perfectFor}
         />
       )}
     </>
