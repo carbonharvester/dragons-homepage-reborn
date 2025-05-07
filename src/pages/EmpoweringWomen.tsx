@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import TripBrochureWrapper from '@/components/trip/TripBrochureWrapper';
 import SEO from '@/components/SEO';
+import Testimonials from '@/components/Testimonials';
 
 const EmpoweringWomen = () => {
   return (
@@ -29,6 +30,9 @@ const EmpoweringWomen = () => {
           {/* Content section with no top padding */}
           <TripBrochureWrapper tripType="empowering-women" contentOnly={true} />
         </div>
+        
+        {/* Student Stories (Testimonials) Section */}
+        <Testimonials />
       </main>
       <Footer />
     </div>
