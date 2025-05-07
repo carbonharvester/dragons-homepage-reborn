@@ -10,7 +10,7 @@ interface TripCTAProps {
 const TripCTA = ({
   isSchoolTrip = true
 }: TripCTAProps) => {
-  return <div className="bg-dragon text-white rounded-lg p-8 md:p-12 text-center mb-16">
+  return <div className="bg-dragon text-white rounded-lg p-8 md:p-12 text-center mb-16 mt-20">
       <h2 className="text-3xl md:text-4xl font-academy font-bold mb-4">
         {isSchoolTrip ? "Ready to Plan Your School Trip?" : "Ready to Make an Impact?"}
       </h2>

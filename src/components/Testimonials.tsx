@@ -60,7 +60,7 @@ const Testimonials = () => {
   const vimeoId = currentTestimonial.vimeoId;
   const vimeoThumbnail = vimeoId ? `https://vumbnail.com/${vimeoId}.jpg` : currentTestimonial.videoThumbnail;
   
-  return <section id="stories" className="py-20 bg-dragon">
+  return <section id="stories" className="py-20 bg-dragon mb-16">
       <div className="container-wide">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-academy font-bold text-white mb-4">Student Stories</h2>
