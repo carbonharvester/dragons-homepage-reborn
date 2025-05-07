@@ -15,7 +15,7 @@ const ProgramSummary = () => {
             <div className="flex flex-wrap gap-4 mb-6">
               <div className="flex items-center gap-2 bg-dragon-beige px-3 py-2 rounded-full">
                 <Calendar className="h-5 w-5 text-dragon" />
-                <span>{programData.duration}</span>
+                <span>4 Weeks</span>
               </div>
               <div className="flex items-center gap-2 bg-dragon-beige px-3 py-2 rounded-full">
                 <Users className="h-5 w-5 text-dragon" />

@@ -4,7 +4,7 @@ import { Globe, Award, GraduationCap, Heart, Leaf } from "lucide-react";
 export const programData = {
   title: "Feeding the Future: Sustainable Agriculture Summer Program",
   description: "A 4-week immersive experience in sustainable agriculture and food security initiatives across Kenya.",
-  duration: "4 weeks (28 days)",
+  duration: "4 weeks",
   season: "Summer (June-August)",
   location: "Kenya",
   ages: "16-20",
