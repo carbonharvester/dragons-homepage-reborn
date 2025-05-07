@@ -25,6 +25,6 @@ export default defineConfig(({ mode }) => ({
     'import.meta.env.VITE_CONTENTFUL_SPACE_ID': 
       JSON.stringify(process.env.VITE_CONTENTFUL_SPACE_ID || 'qz62f406e9mz'),
     'import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN': 
-      JSON.stringify(process.env.VITE_CONTENTFUL_ACCESS_TOKEN || 'CFPAT-PwZhyp7T2W3Q4qcJ1zGOxl0-hKs-NVP9MgIzxDV2Kvw'),
+      JSON.stringify(process.env.VITE_CONTENTFUL_ACCESS_TOKEN || 'BRPK9lPK68qkH-hZOKuzIEM2yAQN7HoVwfrgUL8h1dc'),
   },
 }));
