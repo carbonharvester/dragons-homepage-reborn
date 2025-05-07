@@ -9,7 +9,7 @@ const TripHighlightsWrapper = () => {
     ...highlight,
     icon: (
       <div className="text-white">
-        {highlight.icon}
+        {React.createElement(highlight.icon, { className: "h-8 w-8" })}
       </div>
     )
   }));
