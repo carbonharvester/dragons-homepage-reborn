@@ -20,6 +20,27 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Production optimizations
+    minify: 'terser',
+    cssMinify: true,
+    sourcemap: false,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: [
+            'react', 
+            'react-dom', 
+            'react-router-dom'
+          ],
+          ui: [
+            '@/components/ui'
+          ]
+        }
+      }
+    }
+  },
   define: {
     // Make sure environment variables are properly replaced at build time
     'import.meta.env.VITE_CONTENTFUL_SPACE_ID': 
