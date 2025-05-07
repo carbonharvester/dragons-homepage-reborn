@@ -14,7 +14,7 @@ const ParentPageNavigation: React.FC<ParentPageNavigationProps> = ({
   parentName 
 }) => {
   return (
-    <div className="mb-8">
+    <div>
       <Button 
         variant="ghost" 
         asChild 

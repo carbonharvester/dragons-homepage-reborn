@@ -25,7 +25,7 @@ const EmpoweringWomen = () => {
           <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
         </div>
         
-        {/* Main content after the navigation */}
+        {/* Remove the mb-8 from the content to reduce the gap */}
         <TripBrochureWrapper tripType="empowering-women" contentOnly={true} />
       </main>
       <Footer />
