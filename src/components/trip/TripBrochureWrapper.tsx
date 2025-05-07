@@ -14,8 +14,11 @@ const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({
   heroOnly = false,
   contentOnly = false
 }) => {
+  // Remove wrapper padding when showing content only
+  const wrapperClass = contentOnly ? "bg-white pt-0" : "bg-white";
+  
   return (
-    <div className="bg-white">
+    <div className={wrapperClass}>
       {tripType === 'food-for-education' && (
         <FoodForEducationData heroOnly={heroOnly} contentOnly={contentOnly} />
       )}

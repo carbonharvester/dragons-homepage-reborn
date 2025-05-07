@@ -1,4 +1,3 @@
-
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -62,11 +61,13 @@ const CommunityConservation = () => {
           </div>
         </section>
         
-        <div className="container-wide py-8">
+        {/* Navigation with consistent padding */}
+        <div className="container-wide py-4 bg-white">
           <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
         </div>
         
-        <section className="py-16 bg-white">
+        {/* Content sections - remove any top padding from first section */}
+        <section className="py-16 pt-0 bg-white">
           <div className="container-wide">
             <div className="flex flex-col lg:flex-row gap-12">
               <div className="lg:w-2/3">

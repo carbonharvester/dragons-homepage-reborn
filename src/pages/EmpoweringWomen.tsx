@@ -20,12 +20,12 @@ const EmpoweringWomen = () => {
         {/* Hero section is part of TripBrochureWrapper */}
         <TripBrochureWrapper tripType="empowering-women" heroOnly={true} />
         
-        {/* Navigation positioned directly after the hero, with proper padding */}
+        {/* Navigation positioned directly after the hero, with minimal padding */}
         <div className="container-wide py-4 bg-white">
           <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
         </div>
         
-        {/* Remove the mb-8 from the content to reduce the gap */}
+        {/* Content section directly after navigation with no top margin */}
         <TripBrochureWrapper tripType="empowering-women" contentOnly={true} />
       </main>
       <Footer />
