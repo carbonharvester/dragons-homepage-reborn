@@ -1,4 +1,3 @@
-
 import { WeekProps } from "./types";
 import { 
   MapPinned, Droplet, LandPlot, Leaf, School, Trees, 
@@ -25,9 +24,9 @@ export const weeksData: WeekProps[] = [
       {
         day: "Tuesday",
         date: "July 29",
-        title: "School A - Farm Assessment and Water Harvesting",
+        title: "Farm Assessment and Water Harvesting",
         activities: [
-          "Assess existing farm with School A staff",
+          "Assess existing farm with local staff",
           "Install/upgrade water harvesting system",
           "Set up 10,000-liter tank, gutters, and filters",
           "Evening workshop on permaculture principles"
@@ -37,9 +36,9 @@ export const weeksData: WeekProps[] = [
       {
         day: "Wednesday",
         date: "July 30",
-        title: "School B - Composting and Biochar",
+        title: "Composting and Biochar",
         activities: [
-          "Assess School B farm",
+          "Assess farm area",
           "Build 3-bin composting system",
           "Produce 40-60 liters of biochar",
           "Evening workshop on soil fertility"
@@ -49,7 +48,7 @@ export const weeksData: WeekProps[] = [
       {
         day: "Thursday",
         date: "July 31",
-        title: "School A - Vetiver and Nursery Setup",
+        title: "Vetiver and Nursery Setup",
         activities: [
           "Plant 50-meter vetiver hedgerow",
           "Build nursery table with shade cloth",
@@ -61,11 +60,11 @@ export const weeksData: WeekProps[] = [
       {
         day: "Friday",
         date: "August 1",
-        title: "School B - Vegetable Beds and Community Engagement",
+        title: "Vegetable Beds and Community Engagement",
         activities: [
           "Clear 200 sq meter plot for raised beds",
           "Build 20 raised beds for onions and tomatoes",
-          "Collaborate with School B students on farm tasks",
+          "Collaborate with local students on farm tasks",
           "Evening reflection session"
         ],
         icon: School
@@ -104,7 +103,7 @@ export const weeksData: WeekProps[] = [
       {
         day: "Monday",
         date: "August 4",
-        title: "School A - Greywater System and Bed Expansion",
+        title: "Greywater System and Bed Expansion",
         activities: [
           "Install greywater recycling system",
           "Map handwashing stations and dig trenches",
@@ -116,9 +115,9 @@ export const weeksData: WeekProps[] = [
       {
         day: "Tuesday",
         date: "August 5",
-        title: "School B - Greywater System and Crop Diversification",
+        title: "Greywater System and Crop Diversification",
         activities: [
-          "Install greywater system tailored to School B",
+          "Install greywater system for second location",
           "Prepare nursery pots for kale and peppers",
           "Plant companion crops for pest control",
           "Evening workshop on crop diversification"
@@ -128,9 +127,9 @@ export const weeksData: WeekProps[] = [
       {
         day: "Wednesday",
         date: "August 6",
-        title: "School A - Student-Led Workshop",
+        title: "Student-Led Workshop",
         activities: [
-          "Teach School A students about composting and planting",
+          "Teach local students about composting and planting",
           "Use hands-on demonstrations for learning",
           "Collaborate on nursery planting and farm maintenance",
           "Evening reflection on teaching experience"
@@ -140,9 +139,9 @@ export const weeksData: WeekProps[] = [
       {
         day: "Thursday",
         date: "August 7",
-        title: "School B - Student-Led Workshop and Farm Maintenance",
+        title: "Student-Led Workshop and Farm Maintenance",
         activities: [
-          "Teach School B students about water harvesting",
+          "Teach students about water harvesting",
           "Turn compost piles and apply compost tea",
           "Update farm log with observations",
           "Evening workshop on community leadership"
@@ -156,7 +155,7 @@ export const weeksData: WeekProps[] = [
         activities: [
           "Visit Food For Education facilities",
           "Participate in meal preparation or distribution",
-          "Host farm showcase with School A community",
+          "Host farm showcase with local community",
           "Evening reflection on Week 2 impact"
         ],
         icon: Handshake
