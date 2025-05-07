@@ -1,4 +1,3 @@
-
 import { createClient } from 'contentful';
 
 // Contentful client setup
@@ -60,16 +59,59 @@ export interface ContentfulPodcastEpisode {
   };
 }
 
+// Function to list all content types in the space
+export const getAllContentTypes = async () => {
+  try {
+    console.log('Fetching content types from Contentful');
+    const response = await contentfulClient.getContentTypes();
+    console.log('Content types found:', response.items.map(item => ({ 
+      name: item.name, 
+      id: item.sys.id 
+    })));
+    return response.items;
+  } catch (error) {
+    console.error('Error fetching content types from Contentful:', error);
+    return [];
+  }
+};
+
 // Function to fetch all blog posts
 export const getAllBlogPosts = async (): Promise<ContentfulBlogPost[]> => {
   try {
     console.log('Fetching blog posts from Contentful');
-    const entries = await contentfulClient.getEntries({
-      content_type: 'blogPost', // This should match the content type ID in Contentful
-      order: ['-fields.date'],
-    });
-    console.log('Blog entries received:', entries.items.length);
-    return entries.items as unknown as ContentfulBlogPost[];
+    
+    // First, let's find out what content types are available
+    await getAllContentTypes();
+    
+    // Try common content type names
+    const contentTypeOptions = ['blogPost', 'blog', 'post', 'article', 'blogs'];
+    
+    for (const contentType of contentTypeOptions) {
+      try {
+        console.log(`Trying to fetch entries with content_type: '${contentType}'`);
+        const entries = await contentfulClient.getEntries({
+          content_type: contentType,
+        });
+        
+        if (entries.items.length > 0) {
+          console.log(`SUCCESS! Found ${entries.items.length} entries using content_type: '${contentType}'`);
+          console.log('First entry fields:', entries.items[0].fields);
+          
+          // If successful, update the actual query with ordering
+          const orderedEntries = await contentfulClient.getEntries({
+            content_type: contentType,
+            order: ['-fields.date'],
+          });
+          
+          return orderedEntries.items as unknown as ContentfulBlogPost[];
+        }
+      } catch (specificError) {
+        console.log(`Error trying content_type '${contentType}':`, specificError.message);
+      }
+    }
+    
+    console.error('Could not find any valid content type for blog posts');
+    return [];
   } catch (error) {
     console.error('Error fetching blog posts from Contentful:', error);
     return [];
@@ -79,8 +121,22 @@ export const getAllBlogPosts = async (): Promise<ContentfulBlogPost[]> => {
 // Function to fetch a single blog post by slug
 export const getBlogPostBySlug = async (slug: string): Promise<ContentfulBlogPost | null> => {
   try {
+    // Get the content types first to determine the correct one
+    const contentTypes = await getAllContentTypes();
+    const blogContentType = contentTypes.find(ct => 
+      ['blogPost', 'blog', 'post', 'article', 'blogs'].includes(ct.sys.id)
+    );
+    
+    if (!blogContentType) {
+      console.error('Could not find a valid blog content type');
+      return null;
+    }
+    
+    const contentTypeId = blogContentType.sys.id;
+    console.log(`Using content type '${contentTypeId}' for blog post lookup`);
+    
     const entries = await contentfulClient.getEntries({
-      content_type: 'blogPost', // This should match the content type ID in Contentful
+      content_type: contentTypeId,
       'fields.slug': slug,
       limit: 1,
     });
