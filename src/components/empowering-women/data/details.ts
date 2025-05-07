@@ -31,7 +31,7 @@ export const tripDetails: TripDetail[] = [
   },
   {
     label: "Educational Credits",
-    value: "Optional",
+    value: "CAS Points, Duke of Edinburgh",
     icon: GraduationCap
   },
   {
