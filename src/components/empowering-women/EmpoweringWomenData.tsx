@@ -24,6 +24,20 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
   contentOnly = false,
   navigationOnly = false
 }) => {
+  // Custom description and project goals specific to the Water Empowering Women program
+  const waterDescription = [
+    "In rural Kenyan communities near Tsavo, women and their families often face significant barriers to accessing clean water. Women and girls typically bear the responsibility of fetching water, walking long distances (sometimes 5–10 km daily) to rivers or unreliable sources.",
+    "This burden limits their time for education, income-generating activities, or family care, perpetuating cycles of poverty and gender inequality. Through this immersive 7-8 day journey, students will experience firsthand the water challenges faced by rural Kenyan women and contribute to sustainable water access solutions."
+  ];
+  
+  const waterProjectGoals = [
+    "Experience the daily water collection challenges faced by rural Kenyan women through an immersive water walk",
+    "Install water tanks in local communities to provide reliable access to clean water",
+    "Learn about the relationship between water access, gender equality, and community development",
+    "Contribute to projects that reduce health risks from waterborne diseases and wildlife encounters",
+    "Connect with Kenya's natural beauty through safari and cultural immersion activities"
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -51,6 +65,8 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
           tripItinerary={tripItinerary}
           programData={programData}
           perfectFor={perfectFor}
+          description={waterDescription}
+          projectGoals={waterProjectGoals}
         />
       )}
     </>

@@ -6,10 +6,10 @@ export const programData = {
   season: "Year Round",
   location: "Tsavo, Kenya",
   goals: [
-    "Experience daily challenges of rural Kenyan women to build empathy",
-    "Learn about water access initiatives through home visits",
-    "Engage in cultural activities like crafting and dancing",
-    "Contribute to community projects with measurable impact",
-    "Connect with Kenya's natural beauty through safari and hiking"
+    "Experience daily water collection challenges of rural Kenyan women to build empathy",
+    "Install water tanks that provide reliable access to clean water for local communities",
+    "Learn about the relationship between water access and women's empowerment",
+    "Contribute to reducing health risks from waterborne diseases like cholera",
+    "Connect with Kenya's natural beauty through safari experiences and cultural immersion"
   ]
 };
