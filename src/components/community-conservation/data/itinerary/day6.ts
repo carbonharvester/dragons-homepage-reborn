@@ -1,10 +1,11 @@
 
 export const day6 = {
   day: "Day 6",
-  title: "Project Development",
+  title: "Outdoor Adventure",
   activities: [
-    "Work in teams to develop conservation mini-projects",
-    "Consult with local experts on project viability",
-    "Refine project plans and prepare for implementation"
+    "Morning hike in the Marungu Hills",
+    "Lunch at the summit",
+    "Bush survival skills with rangers",
+    "Free afternoon for games at camp"
   ]
 };

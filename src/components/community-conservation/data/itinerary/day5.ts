@@ -1,10 +1,11 @@
 
 export const day5 = {
   day: "Day 5",
-  title: "Practical Conservation",
+  title: "Conservation Science",
   activities: [
-    "Full day of hands-on conservation work",
-    "Wildlife monitoring and data collection",
-    "Habitat restoration activities"
+    "Morning at the Tsavo Research Centre",
+    "Learning about the carbon cycle (GPS work, data collection with rangers)",
+    "Study of REDD+ conservation initiatives",
+    "Afternoon game drive applying new GPS skills"
   ]
 };

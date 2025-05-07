@@ -1,10 +1,12 @@
 
 export const day4 = {
   day: "Day 4",
-  title: "Community Engagement",
+  title: "Wildlife Works & Conservation Projects",
   activities: [
-    "Visit nearby community affected by conservation efforts",
-    "Learn about human-wildlife conflict from local perspective",
-    "Participate in community discussion forum"
+    "Meet the Wildlife Works team",
+    "Tour of garment factory, basket weaving, and soap making",
+    "Hands-on T-shirt printing workshop",
+    "Afternoon at agroforestry and greenhouse",
+    "Tree planting, tree grafting, vertical farming activities"
   ]
 };
