@@ -22,25 +22,31 @@ const ProgramSidebar = () => {
             <div className="bg-dragon rounded-full p-1 mt-1">
               <Users className="h-4 w-4 text-white" />
             </div>
-            <span>Students ages 14-18 interested in global citizenship</span>
+            <span>Students ages 12-15</span>
           </li>
           <li className="flex items-start gap-2">
             <div className="bg-dragon rounded-full p-1 mt-1">
               <GraduationCap className="h-4 w-4 text-white" />
             </div>
-            <span>Year 2 of the Kapes Multi-Year Travel Curriculum (Development Trip)</span>
+            <span>Students wanting hands-on impact projects</span>
           </li>
           <li className="flex items-start gap-2">
             <div className="bg-dragon rounded-full p-1 mt-1">
               <Award className="h-4 w-4 text-white" />
             </div>
-            <span>IB students seeking meaningful CAS experiences</span>
+            <span>Students studying environmental science</span>
           </li>
           <li className="flex items-start gap-2">
             <div className="bg-dragon rounded-full p-1 mt-1">
               <Heart className="h-4 w-4 text-white" />
             </div>
-            <span>Schools focused on social entrepreneurship and gender equity</span>
+            <span>CAS students</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="bg-dragon rounded-full p-1 mt-1">
+              <GraduationCap className="h-4 w-4 text-white" />
+            </div>
+            <span>Duke of Edinburgh Students</span>
           </li>
         </ul>
       </div>
