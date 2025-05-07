@@ -17,10 +17,10 @@ const EmpoweringWomen = () => {
       <Header />
       
       <main>
-        <TripBrochureWrapper tripType="empowering-women" />
         <div className="container-wide py-8">
           <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
         </div>
+        <TripBrochureWrapper tripType="empowering-women" />
       </main>
       <Footer />
     </div>
