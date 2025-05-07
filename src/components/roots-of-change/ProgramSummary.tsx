@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Calendar, Users, MapPin, DollarSign } from "lucide-react";
 import { programData } from './ProgramData';
-
 const ProgramSummary = () => {
-  return (
-    <section className="py-12 bg-white border-b border-gray-100">
+  return <section className="bg-white border-b border-gray-100 py-0">
       <div className="container-wide">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Program Details */}
@@ -34,9 +31,7 @@ const ProgramSummary = () => {
             </p>
             
             <ul className="list-disc pl-5 text-dragon-gray space-y-2">
-              {programData.goals.map((goal, index) => (
-                <li key={index}>{goal}</li>
-              ))}
+              {programData.goals.map((goal, index) => <li key={index}>{goal}</li>)}
             </ul>
           </div>
           
@@ -75,8 +70,6 @@ const ProgramSummary = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProgramSummary;
