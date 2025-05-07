@@ -1,8 +1,14 @@
 
-import React, { useRef } from 'react';
-import { ScrollArea } from "@/components/ui/scroll-area";
+import React from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 interface GalleryItem {
   src: string;
@@ -15,59 +21,22 @@ interface ScrollableGalleryProps {
 }
 
 const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const scrollLeft = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="mt-24 mb-16">
       <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Photo Gallery</h2>
       
-      <div className="relative">
-        {/* Navigation buttons */}
-        <Button 
-          variant="outline" 
-          size="icon" 
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full shadow-md"
-          onClick={scrollLeft}
+      <div className="relative px-12">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true
+          }}
+          className="w-full"
         >
-          <ChevronLeft className="h-5 w-5" />
-          <span className="sr-only">Scroll left</span>
-        </Button>
-        
-        <Button 
-          variant="outline" 
-          size="icon" 
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full shadow-md"
-          onClick={scrollRight}
-        >
-          <ChevronRight className="h-5 w-5" />
-          <span className="sr-only">Scroll right</span>
-        </Button>
-        
-        {/* Scrollable area with proper ref attachment */}
-        <div className="overflow-hidden">
-          <div 
-            ref={scrollContainerRef}
-            className="flex space-x-4 pb-4 px-8 overflow-x-auto scrollbar-hide"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
+          <CarouselContent className="-ml-4">
             {images.map((item, index) => (
-              <div 
-                key={index} 
-                className="flex-none relative"
-              >
-                <div className="rounded-lg overflow-hidden h-80 w-80">
+              <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                <div className="rounded-lg overflow-hidden h-80">
                   {item.type === 'video' ? (
                     <video
                       src={item.src}
@@ -83,10 +52,13 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
                     />
                   )}
                 </div>
-              </div>
+              </CarouselItem>
             ))}
-          </div>
-        </div>
+          </CarouselContent>
+          
+          <CarouselPrevious className="left-0 bg-white/80 hover:bg-white rounded-full shadow-md" />
+          <CarouselNext className="right-0 bg-white/80 hover:bg-white rounded-full shadow-md" />
+        </Carousel>
       </div>
     </div>
   );
