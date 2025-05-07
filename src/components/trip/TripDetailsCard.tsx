@@ -3,16 +3,19 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ReactNode } from 'react';
 import CalendlyEmbed from '../CalendlyEmbed';
+
 interface TripDetailProps {
   label: string;
   value: string;
   icon: ReactNode;
 }
+
 interface TripDetailsCardProps {
   tripDetails: TripDetailProps[];
   isSchoolTrip?: boolean;
   perfectFor?: string;
 }
+
 const TripDetailsCard = ({
   tripDetails,
   isSchoolTrip = false,
@@ -30,12 +33,17 @@ const TripDetailsCard = ({
               <p className="font-medium text-dragon-dark">{detail.value}</p>
             </div>
           </div>)}
+          
+        {perfectFor && <div className="flex items-center">
+            <div className="mr-3">
+              {/* We're not including an icon here to match other entries */}
+            </div>
+            <div>
+              <p className="text-sm text-gray-500">Perfect For</p>
+              <p className="font-medium text-dragon-dark">{perfectFor}</p>
+            </div>
+          </div>}
       </div>
-      
-      {perfectFor && <div className="mt-4 pt-4 border-t border-gray-200">
-          <h4 className="font-bold text-dragon-dark mb-2">Perfect For</h4>
-          <p className="font-medium text-dragon-dark">{perfectFor}</p>
-        </div>}
       
       <div className="mt-6 space-y-4">
         {!isSchoolTrip && <Button className="w-full bg-dragon hover:bg-dragon-dark" asChild>
@@ -45,4 +53,5 @@ const TripDetailsCard = ({
       </div>
     </div>;
 };
+
 export default TripDetailsCard;
