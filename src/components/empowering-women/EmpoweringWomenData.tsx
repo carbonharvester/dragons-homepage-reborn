@@ -4,6 +4,7 @@ import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 import TripHighlightsWrapper from './TripHighlightsWrapper';
+import TripOverview from '../trip/TripOverview';
 import { 
   tripDetails, 
   tripHighlights, 

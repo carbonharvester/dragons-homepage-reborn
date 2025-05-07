@@ -22,7 +22,7 @@ const TripGallery = ({ images }: TripGalleryProps) => {
   
   return (
     <div className="mt-24 mb-16">
-      <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Trip Gallery</h2>
+      <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Photo Gallery</h2>
       
       {isMobile ? (
         <div className="px-4">
