@@ -1,4 +1,3 @@
-
 import React from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
@@ -8,30 +7,25 @@ import TripItinerary from './TripItinerary';
 import TripCTA from './TripCTA';
 import ProgramBrochure from '../ProgramBrochure';
 import Testimonials from '../Testimonials';
-
 interface TripDetail {
   label: string;
   value: string;
   icon: React.ReactNode;
 }
-
 interface TripHighlight {
   icon: React.ReactNode;
   title: string;
   description: string;
 }
-
 interface TripLearningOutcome {
   title: string;
   description: string;
 }
-
 interface TripItineraryDay {
   day: string;
   title: string;
   activities: string[];
 }
-
 interface ProgramData {
   title: string;
   description: string;
@@ -40,7 +34,6 @@ interface ProgramData {
   location: string;
   goals: string[];
 }
-
 interface TripBrochureContentProps {
   tripDetails: TripDetail[];
   tripHighlights: TripHighlight[];
@@ -58,7 +51,6 @@ interface TripBrochureContentProps {
   hideOverview?: boolean;
   hideHighlights?: boolean;
 }
-
 const TripBrochureContent = ({
   tripDetails,
   tripHighlights,
@@ -72,19 +64,15 @@ const TripBrochureContent = ({
   hideOverview = false,
   hideHighlights = false
 }: TripBrochureContentProps) => {
-  return <div className="container py-[6px]">
+  return <div className="container py-0">
       {/* Trip Overview */}
-      {!hideOverview && (
-        <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />
-      )}
+      {!hideOverview && <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />}
       
       {/* Trip Highlights */}
-      {!hideHighlights && (
-        <div className="mb-16">
+      {!hideHighlights && <div className="mb-16">
           <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Trip Highlights</h2>
           <TripHighlights highlights={tripHighlights} />
-        </div>
-      )}
+        </div>}
       
       {/* Photo Gallery */}
       <TripGallery images={galleryImages} />
@@ -105,5 +93,4 @@ const TripBrochureContent = ({
       <TripCTA isSchoolTrip={true} />
     </div>;
 };
-
 export default TripBrochureContent;
