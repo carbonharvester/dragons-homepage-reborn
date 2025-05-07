@@ -63,10 +63,12 @@ export interface ContentfulPodcastEpisode {
 // Function to fetch all blog posts
 export const getAllBlogPosts = async (): Promise<ContentfulBlogPost[]> => {
   try {
+    console.log('Fetching blog posts from Contentful');
     const entries = await contentfulClient.getEntries({
-      content_type: 'blogPost',
+      content_type: 'blogPost', // This should match the content type ID in Contentful
       order: ['-fields.date'],
     });
+    console.log('Blog entries received:', entries.items.length);
     return entries.items as unknown as ContentfulBlogPost[];
   } catch (error) {
     console.error('Error fetching blog posts from Contentful:', error);
@@ -78,7 +80,7 @@ export const getAllBlogPosts = async (): Promise<ContentfulBlogPost[]> => {
 export const getBlogPostBySlug = async (slug: string): Promise<ContentfulBlogPost | null> => {
   try {
     const entries = await contentfulClient.getEntries({
-      content_type: 'blogPost',
+      content_type: 'blogPost', // This should match the content type ID in Contentful
       'fields.slug': slug,
       limit: 1,
     });
