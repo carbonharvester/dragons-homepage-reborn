@@ -1,5 +1,6 @@
 
-import { Clock, Calendar, MapPin, Users, School, Leaf, Camera, Globe, Elephant } from "lucide-react";
+
+import { Clock, Calendar, MapPin, Users, School, Leaf, Camera, Globe, Sprout } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
 // Trip highlights with raw icon components
@@ -24,7 +25,7 @@ export const tripHighlights: {
     description: "Engage with local students, educators and community members while learning about Kenyan culture and cuisine."
   },
   {
-    icon: Elephant,
+    icon: Sprout,
     title: "Nairobi National Park",
     description: "Explore Kenya's unique wildlife sanctuary with Nairobi's skyline as backdrop, learning about conservation efforts and ecosystems."
   },
@@ -196,3 +197,4 @@ export const programData = {
 
 // Re-export the trip details from the separate file
 export * from './data/details';
+
