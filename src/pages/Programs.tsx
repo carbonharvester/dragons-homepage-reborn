@@ -3,11 +3,10 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
-import { programCategories } from '@/data/programsData';
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ProgramsSection from '@/components/ProgramsSection';
+import ProgramsHero from '@/components/programs/ProgramsHero';
+import ProgramsIntro from '@/components/programs/ProgramsIntro';
+import TabsSection from '@/components/programs/TabsSection';
+import ProgramsCTA from '@/components/programs/ProgramsCTA';
 
 const Programs = () => {
   // Scroll to top on page load
@@ -15,212 +14,32 @@ const Programs = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  return <div className="min-h-screen flex flex-col">
-      <SEO title="Our Programs" description="Explore our transformative educational programs including School Trips, Summer Abroad, Multi-Year Curriculum, and Adult Programs." keywords="educational programs, school trips, summer abroad, multi-year curriculum, adult programs, Kenya, educational travel" />
+  return (
+    <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Our Programs" 
+        description="Explore our transformative educational programs including School Trips, Summer Abroad, Multi-Year Curriculum, and Adult Programs." 
+        keywords="educational programs, school trips, summer abroad, multi-year curriculum, adult programs, Kenya, educational travel" 
+      />
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[60vh] min-h-[500px] flex items-center">
-          <div className="absolute inset-0 z-0 bg-[url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404516.jpg?v=1746515670')] bg-cover bg-center">
-            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-          </div>
-          
-          <div className="container-wide relative z-10 text-white">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">Our Programs</h1>
-              <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">Discover transformative cultural immersion experiences designed to challenge, inspire, and create lasting impact through authentic engagement in Africa.</p>
-            </div>
-          </div>
-        </section>
+        <ProgramsHero />
 
         {/* Programs Content */}
         <section className="py-16 bg-dragon-beige">
           <div className="container-wide">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-academy text-dragon-dark mb-4">
-                Explore Our Programs
-              </h2>
-              <p className="text-lg text-dragon-gray max-w-3xl mx-auto">Our programs create meaningful educational experiences through cultural immersion, service learning, and authentic engagement with local communities—empowering both students and communities with lasting change.</p>
-              
-              {/* Enhanced introduction */}
-              <div className="mt-8 mb-12 bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto text-left">
-                <p className="mb-4">At Kapes Adventures, we believe educational travel should be transformative, ethical, and impactful. Our programs in Africa aren't just trips—they're life-changing journeys that connect students with vibrant cultures, resilient communities, and global challenges.</p>
-                
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <h4 className="font-bold text-dragon mb-2">Beyond Tourism</h4>
-                    <p className="text-dragon-gray">Unlike conventional educational tours, our programs focus on deep cultural immersion and meaningful contribution. Students live and work alongside communities, building authentic relationships that go beyond the typical tourist experience.</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-bold text-dragon mb-2">Measurable Impact</h4>
-                    <p className="text-dragon-gray">Each program addresses community-identified needs, from supporting women's microfinance initiatives to implementing sustainable agriculture. We create tangible, lasting change that continues long after students return home.</p>
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <h4 className="font-bold text-dragon mb-2">African-Centered</h4>
-                    <p className="text-dragon-gray">Our programs challenge dominant narratives by highlighting local innovation, expertise, and leadership. We partner with African educators, entrepreneurs, and changemakers who mentor students, ensuring authentic perspectives shape every experience.</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-bold text-dragon mb-2">Personal Transformation</h4>
-                    <p className="text-dragon-gray">Students return with more than photos—they gain critical thinking, cross-cultural competence, and global citizenship that shape their academic and career paths for years to come.</p>
-                  </div>
-                </div>
-                
-                <p className="text-dragon-dark font-medium">Whether you're a a teacher looking for impactful school trips, a student seeking a transformative summer experience, or an adult pursuing meaningful travel, our programs provide the perfect balance of learning, cultural exchange, and purposeful engagement.</p>
-              </div>
-            </div>
-
-            <Tabs defaultValue="school-trips" className="w-full">
-              <TabsList className="flex flex-wrap justify-center gap-4 mb-10 bg-transparent h-auto">
-                {programCategories.map(category => <TabsTrigger key={category.id} value={category.id} className="px-6 py-3 data-[state=active]:bg-dragon data-[state=active]:text-white bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white">
-                    {category.label}
-                  </TabsTrigger>)}
-              </TabsList>
-
-              <TabsContent value="school-trips" className="mt-8">
-                <div className="max-w-4xl mx-auto">
-                  <h3 className="text-2xl font-bold mb-4 text-dragon-dark">School Trips</h3>
-                  <p className="mb-6 text-lg">Our school trips offer 8 day immersive experiences that complement your curriculum, providing hands-on learning through themed projects with lasting impact.</p>
-                  
-                  <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
-                    <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
-                    <ul className="list-disc pl-5 space-y-2 mb-6">
-                      <li>Curriculum-aligned experiences with pre and post-trip resources</li>
-                      <li>Project-based learning opportunities with measurable community impact</li>
-                      <li>Collaborative work with local communities and experts</li>
-                      <li>Comprehensive risk management and 24/7 support</li>
-                      <li>Customisable itineraries based on your school's needs</li>
-                    </ul>
-                    
-                    <p className="mb-6">
-                      Each school trip focuses on a specific project theme, allowing students to engage 
-                      deeply with important global issues while developing practical skills and cross-cultural 
-                      understanding.
-                    </p>
-                  </div>
-                  
-                  <div className="text-center mt-8">
-                    <Button className="btn-primary" asChild>
-                      <Link to="/school-trips">Explore School Trips</Link>
-                    </Button>
-                  </div>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="summer-abroad" className="mt-8">
-                <div className="max-w-4xl mx-auto">
-                  <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Summer Abroad</h3>
-                  <p className="mb-6 text-lg">Our summer programs offer 3–4-week immersive experiences for students eager to develop new skills, explore career interests, and make lasting contributions to Kenyan communities.</p>
-                  
-                  <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
-                    <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
-                    <ul className="list-disc pl-5 space-y-2 mb-6">
-                      <li>Intensive skill-building with expert local mentors and practitioners</li>
-                      <li>Project-based learning with real-world applications</li>
-                      <li>Cultural immersion and language exposure</li>
-                      <li>Leadership development and global citizenship education</li>
-                      <li>College-ready portfolio development and reflection</li>
-                    </ul>
-                    
-                    <p className="mb-6">Summer programs are designed for students who want to dive deep into their interests while experiencing Kenya's rich culture and landscapes—contributing to communities and gaining valuable experience for college and future careers.</p>
-                  </div>
-                  
-                  <div className="text-center mt-8">
-                    <Button className="btn-primary" asChild>
-                      <Link to="/summer-abroad">Explore Summer Programs</Link>
-                    </Button>
-                  </div>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="multi-year" className="mt-8">
-                <div className="max-w-4xl mx-auto">
-                  <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Multi-Year Curriculums</h3>
-                  <p className="mb-6 text-lg">Our Multi-Year Curriculum offers a transformative educational journey that builds year after year, fostering a cohesive experience that deepens students' skills, knowledge, and global perspective over time.</p>
-                  
-                  <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
-                    <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
-                    <ul className="list-disc pl-5 space-y-2 mb-6">
-                      <li>Progressive skill development across multiple years</li>
-                      <li>Curriculum integration with school standards and frameworks</li>
-                      <li>Scaffolded leadership opportunities and responsibilities</li>
-                      <li>Long-term relationship building with partner communities</li>
-                      <li>Comprehensive documentation for college applications</li>
-                      <li>Compatible with IB CAS requirements and Duke of Edinburgh Awards</li>
-                    </ul>
-                    
-                    <p className="mb-6">The Multi-Year Curriculum is designed for schools eager to weave global education into their core programming, empowering students with a transformative journey that prepares them for academic and professional success.</p>
-                  </div>
-                  
-                  <div className="text-center mt-8">
-                    <Button className="btn-primary" asChild>
-                      <Link to="/multi-year-curriculum">Explore Multi-Year Curriculums</Link>
-                    </Button>
-                  </div>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="adult-trips" className="mt-8">
-                <div className="max-w-4xl mx-auto">
-                  <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Adult Programs</h3>
-                  <p className="mb-6 text-lg">
-                    Our Adult Programs offer immersive learning experiences designed for professionals, educators, 
-                    and lifelong learners seeking to develop new skills, engage with global issues, and make 
-                    meaningful connections with communities in Kenya.
-                  </p>
-                  
-                  <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
-                    <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
-                    <ul className="list-disc pl-5 space-y-2 mb-6">
-                      <li>Expert-led workshops and hands-on learning experiences</li>
-                      <li>Professional development opportunities with certification</li>
-                      <li>Authentic cultural exchange and community engagement</li>
-                      <li>Connections with local experts and practitioners</li>
-                      <li>Comfortable accommodations and thoughtful logistics</li>
-                    </ul>
-                    
-                    <p className="mb-6">
-                      Adult Programs are perfect for individuals or groups looking to combine purposeful travel 
-                      with personal or professional development. Programs can be customized for specific groups, 
-                      organizations, or interests.
-                    </p>
-                  </div>
-                  
-                  <div className="text-center mt-8">
-                    <Button className="btn-primary" asChild>
-                      <Link to="/adult-programs">Learn More About Adult Programs</Link>
-                    </Button>
-                  </div>
-                </div>
-              </TabsContent>
-            </Tabs>
+            <ProgramsIntro />
+            <TabsSection />
           </div>
         </section>
 
         {/* Call to Action */}
-        <section className="py-16 bg-white">
-          <div className="container-wide text-center">
-            <h2 className="text-3xl md:text-4xl font-academy text-dragon-dark mb-4">
-              Ready to Start Your Journey?
-            </h2>
-            <p className="text-lg text-dragon-gray max-w-2xl mx-auto mb-8">Connect with us to learn more about our programs for schools, students, and adults, and how we can create a customised experience for your school.</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button className="btn-primary" asChild>
-                <a href="https://form.typeform.com/to/rtxmvp4L" target="_blank" rel="noopener noreferrer">Apply Now</a>
-              </Button>
-              <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                <Link to="/partner-with-us">Schedule Consultation</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
+        <ProgramsCTA />
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
 
 export default Programs;
