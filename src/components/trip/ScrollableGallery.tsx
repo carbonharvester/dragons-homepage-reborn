@@ -55,8 +55,8 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
           <span className="sr-only">Scroll right</span>
         </Button>
         
-        {/* Scrollable area */}
-        <ScrollArea className="w-full">
+        {/* Scrollable area with proper ref attachment */}
+        <div className="overflow-hidden">
           <div 
             ref={scrollContainerRef}
             className="flex space-x-4 pb-4 px-8 overflow-x-auto scrollbar-hide"
@@ -86,7 +86,7 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
               </div>
             ))}
           </div>
-        </ScrollArea>
+        </div>
       </div>
     </div>
   );
