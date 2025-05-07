@@ -6,7 +6,7 @@ import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { 
-  tripDetails, 
+  tripDetails as rawTripDetails, 
   tripHighlights, 
   galleryImages, 
   learningOutcomes, 
@@ -26,6 +26,12 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
   contentOnly = false,
   navigationOnly = false
 }) => {
+  // Transform Lucide icons to React elements for compatibility
+  const tripDetails = rawTripDetails.map(detail => ({
+    ...detail,
+    icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
+  }));
+
   // Custom description and project goals specific to the Food For Education program
   const foodDescription = [
     "In many rural Kenyan schools, inconsistent access to nutritious food impacts student attendance and academic performance. This collaborative program transforms unused school land into productive food gardens through sustainable permaculture practices.",
@@ -74,7 +80,10 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              tripHighlights={tripHighlights}
+              tripHighlights={tripHighlights.map(highlight => ({
+                ...highlight,
+                icon: React.createElement(highlight.icon, { className: "h-8 w-8 text-white" })
+              }))}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}

@@ -6,7 +6,7 @@ import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { 
-  tripDetails, 
+  tripDetails as rawTripDetails, 
   tripHighlights, 
   galleryImages, 
   learningOutcomes, 
@@ -26,6 +26,12 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
   contentOnly = false,
   navigationOnly = false
 }) => {
+  // Transform Lucide icons to React elements for compatibility
+  const tripDetails = rawTripDetails.map(detail => ({
+    ...detail,
+    icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
+  }));
+
   // Define custom trip description for the overview section
   const conservationDescription = [
     "This 8 day journey to Tsavo, Kenya immerses students in practical conservation work with Wildlife Works while exploring the magnificent Tsavo East National Park.",
@@ -75,7 +81,10 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              tripHighlights={tripHighlights}
+              tripHighlights={tripHighlights.map(highlight => ({
+                ...highlight,
+                icon: React.createElement(highlight.icon, { className: "h-8 w-8 text-white" })
+              }))}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}

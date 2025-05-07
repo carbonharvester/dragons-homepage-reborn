@@ -11,6 +11,9 @@ export const tripDetails = [
   { label: "Group Size", value: "10-30 students", icon: React.createElement(School, { className: "h-5 w-5 text-dragon" }) },
 ];
 
+// Added perfectFor export
+export const perfectFor = "Students ages 15-18, Food sustainability advocates, Schools with service-learning programs";
+
 // Trip highlights
 export const tripHighlights = [
   {
