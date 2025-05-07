@@ -52,6 +52,8 @@ interface TripBrochureContentProps {
   learningOutcomes: TripLearningOutcome[];
   tripItinerary: TripItineraryDay[];
   programData: ProgramData;
+  description?: string[];
+  projectGoals?: string[];
 }
 
 const TripBrochureContent = ({
@@ -60,11 +62,13 @@ const TripBrochureContent = ({
   galleryImages,
   learningOutcomes,
   tripItinerary,
-  programData
+  programData,
+  description,
+  projectGoals
 }: TripBrochureContentProps) => {
   return <div className="container py-[6px]">
       {/* Trip Overview */}
-      <TripOverview tripDetails={tripDetails} />
+      <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} />
       
       {/* Trip Highlights */}
       <TripHighlights highlights={tripHighlights} />
