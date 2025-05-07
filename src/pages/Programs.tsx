@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -41,7 +42,7 @@ const Programs = () => {
               
               {/* Enhanced introduction */}
               <div className="mt-8 mb-12 bg-white p-8 rounded-lg shadow-sm max-w-4xl mx-auto text-left">
-                <p className="mb-4">At Kapes Adventures, we believe educational travel should be transformative, ethical, and impactful. Our programs in Africa aren’t just trips—they’re life-changing journeys that connect students with vibrant cultures, resilient communities, and global challenges.</p>
+                <p className="mb-4">At Kapes Adventures, we believe educational travel should be transformative, ethical, and impactful. Our programs in Africa aren't just trips—they're life-changing journeys that connect students with vibrant cultures, resilient communities, and global challenges.</p>
                 
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div>
@@ -51,7 +52,7 @@ const Programs = () => {
                   
                   <div>
                     <h4 className="font-bold text-dragon mb-2">Measurable Impact</h4>
-                    <p className="text-dragon-gray">Each program addresses community-identified needs, from supporting women’s microfinance initiatives to implementing sustainable agriculture. We create tangible, lasting change that continues long after students return home.</p>
+                    <p className="text-dragon-gray">Each program addresses community-identified needs, from supporting women's microfinance initiatives to implementing sustainable agriculture. We create tangible, lasting change that continues long after students return home.</p>
                   </div>
                 </div>
                 
@@ -123,7 +124,7 @@ const Programs = () => {
                       <li>College-ready portfolio development and reflection</li>
                     </ul>
                     
-                    <p className="mb-6">Summer programs are designed for students who want to dive deep into their interests while experiencing Kenya’s rich culture and landscapes—contributing to communities and gaining valuable experience for college and future careers.</p>
+                    <p className="mb-6">Summer programs are designed for students who want to dive deep into their interests while experiencing Kenya's rich culture and landscapes—contributing to communities and gaining valuable experience for college and future careers.</p>
                   </div>
                   
                   <div className="text-center mt-8">
@@ -137,7 +138,7 @@ const Programs = () => {
               <TabsContent value="multi-year" className="mt-8">
                 <div className="max-w-4xl mx-auto">
                   <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Multi-Year Curriculums</h3>
-                  <p className="mb-6 text-lg">Our Multi-Year Curriculum offers a transformative educational journey that builds year after year, fostering a cohesive experience that deepens students’ skills, knowledge, and global perspective over time.</p>
+                  <p className="mb-6 text-lg">Our Multi-Year Curriculum offers a transformative educational journey that builds year after year, fostering a cohesive experience that deepens students' skills, knowledge, and global perspective over time.</p>
                   
                   <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
                     <h4 className="text-xl font-bold mb-3 text-dragon-dark">Program Features:</h4>
@@ -207,7 +208,7 @@ const Programs = () => {
             <p className="text-lg text-dragon-gray max-w-2xl mx-auto mb-8">Connect with us to learn more about our programs for schools, students, and adults, and how we can create a customised experience for your school.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button className="btn-primary" asChild>
-                
+                <a href="https://form.typeform.com/to/rtxmvp4L" target="_blank" rel="noopener noreferrer">Apply Now</a>
               </Button>
               <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
                 <Link to="/partner-with-us">Schedule Consultation</Link>
