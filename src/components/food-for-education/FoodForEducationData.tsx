@@ -82,7 +82,11 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               tripDetails={tripDetails}
               tripHighlights={tripHighlights.map(highlight => ({
                 ...highlight,
-                icon: React.createElement(highlight.icon, { className: "h-8 w-8 text-white" })
+                icon: (
+                  <div className="text-white">
+                    {React.createElement(highlight.icon, { className: "h-8 w-8 text-white" })}
+                  </div>
+                )
               }))}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
