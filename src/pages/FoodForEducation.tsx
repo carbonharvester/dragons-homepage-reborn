@@ -21,7 +21,7 @@ const FoodForEducation = () => {
         <TripBrochureWrapper tripType="food-for-education" heroOnly={true} />
         
         {/* Navigation positioned directly after the hero, with proper padding */}
-        <div className="container-wide py-8">
+        <div className="container-wide py-4 bg-white">
           <ParentPageNavigation parentPath="/school-trips" parentName="School Trips" />
         </div>
         
