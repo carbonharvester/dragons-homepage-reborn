@@ -1,33 +1,23 @@
-
 import React, { useState } from 'react';
 import WeekSelector from './WeekSelector';
 import WeekItinerary from './WeekItinerary';
 import { weeksData } from './itineraryData';
 import ItineraryHeader from './itinerary/ItineraryHeader';
 import ItineraryFooter from './itinerary/ItineraryFooter';
-
 const ProgramItinerary = () => {
   const [activeWeek, setActiveWeek] = useState<number>(0);
-
-  return (
-    <section className="py-16 bg-white">
+  return <section className="bg-white py-[50px]">
       <div className="container-wide">
         <ItineraryHeader />
         
         {/* Week Tabs */}
-        <WeekSelector 
-          weeks={weeksData}
-          activeWeek={activeWeek}
-          setActiveWeek={setActiveWeek}
-        />
+        <WeekSelector weeks={weeksData} activeWeek={activeWeek} setActiveWeek={setActiveWeek} />
         
         {/* Active Week Content */}
         <WeekItinerary week={weeksData[activeWeek]} />
         
         <ItineraryFooter />
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProgramItinerary;
