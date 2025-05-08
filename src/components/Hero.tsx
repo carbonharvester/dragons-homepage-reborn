@@ -1,9 +1,12 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+
 const Hero = () => {
   const location = useLocation();
   const isCapturingKenyaPage = location.pathname === "/programs/capturing-kenya";
+  
   const scrollToPrograms = () => {
     const programsSection = document.getElementById('programs');
     if (programsSection) {
@@ -12,9 +15,14 @@ const Hero = () => {
       });
     }
   };
-  return <section className="relative h-[80vh] min-h-[600px] flex items-center">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1466721591366-2d5fba72006d?q=80&w=1500&auto=format')] bg-cover bg-center">
+  
+  return (
+    <section className="relative h-[80vh] min-h-[600px] flex items-center">
+      {/* Black background behind the image */}
+      <div className="absolute inset-0 z-0 bg-black">
+        {/* Image with controlled opacity */}
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1466721591366-2d5fba72006d?q=80&w=1500&auto=format')] bg-cover bg-center opacity-80"></div>
+        {/* Enhanced overlay for better text visibility */}
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
       
@@ -35,6 +43,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

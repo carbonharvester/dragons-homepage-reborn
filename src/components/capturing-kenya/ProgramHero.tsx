@@ -8,8 +8,12 @@ import { Calendar, Users, MapPin } from "lucide-react";
 const ProgramHero = () => {
   return (
     <section className="relative h-[60vh] min-h-[500px] flex items-center">
-      <div className="absolute inset-0 z-0 bg-[url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404062.jpg?v=1746502708')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      {/* Black background behind the image */}
+      <div className="absolute inset-0 z-0 bg-black">
+        {/* Image with controlled opacity */}
+        <div className="absolute inset-0 bg-[url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404062.jpg?v=1746502708')] bg-cover bg-center opacity-80"></div>
+        {/* Enhanced overlay for better text visibility */}
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
       
       <div className="container-wide relative z-10 text-white">
