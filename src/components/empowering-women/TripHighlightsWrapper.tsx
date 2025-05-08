@@ -2,11 +2,8 @@
 import React from 'react';
 import TripHighlights from '@/components/trip/TripHighlights';
 import { tripHighlights } from './data/highlights';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const TripHighlightsWrapper = () => {
-  const isMobile = useIsMobile();
-  
   // Convert the Lucide icon components to JSX elements
   const highlightsWithJSX = tripHighlights.map(highlight => ({
     ...highlight,
@@ -18,7 +15,7 @@ const TripHighlightsWrapper = () => {
   }));
 
   return (
-    <div className={`mb-16 ${!isMobile ? 'max-w-[900px] mx-auto' : ''}`}>
+    <div className="mb-16">
       <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Trip Highlights</h2>
       <TripHighlights highlights={highlightsWithJSX} />
     </div>
