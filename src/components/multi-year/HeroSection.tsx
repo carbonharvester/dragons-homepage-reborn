@@ -7,7 +7,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ imgTimestamp }: HeroSectionProps) => {
   return (
-    <section className="relative bg-cover bg-center py-32" style={{
+    <section className="relative h-[60vh] min-h-[500px] bg-cover bg-center flex items-center" style={{
       backgroundImage: `url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop&t=${imgTimestamp}')`
     }}>
       <div className="absolute inset-0 bg-black bg-opacity-60"></div>

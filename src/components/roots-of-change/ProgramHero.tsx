@@ -7,7 +7,7 @@ import { programData } from './ProgramData';
 
 const ProgramHero = () => {
   return (
-    <section className="relative h-[60vh] min-h-[400px] flex items-center">
+    <section className="relative h-[60vh] min-h-[500px] flex items-center">
       <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1531303435785-3853ba035cda?q=80&w=2070&auto=format')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>

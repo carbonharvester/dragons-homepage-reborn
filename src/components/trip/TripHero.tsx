@@ -10,7 +10,7 @@ interface TripHeroProps {
 
 const TripHero = ({ title, subtitle, category, imagePath }: TripHeroProps) => {
   return (
-    <div className="relative h-[60vh] overflow-hidden">
+    <div className="relative h-[60vh] min-h-[500px] overflow-hidden">
       <div className="absolute inset-0">
         <img 
           src={imagePath} 

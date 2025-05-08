@@ -7,7 +7,7 @@ const HeroSection = () => {
   
   return (
     <section 
-      className="bg-cover bg-center py-32 relative"
+      className="bg-cover bg-center h-[60vh] min-h-[500px] relative flex items-center"
       style={{ 
         backgroundImage: `url('https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=2070&auto=format&fit=crop&t=${imgTimestamp}')` 
       }}

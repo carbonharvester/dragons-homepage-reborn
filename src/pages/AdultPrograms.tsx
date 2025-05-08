@@ -1,3 +1,4 @@
+
 import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -34,7 +35,7 @@ const AdultPrograms = () => {
       />
       <Header />
       <main>
-        <section className="relative h-[60vh] min-h-[400px] flex items-center">
+        <section className="relative h-[60vh] min-h-[500px] flex items-center">
           {/* Background Image */}
           <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1603202662747-00e33e7d1468?q=80&w=2069&auto=format')] bg-cover bg-center">
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>

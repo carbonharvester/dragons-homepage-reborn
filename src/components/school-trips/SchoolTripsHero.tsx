@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
+
 const SchoolTripsHero = () => {
-  return <section className="relative h-[70vh] min-h-[500px] flex items-center">
+  return (
+    <section className="relative h-[60vh] min-h-[500px] flex items-center">
       <div className="absolute inset-0 z-0 bg-[url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404093_2.jpg?v=1746502728')] bg-cover bg-center">
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/40 to-transparent"></div>
       </div>
@@ -26,6 +29,8 @@ const SchoolTripsHero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default SchoolTripsHero;
