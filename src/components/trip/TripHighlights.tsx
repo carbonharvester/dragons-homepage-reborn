@@ -26,7 +26,7 @@ const TripHighlights = ({ highlights }: TripHighlightsProps) => {
 
   // Helper function to render a highlight card with consistent styling
   const renderHighlightCard = (highlight: TripHighlightProps, index: number) => (
-    <Card key={index} className="border-none shadow-md h-full">
+    <Card key={index} className="border-none shadow-none h-full">
       <CardContent className="p-6">
         <div className="w-16 h-16 rounded-full bg-dragon flex items-center justify-center mb-4">
           {highlight.icon}
@@ -40,7 +40,7 @@ const TripHighlights = ({ highlights }: TripHighlightsProps) => {
   // On mobile, use carousel
   if (isMobile) {
     return (
-      <Carousel className="w-full">
+      <Carousel className="w-full" opts={{ loop: true }}>
         <CarouselContent>
           {highlights.map((highlight, index) => (
             <CarouselItem key={index} className="pl-4 md:basis-1/1">
