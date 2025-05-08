@@ -53,7 +53,6 @@ interface TripBrochureContentProps {
   perfectFor?: string;
   hideOverview?: boolean;
   hideHighlights?: boolean;
-  isSchoolTrip?: boolean;
 }
 
 const TripBrochureContent = ({
@@ -67,8 +66,7 @@ const TripBrochureContent = ({
   projectGoals,
   perfectFor,
   hideOverview = false,
-  hideHighlights = false,
-  isSchoolTrip = true
+  hideHighlights = false
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
 
@@ -96,11 +94,11 @@ const TripBrochureContent = ({
       {/* Program Brochure */}
       <ProgramBrochure program={programData} />
       
-      {/* Student Stories Section - Only shown for school trips */}
-      {isSchoolTrip && <Testimonials />}
+      {/* Student Stories Section - Moved above CTA */}
+      <Testimonials />
       
-      {/* CTA Section */}
-      <TripCTA isSchoolTrip={isSchoolTrip} />
+      {/* CTA Section - always using isSchoolTrip=true since these are all school trips */}
+      <TripCTA isSchoolTrip={true} />
     </div>;
 };
 

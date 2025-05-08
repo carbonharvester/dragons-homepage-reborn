@@ -7,7 +7,7 @@ import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
-  tripDetails, 
+  tripDetails as rawTripDetails, 
   tripHighlights, 
   galleryImages, 
   learningOutcomes, 
@@ -20,29 +20,34 @@ interface CommunityConservationDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
-  isSchoolTrip?: boolean;
 }
 
 const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({ 
   heroOnly = false, 
   contentOnly = false,
-  navigationOnly = false,
-  isSchoolTrip = true
+  navigationOnly = false
 }) => {
   const isMobile = useIsMobile();
   
-  // Conservation specific description and goals
+  // Transform Lucide icons to React elements for compatibility
+  const tripDetails = rawTripDetails.map(detail => ({
+    ...detail,
+    icon: React.createElement(detail.icon, { className: "h-5 w-5 text-dragon" })
+  }));
+
+  // Define custom trip description for the overview section
   const conservationDescription = [
-    "Tsavo National Park and its surrounding communities represent a delicate balance between human needs and wildlife conservation. This immersive 7-8 day journey introduces students to the complex challenges and innovative solutions at this critical intersection.",
-    "Participants will work alongside local conservation teams on projects designed to reduce human-wildlife conflict, protect endangered species, and support sustainable livelihoods. Through hands-on activities and meaningful cultural exchange, students gain deep insights into community-based conservation approaches."
+    "This 8 day journey to Tsavo, Kenya immerses students in practical conservation work with Wildlife Works while exploring the magnificent Tsavo East National Park.",
+    "Students will experience wildlife monitoring, carbon cycle management, and traditional craft-making while developing outdoor skills through hiking and ranger-led activities. The program provides hands-on engagement with conservation enterprises and social initiatives that balance ecosystem protection with community development."
   ];
-  
-  const conservationGoals = [
-    "Participate in community conservation projects that protect endangered wildlife and ecosystems",
-    "Learn about traditional ecological knowledge and sustainable practices from local communities",
-    "Engage in human-wildlife conflict mitigation efforts alongside conservation experts",
-    "Support initiatives that create sustainable livelihoods through conservation",
-    "Experience Kenya's remarkable biodiversity through guided nature walks and safari game drives"
+
+  // Define custom project goals
+  const conservationProjectGoals = [
+    "Experience conservation in action at Wildlife Works and Tsavo East National Park",
+    "Learn about carbon cycle management and REDD+ conservation initiatives",
+    "Engage with local communities and learn traditional craft-making skills",
+    "Develop outdoor adventure skills including hiking and bush survival techniques",
+    "Contribute to real conservation projects with measurable environmental impact"
   ];
 
   return (
@@ -53,7 +58,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
           title="Community Conservation"
           subtitle="Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices."
           category="School Trip"
-          imagePath="/lovable-uploads/fc764836-7162-400c-a486-00fe9d99f975.png"
+          imagePath="/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png"
         />
       )}
 
@@ -70,7 +75,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
               tripDetails={tripDetails}
               perfectFor={perfectFor}
               description={conservationDescription}
-              projectGoals={conservationGoals}
+              projectGoals={conservationProjectGoals}
             />
             
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
@@ -79,17 +84,19 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              tripHighlights={tripHighlights}
+              tripHighlights={tripHighlights.map(highlight => ({
+                ...highlight,
+                icon: React.createElement(highlight.icon, { className: "h-8 w-8 text-white" })
+              }))}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}
               programData={programData}
               perfectFor={perfectFor}
               description={conservationDescription}
-              projectGoals={conservationGoals}
+              projectGoals={conservationProjectGoals}
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
-              isSchoolTrip={isSchoolTrip}
             />
           </div>
         </>

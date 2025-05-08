@@ -17,17 +17,17 @@ const EmpoweringWomen = () => {
       
       <main>
         {/* Hero section is part of TripBrochureWrapper */}
-        <TripBrochureWrapper tripType="empowering-women" heroOnly={true} isSchoolTrip={true} />
+        <TripBrochureWrapper tripType="empowering-women" heroOnly={true} />
         
         {/* Navigation and content in a continuous section */}
         <div className="bg-white">
           {/* Navigation section */}
           <div className="container-wide py-4">
-            <TripBrochureWrapper tripType="empowering-women" navigationOnly={true} isSchoolTrip={true} />
+            <TripBrochureWrapper tripType="empowering-women" navigationOnly={true} />
           </div>
           
           {/* Content section with no top padding */}
-          <TripBrochureWrapper tripType="empowering-women" contentOnly={true} isSchoolTrip={true} />
+          <TripBrochureWrapper tripType="empowering-women" contentOnly={true} />
         </div>
       </main>
       <Footer />

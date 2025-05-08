@@ -17,17 +17,17 @@ const CommunityConservation = () => {
       
       <main>
         {/* Hero section is part of TripBrochureWrapper */}
-        <TripBrochureWrapper tripType="community-conservation" heroOnly={true} isSchoolTrip={true} />
+        <TripBrochureWrapper tripType="community-conservation" heroOnly={true} />
         
         {/* Navigation and content in a continuous section */}
         <div className="bg-white">
           {/* Navigation section */}
           <div className="container-wide py-4">
-            <TripBrochureWrapper tripType="community-conservation" navigationOnly={true} isSchoolTrip={true} />
+            <TripBrochureWrapper tripType="community-conservation" navigationOnly={true} />
           </div>
           
           {/* Content section with no top padding */}
-          <TripBrochureWrapper tripType="community-conservation" contentOnly={true} isSchoolTrip={true} />
+          <TripBrochureWrapper tripType="community-conservation" contentOnly={true} />
         </div>
       </main>
       <Footer />

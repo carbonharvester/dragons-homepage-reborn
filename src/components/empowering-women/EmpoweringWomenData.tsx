@@ -20,14 +20,12 @@ interface EmpoweringWomenDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
-  isSchoolTrip?: boolean;
 }
 
 const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({ 
   heroOnly = false, 
   contentOnly = false,
-  navigationOnly = false,
-  isSchoolTrip = true
+  navigationOnly = false
 }) => {
   const isMobile = useIsMobile();
   
@@ -89,7 +87,6 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
               projectGoals={waterProjectGoals}
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
-              isSchoolTrip={isSchoolTrip}
             />
           </div>
         </>
