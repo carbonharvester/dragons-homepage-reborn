@@ -49,8 +49,8 @@ const TripHighlights = ({ highlights }: TripHighlightsProps) => {
           ))}
         </CarouselContent>
         <div className="flex justify-center mt-4">
-          <CarouselPrevious className="relative static translate-y-0 mr-2 h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
-          <CarouselNext className="relative static translate-y-0 ml-2 h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
+          <CarouselPrevious className="static mr-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
+          <CarouselNext className="static ml-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
         </div>
       </Carousel>
     );
