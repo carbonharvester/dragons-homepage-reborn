@@ -27,8 +27,15 @@ const ProgramBrochure = ({ program, pdfLink }: ProgramBrochureProps) => {
   
   const handleDownload = () => {
     if (pdfLink) {
-      // Open the direct PDF link in a new tab
-      window.open(pdfLink, '_blank');
+      // Create an anchor element and set the href attribute to the PDF URL
+      const anchor = document.createElement('a');
+      anchor.href = pdfLink;
+      anchor.download = `${program.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`;
+      
+      // Append to the document, trigger download, and remove the element
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
     } else {
       // Generate PDF if no direct link is provided
       const pdf = generateProgramBrochure(program.title, program);
