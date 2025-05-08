@@ -29,7 +29,7 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
     <div className="mt-24 mb-16">
       <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Photo Gallery</h2>
       
-      <div className="relative px-4 md:px-8 lg:px-12">
+      <div className="relative px-4 md:px-8 lg:px-12 max-w-[900px] mx-auto">
         <Carousel
           opts={{
             align: "start",

@@ -51,7 +51,7 @@ const TripLearningOutcomes = ({ outcomes }: TripLearningOutcomesProps) => {
           />
         </Carousel>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[900px] mx-auto">
           {outcomes.map((outcome, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
               <h3 className="text-lg font-bold mb-2 text-dragon-dark">{outcome.title}</h3>

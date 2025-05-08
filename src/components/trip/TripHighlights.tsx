@@ -59,7 +59,7 @@ const TripHighlights = ({ highlights }: TripHighlightsProps) => {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[900px] mx-auto">
       {highlights.map((highlight, index) => (
         <Card key={index} className="border-none shadow-md h-full">
           <CardContent className="p-6">
