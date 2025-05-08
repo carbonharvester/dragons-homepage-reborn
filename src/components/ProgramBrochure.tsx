@@ -7,6 +7,7 @@ import BrochureInformation from './program-brochure/BrochureInformation';
 import { Button } from './ui/button';
 import { Download } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { toast } from '@/components/ui/sonner';
 
 interface ProgramData {
   title: string;
@@ -26,20 +27,33 @@ const ProgramBrochure = ({ program, pdfLink }: ProgramBrochureProps) => {
   const isMobile = useIsMobile();
   
   const handleDownload = () => {
-    if (pdfLink) {
-      // Create an anchor element and set the href attribute to the PDF URL
-      const anchor = document.createElement('a');
-      anchor.href = pdfLink;
-      anchor.download = `${program.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`;
+    try {
+      console.log('Download requested for:', pdfLink || 'generated PDF');
       
-      // Append to the document, trigger download, and remove the element
-      document.body.appendChild(anchor);
-      anchor.click();
-      document.body.removeChild(anchor);
-    } else {
-      // Generate PDF if no direct link is provided
-      const pdf = generateProgramBrochure(program.title, program);
-      pdf.save(`${program.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`);
+      if (pdfLink) {
+        // Create an anchor element and set the href attribute to the PDF URL
+        const anchor = document.createElement('a');
+        anchor.href = pdfLink;
+        anchor.download = `${program.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`;
+        
+        // Append to the document, trigger download, and remove the element
+        document.body.appendChild(anchor);
+        anchor.click();
+        document.body.removeChild(anchor);
+        
+        // Show success toast
+        toast.success('Downloading PDF brochure');
+      } else {
+        // Generate PDF if no direct link is provided
+        const pdf = generateProgramBrochure(program.title, program);
+        pdf.save(`${program.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`);
+        
+        // Show success toast
+        toast.success('Generated PDF brochure');
+      }
+    } catch (error) {
+      console.error('Error downloading PDF:', error);
+      toast.error('Could not download brochure. Please try again.');
     }
   };
 

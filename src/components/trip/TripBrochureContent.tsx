@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
 import ScrollableGallery from './ScrollableGallery';
@@ -71,6 +71,11 @@ const TripBrochureContent = ({
   pdfBrochureLink
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
+  
+  useEffect(() => {
+    console.log('TripBrochureContent mounted with programData:', programData);
+    console.log('PDF Brochure Link:', pdfBrochureLink);
+  }, [programData, pdfBrochureLink]);
 
   return <div className="container py-0">
       {/* Trip Overview */}

@@ -20,6 +20,11 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    sourcemap: mode === 'development',
+    minify: mode === 'production',
+    chunkSizeWarningLimit: 1000, // Increase warning limit for larger chunks
+  },
   define: {
     // Make sure environment variables are properly replaced at build time
     'import.meta.env.VITE_CONTENTFUL_SPACE_ID': 
