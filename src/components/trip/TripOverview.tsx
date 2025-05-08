@@ -25,11 +25,6 @@ const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: Tr
     <div className="mb-16 mt-2">
       <h2 className="text-3xl font-academy mb-6 text-dragon-dark">Trip Overview</h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Show TripDetailsCard first on mobile */}
-        {isMobile && (
-          <TripDetailsCard tripDetails={tripDetails} />
-        )}
-        
         <div className={`${isMobile ? '' : 'lg:col-span-2'} flex flex-col`}>
           {description ? (
             description.map((paragraph, index) => (
@@ -50,6 +45,13 @@ const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: Tr
                 sustainable development, women's empowerment, and social entrepreneurship.
               </p>
             </>
+          )}
+          
+          {/* Show TripDetailsCard after the description on mobile */}
+          {isMobile && (
+            <div className="mb-8">
+              <TripDetailsCard tripDetails={tripDetails} />
+            </div>
           )}
           
           <div className="bg-dragon-beige p-8 rounded-lg mb-8 flex-grow flex flex-col">
