@@ -43,6 +43,9 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
     "Connect with Kenya's natural beauty through safari and cultural immersion activities"
   ];
 
+  // Direct PDF brochure link
+  const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Water_Empowering_Women_Brochure.pdf?v=1746689349";
+
   return (
     <>
       {/* Hero Section */}
@@ -87,6 +90,7 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
               projectGoals={waterProjectGoals}
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
+              pdfBrochureLink={pdfBrochureLink}
             />
           </div>
         </>

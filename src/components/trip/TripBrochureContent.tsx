@@ -53,6 +53,7 @@ interface TripBrochureContentProps {
   perfectFor?: string;
   hideOverview?: boolean;
   hideHighlights?: boolean;
+  pdfBrochureLink?: string;
 }
 
 const TripBrochureContent = ({
@@ -66,7 +67,8 @@ const TripBrochureContent = ({
   projectGoals,
   perfectFor,
   hideOverview = false,
-  hideHighlights = false
+  hideHighlights = false,
+  pdfBrochureLink
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
 
@@ -92,7 +94,7 @@ const TripBrochureContent = ({
       <TripItinerary itineraryDays={tripItinerary} />
       
       {/* Program Brochure */}
-      <ProgramBrochure program={programData} />
+      <ProgramBrochure program={programData} pdfLink={pdfBrochureLink} />
       
       {/* Student Stories Section - Moved above CTA */}
       <Testimonials />

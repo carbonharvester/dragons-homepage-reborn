@@ -19,14 +19,21 @@ interface ProgramData {
 
 interface ProgramBrochureProps {
   program: ProgramData;
+  pdfLink?: string;
 }
 
-const ProgramBrochure = ({ program }: ProgramBrochureProps) => {
+const ProgramBrochure = ({ program, pdfLink }: ProgramBrochureProps) => {
   const isMobile = useIsMobile();
   
   const handleDownload = () => {
-    const pdf = generateProgramBrochure(program.title, program);
-    pdf.save(`${program.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`);
+    if (pdfLink) {
+      // Open the direct PDF link in a new tab
+      window.open(pdfLink, '_blank');
+    } else {
+      // Generate PDF if no direct link is provided
+      const pdf = generateProgramBrochure(program.title, program);
+      pdf.save(`${program.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`);
+    }
   };
 
   return (
