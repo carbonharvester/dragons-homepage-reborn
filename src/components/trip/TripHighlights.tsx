@@ -36,8 +36,8 @@ const TripHighlights = ({ highlights }: TripHighlightsProps) => {
         <CarouselContent>
           {highlights.map((highlight, index) => (
             <CarouselItem key={index} className="basis-full">
-              <Card className="border-none shadow-md mx-4">
-                <CardContent className="p-6">
+              <Card className="border-none shadow-md mx-4 aspect-square">
+                <CardContent className="p-6 flex flex-col justify-center h-full">
                   <div className="w-16 h-16 rounded-full bg-dragon flex items-center justify-center mb-4">
                     {highlight.icon}
                   </div>

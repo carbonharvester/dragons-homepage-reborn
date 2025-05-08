@@ -10,6 +10,7 @@ import {
   CarouselNext
 } from '@/components/ui/carousel';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface GalleryItem {
   src: string;
@@ -43,21 +44,23 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
                 key={index} 
                 className={isMobile ? "basis-full" : "basis-full md:basis-1/2 lg:basis-1/3"}
               >
-                <div className={`rounded-lg overflow-hidden ${isMobile ? 'h-96' : 'h-80'}`}>
-                  {item.type === 'video' ? (
-                    <video
-                      src={item.src}
-                      className="w-full h-full object-cover"
-                      controls
-                      muted
-                    />
-                  ) : (
-                    <img
-                      src={item.src}
-                      alt={item.alt}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  )}
+                <div className={`rounded-lg overflow-hidden ${isMobile ? 'mx-2' : 'mx-1'}`}>
+                  <AspectRatio ratio={1}>
+                    {item.type === 'video' ? (
+                      <video
+                        src={item.src}
+                        className="w-full h-full object-cover"
+                        controls
+                        muted
+                      />
+                    ) : (
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                      />
+                    )}
+                  </AspectRatio>
                 </div>
               </CarouselItem>
             ))}
