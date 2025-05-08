@@ -8,6 +8,7 @@ import TripItinerary from './TripItinerary';
 import TripCTA from './TripCTA';
 import ProgramBrochure from '../ProgramBrochure';
 import Testimonials from '../Testimonials';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface TripDetail {
   label: string;
@@ -67,6 +68,8 @@ const TripBrochureContent = ({
   hideOverview = false,
   hideHighlights = false
 }: TripBrochureContentProps) => {
+  const isMobile = useIsMobile();
+
   return <div className="container py-0">
       {/* Trip Overview */}
       {!hideOverview && <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />}
@@ -76,14 +79,14 @@ const TripBrochureContent = ({
           <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Trip Highlights</h2>
           <TripHighlights highlights={tripHighlights} />
         </div>}
+
+      {/* Learning Outcomes */}
+      <TripLearningOutcomes outcomes={learningOutcomes} />
       
-      {/* Photo Gallery - using ScrollableGallery component */}
+      {/* Photo Gallery - Now positioned depending on device */}
       <ScrollableGallery 
         images={galleryImages} 
       />
-      
-      {/* Learning Outcomes */}
-      <TripLearningOutcomes outcomes={learningOutcomes} />
       
       {/* Sample Itinerary */}
       <TripItinerary itineraryDays={tripItinerary} />

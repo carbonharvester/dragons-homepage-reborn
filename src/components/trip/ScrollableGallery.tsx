@@ -9,6 +9,7 @@ import {
   CarouselPrevious,
   CarouselNext
 } from '@/components/ui/carousel';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface GalleryItem {
   src: string;
@@ -21,6 +22,8 @@ interface ScrollableGalleryProps {
 }
 
 const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
+  const isMobile = useIsMobile();
+
   return (
     <div className="mt-24 mb-16">
       <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Photo Gallery</h2>
@@ -36,8 +39,11 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
         >
           <CarouselContent className="pb-4">
             {images.map((item, index) => (
-              <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
-                <div className="rounded-lg overflow-hidden h-80">
+              <CarouselItem 
+                key={index} 
+                className={isMobile ? "basis-full" : "basis-full md:basis-1/2 lg:basis-1/3"}
+              >
+                <div className={`rounded-lg overflow-hidden ${isMobile ? 'h-96' : 'h-80'}`}>
                   {item.type === 'video' ? (
                     <video
                       src={item.src}
