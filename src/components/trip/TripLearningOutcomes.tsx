@@ -17,7 +17,7 @@ const TripLearningOutcomes = ({ outcomes }: TripLearningOutcomesProps) => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {outcomes.map((outcome, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+          <div key={index} className="bg-white p-4 md:p-6 rounded-lg shadow-sm">
             <h3 className="text-lg font-bold mb-2 text-dragon-dark">{outcome.title}</h3>
             <p className="text-dragon-gray">{outcome.description}</p>
           </div>
