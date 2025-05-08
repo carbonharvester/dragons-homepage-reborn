@@ -22,7 +22,7 @@ const TripLearningOutcomes = ({ outcomes }: TripLearningOutcomesProps) => {
   const isMobile = useIsMobile();
 
   return (
-    <div className="mb-16 bg-dragon-beige p-8 md:p-12 rounded-lg">
+    <div className={`mb-16 bg-dragon-beige p-8 md:p-12 rounded-lg ${!isMobile ? 'max-w-[900px] mx-auto' : ''}`}>
       <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Learning Outcomes</h2>
       
       {isMobile ? (
