@@ -65,8 +65,8 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
           
           {isMobile ? (
             <div className="flex justify-center mt-4">
-              <CarouselPrevious className="static mr-2 translate-y-0 relative" />
-              <CarouselNext className="static ml-2 translate-y-0 relative" />
+              <CarouselPrevious className="static mr-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
+              <CarouselNext className="static ml-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
             </div>
           ) : (
             <>
