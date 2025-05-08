@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Quote, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Sheet, SheetContent } from '@/components/ui/sheet';
 
 const testimonials = [{
   quote: "It was a once in a lifetime experience. I learned how to be grateful for the things I have and the things that are around me. because the people and the things we saw in Kenya, they didn't have too much, but they were still happy. And with the things that we have, we can still be happy even without wanting more.",
@@ -28,11 +29,12 @@ const testimonials = [{
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
+  const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
   const isMobile = useIsMobile();
 
   // Add effect to load Vimeo player script when needed
   useEffect(() => {
-    if (showVideo && testimonials[currentIndex].videoUrl) {
+    if ((showVideo || isFullscreenOpen) && testimonials[currentIndex].videoUrl) {
       const script = document.createElement('script');
       script.src = 'https://player.vimeo.com/api/player.js';
       script.async = true;
@@ -41,21 +43,27 @@ const Testimonials = () => {
         document.body.removeChild(script);
       };
     }
-  }, [showVideo, currentIndex]);
+  }, [showVideo, isFullscreenOpen, currentIndex]);
   
   const handlePrev = () => {
     setCurrentIndex(prevIndex => prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1);
     setShowVideo(false);
+    setIsFullscreenOpen(false);
   };
   
   const handleNext = () => {
     setCurrentIndex(prevIndex => prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1);
     setShowVideo(false);
+    setIsFullscreenOpen(false);
   };
   
   const handlePlayVideo = () => {
     if (testimonials[currentIndex].videoUrl) {
-      setShowVideo(true);
+      if (isMobile) {
+        setIsFullscreenOpen(true);
+      } else {
+        setShowVideo(true);
+      }
     }
   };
   
@@ -139,6 +147,7 @@ const Testimonials = () => {
                   onClick={() => {
                     setCurrentIndex(index);
                     setShowVideo(false);
+                    setIsFullscreenOpen(false);
                   }} 
                   className={`w-3 h-3 rounded-full ${currentIndex === index ? 'bg-white' : 'bg-white/40'}`} 
                   aria-label={`Go to testimonial ${index + 1}`} 
@@ -151,6 +160,23 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile fullscreen video sheet */}
+      <Sheet open={isFullscreenOpen} onOpenChange={setIsFullscreenOpen}>
+        <SheetContent side="bottom" className="p-0 h-full max-h-[100dvh]">
+          <div className="w-full h-full bg-black flex items-center justify-center">
+            <div className="w-full h-full">
+              <iframe 
+                src={`https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1`} 
+                className="w-full h-full" 
+                frameBorder="0" 
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                title={`${currentTestimonial.author}'s story fullscreen`}>
+              </iframe>
+            </div>
+          </div>
+        </SheetContent>
+      </Sheet>
     </section>
   );
 };
