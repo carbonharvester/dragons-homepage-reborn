@@ -75,7 +75,7 @@ const TripBrochureContent = ({
       {!hideOverview && <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />}
       
       {/* Trip Highlights */}
-      {!hideHighlights && <div className="mb-16">
+      {!hideHighlights && <div className="mb-16 max-w-[900px] mx-auto">
           <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Trip Highlights</h2>
           <TripHighlights highlights={tripHighlights} />
         </div>}
