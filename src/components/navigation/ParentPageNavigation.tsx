@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 
 interface ParentPageNavigationProps {
   parentPath: string;
@@ -11,11 +11,10 @@ interface ParentPageNavigationProps {
 const ParentPageNavigation = ({ parentPath, parentName }: ParentPageNavigationProps) => {
   return (
     <div className="flex items-center text-sm text-dragon-gray mb-4">
-      <Link to={parentPath} className="hover:text-dragon transition-colors">
-        {parentName}
+      <Link to={parentPath} className="flex items-center hover:text-dragon transition-colors">
+        <ChevronLeft className="mr-1" size={16} />
+        <span>Back to {parentName}</span>
       </Link>
-      <ChevronRight className="mx-2" size={14} />
-      <span>Current Trip</span>
     </div>
   );
 };
