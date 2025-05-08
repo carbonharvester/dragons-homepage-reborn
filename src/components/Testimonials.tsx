@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const testimonials = [{
   quote: "It was a once in a lifetime experience. I learned how to be grateful for the things I have and the things that are around me. because the people and the things we saw in Kenya, they didn't have too much, but they were still happy. And with the things that we have, we can still be happy even without wanting more.",
@@ -26,6 +28,7 @@ const testimonials = [{
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
+  const isMobile = useIsMobile();
 
   // Add effect to load Vimeo player script when needed
   useEffect(() => {
@@ -60,33 +63,25 @@ const Testimonials = () => {
   const vimeoId = currentTestimonial.vimeoId;
   const vimeoThumbnail = vimeoId ? `https://vumbnail.com/${vimeoId}.jpg` : currentTestimonial.videoThumbnail;
   
-  return <section id="stories" className="py-20 bg-dragon mb-16">
-      <div className="container-wide">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-academy font-bold text-white mb-4">Student Stories</h2>
-          <p className="text-lg md:text-xl text-white opacity-80 max-w-3xl mx-auto">Hear directly from past participants about their transformative experiences in Africa.</p>
+  return (
+    <section id="stories" className="py-16 bg-dragon w-full">
+      <div className="container-wide px-4 md:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-4xl font-academy font-bold text-white mb-4">Student Stories</h2>
+          <p className="text-base md:text-xl text-white opacity-80 max-w-3xl mx-auto">Hear directly from past participants about their transformative experiences in Africa.</p>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg p-8 md:p-12 shadow-lg">
+          <div className="bg-white rounded-lg p-6 md:p-12 shadow-lg">
             {/* Video Thumbnail or Embedded Video */}
-            <div className="mb-8">
+            <div className="mb-6">
               {showVideo && currentTestimonial.videoUrl ? (
-                <div style={{
-                  padding: '56.25% 0 0 0',
-                  position: 'relative'
-                }}>
+                <div className="aspect-video w-full">
                   <iframe 
                     src={`https://player.vimeo.com/video/${vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479`} 
                     frameBorder="0" 
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%'
-                    }} 
+                    className="w-full h-full"
                     title={`${currentTestimonial.author}'s story`}>
                   </iframe>
                 </div>
@@ -117,11 +112,11 @@ const Testimonials = () => {
               )}
             </div>
             
-            <div className="text-dragon-yellow mb-6">
-              <Quote size={48} />
+            <div className="text-dragon-yellow mb-4">
+              <Quote size={40} />
             </div>
-            <blockquote className="mb-8">
-              <p className="text-xl md:text-2xl font-serif text-dragon-dark mb-6">
+            <blockquote className="mb-6">
+              <p className="text-base md:text-xl font-serif text-dragon-dark mb-4">
                 {currentTestimonial.quote}
               </p>
               <footer>
@@ -133,7 +128,7 @@ const Testimonials = () => {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex justify-center mt-8 gap-4">
+          <div className="flex justify-center mt-6 gap-4">
             <button onClick={handlePrev} className="p-3 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors" aria-label="Previous testimonial">
               <ChevronLeft size={24} />
             </button>
@@ -156,7 +151,8 @@ const Testimonials = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default Testimonials;
