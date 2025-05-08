@@ -17,17 +17,17 @@ const FoodForEducation = () => {
       
       <main>
         {/* Hero section is part of TripBrochureWrapper */}
-        <TripBrochureWrapper tripType="food-for-education" heroOnly={true} />
+        <TripBrochureWrapper tripType="food-for-education" heroOnly={true} isSchoolTrip={true} />
         
         {/* Navigation and content in a continuous section */}
         <div className="bg-white">
           {/* Navigation section */}
           <div className="container-wide py-4">
-            <TripBrochureWrapper tripType="food-for-education" navigationOnly={true} />
+            <TripBrochureWrapper tripType="food-for-education" navigationOnly={true} isSchoolTrip={true} />
           </div>
           
           {/* Content section with no top padding */}
-          <TripBrochureWrapper tripType="food-for-education" contentOnly={true} />
+          <TripBrochureWrapper tripType="food-for-education" contentOnly={true} isSchoolTrip={true} />
         </div>
       </main>
       <Footer />
