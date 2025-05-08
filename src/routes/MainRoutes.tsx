@@ -70,7 +70,7 @@ const MainRoutes = () => {
       <Route path="/programs/roots-of-change" element={<Navigate to="/programs/feeding-the-future" replace />} />
       <Route path="/programs/roots-of-change/itinerary" element={<Navigate to="/programs/feeding-the-future/itinerary" replace />} />
       
-      {/* Adult Programs */}
+      {/* Adult Trips */}
       <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
       
       {/* Resource Pages */}

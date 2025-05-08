@@ -12,7 +12,7 @@ import { Route, Calendar, Map, Leaf } from "lucide-react";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 const AdultPrograms = () => {
-  // Adult programs data
+  // Adult trips data
   const programs = [
     { 
       title: "Permaculture Design Course", 
@@ -29,16 +29,18 @@ const AdultPrograms = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Adult Programs"
+        title="Adult Trips"
         description="Engage in transformative learning experiences that combine cultural immersion, skill development, and meaningful contribution to local communities."
-        keywords="adult programs, educational travel, cultural immersion, skill development, Kenya, Africa"
+        keywords="adult trips, educational travel, cultural immersion, skill development, Kenya, Africa"
       />
       <Header />
       <main>
         <section className="relative h-[60vh] min-h-[500px] flex items-center">
           {/* Background Image */}
-          <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1603202662747-00e33e7d1468?q=80&w=2069&auto=format')] bg-cover bg-center">
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute inset-0 z-0 bg-black">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1603202662747-00e33e7d1468?q=80&w=2069&auto=format')] bg-cover bg-center opacity-80">
+              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+            </div>
           </div>
           
           {/* Content */}
@@ -59,9 +61,9 @@ const AdultPrograms = () => {
         <section className="py-16 bg-white">
           <div className="container-wide">
             <div className="text-center mb-12">
-              <h2 className="section-heading">Transformative Programs for Adults</h2>
+              <h2 className="section-heading">Transformative Trips for Adults</h2>
               <p className="section-subheading mx-auto">
-                Our adult programs are designed for curious minds seeking authentic experiences 
+                Our adult trips are designed for curious minds seeking authentic experiences 
                 that combine learning, adventure, and positive impact.
               </p>
             </div>
@@ -111,10 +113,10 @@ const AdultPrograms = () => {
             </div>
             
             <div className="bg-dragon-beige rounded-lg p-8 text-center">
-              <h3 className="text-2xl font-bold text-dragon-dark mb-4">Custom Programs for Groups</h3>
+              <h3 className="text-2xl font-bold text-dragon-dark mb-4">Custom Trips for Groups</h3>
               <p className="text-lg mb-6 max-w-2xl mx-auto">
                 Looking for a specialized experience for your organization, professional group, 
-                or circle of friends? We design custom programs tailored to your interests and objectives.
+                or circle of friends? We design custom trips tailored to your interests and objectives.
               </p>
               <div className="flex justify-center flex-wrap gap-4">
                 <CalendlyEmbed

@@ -46,7 +46,7 @@ export const programCategories = [
     programs: [],
   },
   {
-    title: "Adult Programs",
+    title: "Adult Trips",
     href: "/adult-programs",
     description: "Educational travel experiences designed for adults.",
     programs: [
