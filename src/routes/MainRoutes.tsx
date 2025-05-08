@@ -60,7 +60,6 @@ const MainRoutes = () => {
       <Route path="/programs/food-for-education" element={<FoodForEducation />} />
       <Route path="/programs/community-conservation" element={<CommunityConservation />} />
       <Route path="/programs/empowering-women" element={<EmpoweringWomen />} />
-      <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
       
       {/* Summer Programs */}
       <Route path="/programs/capturing-kenya" element={<CapturingKenya />} />

@@ -1,4 +1,3 @@
-
 export const programCategories = [
   {
     title: "School Trips",
@@ -54,11 +53,6 @@ export const programCategories = [
         title: "Permaculture Design Course",
         href: "/programs/permaculture-design-course",
         description: "Learn permaculture principles while contributing to sustainable food systems.",
-      },
-      {
-        title: "Safari & Conservation",
-        href: "/programs/safari-sustainability",
-        description: "Combine classic safari experiences with hands-on conservation work.",
       },
     ],
   },
