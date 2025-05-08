@@ -36,7 +36,7 @@ const TripLearningOutcomes = ({ outcomes }: TripLearningOutcomesProps) => {
           <CarouselContent>
             {outcomes.map((outcome, index) => (
               <CarouselItem key={index} className="basis-full">
-                <div className="bg-white p-6 mx-4 rounded-lg shadow-sm aspect-square flex flex-col justify-center">
+                <div className="bg-white p-6 mx-4 rounded-lg shadow-sm h-[350px] flex flex-col justify-center items-center text-center">
                   <h3 className="text-lg font-bold mb-3 text-dragon-dark">{outcome.title}</h3>
                   <p className="text-dragon-gray">{outcome.description}</p>
                 </div>
