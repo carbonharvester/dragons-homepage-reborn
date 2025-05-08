@@ -5,6 +5,7 @@ import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { 
   tripDetails as rawTripDetails, 
   tripHighlights as rawTripHighlights, 
@@ -26,6 +27,8 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
   contentOnly = false,
   navigationOnly = false
 }) => {
+  const isMobile = useIsMobile();
+  
   // Transform Lucide icons to React elements for compatibility
   const tripDetails = rawTripDetails.map(detail => ({
     ...detail,
@@ -88,8 +91,9 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               projectGoals={foodProjectGoals}
             />
             
-            {/* Trip Highlights with explicit heading */}
-            <TripHighlightsWrapper />
+            {/* Trip Highlights with explicit heading - only show if we're not on mobile
+                since mobile will show highlights through TripBrochureContent */}
+            {!isMobile && <TripHighlightsWrapper />}
             
             {/* Continue with other components */}
             <TripBrochureContent 
@@ -103,7 +107,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               description={foodDescription}
               projectGoals={foodProjectGoals}
               hideOverview={true}
-              hideHighlights={true}
+              hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
             />
           </div>
         </>

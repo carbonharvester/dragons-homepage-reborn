@@ -5,6 +5,7 @@ import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { 
   tripDetails, 
   tripHighlights, 
@@ -26,6 +27,8 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
   contentOnly = false,
   navigationOnly = false
 }) => {
+  const isMobile = useIsMobile();
+  
   // Custom description and project goals specific to the Water Empowering Women program
   const waterDescription = [
     "In rural Kenyan communities near Tsavo, women and their families often face significant barriers to accessing clean water. Women and girls typically bear the responsibility of fetching water, walking long distances (sometimes 5–10 km daily) to rivers or unreliable sources.",
@@ -68,8 +71,8 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
               projectGoals={waterProjectGoals}
             />
             
-            {/* Trip Highlights with explicit heading */}
-            <TripHighlightsWrapper />
+            {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
+            {!isMobile && <TripHighlightsWrapper />}
             
             {/* Continue with other components */}
             <TripBrochureContent 
@@ -83,7 +86,7 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
               description={waterDescription}
               projectGoals={waterProjectGoals}
               hideOverview={true}
-              hideHighlights={true}
+              hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
             />
           </div>
         </>

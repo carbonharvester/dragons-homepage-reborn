@@ -1,8 +1,9 @@
 
 import React from 'react';
-import TripDetailsCard from './TripDetails';
+import TripDetailsCard from './TripDetailsCard';
 import { ReactNode } from 'react';
 import { Users, Calendar, MapPin } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface TripDetailProps {
   label: string;
@@ -18,11 +19,18 @@ interface TripOverviewProps {
 }
 
 const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: TripOverviewProps) => {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="mb-16 mt-2">
       <h2 className="text-3xl font-academy mb-6 text-dragon-dark">Trip Overview</h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 flex flex-col">
+        {/* Show TripDetailsCard first on mobile */}
+        {isMobile && (
+          <TripDetailsCard tripDetails={tripDetails} />
+        )}
+        
+        <div className={`${isMobile ? '' : 'lg:col-span-2'} flex flex-col`}>
           {description ? (
             description.map((paragraph, index) => (
               <p key={index} className="text-lg text-dragon-gray mb-6">
@@ -63,7 +71,10 @@ const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: Tr
           </div>
         </div>
         
-        <TripDetailsCard tripDetails={tripDetails} />
+        {/* Show TripDetailsCard in normal position on desktop */}
+        {!isMobile && (
+          <TripDetailsCard tripDetails={tripDetails} />
+        )}
       </div>
       
       {perfectFor && (
