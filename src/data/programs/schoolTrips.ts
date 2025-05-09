@@ -30,6 +30,6 @@ export const schoolTrips = [
     image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png", 
     link: "/programs/empowering-women", 
     icon: Globe,
-    ageGroup: "Ages 14-18"
+    ageGroup: "Ages 15-18"
   }
 ];
