@@ -26,7 +26,7 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
   const isMobile = useIsMobile();
 
   return (
-    <Card className={`overflow-hidden border-none shadow-md h-full flex flex-col ${isMobile ? 'min-h-[540px]' : ''}`}>
+    <Card className={`overflow-hidden border-none shadow-md h-full flex flex-col ${isMobile ? 'min-h-[580px]' : ''}`}>
       <div className="relative">
         <AspectRatio ratio={16/9} className="bg-muted">
           <img 
@@ -42,7 +42,7 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
       </div>
           
       <CardContent className={`p-6 flex flex-col justify-between ${isMobile ? 'flex-grow' : 'h-full'}`}>
-        <div className={isMobile ? 'min-h-[250px]' : ''}>
+        <div className={isMobile ? 'min-h-[280px]' : ''}>
           <h3 className="text-lg font-bold mb-1 text-dragon-dark line-clamp-2">{program.title}</h3>
           <p className="text-dragon-gray mb-3">{program.description}</p>
         </div>
