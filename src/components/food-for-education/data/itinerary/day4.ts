@@ -7,6 +7,6 @@ export const day4 = {
     "Introduction to their mission to provide school meals to children across Kenya",
     "Tour facilities to understand how it works",
     "Visit Africa Collects Textiles, where Kapes sends old uniforms to be upcycled",
-    "Participate in weaving workshops using hand looms"
+    "Participate in weaving workshops using hand looms, turning old uniforms into tea coasters and pencil cases"
   ]
 };
