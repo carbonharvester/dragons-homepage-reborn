@@ -23,7 +23,7 @@ interface ProgramCardProps {
 
 const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
   return (
-    <Card className="overflow-hidden border-none shadow-md h-full flex flex-col">
+    <Card className="overflow-hidden border-none shadow-md h-full flex flex-col w-full">
       <div className="relative h-48 overflow-hidden">
         <AspectRatio ratio={16/9} className="bg-muted">
           <img 
@@ -38,12 +38,12 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
         </AspectRatio>
       </div>
           
-      <CardContent className="p-6 flex-grow flex flex-col justify-between">
+      <CardContent className="p-6 flex-grow flex flex-col justify-between h-full">
         <div>
           <h3 className="text-lg md:text-lg font-bold mb-3 text-dragon-dark">{program.title}</h3>
           <p className="text-dragon-gray mb-4">{program.description}</p>
         </div>
-        <div>
+        <div className="mt-auto">
           <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2">
             <div className="flex items-center">
               <Route size={16} className="mr-1" />

@@ -12,7 +12,7 @@ const SchoolTripsList = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
         {schoolTrips.map((program, index) => (
-          <div key={index} className="transform transition-all hover:-translate-y-2 h-full flex">
+          <div key={index} className="transform transition-all hover:-translate-y-2 h-full flex w-full">
             <ProgramCard 
               program={program} 
               buttonClassName="bg-dragon-yellow text-dragon-dark hover:bg-dragon-yellow/90 hover:text-dragon-dark border-dragon-yellow"
