@@ -6,8 +6,11 @@ import SEO from '@/components/SEO';
 import VideoSection from '@/components/VideoSection';
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Calendar, Users, Globe, Equal } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const AboutUs = () => {
+  const isMobile = useIsMobile();
+  
   return <div className="min-h-screen flex flex-col">
       <SEO title="About Us" description="From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters." keywords="Mission Kapes, educational travel, student trips, sustainability, Africa, Kenya" />
       <Header />
@@ -45,12 +48,14 @@ const AboutUs = () => {
                   Through Kapes Uniforms, we address a critical barrier to education—many children miss school simply because they cannot afford required uniforms. That's how our name emerged—we believe our uniforms have superpowers through the good they do, and those who wear them are heroes. Hence, heroes wear Kapes.
                 </p>
                 
-                {/* New image from first sponsored trip */}
+                {/* New image from first sponsored trip - caption hidden on mobile */}
                 <div className="my-8 relative rounded-lg overflow-hidden">
                   <img src="/lovable-uploads/c0bdd0e5-7b79-492d-8c2d-d91d5b892cee.png" alt="Children from a local Kenyan school wearing Kapes uniforms during our first sponsored trip" className="w-full h-auto rounded-lg" />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                    <p className="text-white text-sm md:text-base font-medium">Our Founder Matthew Benjamin and students from Marasi Primary School in Kenya during our first sponsored trip in 2022.</p>
-                  </div>
+                  {!isMobile && (
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                      <p className="text-white text-sm md:text-base font-medium">Our Founder Matthew Benjamin and students from Marasi Primary School in Kenya during our first sponsored trip in 2022.</p>
+                    </div>
+                  )}
                 </div>
                 
                 <p className="mb-4">
