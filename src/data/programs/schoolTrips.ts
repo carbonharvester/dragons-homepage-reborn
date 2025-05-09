@@ -19,7 +19,8 @@ export const schoolTrips = [
     description: "Transform unused school land into thriving gardens through hands-on permaculture farming. Students will build sustainable agricultural systems that provide ongoing meals for local children, ensuring lasting food security and resilience for communities.", 
     image: "/lovable-uploads/3a363a5f-b4be-477f-aea7-e36861d4faf4.png", 
     link: "/programs/food-for-education", 
-    icon: Globe 
+    icon: Globe,
+    ageGroup: "Ages 15-18"
   },
   { 
     title: "Water Empowering Women", 
@@ -28,6 +29,7 @@ export const schoolTrips = [
     description: "Students will engage with rural women, participate in water projects with Kenyan counterparts, and experience the daily water challenges local women face. They'll learn about sustainable water solutions, gender equity, and make a lasting impact by installing water tanks while experiencing Tsavo's stunning wildlife in Kenya.", 
     image: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png", 
     link: "/programs/empowering-women", 
-    icon: Globe 
+    icon: Globe,
+    ageGroup: "Ages 14-18"
   }
 ];
