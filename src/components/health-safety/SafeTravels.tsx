@@ -35,7 +35,7 @@ const SafeTravels = () => {
   return <section className="py-12 bg-white">
       <div className="container-wide">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-academy text-dragon-dark mb-6">Travel Protection with Safe Travels</h2>
+          <h2 className="text-3xl font-academy text-dragon-dark mb-6">Our Cover Includes:</h2>
           
           <div className="bg-dragon-beige p-6 rounded-lg mb-8">
             <p className="text-dragon-gray mb-4">To provide piece of mind and assurance in the unlikely event that something was to occur, we are partnered with Safe Travels by rescue.co to provide comprehensive protection for all our travellers. Safe Travels is the only fully comprehensive protection to include both ground and air rescue cover across East Africa.</p>
