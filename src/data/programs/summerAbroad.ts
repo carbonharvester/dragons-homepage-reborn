@@ -6,7 +6,7 @@ export const summerAbroad = [
     title: "Feeding the Future", 
     duration: "4 Weeks", 
     season: "Jul 28 - Aug 25 2026", 
-    description: "Join sustainable agriculture initiatives to address food security challenges in rural communities through hands-on farming and education programmes.", 
+    description: "Join sustainable agriculture initiatives to tackle food security challenges in rural communities through hands-on farming, seed-saving, and education programmes. Students collaborate with local farmers, learn traditional techniques, and promote resilient food systems, fostering community empowerment and sustainability while immersed in vibrant cultural landscapes.", 
     image: "/lovable-uploads/15e3c0c3-6461-43da-866c-88c8a2129885.png", 
     link: "/programs/feeding-the-future", 
     icon: Globe, 
