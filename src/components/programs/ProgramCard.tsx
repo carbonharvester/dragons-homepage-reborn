@@ -38,38 +38,42 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
         </AspectRatio>
       </div>
           
-      <CardContent className="p-6 flex-grow flex flex-col">
-        <h3 className="text-lg md:text-lg font-bold mb-3 text-dragon-dark">{program.title}</h3>
-        <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
-        <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2">
-          <div className="flex items-center">
-            <Route size={16} className="mr-1" />
-            <span>{program.duration}</span>
-          </div>
-          <div className="flex items-center">
-            <Calendar size={16} className="mr-1" />
-            <span>{program.season}</span>
-          </div>
-          {program.ageGroup && (
-            <div className="flex items-center">
-              <Users size={16} className="mr-1" />
-              <span>{program.ageGroup}</span>
-            </div>
-          )}
-          {program.location && (
-            <div className="flex items-center">
-              <MapPin size={16} className="mr-1" />
-              <span>{program.location}</span>
-            </div>
-          )}
+      <CardContent className="p-6 flex-grow flex flex-col justify-between">
+        <div>
+          <h3 className="text-lg md:text-lg font-bold mb-3 text-dragon-dark">{program.title}</h3>
+          <p className="text-dragon-gray mb-4">{program.description}</p>
         </div>
-        <Button 
-          variant="outline" 
-          className={buttonClassName || "w-full border-dragon text-dragon hover:bg-dragon hover:text-white"} 
-          asChild
-        >
-          <Link to={program.link}>Learn More</Link>
-        </Button>
+        <div>
+          <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2">
+            <div className="flex items-center">
+              <Route size={16} className="mr-1" />
+              <span>{program.duration}</span>
+            </div>
+            <div className="flex items-center">
+              <Calendar size={16} className="mr-1" />
+              <span>{program.season}</span>
+            </div>
+            {program.ageGroup && (
+              <div className="flex items-center">
+                <Users size={16} className="mr-1" />
+                <span>{program.ageGroup}</span>
+              </div>
+            )}
+            {program.location && (
+              <div className="flex items-center">
+                <MapPin size={16} className="mr-1" />
+                <span>{program.location}</span>
+              </div>
+            )}
+          </div>
+          <Button 
+            variant="outline" 
+            className={buttonClassName || "w-full border-dragon text-dragon hover:bg-dragon hover:text-white"} 
+            asChild
+          >
+            <Link to={program.link}>Learn More</Link>
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );
