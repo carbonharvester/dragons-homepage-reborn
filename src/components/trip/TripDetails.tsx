@@ -1,3 +1,9 @@
 
+import React from 'react';
 import TripDetailsCard from './TripDetailsCard';
-export default TripDetailsCard;
+
+const TripDetails = () => {
+  return <TripDetailsCard />;
+};
+
+export default TripDetails;

@@ -24,7 +24,7 @@ interface ProgramCardProps {
 const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
   return (
     <Card className="overflow-hidden border-none shadow-md h-full flex flex-col">
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative">
         <AspectRatio ratio={16/9} className="bg-muted">
           <img 
             src={program.image} 
@@ -38,27 +38,27 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
         </AspectRatio>
       </div>
           
-      <CardContent className="p-6 flex-grow flex flex-col">
-        <h3 className="text-lg md:text-lg font-bold mb-3 text-dragon-dark">{program.title}</h3>
-        <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
+      <CardContent className="p-6 flex-grow flex flex-col h-full">
+        <h3 className="text-lg md:text-lg font-bold mb-3 text-dragon-dark line-clamp-2">{program.title}</h3>
+        <p className="text-dragon-gray mb-4 flex-grow line-clamp-4">{program.description}</p>
         <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2">
           <div className="flex items-center">
-            <Route size={16} className="mr-1" />
+            <Route size={16} className="mr-1 min-w-6" />
             <span>{program.duration}</span>
           </div>
           <div className="flex items-center">
-            <Calendar size={16} className="mr-1" />
+            <Calendar size={16} className="mr-1 min-w-6" />
             <span>{program.season}</span>
           </div>
           {program.ageGroup && (
             <div className="flex items-center">
-              <Users size={16} className="mr-1" />
+              <Users size={16} className="mr-1 min-w-6" />
               <span>{program.ageGroup}</span>
             </div>
           )}
           {program.location && (
             <div className="flex items-center">
-              <MapPin size={16} className="mr-1" />
+              <MapPin size={16} className="mr-1 min-w-6" />
               <span>{program.location}</span>
             </div>
           )}
