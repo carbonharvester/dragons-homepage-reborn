@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/health-safety/HeroSection";
 import SafetyApproach from "@/components/health-safety/SafetyApproach";
+import SafeTravels from "@/components/health-safety/SafeTravels";
 import HealthInformation from "@/components/health-safety/HealthInformation";
 import SafetyGuidelines from "@/components/health-safety/SafetyGuidelines";
 
@@ -14,6 +15,7 @@ const HealthAndSafety = () => {
       <main className="flex-grow">
         <HeroSection />
         <SafetyApproach />
+        <SafeTravels />
         <HealthInformation />
         <SafetyGuidelines />
       </main>
