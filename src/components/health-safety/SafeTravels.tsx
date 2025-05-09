@@ -2,6 +2,7 @@
 import React from "react";
 import { Ambulance, Shield, MapPin, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import VideoPlayer from "@/components/video/VideoPlayer";
 
 const SafeTravels = () => {
   const services = [
@@ -58,6 +59,13 @@ const SafeTravels = () => {
             <p className="text-dragon-gray italic">
               *East African cover includes Kenya, Tanzania (including Zanzibar), Rwanda, and Uganda.
             </p>
+          </div>
+          
+          <div className="mb-12">
+            <VideoPlayer 
+              videoId="g5D8nP4urcg"
+              title="Safe Travels by Rescue.co"
+            />
           </div>
           
           <h3 className="text-2xl font-academy text-dragon-dark mb-6">All Our Plans Include</h3>
