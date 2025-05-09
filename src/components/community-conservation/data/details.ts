@@ -32,4 +32,3 @@ export const tripDetails: TripDetail[] = [
 ];
 
 export const perfectFor = "Ages 12-15, Environmental science, Conservation enthusiasts, CAS & Duke of Edinburgh, Wildlife protection, Outdoor adventure";
-
