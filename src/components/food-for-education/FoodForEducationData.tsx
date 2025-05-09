@@ -33,7 +33,8 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
   // Custom description and project goals specific to the Food For Education program
   const foodDescription = [
     "This 8 day journey to Kenya immerses students in sustainable food systems and community development. Partnering with local farmers and educators, students will explore traditional and modern agricultural practices, contribute to food security initiatives, and learn about the challenges and opportunities in ensuring access to nutritious food for all.",
-    "Through hands-on activities, cultural exchanges, and visits to local farms and markets, students will gain a deeper understanding of the interconnectedness of food, culture, and community resilience."
+    "Through hands-on activities, cultural exchanges, and visits to local farms and markets, students will gain a deeper understanding of the interconnectedness of food, culture, and community resilience.",
+    "This trip is particularly impactful for schools participating in our takeback scheme, where we provide a free meal for every item returned. This circular approach connects students directly to the impact of their actions and enhances the trip's educational value."
   ];
   
   const foodProjectGoals = [
