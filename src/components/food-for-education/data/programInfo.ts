@@ -10,6 +10,6 @@ export const programData = {
     "Supply produce for school meals to address hunger",
     "Create sustainable farming systems using permaculture",
     "Educate and empower students to address food insecurity",
-    "Connect schools to our takeback scheme providing a free meal for every item returned"
+    "Connect schools to the Kapes Uniforms takeback scheme providing a free meal for every item returned"
   ]
 };
