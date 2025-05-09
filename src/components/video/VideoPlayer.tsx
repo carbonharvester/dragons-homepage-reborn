@@ -36,33 +36,32 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
     }
   }, [videoId, isShopifyVideo, customThumbnail]);
   
+  // Handle play button click - trigger immediate play
   const handlePlayClick = () => {
-    // Set playing state immediately
     setIsPlaying(true);
   };
   
-  // Use a separate useEffect to handle video playback when isPlaying changes
-  // This creates a more reliable trigger for playback
+  // Handle actual video playback when isPlaying state changes
   useEffect(() => {
-    if (isPlaying && isShopifyVideo && videoRef.current) {
-      // Ensure the video is ready to play
-      videoRef.current.load();
-      
-      // Give a tiny delay to ensure DOM is ready
-      const playVideo = () => {
-        if (videoRef.current) {
-          const playPromise = videoRef.current.play();
-          
-          if (playPromise !== undefined) {
-            playPromise.catch(error => {
-              console.log('Auto-play was prevented:', error);
-            });
+    if (isPlaying) {
+      if (isShopifyVideo && videoRef.current) {
+        // For Shopify videos using HTML5 video element
+        videoRef.current.load();
+        
+        // Use setTimeout to ensure DOM updates before playing
+        setTimeout(() => {
+          if (videoRef.current) {
+            const playPromise = videoRef.current.play();
+            
+            if (playPromise !== undefined) {
+              playPromise.catch(error => {
+                console.log('Auto-play was prevented:', error);
+              });
+            }
           }
-        }
-      };
-      
-      // Execute immediately but use setTimeout to break the call stack
-      setTimeout(playVideo, 0);
+        }, 10); // Small timeout to ensure DOM is ready
+      }
+      // For Vimeo videos, the iframe's autoplay parameter handles playback
     }
   }, [isPlaying, isShopifyVideo]);
   
@@ -96,10 +95,12 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
         <div className="relative">
           <AspectRatio ratio={16 / 9}>
             <div className="w-full h-full bg-black">
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20 z-10">
+              <div 
+                className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20 z-10 cursor-pointer"
+                onClick={handlePlayClick}
+              >
                 <Button 
-                  className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark" 
-                  onClick={handlePlayClick} 
+                  className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark pointer-events-none" 
                   aria-label="Play video"
                 >
                   <Play className="h-8 w-8" />
