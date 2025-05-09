@@ -58,7 +58,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Community Conservation"
-          subtitle="Our introductory school trip where students work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices."
+          subtitle="Our introductory school trip where students meet local conservation experts protecting animals and trees, see Kenya's wildlife up close and learn traditional ecological knowledge and sustainable practices."
           category="School Trip"
           imagePath="/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png"
         />
