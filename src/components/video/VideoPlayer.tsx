@@ -66,15 +66,14 @@ const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
                 </Button>
               </div>
               {isShopifyVideo ? (
-                <video 
-                  src={previewSrc}
-                  className="w-full h-full object-cover pointer-events-none" 
-                  muted
-                  loop
-                  autoPlay
-                  playsInline
-                  title={`${title} background preview`}
-                ></video>
+                <div 
+                  className="w-full h-full" 
+                  style={{ 
+                    backgroundImage: `url(https://cdn.shopify.com/videos/c/o/v/${videoId}.jpg)`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                ></div>
               ) : (
                 <iframe 
                   src={previewSrc}
