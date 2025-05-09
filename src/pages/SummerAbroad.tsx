@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -117,9 +116,14 @@ const SummerAbroad = () => {
             
             {/* Display Summer Abroad Programs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {/* Using the full descriptions from summerAbroad data directly */}
-              <ProgramCard program={summerAbroad[0]} />
-              <ProgramCard program={summerAbroad[1]} />
+              <ProgramCard program={{
+              ...summerAbroad[0],
+              description: "Perfect for future environmentalists: Join sustainable agriculture initiatives to tackle food security in rural communities through hands-on farming and education, feeding 200 children daily."
+            }} />
+              <ProgramCard program={{
+              ...summerAbroad[1],
+              description: "Ideal for aspiring photographers: Develop photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders, creating a short film for a conservation NGO."
+            }} />
             </div>
 
             {/* A Day in the Life Section - UPDATED WITH NEW IMAGE */}

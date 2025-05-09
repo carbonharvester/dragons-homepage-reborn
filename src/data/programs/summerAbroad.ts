@@ -17,7 +17,7 @@ export const summerAbroad = [
     title: "Capturing Kenya", 
     duration: "3 Weeks", 
     season: "Jul 28 - Aug 25 2026", 
-    description: "Develop photography and videography skills with expert guidance while documenting Kenya's stunning wildlife, diverse landscapes, and vibrant communities. Students create compelling visual narratives, collaborate with local conservationists, and contribute to awareness campaigns about environmental issues, building a professional portfolio of impactful work.", 
+    description: "Develop your photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders across Kenya.", 
     image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/1e93affc-4105-40dd-aa24-f5fd875d2fd5_d59babc0-95fd-4333-b3b9-754cd20f3610.jpg?v=1746515665", 
     link: "/programs/capturing-kenya", 
     icon: Camera, 
