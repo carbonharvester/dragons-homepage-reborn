@@ -1,5 +1,5 @@
 
-import { Clock, Calendar, Map, Users } from 'lucide-react';
+import { Clock, Calendar, Map, Users, Award, FileText } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 import React from 'react';
 
@@ -32,6 +32,16 @@ const tripDetailsData: TripDetailData[] = [
     label: "Group Size",
     value: "10-30 students",
     icon: Users
+  },
+  {
+    label: "Educational Credits",
+    value: "CAS Points, Duke of Edinburgh",
+    icon: Award
+  },
+  {
+    label: "Certificate",
+    value: "Kapes Food Stewardship Certificate",
+    icon: FileText
   }
 ];
 
