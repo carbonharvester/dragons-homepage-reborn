@@ -21,7 +21,7 @@ const VideoSection = ({
   return <section className="py-16 bg-slate-50">
       <div className="container-wide">
         <div className="text-center mb-10">
-          <h2 className="section-heading">Transforming Lives: Our First Adventure in Kenya</h2>
+          <h2 className="section-heading">Transforming Lives</h2>
           {description && <p className="section-subheading mx-auto">
               {description}
             </p>}
