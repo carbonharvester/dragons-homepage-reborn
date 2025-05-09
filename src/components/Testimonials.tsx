@@ -121,7 +121,7 @@ const Testimonials = () => {
               <Quote size={40} />
             </div>
             <blockquote className="mb-6">
-              <p className="text-base md:text-xl font-serif text-dragon-dark mb-4">
+              <p className="text-base md:text-xl font-sans text-dragon-dark mb-4 italic">
                 {currentTestimonial.quote}
               </p>
               <footer>

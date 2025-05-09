@@ -2,6 +2,7 @@
 import React from 'react';
 import VideoPlayer from './video/VideoPlayer';
 import { Quote } from "lucide-react";
+
 interface VideoSectionProps {
   videoId: string;
   title: string;
@@ -12,6 +13,7 @@ interface VideoSectionProps {
     author?: string;
   };
 }
+
 const VideoSection = ({
   videoId,
   title,
@@ -19,7 +21,7 @@ const VideoSection = ({
   customThumbnail,
   quote
 }: VideoSectionProps) => {
-  return <section className="py-16 bg-slate-50">
+  return <section className="py-16 bg-dragon-beige">
       <div className="container-wide">
         <div className="text-center mb-10">
           <h2 className="section-heading">Transforming Lives</h2>
@@ -46,4 +48,5 @@ const VideoSection = ({
       </div>
     </section>;
 };
+
 export default VideoSection;

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -17,7 +16,7 @@ const PartnerFAQ = () => {
         <div className="max-w-3xl mx-auto space-y-6">
           <div className="bg-dragon-beige p-6 rounded-lg">
             <h3 className="font-bold text-dragon-dark text-lg mb-2">What is the typical profit-sharing structure?</h3>
-            <p className="text-dragon-gray">Our profit-sharing model typically provides partners with 15-25% of the trip revenue, depending on the level of involvement and marketing contribution.</p>
+            <p className="text-dragon-gray font-sans">Our profit-sharing model typically provides partners with 15-25% of the trip revenue, depending on the level of involvement and marketing contribution.</p>
           </div>
           
           <div className="bg-dragon-beige p-6 rounded-lg">
