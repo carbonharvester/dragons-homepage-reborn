@@ -40,7 +40,7 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
           
       <CardContent className="p-6 flex-grow flex flex-col h-full">
         <h3 className="text-lg md:text-lg font-bold mb-1 text-dragon-dark h-[2.5rem] line-clamp-2">{program.title}</h3>
-        <p className="text-dragon-gray mb-4 h-[5rem] line-clamp-4 overflow-hidden">{program.description}</p>
+        <p className="text-dragon-gray mb-4 h-[5.5rem] line-clamp-4 overflow-hidden">{program.description}</p>
         <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2 h-[4rem]">
           <div className="flex items-center">
             <Route size={16} className="mr-1 min-w-6" />
