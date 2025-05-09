@@ -23,8 +23,8 @@ const ProgramCategoryContent = ({ activeCategory, isMobile, programs, multiYearD
         <Carousel className="w-full px-4">
           <CarouselContent>
             {programs.map((program, index) => (
-              <CarouselItem key={index} className="basis-full">
-                <div className="p-1">
+              <CarouselItem key={index} className="basis-full h-full">
+                <div className="p-1 h-full">
                   <ProgramCard program={program} />
                 </div>
               </CarouselItem>
