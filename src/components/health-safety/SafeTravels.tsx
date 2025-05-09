@@ -20,7 +20,7 @@ const SafeTravels = () => {
   }, {
     icon: <MapPin className="h-8 w-8 text-dragon" />,
     title: "Roadside Assistance",
-    description: "Towing and breakdown support for your vehicle if you get stuck on the road."
+    description: "Towing and breakdown support for our vehicles if we get stuck on the road."
   }, {
     icon: <Ambulance className="h-8 w-8 text-dragon" />,
     title: "Air Rescues",
