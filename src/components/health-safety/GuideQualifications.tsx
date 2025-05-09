@@ -21,7 +21,7 @@ const GuideQualifications = () => {
     <section className="py-12 bg-white">
       <div className="container-wide">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-academy text-dragon-dark mb-6">Guide Qualifications</h2>
+          <h2 className="text-3xl font-academy text-dragon-dark mb-6">Our Guides</h2>
           
           <Card className="bg-dragon-beige border border-gray-100 shadow-sm mb-6">
             <CardContent className="p-6">
