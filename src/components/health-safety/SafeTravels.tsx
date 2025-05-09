@@ -1,7 +1,9 @@
+
 import React from "react";
 import { Ambulance, Shield, MapPin, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import VideoPlayer from "@/components/video/VideoPlayer";
+
 const SafeTravels = () => {
   const services = [{
     icon: <Shield className="h-8 w-8 text-dragon" />,
@@ -14,11 +16,11 @@ const SafeTravels = () => {
   }, {
     icon: <Shield className="h-8 w-8 text-dragon" />,
     title: "Security Escort",
-    description: "On-demand security response, including safety escort services (available in Kenya only)."
+    description: "On-demand security response, including safety escort services."
   }, {
     icon: <MapPin className="h-8 w-8 text-dragon" />,
     title: "Roadside Assistance",
-    description: "Towing and breakdown support for your vehicle if you get stuck on the road (available in Kenya only)."
+    description: "Towing and breakdown support for your vehicle if you get stuck on the road."
   }, {
     icon: <Ambulance className="h-8 w-8 text-dragon" />,
     title: "Air Rescues",
@@ -32,6 +34,7 @@ const SafeTravels = () => {
     title: "24/7 Dispatch",
     description: "24/7 dispatch and medical concierge for emergency and medical advice."
   }];
+
   return <section className="py-12 bg-white">
       <div className="container-wide">
         <div className="max-w-4xl mx-auto">
@@ -78,4 +81,5 @@ const SafeTravels = () => {
       </div>
     </section>;
 };
+
 export default SafeTravels;
