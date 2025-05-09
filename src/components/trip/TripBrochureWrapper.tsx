@@ -4,6 +4,28 @@ import FoodForEducationData from '../food-for-education/FoodForEducationData';
 import EmpoweringWomenData from '../empowering-women/EmpoweringWomenData';
 import CommunityConservationData from '../community-conservation/CommunityConservationData';
 
+// Define interfaces to specify which props each data component accepts
+interface FoodForEducationDataProps {
+  heroOnly?: boolean;
+  contentOnly?: boolean;
+  navigationOnly?: boolean;
+  customThumbnails?: Record<string, string>;
+}
+
+interface EmpoweringWomenDataProps {
+  heroOnly?: boolean;
+  contentOnly?: boolean;
+  navigationOnly?: boolean;
+  customThumbnails?: Record<string, string>;
+}
+
+interface CommunityConservationDataProps {
+  heroOnly?: boolean;
+  contentOnly?: boolean;
+  navigationOnly?: boolean;
+  customThumbnails?: Record<string, string>;
+}
+
 interface TripBrochureWrapperProps {
   tripType?: 'food-for-education' | 'empowering-women' | 'community-conservation';
   heroOnly?: boolean;

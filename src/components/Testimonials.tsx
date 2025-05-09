@@ -19,7 +19,8 @@ const testimonials = [{
 }, {
   quote: "The biggest thing I've learned is that happiness doesn't come from what you have, it comes from connections with others and how you view the world. Seeing the Kenyan people being happy with so little made me realize that we take a lot of things for granted.",
   author: "Leon",
-  videoId: "9212a5359be94f8cbe20699f6737c724"
+  videoId: "9212a5359be94f8cbe20699f6737c724",
+  customThumbnail: "/lovable-uploads/85322e39-606e-41d2-92e6-3464b37b0e9d.png"
 }];
 
 const Testimonials = () => {
