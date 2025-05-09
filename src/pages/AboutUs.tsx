@@ -135,7 +135,7 @@ const AboutUs = () => {
         </section>
 
         {/* Video Section */}
-        <VideoSection videoId="720192915" title="Kapes Impact Adventures" description="Experience the inspiring journey of Kapes Adventures and how we're making a difference in communities across Kenya." quote={{
+        <VideoSection videoId="720192915" title="Kapes Impact Adventures" description="Experience our first inspiring journey to Kenya, which has become a pathway for life changing adventures for students globally." quote={{
         text: "The activities we've been doing is a pathway to bring our children here to. And that's really important because experiential learning helps to bring to real life the things that we can only do in theory, in the classrooms. Seeing these small enterprises firsthand, understanding how they contribute to a better world in the future, the children can only do that firsthand, and it will change them as much as it's changed me in this short trip.",
         author: "Brett Girven, Former-Principal at The Arbor School"
       }} />
