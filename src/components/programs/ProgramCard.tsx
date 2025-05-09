@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Route, Calendar, Users, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ProgramCardProps {
   program: {
@@ -22,8 +23,10 @@ interface ProgramCardProps {
 }
 
 const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
+  const isMobile = useIsMobile();
+
   return (
-    <Card className="overflow-hidden border-none shadow-md h-full flex flex-col">
+    <Card className={`overflow-hidden border-none shadow-md h-full flex flex-col ${isMobile ? 'min-h-[540px]' : ''}`}>
       <div className="relative">
         <AspectRatio ratio={16/9} className="bg-muted">
           <img 
@@ -38,8 +41,8 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
         </AspectRatio>
       </div>
           
-      <CardContent className="p-6 flex flex-col justify-between h-full">
-        <div>
+      <CardContent className={`p-6 flex flex-col justify-between ${isMobile ? 'flex-grow' : 'h-full'}`}>
+        <div className={isMobile ? 'min-h-[250px]' : ''}>
           <h3 className="text-lg font-bold mb-1 text-dragon-dark line-clamp-2">{program.title}</h3>
           <p className="text-dragon-gray mb-3">{program.description}</p>
         </div>
