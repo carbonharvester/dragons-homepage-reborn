@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -13,6 +13,7 @@ interface VideoPlayerProps {
 const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [thumbnailUrl, setThumbnailUrl] = useState('');
+  const videoRef = useRef<HTMLVideoElement>(null);
   
   // Check if the video ID is from Vimeo or from Shopify
   const isShopifyVideo = !videoId.match(/^\d+$/);
@@ -37,6 +38,23 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
   
   const handlePlayClick = () => {
     setIsPlaying(true);
+    
+    // For Shopify videos, manually play the video after a short delay
+    // This ensures the video starts playing without requiring a second click
+    if (isShopifyVideo) {
+      setTimeout(() => {
+        if (videoRef.current) {
+          const playPromise = videoRef.current.play();
+          
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.log('Auto-play was prevented. User interaction is required.');
+              // We don't need to set isPlaying back to false since the play button is already hidden
+            });
+          }
+        }
+      }, 50);
+    }
   };
   
   return (
@@ -45,9 +63,9 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
         <div className="aspect-video w-full">
           {isShopifyVideo ? (
             <video 
+              ref={videoRef}
               src={videoSrc}
               className="w-full h-full" 
-              autoPlay
               controls 
               playsInline
               title={title}
