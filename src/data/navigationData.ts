@@ -1,3 +1,4 @@
+
 export const programCategories = [
   {
     title: "School Trips",
@@ -5,14 +6,14 @@ export const programCategories = [
     description: "Experiential learning trips for K-12 schools.",
     programs: [
       {
-        title: "Food For Education",
-        href: "/programs/food-for-education",
-        description: "Address food security challenges through sustainable agriculture initiatives.",
-      },
-      {
         title: "Community Conservation",
         href: "/programs/community-conservation",
         description: "Protect endangered ecosystems with local conservation experts.",
+      },
+      {
+        title: "Food For Education",
+        href: "/programs/food-for-education",
+        description: "Address food security challenges through sustainable agriculture initiatives.",
       },
       {
         title: "Water Empowering Women",
