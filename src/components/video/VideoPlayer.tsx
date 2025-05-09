@@ -8,10 +8,11 @@ interface VideoPlayerProps {
   videoId: string;
   title: string;
   customThumbnail?: string;
+  initialPlaying?: boolean;
 }
 
-const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }: VideoPlayerProps) => {
+  const [isPlaying, setIsPlaying] = useState(initialPlaying);
   const [thumbnailUrl, setThumbnailUrl] = useState('');
   const videoRef = useRef<HTMLVideoElement>(null);
   

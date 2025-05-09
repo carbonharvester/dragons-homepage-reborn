@@ -87,6 +87,7 @@ const Testimonials = () => {
                   videoId={currentTestimonial.videoId}
                   title={`${currentTestimonial.author}'s story`}
                   customThumbnail={currentTestimonial.customThumbnail}
+                  initialPlaying={true}
                 />
               ) : (
                 <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-lg bg-gray-100">
