@@ -40,25 +40,25 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
           
       <CardContent className="p-6 flex-grow flex flex-col h-full">
         <h3 className="text-lg md:text-lg font-bold mb-1 text-dragon-dark h-[2.5rem] line-clamp-2">{program.title}</h3>
-        <p className="text-dragon-gray mb-4 h-[5.5rem] line-clamp-4 overflow-hidden">{program.description}</p>
-        <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2 h-[4rem]">
+        <p className="text-dragon-gray mb-3 h-[6.5rem] line-clamp-5 overflow-hidden">{program.description}</p>
+        <div className="flex flex-row flex-wrap justify-between text-xs text-dragon-gray mb-4 gap-x-2 h-[1.5rem]">
           <div className="flex items-center">
-            <Route size={16} className="mr-1 min-w-6" />
+            <Route size={14} className="mr-1 min-w-4" />
             <span>{program.duration}</span>
           </div>
           <div className="flex items-center">
-            <Calendar size={16} className="mr-1 min-w-6" />
+            <Calendar size={14} className="mr-1 min-w-4" />
             <span>{program.season}</span>
           </div>
           {program.ageGroup && (
             <div className="flex items-center">
-              <Users size={16} className="mr-1 min-w-6" />
+              <Users size={14} className="mr-1 min-w-4" />
               <span>{program.ageGroup}</span>
             </div>
           )}
           {program.location && (
             <div className="flex items-center">
-              <MapPin size={16} className="mr-1 min-w-6" />
+              <MapPin size={14} className="mr-1 min-w-4" />
               <span>{program.location}</span>
             </div>
           )}
