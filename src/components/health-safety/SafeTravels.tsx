@@ -1,9 +1,7 @@
-
 import React from "react";
 import { Ambulance, Shield, MapPin, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import VideoPlayer from "@/components/video/VideoPlayer";
-
 const SafeTravels = () => {
   const services = [{
     icon: <Shield className="h-8 w-8 text-dragon" />,
@@ -34,11 +32,10 @@ const SafeTravels = () => {
     title: "24/7 Dispatch",
     description: "24/7 dispatch and medical concierge for emergency and medical advice."
   }];
-
   return <section className="py-12 bg-white">
       <div className="container-wide">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-academy text-dragon-dark mb-6">Our Cover Includes:</h2>
+          <h2 className="text-3xl font-academy text-dragon-dark mb-6">Our Cover</h2>
           
           <div className="bg-dragon-beige p-6 rounded-lg mb-8">
             <p className="text-dragon-gray mb-4">To provide piece of mind and assurance in the unlikely event that something was to occur, we are partnered with Safe Travels by rescue.co to provide comprehensive protection for all our travellers. Safe Travels is the only fully comprehensive protection to include both ground and air rescue cover across East Africa.</p>
@@ -81,5 +78,4 @@ const SafeTravels = () => {
       </div>
     </section>;
 };
-
 export default SafeTravels;
