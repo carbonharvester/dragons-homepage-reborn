@@ -1,8 +1,8 @@
+
 import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
-import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
@@ -72,9 +72,6 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               projectGoals={foodProjectGoals}
             />
             
-            {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
-            {!isMobile && <TripHighlightsWrapper />}
-            
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
@@ -87,7 +84,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               description={foodDescription}
               projectGoals={foodProjectGoals}
               hideOverview={true}
-              hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
+              hideHighlights={false} // Show highlights directly in TripBrochureContent
               customThumbnails={customThumbnails}
             />
           </div>

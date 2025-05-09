@@ -10,22 +10,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
-interface TripHighlightProps {
-  icon: ReactNode;
-  title: string;
-  description: string;
-}
+import { TripHighlight } from './TripBrochureContent';
 
 interface TripHighlightsProps {
-  highlights: TripHighlightProps[];
+  highlights: TripHighlight[];
 }
 
 const TripHighlights = ({ highlights }: TripHighlightsProps) => {
   const isMobile = useIsMobile();
 
   // Helper function to render a highlight card with consistent styling
-  const renderHighlightCard = (highlight: TripHighlightProps, index: number) => (
+  const renderHighlightCard = (highlight: TripHighlight, index: number) => (
     <Card key={index} className="border-none shadow-none h-full">
       <CardContent className="p-6">
         <div className="w-16 h-16 rounded-full bg-dragon flex items-center justify-center mb-4">

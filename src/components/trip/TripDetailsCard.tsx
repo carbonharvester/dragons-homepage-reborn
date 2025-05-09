@@ -1,16 +1,12 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ReactNode } from 'react';
 import CalendlyEmbed from '../CalendlyEmbed';
-
-interface TripDetailProps {
-  label: string;
-  value: string;
-  icon: ReactNode;
-}
+import { TripDetail } from './TripBrochureContent';
 
 interface TripDetailsCardProps {
-  tripDetails: TripDetailProps[];
+  tripDetails: TripDetail[];
   isSchoolTrip?: boolean;
 }
 

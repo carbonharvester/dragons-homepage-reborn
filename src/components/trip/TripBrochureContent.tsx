@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
@@ -9,25 +10,29 @@ import ProgramBrochure from '../ProgramBrochure';
 import Testimonials from '../Testimonials';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-interface TripDetail {
+export interface TripDetail {
   label: string;
   value: string;
   icon: React.ReactNode;
 }
-interface TripHighlight {
+
+export interface TripHighlight {
   icon: React.ReactNode;
   title: string;
   description: string;
 }
+
 interface TripLearningOutcome {
   title: string;
   description: string;
 }
+
 interface TripItineraryDay {
   day: string;
   title: string;
   activities: string[];
 }
+
 interface ProgramData {
   title: string;
   description: string;
@@ -36,6 +41,7 @@ interface ProgramData {
   location: string;
   goals: string[];
 }
+
 interface TripBrochureContentProps {
   tripDetails: TripDetail[];
   tripHighlights: TripHighlight[];

@@ -4,15 +4,10 @@ import TripDetailsCard from './TripDetailsCard';
 import { ReactNode } from 'react';
 import { Users, Calendar, MapPin } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-
-interface TripDetailProps {
-  label: string;
-  value: string;
-  icon: ReactNode;
-}
+import { TripDetail } from './TripBrochureContent';
 
 interface TripOverviewProps {
-  tripDetails: TripDetailProps[];
+  tripDetails: TripDetail[];
   projectGoals?: string[];
   description?: string[];
   perfectFor?: string;
