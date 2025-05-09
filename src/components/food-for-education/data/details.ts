@@ -34,7 +34,7 @@ const tripDetailsData: TripDetailData[] = [
     icon: Users
   },
   {
-    label: "Educational Credits",
+    label: "Educational Credits (Optional)",
     value: "CAS Points, Duke of Edinburgh",
     icon: Award
   },
@@ -51,4 +51,4 @@ export const tripDetails = tripDetailsData.map(detail => ({
   icon: React.createElement(detail.icon, { size: 20 })
 }));
 
-export const perfectFor = "Ages 12-18, Food security interests, Agricultural science, Community service, Sustainable development";
+export const perfectFor = "Aged 15-18, Passionate About Food, Interested in Sustainability and Food Systems, Enjoy Cultural Immersion, Seeking Personal Growth, Comfortable with Physical Challenges, Curious About Agricultural, Value Service";
