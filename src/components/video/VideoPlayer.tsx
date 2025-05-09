@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -11,10 +11,7 @@ interface VideoPlayerProps {
 
 const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  
-  const handlePlayClick = () => {
-    setIsPlaying(true);
-  };
+  const [thumbnailUrl, setThumbnailUrl] = useState('');
   
   // Check if the video ID is from Vimeo or from Shopify
   const isShopifyVideo = !videoId.match(/^\d+$/);
@@ -27,6 +24,17 @@ const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
   const previewSrc = isShopifyVideo
     ? `https://cdn.shopify.com/videos/c/o/v/${videoId}.mp4`
     : `https://player.vimeo.com/video/${videoId}?h=c4bc497777&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&background=1&muted=1`;
+
+  // Set thumbnail URL when component mounts
+  useEffect(() => {
+    if (isShopifyVideo) {
+      setThumbnailUrl(`https://cdn.shopify.com/videos/c/o/v/${videoId}.jpg`);
+    }
+  }, [videoId, isShopifyVideo]);
+  
+  const handlePlayClick = () => {
+    setIsPlaying(true);
+  };
   
   return (
     <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl">
@@ -66,14 +74,18 @@ const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
                 </Button>
               </div>
               {isShopifyVideo ? (
-                <div 
-                  className="w-full h-full" 
-                  style={{ 
-                    backgroundImage: `url(https://cdn.shopify.com/videos/c/o/v/${videoId}.jpg)`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }}
-                ></div>
+                thumbnailUrl ? (
+                  <div 
+                    className="w-full h-full" 
+                    style={{ 
+                      backgroundImage: `url(${thumbnailUrl})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  ></div>
+                ) : (
+                  <div className="w-full h-full bg-gray-800"></div>
+                )
               ) : (
                 <iframe 
                   src={previewSrc}

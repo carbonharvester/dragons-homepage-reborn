@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Button } from "@/components/ui/button";
@@ -25,6 +25,7 @@ const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showVideo, setShowVideo] = useState(false);
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
+  const [thumbnailUrl, setThumbnailUrl] = useState('');
   const isMobile = useIsMobile();
   
   const handlePrev = () => {
@@ -48,6 +49,13 @@ const Testimonials = () => {
       }
     }
   };
+  
+  useEffect(() => {
+    // Update thumbnail URL when current testimonial changes
+    const videoId = testimonials[currentIndex].videoId;
+    setThumbnailUrl(`https://cdn.shopify.com/videos/c/o/v/${videoId}.jpg`);
+    setShowVideo(false);
+  }, [currentIndex]);
   
   const currentTestimonial = testimonials[currentIndex];
   
@@ -73,7 +81,7 @@ const Testimonials = () => {
                   <div 
                     className="relative w-full h-full bg-cover bg-center" 
                     style={{ 
-                      backgroundImage: `url(https://cdn.shopify.com/videos/c/o/v/${currentTestimonial.videoId}.jpg)`,
+                      backgroundImage: `url(${thumbnailUrl})`,
                       backgroundSize: 'cover'
                     }}
                   >
