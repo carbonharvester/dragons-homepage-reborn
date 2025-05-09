@@ -20,12 +20,14 @@ interface CommunityConservationDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
+  customThumbnails?: Record<string, string>;
 }
 
 const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({ 
   heroOnly = false, 
   contentOnly = false,
-  navigationOnly = false
+  navigationOnly = false,
+  customThumbnails
 }) => {
   const isMobile = useIsMobile();
   
@@ -97,6 +99,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
               projectGoals={conservationProjectGoals}
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
+              customThumbnails={customThumbnails}
             />
           </div>
         </>

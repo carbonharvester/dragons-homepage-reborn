@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
@@ -54,9 +53,10 @@ interface TripBrochureContentProps {
   hideOverview?: boolean;
   hideHighlights?: boolean;
   pdfBrochureLink?: string;
+  customThumbnails?: Record<string, string>;
 }
 
-const TripBrochureContent = ({
+const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
   tripDetails,
   tripHighlights,
   galleryImages,
@@ -68,7 +68,8 @@ const TripBrochureContent = ({
   perfectFor,
   hideOverview = false,
   hideHighlights = false,
-  pdfBrochureLink
+  pdfBrochureLink,
+  customThumbnails
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
   

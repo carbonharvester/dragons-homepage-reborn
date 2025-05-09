@@ -20,12 +20,14 @@ interface EmpoweringWomenDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
+  customThumbnails?: Record<string, string>;
 }
 
 const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({ 
   heroOnly = false, 
   contentOnly = false,
-  navigationOnly = false
+  navigationOnly = false,
+  customThumbnails
 }) => {
   const isMobile = useIsMobile();
   
@@ -91,6 +93,7 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
               pdfBrochureLink={pdfBrochureLink}
+              customThumbnails={customThumbnails}
             />
           </div>
         </>
