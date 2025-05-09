@@ -17,6 +17,7 @@ import SchoolTrips from "@/pages/SchoolTrips";
 import SummerAbroad from "@/pages/SummerAbroad";
 import MultiYearCurriculum from "@/pages/MultiYearCurriculum";
 import AdultPrograms from "@/pages/AdultPrograms";
+import EducatorTrips from "@/pages/EducatorTrips";
 
 // School Trip Programs
 import FoodForEducation from "@/pages/FoodForEducation";
@@ -55,6 +56,7 @@ const MainRoutes = () => {
       <Route path="/summer-abroad" element={<SummerAbroad />} />
       <Route path="/multi-year-curriculum" element={<MultiYearCurriculum />} />
       <Route path="/adult-programs" element={<AdultPrograms />} />
+      <Route path="/educator-trips" element={<EducatorTrips />} />
       
       {/* School Trip Programs */}
       <Route path="/programs/food-for-education" element={<FoodForEducation />} />
