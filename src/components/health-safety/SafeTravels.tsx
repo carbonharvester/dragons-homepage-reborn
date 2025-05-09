@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Helicopter, Shield, MapPin, Phone } from "lucide-react";
+import { Ambulance, Shield, MapPin, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const SafeTravels = () => {
@@ -26,7 +26,7 @@ const SafeTravels = () => {
       description: "Towing and breakdown support for your vehicle if you get stuck on the road (available in Kenya only)."
     },
     {
-      icon: <Helicopter className="h-8 w-8 text-dragon" />,
+      icon: <Ambulance className="h-8 w-8 text-dragon" />,
       title: "Air Rescues",
       description: "Air rescues from remote locations (including mountains) with 7 helicopters and 70 fixed-wing aircraft."
     },
