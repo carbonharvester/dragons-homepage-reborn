@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
@@ -37,24 +36,28 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
   }, [videoId, isShopifyVideo, customThumbnail]);
   
   const handlePlayClick = () => {
+    // Set playing state immediately
     setIsPlaying(true);
     
-    // For Shopify videos, manually play the video after a short delay
-    // This ensures the video starts playing without requiring a second click
+    // For Shopify videos, ensure play happens instantly
     if (isShopifyVideo) {
-      setTimeout(() => {
-        if (videoRef.current) {
-          const playPromise = videoRef.current.play();
-          
-          if (playPromise !== undefined) {
-            playPromise.catch(error => {
-              console.log('Auto-play was prevented. User interaction is required.');
-              // We don't need to set isPlaying back to false since the play button is already hidden
-            });
-          }
+      // Pre-load the video by triggering load
+      if (videoRef.current) {
+        videoRef.current.load();
+        
+        // Attempt to play immediately
+        const playPromise = videoRef.current.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.log('Auto-play was prevented:', error);
+            // Keep isPlaying true so the video element is still displayed
+            // The user will need to click the play button on the video controls
+          });
         }
-      }, 50);
+      }
     }
+    // For Vimeo videos, the autoplay=1 parameter will handle auto-playing
   };
   
   return (
@@ -68,6 +71,7 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
               className="w-full h-full" 
               controls 
               playsInline
+              preload="auto"
               title={title}
             ></video>
           ) : (
