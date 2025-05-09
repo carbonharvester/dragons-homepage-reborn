@@ -7,6 +7,7 @@ import SafetyApproach from "@/components/health-safety/SafetyApproach";
 import SafeTravels from "@/components/health-safety/SafeTravels";
 import HealthInformation from "@/components/health-safety/HealthInformation";
 import SafetyGuidelines from "@/components/health-safety/SafetyGuidelines";
+import RiskAssessment from "@/components/health-safety/RiskAssessment";
 
 const HealthAndSafety = () => {
   return (
@@ -15,6 +16,7 @@ const HealthAndSafety = () => {
       <main className="flex-grow">
         <HeroSection />
         <SafetyApproach />
+        <RiskAssessment />
         <SafeTravels />
         <HealthInformation />
         <SafetyGuidelines />
