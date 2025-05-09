@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
@@ -38,27 +39,32 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
   const handlePlayClick = () => {
     // Set playing state immediately
     setIsPlaying(true);
-    
-    // For Shopify videos, ensure play happens instantly
-    if (isShopifyVideo) {
-      // Pre-load the video by triggering load
-      if (videoRef.current) {
-        videoRef.current.load();
-        
-        // Attempt to play immediately
-        const playPromise = videoRef.current.play();
-        
-        if (playPromise !== undefined) {
-          playPromise.catch(error => {
-            console.log('Auto-play was prevented:', error);
-            // Keep isPlaying true so the video element is still displayed
-            // The user will need to click the play button on the video controls
-          });
-        }
-      }
-    }
-    // For Vimeo videos, the autoplay=1 parameter will handle auto-playing
   };
+  
+  // Use a separate useEffect to handle video playback when isPlaying changes
+  // This creates a more reliable trigger for playback
+  useEffect(() => {
+    if (isPlaying && isShopifyVideo && videoRef.current) {
+      // Ensure the video is ready to play
+      videoRef.current.load();
+      
+      // Give a tiny delay to ensure DOM is ready
+      const playVideo = () => {
+        if (videoRef.current) {
+          const playPromise = videoRef.current.play();
+          
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.log('Auto-play was prevented:', error);
+            });
+          }
+        }
+      };
+      
+      // Execute immediately but use setTimeout to break the call stack
+      setTimeout(playVideo, 0);
+    }
+  }, [isPlaying, isShopifyVideo]);
   
   return (
     <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl">
@@ -72,6 +78,7 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
               controls 
               playsInline
               preload="auto"
+              autoPlay
               title={title}
             ></video>
           ) : (
