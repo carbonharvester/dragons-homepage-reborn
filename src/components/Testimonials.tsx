@@ -10,7 +10,8 @@ import VideoPlayer from "@/components/video/VideoPlayer";
 const testimonials = [{
   quote: "It was a once in a lifetime experience. I learned how to be grateful for the things I have and the things that are around me. because the people and the things we saw in Kenya, they didn't have too much, but they were still happy. And with the things that we have, we can still be happy even without wanting more.",
   author: "Loki",
-  videoId: "05fe0835e082489c9e13c779903d992b"
+  videoId: "05fe0835e082489c9e13c779903d992b",
+  customThumbnail: "/lovable-uploads/f0cb24ea-d39a-4427-a741-886cfcc8e9f6.png"
 }, {
   quote: "Being in Kenya, it was an incredibly eye-opening experience. I'm very privileged to have been on this trip. I got to learn so much about different communities and different ways of living. I think my main takeaway was definitely that happiness can be found, regardless of what you have or don't have.",
   author: "Yasma",
@@ -52,8 +53,13 @@ const Testimonials = () => {
   
   useEffect(() => {
     // Update thumbnail URL when current testimonial changes
-    const videoId = testimonials[currentIndex].videoId;
-    setThumbnailUrl(`https://cdn.shopify.com/videos/c/o/v/${videoId}.jpg`);
+    const currentTestimonial = testimonials[currentIndex];
+    // Use custom thumbnail if available, otherwise use default Shopify thumbnail
+    if (currentTestimonial.customThumbnail) {
+      setThumbnailUrl(currentTestimonial.customThumbnail);
+    } else {
+      setThumbnailUrl(`https://cdn.shopify.com/videos/c/o/v/${currentTestimonial.videoId}.jpg`);
+    }
     setShowVideo(false);
   }, [currentIndex]);
   
@@ -75,6 +81,7 @@ const Testimonials = () => {
                 <VideoPlayer 
                   videoId={currentTestimonial.videoId}
                   title={`${currentTestimonial.author}'s story`}
+                  customThumbnail={currentTestimonial.customThumbnail}
                 />
               ) : (
                 <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-lg bg-gray-100">

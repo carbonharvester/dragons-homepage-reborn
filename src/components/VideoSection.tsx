@@ -7,6 +7,7 @@ interface VideoSectionProps {
   videoId: string;
   title: string;
   description?: string;
+  customThumbnail?: string;
   quote?: {
     text: string;
     author?: string;
@@ -17,6 +18,7 @@ const VideoSection = ({
   videoId, 
   title, 
   description, 
+  customThumbnail,
   quote
 }: VideoSectionProps) => {
   return (
@@ -34,6 +36,7 @@ const VideoSection = ({
         <VideoPlayer 
           videoId={videoId}
           title={title}
+          customThumbnail={customThumbnail}
         />
 
         {quote && (

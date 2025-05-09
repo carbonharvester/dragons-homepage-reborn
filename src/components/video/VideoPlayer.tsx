@@ -7,9 +7,10 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 interface VideoPlayerProps {
   videoId: string;
   title: string;
+  customThumbnail?: string;
 }
 
-const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
+const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [thumbnailUrl, setThumbnailUrl] = useState('');
   
@@ -27,10 +28,12 @@ const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
 
   // Set thumbnail URL when component mounts
   useEffect(() => {
-    if (isShopifyVideo) {
+    if (customThumbnail) {
+      setThumbnailUrl(customThumbnail);
+    } else if (isShopifyVideo) {
       setThumbnailUrl(`https://cdn.shopify.com/videos/c/o/v/${videoId}.jpg`);
     }
-  }, [videoId, isShopifyVideo]);
+  }, [videoId, isShopifyVideo, customThumbnail]);
   
   const handlePlayClick = () => {
     setIsPlaying(true);

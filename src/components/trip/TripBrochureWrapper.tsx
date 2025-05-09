@@ -9,13 +9,15 @@ interface TripBrochureWrapperProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
+  customThumbnails?: Record<string, string>;
 }
 
 const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({ 
   tripType = 'food-for-education',
   heroOnly = false,
   contentOnly = false,
-  navigationOnly = false
+  navigationOnly = false,
+  customThumbnails
 }) => {
   // Remove wrapper padding when showing content only
   const wrapperClass = contentOnly ? "bg-white pt-0" : "bg-white";
@@ -27,6 +29,7 @@ const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({
           heroOnly={heroOnly} 
           contentOnly={contentOnly}
           navigationOnly={navigationOnly} 
+          customThumbnails={customThumbnails}
         />
       )}
       {tripType === 'empowering-women' && (
@@ -34,6 +37,7 @@ const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({
           heroOnly={heroOnly} 
           contentOnly={contentOnly}
           navigationOnly={navigationOnly}
+          customThumbnails={customThumbnails}
         />
       )}
       {tripType === 'community-conservation' && (
@@ -41,6 +45,7 @@ const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({
           heroOnly={heroOnly} 
           contentOnly={contentOnly}
           navigationOnly={navigationOnly}
+          customThumbnails={customThumbnails}
         />
       )}
     </div>
