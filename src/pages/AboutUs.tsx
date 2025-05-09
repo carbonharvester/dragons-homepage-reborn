@@ -83,7 +83,7 @@ const AboutUs = () => {
                 <h2 className="section-heading mt-12">Our Vision</h2>
                 
                 <p className="text-lg text-dragon-gray">
-                  A world where young people are reconnected with nature and communities, equipped with cross-cultural competence, ecological awareness, and an ethical mindset to address global challenges collaboratively.
+                  A world where young people are empowered by deep connections to nature, vibrant communities, and a global mindset to collaboratively shape a sustainable and equitable future. And every child has access to a full education.
                 </p>
               </div>
               <div className="bg-dragon-sand rounded-lg p-8 flex items-center justify-center">
