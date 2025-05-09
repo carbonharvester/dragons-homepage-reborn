@@ -4,34 +4,16 @@ import FoodForEducationData from '../food-for-education/FoodForEducationData';
 import EmpoweringWomenData from '../empowering-women/EmpoweringWomenData';
 import CommunityConservationData from '../community-conservation/CommunityConservationData';
 
-// Define interfaces to specify which props each data component accepts
-interface FoodForEducationDataProps {
+// Define a single interface that captures all common props
+interface BrochureDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
   customThumbnails?: Record<string, string>;
 }
 
-interface EmpoweringWomenDataProps {
-  heroOnly?: boolean;
-  contentOnly?: boolean;
-  navigationOnly?: boolean;
-  customThumbnails?: Record<string, string>;
-}
-
-interface CommunityConservationDataProps {
-  heroOnly?: boolean;
-  contentOnly?: boolean;
-  navigationOnly?: boolean;
-  customThumbnails?: Record<string, string>;
-}
-
-interface TripBrochureWrapperProps {
+interface TripBrochureWrapperProps extends BrochureDataProps {
   tripType?: 'food-for-education' | 'empowering-women' | 'community-conservation';
-  heroOnly?: boolean;
-  contentOnly?: boolean;
-  navigationOnly?: boolean;
-  customThumbnails?: Record<string, string>;
 }
 
 const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({ 

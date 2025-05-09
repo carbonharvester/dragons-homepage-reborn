@@ -15,7 +15,8 @@ const testimonials = [{
 }, {
   quote: "Being in Kenya, it was an incredibly eye-opening experience. I'm very privileged to have been on this trip. I got to learn so much about different communities and different ways of living. I think my main takeaway was definitely that happiness can be found, regardless of what you have or don't have.",
   author: "Yasma",
-  videoId: "633421263d7a45a59c6d22bbe58aa81e"
+  videoId: "633421263d7a45a59c6d22bbe58aa81e",
+  customThumbnail: "/lovable-uploads/863456b1-5e2e-438e-b052-f7f475c3af46.png"
 }, {
   quote: "The biggest thing I've learned is that happiness doesn't come from what you have, it comes from connections with others and how you view the world. Seeing the Kenyan people being happy with so little made me realize that we take a lot of things for granted.",
   author: "Leon",
