@@ -1,9 +1,10 @@
 
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Shirt } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendlyEmbed from './CalendlyEmbed';
 import { Button } from './ui/button';
+import { Separator } from './ui/separator';
 
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
@@ -66,6 +67,27 @@ const Footer = () => {
               </li>
               <li className="text-gray-300 mt-2">info@kapesadventures.com</li>
             </ul>
+          </div>
+        </div>
+        
+        {/* Kapes Uniforms CTA */}
+        <div className="border-t border-gray-700 py-6 mt-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+            <div className="flex items-center">
+              <Shirt className="h-5 w-5 mr-2 text-dragon-yellow" />
+              <span className="font-medium">Need sustainable school uniforms?</span>
+            </div>
+            <a 
+              href="https://www.kapesuniforms.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-dragon-yellow hover:text-white transition-colors flex items-center"
+            >
+              Visit Kapes Uniforms
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
           </div>
         </div>
         
