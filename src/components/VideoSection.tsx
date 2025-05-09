@@ -1,3 +1,4 @@
+
 import React from 'react';
 import VideoPlayer from './video/VideoPlayer';
 import { Quote } from "lucide-react";
@@ -34,7 +35,7 @@ const VideoSection = ({
               <Quote size={36} />
             </div>
             
-            <blockquote className="text-lg md:text-xl font-serif text-[#004d31] mb-4 italic">
+            <blockquote className="text-lg md:text-xl font-sans text-[#004d31] mb-4 italic">
               {quote.text}
             </blockquote>
             
