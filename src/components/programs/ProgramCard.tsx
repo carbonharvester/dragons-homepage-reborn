@@ -38,7 +38,7 @@ const ProgramCard = ({
           <p className="text-dragon-gray mb-4">{program.description}</p>
         </div>
         <div className="mt-auto">
-          <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2 my-[20px]">
+          <div className="flex flex-wrap justify-between text-sm text-dragon-gray mb-4 gap-y-2 my-[40px]">
             <div className="flex items-center">
               <Route size={16} className="mr-1" />
               <span>{program.duration}</span>
