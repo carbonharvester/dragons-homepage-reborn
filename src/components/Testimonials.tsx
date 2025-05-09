@@ -43,7 +43,10 @@ const Testimonials = () => {
     setIsFullscreenOpen(false);
   };
   
-  const handlePlayVideo = () => {
+  const handlePlayVideo = (e: React.MouseEvent) => {
+    console.log("Testimonial play clicked");
+    e.stopPropagation(); // Prevent event bubbling
+    
     if (testimonials[currentIndex].videoId) {
       if (isMobile) {
         setIsFullscreenOpen(true);
@@ -88,14 +91,19 @@ const Testimonials = () => {
               ) : (
                 <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-lg bg-gray-100">
                   <div 
-                    className="relative w-full h-full bg-cover bg-center cursor-pointer" 
+                    className="relative w-full h-full bg-cover bg-center"
                     style={{ 
                       backgroundImage: `url(${thumbnailUrl})`,
                       backgroundSize: 'cover'
                     }}
-                    onClick={handlePlayVideo}
                   >
-                    <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20">
+                    <div 
+                      className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20 cursor-pointer"
+                      onClick={handlePlayVideo}
+                      role="button"
+                      tabIndex={0}
+                      aria-label={`Play ${currentTestimonial.author}'s video`}
+                    >
                       <Button 
                         className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark flex items-center justify-center pointer-events-none" 
                         aria-label="Play video"

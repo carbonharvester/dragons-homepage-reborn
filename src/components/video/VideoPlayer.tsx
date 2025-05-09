@@ -36,30 +36,34 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
     }
   }, [videoId, isShopifyVideo, customThumbnail]);
   
-  // Handle play button click - trigger immediate play
+  // Handle play button click
   const handlePlayClick = () => {
+    console.log("Play button clicked");
     setIsPlaying(true);
   };
   
   // Handle actual video playback when isPlaying state changes
   useEffect(() => {
     if (isPlaying) {
+      console.log("isPlaying changed to true");
       if (isShopifyVideo && videoRef.current) {
-        // For Shopify videos using HTML5 video element
+        console.log("Loading and playing Shopify video");
         videoRef.current.load();
         
-        // Use setTimeout to ensure DOM updates before playing
-        setTimeout(() => {
+        videoRef.current.onloadeddata = () => {
+          console.log("Video data loaded, attempting to play");
           if (videoRef.current) {
             const playPromise = videoRef.current.play();
             
             if (playPromise !== undefined) {
-              playPromise.catch(error => {
-                console.log('Auto-play was prevented:', error);
-              });
+              playPromise
+                .then(() => console.log("Playback started successfully"))
+                .catch(error => {
+                  console.log('Auto-play was prevented:', error);
+                });
             }
           }
-        }, 10); // Small timeout to ensure DOM is ready
+        };
       }
       // For Vimeo videos, the iframe's autoplay parameter handles playback
     }
@@ -98,6 +102,9 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
               <div 
                 className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20 z-10 cursor-pointer"
                 onClick={handlePlayClick}
+                role="button"
+                tabIndex={0}
+                aria-label="Play video"
               >
                 <Button 
                   className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark pointer-events-none" 
