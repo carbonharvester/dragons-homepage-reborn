@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
@@ -13,11 +12,11 @@ import { useIsMobile } from '@/hooks/use-mobile';
 export interface TripDetail {
   label: string;
   value: string;
-  icon: React.ReactNode;
+  icon: React.ReactNode | string;
 }
 
 export interface TripHighlight {
-  icon: React.ReactNode;
+  icon: React.ReactNode | string;
   title: string;
   description: string;
 }
