@@ -8,7 +8,7 @@ const TripHighlightsWrapper = () => {
   const highlightsWithJSX = tripHighlights.map(highlight => ({
     ...highlight,
     icon: (
-      <div className="text-dragon">
+      <div className="text-white">
         <highlight.icon className="h-8 w-8" />
       </div>
     )
