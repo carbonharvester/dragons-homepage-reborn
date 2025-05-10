@@ -8,7 +8,6 @@ import TripOverview from '../trip/TripOverview';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
   tripDetails, 
-  tripHighlights, 
   galleryImages, 
   learningOutcomes, 
   tripItinerary, 
@@ -82,7 +81,8 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              tripHighlights={tripHighlights}
+              // Here we're passing an empty array to avoid type issues, since highlights are shown via TripHighlightsWrapper
+              tripHighlights={[]}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}
