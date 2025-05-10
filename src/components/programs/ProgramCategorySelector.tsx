@@ -15,7 +15,7 @@ const ProgramCategorySelector = ({ activeCategory, setActiveCategory }: ProgramC
         <Button 
           key={category.id} 
           onClick={() => setActiveCategory(category.id)} 
-          className={`px-6 py-3 whitespace-normal h-auto ${
+          className={`px-6 py-3 whitespace-normal min-w-[160px] h-12 w-full sm:w-auto ${
             activeCategory === category.id 
               ? "bg-dragon text-white" 
               : "bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white"

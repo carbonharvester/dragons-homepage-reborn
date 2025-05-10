@@ -16,7 +16,7 @@ const TabsSection = () => {
           <TabsTrigger 
             key={category.id} 
             value={category.id} 
-            className="px-6 py-3 data-[state=active]:bg-dragon data-[state=active]:text-white bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white"
+            className="px-6 py-3 min-w-[160px] h-12 w-full sm:w-auto data-[state=active]:bg-dragon data-[state=active]:text-white bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white"
           >
             {category.label}
           </TabsTrigger>
