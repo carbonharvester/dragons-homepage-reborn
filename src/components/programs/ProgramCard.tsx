@@ -48,7 +48,7 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
         </div>
         
         <div className="mt-auto">
-          <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-dragon-gray mb-4">
+          <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-dragon-gray mb-4 justify-center md:justify-center">
             <div className="flex items-center">
               <Route size={14} className="mr-1 shrink-0" />
               <span>{program.duration}</span>
