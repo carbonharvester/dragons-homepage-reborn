@@ -47,5 +47,5 @@ const tripHighlightsData: TripHighlightData[] = [
 // Transform the icons to ReactNode before exporting
 export const tripHighlights = tripHighlightsData.map(highlight => ({
   ...highlight,
-  icon: React.createElement(highlight.icon, { size: 24, className: "h-8 w-8 text-white" })
+  icon: highlight.icon
 }));
