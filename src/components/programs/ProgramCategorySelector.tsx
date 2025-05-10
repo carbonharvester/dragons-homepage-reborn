@@ -1,28 +1,27 @@
 
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import { programCategories } from '@/data/programsData';
 
 interface ProgramCategorySelectorProps {
   activeCategory: string;
-  setActiveCategory: (id: string) => void;
+  setActiveCategory: (category: string) => void;
 }
 
 const ProgramCategorySelector = ({ activeCategory, setActiveCategory }: ProgramCategorySelectorProps) => {
   return (
     <div className="flex flex-wrap justify-center gap-4 mb-10">
-      {programCategories.map(category => (
-        <Button 
-          key={category.id} 
-          onClick={() => setActiveCategory(category.id)} 
-          className={`px-6 py-3 whitespace-normal h-auto ${
-            activeCategory === category.id 
-              ? "bg-dragon text-white" 
-              : "bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white"
+      {programCategories.map((category) => (
+        <button
+          key={category.id}
+          className={`px-6 py-3 rounded-md font-medium text-center min-w-[160px] h-12 transition-colors ${
+            activeCategory === category.id
+              ? 'bg-dragon text-white'
+              : 'bg-white text-dragon border border-dragon hover:bg-dragon hover:text-white'
           }`}
+          onClick={() => setActiveCategory(category.id)}
         >
           {category.label}
-        </Button>
+        </button>
       ))}
     </div>
   );
