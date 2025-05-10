@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { TripHighlight } from './TripBrochureContent';
 import { School, TreeDeciduous, Users, Sun, Camera, LucideIcon } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -10,6 +9,12 @@ const iconMap: Record<string, React.ElementType> = {
   Sun,
   Camera
 };
+
+export interface TripHighlight {
+  icon: React.ReactNode | string;
+  title: string;
+  description: string;
+}
 
 interface TripHighlightsProps {
   highlights: TripHighlight[];
@@ -28,7 +33,7 @@ const TripHighlights: React.FC<TripHighlightsProps> = ({ highlights }) => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {highlights.map((highlight, index) => (
         <div key={index} className="flex flex-col items-start">
-          <div className="mb-4">
+          <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full bg-dragon">
             {renderIcon(highlight.icon)}
           </div>
           <h3 className="text-xl font-semibold mb-2">{highlight.title}</h3>

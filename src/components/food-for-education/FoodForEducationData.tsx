@@ -8,7 +8,6 @@ import TripHighlightsWrapper from './TripHighlightsWrapper';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
   tripDetails, 
-  tripHighlights, 
   galleryImages, 
   learningOutcomes, 
   tripItinerary, 
@@ -80,9 +79,8 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              // Here we're passing tripHighlights but the component expects them to be JSX transformed already
-              // This is okay because TripHighlightsWrapper transforms them for us
-              tripHighlights={[]} // Pass empty array to avoid type issues, since highlights are shown via TripHighlightsWrapper
+              // Here we're passing empty array to avoid type issues, since highlights are shown via TripHighlightsWrapper
+              tripHighlights={[]}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}
