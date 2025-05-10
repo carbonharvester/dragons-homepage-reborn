@@ -53,7 +53,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
           title="Food For Education"
           subtitle="Explore sustainable food systems and contribute to food security initiatives while learning about traditional and modern agricultural practices in Kenya."
           category="School Trip"
-          imagePath="/lovable-uploads/e5508599-0c51-43a7-8945-a0f299149c54.png"
+          imagePath="/lovable-uploads/3a363a5f-b4be-477f-aea7-e36861d4faf4.png"
         />
       )}
 
