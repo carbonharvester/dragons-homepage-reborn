@@ -2,8 +2,8 @@
 import { Leaf, School, Users, Binoculars, Camera, Globe } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
-// Local interface for data definition
-interface TripHighlightData {
+// Interface that matches what TripHighlights component expects
+export interface TripHighlightData {
   icon: LucideIcon;
   title: string;
   description: string;
