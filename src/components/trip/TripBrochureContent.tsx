@@ -91,8 +91,8 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {!hideOverview && <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />}
       
       {/* Trip Highlights */}
-      {!hideHighlights && <div className="mb-16">
-          <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-left">Trip Highlights</h2>
+      {!hideHighlights && <div className="mb-16 text-center">
+          <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Trip Highlights</h2>
           <TripHighlights highlights={tripHighlights} />
         </div>}
 
