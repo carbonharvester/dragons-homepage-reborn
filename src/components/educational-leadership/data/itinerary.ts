@@ -1,5 +1,4 @@
-
-import { Airplane, Calendar, Sun, Map, TreeDeciduous, School, Users, Camera } from "lucide-react";
+import { Calendar, Sun, Map, TreeDeciduous, School, Users, Camera } from "lucide-react";
 
 export const tripItinerary = [
   {
