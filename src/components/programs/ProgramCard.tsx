@@ -72,7 +72,7 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
           </div>
           <Button 
             variant="outline" 
-            className={buttonClassName || "w-full border-dragon text-dragon hover:bg-dragon hover:text-white"} 
+            className={`${buttonClassName || "w-full border-dragon text-dragon hover:bg-dragon hover:text-white"} h-12`}
             asChild
           >
             <Link to={program.link}>Learn More</Link>
