@@ -1,27 +1,23 @@
 
 export const learningOutcomes = [
   {
-    title: "Field-Based Teaching Techniques",
-    description: "Master methodologies for conducting effective outdoor learning experiences that meet educational standards"
+    title: "Experiential Teaching Methods",
+    description: "Develop field-based teaching strategies that bring environmental concepts to life through hands-on learning, inspired by your experiences with conservation projects, sustainable agriculture, and community initiatives."
   },
   {
-    title: "Curriculum Integration",
-    description: "Develop strategies to seamlessly connect field experiences with classroom learning and digital resources"
+    title: "Global Context Integration",
+    description: "Learn to connect classroom curriculum to real-world sustainability challenges through authentic case studies from Kenya, helping students understand complex global issues through local examples."
   },
   {
-    title: "Environmental Science Knowledge",
-    description: "Deepen understanding of biodiversity, conservation biology, climate science, and ecosystem management"
+    title: "Cultural Competence",
+    description: "Enhance your ability to incorporate diverse perspectives into your teaching through meaningful cultural exchange experiences with community groups, artisans, and conservation experts."
   },
   {
-    title: "Global Perspective",
-    description: "Gain cross-cultural insights into environmental challenges and solutions from diverse viewpoints"
+    title: "Sustainability Project Design",
+    description: "Gain practical knowledge of student-led sustainability projects like rainwater harvesting systems and school gardens, allowing you to develop similar initiatives at your school."
   },
   {
-    title: "Leadership Skills",
-    description: "Build capacity to lead environmental initiatives and professional development at your school"
-  },
-  {
-    title: "Resource Creation",
-    description: "Design multimedia teaching resources that bring global environmental contexts to your students"
+    title: "Environmental Leadership",
+    description: "Strengthen your capacity to inspire environmental stewardship in your students by experiencing first-hand how conservation and community empowerment intersect in addressing global challenges."
   }
 ];

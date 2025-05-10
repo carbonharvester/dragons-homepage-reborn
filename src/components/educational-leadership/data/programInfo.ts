@@ -1,15 +1,17 @@
 
 export const programData = {
   title: "Educational Leadership Program",
-  description: "An immersive professional development program for teachers of environmental science, sustainability, and geography in Kenya's diverse ecosystems.",
-  duration: "10 Days",
-  season: "June-August",
+  description: "An immersive professional development program for educators focusing on environmental science, sustainability, and global education through hands-on experiences across Kenya.",
+  duration: "9 Days",
+  season: "May-August",
   location: "Kenya",
   goals: [
+    "Experience first-hand the impact of student-led projects in Kenyan communities",
+    "Gain insights into sustainable practices for food security and conservation",
     "Develop field-based teaching strategies for environmental education",
-    "Create curriculum resources connecting global environmental challenges",
-    "Build a professional network of environmental educators",
-    "Experience conservation initiatives firsthand",
-    "Engage with local communities and indigenous knowledge systems"
+    "Engage with local organizations and communities addressing global challenges",
+    "Connect classroom theory with real-world sustainability solutions"
   ]
 };
+
+export const perfectFor = "Environmental Science Teachers, Geography Teachers, Sustainability Educators, Global Studies Teachers, Science Department Heads";

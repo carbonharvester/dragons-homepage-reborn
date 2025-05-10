@@ -1,93 +1,99 @@
 
+import { Airplane, Calendar, Sun, Map, TreeDeciduous, School, Users, Camera } from "lucide-react";
+
 export const tripItinerary = [
   {
     day: "Day 1",
-    title: "Arrival and Orientation",
+    title: "Arrival in Nairobi",
     activities: [
-      "Arrival in Nairobi",
+      "Arrive at Jomo Kenyatta International Airport (NBO) in Nairobi",
+      "Transfer to Wildebeest Eco Camp and check-in",
       "Welcome dinner and program introduction",
-      "Overview of Kenya's ecosystems and environmental challenges"
+      "Overview of the week ahead and how educators will experience elements of Kapes' transformative programs"
     ]
   },
   {
     day: "Day 2",
-    title: "Conservation Education Frameworks",
+    title: "Food For Education & Kirigu Primary School",
     activities: [
-      "Workshop on global environmental education standards",
-      "Field-based teaching methodology introduction",
-      "Curriculum development planning session"
+      "Meet with Food For Education representatives to learn about combating food insecurity",
+      "Visit Kirigu Primary School, where Kapes provides free uniforms to enhance education access",
+      "Observe the sustainable garden established by Kapes student cohorts",
+      "Participate in meal preparation and serving food to students",
+      "Evening reflection session on food security's role in education"
     ]
   },
   {
     day: "Day 3",
-    title: "Wildlife Works Experience",
+    title: "Africa Collect Textiles & Train to Voi",
     activities: [
-      "Travel to Tsavo region",
-      "Introduction to REDD+ carbon projects",
-      "Field techniques for biodiversity monitoring"
+      "Visit Africa Collect Textiles to learn about sustainable textile recycling",
+      "Participate in a weaving workshop with local artisans using recycled materials",
+      "Afternoon train journey to Voi, enjoying scenic views of Kenya's landscapes",
+      "Check-in at Rukinga Camp and dinner"
     ]
   },
   {
     day: "Day 4",
-    title: "Ecosystem Assessment Methods",
+    title: "Wildlife Works, Conservation & Factory Visit",
     activities: [
-      "Morning data collection expedition",
-      "Afternoon workshop on integrating field data into classroom lessons",
-      "Evening discussion on climate change education"
+      "Visit Wildlife Works to learn about REDD+ conservation projects in Tsavo",
+      "Join hands-on activities with the greenhouse and agroforestry team",
+      "Practice tree grafting and vertical farming techniques",
+      "Tour the Kapes uniform factory to see how school uniforms are made",
+      "Evening game drive in Tsavo region with sundowners at Lokidori Hill"
     ]
   },
   {
     day: "Day 5",
-    title: "Sustainable Development Goals in Practice",
+    title: "Murungu Hills Hiking & Conservation Insights",
     activities: [
-      "Visit to community conservation initiatives",
-      "Workshop on teaching UN SDGs through place-based learning",
-      "Collaborative lesson planning session"
+      "Guided 3-hour hike through Murungu Hills",
+      "Wildlife spotting and ecosystem exploration",
+      "Conservation presentation by Wildlife Works rangers",
+      "Discussion on integrating outdoor education into school curricula",
+      "Evening reflection on conservation and student impact projects"
     ]
   },
   {
     day: "Day 6",
-    title: "Tsavo East National Park",
+    title: "Neema Women's Group Cultural Immersion",
     activities: [
-      "Full-day safari focused on ecological concepts",
-      "Field journaling and observation techniques",
-      "Discussion on teaching biodiversity and conservation biology"
+      "Transfer to Maungu village and check into local lodge",
+      "Cultural exchange through traditional dancing with Neema Women's Group",
+      "Hands-on workshops: paper making from elephant dung, basket weaving, and bead making",
+      "Evening reflection on women's empowerment and cultural preservation"
     ]
   },
   {
     day: "Day 7",
-    title: "Indigenous Knowledge Systems",
+    title: "Zawadisha Community Experience",
     activities: [
-      "Cultural exchange with local elders",
-      "Workshop on integrating traditional ecological knowledge",
-      "Development of culturally responsive teaching materials"
+      "Home visit with local family to understand daily life",
+      "Participate in a 'Water Walk' to experience water access challenges",
+      "Visit a school with a Kapes-installed rainwater harvesting system",
+      "Community session with local women sharing impact stories",
+      "Reflection on water access and gender equality"
     ]
   },
   {
     day: "Day 8",
-    title: "Digital Resources Development",
+    title: "Tsavo East National Park Safari",
     activities: [
-      "Creating multimedia teaching resources",
-      "Virtual field trip design workshop",
-      "Technology integration strategies"
+      "Morning game drive in Tsavo East National Park",
+      "Wildlife spotting including elephants, lions, and cheetahs",
+      "Guided safari walk at Mudanda Rock with park rangers",
+      "Evening stargazing session and discussion on environmental awareness"
     ]
   },
   {
     day: "Day 9",
-    title: "Professional Learning Community",
+    title: "Return to Nairobi & Departure",
     activities: [
-      "Curriculum showcase and feedback session",
-      "Action planning for classroom implementation",
-      "Establishing ongoing collaboration networks"
-    ]
-  },
-  {
-    day: "Day 10",
-    title: "Reflection and Departure",
-    activities: [
-      "Final reflection and certificate ceremony",
-      "Professional development plan completion",
-      "Departure for home"
+      "Morning train journey back to Nairobi",
+      "Lunch at a local café with final reflection session",
+      "Receive Kapes certificate recognizing participation",
+      "Transfer to airport for evening departure"
     ]
   }
 ];
