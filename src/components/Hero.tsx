@@ -33,7 +33,7 @@ const Hero = () => {
             <span className="hero-heading block">Transformative Educational</span>
             <span className="block mt-2 text-dragon-yellow">Travel Experiences</span>
           </h1>
-          <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">School trips, summer programs, and multi-year curriculums that inspire students through cultural immersion, wilderness exploration, and authentic engagement in Africa—while empowering communities with sustainable projects that break down barriers to education.</p>
+          <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">Cultural immersion, wilderness exploration, and sustainable projects that empower communities and transform education</p>
           
           <div className="flex flex-wrap gap-4">
             <Button className="btn-primary text-lg" onClick={scrollToPrograms}>Explore Programs</Button>
