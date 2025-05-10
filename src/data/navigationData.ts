@@ -1,4 +1,3 @@
-
 export const programCategories = [
   {
     title: "School Trips",
@@ -53,11 +52,6 @@ export const programCategories = [
         title: "Educational Leadership",
         href: "/programs/educational-leadership",
         description: "Explore educational leadership through cultural immersion and collaborative learning.",
-      },
-      {
-        title: "Global Classroom Connection",
-        href: "/programs/global-classroom",
-        description: "Develop skills to bring global perspectives back to your classroom.",
       },
     ],
   },
