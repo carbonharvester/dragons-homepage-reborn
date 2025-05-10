@@ -36,8 +36,16 @@ const Hero = () => {
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl">Cultural immersion, wilderness exploration, and sustainable projects that empower communities and transform education</p>
           
           <div className="flex flex-wrap gap-4">
-            <Button className="btn-primary text-lg" onClick={scrollToPrograms}>Explore Programs</Button>
-            <Button className="bg-white text-dragon hover:bg-gray-100 px-6 py-3 rounded-md font-medium text-lg" asChild>
+            <Button 
+              className="btn-primary h-10 text-lg" 
+              onClick={scrollToPrograms}
+            >
+              Explore Programs
+            </Button>
+            <Button 
+              className="bg-white text-dragon hover:bg-gray-100 h-10 text-lg" 
+              asChild
+            >
               <Link to="/about">Learn More</Link>
             </Button>
           </div>

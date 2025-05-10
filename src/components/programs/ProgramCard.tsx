@@ -44,7 +44,7 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
       <CardContent className={`p-6 flex flex-col justify-between ${isMobile ? 'flex-grow' : 'h-full'}`}>
         <div className={isMobile ? 'min-h-[280px]' : ''}>
           <h3 className="text-lg font-bold mb-1 text-dragon-dark line-clamp-2">{program.title}</h3>
-          <p className="text-dragon-gray mb-3">{program.description}</p>
+          <p className="text-dragon-gray mb-3 line-clamp-3">{program.description}</p>
         </div>
         
         <div className="mt-auto">
@@ -72,7 +72,7 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
           </div>
           <Button 
             variant="outline" 
-            className={buttonClassName || "w-full border-dragon text-dragon hover:bg-dragon hover:text-white"} 
+            className={buttonClassName || "w-full h-10 border-dragon text-dragon hover:bg-dragon hover:text-white"}
             asChild
           >
             <Link to={program.link}>Learn More</Link>
