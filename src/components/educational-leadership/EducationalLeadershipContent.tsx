@@ -17,9 +17,8 @@ import TripLearningOutcomes from '../trip/TripLearningOutcomes';
 import ScrollableGallery from '../trip/ScrollableGallery';
 import TripItinerary from '../trip/TripItinerary';
 import ProgramBrochure from '../ProgramBrochure';
-import Testimonials from '../Testimonials';
-import TripCTA from '../trip/TripCTA';
 import VideoSection from '../VideoSection';
+import TripCTA from '../trip/TripCTA';
 
 const EducationalLeadershipContent = () => {
   return (
@@ -83,9 +82,6 @@ const EducationalLeadershipContent = () => {
           
           {/* Program Brochure */}
           <ProgramBrochure program={programData} />
-          
-          {/* Testimonials */}
-          <Testimonials />
           
           {/* CTA Section */}
           <TripCTA isSchoolTrip={false} />

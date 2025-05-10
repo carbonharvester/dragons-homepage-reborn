@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
@@ -59,6 +60,7 @@ interface TripBrochureContentProps {
   hideHighlights?: boolean;
   pdfBrochureLink?: string;
   customThumbnails?: Record<string, string>;
+  isEducatorTrip?: boolean;
 }
 
 const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
@@ -74,7 +76,8 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
   hideOverview = false,
   hideHighlights = false,
   pdfBrochureLink,
-  customThumbnails
+  customThumbnails,
+  isEducatorTrip = false
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
   
@@ -107,11 +110,11 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {/* Program Brochure */}
       <ProgramBrochure program={programData} pdfLink={pdfBrochureLink} />
       
-      {/* Student Stories Section - Moved above CTA */}
-      <Testimonials />
+      {/* Student Stories Section - Only show for student trips, not for educator trips */}
+      {!isEducatorTrip && <Testimonials />}
       
-      {/* CTA Section - always using isSchoolTrip=true since these are all school trips */}
-      <TripCTA isSchoolTrip={true} />
+      {/* CTA Section */}
+      <TripCTA isSchoolTrip={!isEducatorTrip} />
     </div>;
 };
 
