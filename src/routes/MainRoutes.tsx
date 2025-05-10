@@ -30,6 +30,9 @@ import CapturingKenyaItinerary from "@/pages/CapturingKenyaItinerary";
 import FeedingTheFuture from "@/pages/FeedingTheFuture";
 import FeedingTheFutureItinerary from "@/pages/FeedingTheFutureItinerary";
 
+// Educator Programs
+import EducationalLeadership from "@/pages/EducationalLeadership";
+
 // Adult Programs
 import PermacultureDesignCourse from "@/pages/PermacultureDesignCourse";
 
@@ -70,6 +73,9 @@ const MainRoutes = () => {
       <Route path="/programs/feeding-the-future/itinerary" element={<FeedingTheFutureItinerary />} />
       <Route path="/programs/roots-of-change" element={<Navigate to="/programs/feeding-the-future" replace />} />
       <Route path="/programs/roots-of-change/itinerary" element={<Navigate to="/programs/feeding-the-future/itinerary" replace />} />
+      
+      {/* Educator Programs */}
+      <Route path="/programs/educational-leadership" element={<EducationalLeadership />} />
       
       {/* Adult Trips */}
       <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
