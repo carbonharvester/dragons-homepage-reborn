@@ -33,13 +33,13 @@ const tripHighlightsData: TripHighlightData[] = [
   },
   {
     icon: Camera,
-    title: "Document Your Journey",
-    description: "Capture and share your experiences through photography and storytelling to inspire sustainable action back home."
+    title: "Ngong Hills Cultural Hike",
+    description: "Trek across the scenic Ngong Hills, exploring Maasai culture and local flora and fauna while learning about the intersection of ecosystems and sustainable agriculture."
   },
   {
     icon: Globe,
-    title: "Global Food Systems",
-    description: "Gain insights into global food security challenges and discover how local solutions can have worldwide impact."
+    title: "Textile Upcycling Workshop",
+    description: "Visit Africa Collects Textiles to participate in weaving workshops, transforming old uniforms into useful products and understand the circular economy's role in community development."
   }
 ];
 
