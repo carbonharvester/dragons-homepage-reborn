@@ -1,6 +1,6 @@
 
 import { weeks } from './index';
-import { programData, outcomes } from './ProgramData';
+import { programData, outcomes } from '../ProgramData';
 
 // Structured data for the PDF brochure
 export const brochureData = {

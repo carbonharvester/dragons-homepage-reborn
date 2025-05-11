@@ -4,21 +4,9 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import CapturingKenyaBrochure from "./ProgramBrochurePDF";
+import { programData } from './ProgramData';
 
-interface ProgramData {
-  title: string;
-  description: string;
-  duration: string;
-  season: string;
-  location: string;
-  goals: string[];
-}
-
-interface ProgramCTAProps {
-  programData: ProgramData;
-}
-
-const ProgramCTA = ({ programData }: ProgramCTAProps) => {
+const ProgramCTA = () => {
   return (
     <section className="py-16 bg-dragon">
       <div className="container-wide">

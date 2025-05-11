@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { generateProgramBrochure } from '@/utils/pdfGenerator';
+import jsPDF from 'jspdf';
 import { brochureData } from './data/brochure';
 import { Book, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
