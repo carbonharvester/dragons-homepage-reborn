@@ -48,7 +48,7 @@ const FeedingTheFuture = () => {
         <ProgramItinerary />
 
         {/* Program Overview */}
-        <ProgramOverview />
+        <ProgramOverview programData={programData} />
         
         {/* Program Outcomes */}
         <ProgramOutcomes outcomes={outcomes} />
