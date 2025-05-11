@@ -14,8 +14,12 @@ export const learningOutcomes: LearningOutcome[] = [
     description: "Develop empathy and understanding of global food security challenges and solutions."
   },
   {
-    title: "Project Management",
-    description: "Learn to plan, implement, and evaluate community development projects with tangible outcomes."
+    title: "Sustainable Agricultural Practices",
+    description: "Students will acquire hands-on experience in permaculture and sustainable farming techniques."
+  },
+  {
+    title: "Global Food Security Awareness",
+    description: "Students will develop a comprehensive understanding of food insecurity challenges in Kenya and explore scalable local solutions."
   },
   {
     title: "Team Collaboration",
