@@ -16,6 +16,7 @@ import ProgramCTA from '@/components/capturing-kenya/ProgramCTA';
 // Import data
 import { programData, outcomes } from '@/components/capturing-kenya/ProgramData';
 import { weeks } from '@/components/capturing-kenya/data';
+import { brochureData } from '@/components/capturing-kenya/data/brochure';
 
 const CapturingKenya = () => {
   // Scroll to top on page load
