@@ -73,13 +73,13 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               projectGoals={foodProjectGoals}
             />
             
-            {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
-            {!isMobile && <TripHighlightsWrapper />}
+            {/* Trip Highlights - show on all devices */}
+            <TripHighlightsWrapper />
             
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              // Here we're passing empty array to avoid type issues, since highlights are shown via TripHighlightsWrapper
+              // Here we're passing empty array to avoid type issues
               tripHighlights={[]}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
@@ -89,7 +89,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               description={foodDescription}
               projectGoals={foodProjectGoals}
               hideOverview={true}
-              hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
+              hideHighlights={true} // Always hide in TripBrochureContent since we show it separately above
               customThumbnails={customThumbnails}
             />
           </div>
