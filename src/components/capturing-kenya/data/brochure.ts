@@ -14,42 +14,42 @@ export const brochureData = {
     title: outcome.title,
     description: outcome.description
   })),
-  // Extract a sample itinerary from the weeks data for the brochure
+  // Extract a proper itinerary from the weeks data for the brochure
   sampleItinerary: [
     {
-      day: "Week 1: Nairobi & Amboseli",
+      day: "Week 1",
       activities: [
-        "Photography workshops with professional mentors",
-        "Wildlife photography in Amboseli National Park",
-        "Hot air balloon ride over Amboseli at sunrise",
-        "Maasai village cultural experience"
+        "Arrival in Nairobi and orientation to Kenya's photography landscape",
+        "Wildlife photography workshop at Nairobi National Park",
+        "Multi-day safari photography in Amboseli National Park",
+        "Maasai cultural documentation experience"
       ]
     },
     {
-      day: "Week 2: Samburu",
+      day: "Week 2",
       activities: [
-        "Wildlife and landscape photography in Samburu Reserve",
-        "Cultural immersion with Samburu communities",
-        "Photography workshops with local youth",
-        "Advanced editing techniques for unique environments"
+        "Travel to Samburu National Reserve for wildlife photography",
+        "Portrait photography sessions with Samburu communities",
+        "Night sky and astrophotography workshop",
+        "Landscape photography at the Matthews Range"
       ]
     },
     {
-      day: "Week 3: Lake Turkana",
+      day: "Week 3",
       activities: [
-        "Remote landscape photography at Lake Turkana",
-        "Documentary style storytelling with Turkana people",
-        "Environmental photography challenges",
-        "Boat trip on Lake Turkana for unique perspectives"
+        "Documentary photography at Lake Turkana",
+        "Environmental storytelling through photography",
+        "Cultural exchange with Turkana communities",
+        "Specialized wildlife photography at Sibiloi National Park"
       ]
     },
     {
-      day: "Week 4: Nairobi",
+      day: "Week 4",
       activities: [
-        "Advanced editing workshops for portfolio development",
-        "Community showcase of student work",
-        "Certificate ceremony and professional feedback",
-        "Final portfolio preparation for future opportunities"
+        "Return to Nairobi for advanced editing workshops",
+        "Portfolio development sessions with professional photographers",
+        "Final project presentations and community exhibition",
+        "Graduation and certificate ceremony"
       ]
     }
   ],
