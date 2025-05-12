@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { ChevronDown, ChevronUp } from "lucide-react";
@@ -116,9 +117,6 @@ const MobileMenu = ({
               <div className="pl-4 mt-2 space-y-2 border-l-2 border-dragon-beige">
                 <Link to="/blog" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
                   Blog
-                </Link>
-                <Link to="/podcast" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Podcast
                 </Link>
                 <Link to="/discover-kenya" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
                   Discover Kenya
