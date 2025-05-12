@@ -45,7 +45,7 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
   ];
 
   // Direct PDF brochure link
-  const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Water_Empowering_Women_Brochure.pdf?v=1746689349";
+  const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Water_Empowering_Women.pdf?v=1747049848";
 
   return (
     <>
