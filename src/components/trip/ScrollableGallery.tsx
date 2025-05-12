@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -23,6 +23,12 @@ interface ScrollableGalleryProps {
 
 const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
   const isMobile = useIsMobile();
+  const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
+
+  // Function to handle image load events
+  const handleImageLoad = (index: number) => {
+    setImagesLoaded(prev => ({ ...prev, [index]: true }));
+  };
 
   return (
     <div className="mt-24 mb-16">
@@ -43,20 +49,30 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
                 key={index} 
                 className={isMobile ? "basis-full" : "basis-full md:basis-1/2 lg:basis-1/3"}
               >
-                <div className={`rounded-lg overflow-hidden ${isMobile ? 'h-96' : 'h-80'}`}>
+                <div className={`rounded-lg overflow-hidden ${isMobile ? 'h-96' : 'h-80'} bg-gray-100`}>
                   {item.type === 'video' ? (
                     <video
                       src={item.src}
                       className="w-full h-full object-cover"
                       controls
                       muted
+                      preload="metadata"
                     />
                   ) : (
-                    <img
-                      src={item.src}
-                      alt={item.alt}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
+                    <>
+                      {!imagesLoaded[index] && (
+                        <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                          <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
+                        </div>
+                      )}
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        loading="lazy"
+                        className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
+                        onLoad={() => handleImageLoad(index)}
+                      />
+                    </>
                   )}
                 </div>
               </CarouselItem>
