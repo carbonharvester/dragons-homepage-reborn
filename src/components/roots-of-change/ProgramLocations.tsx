@@ -15,7 +15,7 @@ const ProgramLocations = () => {
     weeks: "Weeks 3-4",
     description: "Visit rural schools with extensive land resources but different challenges like water access and infrastructure. While staying in Kasigau Corridor, learn from Wildlife Works experts and apply permaculture strategies suited for larger rural environments.",
     activities: ["Water conservation techniques", "Large-scale composting systems", "Agroforestry planning", "Drought-resistant planting", "School farm design for large spaces", "Connecting with local farming traditions"],
-    image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&q=80"
+    image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Tsavo.jpg?v=1747108126"
   }];
 
   return (
