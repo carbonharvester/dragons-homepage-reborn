@@ -11,6 +11,7 @@ import { galleryImages, learningOutcomes } from './data';
 import { programData } from './data/programInfo';
 import ProgramLocations from '../roots-of-change/ProgramLocations';
 import ProgramItinerary from '../roots-of-change/ProgramItinerary';
+import TripGallery from '../trip/TripGallery';
 
 interface FeedingTheFutureDataProps {
   heroOnly?: boolean;
@@ -83,21 +84,8 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
               </div>
             </div>
             
-            {/* Gallery Section */}
-            <div className="mt-24 mb-16">
-              <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Photo Gallery</h2>
-              <div className="grid grid-cols-12 gap-4">
-                {galleryImages.map((image, index) => (
-                  <div key={index} className={image.className}>
-                    <img 
-                      src={image.src} 
-                      alt={image.alt} 
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+            {/* Gallery Section - Updated to use TripGallery */}
+            <TripGallery images={galleryImages} />
 
             {/* Custom Program Locations section */}
             <ProgramLocations />
