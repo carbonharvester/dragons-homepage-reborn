@@ -69,6 +69,7 @@ const VideoPlayer = ({
   
   // Handle play button click
   const handlePlayClick = () => {
+    console.log('Play button clicked in VideoPlayer');
     setIsPlaying(true);
   };
 

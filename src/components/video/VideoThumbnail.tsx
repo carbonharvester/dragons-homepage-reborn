@@ -23,68 +23,73 @@ const VideoThumbnail = ({
 }: VideoThumbnailProps) => {
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [autoplayAttempted, setAutoplayAttempted] = useState(false);
-  const [userInteracted, setUserInteracted] = useState(false);
+  const [isPreviewPlaying, setIsPreviewPlaying] = useState(false);
   
   const isCloudinary = showCloudinaryPreview && previewSrc && isCloudinaryVideo(previewSrc);
   
-  // Add an event listener to detect any user interaction with the document
-  useEffect(() => {
-    const handleUserInteraction = () => {
-      setUserInteracted(true);
+  // Try to play the preview video
+  const attemptAutoplay = () => {
+    if (!videoRef.current || !isCloudinary) return;
+    
+    console.log('Attempting to play Cloudinary preview');
+    
+    // Ensure video is muted (required for autoplay in most browsers)
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.playsInline = true;
       
-      // If we have a video and haven't tried autoplay yet, try again after user interaction
-      if (isCloudinary && videoRef.current && !autoplayAttempted) {
-        playVideo();
-      }
-    };
-
-    // Add event listeners for common user interactions
-    document.addEventListener('click', handleUserInteraction, { once: true });
-    document.addEventListener('touchstart', handleUserInteraction, { once: true });
-    document.addEventListener('scroll', handleUserInteraction, { once: true });
-
-    return () => {
-      document.removeEventListener('click', handleUserInteraction);
-      document.removeEventListener('touchstart', handleUserInteraction);
-      document.removeEventListener('scroll', handleUserInteraction);
-    };
-  }, [isCloudinary, autoplayAttempted]);
-
-  // Function to handle video playback attempts
-  const playVideo = () => {
-    if (!videoRef.current) return;
-    
-    setAutoplayAttempted(true);
-    
-    videoRef.current.play()
-      .then(() => {
-        console.log('Cloudinary preview video autoplay successful');
-      })
-      .catch(err => {
-        console.log('Autoplay prevented for Cloudinary preview:', err);
-        
-        // If autoplay failed and we have user interaction, try again after a short delay
-        if (userInteracted) {
-          setTimeout(() => {
-            if (videoRef.current) {
-              // Try one more time after a delay
-              videoRef.current.muted = true; // Ensure video is muted as browsers are more likely to allow muted autoplay
-              videoRef.current.play().catch(e => console.log('Second autoplay attempt failed:', e));
-            }
-          }, 1000);
-        }
-      });
+      videoRef.current.play()
+        .then(() => {
+          console.log('Cloudinary preview started successfully');
+          setIsPreviewPlaying(true);
+        })
+        .catch(err => {
+          console.error('Autoplay failed:', err);
+          setIsPreviewPlaying(false);
+        });
+    }
   };
   
-  // Effect to handle video preview autoplay
+  // Handle play button click
+  const handlePlayButtonClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    console.log('Play button clicked');
+    onPlayClick();
+  };
+  
+  // Effect to handle initial autoplay attempt
   useEffect(() => {
-    // Auto-play the Cloudinary preview video when component mounts
     if (isCloudinary && videoRef.current) {
-      // Short timeout to allow browser to process the video element
-      setTimeout(() => playVideo(), 100);
+      // Give the browser a moment to load the video element
+      const timer = setTimeout(() => {
+        attemptAutoplay();
+      }, 300);
+      
+      return () => clearTimeout(timer);
     }
   }, [isCloudinary, previewSrc]);
+  
+  // Add event listeners for user interaction to help with autoplay
+  useEffect(() => {
+    if (!isCloudinary || isPreviewPlaying) return;
+    
+    const handleUserInteraction = () => {
+      if (videoRef.current && !isPreviewPlaying) {
+        attemptAutoplay();
+      }
+    };
+    
+    // Add these events to try autoplay after user interaction
+    window.addEventListener('scroll', handleUserInteraction, { once: true });
+    window.addEventListener('click', handleUserInteraction, { once: true });
+    window.addEventListener('touchstart', handleUserInteraction, { once: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleUserInteraction);
+      window.removeEventListener('click', handleUserInteraction);
+      window.removeEventListener('touchstart', handleUserInteraction);
+    };
+  }, [isCloudinary, isPreviewPlaying]);
   
   return (
     <div className="relative">
@@ -92,7 +97,7 @@ const VideoThumbnail = ({
         <div className="w-full h-full bg-black">
           <div 
             className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20 z-10 cursor-pointer"
-            onClick={onPlayClick}
+            onClick={handlePlayButtonClick}
             role="button"
             tabIndex={0}
             aria-label="Play video"
@@ -114,7 +119,6 @@ const VideoThumbnail = ({
               muted
               loop
               playsInline
-              autoPlay
               preload="auto"
               aria-hidden="true"
             />
