@@ -18,7 +18,7 @@ export const summerAbroad = [
     duration: "3 Weeks", 
     season: "Jul 28 - Aug 25 2026", 
     description: "Develop your photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders across Kenya's diverse landscapes. Create a compelling portfolio while contributing to conservation efforts.", 
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747118596/KleinNettoh--2_1_dxa20b.jpg", 
+    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747130086/KleinNettoh--2_ofhqdi.jpg", 
     link: "/programs/capturing-kenya", 
     icon: Camera, 
     ageGroup: "17-21", 
