@@ -1,26 +1,30 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface CalendlyWidgetProps {
   url: string;
   isOpen: boolean;
-  onLoadError: () => void;
-  onLoadSuccess: () => void;
+  onLoadError?: () => void;
+  onLoadSuccess?: () => void;
 }
 
 const CalendlyWidget = ({ 
   url, 
   isOpen, 
-  onLoadError, 
-  onLoadSuccess 
+  onLoadError = () => {}, 
+  onLoadSuccess = () => {} 
 }: CalendlyWidgetProps) => {
   // Load the widget when the component mounts
-  React.useEffect(() => {
+  useEffect(() => {
     if (isOpen) {
-      // The script loading is now handled via the inline script tag
       try {
-        // Simulate a successful load since we're using the direct embed
-        onLoadSuccess();
+        // Check if Calendly is loaded globally
+        if (window.Calendly) {
+          onLoadSuccess();
+        } else {
+          console.warn("Calendly not found in window object");
+          onLoadError();
+        }
       } catch (error) {
         console.error('Error initializing Calendly widget:', error);
         onLoadError();
