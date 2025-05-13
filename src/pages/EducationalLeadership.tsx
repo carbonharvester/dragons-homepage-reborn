@@ -3,7 +3,7 @@ import React from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import EducationalLeadershipContent from "@/components/educational-leadership/EducationalLeadershipContent";
+import TripBrochureWrapper from '@/components/trip/TripBrochureWrapper';
 
 const EducationalLeadership = () => {
   return (
@@ -16,7 +16,19 @@ const EducationalLeadership = () => {
       <Header />
       
       <main>
-        <EducationalLeadershipContent />
+        {/* Hero section is part of TripBrochureWrapper */}
+        <TripBrochureWrapper tripType="educational-leadership" heroOnly={true} />
+        
+        {/* Navigation and content in a continuous section */}
+        <div className="bg-white">
+          {/* Navigation section */}
+          <div className="container-wide py-4">
+            <TripBrochureWrapper tripType="educational-leadership" navigationOnly={true} />
+          </div>
+          
+          {/* Content section with no top padding */}
+          <TripBrochureWrapper tripType="educational-leadership" contentOnly={true} />
+        </div>
       </main>
       <Footer />
     </div>

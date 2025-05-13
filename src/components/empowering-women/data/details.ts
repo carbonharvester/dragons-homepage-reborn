@@ -1,43 +1,44 @@
 
+import React from 'react';
 import { Calendar, Route, Map, Users, GraduationCap, Award } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
 interface TripDetail {
   label: string;
   value: string;
-  icon: LucideIcon;
+  icon: React.ReactNode;
 }
 
 export const tripDetails: TripDetail[] = [
   {
     label: "Duration",
     value: "8 Days",
-    icon: Calendar
+    icon: React.createElement(Calendar, { className: "h-5 w-5 text-dragon" })
   },
   {
     label: "Season",
     value: "Year Round",
-    icon: Route
+    icon: React.createElement(Route, { className: "h-5 w-5 text-dragon" })
   },
   {
     label: "Location",
     value: "Tsavo, Kenya",
-    icon: Map
+    icon: React.createElement(Map, { className: "h-5 w-5 text-dragon" })
   },
   {
     label: "Group Size",
     value: "10-28 Students / 2-4 Instructors and Rangers",
-    icon: Users
+    icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" })
   },
   {
     label: "Educational Credits (Optional)",
     value: "CAS Points, Duke of Edinburgh",
-    icon: GraduationCap
+    icon: React.createElement(GraduationCap, { className: "h-5 w-5 text-dragon" })
   },
   {
     label: "Certificate",
     value: "Kapes Cultural Impact Certificate",
-    icon: Award
+    icon: React.createElement(Award, { className: "h-5 w-5 text-dragon" })
   }
 ];
 

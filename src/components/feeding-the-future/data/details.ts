@@ -1,54 +1,38 @@
 
-import { Clock, Calendar, Map, Users, Award, FileText } from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
+import { Clock, Calendar, MapPin, Users, DollarSign } from 'lucide-react';
 import React from 'react';
 
-// This interface is used locally for the data definition
-interface TripDetailData {
-  label: string;
-  value: string;
-  icon: LucideIcon;
-}
-
-// The actual exported data uses the icon components directly
-// This will be transformed when used in components
-const tripDetailsData: TripDetailData[] = [
+export const tripDetails = [
   {
     label: "Duration",
     value: "4 Weeks",
-    icon: Clock
+    icon: React.createElement(Clock, { className: "h-5 w-5 text-dragon" })
   },
   {
-    label: "Season",
+    label: "When",
     value: "Jul 28 - Aug 25 2025",
-    icon: Calendar
+    icon: React.createElement(Calendar, { className: "h-5 w-5 text-dragon" })
   },
   {
     label: "Location",
     value: "Nairobi & Tsavo, Kenya",
-    icon: Map
+    icon: React.createElement(MapPin, { className: "h-5 w-5 text-dragon" })
+  },
+  {
+    label: "Ages",
+    value: "16-20",
+    icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" })
   },
   {
     label: "Group Size",
     value: "12 Students / 3 Instructors",
-    icon: Users
+    icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" })
   },
   {
-    label: "Educational Credits",
-    value: "CAS Points, Duke of Edinburgh",
-    icon: Award
-  },
-  {
-    label: "Certificate",
-    value: "Kapes Sustainable Agriculture Certificate",
-    icon: FileText
+    label: "Price",
+    value: "$7,950 (plus airfare)",
+    icon: React.createElement(DollarSign, { className: "h-5 w-5 text-dragon" })
   }
 ];
-
-// Transform LucideIcons to ReactNode before exporting
-export const tripDetails = tripDetailsData.map(detail => ({
-  ...detail,
-  icon: React.createElement(detail.icon, { size: 20 })
-}));
 
 export const perfectFor = "Aged 16-20, Passionate About Sustainability, Enjoy Cultural Immersion, Interest in Agriculture, Active & Hands-on Learners, Open to New Experiences";

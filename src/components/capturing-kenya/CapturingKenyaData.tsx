@@ -7,11 +7,13 @@ import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { tripDetails, perfectFor } from './data/details';
-import { programData, galleryImages, learningOutcomes } from './ProgramData';
+import { programData } from './ProgramData';
 import { weeks } from './data';
 import ProgramItinerary from '../capturing-kenya/ProgramItinerary';
 import ProgramLocations from './ProgramLocations';
 import TripLearningOutcomes from '../trip/TripLearningOutcomes';
+import { galleryImages } from './data/gallery';
+import { learningOutcomes } from './ProgramData';
 
 interface CapturingKenyaDataProps {
   heroOnly?: boolean;
@@ -39,9 +41,6 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
   // Direct PDF brochure link
   const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Capturing_Kenya.pdf";
 
-  // Log weeks data to help with debugging
-  console.log("Weeks data in CapturingKenyaData:", weeks);
-
   return (
     <>
       {/* Hero Section */}
@@ -50,7 +49,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
           title="Capturing Kenya"
           subtitle="A 4-week creative adventure to photograph and film Kenya's stunning landscapes, wildlife, and cultures while developing professional skills."
           category="Summer Abroad"
-          imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747118596/KleinNettoh--2_1_dxa20b.jpg"
+          imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747130086/KleinNettoh--2_ofhqdi.jpg"
         />
       )}
 

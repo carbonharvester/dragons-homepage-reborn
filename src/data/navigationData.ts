@@ -1,4 +1,3 @@
-
 export const programCategories = [
   {
     title: "School Trips",
@@ -56,18 +55,7 @@ export const programCategories = [
       },
     ],
   },
-  {
-    title: "Adult Trips",
-    href: "/adult-programs",
-    description: "Educational travel experiences designed for adults.",
-    programs: [
-      {
-        title: "Permaculture Design Course",
-        href: "/programs/permaculture-design-course",
-        description: "Learn permaculture principles while contributing to sustainable food systems.",
-      },
-    ],
-  },
+  // Adult Trips category removed
 ];
 
 export const resourcePages = [
