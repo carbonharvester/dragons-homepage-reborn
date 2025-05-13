@@ -34,12 +34,6 @@ const ProgramOverview = ({
   }, {
     src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404516.jpg?v=1746515670",
     alt: "Student with camera in natural setting"
-  }, {
-    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/55a9f399-0214-46a2-99d2-25dbc2cba06f.jpg?v=1746515494",
-    alt: "Students working on photography project"
-  }, {
-    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/8aea54cf-37c5-43f0-8665-b4259a4acc7f.jpg?v=1746515558",
-    alt: "Student learning photography techniques"
   }];
   
   return (
