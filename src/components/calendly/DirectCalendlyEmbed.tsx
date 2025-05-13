@@ -1,5 +1,8 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { preloadCalendlyScript, isCalendlyLoaded } from '@/utils/calendlyLoader';
+import CalendlyLoading from './CalendlyLoading';
+import CalendlyError from './CalendlyError';
 
 interface DirectCalendlyEmbedProps {
   url?: string;
@@ -12,43 +15,65 @@ const DirectCalendlyEmbed: React.FC<DirectCalendlyEmbedProps> = ({
   height = "700px",
   className = ""
 }) => {
-  const scriptRef = useRef<HTMLScriptElement | null>(null);
+  const [loadingState, setLoadingState] = useState<'loading' | 'loaded' | 'error'>('loading');
+  const calendarRef = useRef<HTMLDivElement>(null);
   const initialized = useRef(false);
   
+  // Effect to load and initialize Calendly
   useEffect(() => {
-    // Only load the script once
-    if (!initialized.current) {
-      initialized.current = true;
-      
-      // Create and append the Calendly script
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      
-      script.onload = () => {
-        console.log('Calendly script loaded successfully');
-      };
-      
-      script.onerror = () => {
-        console.error('Failed to load Calendly script');
-      };
-      
-      document.body.appendChild(script);
-      scriptRef.current = script;
-    }
+    // Only run once
+    if (initialized.current) return;
+    initialized.current = true;
+    
+    const loadCalendly = async () => {
+      try {
+        await preloadCalendlyScript();
+        
+        // Initialize Calendly after script is loaded
+        if (calendarRef.current && window.Calendly) {
+          // Small delay to ensure DOM is ready
+          setTimeout(() => {
+            setLoadingState('loaded');
+          }, 300);
+        }
+      } catch (error) {
+        console.error('Failed to initialize Calendly widget:', error);
+        setLoadingState('error');
+      }
+    };
+    
+    loadCalendly();
     
     return () => {
-      // We don't remove the script on unmount as it should remain available for future use
+      // Cleanup if needed
     };
-  }, []);
+  }, [url]);
+  
+  // Handle retry on error
+  const handleRetry = () => {
+    setLoadingState('loading');
+    initialized.current = false;
+    preloadCalendlyScript()
+      .then(() => setLoadingState('loaded'))
+      .catch(() => setLoadingState('error'));
+  };
   
   return (
-    <div 
-      className={`calendly-inline-widget ${className}`} 
-      data-url={`${url}?hide_event_type_details=1&hide_gdpr_banner=1`}
-      style={{ minWidth: '320px', height }}
-    />
+    <>
+      {loadingState === 'loading' && <CalendlyLoading />}
+      {loadingState === 'error' && <CalendlyError onRetry={handleRetry} />}
+      
+      <div 
+        ref={calendarRef}
+        className={`calendly-inline-widget ${className}`}
+        data-url={`${url}?hide_event_type_details=1&hide_gdpr_banner=1&background_color=ffffff&primary_color=357566`}
+        style={{ 
+          minWidth: '320px', 
+          height,
+          display: loadingState === 'loaded' ? 'block' : 'none'
+        }}
+      />
+    </>
   );
 };
 

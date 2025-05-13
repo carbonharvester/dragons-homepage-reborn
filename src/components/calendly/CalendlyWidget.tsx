@@ -11,9 +11,7 @@ interface CalendlyWidgetProps {
 
 const CalendlyWidget = ({ 
   url, 
-  isOpen, 
-  onLoadError = () => {}, 
-  onLoadSuccess = () => {} 
+  isOpen
 }: CalendlyWidgetProps) => {
   if (!isOpen) return null;
   
