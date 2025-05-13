@@ -8,22 +8,22 @@ const ProgramLocations = () => {
     {
       name: "Nairobi",
       description: "Kenya's vibrant capital city serving as your arrival and orientation point. Visit wildlife conservation centers and learn about urban photography.",
-      image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--3.jpg?v=1747112174"
+      image: ""
     },
     {
       name: "Amboseli National Park",
       description: "Known for its large elephant herds and stunning views of Mount Kilimanjaro, perfect for landscape and wildlife photography.",
-      image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--4.jpg?v=1747112174"
+      image: ""
     },
     {
       name: "Samburu National Reserve",
       description: "Home to unique wildlife species like Grevy's zebra and cultural experiences with the Samburu people.",
-      image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--5.jpg?v=1747112174"
+      image: ""
     },
     {
       name: "Lake Turkana",
       description: "Capture the raw beauty of the jade sea, engage with the Turkana people, and document cultural traditions in this remote setting.",
-      image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--1.jpg?v=1747112174"
+      image: ""
     }
   ];
 
