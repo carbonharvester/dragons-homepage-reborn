@@ -23,6 +23,11 @@ export const tripDetails: TripDetail[] = [
     label: "Location",
     value: "Nairobi, Voi, Maungu, Tsavo East",
     icon: React.createElement(MapPin, { className: "h-5 w-5 text-dragon" })
+  },
+  {
+    label: "Group Size",
+    value: "6",
+    icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" })
   }
 ];
 
