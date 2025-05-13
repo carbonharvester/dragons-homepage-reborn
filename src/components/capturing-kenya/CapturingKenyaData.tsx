@@ -50,7 +50,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
           title="Capturing Kenya"
           subtitle="A 4-week creative adventure to photograph and film Kenya's stunning landscapes, wildlife, and cultures while developing professional skills."
           category="Summer Abroad"
-          imagePath="https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--2_1.jpg?v=1747112188"
+          imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747118596/KleinNettoh--2_1_dxa20b.jpg"
         />
       )}
 
