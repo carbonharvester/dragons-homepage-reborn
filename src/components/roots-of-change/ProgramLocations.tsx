@@ -8,7 +8,7 @@ const ProgramLocations = () => {
     weeks: "Weeks 1-2",
     description: "Work with urban schools that have limited land, teaching how to maximize small spaces through vertical farming, container gardening, and intensive planting techniques. Learn to adapt permaculture principles to urban constraints.",
     activities: ["Urban farming techniques", "Composting for small spaces", "Vertical gardening systems", "Container growing optimization", "Rainwater harvesting in urban settings", "Working with school feeding programs"],
-    image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&q=80&w=1280"
+    image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Nairobi_From_Nairobi_National_Park.jpg?v=1747107973"
   }, {
     name: "Tsavo Region",
     weeks: "Weeks 3-4",
