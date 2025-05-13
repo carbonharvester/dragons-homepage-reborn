@@ -61,7 +61,6 @@ interface TripBrochureContentProps {
   pdfBrochureLink?: string;
   customThumbnails?: Record<string, string>;
   isEducatorTrip?: boolean;
-  isSchoolTrip?: boolean; // Added the isSchoolTrip property
   hideStudentStories?: boolean;
 }
 
@@ -80,7 +79,6 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
   pdfBrochureLink,
   customThumbnails,
   isEducatorTrip = false,
-  isSchoolTrip = false, // Added the isSchoolTrip prop with default value
   hideStudentStories = false
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
@@ -103,8 +101,10 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {/* Learning Outcomes */}
       <TripLearningOutcomes outcomes={learningOutcomes} />
       
-      {/* Photo Gallery - Using consolidated component */}
-      <ScrollableGallery images={galleryImages} />
+      {/* Photo Gallery - Now positioned depending on device */}
+      <ScrollableGallery 
+        images={galleryImages} 
+      />
       
       {/* Sample Itinerary */}
       <TripItinerary itineraryDays={tripItinerary} />
@@ -116,7 +116,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {!isEducatorTrip && !hideStudentStories && <Testimonials />}
       
       {/* CTA Section */}
-      <TripCTA isSchoolTrip={isSchoolTrip || !isEducatorTrip} />
+      <TripCTA isSchoolTrip={!isEducatorTrip} />
     </div>;
 };
 

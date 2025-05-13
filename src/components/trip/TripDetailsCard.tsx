@@ -22,7 +22,7 @@ interface TripDetailsCardProps {
 
 const TripDetailsCard = ({
   tripDetails,
-  isSchoolTrip = true // Changed default to true for school trips
+  isSchoolTrip = false
 }: TripDetailsCardProps) => {
   const renderIcon = (icon: React.ReactNode | string) => {
     if (typeof icon === 'string') {
@@ -53,16 +53,6 @@ const TripDetailsCard = ({
       </div>
       
       <div className="mt-6 space-y-4">
-        {/* Only show Apply Now button for non-school trips */}
-        {!isSchoolTrip && (
-          <Button 
-            className="w-full bg-dragon text-white hover:bg-dragon-dark"
-            onClick={() => window.open("https://calendly.com/kapes-adventures/30min", "_blank")}
-          >
-            <Calendar className="h-5 w-5 mr-2" /> Apply Now
-          </Button>
-        )}
-        
         <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="outline" className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow" />
       </div>
     </div>;

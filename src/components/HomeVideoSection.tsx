@@ -21,7 +21,7 @@ const HomeVideoSection = ({
           <p className="section-subheading mx-auto">Watch how our immersive programs transform students into global citizens through cultural exchange and authentic experiences in Africa - while empowering communities with lasting impact.</p>
         </div>
         
-        <VideoPlayer videoId={videoId} title={title} initialPlaying={true} />
+        <VideoPlayer videoId={videoId} title={title} />
       </div>
     </section>
   );

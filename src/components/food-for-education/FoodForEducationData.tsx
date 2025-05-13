@@ -26,8 +26,8 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
 
   // Custom description and project goals specific to Food For Education
   const foodDescription = [
-    "In Kenya, 1 in 4 children face stunted growth due to malnutrition, with hunger posing a significant barrier to education—limiting focus, attendance, and long-term potential. The Food For Education Program Trip is a 8 day journey designed to combat this crisis by turning degraded land at schools into thriving gardens and food forests.",
-    "Students work alongside local children and local experts to plant nutrient-rich crops, creating sustainable food sources that provide daily meals for students in need. Through hands-on permaculture workshops and cultural exchanges, this trip empowers students to drive food security, foster global citizenship, and leave a lasting legacy of nourishment for Kenyan communities."
+    "In many Kenyan communities, school children often go without proper nutrition, which impacts their ability to learn and thrive. Using permaculture principles, this program transforms unused school land into productive gardens.",
+    "Students will work alongside local experts to develop sustainable food systems that provide nutritious meals for school children while teaching valuable agricultural skills that address food insecurity."
   ];
   
   const foodProjectGoals = programData.goals;
@@ -41,7 +41,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Food For Education"
-          subtitle="Transform degraded school land into vibrant gardens using permaculture farming techniques to provide nutritious meals for local children, fostering long-term food security."
+          subtitle="Transform unused school land into vibrant gardens using permaculture farming techniques. Students will create sustainable food systems to provide nutritious meals for local children, fostering long-term food security."
           category="School Trip"
           imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg"
         />

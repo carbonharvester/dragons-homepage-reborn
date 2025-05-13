@@ -20,7 +20,7 @@ const CapturingKenya = () => {
       />
       <Header />
       
-      <main className="flex-grow">
+      <main>
         {/* Hero section is part of TripBrochureWrapper */}
         <TripBrochureWrapper tripType="capturing-kenya" heroOnly={true} />
         

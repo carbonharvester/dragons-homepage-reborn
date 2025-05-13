@@ -1,34 +1,25 @@
 
-import React from 'react';
-import { Clock, Calendar, Users, MapPin } from 'lucide-react';
 import { TripDetail } from '@/components/trip/TripBrochureContent';
 
 export const tripDetails: TripDetail[] = [
   {
     label: "Duration",
     value: "9 Days",
-    icon: React.createElement(Clock, { className: "h-5 w-5 text-dragon" })
+    icon: "Clock"
   },
   {
-    label: "When",
-    value: "July 3rd, 2026",
-    icon: React.createElement(Calendar, { className: "h-5 w-5 text-dragon" })
+    label: "Season",
+    value: "May-August",
+    icon: "Calendar"
   },
   {
     label: "Participants",
     value: "Educators",
-    icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" })
+    icon: "Users"
   },
   {
     label: "Location",
     value: "Nairobi, Voi, Maungu, Tsavo East",
-    icon: React.createElement(MapPin, { className: "h-5 w-5 text-dragon" })
-  },
-  {
-    label: "Group Size",
-    value: "6",
-    icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" })
+    icon: "MapPin"
   }
 ];
-
-export const perfectFor = "Environmental Science Teachers, Geography Educators, Sustainability Instructors, Curriculum Developers, School Trip Leaders, Conservation Education Coordinators";

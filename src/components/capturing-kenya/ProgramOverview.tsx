@@ -22,22 +22,22 @@ interface ProgramOverviewProps {
 const ProgramOverview = ({
   programData
 }: ProgramOverviewProps) => {
-  // Updated gallery images with the new URLs
+  // Gallery images with empty src values
   const galleryImages = [{
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747130086/KleinNettoh--2_ofhqdi.jpg",
+    src: "",
     alt: "Student photographer capturing wildlife in Kenya"
   }, {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747126339/A7404295_eqwltt.jpg",
+    src: "",
     alt: "Photography student with camera in Kenya"
   }, {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119242/DSC_4401_bymb4c.jpg",
+    src: "",
     alt: "Student with camera capturing Kenyan landscape"
   }, {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119216/A7405250_gyo4co.jpg",
-    alt: "Photography student in action"
+    src: "",
+    alt: "Student photographer in natural setting"
   }, {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119222/A7404516_c0q5zm.jpg",
-    alt: "Student photographer during Kenya program"
+    src: "",
+    alt: "Photography student during Kenya program"
   }];
   
   return (
