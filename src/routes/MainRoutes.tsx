@@ -60,6 +60,7 @@ const MainRoutes = () => {
       <Route path="/programs/food-for-education" element={<FoodForEducation />} />
       <Route path="/programs/community-conservation" element={<CommunityConservation />} />
       <Route path="/programs/empowering-women" element={<EmpoweringWomen />} />
+      <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
       
       {/* Summer Programs */}
       <Route path="/programs/capturing-kenya" element={<CapturingKenya />} />
@@ -69,7 +70,7 @@ const MainRoutes = () => {
       <Route path="/programs/roots-of-change" element={<Navigate to="/programs/feeding-the-future" replace />} />
       <Route path="/programs/roots-of-change/itinerary" element={<Navigate to="/programs/feeding-the-future/itinerary" replace />} />
       
-      {/* Adult Trips */}
+      {/* Adult Programs */}
       <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
       
       {/* Resource Pages */}

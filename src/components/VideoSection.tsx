@@ -7,7 +7,6 @@ interface VideoSectionProps {
   videoId: string;
   title: string;
   description?: string;
-  customThumbnail?: string;
   quote?: {
     text: string;
     author?: string;
@@ -18,7 +17,6 @@ const VideoSection = ({
   videoId, 
   title, 
   description, 
-  customThumbnail,
   quote
 }: VideoSectionProps) => {
   return (
@@ -36,7 +34,6 @@ const VideoSection = ({
         <VideoPlayer 
           videoId={videoId}
           title={title}
-          customThumbnail={customThumbnail}
         />
 
         {quote && (
@@ -46,12 +43,12 @@ const VideoSection = ({
             </div>
             
             <blockquote className="text-lg md:text-xl font-serif text-[#004d31] mb-4 italic">
-              {quote.text}
+              "The activities we've been doing is a sort of pathway to bring our children here to. And that's really important because experiential learning helps them to bring to real life the things that we can only do in theory, in the classrooms. Seeing these small enterprises firsthand, understanding how they contribute to a better world in the future, the children can only do that firsthand, and it will change them as much as it's changed me in this short trip."
             </blockquote>
             
             {quote.author && (
               <p className="font-medium text-[#F97316]">
-                {quote.author}
+                Brett Girven, Former Principal at The Arbor School
               </p>
             )}
           </div>

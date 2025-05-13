@@ -6,14 +6,14 @@ export const programCategories = [
     description: "Experiential learning trips for K-12 schools.",
     programs: [
       {
-        title: "Community Conservation",
-        href: "/programs/community-conservation",
-        description: "Protect endangered ecosystems with local conservation experts.",
-      },
-      {
         title: "Food For Education",
         href: "/programs/food-for-education",
         description: "Address food security challenges through sustainable agriculture initiatives.",
+      },
+      {
+        title: "Community Conservation",
+        href: "/programs/community-conservation",
+        description: "Protect endangered ecosystems with local conservation experts.",
       },
       {
         title: "Water Empowering Women",
@@ -46,7 +46,7 @@ export const programCategories = [
     programs: [],
   },
   {
-    title: "Adult Trips",
+    title: "Adult Programs",
     href: "/adult-programs",
     description: "Educational travel experiences designed for adults.",
     programs: [
@@ -54,6 +54,11 @@ export const programCategories = [
         title: "Permaculture Design Course",
         href: "/programs/permaculture-design-course",
         description: "Learn permaculture principles while contributing to sustainable food systems.",
+      },
+      {
+        title: "Safari & Conservation",
+        href: "/programs/safari-sustainability",
+        description: "Combine classic safari experiences with hands-on conservation work.",
       },
     ],
   },

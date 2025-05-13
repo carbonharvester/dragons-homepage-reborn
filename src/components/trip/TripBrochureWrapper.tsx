@@ -4,24 +4,18 @@ import FoodForEducationData from '../food-for-education/FoodForEducationData';
 import EmpoweringWomenData from '../empowering-women/EmpoweringWomenData';
 import CommunityConservationData from '../community-conservation/CommunityConservationData';
 
-// Define a single interface that captures all common props
-interface BrochureDataProps {
+interface TripBrochureWrapperProps {
+  tripType?: 'food-for-education' | 'empowering-women' | 'community-conservation';
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
-  customThumbnails?: Record<string, string>;
-}
-
-interface TripBrochureWrapperProps extends BrochureDataProps {
-  tripType?: 'food-for-education' | 'empowering-women' | 'community-conservation';
 }
 
 const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({ 
   tripType = 'food-for-education',
   heroOnly = false,
   contentOnly = false,
-  navigationOnly = false,
-  customThumbnails
+  navigationOnly = false
 }) => {
   // Remove wrapper padding when showing content only
   const wrapperClass = contentOnly ? "bg-white pt-0" : "bg-white";
@@ -33,7 +27,6 @@ const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({
           heroOnly={heroOnly} 
           contentOnly={contentOnly}
           navigationOnly={navigationOnly} 
-          customThumbnails={customThumbnails}
         />
       )}
       {tripType === 'empowering-women' && (
@@ -41,7 +34,6 @@ const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({
           heroOnly={heroOnly} 
           contentOnly={contentOnly}
           navigationOnly={navigationOnly}
-          customThumbnails={customThumbnails}
         />
       )}
       {tripType === 'community-conservation' && (
@@ -49,7 +41,6 @@ const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({
           heroOnly={heroOnly} 
           contentOnly={contentOnly}
           navigationOnly={navigationOnly}
-          customThumbnails={customThumbnails}
         />
       )}
     </div>

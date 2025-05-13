@@ -4,10 +4,15 @@ import TripDetailsCard from './TripDetailsCard';
 import { ReactNode } from 'react';
 import { Users, Calendar, MapPin } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { TripDetail } from './TripBrochureContent';
+
+interface TripDetailProps {
+  label: string;
+  value: string;
+  icon: ReactNode;
+}
 
 interface TripOverviewProps {
-  tripDetails: TripDetail[];
+  tripDetails: TripDetailProps[];
   projectGoals?: string[];
   description?: string[];
   perfectFor?: string;
@@ -76,7 +81,7 @@ const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: Tr
       
       {perfectFor && (
         <div className="mt-8 w-full">
-          <h3 className="text-2xl font-academy text-dragon-dark mb-6">Perfect For Students</h3>
+          <h3 className="text-2xl font-academy text-dragon-dark mb-6">Perfect For</h3>
           
           <div className="flex flex-wrap gap-4">
             {perfectFor.split(', ').map((item, index) => (

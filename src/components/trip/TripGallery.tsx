@@ -27,7 +27,7 @@ const TripGallery = ({ images }: TripGalleryProps) => {
       {isMobile ? (
         <div className="px-4">
           <Carousel 
-            opts={{ align: "center", loop: true }}
+            opts={{ align: "center" }}
             className="w-full"
           >
             <CarouselContent>

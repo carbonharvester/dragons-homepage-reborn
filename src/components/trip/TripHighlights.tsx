@@ -10,17 +10,22 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { TripHighlight } from './TripBrochureContent';
+
+interface TripHighlightProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}
 
 interface TripHighlightsProps {
-  highlights: TripHighlight[];
+  highlights: TripHighlightProps[];
 }
 
 const TripHighlights = ({ highlights }: TripHighlightsProps) => {
   const isMobile = useIsMobile();
 
   // Helper function to render a highlight card with consistent styling
-  const renderHighlightCard = (highlight: TripHighlight, index: number) => (
+  const renderHighlightCard = (highlight: TripHighlightProps, index: number) => (
     <Card key={index} className="border-none shadow-none h-full">
       <CardContent className="p-6">
         <div className="w-16 h-16 rounded-full bg-dragon flex items-center justify-center mb-4">
@@ -44,8 +49,8 @@ const TripHighlights = ({ highlights }: TripHighlightsProps) => {
           ))}
         </CarouselContent>
         <div className="flex justify-center mt-4">
-          <CarouselPrevious className="static mr-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
-          <CarouselNext className="static ml-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
+          <CarouselPrevious className="relative static translate-y-0 mr-2" />
+          <CarouselNext className="relative static translate-y-0 ml-2" />
         </div>
       </Carousel>
     );

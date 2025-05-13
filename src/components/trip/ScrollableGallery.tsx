@@ -63,21 +63,12 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
             ))}
           </CarouselContent>
           
-          {isMobile ? (
-            <div className="flex justify-center mt-4">
-              <CarouselPrevious className="static mr-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
-              <CarouselNext className="static ml-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
-            </div>
-          ) : (
-            <>
-              <CarouselPrevious 
-                className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full shadow-md"
-              />
-              <CarouselNext 
-                className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full shadow-md"
-              />
-            </>
-          )}
+          <CarouselPrevious 
+            className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full shadow-md"
+          />
+          <CarouselNext 
+            className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full shadow-md"
+          />
         </Carousel>
       </div>
     </div>

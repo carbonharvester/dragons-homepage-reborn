@@ -1,12 +1,12 @@
 
 export const day4 = {
   day: "Day 4",
-  title: "Food For Education & Africa Collects Textiles Visit",
+  title: "Food For Education Visit",
   activities: [
     "Visit to Food For Education facilities",
-    "Introduction to their mission to provide school meals to children across Kenya",
-    "Tour facilities to understand how it works",
-    "Visit Africa Collects Textiles, where Kapes sends old uniforms to be upcycled",
-    "Participate in weaving workshops using hand looms, turning old uniforms into tea coasters and pencil cases"
+    "Introduction to their mission to provide school meals using locally sourced produce",
+    "Tour facilities to understand the link to the farm project",
+    "Discuss Kapes' mission to empower changemakers and combat food insecurity",
+    "Orientation for the permaculture project and the farm's onion and tomato focus"
   ]
 };

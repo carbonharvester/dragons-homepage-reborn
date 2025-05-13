@@ -3,11 +3,12 @@ import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
+import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
-  tripDetails, 
-  tripHighlights, 
+  tripDetails as rawTripDetails, 
+  tripHighlights as rawTripHighlights, 
   galleryImages, 
   learningOutcomes, 
   tripItinerary, 
@@ -19,30 +20,47 @@ interface FoodForEducationDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
-  customThumbnails?: Record<string, string>;
 }
 
 const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({ 
   heroOnly = false, 
   contentOnly = false,
-  navigationOnly = false,
-  customThumbnails
+  navigationOnly = false
 }) => {
   const isMobile = useIsMobile();
   
+  // Transform Lucide icons to React elements for compatibility
+  const tripDetails = rawTripDetails.map(detail => ({
+    ...detail,
+    icon: (
+      <div className="text-dragon">
+        <detail.icon className="h-5 w-5" />
+      </div>
+    )
+  }));
+
+  // Transform highlights with JSX elements
+  const tripHighlights = rawTripHighlights.map(highlight => ({
+    ...highlight,
+    icon: (
+      <div className="text-white">
+        <highlight.icon className="h-8 w-8" />
+      </div>
+    )
+  }));
+
   // Custom description and project goals specific to the Food For Education program
   const foodDescription = [
-    "This 8 day journey to Kenya immerses students in sustainable food systems and community development. Partnering with local farmers and educators, students will explore traditional and modern agricultural practices, contribute to food security initiatives, and learn about the challenges and opportunities in ensuring access to nutritious food for all.",
-    "Through hands-on activities, cultural exchanges, and visits to local farms and markets, students will gain a deeper understanding of the interconnectedness of food, culture, and community resilience.",
-    "This trip is particularly impactful for schools participating in the Kapes Uniforms takeback scheme, where we provide a free meal for every item returned. This circular approach connects students directly to the impact of their actions and enhances the trip's educational value."
+    "In many rural Kenyan schools, inconsistent access to nutritious food impacts student attendance and academic performance. This collaborative program transforms unused school land into productive food gardens through sustainable permaculture practices.",
+    "During this immersive 8 day journey, students will work alongside local communities to establish gardens that provide ongoing meals for schoolchildren while learning about food security challenges and solutions that protect both people and ecosystems."
   ];
   
   const foodProjectGoals = [
-    "Explore sustainable farming practices and learn about traditional Kenyan agriculture",
-    "Contribute to food security initiatives by working alongside local farmers",
-    "Learn about the challenges and opportunities in ensuring access to nutritious food",
-    "Engage in cultural exchanges and community development projects",
-    "Connect with Kenya's natural beauty through safari and cultural immersion activities"
+    "Design and establish permaculture food gardens at local schools using sustainable techniques",
+    "Learn practical gardening skills including composting, water conservation, and planting methods",
+    "Understand the relationship between food security, education, and community development",
+    "Connect with Kenya's natural environment through wildlife experiences and cultural immersion",
+    "Create measurable impact that continues to provide nutritious food for schoolchildren"
   ];
 
   return (
@@ -51,9 +69,9 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Food For Education"
-          subtitle="Explore sustainable food systems and contribute to food security initiatives while learning about traditional and modern agricultural practices in Kenya."
+          subtitle="Transform unused school land into productive gardens while addressing food insecurity through sustainable agriculture."
           category="School Trip"
-          imagePath="/lovable-uploads/e5508599-0c51-43a7-8945-a0f299149c54.png"
+          imagePath="/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png"
         />
       )}
 
@@ -73,6 +91,10 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               projectGoals={foodProjectGoals}
             />
             
+            {/* Trip Highlights with explicit heading - only show if we're not on mobile
+                since mobile will show highlights through TripBrochureContent */}
+            {!isMobile && <TripHighlightsWrapper />}
+            
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
@@ -85,8 +107,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               description={foodDescription}
               projectGoals={foodProjectGoals}
               hideOverview={true}
-              hideHighlights={false} // Show highlights directly in TripBrochureContent
-              customThumbnails={customThumbnails}
+              hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
             />
           </div>
         </>

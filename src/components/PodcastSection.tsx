@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Play, Calendar } from "lucide-react";
+import { Play } from "lucide-react";
 import { Button } from '@/components/ui/button';
 import { getAllPodcastEpisodes, ContentfulPodcastEpisode } from '@/services/contentful';
 import { useQuery } from '@tanstack/react-query';
 import { PodcastEpisode } from '@/data/podcastData';
-import { useIsMobile } from '@/hooks/use-mobile';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 // Helper function to convert Contentful episode to our app's format
 const mapContentfulToPodcastEpisode = (contentfulEpisode: ContentfulPodcastEpisode): PodcastEpisode => {
@@ -27,9 +19,7 @@ const mapContentfulToPodcastEpisode = (contentfulEpisode: ContentfulPodcastEpiso
     image: imageUrl.startsWith('//') ? `https:${imageUrl}` : imageUrl
   };
 };
-
 const PodcastSection = () => {
-  const isMobile = useIsMobile();
   const {
     data: contentfulEpisodes,
     isLoading,
@@ -64,67 +54,6 @@ const PodcastSection = () => {
         </div>
       </section>;
   }
-
-  // On mobile, render a carousel with all episodes
-  if (isMobile) {
-    const displayEpisodes = episodes.slice(0, 3); // Limit to 3 episodes
-    
-    return (
-      <section className="py-16 bg-white">
-        <div className="container-wide">
-          <div className="text-center mb-8">
-            <h2 className="section-heading">Listen to Our Podcast</h2>
-            <p className="section-subheading mx-auto">
-              Tune in for inspiring conversations about educational travel, sustainability, and community impact in Kenya.
-            </p>
-          </div>
-
-          <Carousel className="w-full" opts={{ loop: true }}>
-            <CarouselContent>
-              {displayEpisodes.map((episode, index) => (
-                <CarouselItem key={episode.id} className="basis-full">
-                  <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                    <div className="h-48 relative">
-                      <img src={episode.image} alt={episode.title} className="w-full h-full object-cover" />
-                      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                        <div className="rounded-full bg-white bg-opacity-90 p-3 cursor-pointer hover:bg-dragon transition-colors group">
-                          <Play size={24} className="text-dragon-dark group-hover:text-white" />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-5">
-                      <h3 className="text-lg font-bold mb-2">{episode.title}</h3>
-                      <div className="flex items-center text-dragon-gray text-xs mb-2">
-                        <span>{episode.date}</span>
-                        <span className="mx-2">•</span>
-                        <span>{episode.duration}</span>
-                      </div>
-                      <p className="text-sm text-dragon-gray mb-4 line-clamp-3">{episode.description}</p>
-                      <Button asChild size="sm" className="w-full">
-                        <Link to="/podcast">Listen Now</Link>
-                      </Button>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center mt-4">
-              <CarouselPrevious className="relative static translate-y-0 mr-2 h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
-              <CarouselNext className="relative static translate-y-0 ml-2 h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
-            </div>
-          </Carousel>
-
-          <div className="text-center mt-8">
-            <Button variant="outline" asChild>
-              <Link to="/podcast">View All Episodes</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // On desktop, keep the original layout with featured episode and recent episodes
   const featuredEpisode = episodes[0];
   return <section className="py-20 bg-white">
       <div className="container-wide">
@@ -190,5 +119,4 @@ const PodcastSection = () => {
       </div>
     </section>;
 };
-
 export default PodcastSection;

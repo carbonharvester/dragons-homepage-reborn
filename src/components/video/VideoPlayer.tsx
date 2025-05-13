@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -7,13 +7,14 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 interface VideoPlayerProps {
   videoId: string;
   title: string;
-  customThumbnail?: string;
 }
 
-const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
+const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [thumbnailUrl, setThumbnailUrl] = useState('');
-  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  const handlePlayClick = () => {
+    setIsPlaying(true);
+  };
   
   // Check if the video ID is from Vimeo or from Shopify
   const isShopifyVideo = !videoId.match(/^\d+$/);
@@ -26,36 +27,6 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
   const previewSrc = isShopifyVideo
     ? `https://cdn.shopify.com/videos/c/o/v/${videoId}.mp4`
     : `https://player.vimeo.com/video/${videoId}?h=c4bc497777&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&background=1&muted=1`;
-
-  // Set thumbnail URL when component mounts
-  useEffect(() => {
-    if (customThumbnail) {
-      setThumbnailUrl(customThumbnail);
-    } else if (isShopifyVideo) {
-      setThumbnailUrl(`https://cdn.shopify.com/videos/c/o/v/${videoId}.jpg`);
-    }
-  }, [videoId, isShopifyVideo, customThumbnail]);
-  
-  const handlePlayClick = () => {
-    setIsPlaying(true);
-    
-    // For Shopify videos, manually play the video after a short delay
-    // This ensures the video starts playing without requiring a second click
-    if (isShopifyVideo) {
-      setTimeout(() => {
-        if (videoRef.current) {
-          const playPromise = videoRef.current.play();
-          
-          if (playPromise !== undefined) {
-            playPromise.catch(error => {
-              console.log('Auto-play was prevented. User interaction is required.');
-              // We don't need to set isPlaying back to false since the play button is already hidden
-            });
-          }
-        }
-      }, 50);
-    }
-  };
   
   return (
     <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl">
@@ -63,9 +34,9 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
         <div className="aspect-video w-full">
           {isShopifyVideo ? (
             <video 
-              ref={videoRef}
               src={videoSrc}
               className="w-full h-full" 
+              autoPlay
               controls 
               playsInline
               title={title}
@@ -95,18 +66,15 @@ const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
                 </Button>
               </div>
               {isShopifyVideo ? (
-                thumbnailUrl ? (
-                  <div 
-                    className="w-full h-full" 
-                    style={{ 
-                      backgroundImage: `url(${thumbnailUrl})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
-                  ></div>
-                ) : (
-                  <div className="w-full h-full bg-gray-800"></div>
-                )
+                <video 
+                  src={previewSrc}
+                  className="w-full h-full object-cover pointer-events-none" 
+                  muted
+                  loop
+                  autoPlay
+                  playsInline
+                  title={`${title} background preview`}
+                ></video>
               ) : (
                 <iframe 
                   src={previewSrc}

@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
 import ScrollableGallery from './ScrollableGallery';
@@ -10,29 +10,25 @@ import ProgramBrochure from '../ProgramBrochure';
 import Testimonials from '../Testimonials';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-export interface TripDetail {
+interface TripDetail {
   label: string;
   value: string;
   icon: React.ReactNode;
 }
-
-export interface TripHighlight {
+interface TripHighlight {
   icon: React.ReactNode;
   title: string;
   description: string;
 }
-
 interface TripLearningOutcome {
   title: string;
   description: string;
 }
-
 interface TripItineraryDay {
   day: string;
   title: string;
   activities: string[];
 }
-
 interface ProgramData {
   title: string;
   description: string;
@@ -41,7 +37,6 @@ interface ProgramData {
   location: string;
   goals: string[];
 }
-
 interface TripBrochureContentProps {
   tripDetails: TripDetail[];
   tripHighlights: TripHighlight[];
@@ -58,11 +53,9 @@ interface TripBrochureContentProps {
   perfectFor?: string;
   hideOverview?: boolean;
   hideHighlights?: boolean;
-  pdfBrochureLink?: string;
-  customThumbnails?: Record<string, string>;
 }
 
-const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
+const TripBrochureContent = ({
   tripDetails,
   tripHighlights,
   galleryImages,
@@ -73,16 +66,9 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
   projectGoals,
   perfectFor,
   hideOverview = false,
-  hideHighlights = false,
-  pdfBrochureLink,
-  customThumbnails
+  hideHighlights = false
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
-  
-  useEffect(() => {
-    console.log('TripBrochureContent mounted with programData:', programData);
-    console.log('PDF Brochure Link:', pdfBrochureLink);
-  }, [programData, pdfBrochureLink]);
 
   return <div className="container py-0">
       {/* Trip Overview */}
@@ -106,7 +92,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       <TripItinerary itineraryDays={tripItinerary} />
       
       {/* Program Brochure */}
-      <ProgramBrochure program={programData} pdfLink={pdfBrochureLink} />
+      <ProgramBrochure program={programData} />
       
       {/* Student Stories Section - Moved above CTA */}
       <Testimonials />

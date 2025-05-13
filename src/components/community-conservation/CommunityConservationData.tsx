@@ -20,14 +20,12 @@ interface CommunityConservationDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
-  customThumbnails?: Record<string, string>;
 }
 
 const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({ 
   heroOnly = false, 
   contentOnly = false,
-  navigationOnly = false,
-  customThumbnails
+  navigationOnly = false
 }) => {
   const isMobile = useIsMobile();
   
@@ -39,8 +37,8 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
 
   // Define custom trip description for the overview section
   const conservationDescription = [
-    "Our introductory trip to Tsavo, Kenya immerses students in practical conservation work with Wildlife Works while exploring the magnificent Tsavo East National Park.",
-    "Students ages 12-15 will experience wildlife monitoring, carbon cycle management, and traditional craft-making while developing outdoor skills through hiking and ranger-led activities. The program provides hands-on engagement with conservation enterprises and social initiatives that balance ecosystem protection with community development."
+    "This 8 day journey to Tsavo, Kenya immerses students in practical conservation work with Wildlife Works while exploring the magnificent Tsavo East National Park.",
+    "Students will experience wildlife monitoring, carbon cycle management, and traditional craft-making while developing outdoor skills through hiking and ranger-led activities. The program provides hands-on engagement with conservation enterprises and social initiatives that balance ecosystem protection with community development."
   ];
 
   // Define custom project goals
@@ -58,7 +56,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Community Conservation"
-          subtitle="Our introductory school trip where students work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices."
+          subtitle="Work alongside local conservation experts to protect endangered ecosystems while learning traditional ecological knowledge and sustainable practices."
           category="School Trip"
           imagePath="/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png"
         />
@@ -99,7 +97,6 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
               projectGoals={conservationProjectGoals}
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
-              customThumbnails={customThumbnails}
             />
           </div>
         </>
