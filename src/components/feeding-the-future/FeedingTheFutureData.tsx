@@ -97,6 +97,7 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
+              hideStudentStories={true} // Hide student stories section
             />
           </div>
         </>
