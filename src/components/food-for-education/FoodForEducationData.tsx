@@ -1,3 +1,4 @@
+
 import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
@@ -40,7 +41,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Food For Education"
-          subtitle="Transform unused school land into vibrant gardens using permaculture farming techniques. Students will create sustainable food systems to provide nutritious meals for local children, fostering long-term food security."
+          subtitle="Transform degraded school land into vibrant gardens using permaculture farming techniques to provide nutritious meals for local children, fostering long-term food security."
           category="School Trip"
           imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg"
         />
