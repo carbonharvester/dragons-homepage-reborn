@@ -109,5 +109,10 @@ export const galleryImages: GalleryImage[] = [
     src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119196/WhatsApp_Image_2025-05-12_at_23.41.50_bynxvg.jpg",
     alt: "Workers Serving Food",
     className: "col-span-12 md:col-span-12 h-64 overflow-hidden rounded-lg"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg",
+    alt: "Students planting in school garden",
+    className: "col-span-12 md:col-span-8 h-64 md:h-80 overflow-hidden rounded-lg"
   }
 ];
