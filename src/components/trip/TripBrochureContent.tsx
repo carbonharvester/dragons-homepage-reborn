@@ -61,6 +61,7 @@ interface TripBrochureContentProps {
   pdfBrochureLink?: string;
   customThumbnails?: Record<string, string>;
   isEducatorTrip?: boolean;
+  hideStudentStories?: boolean;
 }
 
 const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
@@ -77,7 +78,8 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
   hideHighlights = false,
   pdfBrochureLink,
   customThumbnails,
-  isEducatorTrip = false
+  isEducatorTrip = false,
+  hideStudentStories = false
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
   
@@ -110,8 +112,8 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {/* Program Brochure */}
       <ProgramBrochure program={programData} pdfLink={pdfBrochureLink} />
       
-      {/* Student Stories Section - Only show for student trips, not for educator trips */}
-      {!isEducatorTrip && <Testimonials />}
+      {/* Student Stories Section - Only show for student trips, not for educator trips, and when not explicitly hidden */}
+      {!isEducatorTrip && !hideStudentStories && <Testimonials />}
       
       {/* CTA Section */}
       <TripCTA isSchoolTrip={!isEducatorTrip} />

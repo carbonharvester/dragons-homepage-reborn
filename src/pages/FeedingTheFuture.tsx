@@ -3,19 +3,7 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
-import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
-
-// Import modular components
-import ProgramHero from '@/components/roots-of-change/ProgramHero';
-import ProgramSummary from '@/components/roots-of-change/ProgramSummary';
-import ProgramCTA from '@/components/capturing-kenya/ProgramCTA';
-import ProgramObjectives from '@/components/roots-of-change/ProgramObjectives';
-import ProgramLocations from '@/components/roots-of-change/ProgramLocations';
-import ProgramItinerary from '@/components/roots-of-change/ProgramItinerary';
-import ProgramOutcomes from '@/components/capturing-kenya/ProgramOutcomes';
-
-// Import data
-import { outcomes } from '@/components/roots-of-change/ProgramData';
+import TripBrochureWrapper from '@/components/trip/TripBrochureWrapper';
 
 const FeedingTheFuture = () => {
   // Scroll to top on page load
@@ -25,33 +13,27 @@ const FeedingTheFuture = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title="Feeding the Future: Sustainable Agriculture Program" description="A 4-week immersive experience in sustainable agriculture and food security initiatives across Kenya." keywords="sustainable agriculture, food security, educational travel, Kenya, summer program" />
+      <SEO 
+        title="Feeding the Future: Sustainable Agriculture Program" 
+        description="A 4-week immersive experience in sustainable agriculture and food security initiatives across Kenya." 
+        keywords="sustainable agriculture, food security, educational travel, Kenya, summer program"
+      />
       <Header />
+      
       <main>
-        {/* Hero Section */}
-        <ProgramHero />
-
-        <div className="container-wide py-8 bg-white">
-          <ParentPageNavigation parentPath="/summer-abroad" parentName="Summer Abroad" />
+        {/* Hero section is part of TripBrochureWrapper */}
+        <TripBrochureWrapper tripType="feeding-the-future" heroOnly={true} />
+        
+        {/* Navigation and content in a continuous section */}
+        <div className="bg-white">
+          {/* Navigation section */}
+          <div className="container-wide py-4">
+            <TripBrochureWrapper tripType="feeding-the-future" navigationOnly={true} />
+          </div>
+          
+          {/* Content section with no top padding */}
+          <TripBrochureWrapper tripType="feeding-the-future" contentOnly={true} />
         </div>
-
-        {/* Program Summary - New section with details moved from hero */}
-        <ProgramSummary />
-
-        {/* Program Objectives */}
-        <ProgramObjectives />
-        
-        {/* Program Locations */}
-        <ProgramLocations />
-        
-        {/* Program Itinerary */}
-        <ProgramItinerary />
-        
-        {/* Program Outcomes */}
-        <ProgramOutcomes outcomes={outcomes} />
-
-        {/* Brochure Section */}
-        <ProgramCTA />
       </main>
       <Footer />
     </div>
