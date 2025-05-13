@@ -20,6 +20,8 @@ interface VideoPlayerProps {
   customThumbnail?: string;
   initialPlaying?: boolean;
   showPreview?: boolean;
+  muted?: boolean;
+  autoplayOnScroll?: boolean;
 }
 
 const VideoPlayer = ({ 
@@ -28,9 +30,12 @@ const VideoPlayer = ({
   title, 
   customThumbnail, 
   initialPlaying = false,
-  showPreview = true
+  showPreview = true,
+  muted = initialPlaying, // Default to muted when autoplay is enabled
+  autoplayOnScroll = false
 }: VideoPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(initialPlaying);
+  const [isInView, setIsInView] = useState(false);
   const [thumbnailUrl, setThumbnailUrl] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -84,6 +89,38 @@ const VideoPlayer = ({
         .catch(err => console.error('Autoplay failed:', err));
     }
   }, [initialPlaying, cloudinaryVideo]);
+
+  // Handle autoplay on scroll
+  useEffect(() => {
+    if (!autoplayOnScroll) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        const wasInView = isInView;
+        setIsInView(entry.isIntersecting);
+        
+        // Autoplay when in view if that option is enabled
+        if (entry.isIntersecting && autoplayOnScroll && !isPlaying) {
+          console.log('Auto-playing video on scroll into view');
+          setIsPlaying(true);
+        } else if (!entry.isIntersecting && wasInView && isPlaying && (shopifyVideo || cloudinaryVideo)) {
+          // Pause when scrolled out of view (for videos we control)
+          console.log('Pausing video on scroll out of view');
+          setIsPlaying(false);
+        }
+      },
+      { threshold: 0.3 } // Play when 30% of video is visible
+    );
+    
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+    
+    return () => {
+      observer.disconnect();
+    };
+  }, [autoplayOnScroll, isPlaying, isInView, shopifyVideo, cloudinaryVideo]);
 
   // Setup IntersectionObserver for lazy loading and pausing when offscreen
   useEffect(() => {
@@ -146,11 +183,11 @@ const VideoPlayer = ({
               controls 
               playsInline
               autoPlay
-              muted={initialPlaying} // Mute only if it's set to autoplay
+              muted={muted}
               title={title}
             ></video>
           ) : shopifyVideo ? (
-            <ShopifyVideo src={videoSrc} title={title} />
+            <ShopifyVideo src={videoSrc} title={title} muted={muted} />
           ) : (
             <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white">
               No valid video source available

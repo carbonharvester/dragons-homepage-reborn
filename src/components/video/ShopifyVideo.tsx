@@ -4,9 +4,10 @@ import React, { useRef, useEffect } from 'react';
 interface ShopifyVideoProps {
   src: string;
   title: string;
+  muted?: boolean;
 }
 
-const ShopifyVideo = ({ src, title }: ShopifyVideoProps) => {
+const ShopifyVideo = ({ src, title, muted = false }: ShopifyVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -38,6 +39,7 @@ const ShopifyVideo = ({ src, title }: ShopifyVideoProps) => {
       playsInline
       preload="auto"
       autoPlay
+      muted={muted}
       title={title}
     ></video>
   );
