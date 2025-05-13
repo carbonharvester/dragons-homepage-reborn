@@ -1,4 +1,3 @@
-
 import React from 'react';
 import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '../navigation/ParentPageNavigation';
@@ -23,7 +22,7 @@ const EducationalLeadershipContent = () => {
   ];
   
   const projectGoals = [
-    "Experience student-initiated projects at Kirigu Primary School and learn about food security's role in education",
+    "Experience student-initiated projects at a number of schools and learn more about food security's role in education",
     "Develop practical conservation skills through hands-on activities with Wildlife Works' greenhouse and agroforestry team",
     "Engage with local women's groups and understand gender empowerment through cultural exchange",
     "Learn field-based teaching strategies for environmental education through guided hikes and wildlife observation",
