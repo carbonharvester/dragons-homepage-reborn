@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { MapPin, Calendar, Clock, School, Users } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const ProgramLocations = () => {
   const locations = [{
@@ -32,7 +33,13 @@ const ProgramLocations = () => {
           {locations.map((location, index) => (
             <div key={index} className="rounded-lg overflow-hidden shadow-sm border border-gray-100">
               <div className="h-64 overflow-hidden">
-                <img src={location.image} alt={location.name} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+                <AspectRatio ratio={16/9} className="h-full">
+                  <img 
+                    src={location.image} 
+                    alt={location.name} 
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+                  />
+                </AspectRatio>
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-2">
