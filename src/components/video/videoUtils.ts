@@ -43,11 +43,12 @@ export const generateVideoSrc = (videoId: string, autoplay: boolean = false): st
 export const generateCloudinaryPreviewUrl = (videoUrl: string): string => {
   if (!isCloudinaryVideo(videoUrl)) return videoUrl;
   
-  // For Cloudinary videos, we can add transformation parameters
-  // q_auto and f_auto for optimal delivery, and we mute the video for preview
+  // For Cloudinary videos, add transformation parameters for better autoplay
+  // vc_auto enables automatic video codec selection
+  // q_auto and f_auto for optimal delivery, lower quality for preview to improve loading
   if (videoUrl.includes('/upload/')) {
     // Insert transformations after /upload/
-    return videoUrl.replace('/upload/', '/upload/q_auto,f_auto/');
+    return videoUrl.replace('/upload/', '/upload/q_auto:low,f_auto,vc_auto,e_loop/');
   }
   
   return videoUrl;

@@ -23,16 +23,66 @@ const VideoThumbnail = ({
 }: VideoThumbnailProps) => {
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [autoplayAttempted, setAutoplayAttempted] = useState(false);
+  const [userInteracted, setUserInteracted] = useState(false);
   
   const isCloudinary = showCloudinaryPreview && previewSrc && isCloudinaryVideo(previewSrc);
+  
+  // Add an event listener to detect any user interaction with the document
+  useEffect(() => {
+    const handleUserInteraction = () => {
+      setUserInteracted(true);
+      
+      // If we have a video and haven't tried autoplay yet, try again after user interaction
+      if (isCloudinary && videoRef.current && !autoplayAttempted) {
+        playVideo();
+      }
+    };
+
+    // Add event listeners for common user interactions
+    document.addEventListener('click', handleUserInteraction, { once: true });
+    document.addEventListener('touchstart', handleUserInteraction, { once: true });
+    document.addEventListener('scroll', handleUserInteraction, { once: true });
+
+    return () => {
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('touchstart', handleUserInteraction);
+      document.removeEventListener('scroll', handleUserInteraction);
+    };
+  }, [isCloudinary, autoplayAttempted]);
+
+  // Function to handle video playback attempts
+  const playVideo = () => {
+    if (!videoRef.current) return;
+    
+    setAutoplayAttempted(true);
+    
+    videoRef.current.play()
+      .then(() => {
+        console.log('Cloudinary preview video autoplay successful');
+      })
+      .catch(err => {
+        console.log('Autoplay prevented for Cloudinary preview:', err);
+        
+        // If autoplay failed and we have user interaction, try again after a short delay
+        if (userInteracted) {
+          setTimeout(() => {
+            if (videoRef.current) {
+              // Try one more time after a delay
+              videoRef.current.muted = true; // Ensure video is muted as browsers are more likely to allow muted autoplay
+              videoRef.current.play().catch(e => console.log('Second autoplay attempt failed:', e));
+            }
+          }, 1000);
+        }
+      });
+  };
   
   // Effect to handle video preview autoplay
   useEffect(() => {
     // Auto-play the Cloudinary preview video when component mounts
     if (isCloudinary && videoRef.current) {
-      videoRef.current.play().catch(err => {
-        console.log('Auto-play prevented for preview:', err);
-      });
+      // Short timeout to allow browser to process the video element
+      setTimeout(() => playVideo(), 100);
     }
   }, [isCloudinary, previewSrc]);
   
@@ -65,6 +115,7 @@ const VideoThumbnail = ({
               loop
               playsInline
               autoPlay
+              preload="auto"
               aria-hidden="true"
             />
           ) : thumbnailUrl ? (
