@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/carousel';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { toast } from '@/components/ui/use-toast';
+import ImageDialog from '@/components/ui/ImageDialog';
 
 // Define interfaces to handle both formats of gallery items
 interface BaseGalleryItem {
@@ -32,6 +33,10 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
   const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   const observerRef = useRef<IntersectionObserver | null>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  
+  // States for image dialog
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<BaseGalleryItem | null>(null);
 
   // Function to handle image load events
   const handleImageLoad = (index: number) => {
@@ -42,6 +47,14 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
   const handleImageError = (index: number) => {
     setImageErrors(prev => ({ ...prev, [index]: true }));
     console.error(`Failed to load image at index ${index}`);
+  };
+
+  // Function to handle image click
+  const handleImageClick = (item: BaseGalleryItem) => {
+    if (item.type === 'video') return; // Don't open dialog for videos
+    
+    setSelectedImage(item);
+    setIsDialogOpen(true);
   };
 
   // Filter out images with empty src values and handle errors
@@ -136,9 +149,10 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
                           fetchPriority={index < 3 ? "high" : "auto"}
                           width="400"
                           height="300"
-                          className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
+                          className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
                           onLoad={() => handleImageLoad(index)}
                           onError={() => handleImageError(index)}
+                          onClick={() => handleImageClick(item)}
                         />
                       )}
                     </>
@@ -165,6 +179,16 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
           )}
         </Carousel>
       </div>
+
+      {/* Image dialog for expanded view */}
+      {selectedImage && (
+        <ImageDialog 
+          isOpen={isDialogOpen}
+          onClose={() => setIsDialogOpen(false)}
+          imageSrc={selectedImage.src}
+          imageAlt={selectedImage.alt}
+        />
+      )}
     </div>
   );
 };

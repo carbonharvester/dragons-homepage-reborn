@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
   CarouselNext
 } from "@/components/ui/carousel";
+import ImageDialog from "@/components/ui/ImageDialog";
 
 interface TripGalleryProps {
   images: {
@@ -22,6 +23,10 @@ const TripGallery = ({ images }: TripGalleryProps) => {
   const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
   const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  
+  // States for image dialog
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
 
   // Function to handle image load events
   const handleImageLoad = (index: number) => {
@@ -32,6 +37,12 @@ const TripGallery = ({ images }: TripGalleryProps) => {
   const handleImageError = (index: number) => {
     setImageErrors(prev => ({ ...prev, [index]: true }));
     console.error(`Failed to load image at index ${index}`);
+  };
+  
+  // Function to handle image click
+  const handleImageClick = (image: { src: string; alt: string }) => {
+    setSelectedImage(image);
+    setIsDialogOpen(true);
   };
   
   // Filter out images with empty src values
@@ -83,9 +94,10 @@ const TripGallery = ({ images }: TripGalleryProps) => {
                           fetchPriority={index < 3 ? "high" : "auto"}
                           width="400" 
                           height="400"
-                          className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
+                          className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
                           onLoad={() => handleImageLoad(index)}
                           onError={() => handleImageError(index)}
+                          onClick={() => handleImageClick(image)}
                         />
                       )}
                     </div>
@@ -125,14 +137,25 @@ const TripGallery = ({ images }: TripGalleryProps) => {
                   fetchPriority={index < 3 ? "high" : "auto"}
                   width="600"
                   height="400"
-                  className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
+                  className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
                   onLoad={() => handleImageLoad(index)}
                   onError={() => handleImageError(index)}
+                  onClick={() => handleImageClick(image)}
                 />
               )}
             </div>
           ))}
         </div>
+      )}
+      
+      {/* Image dialog for expanded view */}
+      {selectedImage && (
+        <ImageDialog 
+          isOpen={isDialogOpen}
+          onClose={() => setIsDialogOpen(false)}
+          imageSrc={selectedImage.src}
+          imageAlt={selectedImage.alt}
+        />
       )}
     </div>
   );
