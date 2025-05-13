@@ -125,7 +125,7 @@ const CalendlyEmbed = ({
       </DialogTrigger>
       <DialogContent className="sm:max-w-[700px] lg:max-w-[900px] max-h-[90vh] overflow-hidden">
         <DialogHeader>
-          <DialogTitle className="text-2xl">Schedule a Consultation</DialogTitle>
+          <DialogTitle className="text-2xl text-center">Schedule a Consultation</DialogTitle>
         </DialogHeader>
         <div className="mt-4 h-[500px] lg:h-[600px] overflow-hidden">
           {isLoading && (
