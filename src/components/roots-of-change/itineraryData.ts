@@ -1,3 +1,4 @@
+
 import { WeekProps } from "./types";
 import { 
   MapPinned, Droplet, LandPlot, Leaf, School, Trees, 
@@ -333,36 +334,36 @@ export const weeksData: WeekProps[] = [
       {
         day: "Friday",
         date: "August 22",
-        title: "Travel to Nairobi and Cultural Day",
+        title: "Tsavo East Conservation Day",
         activities: [
-          "Travel back to Nairobi",
-          "Check-in at Wildebeest Eco Camp",
-          "Visit Bomas of Kenya for cultural experiences",
-          "Participate in cultural workshop"
+          "Full day excursion to Tsavo East National Park",
+          "Learn about wildlife conservation challenges",
+          "Meet with park rangers to discuss anti-poaching efforts",
+          "Evening wildlife viewing and photography session"
         ],
-        icon: MapPinned
+        icon: TreeDeciduous
       },
       {
         day: "Saturday",
         date: "August 23",
-        title: "Karura Forest Hike and Final Reflection",
+        title: "Kasigau Cultural Immersion",
         activities: [
-          "Guided hike exploring Karura Forest trails",
-          "Visit waterfalls and caves",
-          "Complete CAS documentation",
-          "Farewell dinner and closing ceremony"
+          "Visit local villages in Kasigau Corridor",
+          "Participate in traditional crafting and cooking",
+          "Complete final program documentation and reflections",
+          "Farewell celebration with Wildlife Works staff"
         ],
-        icon: Mountain
+        icon: Users
       },
       {
         day: "Sunday",
         date: "August 24",
-        title: "Departure",
+        title: "Travel to Nairobi and Farewell Dinner",
         activities: [
-          "Final breakfast and check-out",
-          "Transfer to Jomo Kenyatta International Airport",
-          "Complete final reflections",
-          "Depart for home countries"
+          "Morning departure for Nairobi",
+          "Check-in at Wildebeest Eco Camp",
+          "Final group reflection and celebration",
+          "Farewell dinner at local restaurant"
         ],
         icon: MapPinned
       }
