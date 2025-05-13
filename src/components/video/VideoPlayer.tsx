@@ -8,7 +8,10 @@ import {
   isShopifyVideo, 
   generateVideoSrc, 
   generateThumbnailUrl,
-  preloadVideo
+  preloadVideo,
+  isCloudinaryVideo,
+  generateCloudinaryPreviewUrl,
+  generateCloudinaryThumbnailUrl
 } from './videoUtils';
 
 interface VideoPlayerProps {
@@ -17,6 +20,7 @@ interface VideoPlayerProps {
   title: string;
   customThumbnail?: string;
   initialPlaying?: boolean;
+  showPreview?: boolean;
 }
 
 const VideoPlayer = ({ 
@@ -24,7 +28,8 @@ const VideoPlayer = ({
   videoUrl,
   title, 
   customThumbnail, 
-  initialPlaying = false 
+  initialPlaying = false,
+  showPreview = true
 }: VideoPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(initialPlaying);
   const [thumbnailUrl, setThumbnailUrl] = useState('');
@@ -36,11 +41,23 @@ const VideoPlayer = ({
   // Check if the video ID is from Shopify or from Vimeo (only if videoId provided)
   const shopifyVideo = videoId ? isShopifyVideo(videoId) : false;
   
+  // Check if it's a Cloudinary video URL
+  const cloudinaryVideo = videoUrl ? isCloudinaryVideo(videoUrl) : false;
+  
   // Generate appropriate video source URLs
   const videoSrc = videoUrl || (videoId ? generateVideoSrc(videoId, true) : '');
-  const previewSrc = videoUrl ? '' : (videoId ? (shopifyVideo 
-    ? generateVideoSrc(videoId, false)
-    : generateVideoSrc(videoId, false) + '&background=1&muted=1') : '');
+  
+  // Generate preview sources based on video type
+  const previewSrc = (() => {
+    if (videoUrl && cloudinaryVideo && showPreview) {
+      return generateCloudinaryPreviewUrl(videoUrl);
+    } else if (videoId) {
+      return shopifyVideo 
+        ? generateVideoSrc(videoId, false)
+        : generateVideoSrc(videoId, false) + '&background=1&muted=1';
+    }
+    return '';
+  })();
   
   // Set thumbnail URL when component mounts
   useEffect(() => {
@@ -48,8 +65,10 @@ const VideoPlayer = ({
       setThumbnailUrl(generateThumbnailUrl(videoId, customThumbnail));
     } else if (customThumbnail) {
       setThumbnailUrl(customThumbnail);
+    } else if (videoUrl && cloudinaryVideo) {
+      setThumbnailUrl(generateCloudinaryThumbnailUrl(videoUrl));
     }
-  }, [videoId, customThumbnail]);
+  }, [videoId, customThumbnail, videoUrl, cloudinaryVideo]);
   
   // Handle play button click
   const handlePlayClick = () => {
@@ -58,12 +77,12 @@ const VideoPlayer = ({
 
   // Setup IntersectionObserver for lazy loading and pausing when offscreen
   useEffect(() => {
-    if (!videoId) return; // Skip for direct video URLs
+    if (!videoId && !cloudinaryVideo) return; // Skip for non-controllable videos
     
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting && isPlaying && shopifyVideo) {
-          // Only pause for Shopify videos - we can't control Vimeo directly
+        if (!entry.isIntersecting && isPlaying && (shopifyVideo || cloudinaryVideo)) {
+          // Only pause for videos we can control directly
           setIsPlaying(false);
         }
       },
@@ -77,11 +96,11 @@ const VideoPlayer = ({
     return () => {
       observer.disconnect();
     };
-  }, [isPlaying, shopifyVideo, videoId]);
+  }, [isPlaying, shopifyVideo, videoId, cloudinaryVideo]);
 
   // Preload video when in viewport
   useEffect(() => {
-    if (!shopifyVideo || !videoId) return; // Only preload Shopify videos
+    if ((!shopifyVideo && !cloudinaryVideo) || (!videoId && !videoUrl)) return;
     
     const preloadObserver = new IntersectionObserver(
       ([entry]) => {
@@ -100,14 +119,14 @@ const VideoPlayer = ({
     return () => {
       preloadObserver.disconnect();
     };
-  }, [videoSrc, shopifyVideo, videoId]);
+  }, [videoSrc, shopifyVideo, videoId, cloudinaryVideo, videoUrl]);
   
   return (
     <div 
       ref={containerRef}
       className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl video-container"
     >
-      {isPlaying || isDirectUrl ? (
+      {isPlaying ? (
         <div className="aspect-video w-full">
           {videoUrl ? (
             <video 
@@ -115,7 +134,7 @@ const VideoPlayer = ({
               className="w-full h-full" 
               controls 
               playsInline
-              autoPlay={initialPlaying}
+              autoPlay
               title={title}
             ></video>
           ) : shopifyVideo ? (
@@ -129,8 +148,9 @@ const VideoPlayer = ({
           thumbnailUrl={thumbnailUrl}
           title={title}
           onPlayClick={handlePlayClick}
-          previewSrc={!shopifyVideo ? previewSrc : undefined}
-          isVimeo={!shopifyVideo}
+          previewSrc={showPreview ? previewSrc : undefined}
+          isVimeo={!shopifyVideo && !cloudinaryVideo}
+          showCloudinaryPreview={cloudinaryVideo && showPreview}
         />
       )}
     </div>

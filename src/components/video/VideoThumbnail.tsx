@@ -1,8 +1,9 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { isCloudinaryVideo } from './videoUtils';
 
 interface VideoThumbnailProps {
   thumbnailUrl: string;
@@ -10,6 +11,7 @@ interface VideoThumbnailProps {
   onPlayClick: () => void;
   previewSrc?: string;
   isVimeo?: boolean;
+  showCloudinaryPreview?: boolean;
 }
 
 const VideoThumbnail = ({ 
@@ -17,9 +19,22 @@ const VideoThumbnail = ({
   title, 
   onPlayClick, 
   previewSrc, 
-  isVimeo = false 
+  isVimeo = false,
+  showCloudinaryPreview = false
 }: VideoThumbnailProps) => {
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
+  const isCloudinary = showCloudinaryPreview && previewSrc && isCloudinaryVideo(previewSrc);
+  
+  useEffect(() => {
+    // Auto-play the Cloudinary preview video when component mounts
+    if (isCloudinary && videoRef.current) {
+      videoRef.current.play().catch(err => {
+        console.log('Auto-play prevented for preview:', err);
+      });
+    }
+  }, [isCloudinary, previewSrc]);
   
   return (
     <div className="relative">
@@ -40,7 +55,19 @@ const VideoThumbnail = ({
             </Button>
           </div>
           
-          {isVimeo ? (
+          {isCloudinary ? (
+            // Cloudinary preview video (muted, autoplay, loop)
+            <video 
+              ref={videoRef}
+              src={previewSrc}
+              className="w-full h-full object-cover"
+              muted
+              loop
+              playsInline
+              autoPlay
+              aria-hidden="true"
+            />
+          ) : isVimeo ? (
             <iframe 
               src={previewSrc}
               className="w-full h-full pointer-events-none" 
