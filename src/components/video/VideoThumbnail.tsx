@@ -19,12 +19,10 @@ const VideoThumbnail = ({
   title, 
   onPlayClick, 
   previewSrc, 
-  isVimeo = false,
   showCloudinaryPreview = false
 }: VideoThumbnailProps) => {
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
   
   const isCloudinary = showCloudinaryPreview && previewSrc && isCloudinaryVideo(previewSrc);
   
@@ -68,16 +66,6 @@ const VideoThumbnail = ({
               playsInline
               autoPlay
               aria-hidden="true"
-            />
-          ) : isVimeo && previewSrc ? (
-            <iframe 
-              ref={iframeRef}
-              src={previewSrc}
-              className="w-full h-full pointer-events-none" 
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              title={`${title} background preview`}
-              loading="lazy"
             />
           ) : thumbnailUrl ? (
             <>

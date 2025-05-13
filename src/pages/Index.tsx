@@ -32,8 +32,8 @@ const Index = () => {
         <div id="video-section">
           {sectionsVisible['video-section'] && 
             <HomeVideoSection 
-              videoId="44b5817ef9b647a5a68e4ffd1c092f05" 
-              title="Food For Education - Kenya" 
+              videoUrl="https://res.cloudinary.com/dng12bd0a/video/upload/v1747130086/dragon_homepage_video_akurqr.mp4" 
+              title="Dragon in Kenya" 
               description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences." 
             />
           }

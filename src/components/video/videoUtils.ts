@@ -29,7 +29,9 @@ export const generateVideoSrc = (videoId: string, autoplay: boolean = false): st
   if (isShopifyVideo(videoId)) {
     return `https://cdn.shopify.com/videos/c/o/v/${videoId}.mp4`;
   } else {
-    return `https://player.vimeo.com/video/${videoId}?h=c4bc497777&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479${autoplay ? '&autoplay=1' : ''}`;
+    // Since we're not using Vimeo, just return an empty string for non-Shopify IDs
+    console.warn('Non-Shopify video ID provided:', videoId);
+    return '';
   }
 };
 
@@ -62,10 +64,8 @@ export const generateThumbnailUrl = (videoId: string, customThumbnail?: string):
     return customThumbnail;
   } else if (isShopifyVideo(videoId)) {
     return `https://cdn.shopify.com/videos/c/o/v/${videoId}.jpg`;
-  } else {
-    // For Vimeo videos, use their thumbnail API
-    return `https://vumbnail.com/${videoId}.jpg`;
   }
+  return '';
 };
 
 /**

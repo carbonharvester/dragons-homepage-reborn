@@ -3,13 +3,15 @@ import React from 'react';
 import VideoPlayer from './video/VideoPlayer';
 
 interface HomeVideoSectionProps {
-  videoId: string;
+  videoId?: string;
+  videoUrl?: string;
   title: string;
   description?: string;
 }
 
 const HomeVideoSection = ({
   videoId,
+  videoUrl,
   title,
   description
 }: HomeVideoSectionProps) => {
@@ -23,6 +25,7 @@ const HomeVideoSection = ({
         
         <VideoPlayer 
           videoId={videoId} 
+          videoUrl={videoUrl}
           title={title} 
           initialPlaying={false}
           showPreview={true}

@@ -36,7 +36,8 @@ const VideoSection = ({
           videoId={videoId} 
           videoUrl={videoUrl} 
           title={title} 
-          customThumbnail={customThumbnail} 
+          customThumbnail={customThumbnail}
+          showPreview={true}
         />
 
         {quote && <div className="max-w-3xl mx-auto mt-12 text-center">

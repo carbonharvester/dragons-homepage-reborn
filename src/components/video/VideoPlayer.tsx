@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import VideoThumbnail from './VideoThumbnail';
 import ShopifyVideo from './ShopifyVideo';
-import VimeoVideo from './VimeoVideo';
 import { 
   isShopifyVideo, 
   generateVideoSrc, 
@@ -38,7 +37,7 @@ const VideoPlayer = ({
   // If direct videoUrl is provided, use that instead of videoId processing
   const isDirectUrl = !!videoUrl;
   
-  // Check if the video ID is from Shopify or from Vimeo (only if videoId provided)
+  // Check if the video ID is from Shopify (only if videoId provided)
   const shopifyVideo = videoId ? isShopifyVideo(videoId) : false;
   
   // Check if it's a Cloudinary video URL
@@ -52,9 +51,7 @@ const VideoPlayer = ({
     if (videoUrl && cloudinaryVideo && showPreview) {
       return generateCloudinaryPreviewUrl(videoUrl);
     } else if (videoId && showPreview) {
-      return shopifyVideo 
-        ? generateVideoSrc(videoId, false)
-        : `https://player.vimeo.com/video/${videoId}?background=1&muted=1&autopause=0&loop=1&transparent=0&responsive=1&autoplay=1`;
+      return shopifyVideo ? generateVideoSrc(videoId, false) : '';
     }
     return '';
   })();
@@ -140,7 +137,9 @@ const VideoPlayer = ({
           ) : shopifyVideo ? (
             <ShopifyVideo src={videoSrc} title={title} />
           ) : (
-            <VimeoVideo src={videoSrc} title={title} />
+            <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white">
+              No valid video source available
+            </div>
           )}
         </div>
       ) : (
@@ -149,7 +148,6 @@ const VideoPlayer = ({
           title={title}
           onPlayClick={handlePlayClick}
           previewSrc={showPreview ? previewSrc : undefined}
-          isVimeo={!shopifyVideo && !cloudinaryVideo}
           showCloudinaryPreview={cloudinaryVideo && showPreview}
         />
       )}
