@@ -13,7 +13,6 @@ import { tripHighlights } from './data/highlights';
 import { tripItinerary } from './data/index';
 import ProgramItinerary from '../roots-of-change/ProgramItinerary';
 import ProgramLocations from '../roots-of-change/ProgramLocations';
-import TripLearningOutcomes from '../trip/TripLearningOutcomes';
 
 interface FeedingTheFutureDataProps {
   heroOnly?: boolean;
@@ -71,9 +70,6 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
             
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
             {!isMobile && <TripHighlightsWrapper />}
-            
-            {/* Learning Outcomes Section - Now positioned above Program Locations */}
-            <TripLearningOutcomes outcomes={learningOutcomes} />
             
             {/* Program Locations Section */}
             <ProgramLocations />

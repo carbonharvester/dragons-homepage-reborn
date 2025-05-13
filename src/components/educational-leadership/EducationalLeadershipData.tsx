@@ -3,6 +3,7 @@ import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
+import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
@@ -14,7 +15,6 @@ import {
   programData,
   detailsPerfectFor as perfectFor
 } from './data';
-import TripHighlightsWrapper from './TripHighlightsWrapper';
 
 interface EducationalLeadershipDataProps {
   heroOnly?: boolean;
@@ -47,16 +47,6 @@ const EducationalLeadershipData: React.FC<EducationalLeadershipDataProps> = ({
 
   // Direct PDF brochure link
   const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Educational_Leadership.pdf";
-
-  // Process highlights with proper JSX for icons
-  const processedHighlights = tripHighlights.map(highlight => ({
-    ...highlight,
-    icon: (
-      <div className="text-white">
-        <highlight.icon className="h-8 w-8" />
-      </div>
-    )
-  }));
 
   return (
     <>
@@ -92,8 +82,8 @@ const EducationalLeadershipData: React.FC<EducationalLeadershipDataProps> = ({
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              // Pass the processed highlights with JSX elements
-              tripHighlights={isMobile ? processedHighlights : []}
+              // Here we're passing an empty array to avoid type issues, since highlights are shown via TripHighlightsWrapper
+              tripHighlights={[]}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}
