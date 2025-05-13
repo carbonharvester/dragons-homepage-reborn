@@ -1,3 +1,4 @@
+
 import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
@@ -76,7 +77,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
             <ProgramLocations />
             
             {/* Detailed 4-Week Itinerary Section */}
-            <ProgramItinerary />
+            <ProgramItinerary weeks={weeks} />
             
             {/* Continue with other components using TripBrochureContent */}
             <TripBrochureContent 
