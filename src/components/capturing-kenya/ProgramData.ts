@@ -52,7 +52,7 @@ export const outcomes: Outcome[] = [
   }
 ];
 
-// Adding the missing exports that are referenced in CapturingKenyaData.tsx
+// Export learning outcomes directly from the outcomes array
 export const learningOutcomes = outcomes.map(outcome => ({
   title: outcome.title,
   description: outcome.description
