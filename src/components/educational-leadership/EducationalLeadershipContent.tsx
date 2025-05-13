@@ -16,7 +16,7 @@ import TripBrochureContent from '../trip/TripBrochureContent';
 const EducationalLeadershipContent = () => {
   // Create updated description and goals based on the itinerary
   const description = [
-    "Our Educational Leadership program is an immersive 9-day professional development journey for teachers of environmental science, sustainability, geography, and related disciplines. Starting in Nairobi and traversing through Voi, Maungu, and Tsavo East, educators experience first-hand the impact of student-led projects in Kenyan communities.",
+    "Our Educational Leadership program is an immersive 10-day professional development journey for teachers of environmental science, sustainability, geography, and related disciplines. Starting in Nairobi and traversing through Voi, Maungu, and Tsavo East, educators experience first-hand the impact of student-led projects in Kenyan communities.",
     "Participants will engage with organizations like Food For Education, Wildlife Works, and local community groups while experiencing the same transformative activities that students engage in through Kapes programs. From sustainable gardens and water harvesting systems to conservation initiatives and cultural exchanges, this program bridges classroom theory with authentic global experiences."
   ];
   

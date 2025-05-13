@@ -1,3 +1,4 @@
+
 import { Calendar, Sun, Map, TreeDeciduous, School, Users, Camera } from "lucide-react";
 
 export const tripItinerary = [
@@ -24,16 +25,26 @@ export const tripItinerary = [
   },
   {
     day: "Day 3",
-    title: "Africa Collect Textiles & Train to Voi",
+    title: "Africa Collect Textiles & Overnight in Nairobi",
     activities: [
       "Visit Africa Collect Textiles to learn about sustainable textile recycling",
       "Participate in a weaving workshop with local artisans using recycled materials",
-      "Afternoon train journey to Voi, enjoying scenic views of Kenya's landscapes",
-      "Check-in at Rukinga Camp and dinner"
+      "Afternoon exploration of Nairobi urban farming initiatives",
+      "Dinner and overnight stay in Nairobi"
     ]
   },
   {
     day: "Day 4",
+    title: "Train Journey & Wildlife Works Introduction",
+    activities: [
+      "Morning train journey to Voi, enjoying scenic views of Kenya's landscapes",
+      "Lunch in Voi town",
+      "Afternoon tour of Wildlife Works operations",
+      "Check-in at Rukinga Camp and dinner"
+    ]
+  },
+  {
+    day: "Day 5",
     title: "Wildlife Works, Conservation & Factory Visit",
     activities: [
       "Visit Wildlife Works to learn about REDD+ conservation projects in Tsavo",
@@ -44,7 +55,7 @@ export const tripItinerary = [
     ]
   },
   {
-    day: "Day 5",
+    day: "Day 6",
     title: "Murungu Hills Hiking & Conservation Insights",
     activities: [
       "Guided 3-hour hike through Murungu Hills",
@@ -55,7 +66,7 @@ export const tripItinerary = [
     ]
   },
   {
-    day: "Day 6",
+    day: "Day 7",
     title: "Neema Women's Group Cultural Immersion",
     activities: [
       "Transfer to Maungu village and check into local lodge",
@@ -65,7 +76,7 @@ export const tripItinerary = [
     ]
   },
   {
-    day: "Day 7",
+    day: "Day 8",
     title: "Zawadisha Community Experience",
     activities: [
       "Home visit with local family to understand daily life",
@@ -76,7 +87,7 @@ export const tripItinerary = [
     ]
   },
   {
-    day: "Day 8",
+    day: "Day 9",
     title: "Tsavo East National Park Safari",
     activities: [
       "Morning game drive in Tsavo East National Park",
@@ -86,7 +97,7 @@ export const tripItinerary = [
     ]
   },
   {
-    day: "Day 9",
+    day: "Day 10",
     title: "Return to Nairobi & Departure",
     activities: [
       "Morning train journey back to Nairobi",

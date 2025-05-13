@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
-import { Calendar, Users, MapPin } from "lucide-react";
 
 const ProgramHero = () => {
   return (
@@ -23,22 +22,6 @@ const ProgramHero = () => {
             A 4-week creative adventure to photograph and film Kenya's stunning landscapes, 
             wildlife, and cultures while developing professional skills.
           </p>
-          
-          {/* Basic Program Details - just duration, age, location */}
-          <div className="flex flex-wrap gap-4 mb-8">
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
-              <Calendar className="h-5 w-5" />
-              <span>4 Weeks (Summer)</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
-              <Users className="h-5 w-5" />
-              <span>Ages 16-20</span>
-            </div>
-            <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-full">
-              <MapPin className="h-5 w-5" />
-              <span>Kenya</span>
-            </div>
-          </div>
           
           <div className="flex flex-wrap gap-4">
             <Button className="btn-primary" asChild>
