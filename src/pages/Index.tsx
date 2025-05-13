@@ -32,7 +32,7 @@ const Index = () => {
         <div id="video-section">
           {sectionsVisible['video-section'] && 
             <HomeVideoSection 
-              videoUrl="https://res.cloudinary.com/dng12bd0a/video/upload/v1747150883/kapes_impact_adventures_-_kenya__asd_2024_1080p_uveuue.mp4" 
+              videoUrl="https://cdn.shopify.com/videos/c/o/v/44b5817ef9b647a5a68e4ffd1c092f05.mp4" 
               title="Kapes Impact Adventures" 
               description="Watch how our immersive programs transform students through cultural exchange and authentic experiences." 
               autoPlay={true}
