@@ -82,6 +82,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
+              isEducatorTrip={false} // Changed to use the correct prop name
             />
           </div>
         </>
