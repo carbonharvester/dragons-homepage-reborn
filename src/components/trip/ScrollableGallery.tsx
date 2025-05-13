@@ -1,7 +1,6 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import {
   Carousel,
   CarouselContent,
@@ -10,25 +9,81 @@ import {
   CarouselNext
 } from '@/components/ui/carousel';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { toast } from '@/components/ui/use-toast';
 
-interface GalleryItem {
+// Define interfaces to handle both formats of gallery items
+interface BaseGalleryItem {
   src: string;
   alt: string;
   type?: 'image' | 'video';
 }
 
+interface GalleryItem extends BaseGalleryItem {
+  className?: string;
+}
+
 interface ScrollableGalleryProps {
-  images: GalleryItem[];
+  images: (GalleryItem | BaseGalleryItem)[];
 }
 
 const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
   const isMobile = useIsMobile();
   const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set([0, 1, 2]));
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   // Function to handle image load events
   const handleImageLoad = (index: number) => {
     setImagesLoaded(prev => ({ ...prev, [index]: true }));
   };
+
+  // Function to handle image error events
+  const handleImageError = (index: number) => {
+    setImageErrors(prev => ({ ...prev, [index]: true }));
+    console.error(`Failed to load image at index ${index}`);
+  };
+
+  // Filter out images with empty src values and handle errors
+  const validImages = images.filter(item => item.src && item.src.trim() !== '');
+
+  // Setup intersection observer for lazy loading
+  useEffect(() => {
+    if (validImages.length === 0) return;
+    
+    observerRef.current = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const index = Number(entry.target.getAttribute('data-index'));
+        if (entry.isIntersecting) {
+          setVisibleItems(prev => new Set(prev.add(index)));
+        }
+      });
+    }, {
+      rootMargin: '200px 0px', // Start loading images 200px before they enter viewport
+      threshold: 0.1
+    });
+
+    itemsRef.current.forEach((item, index) => {
+      if (item) {
+        observerRef.current?.observe(item);
+      }
+    });
+
+    return () => {
+      observerRef.current?.disconnect();
+    };
+  }, [validImages.length]);
+
+  // If there are no valid images, show a message
+  if (validImages.length === 0) {
+    return (
+      <div className="mt-24 mb-16 text-center">
+        <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark hero-heading">Photo Gallery</h2>
+        <p className="text-lg text-dragon-gray">No images available at this time.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="mt-24 mb-16">
@@ -44,10 +99,12 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
           className="w-full"
         >
           <CarouselContent className="pb-4">
-            {images.map((item, index) => (
+            {validImages.map((item, index) => (
               <CarouselItem 
                 key={index} 
                 className={isMobile ? "basis-full" : "basis-full md:basis-1/2 lg:basis-1/3"}
+                ref={el => itemsRef.current[index] = el}
+                data-index={index}
               >
                 <div className={`rounded-lg overflow-hidden ${isMobile ? 'h-96' : 'h-80'} bg-gray-100`}>
                   {item.type === 'video' ? (
@@ -57,22 +114,33 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
                       controls
                       muted
                       preload="metadata"
-                      // Removed the invalid 'loading' attribute
                     />
                   ) : (
                     <>
-                      {!imagesLoaded[index] && (
+                      {!imagesLoaded[index] && !imageErrors[index] && (
                         <div className="w-full h-full flex items-center justify-center bg-gray-100">
                           <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
                         </div>
                       )}
-                      <img
-                        src={item.src}
-                        alt={item.alt}
-                        loading="lazy"
-                        className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
-                        onLoad={() => handleImageLoad(index)}
-                      />
+                      {imageErrors[index] ? (
+                        <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                          <p className="text-gray-500">Image not available</p>
+                        </div>
+                      ) : (
+                        (index < 3 || visibleItems.has(index)) && (
+                          <img
+                            src={item.src}
+                            alt={item.alt}
+                            loading={index < 3 ? "eager" : "lazy"}
+                            fetchPriority={index < 3 ? "high" : "auto"}
+                            width="400"
+                            height="300"
+                            className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
+                            onLoad={() => handleImageLoad(index)}
+                            onError={() => handleImageError(index)}
+                          />
+                        )
+                      )}
                     </>
                   )}
                 </div>
