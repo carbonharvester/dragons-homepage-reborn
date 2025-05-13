@@ -7,13 +7,13 @@ import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { tripDetails, perfectFor } from './data/details';
-import { programData, learningOutcomes } from './ProgramData';
+import { programData } from './ProgramData';
 import { weeks } from './data';
 import ProgramItinerary from '../capturing-kenya/ProgramItinerary';
 import ProgramLocations from './ProgramLocations';
 import TripLearningOutcomes from '../trip/TripLearningOutcomes';
 import { galleryImages } from './data/gallery';
-import TripGallery from '../trip/TripGallery';
+import { learningOutcomes } from './ProgramData';
 
 interface CapturingKenyaDataProps {
   heroOnly?: boolean;
@@ -40,9 +40,6 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
 
   // Direct PDF brochure link
   const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Capturing_Kenya.pdf";
-
-  // Log weeks data to help with debugging
-  console.log("Weeks data in CapturingKenyaData:", weeks);
 
   return (
     <>
@@ -83,9 +80,6 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
             
             {/* Detailed 4-Week Itinerary Section */}
             <ProgramItinerary weeks={weeks} />
-            
-            {/* Custom photo gallery instead of the ScrollableGallery */}
-            <TripGallery images={galleryImages} />
             
             {/* Continue with other components using TripBrochureContent */}
             <TripBrochureContent 
