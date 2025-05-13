@@ -5,7 +5,6 @@ import { programCategories } from '@/data/programsData';
 import SchoolTripsTab from './SchoolTripsTab';
 import SummerAbroadTab from './SummerAbroadTab';
 import MultiYearTab from './MultiYearTab';
-import AdultTripsTab from './AdultTripsTab';
 import EducatorTripsTab from './EducatorTripsTab';
 
 const TabsSection = () => {
@@ -34,10 +33,8 @@ const TabsSection = () => {
       <TabsContent value="educator-trips" className="mt-8">
         <EducatorTripsTab />
       </TabsContent>
-
-      <TabsContent value="adult-trips" className="mt-8">
-        <AdultTripsTab />
-      </TabsContent>
+      
+      {/* Adult Trips tab removed */}
     </Tabs>
   );
 };
