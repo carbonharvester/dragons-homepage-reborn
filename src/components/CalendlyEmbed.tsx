@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button, ButtonProps } from "@/components/ui/button";
 import DirectCalendlyEmbed from './calendly/DirectCalendlyEmbed';
+import { calendlyConfig } from '@/config/calendlyConfig';
 
 interface CalendlyEmbedProps extends ButtonProps {
   url?: string;
@@ -10,7 +11,7 @@ interface CalendlyEmbedProps extends ButtonProps {
 }
 
 const CalendlyEmbed = ({ 
-  url = "https://calendly.com/kapesuniforms/discoverymeeting", 
+  url = calendlyConfig.defaultUrl, 
   text = "Schedule a Consultation", 
   className, 
   variant, 

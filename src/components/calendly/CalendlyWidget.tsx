@@ -1,16 +1,17 @@
 
 import React from 'react';
 import DirectCalendlyEmbed from './DirectCalendlyEmbed';
+import { calendlyConfig } from '@/config/calendlyConfig';
 
 interface CalendlyWidgetProps {
-  url: string;
+  url?: string;
   isOpen: boolean;
   onLoadError?: () => void;
   onLoadSuccess?: () => void;
 }
 
 const CalendlyWidget = ({ 
-  url, 
+  url = calendlyConfig.defaultUrl, 
   isOpen
 }: CalendlyWidgetProps) => {
   if (!isOpen) return null;

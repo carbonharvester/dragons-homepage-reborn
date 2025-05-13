@@ -12,13 +12,16 @@ let loadPromise: Promise<void> | null = null;
  */
 export const preloadCalendlyScript = (): Promise<void> => {
   if (scriptStatus === 'loaded') {
+    console.log('Calendly script already loaded, reusing');
     return Promise.resolve();
   }
   
   if (loadPromise) {
+    console.log('Calendly script already loading, waiting for it to complete');
     return loadPromise;
   }
   
+  console.log('Starting to load Calendly script');
   scriptStatus = 'loading';
   
   loadPromise = new Promise<void>((resolve, reject) => {
@@ -30,6 +33,7 @@ export const preloadCalendlyScript = (): Promise<void> => {
     
     // If script already exists in DOM, mark as loaded
     if (document.querySelector('script[src*="calendly.com/assets/external/widget.js"]')) {
+      console.log('Calendly script found in DOM, marking as loaded');
       scriptStatus = 'loaded';
       resolve();
       return;

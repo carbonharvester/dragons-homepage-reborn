@@ -1,8 +1,9 @@
 
-import React, { useEffect, useRef, useState } from 'react';
-import { preloadCalendlyScript, isCalendlyLoaded } from '@/utils/calendlyLoader';
+import React, { useEffect, useRef } from 'react';
+import { preloadCalendlyScript } from '@/utils/calendlyLoader';
 import CalendlyLoading from './CalendlyLoading';
 import CalendlyError from './CalendlyError';
+import { calendlyConfig } from '@/config/calendlyConfig';
 
 interface DirectCalendlyEmbedProps {
   url?: string;
@@ -11,15 +12,14 @@ interface DirectCalendlyEmbedProps {
 }
 
 const DirectCalendlyEmbed: React.FC<DirectCalendlyEmbedProps> = ({
-  url = "https://calendly.com/kapesuniforms/discoverymeeting",
-  height = "700px",
+  url = calendlyConfig.defaultUrl,
+  height = calendlyConfig.defaultHeight,
   className = ""
 }) => {
-  const [loadingState, setLoadingState] = useState<'loading' | 'loaded' | 'error'>('loading');
+  const [loadingState, setLoadingState] = React.useState<'loading' | 'loaded' | 'error'>('loading');
   const calendarRef = useRef<HTMLDivElement>(null);
   const initialized = useRef(false);
   
-  // Effect to load and initialize Calendly
   useEffect(() => {
     // Only run once
     if (initialized.current) return;
@@ -29,10 +29,10 @@ const DirectCalendlyEmbed: React.FC<DirectCalendlyEmbedProps> = ({
       try {
         await preloadCalendlyScript();
         
-        // Initialize Calendly after script is loaded
-        if (calendarRef.current && window.Calendly) {
+        if (window.Calendly && calendarRef.current) {
           // Small delay to ensure DOM is ready
           setTimeout(() => {
+            console.log('Calendly initialized successfully');
             setLoadingState('loaded');
           }, 300);
         }
@@ -58,6 +58,8 @@ const DirectCalendlyEmbed: React.FC<DirectCalendlyEmbedProps> = ({
       .catch(() => setLoadingState('error'));
   };
   
+  const fullUrl = `${url}${calendlyConfig.queryParams}`;
+  
   return (
     <>
       {loadingState === 'loading' && <CalendlyLoading />}
@@ -66,7 +68,7 @@ const DirectCalendlyEmbed: React.FC<DirectCalendlyEmbedProps> = ({
       <div 
         ref={calendarRef}
         className={`calendly-inline-widget ${className}`}
-        data-url={`${url}?hide_event_type_details=1&hide_gdpr_banner=1&background_color=ffffff&primary_color=357566`}
+        data-url={fullUrl}
         style={{ 
           minWidth: '320px', 
           height,
