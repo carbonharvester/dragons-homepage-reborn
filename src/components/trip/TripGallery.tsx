@@ -113,38 +113,45 @@ const TripGallery = ({ images }: TripGalleryProps) => {
         </div>
       ) : (
         <div className="grid grid-cols-12 gap-4">
-          {validImages.map((image, index) => (
-            <div 
-              key={index} 
-              className={`${image.className} bg-gray-100 relative`}
-              data-index={index}
-              ref={el => itemsRef.current[index] = el}
-            >
-              {!imagesLoaded[index] && !imageErrors[index] && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                  <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
-                </div>
-              )}
-              {imageErrors[index] ? (
-                <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                  <p className="text-gray-500">Image not available</p>
-                </div>
-              ) : (
-                <img 
-                  src={image.src} 
-                  alt={image.alt} 
-                  loading={index < 3 ? "eager" : "lazy"}
-                  fetchPriority={index < 3 ? "high" : "auto"}
-                  width="600"
-                  height="400"
-                  className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
-                  onLoad={() => handleImageLoad(index)}
-                  onError={() => handleImageError(index)}
-                  onClick={() => handleImageClick(image)}
-                />
-              )}
-            </div>
-          ))}
+          {validImages.map((image, index) => {
+            // Extract the grid column classes but maintain aspect-square
+            const colClasses = image.className.split(' ')
+              .filter(cls => cls.includes('col-span'))
+              .join(' ');
+            
+            return (
+              <div 
+                key={index} 
+                className={`${colClasses} aspect-square bg-gray-100 relative rounded-lg overflow-hidden`}
+                data-index={index}
+                ref={el => itemsRef.current[index] = el}
+              >
+                {!imagesLoaded[index] && !imageErrors[index] && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                    <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                )}
+                {imageErrors[index] ? (
+                  <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                    <p className="text-gray-500">Image not available</p>
+                  </div>
+                ) : (
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    loading={index < 3 ? "eager" : "lazy"}
+                    fetchPriority={index < 3 ? "high" : "auto"}
+                    width="600"
+                    height="600"
+                    className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
+                    onLoad={() => handleImageLoad(index)}
+                    onError={() => handleImageError(index)}
+                    onClick={() => handleImageClick(image)}
+                  />
+                )}
+              </div>
+            );
+          })}
         </div>
       )}
       

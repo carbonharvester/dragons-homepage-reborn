@@ -33,7 +33,7 @@ const ProgramCard = ({ program, buttonClassName, priority = false }: ProgramCard
   return (
     <Card className={`overflow-hidden border-none shadow-md h-full flex flex-col ${isMobile ? 'min-h-[580px]' : ''}`}>
       <div className="relative">
-        <AspectRatio ratio={16/9} className="bg-gray-200">
+        <AspectRatio ratio={1/1} className="bg-gray-200">
           {!imageLoaded && (
             <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
               <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
@@ -45,7 +45,7 @@ const ProgramCard = ({ program, buttonClassName, priority = false }: ProgramCard
             loading={priority ? "eager" : "lazy"}
             fetchPriority={priority ? "high" : "auto"}
             width="400"
-            height="225"
+            height="400"
             className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
             onLoad={() => setImageLoaded(true)}
             onError={(e) => {

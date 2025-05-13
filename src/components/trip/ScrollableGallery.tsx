@@ -121,7 +121,7 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
                 ref={el => itemsRef.current[index] = el}
                 data-index={index}
               >
-                <div className={`rounded-lg overflow-hidden ${isMobile ? 'h-96' : 'h-80'} bg-gray-100`}>
+                <div className={`rounded-lg overflow-hidden ${isMobile ? 'h-80 w-80 mx-auto' : 'aspect-square'} bg-gray-100`}>
                   {item.type === 'video' ? (
                     <video
                       src={item.src}
@@ -148,7 +148,7 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
                           loading={index < 3 ? "eager" : "lazy"}
                           fetchPriority={index < 3 ? "high" : "auto"}
                           width="400"
-                          height="300"
+                          height="400"
                           className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
                           onLoad={() => handleImageLoad(index)}
                           onError={() => handleImageError(index)}
