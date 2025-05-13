@@ -8,6 +8,7 @@ interface HomeVideoSectionProps {
   title: string;
   description?: string;
   initialPlaying?: boolean;
+  autoPlay?: boolean;
 }
 
 const HomeVideoSection = ({
@@ -15,7 +16,8 @@ const HomeVideoSection = ({
   videoUrl,
   title,
   description,
-  initialPlaying = false
+  initialPlaying = false,
+  autoPlay = false
 }: HomeVideoSectionProps) => {
   return (
     <section className="py-16 bg-slate-50">
@@ -29,8 +31,8 @@ const HomeVideoSection = ({
           videoId={videoId} 
           videoUrl={videoUrl}
           title={title} 
-          initialPlaying={initialPlaying}
-          showPreview={true}
+          initialPlaying={initialPlaying || autoPlay}
+          showPreview={!autoPlay}
         />
       </div>
     </section>

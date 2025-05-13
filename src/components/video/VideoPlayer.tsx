@@ -33,6 +33,7 @@ const VideoPlayer = ({
   const [isPlaying, setIsPlaying] = useState(initialPlaying);
   const [thumbnailUrl, setThumbnailUrl] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   
   // If direct videoUrl is provided, use that instead of videoId processing
   const isDirectUrl = !!videoUrl;
@@ -72,6 +73,17 @@ const VideoPlayer = ({
     console.log('Play button clicked in VideoPlayer');
     setIsPlaying(true);
   };
+  
+  // Effect to handle initial autoplay for cloudinary videos when initialPlaying is true
+  useEffect(() => {
+    if (initialPlaying && cloudinaryVideo && videoRef.current) {
+      console.log('Auto-playing Cloudinary video on initial render');
+      videoRef.current.muted = true; // Must be muted for autoplay to work reliably
+      videoRef.current.play()
+        .then(() => console.log('Autoplay started successfully'))
+        .catch(err => console.error('Autoplay failed:', err));
+    }
+  }, [initialPlaying, cloudinaryVideo]);
 
   // Setup IntersectionObserver for lazy loading and pausing when offscreen
   useEffect(() => {
@@ -128,11 +140,13 @@ const VideoPlayer = ({
         <div className="aspect-video w-full">
           {videoUrl ? (
             <video 
+              ref={videoRef}
               src={videoUrl}
               className="w-full h-full" 
               controls 
               playsInline
               autoPlay
+              muted={initialPlaying} // Mute only if it's set to autoplay
               title={title}
             ></video>
           ) : shopifyVideo ? (
