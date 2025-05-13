@@ -6,62 +6,34 @@ import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { 
-  tripDetails as rawTripDetails, 
-  tripHighlights as rawTripHighlights, 
-  galleryImages, 
-  learningOutcomes, 
-  tripItinerary, 
-  programData,
-  perfectFor
-} from './data';
+import { tripDetails, galleryImages, learningOutcomes, tripItinerary, perfectFor } from './data';
+import { programData } from './data/programInfo';
 
 interface FoodForEducationDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
+  customThumbnails?: Record<string, string>;
 }
 
 const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({ 
   heroOnly = false, 
   contentOnly = false,
-  navigationOnly = false
+  navigationOnly = false,
+  customThumbnails
 }) => {
   const isMobile = useIsMobile();
-  
-  // Transform Lucide icons to React elements for compatibility
-  const tripDetails = rawTripDetails.map(detail => ({
-    ...detail,
-    icon: (
-      <div className="text-dragon">
-        <detail.icon className="h-5 w-5" />
-      </div>
-    )
-  }));
 
-  // Transform highlights with JSX elements
-  const tripHighlights = rawTripHighlights.map(highlight => ({
-    ...highlight,
-    icon: (
-      <div className="text-white">
-        <highlight.icon className="h-8 w-8" />
-      </div>
-    )
-  }));
-
-  // Custom description and project goals specific to the Food For Education program
+  // Custom description and project goals specific to Food For Education
   const foodDescription = [
-    "In many rural Kenyan schools, inconsistent access to nutritious food impacts student attendance and academic performance. This collaborative program transforms unused school land into productive food gardens through sustainable permaculture practices.",
-    "During this immersive 8 day journey, students will work alongside local communities to establish gardens that provide ongoing meals for schoolchildren while learning about food security challenges and solutions that protect both people and ecosystems."
+    "In Kenya, 1 in 4 children face stunted growth due to malnutrition, with hunger posing a significant barrier to education—limiting focus, attendance, and long-term potential. The Food For Education Program Trip is a 8 day journey designed to combat this crisis by turning degraded land at schools into thriving gardens and food forests.",
+    "Students work alongside local children and local experts to plant nutrient-rich crops, creating sustainable food sources that provide daily meals for students in need. Through hands-on permaculture workshops and cultural exchanges, this trip empowers students to drive food security, foster global citizenship, and leave a lasting legacy of nourishment for Kenyan communities."
   ];
   
-  const foodProjectGoals = [
-    "Design and establish permaculture food gardens at local schools using sustainable techniques",
-    "Learn practical gardening skills including composting, water conservation, and planting methods",
-    "Understand the relationship between food security, education, and community development",
-    "Connect with Kenya's natural environment through wildlife experiences and cultural immersion",
-    "Create measurable impact that continues to provide nutritious food for schoolchildren"
-  ];
+  const foodProjectGoals = programData.goals;
+
+  // Direct PDF brochure link
+  const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Food_For_Education.pdf?v=1747049829";
 
   return (
     <>
@@ -69,9 +41,9 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Food For Education"
-          subtitle="Transform unused school land into productive gardens while addressing food insecurity through sustainable agriculture."
+          subtitle="Transform degraded school land into vibrant gardens using permaculture farming techniques to provide nutritious meals for local children, fostering long-term food security."
           category="School Trip"
-          imagePath="/lovable-uploads/ec51d2d5-5e96-4e9f-b5d6-5627994d2fa5.png"
+          imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg"
         />
       )}
 
@@ -91,14 +63,14 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               projectGoals={foodProjectGoals}
             />
             
-            {/* Trip Highlights with explicit heading - only show if we're not on mobile
-                since mobile will show highlights through TripBrochureContent */}
+            {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
             {!isMobile && <TripHighlightsWrapper />}
             
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              tripHighlights={tripHighlights}
+              // Here we're passing an empty array to avoid type issues, since highlights are shown via TripHighlightsWrapper
+              tripHighlights={[]}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}
@@ -108,6 +80,9 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               projectGoals={foodProjectGoals}
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
+              pdfBrochureLink={pdfBrochureLink}
+              customThumbnails={customThumbnails}
+              isEducatorTrip={false} // Changed to use the correct prop name
             />
           </div>
         </>

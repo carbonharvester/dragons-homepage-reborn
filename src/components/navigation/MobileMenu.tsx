@@ -118,9 +118,6 @@ const MobileMenu = ({
                 <Link to="/blog" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
                   Blog
                 </Link>
-                <Link to="/podcast" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Podcast
-                </Link>
                 <Link to="/discover-kenya" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
                   Discover Kenya
                 </Link>

@@ -3,6 +3,7 @@ import React from 'react';
 import { MapPin, Users, BookOpen, Shield, LineChart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from './CalendlyEmbed';
+
 const features = [{
   icon: <MapPin className="h-10 w-10 text-dragon" />,
   title: "Tailored Itineraries",
@@ -28,6 +29,7 @@ const features = [{
   title: "Transformative Experiences",
   description: "Life-changing journeys that foster leadership, cultural understanding, and a deep commitment to global citizenship, while empowering communities through sustainable impact."
 }];
+
 const WhyChooseUs = () => {
   const scrollToPrograms = () => {
     const programsSection = document.getElementById('programs');
@@ -37,6 +39,7 @@ const WhyChooseUs = () => {
       });
     }
   };
+  
   return <section id="why-us" className="py-20 bg-white">
       <div className="container-wide">
         <div className="text-center mb-16">
@@ -55,7 +58,7 @@ const WhyChooseUs = () => {
         </div>
 
         <div className="mt-16 bg-dragon-sand p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between">
-          <div className="mb-6 md:mb-0 md:mr-6">
+          <div className="mb-6 md:mb-0 md:mr-6 text-center md:text-left">
             <h3 className="text-2xl text-dragon-dark mb-2 font-extrabold">Ready for your next adventure?</h3>
             <p className="text-dragon-gray">Connect with a program coordinator to find the transformative journey that's right for your school.</p>
           </div>
@@ -67,4 +70,5 @@ const WhyChooseUs = () => {
       </div>
     </section>;
 };
+
 export default WhyChooseUs;

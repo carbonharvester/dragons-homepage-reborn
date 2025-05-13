@@ -1,4 +1,3 @@
-
 export const programCategories = [
   {
     title: "School Trips",
@@ -6,19 +5,24 @@ export const programCategories = [
     description: "Experiential learning trips for K-12 schools.",
     programs: [
       {
-        title: "Food For Education",
-        href: "/programs/food-for-education",
-        description: "Address food security challenges through sustainable agriculture initiatives.",
-      },
-      {
         title: "Community Conservation",
         href: "/programs/community-conservation",
         description: "Protect endangered ecosystems with local conservation experts.",
       },
       {
+        title: "Food For Education",
+        href: "/programs/food-for-education",
+        description: "Address food security challenges through sustainable agriculture initiatives.",
+      },
+      {
         title: "Water Empowering Women",
         href: "/programs/empowering-women",
         description: "Support women-led initiatives focusing on education and leadership.",
+      },
+      {
+        title: "Multi-Year Curriculum",
+        href: "/multi-year-curriculum",
+        description: "Progressive educational journey spanning multiple years.",
       },
     ],
   },
@@ -40,28 +44,18 @@ export const programCategories = [
     ],
   },
   {
-    title: "Multi-Year Curriculum",
-    href: "/multi-year-curriculum",
-    description: "Comprehensive educational programs spanning multiple years.",
-    programs: [],
-  },
-  {
-    title: "Adult Programs",
-    href: "/adult-programs",
-    description: "Educational travel experiences designed for adults.",
+    title: "Educator Trips",
+    href: "/educator-trips",
+    description: "Professional development trips designed specifically for teachers and school staff.",
     programs: [
       {
-        title: "Permaculture Design Course",
-        href: "/programs/permaculture-design-course",
-        description: "Learn permaculture principles while contributing to sustainable food systems.",
-      },
-      {
-        title: "Safari & Conservation",
-        href: "/programs/safari-sustainability",
-        description: "Combine classic safari experiences with hands-on conservation work.",
+        title: "Educational Leadership",
+        href: "/programs/educational-leadership",
+        description: "Explore educational leadership through cultural immersion and collaborative learning.",
       },
     ],
   },
+  // Adult Trips category removed
 ];
 
 export const resourcePages = [
@@ -85,11 +79,7 @@ export const resourcePages = [
     href: "/discover-kenya",
     description: "Explore the incredible diversity of landscapes, wildlife, and culture in Kenya."
   },
-  {
-    title: "Podcast",
-    href: "/podcast",
-    description: "Listen to our conversations about educational travel, sustainability, and community impact."
-  },
+  // Podcast entry removed
   {
     title: "Blog",
     href: "/blog",

@@ -21,7 +21,7 @@ export const tripDetails: TripDetail[] = [
   },
   {
     label: "Location",
-    value: "Various conservation areas in Kenya",
+    value: "Tsavo East, Kenya",
     icon: Map
   },
   {
@@ -31,4 +31,4 @@ export const tripDetails: TripDetail[] = [
   }
 ];
 
-export const perfectFor = "Ages 12-16";
+export const perfectFor = "Aged 12-15, Passionate About The Environmental, Love Wildlife, Enjoy Cultural Immersion, Seeking Personal Growth, Comfortable with Physical Challenges, Value Community Engagement, Interested in Adventure";

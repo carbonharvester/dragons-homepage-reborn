@@ -1,28 +1,48 @@
 
 export const galleryImages = [
   {
-    src: "/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png",
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747129046/Filip-C-Agoo-Everland-Marketing-Kenya-13983_atg3tn.jpg",
     alt: "Students engaging with Zawadisha women", 
     className: "col-span-12 md:col-span-6 h-64"
   },
   {
-    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/IMG-20250504-WA0018.jpg?v=1746513625",
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747126946/Klein-08816_oo5k4m.jpg",
     alt: "Women's leadership workshop", 
     className: "col-span-12 md:col-span-6 h-64"
   },
   {
-    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/IMG-20250504-WA0013.jpg?v=1746513592",
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747126747/Klein-08863_ef3b4d.jpg",
+    alt: "Students participating in water empowerment project", 
+    className: "col-span-12 md:col-span-4 h-64"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747126743/Klein-08725_oeuuwa.jpg",
     alt: "Students learning traditional crafts", 
     className: "col-span-12 md:col-span-4 h-64"
   },
   {
-    src: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1631&q=80",
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747126522/A7404771_cp2qep.jpg",
     alt: "Water walk experience", 
     className: "col-span-12 md:col-span-4 h-64"
   },
   {
-    src: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1520&q=80",
-    alt: "Microloan impact in rural community", 
-    className: "col-span-12 md:col-span-4 h-64"
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747126346/A7404752_vm5ylg.jpg",
+    alt: "Local women and students collaboration", 
+    className: "col-span-12 md:col-span-6 h-64"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119231/A7404850_l8hxis.jpg",
+    alt: "Community water project", 
+    className: "col-span-12 md:col-span-6 h-64"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119198/A7405014_w9vatd.jpg",
+    alt: "Students and community members", 
+    className: "col-span-12 md:col-span-6 h-64"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747118607/Klein-08705_whivyl.jpg",
+    alt: "Water access initiative", 
+    className: "col-span-12 md:col-span-6 h-64"
   }
 ];

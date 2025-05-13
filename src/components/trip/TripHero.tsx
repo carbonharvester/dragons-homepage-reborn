@@ -11,13 +11,21 @@ interface TripHeroProps {
 const TripHero = ({ title, subtitle, category, imagePath }: TripHeroProps) => {
   return (
     <div className="relative h-[60vh] min-h-[500px] overflow-hidden">
-      <div className="absolute inset-0">
-        <img 
-          src={imagePath} 
-          alt={`${title} project`} 
-          className="w-full h-full object-cover" 
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent"></div>
+      {/* Black background behind the image */}
+      <div className="absolute inset-0 bg-black">
+        {/* Image with controlled opacity */}
+        <div className="absolute inset-0 opacity-80">
+          <img 
+            src={imagePath} 
+            alt={`${title} project`} 
+            className="w-full h-full object-cover" 
+            width="1200"
+            height="800"
+            fetchPriority="high"
+          />
+        </div>
+        {/* Enhanced gradient overlay for better text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-transparent"></div>
       </div>
       <div className="container relative z-10 h-full flex flex-col justify-center text-white pt-16">
         <div className="mb-8">

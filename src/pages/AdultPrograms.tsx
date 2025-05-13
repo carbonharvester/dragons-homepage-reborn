@@ -12,10 +12,10 @@ import { Route, Calendar, Map, Leaf } from "lucide-react";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 const AdultPrograms = () => {
-  // Adult programs data
+  // Adult trips data
   const programs = [
     { 
-      title: "Permaculture Design Course", 
+      title: "Permaculture Design and Impact", 
       duration: "10 Days", 
       season: "Year Round",
       location: "Various locations in Kenya",
@@ -29,22 +29,24 @@ const AdultPrograms = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Adult Programs"
+        title="Adult Trips"
         description="Engage in transformative learning experiences that combine cultural immersion, skill development, and meaningful contribution to local communities."
-        keywords="adult programs, educational travel, cultural immersion, skill development, Kenya, Africa"
+        keywords="adult trips, educational travel, cultural immersion, skill development, Kenya, Africa"
       />
       <Header />
       <main>
         <section className="relative h-[60vh] min-h-[500px] flex items-center">
           {/* Background Image */}
-          <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1603202662747-00e33e7d1468?q=80&w=2069&auto=format')] bg-cover bg-center">
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+          <div className="absolute inset-0 z-0 bg-black">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1603202662747-00e33e7d1468?q=80&w=2069&auto=format')] bg-cover bg-center opacity-80">
+              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+            </div>
           </div>
           
           {/* Content */}
           <div className="container-wide relative z-10 text-white">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-academy mb-6">
                 <span className="hero-heading block">Educational Adventures</span>
                 <span className="block mt-2 text-dragon-yellow">For Adults</span>
               </h1>
@@ -59,9 +61,9 @@ const AdultPrograms = () => {
         <section className="py-16 bg-white">
           <div className="container-wide">
             <div className="text-center mb-12">
-              <h2 className="section-heading">Transformative Programs for Adults</h2>
+              <h2 className="section-heading">Transformative Trips for Adults</h2>
               <p className="section-subheading mx-auto">
-                Our adult programs are designed for curious minds seeking authentic experiences 
+                Our adult trips are designed for curious minds seeking authentic experiences 
                 that combine learning, adventure, and positive impact.
               </p>
             </div>
@@ -87,21 +89,6 @@ const AdultPrograms = () => {
                     <h3 className="text-xl md:text-2xl font-bold mb-3 text-dragon-dark">{program.title}</h3>
                     <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
                     
-                    <div className="grid grid-cols-2 gap-4 text-sm text-dragon-gray mb-4">
-                      <div className="flex items-center">
-                        <Route size={16} className="mr-1" />
-                        <span>{program.duration}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Calendar size={16} className="mr-1" />
-                        <span>{program.season}</span>
-                      </div>
-                      <div className="flex items-center col-span-2">
-                        <Map size={16} className="mr-1" />
-                        <span>{program.location}</span>
-                      </div>
-                    </div>
-                    
                     <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
                       <Link to={program.link}>Learn More</Link>
                     </Button>
@@ -111,10 +98,10 @@ const AdultPrograms = () => {
             </div>
             
             <div className="bg-dragon-beige rounded-lg p-8 text-center">
-              <h3 className="text-2xl font-bold text-dragon-dark mb-4">Custom Programs for Groups</h3>
+              <h3 className="text-2xl font-academy font-bold text-dragon-dark mb-4">Custom Trips for Groups</h3>
               <p className="text-lg mb-6 max-w-2xl mx-auto">
                 Looking for a specialized experience for your organization, professional group, 
-                or circle of friends? We design custom programs tailored to your interests and objectives.
+                or circle of friends? We design custom trips tailored to your interests and objectives.
               </p>
               <div className="flex justify-center flex-wrap gap-4">
                 <CalendlyEmbed

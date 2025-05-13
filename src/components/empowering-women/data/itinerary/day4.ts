@@ -1,6 +1,6 @@
 
 export const day4 = {
-  day: "Day 4 (Monday)",
+  day: "Day 4",
   title: "Community Visit & Water Walk",
   activities: [
     "Visit the local community to meet families and hear about water access challenges",

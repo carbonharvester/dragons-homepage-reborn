@@ -8,7 +8,6 @@ import TripOverview from '../trip/TripOverview';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
   tripDetails, 
-  tripHighlights, 
   galleryImages, 
   learningOutcomes, 
   tripItinerary, 
@@ -20,12 +19,14 @@ interface EmpoweringWomenDataProps {
   heroOnly?: boolean;
   contentOnly?: boolean;
   navigationOnly?: boolean;
+  customThumbnails?: Record<string, string>;
 }
 
 const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({ 
   heroOnly = false, 
   contentOnly = false,
-  navigationOnly = false
+  navigationOnly = false,
+  customThumbnails
 }) => {
   const isMobile = useIsMobile();
   
@@ -43,15 +44,18 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
     "Connect with Kenya's natural beauty through safari and cultural immersion activities"
   ];
 
+  // Direct PDF brochure link
+  const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Water_Empowering_Women.pdf?v=1747049848";
+
   return (
     <>
       {/* Hero Section */}
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Water Empowering Women"
-          subtitle="Partner with local communities and engage with rural Kenyan women through water access initiatives that provide life-changing clean water solutions."
+          subtitle="Partner with local communities and engage with rural Kenyan women to explore the challenges of water insecurity and work on a project that provides access to life-changing clean water."
           category="School Trip"
-          imagePath="/lovable-uploads/2b64c2a8-18d5-43cc-a376-e32137687104.png"
+          imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747129046/Filip-C-Agoo-Everland-Marketing-Kenya-13983_atg3tn.jpg"
         />
       )}
 
@@ -77,7 +81,8 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              tripHighlights={tripHighlights}
+              // Here we're passing an empty array to avoid type issues, since highlights are shown via TripHighlightsWrapper
+              tripHighlights={[]}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}
@@ -87,6 +92,9 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
               projectGoals={waterProjectGoals}
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
+              pdfBrochureLink={pdfBrochureLink}
+              customThumbnails={customThumbnails}
+              isEducatorTrip={false} // Changed from isSchoolTrip to isEducatorTrip
             />
           </div>
         </>

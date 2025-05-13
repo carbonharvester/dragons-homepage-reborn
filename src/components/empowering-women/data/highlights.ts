@@ -2,13 +2,13 @@
 import { Droplets, Home, Paintbrush, Utensils, Mountain, Shield } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 
-interface TripHighlight {
+export interface TripHighlightData {
   icon: LucideIcon;
   title: string;
   description: string;
 }
 
-export const tripHighlights: TripHighlight[] = [
+export const tripHighlights: TripHighlightData[] = [
   {
     icon: Droplets,
     title: "Water Walk Experience",

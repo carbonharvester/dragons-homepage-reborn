@@ -33,5 +33,10 @@ export const tripHighlights: TripHighlight[] = [
     icon: Shield,
     title: "Project Implementation",
     description: "Develop and implement a sustainable conservation project"
+  },
+  {
+    icon: Leaf,
+    title: "Ecological Knowledge",
+    description: "Gain deep insights into traditional ecological knowledge and sustainable practices"
   }
 ];

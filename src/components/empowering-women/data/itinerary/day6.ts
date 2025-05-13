@@ -1,6 +1,6 @@
 
 export const day6 = {
-  day: "Day 6 (Wednesday)",
+  day: "Day 6",
   title: "Water Tank Installation & Celebration",
   activities: [
     "Work alongside local technicians to install the painted water tank in the community",

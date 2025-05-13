@@ -1,92 +1,156 @@
 
-import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Play } from "lucide-react";
+import React, { useState, useEffect, useRef } from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import VideoThumbnail from './VideoThumbnail';
+import ShopifyVideo from './ShopifyVideo';
+import { 
+  isShopifyVideo, 
+  generateVideoSrc, 
+  generateThumbnailUrl,
+  preloadVideo,
+  isCloudinaryVideo,
+  generateCloudinaryPreviewUrl,
+  generateCloudinaryThumbnailUrl
+} from './videoUtils';
 
 interface VideoPlayerProps {
-  videoId: string;
+  videoId?: string;
+  videoUrl?: string;
   title: string;
+  customThumbnail?: string;
+  initialPlaying?: boolean;
+  showPreview?: boolean;
 }
 
-const VideoPlayer = ({ videoId, title }: VideoPlayerProps) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+const VideoPlayer = ({ 
+  videoId, 
+  videoUrl,
+  title, 
+  customThumbnail, 
+  initialPlaying = false,
+  showPreview = true
+}: VideoPlayerProps) => {
+  const [isPlaying, setIsPlaying] = useState(initialPlaying);
+  const [thumbnailUrl, setThumbnailUrl] = useState('');
+  const containerRef = useRef<HTMLDivElement>(null);
   
+  // If direct videoUrl is provided, use that instead of videoId processing
+  const isDirectUrl = !!videoUrl;
+  
+  // Check if the video ID is from Shopify (only if videoId provided)
+  const shopifyVideo = videoId ? isShopifyVideo(videoId) : false;
+  
+  // Check if it's a Cloudinary video URL
+  const cloudinaryVideo = videoUrl ? isCloudinaryVideo(videoUrl) : false;
+  
+  // Generate appropriate video source URLs
+  const videoSrc = videoUrl || (videoId ? generateVideoSrc(videoId, true) : '');
+  
+  // Generate preview sources based on video type
+  const previewSrc = (() => {
+    if (videoUrl && cloudinaryVideo && showPreview) {
+      return generateCloudinaryPreviewUrl(videoUrl);
+    } else if (videoId && showPreview) {
+      return shopifyVideo ? generateVideoSrc(videoId, false) : '';
+    }
+    return '';
+  })();
+  
+  // Set thumbnail URL when component mounts
+  useEffect(() => {
+    if (videoId) {
+      setThumbnailUrl(generateThumbnailUrl(videoId, customThumbnail));
+    } else if (customThumbnail) {
+      setThumbnailUrl(customThumbnail);
+    } else if (videoUrl && cloudinaryVideo) {
+      setThumbnailUrl(generateCloudinaryThumbnailUrl(videoUrl));
+    }
+  }, [videoId, customThumbnail, videoUrl, cloudinaryVideo]);
+  
+  // Handle play button click
   const handlePlayClick = () => {
+    console.log('Play button clicked in VideoPlayer');
     setIsPlaying(true);
   };
-  
-  // Check if the video ID is from Vimeo or from Shopify
-  const isShopifyVideo = !videoId.match(/^\d+$/);
-  
-  // Generate appropriate video source URL based on the video ID format
-  const videoSrc = isShopifyVideo
-    ? `https://cdn.shopify.com/videos/c/o/v/${videoId}.mp4`
-    : `https://player.vimeo.com/video/${videoId}?h=c4bc497777&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1`;
-  
-  const previewSrc = isShopifyVideo
-    ? `https://cdn.shopify.com/videos/c/o/v/${videoId}.mp4`
-    : `https://player.vimeo.com/video/${videoId}?h=c4bc497777&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&background=1&muted=1`;
+
+  // Setup IntersectionObserver for lazy loading and pausing when offscreen
+  useEffect(() => {
+    if (!videoId && !cloudinaryVideo) return; // Skip for non-controllable videos
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && isPlaying && (shopifyVideo || cloudinaryVideo)) {
+          // Only pause for videos we can control directly
+          setIsPlaying(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isPlaying, shopifyVideo, videoId, cloudinaryVideo]);
+
+  // Preload video when in viewport
+  useEffect(() => {
+    if ((!shopifyVideo && !cloudinaryVideo) || (!videoId && !videoUrl)) return;
+    
+    const preloadObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          preloadVideo(videoSrc);
+          preloadObserver.disconnect();
+        }
+      },
+      { rootMargin: '200px 0px', threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      preloadObserver.observe(containerRef.current);
+    }
+
+    return () => {
+      preloadObserver.disconnect();
+    };
+  }, [videoSrc, shopifyVideo, videoId, cloudinaryVideo, videoUrl]);
   
   return (
-    <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl">
+    <div 
+      ref={containerRef}
+      className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl video-container"
+    >
       {isPlaying ? (
         <div className="aspect-video w-full">
-          {isShopifyVideo ? (
+          {videoUrl ? (
             <video 
-              src={videoSrc}
+              src={videoUrl}
               className="w-full h-full" 
-              autoPlay
               controls 
               playsInline
+              autoPlay
               title={title}
             ></video>
+          ) : shopifyVideo ? (
+            <ShopifyVideo src={videoSrc} title={title} />
           ) : (
-            <iframe 
-              src={videoSrc}
-              className="w-full h-full" 
-              frameBorder="0" 
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
-              allowFullScreen 
-              title={title}
-            ></iframe>
+            <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white">
+              No valid video source available
+            </div>
           )}
         </div>
       ) : (
-        <div className="relative">
-          <AspectRatio ratio={16 / 9}>
-            <div className="w-full h-full bg-black">
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20 z-10">
-                <Button 
-                  className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark" 
-                  onClick={handlePlayClick} 
-                  aria-label="Play video"
-                >
-                  <Play className="h-8 w-8" />
-                </Button>
-              </div>
-              {isShopifyVideo ? (
-                <video 
-                  src={previewSrc}
-                  className="w-full h-full object-cover pointer-events-none" 
-                  muted
-                  loop
-                  autoPlay
-                  playsInline
-                  title={`${title} background preview`}
-                ></video>
-              ) : (
-                <iframe 
-                  src={previewSrc}
-                  className="w-full h-full pointer-events-none" 
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                  title={`${title} background preview`}
-                ></iframe>
-              )}
-            </div>
-          </AspectRatio>
-        </div>
+        <VideoThumbnail
+          thumbnailUrl={thumbnailUrl}
+          title={title}
+          onPlayClick={handlePlayClick}
+          previewSrc={showPreview ? previewSrc : undefined}
+          showCloudinaryPreview={cloudinaryVideo && showPreview}
+        />
       )}
     </div>
   );

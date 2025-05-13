@@ -1,6 +1,6 @@
 
 export const day5 = {
-  day: "Day 5 (Tuesday)",
+  day: "Day 5",
   title: "Water Tank Mural Painting",
   activities: [
     "Learn about the importance of water tanks in rural communities with a local engineer",

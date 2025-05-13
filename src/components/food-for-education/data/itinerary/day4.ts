@@ -1,12 +1,12 @@
 
 export const day4 = {
   day: "Day 4",
-  title: "Food For Education Visit",
+  title: "Scope Kenya & School Transformation Visit",
   activities: [
-    "Visit to Food For Education facilities",
-    "Introduction to their mission to provide school meals using locally sourced produce",
-    "Tour facilities to understand the link to the farm project",
-    "Discuss Kapes' mission to empower changemakers and combat food insecurity",
-    "Orientation for the permaculture project and the farm's onion and tomato focus"
+    "Meet John Macharia, the National Coordinator for Scope Kenya",
+    "Visit a school that has been transformed from degraded land into a productive food forest",
+    "Learn about successful permaculture implementation in the school environment",
+    "Discover how food forests can provide sustainable nutrition for students",
+    "Participate in hands-on activities at the school's food forest"
   ]
 };

@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 const AdultTripsTab = () => {
   return (
     <div className="max-w-4xl mx-auto">
-      <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Adult Programs</h3>
+      <h3 className="text-2xl font-bold mb-4 text-dragon-dark">Adult Trips</h3>
       <p className="mb-6 text-lg">
-        Our Adult Programs offer immersive learning experiences designed for professionals, educators, 
+        Our Adult Trips offer immersive learning experiences designed for professionals, educators, 
         and lifelong learners seeking to develop new skills, engage with global issues, and make 
         meaningful connections with communities in Kenya.
       </p>
@@ -24,7 +24,7 @@ const AdultTripsTab = () => {
         </ul>
         
         <p className="mb-6">
-          Adult Programs are perfect for individuals or groups looking to combine purposeful travel 
+          Adult Trips are perfect for individuals or groups looking to combine purposeful travel 
           with personal or professional development. Programs can be customized for specific groups, 
           organizations, or interests.
         </p>
@@ -32,7 +32,7 @@ const AdultTripsTab = () => {
       
       <div className="text-center mt-8">
         <Button className="btn-primary" asChild>
-          <Link to="/adult-programs">Learn More About Adult Programs</Link>
+          <Link to="/adult-programs">Learn More About Adult Trips</Link>
         </Button>
       </div>
     </div>

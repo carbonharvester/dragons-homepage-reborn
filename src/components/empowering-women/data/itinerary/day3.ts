@@ -1,6 +1,6 @@
 
 export const day3 = {
-  day: "Day 3 (Sunday)",
+  day: "Day 3",
   title: "Murangu Hills Hike & Cultural Crafting",
   activities: [
     "Guided morning hike in Murangu Hills carrying light jerry cans to simulate women's daily water collection",

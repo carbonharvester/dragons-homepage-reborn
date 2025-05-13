@@ -9,6 +9,7 @@ export const programData = {
     "Establish pilot farm focused on onions and tomatoes",
     "Supply produce for school meals to address hunger",
     "Create sustainable farming systems using permaculture",
-    "Educate and empower students to address food insecurity"
+    "Educate and empower students to address food insecurity",
+    "Connect schools to the Kapes Uniforms takeback scheme providing a free meal for every item returned"
   ]
 };

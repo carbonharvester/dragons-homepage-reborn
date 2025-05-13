@@ -1,14 +1,16 @@
 
-import { Leaf, School, Users, Binoculars, Camera, Globe } from "lucide-react";
+import { Leaf, School, Users, Binoculars, Mountain, Recycle } from "lucide-react";
 import { LucideIcon } from "lucide-react";
 
-interface TripHighlight {
+// Interface that matches what TripHighlights component expects
+export interface TripHighlightData {
   icon: LucideIcon;
   title: string;
   description: string;
 }
 
-export const tripHighlights: TripHighlight[] = [
+// The raw data with Lucide icons
+const tripHighlightsData: TripHighlightData[] = [
   {
     icon: Leaf,
     title: "Hands-On Permaculture",
@@ -17,7 +19,7 @@ export const tripHighlights: TripHighlight[] = [
   {
     icon: School,
     title: "Meaningful Impact",
-    description: "Directly contribute to a project that provides meals for up to 300 students, improving nutrition and learning outcomes."
+    description: "Directly contribute to a project that provides meals for students in need, improving nutrition and learning outcomes."
   },
   {
     icon: Users,
@@ -30,13 +32,16 @@ export const tripHighlights: TripHighlight[] = [
     description: "Explore Kenya's unique wildlife sanctuary with Nairobi's skyline as backdrop, learning about conservation efforts and ecosystems."
   },
   {
-    icon: Camera,
-    title: "Document Your Journey",
-    description: "Capture and share your experiences through photography and storytelling to inspire sustainable action back home."
+    icon: Mountain,
+    title: "Ngong Hills Cultural Hike",
+    description: "Trek across the scenic Ngong Hills, exploring Maasai culture and local flora and fauna while enjoying views of Nairobi and the Great Rift Valley."
   },
   {
-    icon: Globe,
-    title: "Global Food Systems",
-    description: "Gain insights into global food security challenges and discover how local solutions can have worldwide impact."
+    icon: Recycle,
+    title: "Textile Upcycling Workshop",
+    description: "Visit Africa Collects Textiles to participate in weaving workshops, transforming old uniforms into useful products and learn about the circular economy."
   }
 ];
+
+// Export the raw data with Lucide icons
+export const tripHighlights = tripHighlightsData;

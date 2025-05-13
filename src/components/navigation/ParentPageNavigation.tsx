@@ -1,30 +1,20 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ChevronLeft } from 'lucide-react';
 
 interface ParentPageNavigationProps {
   parentPath: string;
   parentName: string;
 }
 
-const ParentPageNavigation: React.FC<ParentPageNavigationProps> = ({ 
-  parentPath, 
-  parentName 
-}) => {
+const ParentPageNavigation = ({ parentPath, parentName }: ParentPageNavigationProps) => {
   return (
-    <div>
-      <Button 
-        variant="ghost" 
-        asChild 
-        className="text-dragon hover:text-dragon-dark hover:bg-dragon-beige pl-2"
-      >
-        <Link to={parentPath}>
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to {parentName}
-        </Link>
-      </Button>
+    <div className="flex items-center text-sm text-dragon-gray mb-4">
+      <Link to={parentPath} className="flex items-center hover:text-dragon transition-colors">
+        <ChevronLeft className="mr-1" size={16} />
+        <span>Back to {parentName}</span>
+      </Link>
     </div>
   );
 };

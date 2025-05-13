@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import TripOverview from './TripOverview';
 import TripHighlights from './TripHighlights';
 import ScrollableGallery from './ScrollableGallery';
@@ -10,25 +10,29 @@ import ProgramBrochure from '../ProgramBrochure';
 import Testimonials from '../Testimonials';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-interface TripDetail {
+export interface TripDetail {
   label: string;
   value: string;
-  icon: React.ReactNode;
+  icon: React.ReactNode | string;
 }
-interface TripHighlight {
-  icon: React.ReactNode;
+
+export interface TripHighlight {
+  icon: React.ReactNode | string;
   title: string;
   description: string;
 }
+
 interface TripLearningOutcome {
   title: string;
   description: string;
 }
+
 interface TripItineraryDay {
   day: string;
   title: string;
   activities: string[];
 }
+
 interface ProgramData {
   title: string;
   description: string;
@@ -37,6 +41,7 @@ interface ProgramData {
   location: string;
   goals: string[];
 }
+
 interface TripBrochureContentProps {
   tripDetails: TripDetail[];
   tripHighlights: TripHighlight[];
@@ -53,9 +58,13 @@ interface TripBrochureContentProps {
   perfectFor?: string;
   hideOverview?: boolean;
   hideHighlights?: boolean;
+  pdfBrochureLink?: string;
+  customThumbnails?: Record<string, string>;
+  isEducatorTrip?: boolean;
+  hideStudentStories?: boolean;
 }
 
-const TripBrochureContent = ({
+const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
   tripDetails,
   tripHighlights,
   galleryImages,
@@ -66,16 +75,25 @@ const TripBrochureContent = ({
   projectGoals,
   perfectFor,
   hideOverview = false,
-  hideHighlights = false
+  hideHighlights = false,
+  pdfBrochureLink,
+  customThumbnails,
+  isEducatorTrip = false,
+  hideStudentStories = false
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
+  
+  useEffect(() => {
+    console.log('TripBrochureContent mounted with programData:', programData);
+    console.log('PDF Brochure Link:', pdfBrochureLink);
+  }, [programData, pdfBrochureLink]);
 
   return <div className="container py-0">
       {/* Trip Overview */}
       {!hideOverview && <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />}
       
       {/* Trip Highlights */}
-      {!hideHighlights && <div className="mb-16">
+      {!hideHighlights && <div className="mb-16 text-center">
           <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Trip Highlights</h2>
           <TripHighlights highlights={tripHighlights} />
         </div>}
@@ -83,22 +101,20 @@ const TripBrochureContent = ({
       {/* Learning Outcomes */}
       <TripLearningOutcomes outcomes={learningOutcomes} />
       
-      {/* Photo Gallery - Now positioned depending on device */}
-      <ScrollableGallery 
-        images={galleryImages} 
-      />
+      {/* Photo Gallery - Using consolidated component */}
+      <ScrollableGallery images={galleryImages} />
       
       {/* Sample Itinerary */}
       <TripItinerary itineraryDays={tripItinerary} />
       
       {/* Program Brochure */}
-      <ProgramBrochure program={programData} />
+      <ProgramBrochure program={programData} pdfLink={pdfBrochureLink} />
       
-      {/* Student Stories Section - Moved above CTA */}
-      <Testimonials />
+      {/* Student Stories Section - Only show for student trips, not for educator trips, and when not explicitly hidden */}
+      {!isEducatorTrip && !hideStudentStories && <Testimonials />}
       
-      {/* CTA Section - always using isSchoolTrip=true since these are all school trips */}
-      <TripCTA isSchoolTrip={true} />
+      {/* CTA Section */}
+      <TripCTA isSchoolTrip={!isEducatorTrip} />
     </div>;
 };
 

@@ -9,7 +9,7 @@ import PartnerWithUs from "@/pages/PartnerWithUs";
 import NotFound from "@/pages/NotFound";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
-import Podcast from "@/pages/Podcast";
+// import Podcast from "@/pages/Podcast"; - Podcast page hidden
 
 // Program Categories
 import Programs from "@/pages/Programs";
@@ -17,6 +17,7 @@ import SchoolTrips from "@/pages/SchoolTrips";
 import SummerAbroad from "@/pages/SummerAbroad";
 import MultiYearCurriculum from "@/pages/MultiYearCurriculum";
 import AdultPrograms from "@/pages/AdultPrograms";
+import EducatorTrips from "@/pages/EducatorTrips";
 
 // School Trip Programs
 import FoodForEducation from "@/pages/FoodForEducation";
@@ -28,6 +29,9 @@ import CapturingKenya from "@/pages/CapturingKenya";
 import CapturingKenyaItinerary from "@/pages/CapturingKenyaItinerary";
 import FeedingTheFuture from "@/pages/FeedingTheFuture";
 import FeedingTheFutureItinerary from "@/pages/FeedingTheFutureItinerary";
+
+// Educator Programs
+import EducationalLeadership from "@/pages/EducationalLeadership";
 
 // Adult Programs
 import PermacultureDesignCourse from "@/pages/PermacultureDesignCourse";
@@ -47,7 +51,7 @@ const MainRoutes = () => {
       <Route path="/curriculum-guide" element={<PartnerWithUs />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:postId" element={<BlogPost />} />
-      <Route path="/podcast" element={<Podcast />} />
+      {/* Podcast route removed */}
       
       {/* Program Categories */}
       <Route path="/programs" element={<Programs />} />
@@ -55,12 +59,12 @@ const MainRoutes = () => {
       <Route path="/summer-abroad" element={<SummerAbroad />} />
       <Route path="/multi-year-curriculum" element={<MultiYearCurriculum />} />
       <Route path="/adult-programs" element={<AdultPrograms />} />
+      <Route path="/educator-trips" element={<EducatorTrips />} />
       
       {/* School Trip Programs */}
       <Route path="/programs/food-for-education" element={<FoodForEducation />} />
       <Route path="/programs/community-conservation" element={<CommunityConservation />} />
       <Route path="/programs/empowering-women" element={<EmpoweringWomen />} />
-      <Route path="/programs/safari-sustainability" element={<FoodForEducation />} />
       
       {/* Summer Programs */}
       <Route path="/programs/capturing-kenya" element={<CapturingKenya />} />
@@ -70,7 +74,10 @@ const MainRoutes = () => {
       <Route path="/programs/roots-of-change" element={<Navigate to="/programs/feeding-the-future" replace />} />
       <Route path="/programs/roots-of-change/itinerary" element={<Navigate to="/programs/feeding-the-future/itinerary" replace />} />
       
-      {/* Adult Programs */}
+      {/* Educator Programs */}
+      <Route path="/programs/educational-leadership" element={<EducationalLeadership />} />
+      
+      {/* Adult Trips */}
       <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
       
       {/* Resource Pages */}

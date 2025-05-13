@@ -1,14 +1,18 @@
 
-import { Calendar, Clock, MapPin, Users, School } from 'lucide-react';
+import { Clock, Calendar, Map, Users, Award, FileText } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
+import React from 'react';
 
-interface TripDetail {
+// This interface is used locally for the data definition
+interface TripDetailData {
   label: string;
   value: string;
   icon: LucideIcon;
 }
 
-export const tripDetails: TripDetail[] = [
+// The actual exported data uses the icon components directly
+// This will be transformed when used in components
+const tripDetailsData: TripDetailData[] = [
   {
     label: "Duration",
     value: "8 Days",
@@ -22,7 +26,7 @@ export const tripDetails: TripDetail[] = [
   {
     label: "Location",
     value: "Nairobi, Kenya",
-    icon: MapPin
+    icon: Map
   },
   {
     label: "Group Size",
@@ -32,8 +36,19 @@ export const tripDetails: TripDetail[] = [
   {
     label: "Educational Credits (Optional)",
     value: "CAS Points, Duke of Edinburgh",
-    icon: School
+    icon: Award
+  },
+  {
+    label: "Certificate",
+    value: "Kapes Food Stewardship Certificate",
+    icon: FileText
   }
 ];
 
-export const perfectFor = "Students ages 15-18, Food sustainability advocates, Schools with service-learning programs";
+// Transform LucideIcons to ReactNode before exporting
+export const tripDetails = tripDetailsData.map(detail => ({
+  ...detail,
+  icon: React.createElement(detail.icon, { size: 20 })
+}));
+
+export const perfectFor = "Aged 15-18, Passionate About Food, Interested in Sustainability and Food Systems, Enjoy Cultural Immersion, Seeking Personal Growth, Comfortable with Physical Challenges, Curious About Agricultural, Value Service";
