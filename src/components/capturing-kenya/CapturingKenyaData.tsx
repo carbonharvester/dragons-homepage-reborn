@@ -1,4 +1,3 @@
-
 import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
@@ -9,8 +8,8 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { tripDetails, perfectFor } from './data/details';
 import { programData, galleryImages, learningOutcomes } from './ProgramData';
 import { weeks } from './data';
-import ProgramItinerary from '../roots-of-change/ProgramItinerary';
-import ProgramLocations from '../roots-of-change/ProgramLocations';
+import ProgramItinerary from '../capturing-kenya/ProgramItinerary';
+import ProgramLocations from './ProgramLocations';
 import TripLearningOutcomes from '../trip/TripLearningOutcomes';
 
 interface CapturingKenyaDataProps {
@@ -73,7 +72,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
             {/* Learning Outcomes Section - Now positioned above Program Locations */}
             <TripLearningOutcomes outcomes={learningOutcomes} />
             
-            {/* Program Locations Section */}
+            {/* Program Locations Section - Now using our custom component */}
             <ProgramLocations />
             
             {/* Detailed 4-Week Itinerary Section */}
