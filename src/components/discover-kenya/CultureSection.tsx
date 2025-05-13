@@ -1,9 +1,10 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { BookOpen } from "lucide-react";
 
 const CultureSection = () => {
-  const [imageLoaded, setImageLoaded] = useState(false);
+  // Add a random query parameter to force image reload
+  const imgTimestamp = Date.now();
   
   return (
     <section className="py-16">
@@ -13,20 +14,11 @@ const CultureSection = () => {
           
           <div className="flex flex-col md:flex-row gap-8 mb-12">
             <div className="md:w-1/2">
-              <div className="relative bg-gray-100 rounded-lg w-full h-64 mb-4">
-                {!imageLoaded && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
-                    <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
-                  </div>
-                )}
-                <img 
-                  src="https://images.unsplash.com/photo-1612371093327-05adefc95aab?q=80&w=2000&auto=format&fit=crop"
-                  alt="Cultural performance" 
-                  loading="lazy"
-                  className={`rounded-lg w-full h-64 object-cover ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
-                  onLoad={() => setImageLoaded(true)}
-                />
-              </div>
+              <img 
+                src={`https://images.unsplash.com/photo-1612371093327-05adefc95aab?q=80&w=2000&auto=format&fit=crop&t=${imgTimestamp}`}
+                alt="Cultural performance" 
+                className="rounded-lg w-full h-64 object-cover mb-4"
+              />
               <p className="text-dragon-gray">
                 Kenya's cultural landscape is incredibly diverse, with over 40 distinct ethnic groups, each with unique languages, traditions, and customs. From the iconic Maasai and Samburu to the coastal Swahili, Kenya offers a rich tapestry of cultural experiences.
               </p>

@@ -21,7 +21,7 @@ const Hero = () => {
       {/* Black background behind the image */}
       <div className="absolute inset-0 z-0 bg-black">
         {/* Image with controlled opacity */}
-        <div className="absolute inset-0 bg-[url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/klein-500-2_1.jpg?v=1747050056')] bg-cover bg-center opacity-80"></div>
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/69ee70cf-f152-42d4-a2db-597956cbd012.png')] bg-cover bg-center opacity-80"></div>
         {/* Enhanced overlay for better text visibility */}
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>

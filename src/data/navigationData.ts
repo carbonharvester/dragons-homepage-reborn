@@ -1,4 +1,3 @@
-
 export const programCategories = [
   {
     title: "School Trips",
@@ -91,7 +90,11 @@ export const resourcePages = [
     href: "/discover-kenya",
     description: "Explore the incredible diversity of landscapes, wildlife, and culture in Kenya."
   },
-  // Podcast entry removed
+  {
+    title: "Podcast",
+    href: "/podcast",
+    description: "Listen to our conversations about educational travel, sustainability, and community impact."
+  },
   {
     title: "Blog",
     href: "/blog",

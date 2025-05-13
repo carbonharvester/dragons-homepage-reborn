@@ -3,11 +3,17 @@ import React from 'react';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
-import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
+import TripHighlightsWrapper from './TripHighlightsWrapper';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { tripDetails, galleryImages, learningOutcomes, tripItinerary, perfectFor } from './data';
-import { programData } from './data/programInfo';
+import { 
+  tripDetails, 
+  galleryImages, 
+  learningOutcomes, 
+  tripItinerary, 
+  programData,
+  perfectFor
+} from './data';
 
 interface FoodForEducationDataProps {
   heroOnly?: boolean;
@@ -23,17 +29,21 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
   customThumbnails
 }) => {
   const isMobile = useIsMobile();
-
-  // Custom description and project goals specific to Food For Education
+  
+  // Custom description and project goals specific to the Food For Education program
   const foodDescription = [
-    "In many Kenyan communities, school children often go without proper nutrition, which impacts their ability to learn and thrive. Using permaculture principles, this program transforms unused school land into productive gardens.",
-    "Students will work alongside local experts to develop sustainable food systems that provide nutritious meals for school children while teaching valuable agricultural skills that address food insecurity."
+    "This 8 day journey to Kenya immerses students in sustainable food systems and community development. Partnering with local farmers and educators, students will explore traditional and modern agricultural practices, contribute to food security initiatives, and learn about the challenges and opportunities in ensuring access to nutritious food for all.",
+    "Through hands-on activities, cultural exchanges, and visits to local farms and markets, students will gain a deeper understanding of the interconnectedness of food, culture, and community resilience.",
+    "This trip is particularly impactful for schools participating in the Kapes Uniforms takeback scheme, where we provide a free meal for every item returned. This circular approach connects students directly to the impact of their actions and enhances the trip's educational value."
   ];
   
-  const foodProjectGoals = programData.goals;
-
-  // Direct PDF brochure link
-  const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Food_For_Education.pdf?v=1747049829";
+  const foodProjectGoals = [
+    "Explore sustainable farming practices and learn about traditional Kenyan agriculture",
+    "Contribute to food security initiatives by working alongside local farmers",
+    "Learn about the challenges and opportunities in ensuring access to nutritious food",
+    "Engage in cultural exchanges and community development projects",
+    "Connect with Kenya's natural beauty through safari and cultural immersion activities"
+  ];
 
   return (
     <>
@@ -41,7 +51,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Food For Education"
-          subtitle="Transform unused school land into vibrant gardens using permaculture farming techniques. Students will create sustainable food systems to provide nutritious meals for local children, fostering long-term food security."
+          subtitle="Explore sustainable food systems and contribute to food security initiatives while learning about traditional and modern agricultural practices in Kenya."
           category="School Trip"
           imagePath="/lovable-uploads/3a363a5f-b4be-477f-aea7-e36861d4faf4.png"
         />
@@ -69,7 +79,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              // Here we're passing an empty array to avoid type issues, since highlights are shown via TripHighlightsWrapper
+              // Here we're passing empty array to avoid type issues, since highlights are shown via TripHighlightsWrapper
               tripHighlights={[]}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
@@ -80,7 +90,6 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               projectGoals={foodProjectGoals}
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
-              pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
             />
           </div>

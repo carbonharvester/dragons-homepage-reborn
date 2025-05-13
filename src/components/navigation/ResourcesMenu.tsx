@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import { resourcePages } from '@/data/navigationData';
 
 const ResourcesMenu = () => {
-  // Filter out the "All Programs" and "Podcast" items from the resources menu
-  const filteredResources = resourcePages.filter(resource => 
-    resource.title !== "All Programs" && resource.title !== "Podcast"
-  );
+  // Filter out the "All Programs" item from the resources menu
+  const filteredResources = resourcePages.filter(resource => resource.title !== "All Programs");
   
   // Define the order to match the footer
   const orderedResourceTitles = [
     "Blog", 
+    "Podcast", 
     "Discover Kenya",
     "Health & Safety",
     "Partner with Us",

@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { 
   Carousel,
@@ -19,12 +19,6 @@ interface TripGalleryProps {
 
 const TripGallery = ({ images }: TripGalleryProps) => {
   const isMobile = useIsMobile();
-  const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
-
-  // Function to handle image load events
-  const handleImageLoad = (index: number) => {
-    setImagesLoaded(prev => ({ ...prev, [index]: true }));
-  };
   
   return (
     <div className="mt-24 mb-16">
@@ -40,18 +34,11 @@ const TripGallery = ({ images }: TripGalleryProps) => {
               {images.map((image, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1">
-                    <div className="rounded-lg overflow-hidden aspect-square bg-gray-100 relative">
-                      {!imagesLoaded[index] && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                          <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
-                        </div>
-                      )}
+                    <div className="rounded-lg overflow-hidden aspect-square">
                       <img 
                         src={image.src} 
                         alt={image.alt} 
-                        loading="lazy"
-                        className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
-                        onLoad={() => handleImageLoad(index)}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                       />
                     </div>
                   </div>
@@ -67,18 +54,11 @@ const TripGallery = ({ images }: TripGalleryProps) => {
       ) : (
         <div className="grid grid-cols-12 gap-4">
           {images.map((image, index) => (
-            <div key={index} className={`${image.className} bg-gray-100 relative`}>
-              {!imagesLoaded[index] && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                  <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
-                </div>
-              )}
+            <div key={index} className={image.className}>
               <img 
                 src={image.src} 
                 alt={image.alt} 
-                loading="lazy"
-                className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
-                onLoad={() => handleImageLoad(index)}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
               />
             </div>
           ))}
