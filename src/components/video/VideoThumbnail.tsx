@@ -31,7 +31,7 @@ const VideoThumbnail = ({
   const attemptAutoplay = () => {
     if (!videoRef.current || !isCloudinary) return;
     
-    console.log('Attempting to play Cloudinary preview');
+    console.log('Attempting to play Cloudinary preview', previewSrc);
     
     // Ensure video is muted (required for autoplay in most browsers)
     if (videoRef.current) {
@@ -121,6 +121,7 @@ const VideoThumbnail = ({
               playsInline
               preload="auto"
               aria-hidden="true"
+              poster={thumbnailUrl || undefined}
             />
           ) : thumbnailUrl ? (
             <>

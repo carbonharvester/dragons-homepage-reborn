@@ -46,7 +46,12 @@ export const generateCloudinaryPreviewUrl = (videoUrl: string): string => {
   // For Cloudinary videos, add transformation parameters for better autoplay
   // vc_auto enables automatic video codec selection
   // q_auto and f_auto for optimal delivery, lower quality for preview to improve loading
+  // Check if URL already contains transformations
   if (videoUrl.includes('/upload/')) {
+    // Don't add transformations if they're already present
+    if (videoUrl.includes('/upload/q_') || videoUrl.includes('/upload/e_')) {
+      return videoUrl;
+    }
     // Insert transformations after /upload/
     return videoUrl.replace('/upload/', '/upload/q_auto:low,f_auto,vc_auto,e_loop/');
   }
@@ -79,7 +84,7 @@ export const generateCloudinaryThumbnailUrl = (videoUrl: string): string => {
   
   // For Cloudinary videos, we can convert to image by changing the file extension
   // and adding transformation parameters for a thumbnail
-  return videoUrl.replace('.mp4', '.jpg').replace('/video/upload/', '/video/upload/q_auto,f_auto,w_960,h_540,c_fill/');
+  return videoUrl.replace(/\.\w+$/, '.jpg').replace('/video/upload/', '/video/upload/q_auto,f_auto,w_960,h_540,c_fill/');
 };
 
 /**

@@ -13,6 +13,7 @@ interface VideoSectionProps {
     text: string;
     author?: string;
   };
+  initialPlaying?: boolean;
 }
 
 const VideoSection = ({
@@ -21,7 +22,8 @@ const VideoSection = ({
   title,
   description,
   customThumbnail,
-  quote
+  quote,
+  initialPlaying = false
 }: VideoSectionProps) => {
   return <section className="py-16 bg-dragon">
       <div className="container-wide">
@@ -37,6 +39,7 @@ const VideoSection = ({
           videoUrl={videoUrl} 
           title={title} 
           customThumbnail={customThumbnail}
+          initialPlaying={initialPlaying}
           showPreview={true}
         />
 
