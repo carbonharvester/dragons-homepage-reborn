@@ -29,6 +29,8 @@ const Index = () => {
       <main>
         <Hero />
         
+        <IntroSection />
+        
         <div id="video-section">
           {sectionsVisible['video-section'] && 
             <HomeVideoSection 
@@ -38,8 +40,6 @@ const Index = () => {
             />
           }
         </div>
-        
-        <IntroSection />
         
         <div id="programs">
           {sectionsVisible['programs'] && <ProgramsSection />}
