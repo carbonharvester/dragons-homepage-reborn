@@ -4,11 +4,14 @@ import TripHighlights from '@/components/trip/TripHighlights';
 import { tripHighlights } from './data/highlights';
 
 const TripHighlightsWrapper = () => {
-  // Since the tripHighlights already contain JSX elements for icons,
-  // we don't need to convert them - just pass them through
+  // Convert the Lucide icon components to JSX elements
   const highlightsWithJSX = tripHighlights.map(highlight => ({
     ...highlight,
-    icon: highlight.icon
+    icon: (
+      <div className="text-white">
+        <highlight.icon className="h-8 w-8" />
+      </div>
+    )
   }));
 
   return (

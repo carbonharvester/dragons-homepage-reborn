@@ -30,6 +30,16 @@ const EducationalLeadershipContent = () => {
     "Connect classroom curriculum to water access challenges through community experiences and water walks"
   ];
 
+  // Convert Lucide icons to JSX elements
+  const processedHighlights = tripHighlights.map(highlight => ({
+    ...highlight,
+    icon: (
+      <div className="text-white">
+        <highlight.icon className="h-8 w-8" />
+      </div>
+    )
+  }));
+
   return (
     <>
       {/* Hero Section */}
@@ -61,7 +71,7 @@ const EducationalLeadershipContent = () => {
         <div className="container py-[6px]">
           <TripBrochureContent 
             tripDetails={tripDetails}
-            tripHighlights={tripHighlights}
+            tripHighlights={processedHighlights}
             galleryImages={galleryImages}
             learningOutcomes={learningOutcomes}
             tripItinerary={tripItinerary}
