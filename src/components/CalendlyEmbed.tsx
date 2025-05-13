@@ -2,9 +2,6 @@
 import React, { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button, ButtonProps } from "@/components/ui/button";
-import CalendlyLoading from './calendly/CalendlyLoading';
-import CalendlyError from './calendly/CalendlyError';
-import CalendlyWidget from './calendly/CalendlyWidget';
 
 interface CalendlyEmbedProps extends ButtonProps {
   url?: string;
@@ -19,22 +16,6 @@ const CalendlyEmbed = ({
   ...props 
 }: CalendlyEmbedProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadError, setLoadError] = useState(false);
-
-  const handleRetry = () => {
-    setIsLoading(true);
-    setLoadError(false);
-  };
-
-  const handleLoadSuccess = () => {
-    setIsLoading(false);
-  };
-
-  const handleLoadError = () => {
-    setLoadError(true);
-    setIsLoading(false);
-  };
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -45,18 +26,20 @@ const CalendlyEmbed = ({
         <DialogHeader>
           <DialogTitle className="text-2xl text-center">Schedule a Consultation</DialogTitle>
         </DialogHeader>
-        <div className="mt-4 h-[500px] lg:h-[600px] overflow-hidden">
-          {isLoading && <CalendlyLoading />}
-          {loadError && <CalendlyError onRetry={handleRetry} />}
-          
-          <div style={{ visibility: isLoading || loadError ? 'hidden' : 'visible' }}>
-            <CalendlyWidget 
-              url={url}
-              isOpen={isOpen && !loadError}
-              onLoadError={handleLoadError}
-              onLoadSuccess={handleLoadSuccess}
+        <div className="mt-4 h-[700px] overflow-hidden">
+          {isOpen && (
+            <div className="calendly-inline-widget" 
+              data-url={`${url}?hide_event_type_details=1&hide_gdpr_banner=1`} 
+              style={{minWidth:'320px', height:'700px'}}
             />
-          </div>
+          )}
+          {isOpen && (
+            <script 
+              type="text/javascript" 
+              src="https://assets.calendly.com/assets/external/widget.js" 
+              async 
+            />
+          )}
         </div>
       </DialogContent>
     </Dialog>

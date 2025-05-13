@@ -37,11 +37,8 @@ const calendlyLoader = (() => {
   };
 })();
 
-// Preload the Calendly script when the module is first imported
-calendlyLoader().catch(err => {
-  console.warn('Failed to preload Calendly script:', err);
-});
-
+// This function is exported but we no longer need to manually preload
+// as the embed code handles this automatically
 export default calendlyLoader;
 
 // Add this to global Window interface to use Calendly global object
