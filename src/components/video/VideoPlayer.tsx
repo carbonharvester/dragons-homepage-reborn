@@ -12,7 +12,8 @@ import {
 } from './videoUtils';
 
 interface VideoPlayerProps {
-  videoId: string;
+  videoId?: string;
+  videoUrl?: string;
   title: string;
   customThumbnail?: string;
   initialPlaying?: boolean;
@@ -20,6 +21,7 @@ interface VideoPlayerProps {
 
 const VideoPlayer = ({ 
   videoId, 
+  videoUrl,
   title, 
   customThumbnail, 
   initialPlaying = false 
@@ -28,18 +30,25 @@ const VideoPlayer = ({
   const [thumbnailUrl, setThumbnailUrl] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Check if the video ID is from Shopify or from Vimeo
-  const shopifyVideo = isShopifyVideo(videoId);
+  // If direct videoUrl is provided, use that instead of videoId processing
+  const isDirectUrl = !!videoUrl;
+  
+  // Check if the video ID is from Shopify or from Vimeo (only if videoId provided)
+  const shopifyVideo = videoId ? isShopifyVideo(videoId) : false;
   
   // Generate appropriate video source URLs
-  const videoSrc = generateVideoSrc(videoId, true);
-  const previewSrc = shopifyVideo 
+  const videoSrc = videoUrl || (videoId ? generateVideoSrc(videoId, true) : '');
+  const previewSrc = videoUrl ? '' : (videoId ? (shopifyVideo 
     ? generateVideoSrc(videoId, false)
-    : generateVideoSrc(videoId, false) + '&background=1&muted=1';
+    : generateVideoSrc(videoId, false) + '&background=1&muted=1') : '');
   
   // Set thumbnail URL when component mounts
   useEffect(() => {
-    setThumbnailUrl(generateThumbnailUrl(videoId, customThumbnail));
+    if (videoId) {
+      setThumbnailUrl(generateThumbnailUrl(videoId, customThumbnail));
+    } else if (customThumbnail) {
+      setThumbnailUrl(customThumbnail);
+    }
   }, [videoId, customThumbnail]);
   
   // Handle play button click
@@ -49,6 +58,8 @@ const VideoPlayer = ({
 
   // Setup IntersectionObserver for lazy loading and pausing when offscreen
   useEffect(() => {
+    if (!videoId) return; // Skip for direct video URLs
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting && isPlaying && shopifyVideo) {
@@ -66,11 +77,11 @@ const VideoPlayer = ({
     return () => {
       observer.disconnect();
     };
-  }, [isPlaying, shopifyVideo]);
+  }, [isPlaying, shopifyVideo, videoId]);
 
   // Preload video when in viewport
   useEffect(() => {
-    if (!shopifyVideo) return; // Only preload Shopify videos
+    if (!shopifyVideo || !videoId) return; // Only preload Shopify videos
     
     const preloadObserver = new IntersectionObserver(
       ([entry]) => {
@@ -89,16 +100,25 @@ const VideoPlayer = ({
     return () => {
       preloadObserver.disconnect();
     };
-  }, [videoSrc, shopifyVideo]);
+  }, [videoSrc, shopifyVideo, videoId]);
   
   return (
     <div 
       ref={containerRef}
       className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl video-container"
     >
-      {isPlaying ? (
+      {isPlaying || isDirectUrl ? (
         <div className="aspect-video w-full">
-          {shopifyVideo ? (
+          {videoUrl ? (
+            <video 
+              src={videoUrl}
+              className="w-full h-full" 
+              controls 
+              playsInline
+              autoPlay={initialPlaying}
+              title={title}
+            ></video>
+          ) : shopifyVideo ? (
             <ShopifyVideo src={videoSrc} title={title} />
           ) : (
             <VimeoVideo src={videoSrc} title={title} />

@@ -4,7 +4,8 @@ import VideoPlayer from './video/VideoPlayer';
 import { Quote } from "lucide-react";
 
 interface VideoSectionProps {
-  videoId: string;
+  videoId?: string;
+  videoUrl?: string;
   title: string;
   description?: string;
   customThumbnail?: string;
@@ -16,6 +17,7 @@ interface VideoSectionProps {
 
 const VideoSection = ({
   videoId,
+  videoUrl,
   title,
   description,
   customThumbnail,
@@ -30,7 +32,12 @@ const VideoSection = ({
             </p>}
         </div>
         
-        <VideoPlayer videoId={videoId} title={title} customThumbnail={customThumbnail} />
+        <VideoPlayer 
+          videoId={videoId} 
+          videoUrl={videoUrl} 
+          title={title} 
+          customThumbnail={customThumbnail} 
+        />
 
         {quote && <div className="max-w-3xl mx-auto mt-12 text-center">
             <div className="flex justify-center text-white mb-4">
