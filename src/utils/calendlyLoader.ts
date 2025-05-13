@@ -34,33 +34,60 @@ export const preloadCalendlyScript = (): Promise<void> => {
     // If script already exists in DOM, mark as loaded
     if (document.querySelector('script[src*="calendly.com/assets/external/widget.js"]')) {
       console.log('Calendly script found in DOM, marking as loaded');
-      scriptStatus = 'loaded';
-      resolve();
+      
+      // Add a small timeout to make sure Calendly is fully initialized
+      setTimeout(() => {
+        if (window.Calendly) {
+          scriptStatus = 'loaded';
+          resolve();
+        } else {
+          // If window.Calendly is not available, remove the script and try again
+          const existingScript = document.querySelector('script[src*="calendly.com/assets/external/widget.js"]');
+          if (existingScript) {
+            existingScript.remove();
+            loadScript(resolve, reject);
+          }
+        }
+      }, 200);
       return;
     }
     
-    // Create and append the script
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    
-    script.onload = () => {
-      console.log('Calendly script loaded successfully');
-      scriptStatus = 'loaded';
-      resolve();
-    };
-    
-    script.onerror = (error) => {
-      console.error('Failed to load Calendly script', error);
-      scriptStatus = 'error';
-      reject(error);
-    };
-    
-    document.body.appendChild(script);
+    loadScript(resolve, reject);
   });
   
   return loadPromise;
+};
+
+// Helper function to load the script
+const loadScript = (resolve: () => void, reject: (error: any) => void) => {
+  // Create and append the script
+  const script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://assets.calendly.com/assets/external/widget.js';
+  script.async = true;
+  
+  script.onload = () => {
+    // Wait for Calendly to be available in the window object
+    const checkCalendly = () => {
+      if (window.Calendly) {
+        console.log('Calendly script loaded successfully');
+        scriptStatus = 'loaded';
+        resolve();
+      } else {
+        setTimeout(checkCalendly, 100);
+      }
+    };
+    
+    checkCalendly();
+  };
+  
+  script.onerror = (error) => {
+    console.error('Failed to load Calendly script', error);
+    scriptStatus = 'error';
+    reject(error);
+  };
+  
+  document.body.appendChild(script);
 };
 
 /**

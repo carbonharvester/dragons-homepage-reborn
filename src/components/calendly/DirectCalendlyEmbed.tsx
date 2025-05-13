@@ -29,13 +29,27 @@ const DirectCalendlyEmbed: React.FC<DirectCalendlyEmbedProps> = ({
       try {
         await preloadCalendlyScript();
         
-        if (window.Calendly && calendarRef.current) {
-          // Small delay to ensure DOM is ready
-          setTimeout(() => {
-            console.log('Calendly initialized successfully');
+        // Add a slightly longer delay to ensure Calendly is fully initialized
+        setTimeout(() => {
+          if (window.Calendly && calendarRef.current) {
+            console.log('Calendly initialized successfully with URL:', url);
             setLoadingState('loaded');
-          }, 300);
-        }
+            
+            // Force Calendly to initialize the widget after DOM is ready
+            if (window.Calendly.initInlineWidget) {
+              console.log('Explicitly initializing Calendly widget');
+              window.Calendly.initInlineWidget({
+                url: `${url}${calendlyConfig.queryParams}`,
+                parentElement: calendarRef.current,
+                prefill: {},
+                utm: {}
+              });
+            }
+          } else {
+            console.error('Calendly failed to initialize or ref is not available');
+            setLoadingState('error');
+          }
+        }, 500);
       } catch (error) {
         console.error('Failed to initialize Calendly widget:', error);
         setLoadingState('error');

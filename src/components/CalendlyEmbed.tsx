@@ -29,8 +29,7 @@ const CalendlyEmbed = ({
           <DialogTitle className="text-2xl text-center">Schedule a Consultation</DialogTitle>
         </DialogHeader>
         <div className="mt-4 h-[700px] overflow-hidden">
-          {/* Always render the component but conditionally show it when dialog is open */}
-          <DirectCalendlyEmbed url={url} />
+          {isOpen && <DirectCalendlyEmbed url={url} />}
         </div>
       </DialogContent>
     </Dialog>
