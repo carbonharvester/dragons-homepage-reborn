@@ -3,17 +3,12 @@ import React from 'react';
 import { MapPin } from 'lucide-react';
 
 const ProgramLocations = () => {
-  // Key locations from the 4-week itinerary with images
+  // Key locations from the 4-week itinerary based on actual travel plans
   const locations = [
     {
       name: "Nairobi",
       description: "Kenya's vibrant capital city serving as your arrival and orientation point. Visit wildlife conservation centers and learn about urban photography.",
       image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--3.jpg?v=1747112174"
-    },
-    {
-      name: "Maasai Mara",
-      description: "World-famous wildlife reserve offering unparalleled opportunities to photograph the Big Five and witness the great migration (seasonal).",
-      image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--2_1.jpg?v=1747112188"
     },
     {
       name: "Amboseli National Park",
