@@ -50,6 +50,7 @@ const SafeTravels = () => {
             <VideoPlayer 
               videoUrl="https://res.cloudinary.com/dng12bd0a/video/upload/v1747145393/Safe_Travels_-_celebrating_the_launch_of_our_new_cover_alfegu.mp4" 
               title="Safe Travels by Rescue.co" 
+              initialPlaying={true}
             />
           </div>
           
