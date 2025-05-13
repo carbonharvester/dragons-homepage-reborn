@@ -9,9 +9,8 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { tripDetails, perfectFor } from './data/details';
 import { galleryImages, learningOutcomes } from './data';
 import { programData } from './data/programInfo';
-import ProgramLocations from '../roots-of-change/ProgramLocations';
-import ProgramItinerary from '../roots-of-change/ProgramItinerary';
-import TripGallery from '../trip/TripGallery';
+import { tripHighlights } from './data/highlights';
+import { tripItinerary } from './data/index';
 
 interface FeedingTheFutureDataProps {
   heroOnly?: boolean;
@@ -70,75 +69,23 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
             {!isMobile && <TripHighlightsWrapper />}
             
-            {/* Learning Outcomes Section */}
-            <div className="mb-16 bg-dragon-beige p-8 md:p-12 rounded-lg">
-              <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Learning Outcomes</h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {learningOutcomes.map((outcome, index) => (
-                  <div key={index} className="bg-white p-4 md:p-6 rounded-lg shadow-sm">
-                    <h3 className="text-lg font-bold mb-2 text-dragon-dark">{outcome.title}</h3>
-                    <p className="text-dragon-gray">{outcome.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Gallery Section - Using the TripGallery component just like in FoodForEducation */}
-            <TripGallery images={galleryImages} />
-
-            {/* Custom Program Locations section */}
-            <ProgramLocations />
-            
-            {/* Custom Program Itinerary section */}
-            <div className="mb-16">
-              <ProgramItinerary />
-            </div>
-            
-            {/* Program Brochure section */}
-            <div className="mb-16">
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-bold text-dragon-dark">Program Brochure</h3>
-                  <a 
-                    href={pdfBrochureLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-dragon text-white rounded-md hover:bg-dragon-dark transition-colors"
-                  >
-                    <span className="mr-2">Download PDF</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                      <polyline points="7 10 12 15 17 10"></polyline>
-                      <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                  </a>
-                </div>
-                <div className="p-6 bg-dragon-beige rounded-md">
-                  <p className="text-dragon-gray">
-                    Download our comprehensive program brochure to learn more about this trip, including detailed itinerary, program goals, and what to expect during your experience with Kapes Adventures.
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            {/* CTA Section */}
-            <div className="bg-dragon text-white rounded-lg p-6 md:p-12 text-center mb-16 mt-20 w-full">
-              <h2 className="text-2xl md:text-4xl font-academy font-bold mb-4">Ready to Join Feeding the Future?</h2>
-              <p className="text-base md:text-lg max-w-3xl mx-auto mb-6">
-                Take the first step toward an impactful summer experience focusing on sustainable agriculture and food security in Kenya.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a 
-                  href="https://calendly.com/kapesuniforms/30min" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-6 py-3 bg-dragon-yellow text-dragon-dark rounded-md hover:bg-amber-400 transition-colors font-medium"
-                >
-                  Schedule Consultation
-                </a>
-              </div>
-            </div>
+            {/* Continue with other components using TripBrochureContent */}
+            <TripBrochureContent 
+              tripDetails={tripDetails}
+              // Pass trip highlights but they'll be hidden since we're showing them with TripHighlightsWrapper
+              tripHighlights={tripHighlights}
+              galleryImages={galleryImages}
+              learningOutcomes={learningOutcomes}
+              tripItinerary={tripItinerary}
+              programData={programData}
+              perfectFor={perfectFor}
+              description={feedingDescription}
+              projectGoals={feedingProjectGoals}
+              hideOverview={true}
+              hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
+              pdfBrochureLink={pdfBrochureLink}
+              customThumbnails={customThumbnails}
+            />
           </div>
         </>
       )}

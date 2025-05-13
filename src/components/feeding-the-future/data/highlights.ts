@@ -1,47 +1,30 @@
 
-import { Leaf, School, Users, Globe, GraduationCap, Heart } from "lucide-react";
-import { LucideIcon } from "lucide-react";
+import { Leaf, Droplets, Users, BookOpen, Utensils } from 'lucide-react';
 
-// Interface that matches what TripHighlights component expects
-export interface TripHighlightData {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
-
-// The raw data with Lucide icons
-const tripHighlightsData: TripHighlightData[] = [
+export const tripHighlights = [
   {
     icon: Leaf,
-    title: "Permaculture Development",
-    description: "Turn degraded land at schools across Kenya into productive farms."
+    title: "Permaculture Design",
+    description: "Learn and apply permaculture principles to transform unused school land into productive and sustainable food gardens."
   },
   {
-    icon: GraduationCap,
-    title: "Skill Building",
-    description: "Gain hands-on experience in advanced permaculture techniques including water management, waste management, and climate smart agriculture while developing leadership skills."
+    icon: Droplets,
+    title: "Water Management",
+    description: "Implement water conservation techniques including rainwater harvesting, drip irrigation, and greywater systems."
   },
   {
     icon: Users,
-    title: "Community Impact",
-    description: "Strengthen ties with Kenyan students and communities through collaborative projects, workshops, and cultural exchange that support local food security initiatives."
+    title: "Community Engagement",
+    description: "Collaborate with local students, teachers, and community members to ensure long-term project sustainability."
   },
   {
-    icon: Globe,
-    title: "Global Perspective",
-    description: "Foster cross-cultural collaboration and understanding through immersive experiences in both urban and rural Kenyan communities."
+    icon: BookOpen,
+    title: "Knowledge Transfer",
+    description: "Create educational materials and conduct workshops to share skills and knowledge with the local community."
   },
   {
-    icon: Heart,
-    title: "Sustainable Solutions",
-    description: "Work with local partners to implement long-term sustainable solutions that continue to benefit communities well beyond your trip."
-  },
-  {
-    icon: School,
-    title: "Educational Leadership",
-    description: "Develop your capacity as an advocate for sustainable food systems by learning to teach others about permaculture principles and practices."
+    icon: Utensils,
+    title: "Food Security",
+    description: "Contribute to improved nutrition for school children by establishing gardens that provide fresh, nutritious produce."
   }
 ];
-
-// Export the raw data with Lucide icons
-export const tripHighlights = tripHighlightsData;
