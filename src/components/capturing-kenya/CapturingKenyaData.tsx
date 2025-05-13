@@ -11,6 +11,7 @@ import { programData } from './ProgramData';
 import { weeks } from './data';
 import ProgramItinerary from '../capturing-kenya/ProgramItinerary';
 import ProgramLocations from './ProgramLocations';
+import TripLearningOutcomes from '../trip/TripLearningOutcomes';
 import { galleryImages } from './data/gallery';
 import { learningOutcomes } from './ProgramData';
 
@@ -71,7 +72,10 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
             {!isMobile && <TripHighlightsWrapper />}
             
-            {/* Program Locations Section */}
+            {/* Learning Outcomes Section - Now positioned above Program Locations */}
+            <TripLearningOutcomes outcomes={learningOutcomes} />
+            
+            {/* Program Locations Section - Now using our custom component */}
             <ProgramLocations />
             
             {/* Detailed 4-Week Itinerary Section */}
