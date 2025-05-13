@@ -54,7 +54,7 @@ const EducationalLeadershipData: React.FC<EducationalLeadershipDataProps> = ({
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Educational Leadership"
-          subtitle="An immersive professional development program for teachers of environmental science, sustainability, and geography. Experience Kenya's diverse ecosystems and learn how student-led projects create lasting impact."
+          subtitle="An immersive professional development program for educators. Experience Kenya's diverse ecosystems and learn how student-led projects create lasting impact."
           category="Educator Trip"
           imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747130203/IMG_0252_gstfij.jpg"
         />
