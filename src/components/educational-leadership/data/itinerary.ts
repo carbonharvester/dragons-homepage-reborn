@@ -95,7 +95,7 @@ export const tripItinerary = [
       "Wildlife spotting including elephants, lions, and cheetahs",
       "Lunch at a safari lodge with views of the savanna",
       "Guided safari walk at Mudanda Rock with park rangers",
-      "Evening stargazing session and discussion on environmental awareness"
+      "Evening BBQ and fire pit"
     ]
   },
   {
