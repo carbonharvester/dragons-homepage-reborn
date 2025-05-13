@@ -31,4 +31,4 @@ export const tripDetails: TripDetail[] = [
   }
 ];
 
-export const perfectFor = "Environmental Science Teachers, Geography Teachers, Sustainability Coordinators, Curriculum Developers, School Trip Leaders, Conservation Education Coordinators, CAS Coordinators, Principals";
+export const perfectFor = "Environmental Science Teachers, Geography Teachers, Sustainability Coordinators, Curriculum Developers, School Trip Leaders, Co-Curricular Activities Coordinators, CAS Coordinators, Principals";
