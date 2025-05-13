@@ -23,11 +23,11 @@ const Hero = () => {
         {/* Use preloaded hero image - critical for page load */}
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-80" 
-          style={{backgroundImage: 'url(https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg)'}}
+          style={{backgroundImage: 'url(https://cdn.shopify.com/s/files/1/0777/3326/5724/files/klein-500-2_1.jpg?v=1747050056)'}}
         >
           {/* Add hidden image for SEO with proper attributes */}
           <img 
-            src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg" 
+            src="https://cdn.shopify.com/s/files/1/0777/3326/5724/files/klein-500-2_1.jpg?v=1747050056" 
             alt="Kapes Adventures hero image" 
             className="hidden" 
             width="1920" 

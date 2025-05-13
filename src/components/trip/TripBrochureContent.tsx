@@ -101,8 +101,10 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {/* Learning Outcomes */}
       <TripLearningOutcomes outcomes={learningOutcomes} />
       
-      {/* Photo Gallery - Using consolidated component */}
-      <ScrollableGallery images={galleryImages} />
+      {/* Photo Gallery - Now positioned depending on device */}
+      <ScrollableGallery 
+        images={galleryImages} 
+      />
       
       {/* Sample Itinerary */}
       <TripItinerary itineraryDays={tripItinerary} />

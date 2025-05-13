@@ -53,8 +53,6 @@ const TripDetailsCard = ({
       </div>
       
       <div className="mt-6 space-y-4">
-        {/* Apply Now Button - Removed for school trips */}
-        
         <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="outline" className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow" />
       </div>
     </div>;

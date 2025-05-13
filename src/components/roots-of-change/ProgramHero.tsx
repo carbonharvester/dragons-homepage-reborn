@@ -11,7 +11,7 @@ const ProgramHero = () => {
       {/* Black background behind the image */}
       <div className="absolute inset-0 z-0 bg-black">
         {/* Image with controlled opacity */}
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747129548/WhatsApp_Image_2025-05-13_at_12.12.32_2_qbmzae.jpg')] bg-cover bg-center opacity-80"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1531303435785-3853ba035cda?q=80&w=2070&auto=format')] bg-cover bg-center opacity-80"></div>
         {/* Enhanced overlay for better text visibility */}
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>

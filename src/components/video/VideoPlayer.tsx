@@ -3,84 +3,56 @@ import React, { useState, useEffect, useRef } from 'react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import VideoThumbnail from './VideoThumbnail';
 import ShopifyVideo from './ShopifyVideo';
+import VimeoVideo from './VimeoVideo';
 import { 
   isShopifyVideo, 
   generateVideoSrc, 
   generateThumbnailUrl,
-  preloadVideo,
-  isCloudinaryVideo,
-  generateCloudinaryPreviewUrl,
-  generateCloudinaryThumbnailUrl
+  preloadVideo
 } from './videoUtils';
 
 interface VideoPlayerProps {
-  videoId?: string;
-  videoUrl?: string;
+  videoId: string;
   title: string;
   customThumbnail?: string;
   initialPlaying?: boolean;
-  showPreview?: boolean;
 }
 
 const VideoPlayer = ({ 
   videoId, 
-  videoUrl,
   title, 
   customThumbnail, 
-  initialPlaying = false,
-  showPreview = true
+  initialPlaying = false 
 }: VideoPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(initialPlaying);
   const [thumbnailUrl, setThumbnailUrl] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // If direct videoUrl is provided, use that instead of videoId processing
-  const isDirectUrl = !!videoUrl;
-  
-  // Check if the video ID is from Shopify (only if videoId provided)
-  const shopifyVideo = videoId ? isShopifyVideo(videoId) : false;
-  
-  // Check if it's a Cloudinary video URL
-  const cloudinaryVideo = videoUrl ? isCloudinaryVideo(videoUrl) : false;
+  // Check if the video ID is from Shopify or from Vimeo
+  const shopifyVideo = isShopifyVideo(videoId);
   
   // Generate appropriate video source URLs
-  const videoSrc = videoUrl || (videoId ? generateVideoSrc(videoId, true) : '');
-  
-  // Generate preview sources based on video type
-  const previewSrc = (() => {
-    if (videoUrl && cloudinaryVideo && showPreview) {
-      return generateCloudinaryPreviewUrl(videoUrl);
-    } else if (videoId && showPreview) {
-      return shopifyVideo ? generateVideoSrc(videoId, false) : '';
-    }
-    return '';
-  })();
+  const videoSrc = generateVideoSrc(videoId, true);
+  const previewSrc = shopifyVideo 
+    ? generateVideoSrc(videoId, false)
+    : generateVideoSrc(videoId, false) + '&background=1&muted=1';
   
   // Set thumbnail URL when component mounts
   useEffect(() => {
-    if (videoId) {
-      setThumbnailUrl(generateThumbnailUrl(videoId, customThumbnail));
-    } else if (customThumbnail) {
-      setThumbnailUrl(customThumbnail);
-    } else if (videoUrl && cloudinaryVideo) {
-      setThumbnailUrl(generateCloudinaryThumbnailUrl(videoUrl));
-    }
-  }, [videoId, customThumbnail, videoUrl, cloudinaryVideo]);
+    setThumbnailUrl(generateThumbnailUrl(videoId, customThumbnail));
+  }, [videoId, customThumbnail]);
   
   // Handle play button click
   const handlePlayClick = () => {
-    console.log('Play button clicked in VideoPlayer');
     setIsPlaying(true);
   };
 
   // Setup IntersectionObserver for lazy loading and pausing when offscreen
   useEffect(() => {
-    if (!videoId && !cloudinaryVideo) return; // Skip for non-controllable videos
-    
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting && isPlaying && (shopifyVideo || cloudinaryVideo)) {
-          // Only pause for videos we can control directly
+        if (!entry.isIntersecting && isPlaying && shopifyVideo) {
+          // Only pause for Shopify videos - we can't control Vimeo directly
           setIsPlaying(false);
         }
       },
@@ -94,11 +66,11 @@ const VideoPlayer = ({
     return () => {
       observer.disconnect();
     };
-  }, [isPlaying, shopifyVideo, videoId, cloudinaryVideo]);
+  }, [isPlaying, shopifyVideo]);
 
   // Preload video when in viewport
   useEffect(() => {
-    if ((!shopifyVideo && !cloudinaryVideo) || (!videoId && !videoUrl)) return;
+    if (!shopifyVideo) return; // Only preload Shopify videos
     
     const preloadObserver = new IntersectionObserver(
       ([entry]) => {
@@ -117,7 +89,7 @@ const VideoPlayer = ({
     return () => {
       preloadObserver.disconnect();
     };
-  }, [videoSrc, shopifyVideo, videoId, cloudinaryVideo, videoUrl]);
+  }, [videoSrc, shopifyVideo]);
   
   return (
     <div 
@@ -126,21 +98,10 @@ const VideoPlayer = ({
     >
       {isPlaying ? (
         <div className="aspect-video w-full">
-          {videoUrl ? (
-            <video 
-              src={videoUrl}
-              className="w-full h-full" 
-              controls 
-              playsInline
-              autoPlay
-              title={title}
-            ></video>
-          ) : shopifyVideo ? (
+          {shopifyVideo ? (
             <ShopifyVideo src={videoSrc} title={title} />
           ) : (
-            <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white">
-              No valid video source available
-            </div>
+            <VimeoVideo src={videoSrc} title={title} />
           )}
         </div>
       ) : (
@@ -148,8 +109,8 @@ const VideoPlayer = ({
           thumbnailUrl={thumbnailUrl}
           title={title}
           onPlayClick={handlePlayClick}
-          previewSrc={showPreview ? previewSrc : undefined}
-          showCloudinaryPreview={cloudinaryVideo && showPreview}
+          previewSrc={!shopifyVideo ? previewSrc : undefined}
+          isVimeo={!shopifyVideo}
         />
       )}
     </div>

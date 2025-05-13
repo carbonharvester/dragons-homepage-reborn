@@ -1,9 +1,7 @@
-
 import React from "react";
 import { Ambulance, Shield, MapPin, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import VideoPlayer from "@/components/video/VideoPlayer";
-
 const SafeTravels = () => {
   const services = [{
     icon: <Shield className="h-8 w-8 text-dragon" />,
@@ -34,7 +32,6 @@ const SafeTravels = () => {
     title: "24/7 Dispatch",
     description: "24/7 dispatch and medical concierge for emergency and medical advice."
   }];
-  
   return <section className="py-12 bg-dragon-beige">
       <div className="container-wide">
         <div className="max-w-4xl mx-auto">
@@ -47,12 +44,7 @@ const SafeTravels = () => {
           </div>
           
           <div className="mb-12">
-            <VideoPlayer 
-              videoUrl="https://res.cloudinary.com/dng12bd0a/video/upload/v1747145393/Safe_Travels_-_celebrating_the_launch_of_our_new_cover_alfegu.mp4" 
-              title="Safe Travels by Rescue.co" 
-              initialPlaying={false}
-              showPreview={true}
-            />
+            <VideoPlayer videoId="g5D8nP4urcg" title="Safe Travels by Rescue.co" />
           </div>
           
           <h3 className="text-2xl font-academy text-dragon-dark mb-6">Cover Includes:</h3>
@@ -86,5 +78,4 @@ const SafeTravels = () => {
       </div>
     </section>;
 };
-
 export default SafeTravels;

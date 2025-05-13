@@ -21,7 +21,7 @@ export const tripDetails: TripDetail[] = [
   },
   {
     label: "Location",
-    value: "Tsavo East, Kenya",
+    value: "Various conservation areas in Kenya",
     icon: Map
   },
   {

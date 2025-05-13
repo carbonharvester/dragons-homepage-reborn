@@ -32,10 +32,9 @@ const Index = () => {
         <div id="video-section">
           {sectionsVisible['video-section'] && 
             <HomeVideoSection 
-              videoUrl="https://res.cloudinary.com/dng12bd0a/video/upload/q_auto,f_auto,vc_auto/v1747145204/kapes_impact_adventures_1080p_zxggqx.mp4" 
-              title="Kapes Impact Adventures" 
-              description="Watch how our immersive programs transform students through cultural exchange and authentic experiences." 
-              initialPlaying={false}
+              videoId="44b5817ef9b647a5a68e4ffd1c092f05" 
+              title="Food For Education - Kenya" 
+              description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences." 
             />
           }
         </div>

@@ -11,15 +11,6 @@ export const isShopifyVideo = (videoId: string): boolean => {
 };
 
 /**
- * Checks if a URL is a Cloudinary video URL
- * @param url The URL to check
- * @returns boolean - true if it's a Cloudinary video URL
- */
-export const isCloudinaryVideo = (url: string): boolean => {
-  return url.includes('cloudinary.com') && (url.includes('/video/upload/') || url.includes('.mp4'));
-};
-
-/**
  * Generates the appropriate video source URL based on the video ID format
  * @param videoId The video ID
  * @param autoplay Whether to enable autoplay (for Vimeo videos)
@@ -29,34 +20,8 @@ export const generateVideoSrc = (videoId: string, autoplay: boolean = false): st
   if (isShopifyVideo(videoId)) {
     return `https://cdn.shopify.com/videos/c/o/v/${videoId}.mp4`;
   } else {
-    // Since we're not using Vimeo, just return an empty string for non-Shopify IDs
-    console.warn('Non-Shopify video ID provided:', videoId);
-    return '';
+    return `https://player.vimeo.com/video/${videoId}?h=c4bc497777&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479${autoplay ? '&autoplay=1' : ''}`;
   }
-};
-
-/**
- * Generates a preview URL for a Cloudinary video
- * @param videoUrl The full Cloudinary video URL
- * @returns string - The preview URL with transformations for background preview
- */
-export const generateCloudinaryPreviewUrl = (videoUrl: string): string => {
-  if (!isCloudinaryVideo(videoUrl)) return videoUrl;
-  
-  // For Cloudinary videos, add transformation parameters for better autoplay
-  // vc_auto enables automatic video codec selection
-  // q_auto and f_auto for optimal delivery, lower quality for preview to improve loading
-  // Check if URL already contains transformations
-  if (videoUrl.includes('/upload/')) {
-    // Don't add transformations if they're already present
-    if (videoUrl.includes('/upload/q_') || videoUrl.includes('/upload/e_')) {
-      return videoUrl;
-    }
-    // Insert transformations after /upload/
-    return videoUrl.replace('/upload/', '/upload/q_auto:low,f_auto,vc_auto,e_loop/');
-  }
-  
-  return videoUrl;
 };
 
 /**
@@ -72,19 +37,6 @@ export const generateThumbnailUrl = (videoId: string, customThumbnail?: string):
     return `https://cdn.shopify.com/videos/c/o/v/${videoId}.jpg`;
   }
   return '';
-};
-
-/**
- * Generates a thumbnail URL for a Cloudinary video
- * @param videoUrl The Cloudinary video URL
- * @returns string - The thumbnail URL
- */
-export const generateCloudinaryThumbnailUrl = (videoUrl: string): string => {
-  if (!isCloudinaryVideo(videoUrl)) return '';
-  
-  // For Cloudinary videos, we can convert to image by changing the file extension
-  // and adding transformation parameters for a thumbnail
-  return videoUrl.replace(/\.\w+$/, '.jpg').replace('/video/upload/', '/video/upload/q_auto,f_auto,w_960,h_540,c_fill/');
 };
 
 /**

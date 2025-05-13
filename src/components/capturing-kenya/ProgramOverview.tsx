@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import { DollarSign, Users } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
-import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface ProgramOverviewProps {
   programData: {
@@ -22,22 +21,19 @@ interface ProgramOverviewProps {
 const ProgramOverview = ({
   programData
 }: ProgramOverviewProps) => {
-  // Updated gallery images with the new URLs
+  // Gallery images
   const galleryImages = [{
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747130086/KleinNettoh--2_ofhqdi.jpg",
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/DSC_0177.jpg?v=1746513529",
     alt: "Student photographer capturing wildlife in Kenya"
   }, {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747126339/A7404295_eqwltt.jpg",
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404062.jpg?v=1746502708",
     alt: "Photography student with camera in Kenya"
   }, {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119242/DSC_4401_bymb4c.jpg",
-    alt: "Student with camera capturing Kenyan landscape"
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/1e93affc-4105-40dd-aa24-f5fd875d2fd5_d59babc0-95fd-4333-b3b9-754cd20f3610.jpg?v=1746515665",
+    alt: "Students photographing wildlife in Kenya"
   }, {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119216/A7405250_gyo4co.jpg",
-    alt: "Photography student in action"
-  }, {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119222/A7404516_c0q5zm.jpg",
-    alt: "Student photographer during Kenya program"
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404516.jpg?v=1746515670",
+    alt: "Student with camera in natural setting"
   }];
   
   return (
@@ -146,31 +142,22 @@ const ProgramOverview = ({
       {/* Image Gallery */}
       <div className="mt-10 mb-6">
         <h3 className="text-2xl font-academy text-dragon-dark mb-6">Program Gallery</h3>
-        <Carousel 
-          opts={{
-            align: "start",
-            loop: true,
-            skipSnaps: false
-          }}
-          className="w-full"
-        >
-          <CarouselContent className="pb-4">
+        <Carousel className="w-full">
+          <CarouselContent>
             {galleryImages.map((image, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-64">
                   <img 
                     src={image.src} 
                     alt={image.alt} 
-                    className="w-full h-full object-cover rounded-md hover:scale-105 transition-transform duration-500" 
+                    className="w-full h-full object-cover rounded-md" 
                   />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex items-center justify-center mt-4">
-            <CarouselPrevious className="static mr-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
-            <CarouselNext className="static ml-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
-          </div>
+          <CarouselPrevious />
+          <CarouselNext />
         </Carousel>
       </div>
     </div>

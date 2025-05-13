@@ -9,11 +9,9 @@ import {
   learningOutcomes,
   tripItinerary,
   programData,
-  detailsPerfectFor as perfectFor
+  perfectFor
 } from './data';
 import TripBrochureContent from '../trip/TripBrochureContent';
-import { Button } from '../ui/button';
-import { CalendarIcon } from 'lucide-react';
 
 const EducationalLeadershipContent = () => {
   // Create updated description and goals based on the itinerary
@@ -30,16 +28,6 @@ const EducationalLeadershipContent = () => {
     "Connect classroom curriculum to water access challenges through community experiences and water walks"
   ];
 
-  // Convert Lucide icons to JSX elements
-  const processedHighlights = tripHighlights.map(highlight => ({
-    ...highlight,
-    icon: (
-      <div className="text-white">
-        <highlight.icon className="h-8 w-8" />
-      </div>
-    )
-  }));
-
   return (
     <>
       {/* Hero Section */}
@@ -47,7 +35,7 @@ const EducationalLeadershipContent = () => {
         title="Educational Leadership"
         subtitle="An immersive professional development program for teachers of environmental science, sustainability, and geography. Experience Kenya's diverse ecosystems and learn how student-led projects create lasting impact."
         category="Educator Trip"
-        imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747130203/IMG_0252_gstfij.jpg"
+        imagePath="/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png"
       />
       
       {/* Main Content */}
@@ -56,22 +44,10 @@ const EducationalLeadershipContent = () => {
           <ParentPageNavigation parentPath="/educator-trips" parentName="Educator Trips" />
         </div>
         
-        {/* Apply Now Button */}
-        <div className="container mb-8">
-          <div className="flex justify-center">
-            <Button 
-              className="bg-dragon hover:bg-dragon-dark text-white px-8 py-6 text-lg flex items-center gap-2"
-              onClick={() => window.open("https://calendly.com/kapes-adventures/30min", "_blank")}
-            >
-              <CalendarIcon className="h-5 w-5" /> Apply Now
-            </Button>
-          </div>
-        </div>
-        
         <div className="container py-[6px]">
           <TripBrochureContent 
             tripDetails={tripDetails}
-            tripHighlights={processedHighlights}
+            tripHighlights={tripHighlights}
             galleryImages={galleryImages}
             learningOutcomes={learningOutcomes}
             tripItinerary={tripItinerary}

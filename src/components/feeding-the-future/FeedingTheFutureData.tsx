@@ -13,6 +13,7 @@ import { tripHighlights } from './data/highlights';
 import { tripItinerary } from './data/index';
 import ProgramItinerary from '../roots-of-change/ProgramItinerary';
 import ProgramLocations from '../roots-of-change/ProgramLocations';
+import TripLearningOutcomes from '../trip/TripLearningOutcomes';
 
 interface FeedingTheFutureDataProps {
   heroOnly?: boolean;
@@ -48,7 +49,7 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
           title="Feeding the Future"
           subtitle="A 4-week immersive experience in sustainable agriculture and food security initiatives across Kenya, combining permaculture techniques with community engagement."
           category="Summer Abroad"
-          imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747129548/WhatsApp_Image_2025-05-13_at_12.12.32_2_qbmzae.jpg"
+          imagePath="https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Happy_Students_at_Lunch_Time.jpg?v=1747109942"
         />
       )}
 
@@ -70,6 +71,9 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
             
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
             {!isMobile && <TripHighlightsWrapper />}
+            
+            {/* Learning Outcomes Section - Now positioned above Program Locations */}
+            <TripLearningOutcomes outcomes={learningOutcomes} />
             
             {/* Program Locations Section */}
             <ProgramLocations />
@@ -93,7 +97,6 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
-              hideStudentStories={true} // Hide student stories section
             />
           </div>
         </>

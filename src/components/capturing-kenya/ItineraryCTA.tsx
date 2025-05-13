@@ -12,7 +12,9 @@ const ItineraryCTA = () => {
         Each day is designed to build your skills while immersing you in Kenya's diverse environments and cultures.
       </p>
       <div className="flex flex-wrap justify-center gap-4">
-        {/* Apply Now button removed since this is a school trip */}
+        <Button className="btn-primary font-gothic uppercase tracking-wide text-lg" asChild>
+          <Link to="/apply">Apply Now</Link>
+        </Button>
         <CalendlyEmbed 
           url="https://calendly.com/kapesuniforms/discoverymeeting"
           text="Schedule Consultation"

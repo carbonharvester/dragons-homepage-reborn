@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -8,11 +9,13 @@ import { Button } from '@/components/ui/button';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import { Calendar, Users, MapPin } from "lucide-react";
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
+
 const SummerAbroad = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return <div className="min-h-screen flex flex-col">
       <SEO title="Summer Abroad Programs" description="Immersive summer programs in Kenya for students looking to expand their horizons through cultural experiences and educational adventures." keywords="summer abroad, student travel, Kenya, cultural immersion, educational travel, summer programs" />
       <Header />
@@ -114,13 +117,37 @@ const SummerAbroad = () => {
             
             {/* Display Summer Abroad Programs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {summerAbroad.map((program, index) => <div key={index} className="h-full">
+              {summerAbroad.map((program, index) => (
+                <div key={index} className="h-full">
                   <ProgramCard program={program} />
-                </div>)}
+                </div>
+              ))}
             </div>
 
             {/* A Day in the Life Section */}
-            
+            <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden bg-black">
+              {/* Using the updated image URL provided by the user */}
+              <div 
+                className="absolute inset-0 z-0" 
+                style={{ 
+                  backgroundImage: "url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/762360F4-3F96-42EF-AE08-ABDF6FA8C725.png?v=1746513433')",
+                  backgroundPosition: 'center',
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                  opacity: 0.2  // Reduced opacity further
+                }}
+              >
+                {/* Removed the additional black overlay as we already have a black background */}
+              </div>
+              
+              {/* Content */}
+              <div className="relative z-20">
+                <h3 className="text-2xl font-academy text-white mb-4">A Day in the Life</h3>
+                <p className="text-white mb-4">
+                  Start with a sunrise safari, learn Swahili phrases over breakfast, work on your project with locals, then join a cultural workshop—every moment is a chance to grow and connect.
+                </p>
+              </div>
+            </div>
 
             {/* Why Choose Section */}
             <div className="bg-dragon-beige rounded-lg p-8 text-center">
@@ -151,4 +178,5 @@ const SummerAbroad = () => {
       <Footer />
     </div>;
 };
+
 export default SummerAbroad;

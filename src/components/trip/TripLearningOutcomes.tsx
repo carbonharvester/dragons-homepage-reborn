@@ -10,9 +10,7 @@ interface TripLearningOutcomesProps {
   outcomes: TripLearningOutcomeProps[];
 }
 
-const TripLearningOutcomes = ({
-  outcomes
-}: TripLearningOutcomesProps) => {
+const TripLearningOutcomes = ({ outcomes }: TripLearningOutcomesProps) => {
   return (
     <div className="mb-16 bg-dragon-beige p-8 md:p-12 rounded-lg">
       <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Learning Outcomes</h2>

@@ -1,23 +1,28 @@
 
 export const galleryImages = [
   {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119240/IMG_0245_uvjrgu.jpg",
+    src: "/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png",
     alt: "Educators experiencing conservation activities",
     className: "object-cover h-full w-full"
   },
   {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747130203/IMG_0252_gstfij.jpg",
+    src: "/lovable-uploads/9cdd3641-0b63-46d4-9b2d-9e6d3a85f70e.png",
     alt: "School garden project at partner school",
     className: "object-cover h-full w-full"
   },
   {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119229/DSC_0041_ufrwo2.jpg",
+    src: "/lovable-uploads/f83bb6ef-1a09-47f6-9cee-60b23dd0823c.png",
     alt: "Wildlife encounter during Tsavo safari",
     className: "object-cover h-full w-full"
   },
   {
-    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119225/DSC_0188_vdgihb.jpg",
+    src: "/lovable-uploads/c0bdd0e5-7b79-492d-8c2d-d91d5b892cee.png",
     alt: "Cultural exchange with Neema Women's Group",
+    className: "object-cover h-full w-full"
+  },
+  {
+    src: "/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png",
+    alt: "Educators participating in water conservation project",
     className: "object-cover h-full w-full"
   }
 ];
