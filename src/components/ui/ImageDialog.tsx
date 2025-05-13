@@ -26,7 +26,7 @@ const ImageDialog: React.FC<ImageDialogProps> = ({ isOpen, onClose, imageSrc, im
             <img 
               src={imageSrc} 
               alt={imageAlt} 
-              className="max-h-[80vh] max-w-full object-contain" 
+              className="max-h-[80vh] max-w-full object-contain border-0" 
             />
           </div>
         </div>
