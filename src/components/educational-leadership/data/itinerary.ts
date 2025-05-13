@@ -38,7 +38,7 @@ export const tripItinerary = [
     title: "Train Journey & Wildlife Works Introduction",
     activities: [
       "Morning train journey to Voi, enjoying scenic views of Kenya's landscapes",
-      "Lunch in Voi town",
+      "Welcome lunch at camp",
       "Afternoon tour of Wildlife Works operations",
       "Check-in at Rukinga Camp and dinner"
     ]
@@ -107,3 +107,4 @@ export const tripItinerary = [
     ]
   }
 ];
+
