@@ -32,9 +32,9 @@ const Index = () => {
         <div id="video-section">
           {sectionsVisible['video-section'] && 
             <HomeVideoSection 
-              videoUrl="https://res.cloudinary.com/dng12bd0a/video/upload/v1747130086/dragon_homepage_video_akurqr.mp4" 
-              title="Dragon in Kenya" 
-              description="Watch how our immersive programmes transform students through cultural exchange and authentic experiences." 
+              videoUrl="https://res.cloudinary.com/dng12bd0a/video/upload/v1747145204/kapes_impact_adventures_1080p_zxggqx.mp4" 
+              title="Kapes Impact Adventures" 
+              description="Watch how our immersive programs transform students through cultural exchange and authentic experiences." 
             />
           }
         </div>
