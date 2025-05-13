@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import { DollarSign, Users } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 interface ProgramOverviewProps {
   programData: {
@@ -145,22 +146,31 @@ const ProgramOverview = ({
       {/* Image Gallery */}
       <div className="mt-10 mb-6">
         <h3 className="text-2xl font-academy text-dragon-dark mb-6">Program Gallery</h3>
-        <Carousel className="w-full">
-          <CarouselContent>
+        <Carousel 
+          opts={{
+            align: "start",
+            loop: true,
+            skipSnaps: false
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="pb-4">
             {galleryImages.map((image, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-64">
                   <img 
                     src={image.src} 
                     alt={image.alt} 
-                    className="w-full h-full object-cover rounded-md" 
+                    className="w-full h-full object-cover rounded-md hover:scale-105 transition-transform duration-500" 
                   />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <div className="flex items-center justify-center mt-4">
+            <CarouselPrevious className="static mr-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
+            <CarouselNext className="static ml-2 translate-y-0 relative h-8 w-8 rounded-full bg-white text-dragon hover:bg-dragon-beige transition-colors shadow-md" />
+          </div>
         </Carousel>
       </div>
     </div>
