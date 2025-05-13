@@ -103,9 +103,7 @@ export const tripItinerary = [
     title: "Return to Nairobi & Departure",
     activities: [
       "Morning train journey back to Nairobi",
-      "Lunch at a local café with final reflection session",
-      "Receive Kapes certificate recognizing participation",
-      "Transfer to airport for evening departure"
+      "Say our goodbyes"
     ]
   }
 ];
