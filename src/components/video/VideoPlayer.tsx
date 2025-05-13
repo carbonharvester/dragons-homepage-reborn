@@ -34,6 +34,7 @@ const VideoPlayer = ({
   muted = initialPlaying, // Default to muted when autoplay is enabled
   autoplayOnScroll = false
 }: VideoPlayerProps) => {
+  // If initialPlaying is true, we should show the video immediately
   const [isPlaying, setIsPlaying] = useState(initialPlaying);
   const [isInView, setIsInView] = useState(false);
   const [thumbnailUrl, setThumbnailUrl] = useState('');
@@ -81,14 +82,14 @@ const VideoPlayer = ({
   
   // Effect to handle initial autoplay for cloudinary videos when initialPlaying is true
   useEffect(() => {
-    if (initialPlaying && cloudinaryVideo && videoRef.current) {
-      console.log('Auto-playing Cloudinary video on initial render');
+    if (initialPlaying && videoRef.current) {
+      console.log('Auto-playing video on initial render');
       videoRef.current.muted = true; // Must be muted for autoplay to work reliably
       videoRef.current.play()
         .then(() => console.log('Autoplay started successfully'))
         .catch(err => console.error('Autoplay failed:', err));
     }
-  }, [initialPlaying, cloudinaryVideo]);
+  }, [initialPlaying]);
 
   // Handle autoplay on scroll
   useEffect(() => {

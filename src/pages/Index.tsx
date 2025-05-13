@@ -36,6 +36,7 @@ const Index = () => {
               title="Kapes Impact Adventures" 
               description="Watch how our immersive programs transform students through cultural exchange and authentic experiences." 
               autoPlay={true}
+              muted={true}
             />
           }
         </div>

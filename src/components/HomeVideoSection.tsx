@@ -36,7 +36,7 @@ const HomeVideoSection = ({
           videoUrl={videoUrl}
           title={title} 
           initialPlaying={initialPlaying || autoPlay}
-          showPreview={!autoPlay}
+          showPreview={false}  
           muted={muted}
           autoplayOnScroll={autoplayOnScroll}
         />
