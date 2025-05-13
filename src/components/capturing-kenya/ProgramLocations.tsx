@@ -16,13 +16,13 @@ const ProgramLocations = () => {
       image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--4.jpg?v=1747112174"
     },
     {
-      name: "Tsavo Conservation Area",
-      description: "Work with Wildlife Works to document conservation efforts and contribute to environmental storytelling projects.",
+      name: "Samburu National Reserve",
+      description: "Home to unique wildlife species like Grevy's zebra and cultural experiences with the Samburu people.",
       image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--5.jpg?v=1747112174"
     },
     {
-      name: "Coastal Kenya",
-      description: "Capture the unique blend of Swahili culture, historical sites, and Indian Ocean landscapes in areas like Diani Beach and Lamu Island.",
+      name: "Lake Turkana",
+      description: "Capture the raw beauty of the jade sea, engage with the Turkana people, and document cultural traditions in this remote setting.",
       image: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--1.jpg?v=1747112174"
     }
   ];
@@ -38,7 +38,7 @@ const ProgramLocations = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {locations.map((location, index) => (
             <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow">
               <div className="h-48 overflow-hidden">
