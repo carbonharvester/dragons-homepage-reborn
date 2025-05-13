@@ -39,6 +39,9 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
   // Direct PDF brochure link
   const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Capturing_Kenya.pdf";
 
+  // Log weeks data to help with debugging
+  console.log("Weeks data in CapturingKenyaData:", weeks);
+
   return (
     <>
       {/* Hero Section */}

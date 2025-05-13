@@ -12,11 +12,11 @@ interface TripItineraryProps {
 }
 
 const TripItinerary = ({
-  itineraryDays
+  itineraryDays = []
 }: TripItineraryProps) => {
   return (
     <div className="py-10">
-      {itineraryDays.length > 0 ? (
+      {itineraryDays && itineraryDays.length > 0 ? (
         <div>
           <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Sample Itinerary</h2>
           <div className="space-y-6">

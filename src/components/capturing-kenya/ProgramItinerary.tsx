@@ -27,7 +27,7 @@ interface ProgramItineraryProps {
   weeks: Week[];
 }
 
-const ProgramItinerary = ({ weeks }: ProgramItineraryProps) => {
+const ProgramItinerary = ({ weeks = [] }: ProgramItineraryProps) => {
   // State for expanded day details
   const [expandedDays, setExpandedDays] = useState<Record<string, boolean>>({});
 
@@ -38,6 +38,9 @@ const ProgramItinerary = ({ weeks }: ProgramItineraryProps) => {
       [dayId]: !prev[dayId]
     }));
   };
+
+  // Defensive check to ensure weeks is an array
+  const safeWeeks = Array.isArray(weeks) ? weeks : [];
 
   return (
     <section id="itinerary" className="py-16 bg-dragon-beige">
@@ -50,83 +53,89 @@ const ProgramItinerary = ({ weeks }: ProgramItineraryProps) => {
           </p>
         </div>
 
-        <Tabs defaultValue="week1" className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-12">
-            {weeks.map((week) => (
-              <TabsTrigger key={week.number} value={`week${week.number}`} className="text-dragon-gray">
-                Week {week.number}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+        {safeWeeks.length > 0 ? (
+          <Tabs defaultValue={`week${safeWeeks[0]?.number || 1}`} className="w-full">
+            <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-12">
+              {safeWeeks.map((week) => (
+                <TabsTrigger key={week.number} value={`week${week.number}`} className="text-dragon-gray">
+                  Week {week.number}
+                </TabsTrigger>
+              ))}
+            </TabsList>
 
-          {weeks.map((week) => (
-            <TabsContent key={week.number} value={`week${week.number}`} className="mt-0">
-              <Card className="border-none shadow-md overflow-hidden">
-                <div className="grid md:grid-cols-2">
-                  <div className="h-80 md:h-auto overflow-hidden">
-                    <img 
-                      src={week.image} 
-                      alt={`Week ${week.number}: ${week.title}`} 
-                      className="w-full h-full object-cover"
-                    />
+            {safeWeeks.map((week) => (
+              <TabsContent key={week.number} value={`week${week.number}`} className="mt-0">
+                <Card className="border-none shadow-md overflow-hidden">
+                  <div className="grid md:grid-cols-2">
+                    <div className="h-80 md:h-auto overflow-hidden">
+                      <img 
+                        src={week.image} 
+                        alt={`Week ${week.number}: ${week.title}`} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardContent className="p-6 md:p-8">
+                      <div className="mb-6">
+                        <h3 className="text-2xl font-bold text-dragon-dark mb-1">
+                          Week {week.number}: {week.title}
+                        </h3>
+                        <p className="text-dragon mb-3">{week.subtitle}</p>
+                        <p className="text-dragon-gray mb-4">{week.description}</p>
+                      </div>
+
+                      <div className="space-y-4">
+                        <div className="flex gap-2">
+                          <Clock className="h-5 w-5 text-dragon shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-medium">Base Location:</p>
+                            <p className="text-dragon-gray">{week.base}</p>
+                          </div>
+                        </div>
+
+                        <div className="flex gap-2">
+                          <Heart className="h-5 w-5 text-dragon shrink-0 mt-0.5" />
+                          <div>
+                            <p className="font-medium">Community Impact:</p>
+                            <p className="text-dragon-gray">{week.impact}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="mt-6">
+                        <h4 className="font-bold mb-3">Week Highlights:</h4>
+                        <ul className="space-y-2">
+                          {week.highlights.map((highlight, index) => (
+                            <li key={index} className="flex items-center">
+                              <span className="bg-dragon rounded-full p-1 mr-2"></span>
+                              <span className="text-sm">{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div className="mt-6">
+                        <Button 
+                          variant="outline" 
+                          className="w-full flex justify-between items-center border-dragon text-dragon"
+                          asChild
+                        >
+                          <Link to="/programs/capturing-kenya/itinerary">
+                            <span>View Detailed Daily Itinerary</span>
+                            <ChevronDown className="ml-2 h-4 w-4" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </CardContent>
                   </div>
-                  <CardContent className="p-6 md:p-8">
-                    <div className="mb-6">
-                      <h3 className="text-2xl font-bold text-dragon-dark mb-1">
-                        Week {week.number}: {week.title}
-                      </h3>
-                      <p className="text-dragon mb-3">{week.subtitle}</p>
-                      <p className="text-dragon-gray mb-4">{week.description}</p>
-                    </div>
-
-                    <div className="space-y-4">
-                      <div className="flex gap-2">
-                        <Clock className="h-5 w-5 text-dragon shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-medium">Base Location:</p>
-                          <p className="text-dragon-gray">{week.base}</p>
-                        </div>
-                      </div>
-
-                      <div className="flex gap-2">
-                        <Heart className="h-5 w-5 text-dragon shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-medium">Community Impact:</p>
-                          <p className="text-dragon-gray">{week.impact}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-6">
-                      <h4 className="font-bold mb-3">Week Highlights:</h4>
-                      <ul className="space-y-2">
-                        {week.highlights.map((highlight, index) => (
-                          <li key={index} className="flex items-center">
-                            <span className="bg-dragon rounded-full p-1 mr-2"></span>
-                            <span className="text-sm">{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div className="mt-6">
-                      <Button 
-                        variant="outline" 
-                        className="w-full flex justify-between items-center border-dragon text-dragon"
-                        asChild
-                      >
-                        <Link to="/programs/capturing-kenya/itinerary">
-                          <span>View Detailed Daily Itinerary</span>
-                          <ChevronDown className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </div>
-              </Card>
-            </TabsContent>
-          ))}
-        </Tabs>
+                </Card>
+              </TabsContent>
+            ))}
+          </Tabs>
+        ) : (
+          <div className="text-center bg-white p-8 rounded-lg shadow-sm">
+            <p className="text-dragon-gray">Itinerary details coming soon...</p>
+          </div>
+        )}
         
         <div className="mt-8 text-center">
           <p className="text-dragon-gray mb-4">
