@@ -29,7 +29,7 @@ export const tripItinerary = [
     activities: [
       "Visit Africa Collect Textiles to learn about sustainable textile recycling",
       "Participate in a weaving workshop with local artisans using old school uniforms",
-      "Afternoon exploration of Nairobi urban farming initiatives",
+      "Afternoon with SCOPE Kenya, exploring rural school farming projects",
       "Dinner and overnight stay in Nairobi"
     ]
   },
