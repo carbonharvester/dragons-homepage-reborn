@@ -4,7 +4,7 @@ import { Trees, Leaf, Users, School, Handshake, TreeDeciduous } from "lucide-rea
 
 export const weekThreeData: WeekProps = {
   title: "Week 3",
-  dates: "August 11 - August 18, 2026",
+  dates: "August 11 - August 18, 2025",
   focus: "Agroforestry and Greenhouse Work",
   days: [
     {

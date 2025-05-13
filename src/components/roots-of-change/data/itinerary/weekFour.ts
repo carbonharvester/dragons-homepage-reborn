@@ -4,7 +4,7 @@ import { Droplet, Trees, Handshake, TreeDeciduous, Users, MapPinned } from "luci
 
 export const weekFourData: WeekProps = {
   title: "Week 4",
-  dates: "August 18 - August 25, 2026",
+  dates: "August 18 - August 25, 2025",
   focus: "Sustainability and Program Wrap-Up",
   days: [
     {

@@ -4,7 +4,7 @@ import { MapPinned, Droplet, LandPlot, Leaf, School, Trees, Mountain } from "luc
 
 export const weekOneData: WeekProps = {
   title: "Week 1",
-  dates: "July 28 - August 4, 2026",
+  dates: "July 28 - August 4, 2025",
   focus: "Farm Establishment and Community Building",
   days: [
     {

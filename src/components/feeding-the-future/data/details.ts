@@ -20,7 +20,7 @@ const tripDetailsData: TripDetailData[] = [
   },
   {
     label: "Season",
-    value: "Jul 28 - Aug 25 2026",
+    value: "Jul 28 - Aug 25 2025",
     icon: Calendar
   },
   {

@@ -4,7 +4,7 @@ import { Droplet, Leaf, School, Handshake, MapPinned, Building } from "lucide-re
 
 export const weekTwoData: WeekProps = {
   title: "Week 2",
-  dates: "August 4 - August 11, 2026",
+  dates: "August 4 - August 11, 2025",
   focus: "Farm Expansion and Community Workshops",
   days: [
     {
