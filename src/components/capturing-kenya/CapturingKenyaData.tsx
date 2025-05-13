@@ -7,11 +7,13 @@ import TripHighlightsWrapper from './TripHighlightsWrapper';
 import TripOverview from '../trip/TripOverview';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { tripDetails, perfectFor } from './data/details';
-import { programData, galleryImages, learningOutcomes } from './ProgramData';
+import { programData, learningOutcomes } from './ProgramData';
 import { weeks } from './data';
 import ProgramItinerary from '../capturing-kenya/ProgramItinerary';
 import ProgramLocations from './ProgramLocations';
 import TripLearningOutcomes from '../trip/TripLearningOutcomes';
+import { galleryImages } from './data/gallery';
+import TripGallery from '../trip/TripGallery';
 
 interface CapturingKenyaDataProps {
   heroOnly?: boolean;
@@ -81,6 +83,9 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
             
             {/* Detailed 4-Week Itinerary Section */}
             <ProgramItinerary weeks={weeks} />
+            
+            {/* Custom photo gallery instead of the ScrollableGallery */}
+            <TripGallery images={galleryImages} />
             
             {/* Continue with other components using TripBrochureContent */}
             <TripBrochureContent 
