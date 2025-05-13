@@ -12,6 +12,8 @@ import {
   perfectFor
 } from './data';
 import TripBrochureContent from '../trip/TripBrochureContent';
+import { Button } from '../ui/button';
+import { CalendarIcon } from 'lucide-react';
 
 const EducationalLeadershipContent = () => {
   // Create updated description and goals based on the itinerary
@@ -42,6 +44,18 @@ const EducationalLeadershipContent = () => {
       <div className="bg-white">
         <div className="container-wide py-4">
           <ParentPageNavigation parentPath="/educator-trips" parentName="Educator Trips" />
+        </div>
+        
+        {/* Apply Now Button */}
+        <div className="container mb-8">
+          <div className="flex justify-center">
+            <Button 
+              className="bg-dragon hover:bg-dragon-dark text-white px-8 py-6 text-lg flex items-center gap-2"
+              onClick={() => window.open("https://calendly.com/kapes-adventures/30min", "_blank")}
+            >
+              <CalendarIcon className="h-5 w-5" /> Apply Now
+            </Button>
+          </div>
         </div>
         
         <div className="container py-[6px]">
