@@ -32,15 +32,13 @@ const ProgramLocations = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           {locations.map((location, index) => (
             <div key={index} className="rounded-lg overflow-hidden shadow-sm border border-gray-100">
-              <div className="h-64 overflow-hidden">
-                <AspectRatio ratio={16/9} className="h-full">
-                  <img 
-                    src={location.image} 
-                    alt={location.name} 
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
-                  />
-                </AspectRatio>
-              </div>
+              <AspectRatio ratio={16/9}>
+                <img 
+                  src={location.image} 
+                  alt={location.name} 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" 
+                />
+              </AspectRatio>
               <div className="p-6">
                 <div className="flex items-center mb-2">
                   <MapPin className="h-5 w-5 text-dragon mr-2" />
