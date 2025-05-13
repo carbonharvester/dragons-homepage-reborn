@@ -1,5 +1,5 @@
 
-import { Clock, Calendar, Map, Users, Award, FileText } from 'lucide-react';
+import { Clock, Calendar, Map, Users } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 import React from 'react';
 
@@ -32,16 +32,6 @@ const tripDetailsData: TripDetailData[] = [
     label: "Group Size",
     value: "10-30 students",
     icon: Users
-  },
-  {
-    label: "Educational Credits (Optional)",
-    value: "CAS Points, Duke of Edinburgh",
-    icon: Award
-  },
-  {
-    label: "Certificate",
-    value: "Kapes Food Stewardship Certificate",
-    icon: FileText
   }
 ];
 
@@ -51,4 +41,4 @@ export const tripDetails = tripDetailsData.map(detail => ({
   icon: React.createElement(detail.icon, { size: 20 })
 }));
 
-export const perfectFor = "Aged 15-18, Passionate About Food, Interested in Sustainability and Food Systems, Enjoy Cultural Immersion, Seeking Personal Growth, Comfortable with Physical Challenges, Curious About Agricultural, Value Service";
+export const perfectFor = "Ages 12-18, Food security interests, Agricultural science, Community service, Sustainable development";

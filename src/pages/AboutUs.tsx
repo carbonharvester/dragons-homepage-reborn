@@ -6,11 +6,8 @@ import SEO from '@/components/SEO';
 import VideoSection from '@/components/VideoSection';
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Calendar, Users, Globe, Equal } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const AboutUs = () => {
-  const isMobile = useIsMobile();
-  
   return <div className="min-h-screen flex flex-col">
       <SEO title="About Us" description="From sustainable school uniforms to transformative travel experiences, we're reconnecting students with communities, nature, and what truly matters." keywords="Mission Kapes, educational travel, student trips, sustainability, Africa, Kenya" />
       <Header />
@@ -48,14 +45,12 @@ const AboutUs = () => {
                   Through Kapes Uniforms, we address a critical barrier to education—many children miss school simply because they cannot afford required uniforms. That's how our name emerged—we believe our uniforms have superpowers through the good they do, and those who wear them are heroes. Hence, heroes wear Kapes.
                 </p>
                 
-                {/* New image from first sponsored trip - caption hidden on mobile */}
+                {/* New image from first sponsored trip */}
                 <div className="my-8 relative rounded-lg overflow-hidden">
                   <img src="/lovable-uploads/c0bdd0e5-7b79-492d-8c2d-d91d5b892cee.png" alt="Children from a local Kenyan school wearing Kapes uniforms during our first sponsored trip" className="w-full h-auto rounded-lg" />
-                  {!isMobile && (
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                      <p className="text-white text-sm md:text-base font-medium">Our Founder Matthew Benjamin and students from Marasi Primary School in Kenya during our first sponsored trip in 2022.</p>
-                    </div>
-                  )}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                    <p className="text-white text-sm md:text-base font-medium">Our Founder Matthew Benjamin and students from Marasi Primary School in Kenya during our first sponsored trip in 2022.</p>
+                  </div>
                 </div>
                 
                 <p className="mb-4">
@@ -83,7 +78,7 @@ const AboutUs = () => {
                 <h2 className="section-heading mt-12">Our Vision</h2>
                 
                 <p className="text-lg text-dragon-gray">
-                  A world where young people are empowered by deep connections to nature, vibrant communities, and a global mindset to collaboratively shape a sustainable and equitable future. And every child has access to a full education.
+                  A world where young people are reconnected with nature and communities, equipped with cross-cultural competence, ecological awareness, and an ethical mindset to address global challenges collaboratively.
                 </p>
               </div>
               <div className="bg-dragon-sand rounded-lg p-8 flex items-center justify-center">
@@ -135,8 +130,8 @@ const AboutUs = () => {
         </section>
 
         {/* Video Section */}
-        <VideoSection videoId="720192915" title="Kapes Impact Adventures" description="Experience our first inspiring journey to Kenya, which has become a pathway for life changing adventures for students globally." quote={{
-        text: "The activities we've been doing is a pathway to bring our children here to. And that's really important because experiential learning helps to bring to real life the things that we can only do in theory, in the classrooms. Seeing these small enterprises firsthand, understanding how they contribute to a better world in the future, the children can only do that firsthand, and it will change them as much as it's changed me in this short trip.",
+        <VideoSection videoId="720192915" title="Kapes Impact Adventures" description="Experience the inspiring journey of Kapes Adventures and how we're making a difference in communities across Kenya." quote={{
+        text: "These experiences change perspectives, build connections, and inspire students to become more conscious global citizens who understand their role in creating a sustainable future.",
         author: "Brett Girven, Former-Principal at The Arbor School"
       }} />
       </main>

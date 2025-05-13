@@ -13,11 +13,11 @@ import { useIsMobile } from '@/hooks/use-mobile';
 export interface TripDetail {
   label: string;
   value: string;
-  icon: React.ReactNode | string;
+  icon: React.ReactNode;
 }
 
 export interface TripHighlight {
-  icon: React.ReactNode | string;
+  icon: React.ReactNode;
   title: string;
   description: string;
 }
@@ -60,7 +60,6 @@ interface TripBrochureContentProps {
   hideHighlights?: boolean;
   pdfBrochureLink?: string;
   customThumbnails?: Record<string, string>;
-  isEducatorTrip?: boolean;
 }
 
 const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
@@ -76,8 +75,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
   hideOverview = false,
   hideHighlights = false,
   pdfBrochureLink,
-  customThumbnails,
-  isEducatorTrip = false
+  customThumbnails
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
   
@@ -91,7 +89,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {!hideOverview && <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />}
       
       {/* Trip Highlights */}
-      {!hideHighlights && <div className="mb-16 text-center">
+      {!hideHighlights && <div className="mb-16">
           <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Trip Highlights</h2>
           <TripHighlights highlights={tripHighlights} />
         </div>}
@@ -110,11 +108,11 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {/* Program Brochure */}
       <ProgramBrochure program={programData} pdfLink={pdfBrochureLink} />
       
-      {/* Student Stories Section - Only show for student trips, not for educator trips */}
-      {!isEducatorTrip && <Testimonials />}
+      {/* Student Stories Section - Moved above CTA */}
+      <Testimonials />
       
-      {/* CTA Section */}
-      <TripCTA isSchoolTrip={!isEducatorTrip} />
+      {/* CTA Section - always using isSchoolTrip=true since these are all school trips */}
+      <TripCTA isSchoolTrip={true} />
     </div>;
 };
 

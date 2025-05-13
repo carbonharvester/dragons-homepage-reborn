@@ -1,6 +1,6 @@
 
 export const day1 = {
-  day: "Day 1",
+  day: "Day 1 (Friday)",
   title: "Arrival in Nairobi & Train to Voi",
   activities: [
     "Arrive at Jomo Kenyatta International Airport, meet Kapes staff and Zawadisha representatives",

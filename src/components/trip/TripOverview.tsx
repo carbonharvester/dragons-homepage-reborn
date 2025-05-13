@@ -76,9 +76,7 @@ const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: Tr
       
       {perfectFor && (
         <div className="mt-8 w-full">
-          <h3 className="text-2xl font-academy text-dragon-dark mb-6">
-            {perfectFor.includes("Educators") || perfectFor.includes("Teacher") ? "Perfect For" : "Perfect For Students"}
-          </h3>
+          <h3 className="text-2xl font-academy text-dragon-dark mb-6">Perfect For Students</h3>
           
           <div className="flex flex-wrap gap-4">
             {perfectFor.split(', ').map((item, index) => (

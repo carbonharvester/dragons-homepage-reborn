@@ -8,11 +8,10 @@ interface VideoPlayerProps {
   videoId: string;
   title: string;
   customThumbnail?: string;
-  initialPlaying?: boolean;
 }
 
-const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }: VideoPlayerProps) => {
-  const [isPlaying, setIsPlaying] = useState(initialPlaying);
+const VideoPlayer = ({ videoId, title, customThumbnail }: VideoPlayerProps) => {
+  const [isPlaying, setIsPlaying] = useState(false);
   const [thumbnailUrl, setThumbnailUrl] = useState('');
   const videoRef = useRef<HTMLVideoElement>(null);
   
@@ -37,38 +36,26 @@ const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }
     }
   }, [videoId, isShopifyVideo, customThumbnail]);
   
-  // Handle play button click
   const handlePlayClick = () => {
-    console.log("Play button clicked");
     setIsPlaying(true);
-  };
-  
-  // Handle actual video playback when isPlaying state changes
-  useEffect(() => {
-    if (isPlaying) {
-      console.log("isPlaying changed to true");
-      if (isShopifyVideo && videoRef.current) {
-        console.log("Loading and playing Shopify video");
-        videoRef.current.load();
-        
-        videoRef.current.onloadeddata = () => {
-          console.log("Video data loaded, attempting to play");
-          if (videoRef.current) {
-            const playPromise = videoRef.current.play();
-            
-            if (playPromise !== undefined) {
-              playPromise
-                .then(() => console.log("Playback started successfully"))
-                .catch(error => {
-                  console.log('Auto-play was prevented:', error);
-                });
-            }
+    
+    // For Shopify videos, manually play the video after a short delay
+    // This ensures the video starts playing without requiring a second click
+    if (isShopifyVideo) {
+      setTimeout(() => {
+        if (videoRef.current) {
+          const playPromise = videoRef.current.play();
+          
+          if (playPromise !== undefined) {
+            playPromise.catch(error => {
+              console.log('Auto-play was prevented. User interaction is required.');
+              // We don't need to set isPlaying back to false since the play button is already hidden
+            });
           }
-        };
-      }
-      // For Vimeo videos, the iframe's autoplay parameter handles playback
+        }
+      }, 50);
     }
-  }, [isPlaying, isShopifyVideo]);
+  };
   
   return (
     <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl">
@@ -81,8 +68,6 @@ const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }
               className="w-full h-full" 
               controls 
               playsInline
-              preload="auto"
-              autoPlay
               title={title}
             ></video>
           ) : (
@@ -100,15 +85,10 @@ const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }
         <div className="relative">
           <AspectRatio ratio={16 / 9}>
             <div className="w-full h-full bg-black">
-              <div 
-                className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20 z-10 cursor-pointer"
-                onClick={handlePlayClick}
-                role="button"
-                tabIndex={0}
-                aria-label="Play video"
-              >
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center transition-opacity hover:bg-opacity-20 z-10">
                 <Button 
-                  className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark pointer-events-none" 
+                  className="h-16 w-16 rounded-full bg-dragon-yellow hover:bg-amber-400 text-dragon-dark" 
+                  onClick={handlePlayClick} 
                   aria-label="Play video"
                 >
                   <Play className="h-8 w-8" />

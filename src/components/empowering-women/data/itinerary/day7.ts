@@ -1,6 +1,6 @@
 
 export const day7 = {
-  day: "Day 7",
+  day: "Day 7 (Thursday)",
   title: "Reflection & Farewell",
   activities: [
     "Afternoon cooking class to learn traditional Kenyan recipes",

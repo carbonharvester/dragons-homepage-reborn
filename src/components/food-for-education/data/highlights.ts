@@ -1,9 +1,10 @@
 
 import { Leaf, School, Users, Binoculars, Camera, Globe } from "lucide-react";
 import { LucideIcon } from "lucide-react";
+import React from 'react';
 
-// Interface that matches what TripHighlights component expects
-export interface TripHighlightData {
+// Local interface for data definition
+interface TripHighlightData {
   icon: LucideIcon;
   title: string;
   description: string;
@@ -43,5 +44,8 @@ const tripHighlightsData: TripHighlightData[] = [
   }
 ];
 
-// Export the raw data with Lucide icons
-export const tripHighlights = tripHighlightsData;
+// Transform the icons to ReactNode before exporting
+export const tripHighlights = tripHighlightsData.map(highlight => ({
+  ...highlight,
+  icon: React.createElement(highlight.icon, { size: 24, className: "h-8 w-8 text-white" })
+}));

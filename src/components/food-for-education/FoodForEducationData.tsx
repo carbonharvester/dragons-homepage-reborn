@@ -4,10 +4,10 @@ import TripBrochureContent from '../trip/TripBrochureContent';
 import TripHero from '../trip/TripHero';
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 import TripOverview from '../trip/TripOverview';
-import TripHighlightsWrapper from './TripHighlightsWrapper';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { 
   tripDetails, 
+  tripHighlights, 
   galleryImages, 
   learningOutcomes, 
   tripItinerary, 
@@ -53,7 +53,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
           title="Food For Education"
           subtitle="Explore sustainable food systems and contribute to food security initiatives while learning about traditional and modern agricultural practices in Kenya."
           category="School Trip"
-          imagePath="/lovable-uploads/3a363a5f-b4be-477f-aea7-e36861d4faf4.png"
+          imagePath="/lovable-uploads/e5508599-0c51-43a7-8945-a0f299149c54.png"
         />
       )}
 
@@ -73,14 +73,10 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               projectGoals={foodProjectGoals}
             />
             
-            {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
-            {!isMobile && <TripHighlightsWrapper />}
-            
             {/* Continue with other components */}
             <TripBrochureContent 
               tripDetails={tripDetails}
-              // Here we're passing empty array to avoid type issues, since highlights are shown via TripHighlightsWrapper
-              tripHighlights={[]}
+              tripHighlights={tripHighlights}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}
@@ -89,7 +85,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               description={foodDescription}
               projectGoals={foodProjectGoals}
               hideOverview={true}
-              hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
+              hideHighlights={false} // Show highlights directly in TripBrochureContent
               customThumbnails={customThumbnails}
             />
           </div>

@@ -17,14 +17,12 @@ const SchoolTripsTab = () => {
           <li>Collaborative work with local communities and experts</li>
           <li>Comprehensive risk management and 24/7 support</li>
           <li>Customisable itineraries based on your school's needs</li>
-          <li>Optional <Link to="/multi-year-curriculum" className="text-dragon hover:underline">Multi-Year Curriculum</Link> integration for sustained learning impact</li>
         </ul>
         
         <p className="mb-6">
           Each school trip focuses on a specific project theme, allowing students to engage 
           deeply with important global issues while developing practical skills and cross-cultural 
-          understanding. Schools can also opt for our Multi-Year Curriculum approach for more sustained, 
-          developmental learning experiences.
+          understanding.
         </p>
       </div>
       

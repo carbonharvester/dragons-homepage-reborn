@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -37,7 +36,7 @@ const SummerAbroad = () => {
           </div>
         </section>
 
-        {/* Navigation and content in a continuous section */}
+        {/* Back to Programs Navigation */}
         <div className="container-wide py-8">
           <ParentPageNavigation parentPath="/programs" parentName="Programs" />
         </div>
@@ -117,14 +116,17 @@ const SummerAbroad = () => {
             
             {/* Display Summer Abroad Programs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {summerAbroad.map((program, index) => (
-                <div key={index} className="h-full">
-                  <ProgramCard program={program} />
-                </div>
-              ))}
+              <ProgramCard program={{
+              ...summerAbroad[0],
+              description: "Perfect for future environmentalists: Join sustainable agriculture initiatives to tackle food security in rural communities through hands-on farming and education, feeding 200 children daily."
+            }} />
+              <ProgramCard program={{
+              ...summerAbroad[1],
+              description: "Ideal for aspiring photographers: Develop photography and videography skills with expert guidance as you document safari adventures, community experiences, and natural wonders, creating a short film for a conservation NGO."
+            }} />
             </div>
 
-            {/* A Day in the Life Section */}
+            {/* A Day in the Life Section - UPDATED WITH NEW IMAGE */}
             <div className="max-w-3xl mx-auto rounded-lg p-8 text-center mb-16 relative overflow-hidden bg-black">
               {/* Using the updated image URL provided by the user */}
               <div 
@@ -149,7 +151,6 @@ const SummerAbroad = () => {
               </div>
             </div>
 
-            {/* Why Choose Section */}
             <div className="bg-dragon-beige rounded-lg p-8 text-center">
               <h3 className="text-2xl font-academy text-dragon-dark mb-4">Why Choose Our Summer Programs?</h3>
               <div className="grid md:grid-cols-3 gap-6 mb-8">

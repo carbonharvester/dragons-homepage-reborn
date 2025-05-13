@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 const CTASection = () => {
@@ -8,10 +7,10 @@ const CTASection = () => {
           <h2 className="text-3xl font-bold mb-6">Experience Kenya with Kapes Adventures</h2>
           <p className="text-lg mb-8">Discover this incredible country through our immersive programs, designed to connect you with its landscapes, wildlife, and cultures—while creating lasting impact for communities.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/programs/food-for-education" className="btn-primary h-12 w-full sm:w-auto inline-flex items-center justify-center">
+            <Link to="/programs/food-for-education" className="btn-primary">
               Explore Our Programs
             </Link>
-            <Link to="/partner-with-us" className="btn-secondary bg-white text-dragon hover:bg-gray-100 h-12 w-full sm:w-auto inline-flex items-center justify-center">Schedule Consultation</Link>
+            <Link to="/partner-with-us" className="btn-secondary bg-white text-dragon hover:bg-gray-100">Schedule Consultation</Link>
           </div>
         </div>
       </div>

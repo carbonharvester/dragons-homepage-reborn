@@ -1,10 +1,8 @@
-
 import React, { useState } from 'react';
 import { useIsMobile } from "@/hooks/use-mobile";
-import { schoolTrips, summerAbroad, adultTrips, multiYearProgram, educatorTrips } from '@/data/programsData';
+import { schoolTrips, summerAbroad, adultTrips, multiYearProgram } from '@/data/programsData';
 import ProgramCategorySelector from './programs/ProgramCategorySelector';
 import ProgramCategoryContent from './programs/ProgramCategoryContent';
-
 const ProgramsSection = () => {
   const [activeCategory, setActiveCategory] = useState("school-trips");
   const isMobile = useIsMobile();
@@ -16,17 +14,13 @@ const ProgramsSection = () => {
         return schoolTrips;
       case "summer-abroad":
         return summerAbroad;
-      case "educator-trips":
-        return educatorTrips;
       case "adult-trips":
         return adultTrips;
       default:
         return [];
     }
   };
-
-  return (
-    <section id="programs" className="py-20 bg-dragon-beige">
+  return <section id="programs" className="py-20 bg-dragon-beige">
       <div className="container-wide">
         <div className="text-center mb-12">
           <h2 className="section-heading">Transformative Programs</h2>
@@ -39,8 +33,6 @@ const ProgramsSection = () => {
         {/* Program Content */}
         <ProgramCategoryContent activeCategory={activeCategory} isMobile={isMobile} programs={getActivePrograms()} multiYearData={multiYearProgram} />
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProgramsSection;

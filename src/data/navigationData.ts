@@ -1,3 +1,4 @@
+
 export const programCategories = [
   {
     title: "School Trips",
@@ -19,11 +20,6 @@ export const programCategories = [
         href: "/programs/empowering-women",
         description: "Support women-led initiatives focusing on education and leadership.",
       },
-      {
-        title: "Multi-Year Curriculum",
-        href: "/multi-year-curriculum",
-        description: "Progressive educational journey spanning multiple years.",
-      },
     ],
   },
   {
@@ -44,16 +40,10 @@ export const programCategories = [
     ],
   },
   {
-    title: "Educator Trips",
-    href: "/educator-trips",
-    description: "Professional development trips designed specifically for teachers and school staff.",
-    programs: [
-      {
-        title: "Educational Leadership",
-        href: "/programs/educational-leadership",
-        description: "Explore educational leadership through cultural immersion and collaborative learning.",
-      },
-    ],
+    title: "Multi-Year Curriculum",
+    href: "/multi-year-curriculum",
+    description: "Comprehensive educational programs spanning multiple years.",
+    programs: [],
   },
   {
     title: "Adult Trips",

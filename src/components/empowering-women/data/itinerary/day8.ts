@@ -1,6 +1,6 @@
 
 export const day8 = {
-  day: "Day 8",
+  day: "Day 8 (Friday)",
   title: "Return to Nairobi & Departure",
   activities: [
     "Morning breakfast and final packing at Rukinga Camp",

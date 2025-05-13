@@ -6,7 +6,6 @@ import SchoolTripsTab from './SchoolTripsTab';
 import SummerAbroadTab from './SummerAbroadTab';
 import MultiYearTab from './MultiYearTab';
 import AdultTripsTab from './AdultTripsTab';
-import EducatorTripsTab from './EducatorTripsTab';
 
 const TabsSection = () => {
   return (
@@ -16,7 +15,7 @@ const TabsSection = () => {
           <TabsTrigger 
             key={category.id} 
             value={category.id} 
-            className="px-6 py-3 min-w-[160px] h-12 w-full sm:w-auto data-[state=active]:bg-dragon data-[state=active]:text-white bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white"
+            className="px-6 py-3 data-[state=active]:bg-dragon data-[state=active]:text-white bg-white border border-dragon text-dragon hover:bg-dragon hover:text-white"
           >
             {category.label}
           </TabsTrigger>
@@ -31,8 +30,8 @@ const TabsSection = () => {
         <SummerAbroadTab />
       </TabsContent>
 
-      <TabsContent value="educator-trips" className="mt-8">
-        <EducatorTripsTab />
+      <TabsContent value="multi-year" className="mt-8">
+        <MultiYearTab />
       </TabsContent>
 
       <TabsContent value="adult-trips" className="mt-8">

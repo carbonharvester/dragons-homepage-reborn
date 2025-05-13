@@ -19,7 +19,7 @@ const SchoolTripsHero = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading animate-fade-in">School Trips</h1>
           <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl animate-fade-in" style={{
           animationDelay: "0.2s"
-        }}>Inspiring journeys that take students beyond the classroom to engage with communities and grow as global citizens, designed for schools worldwide.</p>
+        }}>Inspiring 7-8 day journeys that take students beyond the classroom to engage with communities and grow as global citizens, designed for schools worldwide.</p>
           
           <div className="flex flex-wrap gap-4 animate-fade-in" style={{
           animationDelay: "0.4s"
@@ -38,4 +38,3 @@ const SchoolTripsHero = () => {
 };
 
 export default SchoolTripsHero;
-
