@@ -1,4 +1,3 @@
-
 interface GalleryImage {
   src: string;
   alt: string;
@@ -35,6 +34,36 @@ export const galleryImages: GalleryImage[] = [
     src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119192/8aea54cf-37c5-43f0-8665-b4259a4acc7f_p5lr1v.jpg",
     alt: "Children enjoying a meal",
     className: "col-span-12 md:col-span-6 h-64 overflow-hidden rounded-lg"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747126344/A7405558_q0ujnc.jpg",
+    alt: "Students working on school garden",
+    className: "col-span-12 md:col-span-4 h-64 overflow-hidden rounded-lg"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747126345/A7405562_urfbf7.jpg",
+    alt: "Food education activities",
+    className: "col-span-12 md:col-span-4 h-64 overflow-hidden rounded-lg"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747126338/A7405436_bzpigr.jpg",
+    alt: "School garden project",
+    className: "col-span-12 md:col-span-4 h-64 overflow-hidden rounded-lg"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119245/A7405416_btitb3.jpg",
+    alt: "Students learning about sustainable farming",
+    className: "col-span-12 md:col-span-6 h-64 overflow-hidden rounded-lg"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747129548/WhatsApp_Image_2025-05-13_at_12.12.32_2_qbmzae.jpg",
+    alt: "Food For Education school meal program",
+    className: "col-span-12 md:col-span-6 h-64 overflow-hidden rounded-lg"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747129548/WhatsApp_Image_2025-05-13_at_12.12.32_1_gve5d6.jpg",
+    alt: "Students enjoying nutritious meals",
+    className: "col-span-12 md:col-span-4 h-64 overflow-hidden rounded-lg"
   },
   {
     src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119192/WhatsApp_Image_2025-05-13_at_12.07.57_2_p5yzxl.jpg",
