@@ -49,9 +49,9 @@ export const tripItinerary = [
     title: "Wildlife Works, Conservation & Factory Visit",
     activities: [
       "Visit Wildlife Works to learn about REDD+ conservation projects in Kasigau Corridor",
+      "Tour the Kapes uniform factory to see how school uniforms are made",
       "Join hands-on activities with the greenhouse and agroforestry team",
       "Practice tree grafting and vertical farming techniques",
-      "Tour the Kapes uniform factory to see how school uniforms are made",
       "Evening game drive in Tsavo region with sundowners at Lokidori Hill"
     ]
   },
