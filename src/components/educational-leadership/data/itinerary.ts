@@ -93,6 +93,7 @@ export const tripItinerary = [
     activities: [
       "Morning game drive in Tsavo East National Park",
       "Wildlife spotting including elephants, lions, and cheetahs",
+      "Lunch at a safari lodge with views of the savanna",
       "Guided safari walk at Mudanda Rock with park rangers",
       "Evening stargazing session and discussion on environmental awareness"
     ]
