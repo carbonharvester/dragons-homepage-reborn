@@ -17,7 +17,7 @@ export const schoolTrips = [
     duration: "8 Days", 
     season: "Jan-Oct", 
     description: "Transform unused school land into vibrant gardens using permaculture farming techniques. Students will create sustainable food systems to provide nutritious meals for local children, fostering long-term food security and community resilience.", 
-    image: "/lovable-uploads/3a363a5f-b4be-477f-aea7-e36861d4faf4.png", 
+    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg", 
     link: "/programs/food-for-education", 
     icon: Globe,
     ageGroup: "Ages 15-18"
