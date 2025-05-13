@@ -1,7 +1,7 @@
 
 export const galleryImages = [
   {
-    src: "",
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747129046/Filip-C-Agoo-Everland-Marketing-Kenya-13983_atg3tn.jpg",
     alt: "Students engaging with Zawadisha women", 
     className: "col-span-12 md:col-span-6 h-64"
   },

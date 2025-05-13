@@ -60,7 +60,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
           title="Community Conservation"
           subtitle="Our introductory school trip where students meet local conservation experts protecting animals and trees, see Kenya's wildlife up close and learn traditional ecological knowledge and sustainable practices."
           category="School Trip"
-          imagePath="/lovable-uploads/5c2915df-6fcc-4fd9-a320-7025337ffd6a.png"
+          imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747129047/Collection_5_s7opwi.jpg"
         />
       )}
 

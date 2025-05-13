@@ -1,7 +1,7 @@
 
 export const galleryImages = [
   {
-    src: "",
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747129047/Collection_5_s7opwi.jpg",
     alt: "Students working on conservation",
     className: "col-span-12 md:col-span-8 h-80 rounded-lg overflow-hidden"
   },
