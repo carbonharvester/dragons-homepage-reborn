@@ -49,7 +49,7 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
           title="Feeding the Future"
           subtitle="A 4-week immersive experience in sustainable agriculture and food security initiatives across Kenya, combining permaculture techniques with community engagement."
           category="Summer Abroad"
-          imagePath="https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Happy_Students_at_Lunch_Time.jpg?v=1747109942"
+          imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747129548/WhatsApp_Image_2025-05-13_at_12.12.32_2_qbmzae.jpg"
         />
       )}
 

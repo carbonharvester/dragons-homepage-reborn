@@ -24,7 +24,7 @@ const ProgramOverview = ({
 }: ProgramOverviewProps) => {
   // Gallery images with empty src values
   const galleryImages = [{
-    src: "",
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747118596/KleinNettoh--2_1_dxa20b.jpg",
     alt: "Student photographer capturing wildlife in Kenya"
   }, {
     src: "",

@@ -7,7 +7,7 @@ interface GalleryImage {
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: "",
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747129548/WhatsApp_Image_2025-05-13_at_12.12.32_2_qbmzae.jpg",
     alt: "Happy Students at Lunch Time",
     className: "col-span-12 md:col-span-8 h-64 md:h-80 overflow-hidden rounded-lg"
   },
