@@ -49,5 +49,30 @@ export const galleryImages = [
     src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119235/DSC_0177_nvivx5.jpg",
     alt: "Photography learning experience in Kenya", 
     className: "col-span-12 md:col-span-4 h-64"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119242/DSC_4401_bymb4c.jpg",
+    alt: "Student photographer capturing wildlife", 
+    className: "col-span-12 md:col-span-6 h-64"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119221/DSC_0172_nke6hg.jpg",
+    alt: "Photography student on safari", 
+    className: "col-span-12 md:col-span-6 h-64"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119196/A7404005_lrjccd.jpg",
+    alt: "Student learning camera techniques", 
+    className: "col-span-12 md:col-span-4 h-64"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119216/A7405250_gyo4co.jpg",
+    alt: "Photography student in action", 
+    className: "col-span-12 md:col-span-4 h-64"
+  },
+  {
+    src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119222/A7404516_c0q5zm.jpg",
+    alt: "Student photographer in Kenyan landscape", 
+    className: "col-span-12 md:col-span-4 h-64"
   }
 ];
