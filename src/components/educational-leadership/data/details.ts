@@ -26,7 +26,7 @@ export const tripDetails: TripDetail[] = [
   },
   {
     label: "Group Size",
-    value: "6",
+    value: "6-12 with 1 instructor and 1-2 rangers",
     icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" })
   }
 ];
