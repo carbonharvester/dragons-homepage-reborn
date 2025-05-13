@@ -51,10 +51,10 @@ const VideoPlayer = ({
   const previewSrc = (() => {
     if (videoUrl && cloudinaryVideo && showPreview) {
       return generateCloudinaryPreviewUrl(videoUrl);
-    } else if (videoId) {
+    } else if (videoId && showPreview) {
       return shopifyVideo 
         ? generateVideoSrc(videoId, false)
-        : generateVideoSrc(videoId, false) + '&background=1&muted=1';
+        : `https://player.vimeo.com/video/${videoId}?background=1&muted=1&autopause=0&loop=1&transparent=0&responsive=1&autoplay=1`;
     }
     return '';
   })();

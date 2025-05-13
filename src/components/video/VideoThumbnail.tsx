@@ -24,9 +24,11 @@ const VideoThumbnail = ({
 }: VideoThumbnailProps) => {
   const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   
   const isCloudinary = showCloudinaryPreview && previewSrc && isCloudinaryVideo(previewSrc);
   
+  // Effect to handle video preview autoplay
   useEffect(() => {
     // Auto-play the Cloudinary preview video when component mounts
     if (isCloudinary && videoRef.current) {
@@ -67,8 +69,9 @@ const VideoThumbnail = ({
               autoPlay
               aria-hidden="true"
             />
-          ) : isVimeo ? (
+          ) : isVimeo && previewSrc ? (
             <iframe 
+              ref={iframeRef}
               src={previewSrc}
               className="w-full h-full pointer-events-none" 
               frameBorder="0"

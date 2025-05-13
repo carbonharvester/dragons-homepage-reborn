@@ -1,5 +1,5 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 interface VimeoVideoProps {
   src: string;
@@ -8,6 +8,11 @@ interface VimeoVideoProps {
 
 const VimeoVideo = ({ src, title }: VimeoVideoProps) => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    // Add any necessary Vimeo API integration here if needed
+    console.log('Vimeo video mounted:', src);
+  }, [src]);
 
   return (
     <iframe 

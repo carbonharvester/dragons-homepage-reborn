@@ -62,8 +62,10 @@ export const generateThumbnailUrl = (videoId: string, customThumbnail?: string):
     return customThumbnail;
   } else if (isShopifyVideo(videoId)) {
     return `https://cdn.shopify.com/videos/c/o/v/${videoId}.jpg`;
+  } else {
+    // For Vimeo videos, use their thumbnail API
+    return `https://vumbnail.com/${videoId}.jpg`;
   }
-  return '';
 };
 
 /**
