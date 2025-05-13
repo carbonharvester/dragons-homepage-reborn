@@ -40,7 +40,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
   // Define custom trip description for the overview section
   const conservationDescription = [
     "Our introductory trip to Tsavo, Kenya immerses students in practical conservation work with Wildlife Works while exploring the magnificent Tsavo East National Park.",
-    "Students ages 12-15 will experience wildlife monitoring, carbon cycle management, and traditional craft-making while developing outdoor skills through hiking and ranger-led activities. The program provides hands-on engagement with conservation enterprises and social initiatives that balance ecosystem protection with community development."
+    "Students will experience games drives, wildlife monitoring, carbon cycle management, and traditional craft-making while developing outdoor skills through hiking and ranger-led activities. The program provides hands-on engagement with conservation enterprises and social initiatives that balance ecosystem protection with community development."
   ];
 
   // Define custom project goals
