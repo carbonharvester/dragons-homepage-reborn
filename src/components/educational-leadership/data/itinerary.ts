@@ -38,7 +38,7 @@ export const tripItinerary = [
     title: "Train Journey & Wildlife Works Introduction",
     activities: [
       "Morning train journey to Voi, enjoying scenic views of Kenya's landscapes",
-      "Check-in at Rukinga Camp",
+      "Check-in at camp",
       "Welcome lunch at camp",
       "Free time to settle in and explore the surroundings",
       "Evening game drive in Tsavo region with wildlife viewing opportunities"
@@ -73,7 +73,7 @@ export const tripItinerary = [
       "Travel to Maungu village for the day",
       "Cultural exchange through traditional dancing with Neema Women's Group",
       "Hands-on workshops: paper making from elephant dung, basket weaving, and bead making",
-      "Return to Rukinga Camp for dinner and evening reflection on women's empowerment and cultural preservation"
+      "Return to camp for dinner and evening reflection on women's empowerment and cultural preservation"
     ]
   },
   {
