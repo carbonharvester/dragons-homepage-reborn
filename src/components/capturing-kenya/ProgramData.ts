@@ -51,3 +51,38 @@ export const outcomes: Outcome[] = [
     icon: BookOpen
   }
 ];
+
+// Adding the missing exports that are referenced in CapturingKenyaData.tsx
+export const learningOutcomes = outcomes.map(outcome => ({
+  title: outcome.title,
+  description: outcome.description
+}));
+
+// Gallery images for the scrollable gallery
+export const galleryImages = [
+  {
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--1.jpg?v=1747112174",
+    alt: "Student photographing wildlife in Kenya",
+    className: "min-w-[280px] h-[220px] md:min-w-[400px] md:h-[300px] rounded-lg object-cover"
+  },
+  {
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--2_1.jpg?v=1747112188",
+    alt: "Students learning camera techniques in the field",
+    className: "min-w-[280px] h-[220px] md:min-w-[400px] md:h-[300px] rounded-lg object-cover"
+  },
+  {
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--3.jpg?v=1747112174",
+    alt: "Wildlife photography in Maasai Mara",
+    className: "min-w-[280px] h-[220px] md:min-w-[400px] md:h-[300px] rounded-lg object-cover"
+  },
+  {
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--4.jpg?v=1747112174",
+    alt: "Cultural photography experience with local communities",
+    className: "min-w-[280px] h-[220px] md:min-w-[400px] md:h-[300px] rounded-lg object-cover"
+  },
+  {
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--5.jpg?v=1747112174",
+    alt: "Landscape photography in Kenya's diverse environments",
+    className: "min-w-[280px] h-[220px] md:min-w-[400px] md:h-[300px] rounded-lg object-cover"
+  }
+];
