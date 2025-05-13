@@ -94,7 +94,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       
       {/* Trip Highlights */}
       {!hideHighlights && <div className="mb-16 text-center">
-          <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Trip Highlights</h2>
+          <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Trip Highlights</h2>
           <TripHighlights highlights={tripHighlights} />
         </div>}
 
