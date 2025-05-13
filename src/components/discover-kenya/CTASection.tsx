@@ -1,6 +1,8 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
+
 const CTASection = () => {
   return <section className="py-16 bg-dragon-sand text-dragon-dark rounded-lg shadow-sm mb-12">
       <div className="container-wide">
@@ -11,7 +13,12 @@ const CTASection = () => {
             <Link to="/programs/food-for-education" className="btn-primary h-12 w-full sm:w-auto inline-flex items-center justify-center">
               Explore Our Programs
             </Link>
-            <Link to="/partner-with-us" className="btn-secondary bg-white text-dragon hover:bg-gray-100 h-12 w-full sm:w-auto inline-flex items-center justify-center">Schedule Consultation</Link>
+            <CalendlyEmbed 
+              url="https://calendly.com/kapesuniforms/discoverymeeting"
+              text="Schedule Consultation"
+              variant="secondary"
+              className="bg-white text-dragon hover:bg-gray-100 h-12 w-full sm:w-auto"
+            />
           </div>
         </div>
       </div>
