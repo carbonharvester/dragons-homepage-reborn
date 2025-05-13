@@ -18,7 +18,7 @@ const TripItinerary = ({
     <div className="py-10">
       {itineraryDays && itineraryDays.length > 0 ? (
         <div>
-          <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Sample Itinerary</h2>
+          <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Sample Itinerary</h2>
           <div className="space-y-6">
             {itineraryDays.map((day, index) => (
               <div key={index} className="border-b border-gray-200 pb-6">
