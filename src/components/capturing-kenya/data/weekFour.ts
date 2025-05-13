@@ -1,4 +1,3 @@
-
 import { Week } from "../types";
 
 export const weekFour: Week = {
@@ -25,7 +24,7 @@ export const weekFour: Week = {
         "Afternoon: Individual editing time with expert guidance",
         "Evening: Group reflection on the program's impact",
         "Creative Task: Complete a draft portfolio",
-        "Accommodation: Guesthouse in Nairobi"
+        "Accommodation: Accommodation in Nairobi"
       ]
     },
     {
@@ -36,7 +35,7 @@ export const weekFour: Week = {
         "Afternoon: One-on-one portfolio reviews with the expert",
         "Evening: Prepare for the community showcase",
         "Creative Task: Finalize portfolio (photo essay or film)",
-        "Accommodation: Guesthouse in Nairobi"
+        "Accommodation: Accommodation in Nairobi"
       ]
     },
     {
@@ -47,7 +46,7 @@ export const weekFour: Week = {
         "Afternoon: Visit youth center to share portfolios",
         "Evening: Workshop on presenting creative work",
         "Creative Task: Prepare a presentation of portfolio highlights",
-        "Accommodation: Guesthouse in Nairobi"
+        "Accommodation: Accommodation in Nairobi"
       ]
     },
     {
@@ -58,7 +57,7 @@ export const weekFour: Week = {
         "Afternoon: Host the showcase for local community",
         "Evening: Celebration dinner and certificate ceremony",
         "Creative Task: Document the showcase for portfolios",
-        "Accommodation: Guesthouse in Nairobi"
+        "Accommodation: Accommodation in Nairobi"
       ]
     },
     {
@@ -69,7 +68,7 @@ export const weekFour: Week = {
         "Afternoon: Free time to photograph Nairobi",
         "Evening: Final group critique of portfolios",
         "Creative Task: Write a reflective essay on the program",
-        "Accommodation: Guesthouse in Nairobi"
+        "Accommodation: Accommodation in Nairobi"
       ]
     },
     {
@@ -80,7 +79,7 @@ export const weekFour: Week = {
         "Afternoon: Pack and finalize digital portfolios",
         "Evening: Farewell dinner with cultural performances",
         "Creative Task: Create a group photo montage",
-        "Accommodation: Guesthouse in Nairobi"
+        "Accommodation: Accommodation in Nairobi"
       ]
     },
     {

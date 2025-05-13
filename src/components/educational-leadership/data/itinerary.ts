@@ -7,7 +7,7 @@ export const tripItinerary = [
     title: "Arrival in Nairobi",
     activities: [
       "Arrive at Jomo Kenyatta International Airport (NBO) in Nairobi",
-      "Transfer to Wildebeest Eco Camp and check-in",
+      "Transfer to accommodation and check-in",
       "Welcome dinner and program introduction",
       "Overview of the week ahead and how educators will experience elements of Kapes' transformative programs"
     ]

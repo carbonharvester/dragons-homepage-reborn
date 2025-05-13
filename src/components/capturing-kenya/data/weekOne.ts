@@ -21,11 +21,11 @@ export const weekOne: Week = {
       day: 1,
       title: "Arrival in Nairobi",
       activities: [
-        "Arrive at Jomo Kenyatta International Airport, transfer to a Nairobi guesthouse",
+        "Arrive at Jomo Kenyatta International Airport, transfer to accommodation in Nairobi",
         "Welcome dinner and orientation with the expert photographer/videographer",
         "Workshop: Introduction to storytelling through photography/videography",
         "Creative Task: Capture first impressions of Nairobi",
-        "Accommodation: Guesthouse in Nairobi"
+        "Accommodation: Accommodation in Nairobi"
       ]
     },
     {
@@ -36,7 +36,7 @@ export const weekOne: Week = {
         "Afternoon: Workshop at a Nairobi youth center, teaching basic photography",
         "Evening: Technical workshop on camera settings and lighting basics",
         "Creative Task: Create a photo series or short video clip of Kibera",
-        "Accommodation: Guesthouse in Nairobi"
+        "Accommodation: Accommodation in Nairobi"
       ]
     },
     {
