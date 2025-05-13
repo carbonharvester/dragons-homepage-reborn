@@ -9,7 +9,7 @@ import {
   learningOutcomes,
   tripItinerary,
   programData,
-  perfectFor
+  detailsPerfectFor as perfectFor
 } from './data';
 import TripBrochureContent from '../trip/TripBrochureContent';
 import { Button } from '../ui/button';
