@@ -94,6 +94,7 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
+              isSchoolTrip={true} // Explicitly set this as a school trip
             />
           </div>
         </>
