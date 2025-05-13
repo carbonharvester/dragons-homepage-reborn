@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -17,13 +16,11 @@ import ProgramItinerary from '@/components/roots-of-change/ProgramItinerary';
 
 // Import data
 import { programData, outcomes } from '@/components/roots-of-change/ProgramData';
-
 const FeedingTheFuture = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return <div className="min-h-screen flex flex-col">
       <SEO title="Feeding the Future: Sustainable Agriculture Program" description="A 4-week immersive experience in sustainable agriculture and food security initiatives across Kenya." keywords="sustainable agriculture, food security, educational travel, Kenya, summer program" />
       <Header />
@@ -54,10 +51,9 @@ const FeedingTheFuture = () => {
         <ProgramOutcomes outcomes={outcomes} />
 
         {/* Brochure Section */}
-        <ProgramCTA />
+        <ProgramCTA programData={programData} />
       </main>
       <Footer />
     </div>;
 };
-
 export default FeedingTheFuture;

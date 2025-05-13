@@ -15,7 +15,7 @@ import ProgramCTA from '@/components/capturing-kenya/ProgramCTA';
 
 // Import data
 import { programData, outcomes } from '@/components/capturing-kenya/ProgramData';
-import { weeks } from '@/components/capturing-kenya/data';
+import { weeks } from '@/components/capturing-kenya/WeekData';
 
 const CapturingKenya = () => {
   // Scroll to top on page load
@@ -40,9 +40,7 @@ const CapturingKenya = () => {
         </div>
 
         {/* Program Overview */}
-        <div className="container-wide">
-          <ProgramOverview programData={programData} />
-        </div>
+        <ProgramOverview programData={programData} />
 
         {/* Itinerary Tabs */}
         <ProgramItinerary weeks={weeks} />
@@ -54,7 +52,7 @@ const CapturingKenya = () => {
         <ProgramDetails />
 
         {/* Brochure Section */}
-        <ProgramCTA />
+        <ProgramCTA programData={programData} />
         
       </main>
       <Footer />

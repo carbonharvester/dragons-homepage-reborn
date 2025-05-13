@@ -3,14 +3,26 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
-import CapturingKenyaBrochure from "./ProgramBrochurePDF";
-import { programData } from './ProgramData';
+import ProgramBrochure from "@/components/ProgramBrochure";
 
-const ProgramCTA = () => {
+interface ProgramData {
+  title: string;
+  description: string;
+  duration: string;
+  season: string;
+  location: string;
+  goals: string[];
+}
+
+interface ProgramCTAProps {
+  programData: ProgramData;
+}
+
+const ProgramCTA = ({ programData }: ProgramCTAProps) => {
   return (
     <section className="py-16 bg-dragon">
       <div className="container-wide">
-        <CapturingKenyaBrochure />
+        <ProgramBrochure program={programData} />
         
         <div className="text-center mt-10">
           <h3 className="text-2xl font-bold text-white mb-4">Ready to Capture Kenya?</h3>

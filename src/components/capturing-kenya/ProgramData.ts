@@ -1,53 +1,45 @@
 
-import { Camera, VideoIcon, Globe, Briefcase, Users, BookOpen } from "lucide-react";
-import { ProgramDataType, Outcome } from "./types";
+import { Camera, Award, GraduationCap, Heart } from "lucide-react";
 
-export const programData: ProgramDataType = {
-  title: "Capturing Kenya",
-  description: "A 4-week creative adventure to photograph and film Kenya's stunning landscapes, wildlife, and cultures while developing professional skills.",
-  duration: "4 Weeks",
-  season: "Jul 28 - Aug 25 2026",
-  location: "Kenya (Various locations)",
+export const programData = {
+  title: "Kapes Creative Capture: Kenya Summer Program",
+  description: "A 4-week adventure for budding creatives to capture Kenya's wonders through photography and videography.",
+  duration: "4 weeks (28 days)",
+  season: "Summer (July)",
+  location: "Kenya",
   ages: "16-20",
   goals: [
-    "Master photography and videography techniques in diverse environments",
-    "Build a professional portfolio showcasing Kenya's landscapes, wildlife, and cultures",
-    "Contribute to conservation efforts by documenting wildlife and habitats",
-    "Develop storytelling skills through visual narratives of community initiatives",
-    "Learn post-processing with industry-standard tools and workflows",
-    "Create a final project that combines technical skill with creative vision"
+    "Develop technical skills in photography and videography",
+    "Create a portfolio capturing Kenya's landscapes, wildlife, and cultures",
+    "Foster cultural sensitivity and global awareness",
+    "Contribute to local communities via service projects"
   ]
 };
 
-export const outcomes: Outcome[] = [
+export const outcomes = [
   {
-    title: "Technical Mastery",
-    description: "Develop advanced camera skills including manual controls, composition, and specialized techniques for wildlife, landscape, and portrait photography.",
+    title: "Creative Portfolio",
+    description: "Develop a professional-quality photo essay or 3-5 minute documentary film showcasing Kenya's landscapes, wildlife, and cultures.",
     icon: Camera
   },
   {
-    title: "Visual Storytelling",
-    description: "Learn to craft compelling visual narratives that communicate powerful stories about Kenya's landscapes, wildlife, and communities.",
-    icon: VideoIcon
+    title: "Kapes Creative Storytelling Certificate",
+    description: "Earn an official certificate recognizing your growth as a visual storyteller and your contribution to community projects.",
+    icon: Award
   },
   {
-    title: "Cultural Immersion",
-    description: "Gain deep understanding of diverse Kenyan cultures and ethical approaches to documentary photography and videography.",
-    icon: Globe
+    title: "CAS Points (IB)",
+    description: "Earn points for Creativity (photography/videography), Activity (game drives, camping), and Service (community workshops).",
+    icon: GraduationCap
   },
   {
-    title: "Professional Skills",
-    description: "Master industry-standard editing software, workflow management, and portfolio development to prepare for future opportunities.",
-    icon: Briefcase
+    title: "Duke of Edinburgh's Award",
+    description: "Complete requirements for the Gold Award's Skills, Physical, and Volunteering sections through creative and service activities.",
+    icon: Award
   },
   {
-    title: "Team Collaboration",
-    description: "Work with peers on collaborative projects, developing essential skills in communication, feedback, and group creative processes.",
-    icon: Users
-  },
-  {
-    title: "Conservation Awareness",
-    description: "Understand how visual media can support conservation efforts and raise awareness about environmental challenges.",
-    icon: BookOpen
+    title: "Community Impact",
+    description: "Fund photography workshops, provide cameras to youth, and support local art initiatives in Kenyan communities.",
+    icon: Heart
   }
 ];
