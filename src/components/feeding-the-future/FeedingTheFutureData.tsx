@@ -73,7 +73,7 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
             <TripBrochureContent 
               tripDetails={tripDetails}
               // Pass trip highlights but they'll be hidden since we're showing them with TripHighlightsWrapper
-              tripHighlights={tripHighlights}
+              tripHighlights={[]}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
               tripItinerary={tripItinerary}
