@@ -35,7 +35,7 @@ const EducationalLeadershipContent = () => {
         title="Educational Leadership"
         subtitle="An immersive professional development program for teachers of environmental science, sustainability, and geography. Experience Kenya's diverse ecosystems and learn how student-led projects create lasting impact."
         category="Educator Trip"
-        imagePath="/lovable-uploads/741a3f8a-9da4-4fa9-a3d2-363c5231bed5.png"
+        imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747130203/IMG_0252_gstfij.jpg"
       />
       
       {/* Main Content */}
