@@ -1,4 +1,3 @@
-
 import { Calendar, Sun, Map, TreeDeciduous, School, Users, Camera } from "lucide-react";
 
 export const tripItinerary = [
@@ -47,7 +46,7 @@ export const tripItinerary = [
     day: "Day 5",
     title: "Wildlife Works, Conservation & Factory Visit",
     activities: [
-      "Visit Wildlife Works to learn about REDD+ conservation projects in Tsavo",
+      "Visit Wildlife Works to learn about REDD+ conservation projects in Kasigau Corridor",
       "Join hands-on activities with the greenhouse and agroforestry team",
       "Practice tree grafting and vertical farming techniques",
       "Tour the Kapes uniform factory to see how school uniforms are made",
@@ -107,4 +106,3 @@ export const tripItinerary = [
     ]
   }
 ];
-
