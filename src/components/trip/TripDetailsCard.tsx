@@ -22,7 +22,7 @@ interface TripDetailsCardProps {
 
 const TripDetailsCard = ({
   tripDetails,
-  isSchoolTrip = false
+  isSchoolTrip = true // Changed default to true for school trips
 }: TripDetailsCardProps) => {
   const renderIcon = (icon: React.ReactNode | string) => {
     if (typeof icon === 'string') {
@@ -53,7 +53,7 @@ const TripDetailsCard = ({
       </div>
       
       <div className="mt-6 space-y-4">
-        {/* Apply Now Button - Only show for non-school trips */}
+        {/* Only show Apply Now button for non-school trips */}
         {!isSchoolTrip && (
           <Button 
             className="w-full bg-dragon text-white hover:bg-dragon-dark"

@@ -100,6 +100,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
               customThumbnails={customThumbnails}
+              isSchoolTrip={true} // Explicitly set this to true since it's a school trip
             />
           </div>
         </>

@@ -8,7 +8,7 @@ interface TripCTAProps {
 }
 
 const TripCTA = ({
-  isSchoolTrip = true
+  isSchoolTrip = true // Changed default to true for school trips
 }: TripCTAProps) => {
   return (
     <div className="bg-dragon text-white rounded-lg p-6 md:p-12 text-center mb-16 mt-20 w-full">
