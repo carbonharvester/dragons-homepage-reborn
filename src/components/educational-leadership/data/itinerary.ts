@@ -69,10 +69,10 @@ export const tripItinerary = [
     day: "Day 7",
     title: "Neema Women's Group Cultural Immersion",
     activities: [
-      "Transfer to Maungu village and check into local lodge",
+      "Travel to Maungu village for the day",
       "Cultural exchange through traditional dancing with Neema Women's Group",
       "Hands-on workshops: paper making from elephant dung, basket weaving, and bead making",
-      "Evening reflection on women's empowerment and cultural preservation"
+      "Return to Rukinga Camp for dinner and evening reflection on women's empowerment and cultural preservation"
     ]
   },
   {
