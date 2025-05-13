@@ -1,3 +1,4 @@
+
 import { Calendar, Sun, Map, TreeDeciduous, School, Users, Camera } from "lucide-react";
 
 export const tripItinerary = [
@@ -37,9 +38,10 @@ export const tripItinerary = [
     title: "Train Journey & Wildlife Works Introduction",
     activities: [
       "Morning train journey to Voi, enjoying scenic views of Kenya's landscapes",
+      "Check-in at Rukinga Camp",
       "Welcome lunch at camp",
-      "Afternoon tour of Wildlife Works operations",
-      "Check-in at Rukinga Camp and dinner"
+      "Free time to settle in and explore the surroundings",
+      "Evening game drive in Tsavo region with wildlife viewing opportunities"
     ]
   },
   {
