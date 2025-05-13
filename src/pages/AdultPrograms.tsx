@@ -15,7 +15,7 @@ const AdultPrograms = () => {
   // Adult trips data
   const programs = [
     { 
-      title: "Permaculture Design and Impact", 
+      title: "Permaculture Design Course", 
       duration: "10 Days", 
       season: "Year Round",
       location: "Various locations in Kenya",
@@ -46,7 +46,7 @@ const AdultPrograms = () => {
           {/* Content */}
           <div className="container-wide relative z-10 text-white">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-academy mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl mb-6">
                 <span className="hero-heading block">Educational Adventures</span>
                 <span className="block mt-2 text-dragon-yellow">For Adults</span>
               </h1>
@@ -89,6 +89,21 @@ const AdultPrograms = () => {
                     <h3 className="text-xl md:text-2xl font-bold mb-3 text-dragon-dark">{program.title}</h3>
                     <p className="text-dragon-gray mb-4 flex-grow">{program.description}</p>
                     
+                    <div className="grid grid-cols-2 gap-4 text-sm text-dragon-gray mb-4">
+                      <div className="flex items-center">
+                        <Route size={16} className="mr-1" />
+                        <span>{program.duration}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Calendar size={16} className="mr-1" />
+                        <span>{program.season}</span>
+                      </div>
+                      <div className="flex items-center col-span-2">
+                        <Map size={16} className="mr-1" />
+                        <span>{program.location}</span>
+                      </div>
+                    </div>
+                    
                     <Button variant="outline" className="w-full border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
                       <Link to={program.link}>Learn More</Link>
                     </Button>
@@ -98,7 +113,7 @@ const AdultPrograms = () => {
             </div>
             
             <div className="bg-dragon-beige rounded-lg p-8 text-center">
-              <h3 className="text-2xl font-academy font-bold text-dragon-dark mb-4">Custom Trips for Groups</h3>
+              <h3 className="text-2xl font-bold text-dragon-dark mb-4">Custom Trips for Groups</h3>
               <p className="text-lg mb-6 max-w-2xl mx-auto">
                 Looking for a specialized experience for your organization, professional group, 
                 or circle of friends? We design custom trips tailored to your interests and objectives.

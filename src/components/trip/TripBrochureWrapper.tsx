@@ -3,7 +3,6 @@ import React from 'react';
 import FoodForEducationData from '../food-for-education/FoodForEducationData';
 import EmpoweringWomenData from '../empowering-women/EmpoweringWomenData';
 import CommunityConservationData from '../community-conservation/CommunityConservationData';
-import FeedingTheFutureData from '../feeding-the-future/FeedingTheFutureData';
 
 // Define a single interface that captures all common props
 interface BrochureDataProps {
@@ -14,7 +13,7 @@ interface BrochureDataProps {
 }
 
 interface TripBrochureWrapperProps extends BrochureDataProps {
-  tripType?: 'food-for-education' | 'empowering-women' | 'community-conservation' | 'feeding-the-future';
+  tripType?: 'food-for-education' | 'empowering-women' | 'community-conservation';
 }
 
 const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({ 
@@ -47,14 +46,6 @@ const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({
       )}
       {tripType === 'community-conservation' && (
         <CommunityConservationData 
-          heroOnly={heroOnly} 
-          contentOnly={contentOnly}
-          navigationOnly={navigationOnly}
-          customThumbnails={customThumbnails}
-        />
-      )}
-      {tripType === 'feeding-the-future' && (
-        <FeedingTheFutureData 
           heroOnly={heroOnly} 
           contentOnly={contentOnly}
           navigationOnly={navigationOnly}

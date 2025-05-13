@@ -26,7 +26,7 @@ const ProgramOutcomes = ({ outcomes }: ProgramOutcomesProps) => {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="section-heading">Program Outcomes</h2>
           <p className="section-subheading">
-            Immerse in Kenyan culture, capture its beauty, and develop skills with expert guidance on this trip.
+            Develop valuable skills, earn recognized credentials, and create lasting impact through the Capturing Kenya program.
           </p>
         </div>
 

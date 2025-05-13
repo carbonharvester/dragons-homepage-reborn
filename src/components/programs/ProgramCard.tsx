@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Route, Calendar, Users, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -19,10 +20,9 @@ interface ProgramCardProps {
     location?: string;
   };
   buttonClassName?: string;
-  priority?: boolean;
 }
 
-const ProgramCard = ({ program, buttonClassName, priority = false }: ProgramCardProps) => {
+const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
   const isMobile = useIsMobile();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -42,10 +42,7 @@ const ProgramCard = ({ program, buttonClassName, priority = false }: ProgramCard
           <img 
             src={imageToUse}
             alt={program.title} 
-            loading={priority ? "eager" : "lazy"}
-            fetchPriority={priority ? "high" : "auto"}
-            width="400"
-            height="225"
+            loading="lazy"
             className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
             onLoad={() => setImageLoaded(true)}
             onError={(e) => {
@@ -65,6 +62,28 @@ const ProgramCard = ({ program, buttonClassName, priority = false }: ProgramCard
         </div>
         
         <div className="mt-auto">
+          <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs text-dragon-gray mb-4 justify-center md:justify-center">
+            <div className="flex items-center">
+              <Route size={14} className="mr-1 shrink-0" />
+              <span>{program.duration}</span>
+            </div>
+            <div className="flex items-center">
+              <Calendar size={14} className="mr-1 shrink-0" />
+              <span>{program.season}</span>
+            </div>
+            {program.ageGroup && (
+              <div className="flex items-center">
+                <Users size={14} className="mr-1 shrink-0" />
+                <span>{program.ageGroup}</span>
+              </div>
+            )}
+            {program.location && (
+              <div className="flex items-center">
+                <MapPin size={14} className="mr-1 shrink-0" />
+                <span>{program.location}</span>
+              </div>
+            )}
+          </div>
           <Button 
             variant="outline" 
             className={`${buttonClassName || "w-full border-dragon text-dragon hover:bg-dragon hover:text-white"} h-12`}

@@ -1,4 +1,5 @@
 
+
 import { Globe, Award, GraduationCap, Heart, Leaf } from "lucide-react";
 
 export const programData = {
@@ -9,7 +10,7 @@ export const programData = {
   location: "Kenya",
   ages: "16-20",
   goals: [
-    "Turn degraded land at schools across Kenya into productive farms",
+    "Gain hands-on experience in sustainable farming techniques",
     "Address food security challenges through innovative agricultural approaches",
     "Learn about traditional and modern farming practices in Kenya",
     "Develop leadership skills through community-based projects"
@@ -19,7 +20,7 @@ export const programData = {
 export const outcomes = [
   {
     title: "Agricultural Expertise",
-    description: "Gain hands-on experience in advanced permaculture techniques including water management, waste management, and climate smart agriculture while developing leadership skills.",
+    description: "Gain practical skills in permaculture design, regenerative agriculture, and sustainable food production systems.",
     icon: Leaf
   },
   {

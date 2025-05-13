@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Calendar, Users, MapPin, DollarSign } from "lucide-react";
 import { programData } from './ProgramData';
-
 const ProgramSummary = () => {
-  return (
-    <section className="py-12 bg-white border-b border-gray-100">
+  return <section className="py-12 bg-white border-b border-gray-100">
       <div className="container-wide">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Program Details */}
@@ -57,7 +54,7 @@ const ProgramSummary = () => {
                 <div>
                   <h4 className="font-bold text-dragon-dark">Tuition</h4>
                   <p className="text-dragon-gray">$7,950</p>
-                  <p className="text-sm text-dragon-gray mt-1">Plus airfare & insurance</p>
+                  <p className="text-sm text-dragon-gray mt-1">Plus airfare & insurance. Need-based scholarships available.</p>
                 </div>
               </div>
               
@@ -73,8 +70,6 @@ const ProgramSummary = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProgramSummary;

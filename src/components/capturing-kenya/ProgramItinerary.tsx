@@ -51,7 +51,7 @@ const ProgramItinerary = ({ weeks }: ProgramItineraryProps) => {
         </div>
 
         <Tabs defaultValue="week1" className="w-full">
-          <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-12">
+          <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8">
             {weeks.map((week) => (
               <TabsTrigger key={week.number} value={`week${week.number}`} className="text-dragon-gray">
                 Week {week.number}

@@ -3,7 +3,7 @@ import { Leaf } from "lucide-react";
 
 export const adultTrips = [
   { 
-    title: "Permaculture Design and Impact", 
+    title: "Permaculture Design Course", 
     duration: "10 Days", 
     season: "Year Round", 
     description: "Immerse yourself in permaculture principles while contributing to sustainable food systems in local Kenyan communities. Learn design techniques and practical skills with real-world impact that promote ecological balance and community resilience.", 

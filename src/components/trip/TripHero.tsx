@@ -19,9 +19,6 @@ const TripHero = ({ title, subtitle, category, imagePath }: TripHeroProps) => {
             src={imagePath} 
             alt={`${title} project`} 
             className="w-full h-full object-cover" 
-            width="1200"
-            height="800"
-            fetchPriority="high"
           />
         </div>
         {/* Enhanced gradient overlay for better text visibility */}

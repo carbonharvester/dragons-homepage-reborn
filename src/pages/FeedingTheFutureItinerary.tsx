@@ -17,8 +17,8 @@ const FeedingTheFutureItinerary = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Feeding the Future: Program Itinerary 2025"
-        description="Detailed 4-week itinerary for our sustainable agriculture and food security program across Kenya in 2025."
+        title="Feeding the Future: Program Itinerary"
+        description="Detailed 4-week itinerary for our sustainable agriculture and food security program across Kenya."
         keywords="itinerary, program schedule, Kenya, sustainable agriculture, educational travel, summer program"
       />
       <Header />
@@ -27,7 +27,7 @@ const FeedingTheFutureItinerary = () => {
         <section className="py-16 bg-dragon-beige">
           <div className="container-wide">
             <h1 className="text-4xl md:text-5xl font-academy text-dragon-dark text-center mb-6">
-              Feeding the Future: Summer 2025 Itinerary
+              Feeding the Future: Full Itinerary
             </h1>
             <p className="text-center text-dragon-gray max-w-3xl mx-auto mb-8">
               Our immersive 28-day journey across Kenya focuses on sustainable agriculture, 

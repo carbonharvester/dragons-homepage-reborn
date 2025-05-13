@@ -30,7 +30,6 @@ const Carousel = React.forwardRef<
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
 
-    // Optimize onSelect to only run when api changes
     const onSelect = React.useCallback((api: any) => {
       if (!api) {
         return;
@@ -61,7 +60,6 @@ const Carousel = React.forwardRef<
       [scrollPrev, scrollNext]
     );
 
-    // Optimize API effects with proper dependencies
     React.useEffect(() => {
       if (!api || !setApi) {
         return;
@@ -81,7 +79,6 @@ const Carousel = React.forwardRef<
 
       return () => {
         api?.off("select", onSelect);
-        api?.off("reInit", onSelect);
       };
     }, [api, onSelect]);
 

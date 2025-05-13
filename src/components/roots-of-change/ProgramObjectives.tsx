@@ -7,12 +7,12 @@ const ProgramObjectives = () => {
     {
       icon: Leaf,
       title: "Permaculture Development",
-      description: "Turn degraded land at schools across Kenya into productive farms."
+      description: "Establish and expand sustainable farms at Nairobi schools and contribute to agroforestry projects with Wildlife Works in the Tsavo region."
     },
     {
       icon: GraduationCap,
       title: "Skill Building",
-      description: "Gain hands-on experience in advanced permaculture techniques including water management, waste management, and climate smart agriculture while developing leadership skills."
+      description: "Gain hands-on experience in advanced permaculture techniques including greywater recycling, seed saving, and agroforestry while developing leadership skills."
     },
     {
       icon: Users,
