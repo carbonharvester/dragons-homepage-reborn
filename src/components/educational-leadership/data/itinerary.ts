@@ -61,7 +61,7 @@ export const tripItinerary = [
     activities: [
       "Guided 3-hour hike through Murungu Hills",
       "Wildlife spotting and ecosystem exploration",
-      "Conservation presentation by Wildlife Works rangers",
+      "Bush Survival Skills with park rangers",
       "Discussion on integrating outdoor education into school curricula",
       "Evening reflection on conservation and student impact projects"
     ]
