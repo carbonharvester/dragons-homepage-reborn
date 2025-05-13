@@ -84,7 +84,7 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
               </div>
             </div>
             
-            {/* Gallery Section - Updated to use TripGallery */}
+            {/* Gallery Section - Using the TripGallery component just like in FoodForEducation */}
             <TripGallery images={galleryImages} />
 
             {/* Custom Program Locations section */}
