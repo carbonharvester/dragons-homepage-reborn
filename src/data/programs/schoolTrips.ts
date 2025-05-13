@@ -6,7 +6,7 @@ export const schoolTrips = [
     title: "Community Conservation", 
     duration: "8 Days", 
     season: "Year Round", 
-    description: "Our introductory trip where students join forces with local experts to protect ecosystems through reforestation, wildlife monitoring, and sustainable practices that promote biodiversity and habitat preservation.", 
+    description: "Our introductory trip where students learn how carbon offsetting protects trees and wildlife in Tsavo Conservancy, and how local social enterprises are adapting to the impacts of climate change. While also witnessing Kenya's majestic animals up close.", 
     image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747129047/Collection_5_s7opwi.jpg", 
     link: "/programs/community-conservation", 
     icon: Globe,
