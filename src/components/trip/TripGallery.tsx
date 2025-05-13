@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { 
   Carousel,
@@ -20,8 +20,7 @@ interface TripGalleryProps {
 const TripGallery = ({ images }: TripGalleryProps) => {
   const isMobile = useIsMobile();
   const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
-  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set([0, 1, 2]));
-  const observerRef = useRef<IntersectionObserver | null>(null);
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   // Function to handle image load events
@@ -29,31 +28,24 @@ const TripGallery = ({ images }: TripGalleryProps) => {
     setImagesLoaded(prev => ({ ...prev, [index]: true }));
   };
 
-  // Setup intersection observer for lazy loading
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const index = Number(entry.target.getAttribute('data-index'));
-        if (entry.isIntersecting) {
-          setVisibleItems(prev => new Set(prev.add(index)));
-        }
-      });
-    }, {
-      rootMargin: '200px 0px', // Start loading images 200px before they enter viewport
-      threshold: 0.1
-    });
-
-    itemsRef.current.forEach((item, index) => {
-      if (item) {
-        observerRef.current?.observe(item);
-      }
-    });
-
-    return () => {
-      observerRef.current?.disconnect();
-    };
-  }, []);
+  // Function to handle image error events
+  const handleImageError = (index: number) => {
+    setImageErrors(prev => ({ ...prev, [index]: true }));
+    console.error(`Failed to load image at index ${index}`);
+  };
   
+  // Filter out images with empty src values
+  const validImages = images.filter(item => item.src && item.src.trim() !== '');
+
+  if (validImages.length === 0) {
+    return (
+      <div className="mt-24 mb-16 text-center">
+        <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark hero-heading">Photo Gallery</h2>
+        <p className="text-lg text-dragon-gray">No images available at this time.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="mt-24 mb-16">
       <h2 className="text-3xl font-academy-bold mb-8 text-dragon-dark text-center hero-heading">Photo Gallery</h2>
@@ -65,16 +57,25 @@ const TripGallery = ({ images }: TripGalleryProps) => {
             className="w-full"
           >
             <CarouselContent>
-              {images.map((image, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3" data-index={index} ref={el => itemsRef.current[index] = el}>
+              {validImages.map((image, index) => (
+                <CarouselItem 
+                  key={index} 
+                  className="md:basis-1/2 lg:basis-1/3" 
+                  data-index={index}
+                  ref={el => itemsRef.current[index] = el}
+                >
                   <div className="p-1">
                     <div className="rounded-lg overflow-hidden aspect-square bg-gray-100 relative">
-                      {!imagesLoaded[index] && (
+                      {!imagesLoaded[index] && !imageErrors[index] && (
                         <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                           <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
                         </div>
                       )}
-                      {(index < 3 || visibleItems.has(index)) && (
+                      {imageErrors[index] ? (
+                        <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                          <p className="text-gray-500">Image not available</p>
+                        </div>
+                      ) : (
                         <img 
                           src={image.src} 
                           alt={image.alt} 
@@ -84,6 +85,7 @@ const TripGallery = ({ images }: TripGalleryProps) => {
                           height="400"
                           className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
                           onLoad={() => handleImageLoad(index)}
+                          onError={() => handleImageError(index)}
                         />
                       )}
                     </div>
@@ -99,19 +101,23 @@ const TripGallery = ({ images }: TripGalleryProps) => {
         </div>
       ) : (
         <div className="grid grid-cols-12 gap-4">
-          {images.map((image, index) => (
+          {validImages.map((image, index) => (
             <div 
               key={index} 
               className={`${image.className} bg-gray-100 relative`}
               data-index={index}
               ref={el => itemsRef.current[index] = el}
             >
-              {!imagesLoaded[index] && (
+              {!imagesLoaded[index] && !imageErrors[index] && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                   <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
                 </div>
               )}
-              {(index < 3 || visibleItems.has(index)) && (
+              {imageErrors[index] ? (
+                <div className="w-full h-full flex items-center justify-center bg-gray-200">
+                  <p className="text-gray-500">Image not available</p>
+                </div>
+              ) : (
                 <img 
                   src={image.src} 
                   alt={image.alt} 
@@ -121,6 +127,7 @@ const TripGallery = ({ images }: TripGalleryProps) => {
                   height="400"
                   className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
                   onLoad={() => handleImageLoad(index)}
+                  onError={() => handleImageError(index)}
                 />
               )}
             </div>

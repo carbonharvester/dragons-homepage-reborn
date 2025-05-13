@@ -30,7 +30,6 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
   const isMobile = useIsMobile();
   const [imagesLoaded, setImagesLoaded] = useState<Record<number, boolean>>({});
   const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
-  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set([0, 1, 2]));
   const observerRef = useRef<IntersectionObserver | null>(null);
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -48,15 +47,18 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
   // Filter out images with empty src values and handle errors
   const validImages = images.filter(item => item.src && item.src.trim() !== '');
 
-  // Setup intersection observer for lazy loading
+  // Setup intersection observer for loading priority optimization
   useEffect(() => {
     if (validImages.length === 0) return;
     
     observerRef.current = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        const index = Number(entry.target.getAttribute('data-index'));
         if (entry.isIntersecting) {
-          setVisibleItems(prev => new Set(prev.add(index)));
+          const img = entry.target.querySelector('img');
+          if (img && img.loading === 'lazy') {
+            // Prioritize loading for visible images
+            img.loading = 'eager';
+          }
         }
       });
     }, {
@@ -127,19 +129,17 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
                           <p className="text-gray-500">Image not available</p>
                         </div>
                       ) : (
-                        (index < 3 || visibleItems.has(index)) && (
-                          <img
-                            src={item.src}
-                            alt={item.alt}
-                            loading={index < 3 ? "eager" : "lazy"}
-                            fetchPriority={index < 3 ? "high" : "auto"}
-                            width="400"
-                            height="300"
-                            className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
-                            onLoad={() => handleImageLoad(index)}
-                            onError={() => handleImageError(index)}
-                          />
-                        )
+                        <img
+                          src={item.src}
+                          alt={item.alt}
+                          loading={index < 3 ? "eager" : "lazy"}
+                          fetchPriority={index < 3 ? "high" : "auto"}
+                          width="400"
+                          height="300"
+                          className={`w-full h-full object-cover hover:scale-105 transition-transform duration-500 ${!imagesLoaded[index] ? 'opacity-0' : 'opacity-100'}`}
+                          onLoad={() => handleImageLoad(index)}
+                          onError={() => handleImageError(index)}
+                        />
                       )}
                     </>
                   )}
