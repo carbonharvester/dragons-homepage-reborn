@@ -14,4 +14,4 @@ export const programData = {
   ]
 };
 
-export const perfectFor = "Environmental Science Teachers, Geography Teachers, Sustainability Educators, Global Studies Teachers, Science Department Heads";
+export const perfectFor = "Environmental Science Teachers, Geography Teachers, Sustainability Coordinators, Global Studies Teachers, Science Department Heads";
