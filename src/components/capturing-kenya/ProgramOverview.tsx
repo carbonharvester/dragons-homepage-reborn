@@ -26,14 +26,17 @@ const ProgramOverview = ({
     src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/DSC_0177.jpg?v=1746513529",
     alt: "Student photographer capturing wildlife in Kenya"
   }, {
-    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404062.jpg?v=1746502708",
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--8_1.jpg?v=1747112206",
     alt: "Photography student with camera in Kenya"
   }, {
-    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/1e93affc-4105-40dd-aa24-f5fd875d2fd5_d59babc0-95fd-4333-b3b9-754cd20f3610.jpg?v=1746515665",
-    alt: "Students photographing wildlife in Kenya"
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/KleinNettoh--2_1.jpg?v=1747112188",
+    alt: "Student with camera capturing Kenyan landscape"
   }, {
-    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404516.jpg?v=1746515670",
-    alt: "Student with camera in natural setting"
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Klein-08655_1.jpg?v=1747112211",
+    alt: "Student photographer in natural setting"
+  }, {
+    src: "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Klein-08585_1.jpg?v=1747112191",
+    alt: "Photography student during Kenya program"
   }];
   
   return (
