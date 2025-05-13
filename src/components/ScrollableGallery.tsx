@@ -87,7 +87,7 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
                       controls
                       muted
                       preload="metadata"
-                      loading="lazy"
+                      // Removed the 'loading' attribute as it's not valid for video elements
                     />
                   ) : (
                     <>

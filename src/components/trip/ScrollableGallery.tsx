@@ -57,6 +57,7 @@ const ScrollableGallery: React.FC<ScrollableGalleryProps> = ({ images }) => {
                       controls
                       muted
                       preload="metadata"
+                      // Removed the invalid 'loading' attribute
                     />
                   ) : (
                     <>
