@@ -14,9 +14,6 @@ const ProgramsCTA = () => {
           Connect with us to learn more about our programs for schools, students, and adults, and how we can create a customised experience for your school.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Button className="btn-primary" asChild>
-            <a href="https://form.typeform.com/to/rtxmvp4L" target="_blank" rel="noopener noreferrer">Apply Now</a>
-          </Button>
           <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
             <Link to="/partner-with-us">Schedule Consultation</Link>
           </Button>

@@ -45,7 +45,7 @@ const MultiYearCurriculumPage = () => {
           </div>
         </section>
 
-        <TripCTA />
+        <TripCTA isSchoolTrip={true} />
       </main>
       <Footer />
     </div>
