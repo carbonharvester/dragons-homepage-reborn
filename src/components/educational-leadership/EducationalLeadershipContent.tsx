@@ -19,7 +19,7 @@ const EducationalLeadershipContent = () => {
   // Create updated description and goals based on the itinerary
   const description = [
     "Our Educational Leadership program is an immersive 10-day professional development journey for teachers of environmental science, sustainability, geography, and related disciplines. Starting in Nairobi and traversing through Voi, Maungu, and Tsavo East, educators experience first-hand the impact of student-led projects in Kenyan communities.",
-    "Participants will engage with organizations like Food For Education, Wildlife Works, and local community groups while experiencing the same transformative activities that students engage in through Kapes programs. From sustainable gardens and water harvesting systems to conservation initiatives and cultural exchanges, this program bridges classroom theory with authentic global experiences."
+    "Participants will engage with organisations tackling food and water insecurity, deforestation, and local community groups while experiencing the same transformative activities that students engage in through Kapes programs. From sustainable gardens and water harvesting systems to conservation initiatives and cultural exchanges, this program bridges classroom theory with authentic global experiences."
   ];
   
   const projectGoals = [
@@ -45,7 +45,7 @@ const EducationalLeadershipContent = () => {
       {/* Hero Section */}
       <TripHero 
         title="Educational Leadership"
-        subtitle="An immersive professional development program for teachers of environmental science, sustainability, and geography. Experience Kenya's diverse ecosystems and learn how student-led projects create lasting impact."
+        subtitle="An immersive professional development program for educators. Experience Kenya's diverse ecosystems and learn how student-led projects create lasting impact."
         category="Educator Trip"
         imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747130203/IMG_0252_gstfij.jpg"
       />

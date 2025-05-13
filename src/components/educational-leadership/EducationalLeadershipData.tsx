@@ -34,7 +34,7 @@ const EducationalLeadershipData: React.FC<EducationalLeadershipDataProps> = ({
   // Custom description and project goals
   const description = [
     "Our Educational Leadership program is an immersive professional development journey for teachers of environmental science, sustainability, geography, and related disciplines. Starting in Nairobi and traversing through Voi, Maungu, and Tsavo East, educators experience first-hand the impact of student-led projects in Kenyan communities.",
-    "Participants will engage with organizations like Food For Education, Wildlife Works, and local community groups while experiencing the same transformative activities that students engage in through Kapes programs. From sustainable gardens and water harvesting systems to conservation initiatives and cultural exchanges, this program bridges classroom theory with authentic global experiences."
+    "Participants will engage with organisations tackling food and water insecurity, deforestation, and local community groups while experiencing the same transformative activities that students engage in through Kapes programs. From sustainable gardens and water harvesting systems to conservation initiatives and cultural exchanges, this program bridges classroom theory with authentic global experiences."
   ];
   
   const projectGoals = [
