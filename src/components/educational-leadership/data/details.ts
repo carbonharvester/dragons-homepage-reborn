@@ -6,7 +6,7 @@ import { TripDetail } from '@/components/trip/TripBrochureContent';
 export const tripDetails: TripDetail[] = [
   {
     label: "Duration",
-    value: "9 Days",
+    value: "10 Days",
     icon: React.createElement(Clock, { className: "h-5 w-5 text-dragon" })
   },
   {

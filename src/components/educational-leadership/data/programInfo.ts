@@ -2,7 +2,7 @@
 export const programData = {
   title: "Educational Leadership Program",
   description: "An immersive professional development program for educators focusing on environmental science, sustainability, and global education through hands-on experiences across Kenya.",
-  duration: "9 Days",
+  duration: "10 Days",
   season: "May-August",
   location: "Kenya",
   goals: [
