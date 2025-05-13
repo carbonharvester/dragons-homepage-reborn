@@ -11,12 +11,12 @@ const ProgramLocations = () => {
       image: ""
     },
     {
-      name: "Amboseli National Park",
+      name: "Amboseli",
       description: "Known for its large elephant herds and stunning views of Mount Kilimanjaro, perfect for landscape and wildlife photography.",
       image: ""
     },
     {
-      name: "Samburu National Reserve",
+      name: "Samburu",
       description: "Home to unique wildlife species like Grevy's zebra and cultural experiences with the Samburu people.",
       image: ""
     },
