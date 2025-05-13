@@ -20,9 +20,10 @@ interface ProgramCardProps {
     location?: string;
   };
   buttonClassName?: string;
+  priority?: boolean;
 }
 
-const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
+const ProgramCard = ({ program, buttonClassName, priority = false }: ProgramCardProps) => {
   const isMobile = useIsMobile();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -42,7 +43,10 @@ const ProgramCard = ({ program, buttonClassName }: ProgramCardProps) => {
           <img 
             src={imageToUse}
             alt={program.title} 
-            loading="lazy"
+            loading={priority ? "eager" : "lazy"}
+            fetchPriority={priority ? "high" : "auto"}
+            width="400"
+            height="225"
             className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${imageLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
             onLoad={() => setImageLoaded(true)}
             onError={(e) => {

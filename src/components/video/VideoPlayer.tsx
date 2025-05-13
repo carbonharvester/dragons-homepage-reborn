@@ -14,7 +14,9 @@ interface VideoPlayerProps {
 const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }: VideoPlayerProps) => {
   const [isPlaying, setIsPlaying] = useState(initialPlaying);
   const [thumbnailUrl, setThumbnailUrl] = useState('');
+  const [thumbnailLoaded, setThumbnailLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   
   // Check if the video ID is from Vimeo or from Shopify
   const isShopifyVideo = !videoId.match(/^\d+$/);
@@ -39,20 +41,44 @@ const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }
   
   // Handle play button click
   const handlePlayClick = () => {
-    console.log("Play button clicked");
     setIsPlaying(true);
   };
+
+  // Pause video when component unmounts or becomes invisible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting && isPlaying) {
+          if (isShopifyVideo && videoRef.current) {
+            videoRef.current.pause();
+          }
+          // We can't control Vimeo iframe directly, but we can swap in/out of DOM
+        }
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    const targetRef = isShopifyVideo ? videoRef.current : iframeRef.current;
+    if (targetRef) {
+      observer.observe(targetRef);
+    }
+
+    return () => {
+      if (targetRef) {
+        observer.unobserve(targetRef);
+      }
+    };
+  }, [isPlaying, isShopifyVideo]);
   
   // Handle actual video playback when isPlaying state changes
   useEffect(() => {
     if (isPlaying) {
-      console.log("isPlaying changed to true");
       if (isShopifyVideo && videoRef.current) {
-        console.log("Loading and playing Shopify video");
         videoRef.current.load();
         
         videoRef.current.onloadeddata = () => {
-          console.log("Video data loaded, attempting to play");
           if (videoRef.current) {
             const playPromise = videoRef.current.play();
             
@@ -69,9 +95,45 @@ const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }
       // For Vimeo videos, the iframe's autoplay parameter handles playback
     }
   }, [isPlaying, isShopifyVideo]);
+
+  // Preload the video or iframe
+  useEffect(() => {
+    const preloadVideo = () => {
+      if (isShopifyVideo) {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = videoSrc;
+        link.as = 'video';
+        document.head.appendChild(link);
+      }
+    };
+
+    // Only preload if we're in viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          preloadVideo();
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: '200px 0px',
+        threshold: 0.1,
+      }
+    );
+
+    const container = document.querySelector('.video-container');
+    if (container) {
+      observer.observe(container);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [videoSrc, isShopifyVideo]);
   
   return (
-    <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl">
+    <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl video-container">
       {isPlaying ? (
         <div className="aspect-video w-full">
           {isShopifyVideo ? (
@@ -87,12 +149,14 @@ const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }
             ></video>
           ) : (
             <iframe 
+              ref={iframeRef}
               src={videoSrc}
               className="w-full h-full" 
               frameBorder="0" 
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
               allowFullScreen 
               title={title}
+              loading="lazy"
             ></iframe>
           )}
         </div>
@@ -116,14 +180,19 @@ const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }
               </div>
               {isShopifyVideo ? (
                 thumbnailUrl ? (
-                  <div 
-                    className="w-full h-full" 
-                    style={{ 
-                      backgroundImage: `url(${thumbnailUrl})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
-                  ></div>
+                  <>
+                    {!thumbnailLoaded && <div className="w-full h-full bg-gray-800 flex items-center justify-center">
+                        <div className="w-8 h-8 border-4 border-dragon border-t-transparent rounded-full animate-spin"></div>
+                      </div>}
+                    <img 
+                      src={thumbnailUrl}
+                      alt={`${title} thumbnail`}
+                      className={`w-full h-full object-cover ${thumbnailLoaded ? 'opacity-100' : 'opacity-0'}`}
+                      onLoad={() => setThumbnailLoaded(true)}
+                      width="960"
+                      height="540"
+                    />
+                  </>
                 ) : (
                   <div className="w-full h-full bg-gray-800"></div>
                 )
@@ -134,6 +203,7 @@ const VideoPlayer = ({ videoId, title, customThumbnail, initialPlaying = false }
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                   title={`${title} background preview`}
+                  loading="lazy"
                 ></iframe>
               )}
             </div>

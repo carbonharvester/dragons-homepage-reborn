@@ -20,8 +20,21 @@ const Hero = () => {
     <section className="relative h-[80vh] min-h-[600px] flex items-center">
       {/* Black background behind the image */}
       <div className="absolute inset-0 z-0 bg-black">
-        {/* Image with controlled opacity */}
-        <div className="absolute inset-0 bg-[url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/klein-500-2_1.jpg?v=1747050056')] bg-cover bg-center opacity-80"></div>
+        {/* Use preloaded hero image - critical for page load */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-80" 
+          style={{backgroundImage: 'url(https://cdn.shopify.com/s/files/1/0777/3326/5724/files/klein-500-2_1.jpg?v=1747050056)'}}
+        >
+          {/* Add hidden image for SEO with proper attributes */}
+          <img 
+            src="https://cdn.shopify.com/s/files/1/0777/3326/5724/files/klein-500-2_1.jpg?v=1747050056" 
+            alt="Kapes Adventures hero image" 
+            className="hidden" 
+            width="1920" 
+            height="1080" 
+            fetchPriority="high"
+          />
+        </div>
         {/* Enhanced overlay for better text visibility */}
         <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
