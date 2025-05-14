@@ -52,8 +52,9 @@ const VideoThumbnail = ({
   
   // Handle play button click
   const handlePlayButtonClick = (e: React.MouseEvent) => {
+    e.preventDefault();
     e.stopPropagation();
-    console.log('Play button clicked');
+    console.log('Play button clicked in VideoThumbnail');
     onPlayClick();
   };
   

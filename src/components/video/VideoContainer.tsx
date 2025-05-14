@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import ShopifyVideo from './ShopifyVideo';
 import CloudinaryVideo from './CloudinaryVideo';
 
@@ -20,6 +20,10 @@ const VideoContainer = ({
   shopifyVideo,
   videoRef
 }: VideoContainerProps) => {
+  useEffect(() => {
+    console.log('VideoContainer mounted with:', { videoUrl, videoSrc, shopifyVideo });
+  }, [videoUrl, videoSrc, shopifyVideo]);
+  
   if (videoUrl) {
     return (
       <video 

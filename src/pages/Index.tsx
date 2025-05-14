@@ -38,6 +38,7 @@ const Index = () => {
               autoPlay={false}
               muted={true}
               showPreview={true}
+              autoplayOnScroll={false}
             />
           }
         </div>
