@@ -35,8 +35,9 @@ const Index = () => {
               videoUrl="https://cdn.shopify.com/videos/c/o/v/44b5817ef9b647a5a68e4ffd1c092f05.mp4" 
               title="Kapes Impact Adventures" 
               description="Watch how our immersive programs transform students through cultural exchange and authentic experiences." 
-              autoPlay={true}
+              autoPlay={false}
               muted={true}
+              showPreview={true}
             />
           }
         </div>
