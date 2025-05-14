@@ -25,13 +25,13 @@ const VideoThumbnail = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPreviewPlaying, setIsPreviewPlaying] = useState(false);
   
-  const isCloudinary = showCloudinaryPreview && previewSrc && isCloudinaryVideo(previewSrc);
+  const isCloudinary = previewSrc && (showCloudinaryPreview || isCloudinaryVideo(previewSrc));
   
-  // Try to play the preview video
+  // Try to play the preview video automatically
   const attemptAutoplay = () => {
-    if (!videoRef.current || !isCloudinary) return;
+    if (!videoRef.current) return;
     
-    console.log('Attempting to play Cloudinary preview', previewSrc);
+    console.log('Attempting to play preview video', previewSrc);
     
     // Ensure video is muted (required for autoplay in most browsers)
     if (videoRef.current) {
@@ -40,11 +40,11 @@ const VideoThumbnail = ({
       
       videoRef.current.play()
         .then(() => {
-          console.log('Cloudinary preview started successfully');
+          console.log('Preview video started successfully');
           setIsPreviewPlaying(true);
         })
         .catch(err => {
-          console.error('Autoplay failed:', err);
+          console.error('Preview autoplay failed:', err);
           setIsPreviewPlaying(false);
         });
     }
@@ -60,7 +60,7 @@ const VideoThumbnail = ({
   
   // Effect to handle initial autoplay attempt
   useEffect(() => {
-    if (isCloudinary && videoRef.current) {
+    if (previewSrc && videoRef.current) {
       // Give the browser a moment to load the video element
       const timer = setTimeout(() => {
         attemptAutoplay();
@@ -68,11 +68,11 @@ const VideoThumbnail = ({
       
       return () => clearTimeout(timer);
     }
-  }, [isCloudinary, previewSrc]);
+  }, [previewSrc]);
   
   // Add event listeners for user interaction to help with autoplay
   useEffect(() => {
-    if (!isCloudinary || isPreviewPlaying) return;
+    if (!previewSrc || isPreviewPlaying) return;
     
     const handleUserInteraction = () => {
       if (videoRef.current && !isPreviewPlaying) {
@@ -90,7 +90,7 @@ const VideoThumbnail = ({
       window.removeEventListener('click', handleUserInteraction);
       window.removeEventListener('touchstart', handleUserInteraction);
     };
-  }, [isCloudinary, isPreviewPlaying]);
+  }, [previewSrc, isPreviewPlaying]);
   
   return (
     <div className="relative">
@@ -111,8 +111,8 @@ const VideoThumbnail = ({
             </Button>
           </div>
           
-          {isCloudinary ? (
-            // Cloudinary preview video (muted, autoplay, loop)
+          {/* Always try to show the preview video if available */}
+          {previewSrc ? (
             <video 
               ref={videoRef}
               src={previewSrc}

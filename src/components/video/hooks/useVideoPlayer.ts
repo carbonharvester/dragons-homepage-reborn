@@ -42,12 +42,15 @@ export const useVideoPlayer = ({
   // Generate appropriate video source URLs
   const videoSrc = videoUrl || (videoId ? generateVideoSrc(videoId, true) : '');
   
-  // Generate preview sources based on video type
+  // Generate preview sources based on video type - always generate a preview when possible
   const previewSrc = (() => {
     if (videoUrl && cloudinaryVideo && showPreview) {
       return generateCloudinaryPreviewUrl(videoUrl);
     } else if (videoId && showPreview) {
       return shopifyVideo ? generateVideoSrc(videoId, false) : '';
+    } else if (videoUrl && showPreview) {
+      // Use the main video URL as preview for non-cloudinary videos
+      return videoUrl;
     }
     return '';
   })();

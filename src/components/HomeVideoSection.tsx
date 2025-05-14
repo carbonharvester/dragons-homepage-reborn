@@ -21,7 +21,7 @@ const HomeVideoSection = ({
   description,
   initialPlaying = false,
   autoPlay = false,
-  muted = true,
+  muted = false,
   autoplayOnScroll = false,
   showPreview = true
 }: HomeVideoSectionProps) => {

@@ -22,7 +22,7 @@ const VideoPlayer = ({
   customThumbnail, 
   initialPlaying = false,
   showPreview = true,
-  muted = initialPlaying, // Default to muted when autoplay is enabled
+  muted = false, // Default to unmuted - this is the main change
   autoplayOnScroll = false
 }: VideoPlayerProps) => {
   const {

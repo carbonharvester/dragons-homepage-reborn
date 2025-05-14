@@ -36,7 +36,7 @@ const Index = () => {
               title="Kapes Impact Adventures" 
               description="Watch how our immersive programs transform students through cultural exchange and authentic experiences." 
               autoPlay={false}
-              muted={true}
+              muted={false}
               showPreview={true}
               autoplayOnScroll={false}
             />
