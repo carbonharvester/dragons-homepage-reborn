@@ -3,32 +3,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Kapes Companion | Your Travel Guide</title>
-    <meta name="description" content="Your personal companion for Kapes Adventures trips. Access itineraries, maps, and local information even when offline." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kapes Adventures | Travel That Transforms</title>
+    <meta name="description" content="Transformative student travel programs in Asia, Africa, and Latin America offering cultural immersion, wilderness adventure, and language learning since 1993." />
     <meta name="author" content="Kapes Adventures" />
     
     <!-- Favicon -->
     <link rel="icon" href="/lovable-uploads/565e314b-84ac-43fe-9891-afbf53053bd3.png" type="image/png" />
     
-    <!-- PWA manifest -->
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#115740" />
-    <link rel="apple-touch-icon" href="/lovable-uploads/565e314b-84ac-43fe-9891-afbf53053bd3.png" />
-    
-    <!-- Font preloads -->
+    <!-- Critical resources preload -->
+    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0777/3326/5724/files/klein-500-2_1.jpg?v=1747050056" as="image" />
     <link rel="preconnect" href="https://cdn.shopify.com" />
-    <link rel="preconnect" href="https://use.typekit.net" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://cdn.shopify.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Kapes Companion | Your Travel Guide" />
-    <meta property="og:description" content="Your personal companion for Kapes Adventures trips. Access itineraries, maps, and local information even offline." />
+    <meta property="og:title" content="Kapes Adventures | Travel That Transforms" />
+    <meta property="og:description" content="Transformative student travel programs in Asia, Africa, and Latin America offering cultural immersion, wilderness adventure, and language learning since 1993." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@kapesadventures" />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg" />
   </head>
 
   <body>
     <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

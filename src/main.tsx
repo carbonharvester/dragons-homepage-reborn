@@ -1,27 +1,18 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import { HelmetProvider } from 'react-helmet-async';
+import App from './App.tsx';
 import './index.css';
+import { preloadCalendlyScript } from './utils/calendlyLoader.ts';
 
-// Register service worker for offline functionality
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then(registration => {
-        console.log('Service Worker registered: ', registration);
-      })
-      .catch(registrationError => {
-        console.log('Service Worker registration failed: ', registrationError);
-      });
-  });
-}
+// Preload the Calendly script as soon as possible
+preloadCalendlyScript().catch(error => {
+  console.warn('Failed to preload Calendly script:', error);
+});
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
 );
