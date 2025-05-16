@@ -13,7 +13,7 @@ export default {
 	theme: {
 		container: {
 			center: true,
-			padding: '2rem',
+			padding: '1rem',
 			screens: {
 				'2xl': '1400px'
 			}
@@ -106,12 +106,30 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
-				}
+				},
+				'slide-up': {
+					'0%': {
+						transform: 'translateY(100%)'
+					},
+					'100%': {
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-down': {
+					'0%': {
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						transform: 'translateY(100%)'
+					}
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.8s ease-out'
+				'fade-in': 'fade-in 0.3s ease-out',
+				'slide-up': 'slide-up 0.3s ease-out',
+				'slide-down': 'slide-down 0.3s ease-out'
 			},
 			fontFamily: {
 				sans: ['Proxima Nova', 'Montserrat', 'sans-serif'],
@@ -119,6 +137,16 @@ export default {
 				gothic: ['League Gothic', 'sans-serif'],
 				academy: ['AcademySansExpanded-Black', 'sans-serif'],
 				'academy-bold': ['AcademySansExpanded-Bold', 'AcademySansExpanded-Black', 'sans-serif'],
+			},
+			// Mobile-specific optimizations
+			height: {
+				'screen-safe': 'calc(100vh - env(safe-area-inset-bottom, 0px))'
+			},
+			padding: {
+				'safe-bottom': 'env(safe-area-inset-bottom, 16px)',
+				'safe-top': 'env(safe-area-inset-top, 0px)',
+				'safe-left': 'env(safe-area-inset-left, 0px)',
+				'safe-right': 'env(safe-area-inset-right, 0px)',
 			}
 		}
 	},

@@ -1,0 +1,23 @@
+
+{
+  "name": "Kapes Companion",
+  "short_name": "Kapes",
+  "theme_color": "#115740",
+  "background_color": "#F5F0E5",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/lovable-uploads/565e314b-84ac-43fe-9891-afbf53053bd3.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/lovable-uploads/565e314b-84ac-43fe-9891-afbf53053bd3.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
