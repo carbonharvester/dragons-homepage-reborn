@@ -57,9 +57,9 @@ export const tripItinerary = [
   },
   {
     day: "Day 6",
-    title: "Murungu Hills Hiking & Conservation Insights",
+    title: "Maungu Hills Hiking & Conservation Insights",
     activities: [
-      "Guided 3-hour hike through Murungu Hills",
+      "Guided 3-hour hike through Maungu Hills",
       "Wildlife spotting and ecosystem exploration",
       "Bush Survival Skills with park rangers",
       "Discussion on integrating outdoor education into school curricula",
