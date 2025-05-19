@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -18,7 +19,7 @@ const SummerAbroad = () => {
       <Header />
       <main>
         <section className="relative h-[70vh] min-h-[500px] flex items-center">
-          <div className="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1513977055326-8ae6272d90a7?q=80&w=2070&auto=format')] bg-cover bg-center">
+          <div className="absolute inset-0 z-0 bg-[url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747126747/Klein-08863_ef3b4d.jpg')] bg-cover bg-center">
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
           </div>
           
