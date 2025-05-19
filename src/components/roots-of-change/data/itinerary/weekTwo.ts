@@ -85,7 +85,7 @@ export const weekTwoData: WeekProps = {
       title: "Travel to Tsavo and Wildlife Works Orientation",
       activities: [
         "Travel to Wildlife Works, Rukinga Sanctuary",
-        "Check-in at Rukinga Camp",
+        "Check-in at Camp",
         "Orientation to agroforestry and greenhouse projects",
         "Group reflection on Nairobi phase"
       ],

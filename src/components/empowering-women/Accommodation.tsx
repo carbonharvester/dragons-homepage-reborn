@@ -6,7 +6,7 @@ const Accommodation = () => {
     <div className="bg-white p-8 rounded-lg shadow-md mb-8">
       <h2 className="text-2xl font-bold text-dragon-dark mb-4">Accommodation & Logistics</h2>
       <p className="text-dragon-gray mb-4">
-        Students stay in dormitory-style accommodations at Rukinga Camp, a sustainable eco-camp near Voi in the 
+        Students stay in dormitory-style accommodations at Camp, a sustainable eco-camp near Voi in the 
         Tsavo Conservancy. The camp features:
       </p>
       <ul className="list-disc pl-5 space-y-1 text-dragon-gray mb-4">
