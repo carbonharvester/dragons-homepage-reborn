@@ -39,8 +39,8 @@ const ProgramItinerary = ({ weeks = [] }: ProgramItineraryProps) => {
     }));
   };
 
-  // Defensive check to ensure weeks is an array
-  const safeWeeks = Array.isArray(weeks) ? weeks : [];
+  // Defensive check to ensure weeks is an array and limit to 3 weeks
+  const safeWeeks = Array.isArray(weeks) ? weeks.slice(0, 3) : [];
 
   return (
     <section id="itinerary" className="py-16 bg-dragon-beige">
@@ -48,22 +48,21 @@ const ProgramItinerary = ({ weeks = [] }: ProgramItineraryProps) => {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="section-heading">Program Itinerary</h2>
           <p className="section-subheading">
-            Journey through Kenya over four weeks, capturing stunning landscapes, wildlife, and cultural moments 
+            Journey through Kenya over three weeks, capturing stunning landscapes, wildlife, and cultural moments 
             while developing your photography and videography skills.
           </p>
         </div>
 
         {safeWeeks.length > 0 ? (
           <Tabs defaultValue={`week${safeWeeks[0]?.number || 1}`} className="w-full">
-            <TabsList className="grid grid-cols-2 md:grid-cols-4 w-full max-w-4xl mx-auto mb-12 h-auto p-2 bg-white/50 backdrop-blur-sm border border-dragon/10">
+            <TabsList className="grid grid-cols-3 w-full max-w-2xl mx-auto mb-12 h-auto p-2 bg-white/50 backdrop-blur-sm border border-dragon/10">
               {safeWeeks.map((week) => (
                 <TabsTrigger 
                   key={week.number} 
                   value={`week${week.number}`} 
-                  className="flex flex-col items-center justify-center py-4 px-3 text-center data-[state=active]:bg-dragon data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 rounded-lg"
+                  className="flex items-center justify-center py-4 px-3 text-center data-[state=active]:bg-dragon data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 rounded-lg"
                 >
                   <span className="font-bold text-sm">Week {week.number}</span>
-                  <span className="text-xs opacity-80 mt-1 hidden sm:block line-clamp-1">{week.title}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
@@ -74,7 +73,7 @@ const ProgramItinerary = ({ weeks = [] }: ProgramItineraryProps) => {
                   <div className="grid md:grid-cols-2">
                     <div className="h-80 md:h-auto overflow-hidden">
                       <img 
-                        src={week.image} 
+                        src={week.number === 1 ? "https://res.cloudinary.com/dng12bd0a/image/upload/v1749400855/KleinNettoh--8_1_gtxyvk.jpg" : week.image} 
                         alt={`Week ${week.number}: ${week.title}`} 
                         className="w-full h-full object-cover"
                       />
