@@ -32,7 +32,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
 
   // Custom description and project goals specific to Capturing Kenya
   const capturingDescription = [
-    "Welcome to Capturing Kenya, a unique 4-week summer adventure that combines photography, videography, and conservation in one unforgettable experience. This program is designed for creative young minds who want to develop their visual storytelling skills while exploring Kenya's diverse landscapes and wildlife.",
+    "Welcome to Capturing Kenya, a unique 3-week summer adventure that combines photography, videography, and conservation in one unforgettable experience. This program is designed for creative young minds who want to develop their visual storytelling skills while exploring Kenya's diverse landscapes and wildlife.",
     "Under the guidance of professional photographers and local experts, you'll learn technical skills, composition techniques, and editing workflows as you create a compelling portfolio showcasing Kenya's natural beauty and cultural richness. Throughout the journey, you'll contribute to real conservation efforts by documenting wildlife and helping create visual resources for local organizations."
   ];
   
@@ -47,7 +47,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
       {(heroOnly || (!heroOnly && !contentOnly && !navigationOnly)) && (
         <TripHero 
           title="Capturing Kenya"
-          subtitle="A 4-week creative adventure to photograph and film Kenya's stunning landscapes, wildlife, and cultures while developing professional skills."
+          subtitle="A 3-week creative adventure to photograph and film Kenya's stunning landscapes, wildlife, and cultures while developing professional skills."
           category="Summer Abroad"
           imagePath="https://res.cloudinary.com/dng12bd0a/image/upload/v1747130086/KleinNettoh--2_ofhqdi.jpg"
         />
@@ -78,7 +78,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
             {/* Program Locations Section - Now using our custom component */}
             <ProgramLocations />
             
-            {/* Detailed 4-Week Itinerary Section */}
+            {/* Detailed 3-Week Itinerary Section */}
             <ProgramItinerary weeks={weeks} />
             
             {/* Continue with other components using TripBrochureContent */}
@@ -95,6 +95,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
               projectGoals={capturingProjectGoals}
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
+              hideLearningOutcomes={true} // Hide learning outcomes since we show them explicitly above
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
               hideStudentStories={true} // Hide student stories section

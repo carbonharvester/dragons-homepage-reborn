@@ -58,6 +58,7 @@ interface TripBrochureContentProps {
   perfectFor?: string;
   hideOverview?: boolean;
   hideHighlights?: boolean;
+  hideLearningOutcomes?: boolean;
   pdfBrochureLink?: string;
   customThumbnails?: Record<string, string>;
   isEducatorTrip?: boolean;
@@ -76,6 +77,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
   perfectFor,
   hideOverview = false,
   hideHighlights = false,
+  hideLearningOutcomes = false,
   pdfBrochureLink,
   customThumbnails,
   isEducatorTrip = false,
@@ -99,7 +101,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
         </div>}
 
       {/* Learning Outcomes */}
-      <TripLearningOutcomes outcomes={learningOutcomes} />
+      {!hideLearningOutcomes && <TripLearningOutcomes outcomes={learningOutcomes} />}
       
       {/* Photo Gallery - Using consolidated component */}
       <ScrollableGallery images={galleryImages} />
