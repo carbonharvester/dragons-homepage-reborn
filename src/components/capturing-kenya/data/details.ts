@@ -1,3 +1,4 @@
+
 import { Calendar, MapPin, Clock, Users, DollarSign } from "lucide-react";
 import React from 'react';
 
@@ -34,4 +35,4 @@ export const tripDetails = [
   }
 ];
 
-export const perfectFor = "Interested In Photography";
+export const perfectFor = "Interested In Photography, Creative Arts, Cultural Studies, Environmental Science, Wildlife Conservation, Adventure Travel, Social Media Content Creation, Documentary Filmmaking";
