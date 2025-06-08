@@ -16,7 +16,7 @@ const ProgramLocations = () => {
         "Portrait photography and storytelling workshops",
         "Traditional dances and craft-making documentation"
       ],
-      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1749402400/A7404248_tu5rld.jpg"
+      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg"
     },
     {
       name: "Amboseli & Tsavo",
