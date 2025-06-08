@@ -81,9 +81,9 @@ const ProgramItinerary = ({ weeks = [] }: ProgramItineraryProps) => {
                     <CardContent className="p-6 md:p-8">
                       <div className="mb-6">
                         <h3 className="text-2xl font-bold text-dragon-dark mb-1">
-                          Week {week.number}: {week.title}
+                          Week {week.number}: {week.number === 3 ? week.title.replace('Coastal & Marine Photography', 'Coastal Photography') : week.title}
                         </h3>
-                        <p className="text-dragon mb-3">{week.subtitle}</p>
+                        <p className="text-dragon mb-3">{week.number === 3 ? week.subtitle.replace('Coastal and Marine Photography Excellence', 'Coastal Photography Excellence') : week.subtitle}</p>
                         <p className="text-dragon-gray mb-4">{week.description}</p>
                       </div>
 
@@ -135,12 +135,12 @@ const ProgramItinerary = ({ weeks = [] }: ProgramItineraryProps) => {
         
         <div className="mt-8 text-center">
           <p className="text-dragon-gray mb-4">
-            Ready to embark on this creative journey? Download our detailed program brochure.
+            Ready to embark on this creative journey? Apply Here
           </p>
           <div className="flex justify-center">
             <CalendlyEmbed 
               url="https://calendly.com/kapesuniforms/discoverymeeting"
-              text="Request Full Itinerary"
+              text="Apply Now"
               className="btn-primary"
             />
           </div>
