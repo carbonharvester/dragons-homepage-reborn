@@ -35,4 +35,4 @@ export const tripDetails = [
   }
 ];
 
-export const perfectFor = "Creative students interested in photography, videography, wildlife documentation, and cultural storytelling";
+export const perfectFor = "Creative Students Interested In Photography, Videography, Wildlife Documentation, Cultural Storytelling";
