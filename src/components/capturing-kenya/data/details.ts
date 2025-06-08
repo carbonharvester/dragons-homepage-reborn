@@ -10,7 +10,7 @@ export const tripDetails = [
   },
   {
     label: "When",
-    value: "Jul 21 - Aug 10 2025",
+    value: "Jul 21 - Aug 10 2025 & Jul 1 - Jul 21 2026",
     icon: React.createElement(Clock, { className: "h-5 w-5 text-dragon" })
   },
   {
