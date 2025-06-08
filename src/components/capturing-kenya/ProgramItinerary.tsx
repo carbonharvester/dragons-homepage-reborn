@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, Heart, ChevronDown } from "lucide-react";
+import { Clock, ChevronDown } from "lucide-react";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 interface Week {
@@ -93,14 +93,6 @@ const ProgramItinerary = ({ weeks = [] }: ProgramItineraryProps) => {
                           <div>
                             <p className="font-medium">Base Location:</p>
                             <p className="text-dragon-gray">{week.base}</p>
-                          </div>
-                        </div>
-
-                        <div className="flex gap-2">
-                          <Heart className="h-5 w-5 text-dragon shrink-0 mt-0.5" />
-                          <div>
-                            <p className="font-medium">Community Impact:</p>
-                            <p className="text-dragon-gray">{week.impact}</p>
                           </div>
                         </div>
                       </div>
