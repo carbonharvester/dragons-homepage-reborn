@@ -3,94 +3,79 @@ import { Week } from "../types";
 
 export const weekTwo: Week = {
   number: 2,
-  title: "Samburu National Reserve",
-  subtitle: "Cultural Immersion and Wildlife",
-  description: "Deepen skills in cultural and wildlife photography, engage with the Samburu people, and explore unique landscapes.",
-  base: "Samburu National Reserve (days 8–14)",
-  impact: "Fund a photography workshop for Samburu youth",
-  image: "https://images.unsplash.com/photo-1604542031658-5799ca5d7936?q=80&w=2070&auto=format",
+  title: "Amboseli & Tsavo – Wildlife Photography",
+  subtitle: "Master Wildlife Photography Techniques",
+  description: "Develop advanced wildlife photography skills in Kenya's premier national parks, capturing elephants against Mount Kilimanjaro and exploring diverse ecosystems.",
+  base: "Amboseli National Park (days 8–11), Tsavo National Parks (days 12–14)",
+  impact: "Support wildlife conservation through documentation",
+  image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119242/DSC_4401_bymb4c.jpg",
   highlights: [
-    "Photograph Samburu's rare species like Grevy's zebra",
-    "Samburu village photography with permission",
-    "Community-led photography workshop with Samburu youth",
-    "Landscape photography at Ewaso Ng'iro River",
-    "One-on-one mentoring with expert photographers"
+    "Hot air balloon sunrise photography over Amboseli",
+    "Wildlife photography with Mount Kilimanjaro backdrop",
+    "Elephant herd documentation in Amboseli",
+    "Big cats and landscape photography in Tsavo",
+    "Mzima Springs aquatic life photography"
   ],
   days: [
     {
       day: 8,
-      title: "Nairobi to Samburu – Travel and Setup",
+      title: "Flight to Amboseli National Park",
       activities: [
-        "Morning: Drive to Samburu National Reserve, photographing en route",
-        "Afternoon: Settle into a campsite, orientation on Samburu's ecosystem",
-        "Evening: Workshop on low-light photography",
-        "Creative Task: Capture the journey to Samburu",
-        "Accommodation: Camping in Samburu"
+        "Morning flight from Samburu to Amboseli",
+        "Afternoon introductory wildlife photography session",
+        "Evening game drive, focusing on wildlife at dusk"
       ]
     },
     {
       day: 9,
-      title: "Samburu – Game Drives and Wildlife Diversity",
+      title: "Amboseli Hot Air Balloon Experience",
       activities: [
-        "Morning: Game drive to photograph Samburu's rare species",
-        "Afternoon: Workshop on advanced wildlife techniques",
-        "Evening: Edit session, focusing on storytelling through video pacing",
-        "Creative Task: Create a wildlife photo essay or 2-minute safari video",
-        "Accommodation: Camping in Samburu"
+        "Sunrise hot air balloon ride for stunning aerial photography",
+        "Daytime workshops on wildlife photography techniques",
+        "Afternoon game drive"
       ]
     },
     {
       day: 10,
-      title: "Samburu – Meeting the Samburu People",
+      title: "Amboseli Wildlife Intensive",
       activities: [
-        "Morning: Visit a Samburu village, photographing daily life with permission",
-        "Afternoon: Participate in a community-led photography workshop",
-        "Evening: Workshop on cultural storytelling through visuals",
-        "Creative Task: Develop a photo series on Samburu life",
-        "Accommodation: Camping in Samburu"
+        "Full-day game drive, emphasizing elephant herds and Mount Kilimanjaro backdrop",
+        "Evening photography critique session"
       ]
     },
     {
       day: 11,
-      title: "Samburu – Cultural Immersion and Portraits",
+      title: "Drive to Tsavo West National Park",
       activities: [
-        "Morning: Return to the Samburu village for deeper engagement",
-        "Afternoon: Workshop on advanced portrait techniques",
-        "Evening: Group critique of Samburu cultural work",
-        "Creative Task: Create a portrait series with Samburu individuals",
-        "Accommodation: Camping in Samburu"
+        "Scenic road trip, stopping at notable viewpoints for landscape photography",
+        "Afternoon game drive in Tsavo West",
+        "Evening storytelling and editing workshop"
       ]
     },
     {
       day: 12,
-      title: "Samburu – Ewaso Ng'iro River and Landscapes",
+      title: "Tsavo West National Park",
       activities: [
-        "Morning: Photograph the Ewaso Ng'iro River and landscapes",
-        "Afternoon: Workshop on landscape photography techniques",
-        "Evening: Edit session on creating a cohesive visual narrative",
-        "Creative Task: Develop a landscape photo series or time-lapse video",
-        "Accommodation: Camping in Samburu"
+        "Morning wildlife photography focusing on big cats and diverse landscapes",
+        "Visit Mzima Springs for photography of aquatic life",
+        "Evening game drive, capturing wildlife behavior"
       ]
     },
     {
       day: 13,
-      title: "Samburu – Creative Exploration",
+      title: "Tsavo East National Park",
       activities: [
-        "Morning: Free-form photography session",
-        "Afternoon: One-on-one mentoring with the expert",
-        "Evening: Group reflection on cultural and creative experiences",
-        "Creative Task: Begin drafting a mid-program portfolio",
-        "Accommodation: Camping in Samburu"
+        "Early morning drive to Tsavo East",
+        "Full day dedicated to wildlife photography and workshops",
+        "Evening bonfire session reviewing the day's captures"
       ]
     },
     {
       day: 14,
-      title: "Samburu to Marsabit – Transition",
+      title: "Wildlife Reflection Day",
       activities: [
-        "Morning: Final Samburu shoot at sunrise",
-        "Afternoon: Drive to Marsabit, photographing volcanic landscapes",
-        "Evening: Workshop on preparing for remote environments",
-        "Accommodation: Guesthouse or campsite in Marsabit"
+        "Morning game drive",
+        "Afternoon session dedicated to editing and selecting portfolio shots"
       ]
     }
   ]

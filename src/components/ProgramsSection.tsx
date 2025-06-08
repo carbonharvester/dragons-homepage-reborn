@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useIsMobile } from "@/hooks/use-mobile";
-import { schoolTrips, summerAbroad, adultTrips, multiYearProgram, educatorTrips } from '@/data/programsData';
+import { schoolTrips, summerAbroad, adultTrips, educatorTrips } from '@/data/programsData';
 import ProgramCategorySelector from './programs/ProgramCategorySelector';
 import ProgramCategoryContent from './programs/ProgramCategoryContent';
 
@@ -9,7 +9,7 @@ const ProgramsSection = () => {
   const [activeCategory, setActiveCategory] = useState("school-trips");
   const isMobile = useIsMobile();
 
-  // Determine which programs to show based on active category
+  // Determine which programs to show based on active category (excluding multi-year)
   const getActivePrograms = () => {
     switch (activeCategory) {
       case "school-trips":
@@ -36,8 +36,8 @@ const ProgramsSection = () => {
         {/* Program Category Buttons */}
         <ProgramCategorySelector activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
 
-        {/* Program Content */}
-        <ProgramCategoryContent activeCategory={activeCategory} isMobile={isMobile} programs={getActivePrograms()} multiYearData={multiYearProgram} />
+        {/* Program Content - removed multiYearData prop since we're hiding it */}
+        <ProgramCategoryContent activeCategory={activeCategory} isMobile={isMobile} programs={getActivePrograms()} />
       </div>
     </section>
   );

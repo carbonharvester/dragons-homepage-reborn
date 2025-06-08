@@ -3,94 +3,80 @@ import { Week } from "../types";
 
 export const weekThree: Week = {
   number: 3,
-  title: "Lake Turkana and Turkana People",
-  subtitle: "Remote Adventure and Cultural Depth",
-  description: "Capture the raw beauty of Lake Turkana, engage with the Turkana people, and refine storytelling in a remote setting.",
-  base: "Lake Turkana (days 15–21)",
-  impact: "Donate cameras or fund a cultural preservation project for the Turkana",
-  image: "https://images.unsplash.com/photo-1494783367193-149034c05e8f?q=80&w=2070&auto=format",
+  title: "Mombasa & Kenyan Coast – Coastal Photography",
+  subtitle: "Coastal and Marine Photography Excellence",
+  description: "Experience coastal photography, marine life documentation, and architectural photography while exploring Kenya's historic coastal region and pristine beaches.",
+  base: "Mombasa (days 15–17), Diani Beach & Shimba Hills (days 18–21)",
+  impact: "Document coastal communities and marine conservation efforts",
+  image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119216/A7405250_gyo4co.jpg",
   highlights: [
-    "Photograph Lake Turkana's turquoise waters at sunrise",
-    "Environmental storytelling workshop",
-    "Documentary filmmaking with Turkana communities",
-    "Youth photography workshops in Turkana villages",
-    "Boat trip on Lake Turkana for unique perspectives"
+    "Scenic train journey photography to Mombasa",
+    "Old Town architecture and culture documentation",
+    "Underwater and marine life photography",
+    "Pristine beach lifestyle photography at Diani",
+    "Final portfolio presentation and exhibition"
   ],
   days: [
     {
       day: 15,
-      title: "Marsabit to Lake Turkana – Travel and Arrival",
+      title: "Train Journey to Mombasa",
       activities: [
-        "Morning: Drive to Lake Turkana, photographing desert landscapes",
-        "Afternoon: Arrive at campsite near Loiyangalani, orientation",
-        "Evening: Workshop on photography in harsh environments",
-        "Creative Task: Capture the journey to Turkana",
-        "Accommodation: Camping near Lake Turkana"
+        "Morning train ride from Tsavo to Mombasa (3-4 hours)",
+        "Afternoon exploration of Old Town, capturing architecture and culture",
+        "Evening photography walk along the coast"
       ]
     },
     {
       day: 16,
-      title: "Lake Turkana – Lake and Landscape Photography",
+      title: "Mombasa Coast & Marine Life - Day 1",
       activities: [
-        "Morning: Photograph Lake Turkana's waters and shores at sunrise",
-        "Afternoon: Workshop on environmental storytelling",
-        "Evening: Edit session on creating emotional impact",
-        "Creative Task: Create a photo essay on Lake Turkana",
-        "Accommodation: Camping near Lake Turkana"
+        "Sunrise beach photography sessions",
+        "Snorkeling and underwater photography workshop",
+        "Explore local fishing communities and capture daily coastal life",
+        "Evening critique and portfolio-building sessions"
       ]
     },
     {
       day: 17,
-      title: "Lake Turkana – Meeting the Turkana People",
+      title: "Mombasa Coast & Marine Life - Day 2",
       activities: [
-        "Morning: Visit a Turkana village, photographing daily life",
-        "Afternoon: Participate in a community discussion on traditions",
-        "Evening: Workshop on documentary filmmaking basics",
-        "Creative Task: Develop a photo series on Turkana culture",
-        "Accommodation: Camping near Lake Turkana"
+        "Sunrise beach photography sessions",
+        "Snorkeling and underwater photography workshop",
+        "Explore local fishing communities and capture daily coastal life",
+        "Evening critique and portfolio-building sessions"
       ]
     },
     {
       day: 18,
-      title: "Lake Turkana – Cultural Immersion and Service",
+      title: "Diani Beach & Shimba Hills - Day 1",
       activities: [
-        "Morning: Photography workshop with Turkana youth",
-        "Afternoon: Photograph a Turkana cultural event",
-        "Evening: Group critique of Turkana work",
-        "Creative Task: Create a portrait series with Turkana community",
-        "Accommodation: Camping near Lake Turkana"
+        "Travel to Diani Beach",
+        "Daytime relaxation and lifestyle photography on pristine beaches",
+        "Excursion to Shimba Hills National Reserve for forest and wildlife photography"
       ]
     },
     {
       day: 19,
-      title: "Lake Turkana – Creative Exploration",
+      title: "Diani Beach & Shimba Hills - Day 2",
       activities: [
-        "Morning: Free-form photography session",
-        "Afternoon: One-on-one mentoring for individual projects",
-        "Evening: Workshop on preparing the final portfolio",
-        "Creative Task: Draft a Lake Turkana portfolio section",
-        "Accommodation: Camping near Lake Turkana"
+        "Daytime relaxation and lifestyle photography on pristine beaches",
+        "Excursion to Shimba Hills National Reserve for forest and wildlife photography"
       ]
     },
     {
       day: 20,
-      title: "Lake Turkana – Reflection and Adventure",
+      title: "Portfolio Finalization & Farewell Dinner",
       activities: [
-        "Morning: Boat trip on Lake Turkana for photography",
-        "Afternoon: Group reflection on experiences",
-        "Evening: Edit session for final portfolio preparation",
-        "Creative Task: Refine portfolio drafts",
-        "Accommodation: Camping near Lake Turkana"
+        "Dedicated day for editing, portfolio finalization, and presentations",
+        "Evening farewell dinner and photo exhibition showcasing students' best works"
       ]
     },
     {
       day: 21,
-      title: "Lake Turkana to Nairobi – Transition",
+      title: "Departure",
       activities: [
-        "Morning: Final Lake Turkana shoot at sunrise",
-        "Afternoon: Drive back to Nairobi with photography stops",
-        "Evening: Rest and informal portfolio review",
-        "Accommodation: Guesthouse in Nairobi"
+        "Morning transfer to Moi International Airport, Mombasa",
+        "Departure flights home"
       ]
     }
   ]

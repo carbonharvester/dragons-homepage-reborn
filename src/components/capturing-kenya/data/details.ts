@@ -5,12 +5,12 @@ import React from 'react';
 export const tripDetails = [
   {
     label: "Duration",
-    value: "4 Weeks",
+    value: "3 Weeks",
     icon: React.createElement(Calendar, { className: "h-5 w-5 text-dragon" })
   },
   {
     label: "When",
-    value: "Jul 1 - Jul 28 2026",
+    value: "Jul 1 - Jul 21 2026",
     icon: React.createElement(Clock, { className: "h-5 w-5 text-dragon" })
   },
   {
@@ -30,9 +30,9 @@ export const tripDetails = [
   },
   {
     label: "Price",
-    value: "$6,950 (plus airfare)",
+    value: "$5,950 (plus airfare)",
     icon: React.createElement(DollarSign, { className: "h-5 w-5 text-dragon" })
   }
 ];
 
-export const perfectFor = "Creative students interested in photography, videography, wildlife conservation, and cultural documentation";
+export const perfectFor = "Creative students interested in photography, videography, wildlife documentation, and cultural storytelling";

@@ -4,14 +4,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { programCategories } from '@/data/programsData';
 import SchoolTripsTab from './SchoolTripsTab';
 import SummerAbroadTab from './SummerAbroadTab';
-import MultiYearTab from './MultiYearTab';
 import EducatorTripsTab from './EducatorTripsTab';
 
 const TabsSection = () => {
+  // Filter out multi-year curriculum from the categories
+  const visibleCategories = programCategories.filter(category => category.id !== 'multi-year');
+  
   return (
     <Tabs defaultValue="school-trips" className="w-full">
       <TabsList className="flex flex-wrap justify-center gap-4 mb-10 bg-transparent h-auto">
-        {programCategories.map(category => (
+        {visibleCategories.map(category => (
           <TabsTrigger 
             key={category.id} 
             value={category.id} 
@@ -33,8 +35,6 @@ const TabsSection = () => {
       <TabsContent value="educator-trips" className="mt-8">
         <EducatorTripsTab />
       </TabsContent>
-      
-      {/* Adult Trips tab removed */}
     </Tabs>
   );
 };

@@ -4,59 +4,46 @@ import { MapPin, Calendar, Clock, School, Users } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const ProgramLocations = () => {
-  // Key locations from the 4-week itinerary based on actual travel plans
+  // Updated locations based on the new 3-week itinerary
   const locations = [
     {
-      name: "Nairobi",
+      name: "Nairobi & Samburu",
       weeks: "Week 1",
-      description: "Kenya's vibrant capital city serving as your arrival and orientation point. Visit wildlife conservation centers and learn about urban photography.",
+      description: "Begin your journey in Kenya's capital before immersing yourself in Samburu culture for portrait photography and cultural storytelling.",
       activities: [
-        "Urban photography workshops",
-        "Wildlife conservation center visits",
-        "Technical skills development",
-        "Cultural photography in local communities",
-        "Camera settings and lighting basics"
+        "Photography basics workshop in Nairobi",
+        "Street photography in bustling markets",
+        "Cultural immersion with Samburu community",
+        "Portrait photography and storytelling workshops",
+        "Traditional dances and craft-making documentation"
       ],
       image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119235/DSC_0177_nvivx5.jpg"
     },
     {
-      name: "Amboseli",
-      weeks: "Week 1",
-      description: "Known for its large elephant herds and stunning views of Mount Kilimanjaro, perfect for landscape and wildlife photography.",
+      name: "Amboseli & Tsavo",
+      weeks: "Week 2",
+      description: "Develop wildlife photography skills in two of Kenya's most renowned national parks, with Mount Kilimanjaro as your backdrop.",
       activities: [
+        "Hot air balloon sunrise photography",
         "Wildlife photography with Mt. Kilimanjaro backdrop",
-        "Hot air balloon rides at sunrise",
-        "Maasai village cultural photography",
-        "Wildlife portrait techniques",
-        "Advanced editing workshops"
+        "Elephant herd documentation in Amboseli",
+        "Big cats and landscape photography in Tsavo",
+        "Mzima Springs aquatic life photography"
       ],
       image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119242/DSC_4401_bymb4c.jpg"
     },
     {
-      name: "Samburu",
-      weeks: "Week 2",
-      description: "Home to unique wildlife species like Grevy's zebra and cultural experiences with the Samburu people.",
+      name: "Mombasa & Coast",
+      weeks: "Week 3",
+      description: "Experience coastal photography, marine life documentation, and architectural photography in Kenya's historic coastal region.",
       activities: [
-        "Rare wildlife species photography",
-        "Cultural immersion with Samburu people",
-        "Portrait photography workshops",
-        "Landscape photography at Ewaso Ng'iro River",
-        "One-on-one mentor sessions"
+        "Scenic train journey photography to Mombasa",
+        "Old Town architecture and culture documentation",
+        "Sunrise beach photography sessions",
+        "Underwater and marine life photography",
+        "Diani Beach lifestyle photography"
       ],
       image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119216/A7405250_gyo4co.jpg"
-    },
-    {
-      name: "Lake Turkana",
-      weeks: "Week 3",
-      description: "Capture the raw beauty of the jade sea, engage with the Turkana people, and document cultural traditions in this remote setting.",
-      activities: [
-        "Sunrise photography of turquoise waters",
-        "Documentary filmmaking with Turkana communities",
-        "Environmental storytelling workshops",
-        "Youth photography workshops in villages",
-        "Boat trip photography excursions"
-      ],
-      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119190/1e93affc-4105-40dd-aa24-f5fd875d2fd5_ftinmr.jpg"
     }
   ];
 
@@ -68,10 +55,10 @@ const ProgramLocations = () => {
         </h2>
         
         <p className="text-center text-dragon-gray max-w-3xl mx-auto mb-12">
-          Students will experience diverse environments across Kenya, each offering unique photography and videography opportunities and challenges.
+          Journey across Kenya's diverse regions over three weeks, from urban environments to wildlife parks to coastal communities, each offering unique photography opportunities.
         </p>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
           {locations.map((location, index) => (
             <div key={index} className="rounded-lg overflow-hidden shadow-sm border border-gray-100">
               <AspectRatio ratio={16/9}>

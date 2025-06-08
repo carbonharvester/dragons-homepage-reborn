@@ -4,18 +4,18 @@ import { ProgramDataType, Outcome } from "./types";
 
 export const programData: ProgramDataType = {
   title: "Capturing Kenya",
-  description: "A 4-week creative adventure to photograph and film Kenya's stunning landscapes, wildlife, and cultures while developing professional skills.",
-  duration: "4 Weeks",
-  season: "Jul 28 - Aug 25 2026",
+  description: "A 3-week creative adventure to photograph and film Kenya's diverse landscapes, wildlife, and cultures while developing professional skills.",
+  duration: "3 Weeks",
+  season: "Jul 1 - Jul 21 2026",
   location: "Kenya (Various locations)",
   ages: "16-20",
   goals: [
-    "Master photography and videography techniques in diverse environments",
+    "Master photography and videography techniques across diverse environments - from urban to wildlife to coastal",
     "Build a professional portfolio showcasing Kenya's landscapes, wildlife, and cultures",
-    "Contribute to conservation efforts by documenting wildlife and habitats",
-    "Develop storytelling skills through visual narratives of community initiatives",
-    "Learn post-processing with industry-standard tools and workflows",
-    "Create a final project that combines technical skill with creative vision"
+    "Develop advanced portrait and cultural storytelling skills through Samburu community immersion",
+    "Learn wildlife photography techniques in world-renowned parks like Amboseli and Tsavo",
+    "Experience unique perspectives through hot air balloon and train journey photography",
+    "Create a final portfolio that demonstrates technical skill and creative storytelling vision"
   ]
 };
 
