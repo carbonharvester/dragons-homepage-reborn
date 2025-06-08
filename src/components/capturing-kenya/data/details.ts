@@ -25,7 +25,7 @@ export const tripDetails = [
   },
   {
     label: "Group Size",
-    value: "12-16 students / 3 Instructors",
+    value: "12 students/2 instructors & 1 guide",
     icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" })
   },
   {
