@@ -55,15 +55,15 @@ const ProgramItinerary = ({ weeks = [] }: ProgramItineraryProps) => {
 
         {safeWeeks.length > 0 ? (
           <Tabs defaultValue={`week${safeWeeks[0]?.number || 1}`} className="w-full">
-            <TabsList className="grid grid-cols-2 md:grid-cols-3 w-full max-w-2xl mx-auto mb-12 h-auto p-2 bg-white/50 backdrop-blur-sm border border-dragon/10">
+            <TabsList className="grid grid-cols-2 md:grid-cols-4 w-full max-w-4xl mx-auto mb-12 h-auto p-2 bg-white/50 backdrop-blur-sm border border-dragon/10">
               {safeWeeks.map((week) => (
                 <TabsTrigger 
                   key={week.number} 
                   value={`week${week.number}`} 
-                  className="flex flex-col items-center justify-center py-3 px-4 text-center data-[state=active]:bg-dragon data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 rounded-lg"
+                  className="flex flex-col items-center justify-center py-4 px-3 text-center data-[state=active]:bg-dragon data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 rounded-lg"
                 >
                   <span className="font-bold text-sm">Week {week.number}</span>
-                  <span className="text-xs opacity-80 mt-1 hidden sm:block">{week.title}</span>
+                  <span className="text-xs opacity-80 mt-1 hidden sm:block line-clamp-1">{week.title}</span>
                 </TabsTrigger>
               ))}
             </TabsList>
