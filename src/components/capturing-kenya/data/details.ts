@@ -30,7 +30,7 @@ export const tripDetails = [
   },
   {
     label: "Price",
-    value: "$5,950 (plus airfare)",
+    value: "$6,950 (plus airfare)",
     icon: React.createElement(DollarSign, { className: "h-5 w-5 text-dragon" })
   }
 ];
