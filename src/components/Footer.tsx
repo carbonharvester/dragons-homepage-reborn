@@ -29,7 +29,6 @@ const Footer = () => {
               <li><Link to="/summer-abroad" className="text-gray-300 hover:text-white transition-colors">Summer Abroad</Link></li>
               <li><Link to="/educator-trips" className="text-gray-300 hover:text-white transition-colors">Educator Trips</Link></li>
               {/* Adult Programs link removed */}
-              <li><Link to="/multi-year-curriculum" className="text-gray-300 hover:text-white transition-colors">Multi-Year Curriculum</Link></li>
             </ul>
           </div>
           
