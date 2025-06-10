@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
+import { Hero } from '@/components/ui/animated-hero';
 import HomeVideoSection from '@/components/HomeVideoSection';
 import ProgramsSection from '@/components/ProgramsSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
