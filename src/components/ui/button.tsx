@@ -1,8 +1,6 @@
-
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-import { ArrowRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -39,52 +37,17 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
-  interactive?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, interactive = false, children, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
-    
-    if (interactive) {
-      return (
-        <Comp
-          className={cn(
-            buttonVariants({ variant, size }),
-            "group relative cursor-pointer overflow-hidden",
-            className
-          )}
-          ref={ref}
-          {...props}
-        >
-          <span className="inline-block translate-x-0 transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">
-            {children}
-          </span>
-          <div className="absolute top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 opacity-0 transition-all duration-300 group-hover:-translate-x-1 group-hover:opacity-100">
-            <span>{children}</span>
-            <ArrowRight className="h-4 w-4" />
-          </div>
-          <div className={cn(
-            "absolute left-[20%] top-[40%] h-2 w-2 scale-[1] rounded-lg transition-all duration-300 group-hover:left-[0%] group-hover:top-[0%] group-hover:h-full group-hover:w-full group-hover:scale-[1.8]",
-            variant === "default" && "bg-primary group-hover:bg-primary",
-            variant === "secondary" && "bg-secondary group-hover:bg-secondary",
-            variant === "destructive" && "bg-destructive group-hover:bg-destructive",
-            variant === "outline" && "bg-accent group-hover:bg-accent",
-            variant === "ghost" && "bg-accent group-hover:bg-accent",
-            variant === "link" && "bg-primary group-hover:bg-primary"
-          )}></div>
-        </Comp>
-      )
-    }
-    
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
-      >
-        {children}
-      </Comp>
+      />
     )
   }
 )
