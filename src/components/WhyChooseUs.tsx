@@ -2,6 +2,7 @@
 import React from 'react';
 import { MapPin, Users, BookOpen, Shield, LineChart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import CalendlyEmbed from './CalendlyEmbed';
 
 const features = [{
@@ -30,6 +31,49 @@ const features = [{
   description: "Life-changing journeys that foster leadership, cultural understanding, and a deep commitment to global citizenship, while empowering communities through sustainable impact."
 }];
 
+const Feature = ({
+  title,
+  description,
+  icon,
+  index,
+}: {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  index: number;
+}) => {
+  return (
+    <div
+      className={cn(
+        "flex flex-col lg:border-r py-10 relative group/feature border-dragon-beige",
+        (index === 0 || index === 3) && "lg:border-l border-dragon-beige",
+        index < 3 && "lg:border-b border-dragon-beige"
+      )}
+    >
+      {index < 3 && (
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-dragon-beige to-transparent pointer-events-none" />
+      )}
+      {index >= 3 && (
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-dragon-beige to-transparent pointer-events-none" />
+      )}
+      <div className="mb-4 relative z-10 px-10">
+        <div className="p-3 bg-dragon-beige rounded-lg inline-block">
+          {icon}
+        </div>
+      </div>
+      <div className="text-xl font-bold mb-2 relative z-10 px-10">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-dragon-beige group-hover/feature:bg-dragon transition-all duration-200 origin-center" />
+        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-dragon-dark">
+          {title}
+        </span>
+      </div>
+      <p className="text-dragon-gray max-w-xs relative z-10 px-10">
+        {description}
+      </p>
+    </div>
+  );
+};
+
 const WhyChooseUs = () => {
   const scrollToPrograms = () => {
     const programsSection = document.getElementById('programs');
@@ -47,14 +91,10 @@ const WhyChooseUs = () => {
           <p className="section-subheading mx-auto">We believe travel transforms lives and builds bridges between cultures. Our unique programs immerse students in authentic African experiences, inspiring personal growth while creating sustainable impact for communities, setting us apart in educational travel.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-          {features.map((feature, index) => <div key={index} className="flex flex-col items-start">
-              <div className="mb-4 p-3 bg-dragon-beige rounded-lg">
-                {feature.icon}
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-dragon-dark">{feature.title}</h3>
-              <p className="text-dragon-gray">{feature.description}</p>
-            </div>)}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 max-w-7xl mx-auto">
+          {features.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
         </div>
 
         <div className="mt-16 bg-dragon-sand p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between">
