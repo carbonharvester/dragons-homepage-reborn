@@ -1,4 +1,3 @@
-
 export const programCategories = [
   {
     title: "School Trips",
@@ -19,6 +18,11 @@ export const programCategories = [
         title: "Water Empowering Women",
         href: "/programs/empowering-women",
         description: "Support women-led initiatives focusing on education and leadership.",
+      },
+      {
+        title: "Multi-Year Curriculum",
+        href: "/multi-year-curriculum",
+        description: "Progressive educational journey spanning multiple years.",
       },
     ],
   },

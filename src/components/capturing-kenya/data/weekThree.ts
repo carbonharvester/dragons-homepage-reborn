@@ -1,3 +1,4 @@
+
 import { Week } from "../types";
 
 export const weekThree: Week = {
@@ -7,7 +8,7 @@ export const weekThree: Week = {
   description: "Experience coastal photography, marine life documentation, and architectural photography while exploring Kenya's historic coastal region and pristine beaches.",
   base: "Mombasa (days 15–17), Diani Beach & Shimba Hills (days 18–21)",
   impact: "Document coastal communities and marine conservation efforts",
-  image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1749403975/IMG_1389_rzdn6e.jpg",
+  image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119216/A7405250_gyo4co.jpg",
   highlights: [
     "Scenic train journey photography to Mombasa",
     "Old Town architecture and culture documentation",

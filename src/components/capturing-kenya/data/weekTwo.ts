@@ -1,3 +1,4 @@
+
 import { Week } from "../types";
 
 export const weekTwo: Week = {
@@ -7,7 +8,7 @@ export const weekTwo: Week = {
   description: "Develop advanced wildlife photography skills in Kenya's premier national parks, capturing elephants against Mount Kilimanjaro and exploring diverse ecosystems.",
   base: "Amboseli National Park (days 8–11), Tsavo National Parks (days 12–14)",
   impact: "Support wildlife conservation through documentation",
-  image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1749403077/A7404525_vay31o.jpg",
+  image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119242/DSC_4401_bymb4c.jpg",
   highlights: [
     "Hot air balloon sunrise photography over Amboseli",
     "Wildlife photography with Mount Kilimanjaro backdrop",
