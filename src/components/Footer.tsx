@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Shirt } from "lucide-react";
+import { Instagram, Shirt } from "lucide-react";
 import { Link } from "react-router-dom";
 import CalendlyEmbed from './CalendlyEmbed';
 import { Button } from './ui/button';
@@ -16,17 +16,8 @@ const Footer = () => {
             </div>
             <p className="text-gray-300 mb-6 text-sm pl-[5px]">We create immersive, responsible travel programs that connect students with communities, fostering transformation through authentic cultural exchange.</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="Facebook">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/kapesadventures?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="text-white hover:text-dragon-yellow transition-colors" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                 <Instagram size={18} />
-              </a>
-              <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="Twitter">
-                <Twitter size={18} />
-              </a>
-              <a href="#" className="text-white hover:text-dragon-yellow transition-colors" aria-label="YouTube">
-                <Youtube size={18} />
               </a>
             </div>
           </div>
@@ -38,7 +29,6 @@ const Footer = () => {
               <li><Link to="/summer-abroad" className="text-gray-300 hover:text-white transition-colors">Summer Abroad</Link></li>
               <li><Link to="/educator-trips" className="text-gray-300 hover:text-white transition-colors">Educator Trips</Link></li>
               {/* Adult Programs link removed */}
-              <li><Link to="/multi-year-curriculum" className="text-gray-300 hover:text-white transition-colors">Multi-Year Curriculum</Link></li>
             </ul>
           </div>
           

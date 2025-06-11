@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Calendar, Clock, School, Users } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -17,7 +16,7 @@ const ProgramLocations = () => {
         "Portrait photography and storytelling workshops",
         "Traditional dances and craft-making documentation"
       ],
-      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119235/DSC_0177_nvivx5.jpg"
+      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg"
     },
     {
       name: "Amboseli & Tsavo",
@@ -30,7 +29,7 @@ const ProgramLocations = () => {
         "Big cats and landscape photography in Tsavo",
         "Mzima Springs aquatic life photography"
       ],
-      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119242/DSC_4401_bymb4c.jpg"
+      image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1749402400/A7404248_tu5rld.jpg"
     },
     {
       name: "Mombasa & Coast",

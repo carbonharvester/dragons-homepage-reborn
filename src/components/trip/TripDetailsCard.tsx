@@ -47,7 +47,7 @@ const TripDetailsCard = ({
             </div>
             <div>
               <p className="text-sm text-gray-500">{detail.label}</p>
-              <p className="font-medium text-dragon-dark">{detail.value}</p>
+              <p className="font-medium text-dragon-dark whitespace-pre-line">{detail.value}</p>
             </div>
           </div>)}
       </div>

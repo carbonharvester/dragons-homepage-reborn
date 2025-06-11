@@ -1,9 +1,9 @@
 
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, GraduationCap } from "lucide-react";
 import BulletList from '@/components/ui/BulletList';
+import { Link } from 'react-router-dom';
 
 const SchoolTripsIntro = () => {
   const keyBenefits = [{
@@ -43,6 +43,51 @@ const SchoolTripsIntro = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+      </div>
+
+      {/* Multi-Year Approach Section */}
+      <div className="mt-16 bg-gradient-to-br from-dragon-beige to-white p-8 rounded-lg shadow-sm">
+        <div className="flex items-center justify-center mb-6">
+          <GraduationCap className="text-dragon h-8 w-8 mr-3" />
+          <h3 className="text-3xl font-academy font-bold text-dragon-dark">Multi-Year Approach</h3>
+        </div>
+        
+        <p className="text-lg text-dragon-gray mb-6">
+          For schools seeking deeper educational impact, we offer a progressive multi-year curriculum that builds skills, 
+          confidence, and global citizenship over time. This approach allows students to develop meaningful relationships 
+          with communities and see the long-term impact of their contributions.
+        </p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div className="bg-white p-4 rounded-lg border-l-4 border-dragon">
+            <h4 className="font-bold text-dragon-dark mb-2">Year 1: Foundation</h4>
+            <p className="text-sm text-dragon-gray">Students aged 11-13 discover Kenya through conservation projects, cultural workshops, and wildlife encounters.</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg border-l-4 border-dragon">
+            <h4 className="font-bold text-dragon-dark mb-2">Year 2: Development</h4>
+            <p className="text-sm text-dragon-gray">Students aged 14-16 engage in more complex projects, such as women's empowerment initiatives and sustainable agriculture.</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg border-l-4 border-dragon">
+            <h4 className="font-bold text-dragon-dark mb-2">Year 3: Leadership</h4>
+            <p className="text-sm text-dragon-gray">Students aged 17-18 take on leadership roles, designing and implementing their own community projects.</p>
+          </div>
+        </div>
+        
+        <div className="mt-6 text-center">
+          <p className="text-dragon-gray mb-4">
+            This progressive approach earns students valuable certificates and credits, including CAS points for IB students 
+            and Duke of Edinburgh Award credits, while creating lasting positive change in African communities.
+          </p>
+          <Link 
+            to="/multi-year-curriculum" 
+            className="inline-flex items-center text-dragon hover:text-dragon-dark font-medium transition-colors"
+          >
+            Learn more about our Multi-Year Curriculum
+            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
       
