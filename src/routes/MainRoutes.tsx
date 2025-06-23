@@ -9,6 +9,8 @@ import PartnerWithUs from "@/pages/PartnerWithUs";
 import NotFound from "@/pages/NotFound";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfService from "@/pages/TermsOfService";
 // import Podcast from "@/pages/Podcast"; - Podcast page hidden
 
 // Program Categories
@@ -51,6 +53,8 @@ const MainRoutes = () => {
       <Route path="/curriculum-guide" element={<PartnerWithUs />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/:postId" element={<BlogPost />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
       {/* Podcast route removed */}
       
       {/* Program Categories */}
