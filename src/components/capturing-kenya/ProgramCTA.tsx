@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
+import WaitingListForm from "@/components/WaitingListForm";
 import CapturingKenyaBrochure from "./ProgramBrochurePDF";
 import { programData } from './ProgramData';
 
@@ -20,9 +21,11 @@ const ProgramCTA = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="btn-primary bg-white text-dragon hover:bg-gray-100" disabled>
-              Apply Now (Next Opening - Sept 2025)
-            </Button>
+            <WaitingListForm>
+              <Button className="btn-primary bg-white text-dragon hover:bg-gray-100">
+                Join Waiting List
+              </Button>
+            </WaitingListForm>
             <CalendlyEmbed 
               url="https://calendly.com/kapesuniforms/discoverymeeting"
               text="Schedule Consultation"

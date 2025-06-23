@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ReactNode } from 'react';
 import CalendlyEmbed from '../CalendlyEmbed';
+import WaitingListForm from '../WaitingListForm';
 import { TripDetail } from './TripBrochureContent';
 import { Link } from 'react-router-dom';
 import { Calendar, Users, MapPin, Clock, LucideIcon } from 'lucide-react';
@@ -87,11 +88,13 @@ const TripDetailsCard = ({
       </div>
       
       <div className="mt-6 space-y-4">
-        {/* Apply Now Button - Removed for school trips and made disabled for others */}
+        {/* Join Waiting List Button - Removed for school trips */}
         {!isSchoolTrip && (
-          <Button className="w-full btn-primary" disabled>
-            Apply Now (Next Opening - Sept 2025)
-          </Button>
+          <WaitingListForm className="w-full">
+            <Button className="w-full btn-primary">
+              Join Waiting List
+            </Button>
+          </WaitingListForm>
         )}
         
         <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="outline" className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow" />

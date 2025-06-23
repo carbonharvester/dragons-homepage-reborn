@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -7,6 +6,7 @@ import { summerAbroad } from '@/data/programsData';
 import ProgramCard from '@/components/programs/ProgramCard';
 import { Button } from '@/components/ui/button';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
+import WaitingListForm from '@/components/WaitingListForm';
 import { Calendar, Users, MapPin } from "lucide-react";
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
 
@@ -97,9 +97,11 @@ const SummerAbroad = () => {
                 <p className="text-dragon-gray mb-4">
                   Don't miss out—spots are limited! Explore our programs and take the first step toward an experience that will change how you see yourself—and the world.
                 </p>
-                <Button className="btn-primary" disabled>
-                  Apply Now (Next Opening - Sept 2025)
-                </Button>
+                <WaitingListForm>
+                  <Button className="btn-primary">
+                    Join Waiting List
+                  </Button>
+                </WaitingListForm>
               </div>
             </div>
           </div>
@@ -143,9 +145,11 @@ const SummerAbroad = () => {
                   <p>Work with experts in conservation, education, and creative media, guiding you to create impactful work.</p>
                 </div>
               </div>
-              <Button className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400" disabled>
-                Apply Now (Next Opening - Sept 2025)
-              </Button>
+              <WaitingListForm>
+                <Button className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400">
+                  Join Waiting List
+                </Button>
+              </WaitingListForm>
             </div>
           </div>
         </section>
