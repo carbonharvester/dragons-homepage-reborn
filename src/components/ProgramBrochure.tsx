@@ -31,9 +31,13 @@ const ProgramBrochure = ({ program, pdfLink }: ProgramBrochureProps) => {
       console.log('Download requested for:', pdfLink || 'generated PDF');
       
       if (pdfLink) {
-        // Create an anchor element and set the href attribute to the PDF URL
+        // Open PDF in new window/tab
+        window.open(pdfLink, '_blank');
+        
+        // Also attempt direct download by creating an anchor with target="_blank"
         const anchor = document.createElement('a');
         anchor.href = pdfLink;
+        anchor.target = '_blank';
         anchor.download = `${program.title.toLowerCase().replace(/\s+/g, '-')}-brochure.pdf`;
         
         // Append to the document, trigger download, and remove the element
@@ -42,7 +46,7 @@ const ProgramBrochure = ({ program, pdfLink }: ProgramBrochureProps) => {
         document.body.removeChild(anchor);
         
         // Show success toast
-        toast.success('Downloading PDF brochure');
+        toast.success('Opening PDF brochure in new window');
       } else {
         // Generate PDF if no direct link is provided
         const pdf = generateProgramBrochure(program.title, program);
