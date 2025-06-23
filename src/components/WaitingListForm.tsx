@@ -5,6 +5,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -13,6 +20,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
+import { summerAbroad, educatorTrips } from '@/data/programsData';
 
 interface WaitingListFormProps {
   children: React.ReactNode;
@@ -22,6 +30,8 @@ interface WaitingListFormProps {
 const WaitingListForm = ({ children, className }: WaitingListFormProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedProgramType, setSelectedProgramType] = useState<string>('');
+  const [selectedSpecificTrip, setSelectedSpecificTrip] = useState<string>('');
   const { toast } = useToast();
   
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -46,6 +56,8 @@ const WaitingListForm = ({ children, className }: WaitingListFormProps) => {
         });
         setIsOpen(false);
         (e.target as HTMLFormElement).reset();
+        setSelectedProgramType('');
+        setSelectedSpecificTrip('');
       } else {
         throw new Error('Form submission failed');
       }
@@ -58,6 +70,22 @@ const WaitingListForm = ({ children, className }: WaitingListFormProps) => {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const getAvailableTrips = () => {
+    switch (selectedProgramType) {
+      case 'summer-abroad':
+        return summerAbroad;
+      case 'educator-trips':
+        return educatorTrips;
+      default:
+        return [];
+    }
+  };
+
+  const handleProgramTypeChange = (value: string) => {
+    setSelectedProgramType(value);
+    setSelectedSpecificTrip(''); // Reset specific trip when program type changes
   };
 
   return (
@@ -94,9 +122,44 @@ const WaitingListForm = ({ children, className }: WaitingListFormProps) => {
             <Input type="tel" id="phone" name="phone" />
           </div>
           <div>
-            <Label htmlFor="program">Interested Program(s)</Label>
-            <Input id="program" name="program" placeholder="e.g., Capturing Kenya, Feeding the Future" />
+            <Label htmlFor="programType">Program Type*</Label>
+            <Select 
+              name="programType" 
+              value={selectedProgramType} 
+              onValueChange={handleProgramTypeChange}
+              required
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select a program type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="summer-abroad">Summer Abroad</SelectItem>
+                <SelectItem value="educator-trips">Educator Trips</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
+          {selectedProgramType && (
+            <div>
+              <Label htmlFor="specificTrip">Specific Program*</Label>
+              <Select 
+                name="specificTrip" 
+                value={selectedSpecificTrip} 
+                onValueChange={setSelectedSpecificTrip}
+                required
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a specific program" />
+                </SelectTrigger>
+                <SelectContent>
+                  {getAvailableTrips().map((trip, index) => (
+                    <SelectItem key={index} value={trip.title}>
+                      {trip.title}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+          )}
           <div>
             <Label htmlFor="message">Additional Comments</Label>
             <Textarea 
