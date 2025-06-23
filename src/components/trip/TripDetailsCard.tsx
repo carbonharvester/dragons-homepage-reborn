@@ -38,18 +38,49 @@ const TripDetailsCard = ({
     return icon;
   };
 
+  const formatValue = (value: string) => {
+    // Check if this is the "When" field that contains sold out information
+    if (value.includes("Sold Out")) {
+      const lines = value.split('\n');
+      return (
+        <div>
+          {lines.map((line, index) => (
+            <div key={index}>
+              {line.includes("Sold Out") ? (
+                <span>
+                  <span className="line-through text-gray-400">
+                    {line.replace(" - Sold Out", "")}
+                  </span>
+                  <span className="text-red-500 font-medium ml-2">- Sold Out</span>
+                </span>
+              ) : (
+                line
+              )}
+            </div>
+          ))}
+        </div>
+      );
+    }
+    // For other fields, handle normal line breaks
+    return value.split('\n').map((line, index) => (
+      <div key={index}>{line}</div>
+    ));
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md p-6 h-fit">
       <h3 className="text-xl font-bold mb-4 text-dragon-dark border-b border-gray-200 pb-2">Trip Details</h3>
       <div className="space-y-4">
         {tripDetails.map((detail, index) => (
-          <div key={index} className="flex items-center">
-            <div className="mr-3">
+          <div key={index} className="flex items-start">
+            <div className="mr-3 mt-1">
               {renderIcon(detail.icon)}
             </div>
             <div>
               <p className="text-sm text-gray-500">{detail.label}</p>
-              <p className="font-medium text-dragon-dark whitespace-pre-line">{detail.value}</p>
+              <div className="font-medium text-dragon-dark">
+                {formatValue(detail.value)}
+              </div>
             </div>
           </div>
         ))}
