@@ -6,7 +6,7 @@ import CalendlyEmbed from '../CalendlyEmbed';
 import WaitingListForm from '../WaitingListForm';
 import { TripDetail } from './TripBrochureContent';
 import { Link } from 'react-router-dom';
-import { Calendar, Users, MapPin, Clock, LucideIcon } from 'lucide-react';
+import { Calendar, Users, MapPin, Clock, LucideIcon, Download } from 'lucide-react';
 
 // Define the map of string icon names to their corresponding Lucide components
 const iconMap: Record<string, React.ElementType> = {
@@ -19,11 +19,13 @@ const iconMap: Record<string, React.ElementType> = {
 interface TripDetailsCardProps {
   tripDetails: TripDetail[];
   isSchoolTrip?: boolean;
+  pdfBrochureLink?: string;
 }
 
 const TripDetailsCard = ({
   tripDetails,
-  isSchoolTrip = false
+  isSchoolTrip = false,
+  pdfBrochureLink
 }: TripDetailsCardProps) => {
   const renderIcon = (icon: React.ReactNode | string) => {
     if (typeof icon === 'string') {
@@ -68,6 +70,12 @@ const TripDetailsCard = ({
     ));
   };
 
+  const handleDownloadBrochure = () => {
+    if (pdfBrochureLink) {
+      window.open(pdfBrochureLink, '_blank');
+    }
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-md p-6 h-fit">
       <h3 className="text-xl font-bold mb-4 text-dragon-dark border-b border-gray-200 pb-2">Trip Details</h3>
@@ -88,8 +96,18 @@ const TripDetailsCard = ({
       </div>
       
       <div className="mt-6 space-y-4">
-        {/* Join Waiting List Button - Removed for school trips */}
-        {!isSchoolTrip && (
+        {/* Download Brochure Button for school trips, Join Waiting List for others */}
+        {isSchoolTrip ? (
+          pdfBrochureLink && (
+            <Button 
+              onClick={handleDownloadBrochure}
+              className="w-full btn-primary flex items-center justify-center gap-2"
+            >
+              <Download className="h-4 w-4" />
+              Download Brochure
+            </Button>
+          )
+        ) : (
           <WaitingListForm className="w-full">
             <Button className="w-full btn-primary">
               Join Waiting List

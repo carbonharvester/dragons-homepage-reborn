@@ -1,14 +1,37 @@
-
-import React, { useEffect } from 'react';
-import TripOverview from './TripOverview';
+import React from 'react';
 import TripHighlights from './TripHighlights';
-import ScrollableGallery from './ScrollableGallery';
+import TripGallery from './TripGallery';
 import TripLearningOutcomes from './TripLearningOutcomes';
 import TripItinerary from './TripItinerary';
+import TripDetailsCard from './TripDetailsCard';
 import TripCTA from './TripCTA';
+import StudentStoriesSection from './StudentStoriesSection';
 import ProgramBrochure from '../ProgramBrochure';
-import Testimonials from '../Testimonials';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Calendar, Users, MapPin, Clock, LucideIcon } from 'lucide-react';
+
+export interface TripHighlight {
+  title: string;
+  description: string;
+  imagePath: string;
+  icon: React.ReactNode;
+}
+
+export interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
+export interface LearningOutcome {
+  title: string;
+  description: string;
+}
+
+export interface TripItineraryDay {
+  day: string;
+  title: string;
+  description: string;
+}
 
 export interface TripDetail {
   label: string;
@@ -16,108 +39,134 @@ export interface TripDetail {
   icon: React.ReactNode | string;
 }
 
-export interface TripHighlight {
-  icon: React.ReactNode | string;
+export interface ProgramData {
   title: string;
-  description: string;
+  description?: string;
+  duration?: string;
+  season?: string;
+  location?: string;
+  goals?: string[];
 }
 
-interface TripLearningOutcome {
+export interface PerfectFor {
   title: string;
   description: string;
-}
-
-interface TripItineraryDay {
-  day: string;
-  title: string;
-  activities: string[];
-}
-
-interface ProgramData {
-  title: string;
-  description: string;
-  duration: string;
-  season: string;
-  location: string;
-  goals: string[];
 }
 
 interface TripBrochureContentProps {
   tripDetails: TripDetail[];
   tripHighlights: TripHighlight[];
-  galleryImages: {
-    src: string;
-    alt: string;
-    className: string;
-  }[];
-  learningOutcomes: TripLearningOutcome[];
+  galleryImages: GalleryImage[];
+  learningOutcomes: LearningOutcome[];
   tripItinerary: TripItineraryDay[];
   programData: ProgramData;
-  description?: string[];
-  projectGoals?: string[];
-  perfectFor?: string;
+  perfectFor: PerfectFor[];
+  description: string[];
+  projectGoals: string[];
   hideOverview?: boolean;
   hideHighlights?: boolean;
-  hideLearningOutcomes?: boolean;
+  hideStudentStories?: boolean;
   pdfBrochureLink?: string;
   customThumbnails?: Record<string, string>;
   isEducatorTrip?: boolean;
-  hideStudentStories?: boolean;
 }
 
-const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
+const TripBrochureContent = ({
   tripDetails,
   tripHighlights,
   galleryImages,
   learningOutcomes,
   tripItinerary,
   programData,
+  perfectFor,
   description,
   projectGoals,
-  perfectFor,
   hideOverview = false,
   hideHighlights = false,
-  hideLearningOutcomes = false,
+  hideStudentStories = false,
   pdfBrochureLink,
   customThumbnails,
-  isEducatorTrip = false,
-  hideStudentStories = false
+  isEducatorTrip = false
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
-  
-  useEffect(() => {
-    console.log('TripBrochureContent mounted with programData:', programData);
-    console.log('PDF Brochure Link:', pdfBrochureLink);
-  }, [programData, pdfBrochureLink]);
 
-  return <div className="container py-0">
-      {/* Trip Overview */}
-      {!hideOverview && <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />}
-      
-      {/* Trip Highlights */}
-      {!hideHighlights && <div className="mb-16 text-center">
-          <h2 className="text-3xl font-academy mb-8 text-dragon-dark text-center">Trip Highlights</h2>
-          <TripHighlights highlights={tripHighlights} />
-        </div>}
+  return (
+    <>
+      {/* Desktop Layout */}
+      {!isMobile && (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <div className="lg:col-span-2 space-y-16">
+            {/* Trip Highlights */}
+            {!hideHighlights && tripHighlights && tripHighlights.length > 0 && (
+              <TripHighlights highlights={tripHighlights} />
+            )}
 
-      {/* Learning Outcomes */}
-      {!hideLearningOutcomes && <TripLearningOutcomes outcomes={learningOutcomes} />}
-      
-      {/* Photo Gallery - Using consolidated component */}
-      <ScrollableGallery images={galleryImages} />
-      
-      {/* Sample Itinerary */}
-      <TripItinerary itineraryDays={tripItinerary} />
-      
-      {/* Program Brochure */}
-      <ProgramBrochure program={programData} pdfLink={pdfBrochureLink} />
-      
-      {/* Student Stories Section - Only show for student trips, not for educator trips, and when not explicitly hidden */}
-      {!isEducatorTrip && !hideStudentStories && <Testimonials />}
-      
+            {/* Gallery */}
+            <TripGallery images={galleryImages} customThumbnails={customThumbnails} />
+
+            {/* Learning Outcomes */}
+            <TripLearningOutcomes outcomes={learningOutcomes} />
+
+            {/* Itinerary */}
+            <TripItinerary days={tripItinerary} />
+
+            {/* Program Brochure - only show if pdfBrochureLink is provided */}
+            {pdfBrochureLink && (
+              <ProgramBrochure program={programData} pdfLink={pdfBrochureLink} />
+            )}
+
+            {/* Student Stories - only show if not hidden */}
+            {!hideStudentStories && <StudentStoriesSection />}
+          </div>
+
+          {/* Sidebar */}
+          <div className="space-y-8">
+            <TripDetailsCard 
+              tripDetails={tripDetails} 
+              isSchoolTrip={!isEducatorTrip}
+              pdfBrochureLink={pdfBrochureLink}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Mobile Layout */}
+      {isMobile && (
+        <div className="space-y-8">
+          <TripDetailsCard 
+            tripDetails={tripDetails} 
+            isSchoolTrip={!isEducatorTrip}
+            pdfBrochureLink={pdfBrochureLink}
+          />
+
+          {/* Trip Highlights */}
+          {!hideHighlights && tripHighlights && tripHighlights.length > 0 && (
+            <TripHighlights highlights={tripHighlights} />
+          )}
+
+          {/* Gallery */}
+          <TripGallery images={galleryImages} customThumbnails={customThumbnails} />
+
+          {/* Learning Outcomes */}
+          <TripLearningOutcomes outcomes={learningOutcomes} />
+
+          {/* Itinerary */}
+          <TripItinerary days={tripItinerary} />
+
+          {/* Program Brochure - only show if pdfBrochureLink is provided */}
+          {pdfBrochureLink && (
+            <ProgramBrochure program={programData} pdfLink={pdfBrochureLink} />
+          )}
+
+          {/* Student Stories - only show if not hidden */}
+          {!hideStudentStories && <StudentStoriesSection />}
+        </div>
+      )}
+
       {/* CTA Section */}
       <TripCTA isSchoolTrip={!isEducatorTrip} />
-    </div>;
+    </>
+  );
 };
 
 export default TripBrochureContent;
