@@ -20,7 +20,6 @@ export interface TripHighlight {
   icon: React.ReactNode | string;
   title: string;
   description: string;
-  imagePath?: string;
 }
 
 interface TripLearningOutcome {
@@ -32,7 +31,6 @@ interface TripItineraryDay {
   day: string;
   title: string;
   activities: string[];
-  description?: string;
 }
 
 interface ProgramData {
@@ -50,14 +48,14 @@ interface TripBrochureContentProps {
   galleryImages: {
     src: string;
     alt: string;
-    className?: string;
+    className: string;
   }[];
   learningOutcomes: TripLearningOutcome[];
   tripItinerary: TripItineraryDay[];
   programData: ProgramData;
   description?: string[];
   projectGoals?: string[];
-  perfectFor?: string | string[];
+  perfectFor?: string;
   hideOverview?: boolean;
   hideHighlights?: boolean;
   hideLearningOutcomes?: boolean;
@@ -92,19 +90,9 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
     console.log('PDF Brochure Link:', pdfBrochureLink);
   }, [programData, pdfBrochureLink]);
 
-  // Determine if this is a school trip (inverse of isEducatorTrip for now)
-  const isSchoolTrip = !isEducatorTrip;
-
   return <div className="container py-0">
       {/* Trip Overview */}
-      {!hideOverview && <TripOverview 
-        tripDetails={tripDetails} 
-        description={description} 
-        projectGoals={projectGoals} 
-        perfectFor={perfectFor}
-        isSchoolTrip={isSchoolTrip}
-        pdfBrochureLink={pdfBrochureLink}
-      />}
+      {!hideOverview && <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />}
       
       {/* Trip Highlights */}
       {!hideHighlights && <div className="mb-16 text-center">
@@ -128,7 +116,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {!isEducatorTrip && !hideStudentStories && <Testimonials />}
       
       {/* CTA Section */}
-      <TripCTA isSchoolTrip={isSchoolTrip} />
+      <TripCTA isSchoolTrip={!isEducatorTrip} />
     </div>;
 };
 

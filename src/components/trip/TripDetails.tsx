@@ -5,22 +5,12 @@ import { TripDetail } from './TripBrochureContent';
 
 interface TripDetailsProps {
   tripDetails: TripDetail[];
-  isSchoolTrip?: boolean;
-  pdfBrochureLink?: string;
 }
 
-const TripDetails: React.FC<TripDetailsProps> = ({ 
-  tripDetails, 
-  isSchoolTrip,
-  pdfBrochureLink 
-}) => {
+const TripDetails: React.FC<TripDetailsProps> = ({ tripDetails }) => {
   return (
     <div className="lg:w-1/3">
-      <TripDetailsCard 
-        tripDetails={tripDetails} 
-        isSchoolTrip={isSchoolTrip}
-        pdfBrochureLink={pdfBrochureLink}
-      />
+      <TripDetailsCard tripDetails={tripDetails} />
     </div>
   );
 };
