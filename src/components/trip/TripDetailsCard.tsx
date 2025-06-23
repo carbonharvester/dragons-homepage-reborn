@@ -38,10 +38,12 @@ const TripDetailsCard = ({
     return icon;
   };
 
-  return <div className="bg-white rounded-lg shadow-md p-6 h-fit">
+  return (
+    <div className="bg-white rounded-lg shadow-md p-6 h-fit">
       <h3 className="text-xl font-bold mb-4 text-dragon-dark border-b border-gray-200 pb-2">Trip Details</h3>
       <div className="space-y-4">
-        {tripDetails.map((detail, index) => <div key={index} className="flex items-center">
+        {tripDetails.map((detail, index) => (
+          <div key={index} className="flex items-center">
             <div className="mr-3">
               {renderIcon(detail.icon)}
             </div>
@@ -49,15 +51,22 @@ const TripDetailsCard = ({
               <p className="text-sm text-gray-500">{detail.label}</p>
               <p className="font-medium text-dragon-dark whitespace-pre-line">{detail.value}</p>
             </div>
-          </div>)}
+          </div>
+        ))}
       </div>
       
       <div className="mt-6 space-y-4">
-        {/* Apply Now Button - Removed for school trips */}
+        {/* Apply Now Button - Removed for school trips and made disabled for others */}
+        {!isSchoolTrip && (
+          <Button className="w-full btn-primary" disabled>
+            Apply Now (Next Opening - Sept 2025)
+          </Button>
+        )}
         
         <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="outline" className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow" />
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default TripDetailsCard;

@@ -9,12 +9,15 @@ import { Button } from '@/components/ui/button';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
 import { Calendar, Users, MapPin } from "lucide-react";
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
+
 const SummerAbroad = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  return <div className="min-h-screen flex flex-col">
+
+  return (
+    <div className="min-h-screen flex flex-col">
       <SEO title="Summer Abroad Programs" description="Immersive summer programs in Kenya for students looking to expand their horizons through cultural experiences and educational adventures." keywords="summer abroad, student travel, Kenya, cultural immersion, educational travel, summer programs" />
       <Header />
       <main>
@@ -94,10 +97,8 @@ const SummerAbroad = () => {
                 <p className="text-dragon-gray mb-4">
                   Don't miss out—spots are limited! Explore our programs and take the first step toward an experience that will change how you see yourself—and the world.
                 </p>
-                <Button className="btn-primary" asChild>
-                  <a href="https://form.typeform.com/to/rtxmvp4L" target="_blank" rel="noopener noreferrer">
-                    Apply Now
-                  </a>
+                <Button className="btn-primary" disabled>
+                  Apply Now (Next Opening - Sept 2025)
                 </Button>
               </div>
             </div>
@@ -115,9 +116,11 @@ const SummerAbroad = () => {
             
             {/* Display Summer Abroad Programs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {summerAbroad.map((program, index) => <div key={index} className="h-full">
+              {summerAbroad.map((program, index) => (
+                <div key={index} className="h-full">
                   <ProgramCard program={program} />
-                </div>)}
+                </div>
+              ))}
             </div>
 
             {/* A Day in the Life Section */}
@@ -140,16 +143,16 @@ const SummerAbroad = () => {
                   <p>Work with experts in conservation, education, and creative media, guiding you to create impactful work.</p>
                 </div>
               </div>
-              <Button className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400" asChild>
-                <a href="https://form.typeform.com/to/rtxmvp4L" target="_blank" rel="noopener noreferrer">
-                  Join Our Next Adventure
-                </a>
+              <Button className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400" disabled>
+                Apply Now (Next Opening - Sept 2025)
               </Button>
             </div>
           </div>
         </section>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default SummerAbroad;

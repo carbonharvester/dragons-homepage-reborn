@@ -20,8 +20,8 @@ const ProgramCTA = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="btn-primary bg-white text-dragon hover:bg-gray-100" asChild>
-              <Link to="/apply">Apply Now</Link>
+            <Button className="btn-primary bg-white text-dragon hover:bg-gray-100" disabled>
+              Apply Now (Next Opening - Sept 2025)
             </Button>
             <CalendlyEmbed 
               url="https://calendly.com/kapesuniforms/discoverymeeting"
