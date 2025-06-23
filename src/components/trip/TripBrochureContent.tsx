@@ -1,3 +1,4 @@
+
 import React from 'react';
 import TripHighlights from './TripHighlights';
 import TripGallery from './TripGallery';
@@ -13,13 +14,14 @@ import { Calendar, Users, MapPin, Clock, LucideIcon } from 'lucide-react';
 export interface TripHighlight {
   title: string;
   description: string;
-  imagePath: string;
+  imagePath?: string; // Make imagePath optional
   icon: React.ReactNode;
 }
 
 export interface GalleryImage {
   src: string;
   alt: string;
+  className?: string; // Make className optional
 }
 
 export interface LearningOutcome {
@@ -30,7 +32,8 @@ export interface LearningOutcome {
 export interface TripItineraryDay {
   day: string;
   title: string;
-  description: string;
+  description?: string; // Make description optional
+  activities?: string[]; // Add activities as optional
 }
 
 export interface TripDetail {
@@ -60,12 +63,13 @@ interface TripBrochureContentProps {
   learningOutcomes: LearningOutcome[];
   tripItinerary: TripItineraryDay[];
   programData: ProgramData;
-  perfectFor: PerfectFor[];
+  perfectFor: PerfectFor[] | string; // Allow both array and string
   description: string[];
   projectGoals: string[];
   hideOverview?: boolean;
   hideHighlights?: boolean;
   hideStudentStories?: boolean;
+  hideLearningOutcomes?: boolean;
   pdfBrochureLink?: string;
   customThumbnails?: Record<string, string>;
   isEducatorTrip?: boolean;
@@ -84,11 +88,18 @@ const TripBrochureContent = ({
   hideOverview = false,
   hideHighlights = false,
   hideStudentStories = false,
+  hideLearningOutcomes = false,
   pdfBrochureLink,
   customThumbnails,
   isEducatorTrip = false
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
+
+  // Ensure galleryImages have className
+  const processedGalleryImages = galleryImages.map(img => ({
+    ...img,
+    className: img.className || "object-cover h-full w-full"
+  }));
 
   return (
     <>
@@ -102,13 +113,15 @@ const TripBrochureContent = ({
             )}
 
             {/* Gallery */}
-            <TripGallery images={galleryImages} customThumbnails={customThumbnails} />
+            <TripGallery images={processedGalleryImages} customThumbnails={customThumbnails} />
 
             {/* Learning Outcomes */}
-            <TripLearningOutcomes outcomes={learningOutcomes} />
+            {!hideLearningOutcomes && (
+              <TripLearningOutcomes outcomes={learningOutcomes} />
+            )}
 
             {/* Itinerary */}
-            <TripItinerary days={tripItinerary} />
+            <TripItinerary itinerary={tripItinerary} />
 
             {/* Program Brochure - only show if pdfBrochureLink is provided */}
             {pdfBrochureLink && (
@@ -145,13 +158,15 @@ const TripBrochureContent = ({
           )}
 
           {/* Gallery */}
-          <TripGallery images={galleryImages} customThumbnails={customThumbnails} />
+          <TripGallery images={processedGalleryImages} customThumbnails={customThumbnails} />
 
           {/* Learning Outcomes */}
-          <TripLearningOutcomes outcomes={learningOutcomes} />
+          {!hideLearningOutcomes && (
+            <TripLearningOutcomes outcomes={learningOutcomes} />
+          )}
 
           {/* Itinerary */}
-          <TripItinerary days={tripItinerary} />
+          <TripItinerary itinerary={tripItinerary} />
 
           {/* Program Brochure - only show if pdfBrochureLink is provided */}
           {pdfBrochureLink && (
