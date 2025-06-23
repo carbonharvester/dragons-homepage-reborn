@@ -32,8 +32,8 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
   
   const foodProjectGoals = programData.goals;
 
-  // Direct PDF brochure link
-  const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Food_For_Education.pdf?v=1747049829";
+  // Updated PDF brochure link
+  const pdfBrochureLink = "https://cdn.shopify.com/s/files/1/0777/3326/5724/files/Food_For_Education_2025.pdf?v=1750708949";
 
   return (
     <>
