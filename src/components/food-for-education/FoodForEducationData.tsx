@@ -61,6 +61,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               perfectFor={perfectFor}
               description={foodDescription}
               projectGoals={foodProjectGoals}
+              isSchoolTrip={true}
             />
             
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
@@ -83,6 +84,7 @@ const FoodForEducationData: React.FC<FoodForEducationDataProps> = ({
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
               isEducatorTrip={false} // Changed to use the correct prop name
+              isSchoolTrip={true}
             />
           </div>
         </>

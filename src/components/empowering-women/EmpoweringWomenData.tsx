@@ -73,6 +73,7 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
               perfectFor={perfectFor}
               description={waterDescription}
               projectGoals={waterProjectGoals}
+              isSchoolTrip={true}
             />
             
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
@@ -95,6 +96,7 @@ const EmpoweringWomenData: React.FC<EmpoweringWomenDataProps> = ({
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
               isEducatorTrip={false} // Changed from isSchoolTrip to isEducatorTrip
+              isSchoolTrip={true}
             />
           </div>
         </>
