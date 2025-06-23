@@ -4,7 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import MainRoutes from "./routes/MainRoutes";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -14,14 +13,12 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <HelmetProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <ScrollToTop />
-            <MainRoutes />
-          </BrowserRouter>
-        </TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <MainRoutes />
+        </BrowserRouter>
       </HelmetProvider>
     </QueryClientProvider>
   );
