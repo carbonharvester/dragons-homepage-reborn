@@ -63,6 +63,7 @@ interface TripBrochureContentProps {
   customThumbnails?: Record<string, string>;
   isEducatorTrip?: boolean;
   hideStudentStories?: boolean;
+  isSchoolTrip?: boolean;
 }
 
 const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
@@ -81,7 +82,8 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
   pdfBrochureLink,
   customThumbnails,
   isEducatorTrip = false,
-  hideStudentStories = false
+  hideStudentStories = false,
+  isSchoolTrip = false
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
   
@@ -92,7 +94,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
 
   return <div className="container py-0">
       {/* Trip Overview */}
-      {!hideOverview && <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} />}
+      {!hideOverview && <TripOverview tripDetails={tripDetails} description={description} projectGoals={projectGoals} perfectFor={perfectFor} isSchoolTrip={isSchoolTrip} />}
       
       {/* Trip Highlights */}
       {!hideHighlights && <div className="mb-16 text-center">
@@ -116,7 +118,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {!isEducatorTrip && !hideStudentStories && <Testimonials />}
       
       {/* CTA Section */}
-      <TripCTA isSchoolTrip={!isEducatorTrip} />
+      <TripCTA isSchoolTrip={isSchoolTrip} />
     </div>;
 };
 

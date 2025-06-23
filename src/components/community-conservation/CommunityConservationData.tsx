@@ -78,6 +78,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
               perfectFor={perfectFor}
               description={conservationDescription}
               projectGoals={conservationProjectGoals}
+              isSchoolTrip={true}
             />
             
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
@@ -100,6 +101,7 @@ const CommunityConservationData: React.FC<CommunityConservationDataProps> = ({
               hideOverview={true}
               hideHighlights={!isMobile} // Show highlights in TripBrochureContent only on mobile
               customThumbnails={customThumbnails}
+              isSchoolTrip={true}
             />
           </div>
         </>

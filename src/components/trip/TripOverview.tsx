@@ -11,9 +11,10 @@ interface TripOverviewProps {
   projectGoals?: string[];
   description?: string[];
   perfectFor?: string;
+  isSchoolTrip?: boolean;
 }
 
-const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: TripOverviewProps) => {
+const TripOverview = ({ tripDetails, projectGoals, description, perfectFor, isSchoolTrip = false }: TripOverviewProps) => {
   const isMobile = useIsMobile();
   
   return (
@@ -45,7 +46,7 @@ const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: Tr
           {/* Show TripDetailsCard after the description on mobile */}
           {isMobile && (
             <div className="mb-8">
-              <TripDetailsCard tripDetails={tripDetails} />
+              <TripDetailsCard tripDetails={tripDetails} isSchoolTrip={isSchoolTrip} />
             </div>
           )}
           
@@ -70,7 +71,7 @@ const TripOverview = ({ tripDetails, projectGoals, description, perfectFor }: Tr
         
         {/* Show TripDetailsCard in normal position on desktop */}
         {!isMobile && (
-          <TripDetailsCard tripDetails={tripDetails} />
+          <TripDetailsCard tripDetails={tripDetails} isSchoolTrip={isSchoolTrip} />
         )}
       </div>
       
