@@ -51,7 +51,7 @@ const PartnerForm = () => {
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-1">Tell us about your organization*</label>
+              <label htmlFor="message" className="block text-sm font-medium mb-1">Tell us about your organisation*</label>
               <textarea id="message" rows={4} required className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-dragon focus:border-transparent" placeholder="Please share details about your organization, the type of trips you currently offer, and what interests you about partnering with Kapes Adventures."></textarea>
             </div>
             
