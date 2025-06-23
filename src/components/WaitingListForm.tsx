@@ -21,17 +21,43 @@ interface WaitingListFormProps {
 
 const WaitingListForm = ({ children, className }: WaitingListFormProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
   
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    toast({
-      title: "Welcome to our waiting list!",
-      description: "Thank you for your interest. We'll contact you when applications open in September 2025.",
-    });
+    const formData = new FormData(e.currentTarget);
     
-    setIsOpen(false);
+    try {
+      const response = await fetch('https://formspree.io/f/xnnvgglo', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Welcome to our waiting list!",
+          description: "Thank you for your interest. We'll contact you when applications open in September 2025.",
+        });
+        setIsOpen(false);
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -52,35 +78,40 @@ const WaitingListForm = ({ children, className }: WaitingListFormProps) => {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Label htmlFor="firstName">First Name*</Label>
-              <Input id="firstName" required />
+              <Input id="firstName" name="firstName" required />
             </div>
             <div>
               <Label htmlFor="lastName">Last Name*</Label>
-              <Input id="lastName" required />
+              <Input id="lastName" name="lastName" required />
             </div>
           </div>
           <div>
             <Label htmlFor="email">Email Address*</Label>
-            <Input type="email" id="email" required />
+            <Input type="email" id="email" name="email" required />
           </div>
           <div>
             <Label htmlFor="phone">Phone Number</Label>
-            <Input type="tel" id="phone" />
+            <Input type="tel" id="phone" name="phone" />
           </div>
           <div>
             <Label htmlFor="program">Interested Program(s)</Label>
-            <Input id="program" placeholder="e.g., Capturing Kenya, Feeding the Future" />
+            <Input id="program" name="program" placeholder="e.g., Capturing Kenya, Feeding the Future" />
           </div>
           <div>
             <Label htmlFor="message">Additional Comments</Label>
             <Textarea 
               id="message" 
+              name="message"
               placeholder="Tell us about your interests or any questions you have..."
               rows={3}
             />
           </div>
-          <Button type="submit" className="w-full bg-dragon hover:bg-dragon-dark text-white">
-            Join Waiting List
+          <Button 
+            type="submit" 
+            className="w-full bg-dragon hover:bg-dragon-dark text-white"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Joining..." : "Join Waiting List"}
           </Button>
         </form>
       </DialogContent>
