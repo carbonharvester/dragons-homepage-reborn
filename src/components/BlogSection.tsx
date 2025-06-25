@@ -32,8 +32,8 @@ const BlogSection = () => {
       <section className="py-16 bg-dragon-beige/30">
         <div className="container-wide">
           <BlogSectionHeader 
-            title="Latest From Our Blog" 
-            subtitle="Discover insights, stories, and updates from our adventures and impact initiatives."
+            title="Latest From Our Founder's Blog" 
+            subtitle="Personal insights, stories, and reflections from the founder on transformative educational travel and cultural immersion experiences."
           />
 
           <Carousel className="w-full" opts={{ loop: true }}>
@@ -88,8 +88,8 @@ const BlogSection = () => {
     <section className="py-20 bg-dragon-beige/30">
       <div className="container-wide">
         <BlogSectionHeader 
-          title="Latest From Our Blog" 
-          subtitle="Discover insights, stories, and updates from our adventures and impact initiatives."
+          title="Latest From Our Founder's Blog" 
+          subtitle="Personal insights, stories, and reflections from the founder on transformative educational travel and cultural immersion experiences."
         />
 
         <BlogGrid posts={posts} />
