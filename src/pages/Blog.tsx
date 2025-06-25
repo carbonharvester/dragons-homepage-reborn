@@ -27,15 +27,15 @@ const BlogHome = () => {
   return (
     <>
       <SEO 
-        title="Blog | Mission Kapes"
-        description="Insights, stories, and resources for transformative educational travel and cultural immersion experiences."
-        keywords="educational travel, student trips, blog, mission kapes blog, Africa travel"
+        title="Founder's Blog | Mission Kapes"
+        description="Personal insights, stories, and reflections from the founder of Mission Kapes on educational travel and cultural immersion experiences."
+        keywords="founder blog, educational travel, student trips, mission kapes founder, Africa travel"
       />
       <Header />
       <main className="pt-8 pb-16">
         <BlogHero 
-          title="Kapes Adventures Blog" 
-          description="Insights, stories, and resources for transformative educational travel and cultural immersion experiences."
+          title="Founder's Blog" 
+          description="Personal insights, stories, and reflections from the founder on transformative educational travel and cultural immersion experiences."
         />
 
         {isLoading ? (
