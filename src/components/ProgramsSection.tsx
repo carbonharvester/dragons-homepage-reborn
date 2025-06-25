@@ -1,10 +1,8 @@
-
 import React, { useState } from 'react';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { schoolTrips, summerAbroad, adultTrips, educatorTrips } from '@/data/programsData';
 import ProgramCategorySelector from './programs/ProgramCategorySelector';
 import ProgramCategoryContent from './programs/ProgramCategoryContent';
-
 const ProgramsSection = () => {
   const [activeCategory, setActiveCategory] = useState("school-trips");
   const isMobile = useIsMobile();
@@ -24,13 +22,11 @@ const ProgramsSection = () => {
         return [];
     }
   };
-
-  return (
-    <section id="programs" className="py-20 bg-dragon-beige">
+  return <section id="programs" className="py-20 bg-dragon-beige">
       <div className="container-wide">
         <div className="text-center mb-12">
-          <h2 className="section-heading">Transformative Programs</h2>
-          <p className="section-subheading mx-auto">Discover cultural immersion experiences that challenge, inspire, and transform students while empowering African communities with sustainable impact.</p>
+          <h2 className="section-heading">Founder's Blog</h2>
+          <p className="section-subheading mx-auto">Personal insights, stories, and reflections from the founder on transformative educational travel and cultural immersion experiences.</p>
         </div>
 
         {/* Program Category Buttons */}
@@ -39,8 +35,6 @@ const ProgramsSection = () => {
         {/* Program Content - removed multiYearData prop since we're hiding it */}
         <ProgramCategoryContent activeCategory={activeCategory} isMobile={isMobile} programs={getActivePrograms()} />
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ProgramsSection;
