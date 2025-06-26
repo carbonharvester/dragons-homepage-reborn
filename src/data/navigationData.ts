@@ -1,14 +1,10 @@
+
 export const programCategories = [
   {
     title: "School Trips",
     href: "/school-trips",
     description: "Experiential learning trips for K-12 schools.",
     programs: [
-      {
-        title: "School Trips Landing",
-        href: "/school-trips-landing",
-        description: "Dedicated landing page for school trip programs.",
-      },
       {
         title: "Community Conservation",
         href: "/programs/community-conservation",
@@ -55,6 +51,7 @@ export const programCategories = [
       },
     ],
   },
+  // Adult Trips category removed
 ];
 
 export const resourcePages = [
@@ -78,6 +75,7 @@ export const resourcePages = [
     href: "/discover-kenya",
     description: "Explore the incredible diversity of landscapes, wildlife, and culture in Kenya."
   },
+  // Podcast entry removed
   {
     title: "Blog",
     href: "/blog",
