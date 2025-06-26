@@ -4,7 +4,7 @@ import React from 'react';
 const HeroSection = () => {
   // Responsive image URLs for different screen sizes
   const heroImageBase = 'https://res.cloudinary.com/dng12bd0a/image/upload';
-  const heroImageId = 'v1750710691/IMG_2878_nkkymi_uvn1pi.jpg';
+  const heroImageId = 'v1747119240/A7405124_ygha4n.jpg';
   
   // Responsive image transformations
   const mobileImage = `${heroImageBase}/w_768,h_768,c_fill,f_auto,q_auto/${heroImageId}`;
