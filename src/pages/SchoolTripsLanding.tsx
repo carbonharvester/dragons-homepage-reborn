@@ -6,7 +6,6 @@ import SEO from '@/components/SEO';
 import HeroSection from '@/components/school-trips-landing/HeroSection';
 import IntroSection from '@/components/school-trips-landing/IntroSection';
 import BenefitsSection from '@/components/school-trips-landing/BenefitsSection';
-import TestimonialsSection from '@/components/school-trips-landing/TestimonialsSection';
 import ProgramsSection from '@/components/school-trips-landing/ProgramsSection';
 import ResourcesSection from '@/components/school-trips-landing/ResourcesSection';
 import CTASection from '@/components/school-trips-landing/CTASection';
@@ -31,7 +30,6 @@ const SchoolTripsLanding = () => {
         <HeroSection />
         <IntroSection />
         <BenefitsSection />
-        <TestimonialsSection />
         <ProgramsSection />
         <ResourcesSection />
         <CTASection />
