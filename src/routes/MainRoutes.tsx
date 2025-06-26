@@ -16,6 +16,7 @@ import TermsOfService from "@/pages/TermsOfService";
 // Program Categories
 import Programs from "@/pages/Programs";
 import SchoolTrips from "@/pages/SchoolTrips";
+import SchoolTripsLanding from "@/pages/SchoolTripsLanding";
 import SummerAbroad from "@/pages/SummerAbroad";
 import MultiYearCurriculum from "@/pages/MultiYearCurriculum";
 import AdultPrograms from "@/pages/AdultPrograms";
@@ -60,6 +61,7 @@ const MainRoutes = () => {
       {/* Program Categories */}
       <Route path="/programs" element={<Programs />} />
       <Route path="/school-trips" element={<SchoolTrips />} />
+      <Route path="/school-trips-landing" element={<SchoolTripsLanding />} />
       <Route path="/summer-abroad" element={<SummerAbroad />} />
       <Route path="/multi-year-curriculum" element={<MultiYearCurriculum />} />
       <Route path="/adult-programs" element={<AdultPrograms />} />
