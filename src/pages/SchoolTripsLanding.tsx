@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import { schoolTrips } from '@/data/programsData';
 import { Book, Users, Globe, Award, Shield, Calendar } from 'lucide-react';
 import CalendlyEmbed from '@/components/CalendlyEmbed';
+import SchoolLogosScroll from '@/components/home/SchoolLogosScroll';
+import Testimonials from '@/components/Testimonials';
 
 const SchoolTripsLanding = () => {
   useEffect(() => {
@@ -107,8 +109,36 @@ const SchoolTripsLanding = () => {
                 </div>
               ))}
             </div>
+
+            {/* School Logos Section */}
+            <div className="mt-16">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-dragon-dark mb-4">
+                  Trusted by Top International Schools
+                </h3>
+                <p className="text-lg text-dragon-gray max-w-2xl mx-auto">
+                  Leading educational institutions worldwide choose Mission Kapes for transformative student experiences.
+                </p>
+              </div>
+              <SchoolLogosScroll />
+            </div>
           </div>
         </section>
+
+        {/* Student Testimonials Section */}
+        <div className="bg-dragon">
+          <div className="container-wide">
+            <div className="text-center py-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                What Students Think?
+              </h2>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                Hear directly from students about their life-changing experiences and personal growth during their time in Kenya.
+              </p>
+            </div>
+          </div>
+          <Testimonials />
+        </div>
 
         {/* Programs Section */}
         <section id="programs" className="py-20 bg-dragon-beige/50">
@@ -164,7 +194,7 @@ const SchoolTripsLanding = () => {
               Ready to Transform Your Students' Education?
             </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Join hundreds of schools worldwide who have chosen Mission Kapes for life-changing educational experiences. Contact us today for a free consultation and custom program proposal.
+              Join leading international schools who have chosen Mission Kapes for life-changing educational experiences. Contact us today for a free consultation and custom program proposal.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <CalendlyEmbed 
