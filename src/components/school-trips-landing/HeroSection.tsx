@@ -1,49 +1,19 @@
 
 import React from 'react';
+import HomeVideoSection from '@/components/HomeVideoSection';
 
 const HeroSection = () => {
-  // Responsive image URLs for different screen sizes
-  const heroImageBase = 'https://res.cloudinary.com/dng12bd0a/image/upload';
-  const heroImageId = 'v1747119240/A7405124_ygha4n.jpg';
-  
-  // Responsive image transformations
-  const mobileImage = `${heroImageBase}/w_768,h_768,c_fill,f_auto,q_auto/${heroImageId}`;
-  const tabletImage = `${heroImageBase}/w_1024,h_768,c_fill,f_auto,q_auto/${heroImageId}`;
-  const desktopImage = `${heroImageBase}/w_1920,h_1080,c_fill,f_auto,q_auto/${heroImageId}`;
-
   return (
-    <section className="relative h-[100vh] min-h-[600px] max-h-[800px]">
-      {/* Black background behind the image */}
-      <div className="absolute inset-0 z-0 bg-black">
-        {/* Responsive hero image with optimized loading */}
-        <picture className="absolute inset-0">
-          {/* Mobile image */}
-          <source 
-            media="(max-width: 767px)" 
-            srcSet={mobileImage}
-          />
-          {/* Tablet image */}
-          <source 
-            media="(max-width: 1023px)" 
-            srcSet={tabletImage}
-          />
-          {/* Desktop image */}
-          <source 
-            media="(min-width: 1024px)" 
-            srcSet={desktopImage}
-          />
-          {/* Fallback image with optimized loading */}
-          <img 
-            src={desktopImage}
-            alt="Students on educational trip in Kenya" 
-            className="w-full h-full object-cover"
-            width="1920" 
-            height="1080" 
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-          />
-        </picture>
+    <section className="relative h-[100vh] min-h-[600px] max-h-[800px] bg-black">
+      <div className="absolute inset-0">
+        <HomeVideoSection 
+          videoUrl="https://cdn.shopify.com/videos/c/o/v/44b5817ef9b647a5a68e4ffd1c092f05.mp4" 
+          title="Educational School Trips to Kenya" 
+          initialPlaying={false}
+          showPreview={true}
+          muted={false}
+          autoplayOnScroll={false}
+        />
       </div>
     </section>
   );
