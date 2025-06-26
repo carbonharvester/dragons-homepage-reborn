@@ -13,6 +13,7 @@ interface VideoPlayerProps {
   showPreview?: boolean;
   muted?: boolean;
   autoplayOnScroll?: boolean;
+  className?: string;
 }
 
 const VideoPlayer = ({ 
@@ -22,8 +23,9 @@ const VideoPlayer = ({
   customThumbnail, 
   initialPlaying = false,
   showPreview = true,
-  muted = false, // Default to unmuted - this is the main change
-  autoplayOnScroll = false
+  muted = false,
+  autoplayOnScroll = false,
+  className = ""
 }: VideoPlayerProps) => {
   const {
     isPlaying,
@@ -110,10 +112,16 @@ const VideoPlayer = ({
     );
   };
   
+  // Check if we should remove rounded corners (when className contains specific indicators)
+  const shouldRemoveRounding = className.includes('hero') || className.includes('edge-to-edge');
+  const containerClasses = shouldRemoveRounding 
+    ? `relative mx-auto overflow-hidden shadow-xl video-container ${className}`
+    : `relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl video-container ${className}`;
+  
   return (
     <div 
       ref={containerRef}
-      className="relative mx-auto max-w-4xl overflow-hidden rounded-xl shadow-xl video-container"
+      className={containerClasses}
     >
       {renderVideoContent()}
     </div>
