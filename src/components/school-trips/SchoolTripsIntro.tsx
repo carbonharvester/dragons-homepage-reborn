@@ -92,18 +92,86 @@ const SchoolTripsIntro = () => {
       </div>
       
       <div className="mt-8 flex flex-col md:flex-row gap-6">
-        <div className="bg-white p-6 rounded-lg shadow-sm flex-1">
-          <h3 className="text-2xl font-academy text-dragon-dark mb-4">Global Education Network</h3>
-          <p className="text-dragon-gray">
-            Kapes Adventures has delivered and designed educational journeys implemented through our network of trusted partners for several leading international schools, ensuring authentic and impactful experiences for students worldwide.
-          </p>
+        <div className="bg-white p-6 rounded-lg shadow-sm flex-1 relative">
+          {/* African Pattern Border */}
+          <div className="absolute inset-0 rounded-lg overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 w-full h-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute left-0 top-0 bottom-0 w-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute right-0 top-0 bottom-0 w-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          
+          <div className="relative z-10">
+            <h3 className="text-2xl font-academy text-dragon-dark mb-4">Global Education Network</h3>
+            <p className="text-dragon-gray">
+              Kapes Adventures has delivered and designed educational journeys implemented through our network of trusted partners for several leading international schools, ensuring authentic and impactful experiences for students worldwide.
+            </p>
+          </div>
         </div>
         
-        <div className="bg-white p-6 rounded-lg shadow-sm flex-1">
-          <h3 className="text-2xl font-academy text-dragon-dark mb-4">Safety and Support</h3>
-          <p className="text-dragon-gray">
-            We prioritise safety with 24/7 support, experienced guides trained in first aid, vetted accommodations, and a robust emergency response system.
-          </p>
+        <div className="bg-white p-6 rounded-lg shadow-sm flex-1 relative">
+          {/* African Pattern Border */}
+          <div className="absolute inset-0 rounded-lg overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 w-full h-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute left-0 top-0 bottom-0 w-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute right-0 top-0 bottom-0 w-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          
+          <div className="relative z-10">
+            <h3 className="text-2xl font-academy text-dragon-dark mb-4">Safety and Support</h3>
+            <p className="text-dragon-gray">
+              We prioritise safety with 24/7 support, experienced guides trained in first aid, vetted accommodations, and a robust emergency response system.
+            </p>
+          </div>
         </div>
       </div>
     </div>
