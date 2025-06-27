@@ -34,12 +34,27 @@ const ProgramsSection = () => {
   };
 
   return (
-    <section id="programs" className="py-20 bg-dragon-beige" ref={elementRef}>
-      <div className="container-wide">
+    <section id="programs" className="py-20 bg-dragon-beige relative overflow-hidden" ref={elementRef}>
+      {/* African Pattern Border Decorations */}
+      <div className="absolute top-0 left-0 w-full h-2 opacity-30">
+        <img 
+          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          alt="" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="absolute -left-8 top-1/2 transform -translate-y-1/2 w-12 h-32 opacity-20">
+        <img 
+          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          alt="" 
+          className="w-full h-full object-cover rounded-r-lg"
+        />
+      </div>
+      
+      <div className="container-wide relative z-10">
         <div className={`text-center mb-12 transition-all duration-800 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="section-heading relative">
+          <h2 className="section-heading">
             Transformative Programs
-            <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-dragon transition-all duration-1000 ${isVisible ? 'w-24' : 'w-0'}`} style={{ transitionDelay: '400ms' }}></div>
           </h2>
           <p className="section-subheading mx-auto">Discover cultural immersion experiences that challenge, inspire, and transform students while empowering African communities with sustainable impact.</p>
         </div>

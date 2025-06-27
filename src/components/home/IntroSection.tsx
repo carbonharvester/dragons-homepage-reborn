@@ -10,12 +10,27 @@ const IntroSection = () => {
   });
 
   return (
-    <div className="py-16 bg-white" ref={elementRef}>
-      <div className="container-wide text-center">
+    <div className="py-16 bg-white relative overflow-hidden" ref={elementRef}>
+      {/* African Pattern Decorations */}
+      <div className="absolute top-8 left-8 w-16 h-16 opacity-20">
+        <img 
+          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          alt="" 
+          className="w-full h-full object-cover rounded-lg"
+        />
+      </div>
+      <div className="absolute bottom-8 right-8 w-20 h-12 opacity-15">
+        <img 
+          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          alt="" 
+          className="w-full h-full object-cover rounded-lg"
+        />
+      </div>
+      
+      <div className="container-wide text-center relative z-10">
         <div className={`transition-all duration-800 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="section-heading relative">
+          <h2 className="section-heading">
             Experience Learning Through Adventure
-            <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-dragon transition-all duration-1000 ${isVisible ? 'w-32' : 'w-0'}`} style={{ transitionDelay: '400ms' }}></div>
           </h2>
         </div>
         

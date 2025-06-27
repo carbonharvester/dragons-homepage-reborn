@@ -97,12 +97,27 @@ const WhyChooseUs = () => {
     }
   };
   
-  return <section id="why-us" className="py-20 bg-white" ref={elementRef}>
-      <div className="container-wide">
+  return <section id="why-us" className="py-20 bg-white relative overflow-hidden" ref={elementRef}>
+      {/* African Pattern Accent Elements */}
+      <div className="absolute top-12 right-12 w-24 h-16 opacity-15">
+        <img 
+          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          alt="" 
+          className="w-full h-full object-cover rounded-lg"
+        />
+      </div>
+      <div className="absolute bottom-16 left-16 w-20 h-20 opacity-20">
+        <img 
+          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          alt="" 
+          className="w-full h-full object-cover rounded-full"
+        />
+      </div>
+      
+      <div className="container-wide relative z-10">
         <div className={`text-center mb-16 transition-all duration-800 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="section-heading relative">
+          <h2 className="section-heading">
             Why Kapes?
-            <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-dragon transition-all duration-1000 ${isVisible ? 'w-20' : 'w-0'}`} style={{ transitionDelay: '300ms' }}></div>
           </h2>
           <p className="section-subheading mx-auto">We believe travel transforms lives and builds bridges between cultures. Our unique programs immerse students in authentic African experiences, inspiring personal growth while creating sustainable impact for communities, setting us apart in educational travel.</p>
         </div>
