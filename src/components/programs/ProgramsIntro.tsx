@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const ProgramsIntro = () => {
@@ -46,7 +47,7 @@ const ProgramsIntro = () => {
           <p className="mb-4">At Kapes Adventures, we believe educational travel should be transformative, ethical, and impactful. Our programs in Africa aren't just trips—they're life-changing journeys that connect students with vibrant cultures, resilient communities, and global challenges.</p>
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-dragon-beige/20 p-4 rounded-lg relative">
+            <div className="bg-dragon-beige/20 p-4 rounded-lg relative print:border-2 print:border-black">
               {/* African Pattern Border for feature box */}
               <div className="absolute inset-0 rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2">
@@ -84,7 +85,7 @@ const ProgramsIntro = () => {
               </div>
             </div>
             
-            <div className="bg-dragon-beige/20 p-4 rounded-lg relative">
+            <div className="bg-dragon-beige/20 p-4 rounded-lg relative print:border-2 print:border-black">
               {/* African Pattern Border for feature box */}
               <div className="absolute inset-0 rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2">
@@ -124,7 +125,7 @@ const ProgramsIntro = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <div className="bg-dragon-beige/20 p-4 rounded-lg relative">
+            <div className="bg-dragon-beige/20 p-4 rounded-lg relative print:border-2 print:border-black">
               {/* African Pattern Border for feature box */}
               <div className="absolute inset-0 rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2">
@@ -162,7 +163,7 @@ const ProgramsIntro = () => {
               </div>
             </div>
             
-            <div className="bg-dragon-beige/20 p-4 rounded-lg relative">
+            <div className="bg-dragon-beige/20 p-4 rounded-lg relative print:border-2 print:border-black">
               {/* African Pattern Border for feature box */}
               <div className="absolute inset-0 rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2">
