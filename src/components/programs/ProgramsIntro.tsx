@@ -42,7 +42,7 @@ const ProgramsIntro = () => {
           </div>
         </div>
 
-        <div className="bg-white p-8 rounded-lg shadow-sm text-left relative z-10 print:border-2 print:border-black">
+        <div className="bg-white p-8 rounded-lg shadow-sm text-left relative z-10 border-2 border-dragon-beige print:border-2 print:border-black">
           <p className="mb-4">At Kapes Adventures, we believe educational travel should be transformative, ethical, and impactful. Our programs in Africa aren't just trips—they're life-changing journeys that connect students with vibrant cultures, resilient communities, and global challenges.</p>
           
           <div className="grid md:grid-cols-2 gap-6 mb-6">
