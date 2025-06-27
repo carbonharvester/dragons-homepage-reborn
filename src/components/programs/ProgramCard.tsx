@@ -64,7 +64,7 @@ const ProgramCard = ({ program, buttonClassName, priority = false }: ProgramCard
         </div>
       </div>
 
-      <Card className={`overflow-hidden border-none shadow-md h-full flex flex-col transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 hover:scale-[1.02] group relative z-10 ${isMobile ? 'min-h-[580px]' : ''}`}>
+      <Card className={`overflow-hidden border-none shadow-md h-full flex flex-col transition-shadow duration-300 hover:shadow-xl group relative z-10 ${isMobile ? 'min-h-[580px]' : ''}`}>
         <div className="relative overflow-hidden">
           <AspectRatio ratio={1/1} className="bg-gray-200">
             {!imageLoaded && (
@@ -102,7 +102,7 @@ const ProgramCard = ({ program, buttonClassName, priority = false }: ProgramCard
           <div className="mt-auto">
             <Button 
               variant="outline" 
-              className={`${buttonClassName || "w-full border-dragon text-dragon hover:bg-dragon hover:text-white"} h-12 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg active:scale-95`}
+              className={`${buttonClassName || "w-full border-dragon text-dragon hover:bg-dragon hover:text-white"} h-12 transition-all duration-300 hover:shadow-lg`}
               asChild
             >
               <Link to={program.link}>Learn More</Link>
