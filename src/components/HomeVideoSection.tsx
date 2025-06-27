@@ -45,15 +45,17 @@ const HomeVideoSection = ({
         />
       </div>
 
-      {/* African Pattern Side Borders */}
-      <div className="absolute left-0 top-0 bottom-0 w-8 opacity-25">
+      {/* Left Side Border */}
+      <div className="absolute left-0 top-0 bottom-0 w-3 opacity-30">
         <img 
           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="absolute right-0 top-0 bottom-0 w-8 opacity-25">
+      
+      {/* Right Side Border */}
+      <div className="absolute right-0 top-0 bottom-0 w-3 opacity-30">
         <img 
           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
