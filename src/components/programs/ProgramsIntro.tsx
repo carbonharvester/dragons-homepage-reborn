@@ -52,28 +52,28 @@ const ProgramsIntro = () => {
               <div className="absolute inset-0 rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 w-full h-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute left-0 top-0 bottom-0 w-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute right-0 top-0 bottom-0 w-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
@@ -90,28 +90,28 @@ const ProgramsIntro = () => {
               <div className="absolute inset-0 rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 w-full h-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute left-0 top-0 bottom-0 w-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute right-0 top-0 bottom-0 w-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
@@ -130,28 +130,28 @@ const ProgramsIntro = () => {
               <div className="absolute inset-0 rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 w-full h-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute left-0 top-0 bottom-0 w-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute right-0 top-0 bottom-0 w-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
@@ -168,28 +168,28 @@ const ProgramsIntro = () => {
               <div className="absolute inset-0 rounded-lg overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 w-full h-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute left-0 top-0 bottom-0 w-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute right-0 top-0 bottom-0 w-2">
                   <img 
-                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050598/d27a6b43-8fca-4d7e-9edb-6f0fc0b89338_whp6v7.png" 
+                    src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751052653/06ff528d-3831-440b-b0b0-155e1fa8dc75_njuoxi.png" 
                     alt="" 
                     className="w-full h-full object-cover"
                   />
