@@ -1,4 +1,3 @@
-
 import React from 'react';
 import VideoPlayer from './video/VideoPlayer';
 
@@ -28,7 +27,7 @@ const HomeVideoSection = ({
   return (
     <section className="py-24 bg-slate-50 relative overflow-hidden">
       {/* Top Border */}
-      <div className="absolute top-0 left-0 w-full h-12 opacity-15">
+      <div className="absolute top-0 left-0 w-full h-12">
         <img 
           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
@@ -37,7 +36,7 @@ const HomeVideoSection = ({
       </div>
       
       {/* Bottom Border */}
-      <div className="absolute bottom-0 left-0 w-full h-12 opacity-15">
+      <div className="absolute bottom-0 left-0 w-full h-12">
         <img 
           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
@@ -46,7 +45,7 @@ const HomeVideoSection = ({
       </div>
 
       {/* Left Side Border */}
-      <div className="absolute left-0 top-0 bottom-0 w-12 opacity-15">
+      <div className="absolute left-0 top-0 bottom-0 w-12">
         <img 
           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
@@ -55,7 +54,7 @@ const HomeVideoSection = ({
       </div>
       
       {/* Right Side Border */}
-      <div className="absolute right-0 top-0 bottom-0 w-12 opacity-15">
+      <div className="absolute right-0 top-0 bottom-0 w-12">
         <img 
           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
