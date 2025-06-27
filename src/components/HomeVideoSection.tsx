@@ -26,7 +26,7 @@ const HomeVideoSection = ({
   showPreview = true
 }: HomeVideoSectionProps) => {
   return (
-    <section className="py-16 bg-slate-50">
+    <section className="py-16 bg-pattern-subtle">
       <div className="container-wide">
         <div className="text-center mb-10">
           <h2 className="section-heading">Experience Our Journey</h2>
