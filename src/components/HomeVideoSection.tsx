@@ -26,9 +26,9 @@ const HomeVideoSection = ({
   showPreview = true
 }: HomeVideoSectionProps) => {
   return (
-    <section className="py-16 bg-slate-50 relative overflow-hidden">
+    <section className="py-24 bg-slate-50 relative overflow-hidden">
       {/* Top Border */}
-      <div className="absolute top-0 left-0 w-full h-3 opacity-30">
+      <div className="absolute top-0 left-0 w-full h-12 opacity-15">
         <img 
           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
@@ -37,7 +37,7 @@ const HomeVideoSection = ({
       </div>
       
       {/* Bottom Border */}
-      <div className="absolute bottom-0 left-0 w-full h-3 opacity-30">
+      <div className="absolute bottom-0 left-0 w-full h-12 opacity-15">
         <img 
           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
@@ -46,7 +46,7 @@ const HomeVideoSection = ({
       </div>
 
       {/* Left Side Border */}
-      <div className="absolute left-0 top-0 bottom-0 w-3 opacity-30">
+      <div className="absolute left-0 top-0 bottom-0 w-12 opacity-15">
         <img 
           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
@@ -55,7 +55,7 @@ const HomeVideoSection = ({
       </div>
       
       {/* Right Side Border */}
-      <div className="absolute right-0 top-0 bottom-0 w-3 opacity-30">
+      <div className="absolute right-0 top-0 bottom-0 w-12 opacity-15">
         <img 
           src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
@@ -63,8 +63,8 @@ const HomeVideoSection = ({
         />
       </div>
       
-      <div className="container-wide relative z-10">
-        <div className="text-center mb-10">
+      <div className="container-wide relative z-10 px-16">
+        <div className="text-center mb-12">
           <h2 className="section-heading">Experience Our Journey</h2>
           <p className="section-subheading mx-auto">Watch how our immersive programs transform students into global citizens through cultural exchange and authentic experiences in Africa - while empowering communities with lasting impact.</p>
         </div>
