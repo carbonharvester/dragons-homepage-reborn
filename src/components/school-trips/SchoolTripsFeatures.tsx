@@ -17,11 +17,11 @@ const SchoolTripsFeatures = () => {
     description: "Meaningful community projects that create lasting impact while fostering global citizenship, leadership, and teamwork.",
     points: ["Community-identified projects with measurable outcomes, like clean water access for 100 people", "Sustainable development initiatives, such as solar energy projects", "Cross-cultural collaboration and exchange"]
   }];
-  return <section className="py-20 bg-dragon my-16 rounded-lg overflow-hidden">
+  return <section className="py-20 my-16 rounded-lg overflow-hidden bg-yellow-400">
       <div className="container-wide">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-academy font-bold text-white mb-4">Educational Focus Areas</h2>
-          <p className="text-lg md:text-xl text-white opacity-80 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-academy font-bold mb-4 text-green-950">Educational Focus Areas</h2>
+          <p className="text-lg md:text-xl opacity-80 max-w-3xl mx-auto text-green-950">
             Our trips are designed to foster global citizenship and personal growth in three key areas, with outcomes documented for college applications.
           </p>
         </div>
