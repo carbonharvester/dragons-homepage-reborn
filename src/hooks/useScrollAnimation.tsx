@@ -23,7 +23,7 @@ export const useScrollAnimation = (
 
   const [isVisible, setIsVisible] = useState(false);
   const [visibleElements, setVisibleElements] = useState<boolean[]>([]);
-  const elementRef = useRef<HTMLDivElement>(null);
+  const elementRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

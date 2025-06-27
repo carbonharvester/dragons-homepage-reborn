@@ -10,7 +10,7 @@ const IntroSection = () => {
   });
 
   return (
-    <div className="py-16" ref={elementRef}>
+    <div className="py-16 bg-white" ref={elementRef}>
       <div className="container-wide text-center">
         <div className={`transition-all duration-800 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
           <h2 className="section-heading relative">

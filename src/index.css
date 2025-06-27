@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 /* Import Proxima Nova */
@@ -124,59 +125,6 @@
   /* Hero-heading class for the hero banners specifically */
   .hero-heading {
     font-family: 'AcademySansExpanded-Bold', 'AcademySansExpanded-Black', sans-serif;
-  }
-
-  /* African Pattern Background Classes */
-  .bg-pattern-subtle {
-    background-color: #ffffff;
-    background-image: url('https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png');
-    background-size: 150px 150px;
-    background-repeat: repeat;
-    background-position: 0 0;
-    position: relative;
-  }
-
-  .bg-pattern-subtle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.85);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .bg-pattern-subtle > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .bg-pattern-extra-subtle {
-    background-color: #ffffff;
-    background-image: url('https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png');
-    background-size: 200px 200px;
-    background-repeat: repeat;
-    background-position: 0 0;
-    position: relative;
-  }
-
-  .bg-pattern-extra-subtle::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.90);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .bg-pattern-extra-subtle > * {
-    position: relative;
-    z-index: 1;
   }
 
   /* Enhanced animation classes */

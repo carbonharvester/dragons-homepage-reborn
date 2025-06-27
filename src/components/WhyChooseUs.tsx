@@ -97,7 +97,7 @@ const WhyChooseUs = () => {
     }
   };
   
-  return <section id="why-us" className="py-20" ref={elementRef}>
+  return <section id="why-us" className="py-20 bg-white" ref={elementRef}>
       <div className="container-wide">
         <div className={`text-center mb-16 transition-all duration-800 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
           <h2 className="section-heading relative">
