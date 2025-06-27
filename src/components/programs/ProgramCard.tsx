@@ -79,7 +79,7 @@ const ProgramCard = ({ program, buttonClassName, priority = false }: ProgramCard
               fetchPriority={priority ? "high" : "auto"}
               width="400"
               height="400"
-              className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              className={`w-full h-full object-cover transition-all duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               onLoad={() => setImageLoaded(true)}
               onError={(e) => {
                 if (!imageError) {
