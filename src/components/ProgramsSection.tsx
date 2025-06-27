@@ -35,22 +35,6 @@ const ProgramsSection = () => {
 
   return (
     <section id="programs" className="py-20 bg-dragon-beige relative overflow-hidden" ref={elementRef}>
-      {/* African Pattern Border Decorations */}
-      <div className="absolute top-0 left-0 w-full h-2 opacity-30">
-        <img 
-          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
-          alt="" 
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="absolute -left-8 top-1/2 transform -translate-y-1/2 w-12 h-32 opacity-20">
-        <img 
-          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
-          alt="" 
-          className="w-full h-full object-cover rounded-r-lg"
-        />
-      </div>
-      
       <div className="container-wide relative z-10">
         <div className={`text-center mb-12 transition-all duration-800 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
           <h2 className="section-heading">
