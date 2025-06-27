@@ -97,6 +97,7 @@ const EducationalLeadershipData: React.FC<EducationalLeadershipDataProps> = ({
               customThumbnails={customThumbnails}
               isEducatorTrip={true} // Indicate this is an educator trip
               hideStudentStories={true} // Hide student stories section
+              hideProgramBrochure={true} // Hide the program brochure section
             />
           </div>
         </>
