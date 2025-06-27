@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MapPin, Users, BookOpen, Shield, LineChart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -98,22 +97,6 @@ const WhyChooseUs = () => {
   };
   
   return <section id="why-us" className="py-20 bg-white relative overflow-hidden" ref={elementRef}>
-      {/* African Pattern Accent Elements */}
-      <div className="absolute top-12 right-12 w-24 h-16 opacity-15">
-        <img 
-          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
-          alt="" 
-          className="w-full h-full object-cover rounded-lg"
-        />
-      </div>
-      <div className="absolute bottom-16 left-16 w-20 h-20 opacity-20">
-        <img 
-          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
-          alt="" 
-          className="w-full h-full object-cover rounded-full"
-        />
-      </div>
-      
       <div className="container-wide relative z-10">
         <div className={`text-center mb-16 transition-all duration-800 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
           <h2 className="section-heading">
