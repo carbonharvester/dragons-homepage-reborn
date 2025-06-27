@@ -105,10 +105,45 @@ const WhyChooseUs = () => {
           <p className="section-subheading mx-auto">We believe travel transforms lives and builds bridges between cultures. Our unique programs immerse students in authentic African experiences, inspiring personal growth while creating sustainable impact for communities, setting us apart in educational travel.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 max-w-7xl mx-auto">
-          {features.map((feature, index) => (
-            <Feature key={feature.title} {...feature} index={index} isVisible={isVisible} />
-          ))}
+        {/* Add decorative border to the features grid container */}
+        <div className="relative max-w-7xl mx-auto">
+          {/* African Pattern Border */}
+          <div className="absolute inset-0 rounded-lg overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 w-full h-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute left-0 top-0 bottom-0 w-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute right-0 top-0 bottom-0 w-4">
+              <img 
+                src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751050160/b75c66c7-3895-4c95-9914-7537fdad9ba2_hcqch5.png" 
+                alt="" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 bg-white rounded-lg">
+            {features.map((feature, index) => (
+              <Feature key={feature.title} {...feature} index={index} isVisible={isVisible} />
+            ))}
+          </div>
         </div>
 
         <div className={`mt-16 bg-dragon-sand p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between transition-all duration-800 hover:shadow-xl ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`} style={{ transitionDelay: '800ms' }}>
