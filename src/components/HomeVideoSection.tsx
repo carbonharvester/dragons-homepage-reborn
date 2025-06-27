@@ -30,14 +30,14 @@ const HomeVideoSection = ({
       {/* African Pattern Side Borders */}
       <div className="absolute left-0 top-0 bottom-0 w-8 opacity-25">
         <img 
-          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
           className="w-full h-full object-cover"
         />
       </div>
       <div className="absolute right-0 top-0 bottom-0 w-8 opacity-25">
         <img 
-          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
           className="w-full h-full object-cover"
         />

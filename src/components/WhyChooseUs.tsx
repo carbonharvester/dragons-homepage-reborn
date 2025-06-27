@@ -101,14 +101,14 @@ const WhyChooseUs = () => {
       {/* African Pattern Accent Elements */}
       <div className="absolute top-12 right-12 w-24 h-16 opacity-15">
         <img 
-          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
           className="w-full h-full object-cover rounded-lg"
         />
       </div>
       <div className="absolute bottom-16 left-16 w-20 h-20 opacity-20">
         <img 
-          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
           className="w-full h-full object-cover rounded-full"
         />

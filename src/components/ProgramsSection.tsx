@@ -38,14 +38,14 @@ const ProgramsSection = () => {
       {/* African Pattern Border Decorations */}
       <div className="absolute top-0 left-0 w-full h-2 opacity-30">
         <img 
-          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
           className="w-full h-full object-cover"
         />
       </div>
       <div className="absolute -left-8 top-1/2 transform -translate-y-1/2 w-12 h-32 opacity-20">
         <img 
-          src="/lovable-uploads/cf30b0db-eae7-47de-8db9-886a54aeacac.png" 
+          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
           alt="" 
           className="w-full h-full object-cover rounded-r-lg"
         />
