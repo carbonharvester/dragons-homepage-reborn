@@ -127,6 +127,59 @@
     font-family: 'AcademySansExpanded-Bold', 'AcademySansExpanded-Black', sans-serif;
   }
 
+  /* African Pattern Background Classes */
+  .bg-pattern-subtle {
+    background-color: #ffffff;
+    background-image: url('/lovable-uploads/f83bb6ef-1a09-47f6-9cee-60b23dd0823c.png');
+    background-size: 150px 150px;
+    background-repeat: repeat;
+    background-position: 0 0;
+    position: relative;
+  }
+
+  .bg-pattern-subtle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bg-pattern-subtle > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bg-pattern-extra-subtle {
+    background-color: #ffffff;
+    background-image: url('/lovable-uploads/f83bb6ef-1a09-47f6-9cee-60b23dd0823c.png');
+    background-size: 200px 200px;
+    background-repeat: repeat;
+    background-position: 0 0;
+    position: relative;
+  }
+
+  .bg-pattern-extra-subtle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.97);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bg-pattern-extra-subtle > * {
+    position: relative;
+    z-index: 1;
+  }
+
   /* Enhanced animation classes */
   .card-hover {
     @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2;
