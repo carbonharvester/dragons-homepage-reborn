@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 /* Import Proxima Nova */
@@ -84,15 +85,25 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: 'AcademySansExpanded-Black', 'League Gothic', sans-serif;
   }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-dragon text-white hover:bg-dragon-dark px-6 py-3 rounded-md font-medium transition-colors duration-200;
+    @apply bg-dragon text-white hover:bg-dragon-dark px-6 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95;
   }
   
   .btn-secondary {
-    @apply bg-dragon-yellow text-dragon-dark hover:bg-amber-400 px-6 py-3 rounded-md font-medium transition-colors duration-200;
+    @apply bg-dragon-yellow text-dragon-dark hover:bg-amber-400 px-6 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95;
   }
   
   .container-wide {
@@ -114,6 +125,57 @@
   /* Hero-heading class for the hero banners specifically */
   .hero-heading {
     font-family: 'AcademySansExpanded-Bold', 'AcademySansExpanded-Black', sans-serif;
+  }
+
+  /* Enhanced animation classes */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2;
+  }
+
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .stagger-children.animate > *:nth-child(1) { transition-delay: 100ms; }
+  .stagger-children.animate > *:nth-child(2) { transition-delay: 200ms; }
+  .stagger-children.animate > *:nth-child(3) { transition-delay: 300ms; }
+  .stagger-children.animate > *:nth-child(4) { transition-delay: 400ms; }
+  .stagger-children.animate > *:nth-child(5) { transition-delay: 500ms; }
+  .stagger-children.animate > *:nth-child(6) { transition-delay: 600ms; }
+
+  .stagger-children.animate > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .underline-animate {
+    position: relative;
+  }
+
+  .underline-animate::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: theme('colors.dragon.DEFAULT');
+    transition: width 0.3s ease-out;
+  }
+
+  .underline-animate:hover::after {
+    width: 100%;
+  }
+
+  .icon-bounce:hover {
+    animation: bounce-gentle 0.5s ease-in-out;
+  }
+
+  .parallax-bg {
+    transform: translateZ(0);
+    transition: transform 0.1s ease-out;
   }
 }
 
@@ -147,4 +209,15 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+
+  /* Stagger animation delays */
+  .delay-0 { animation-delay: 0ms; }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
 }
