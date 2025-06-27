@@ -1,7 +1,7 @@
 
 export const programData = {
   title: "Community Conservation Program",
-  description: "Our introductory trip where students learn how carbon offsetting protects trees and wildlife in Tsavo Conservancy, and how local social enterprises are adapting to the impacts of climate change. While also witnessing Kenya's majestic animals up close.",
+  description: "Our introductory trip where students learn how carbon offsetting protects trees and wildlife in Tsavo Conservancy, and how local social enterprises are adapting to the impacts of climate change. While also witnessing Kenya's majestic animals.",
   duration: "8 Days",
   season: "Year Round",
   location: "Tsavo, Kenya",
