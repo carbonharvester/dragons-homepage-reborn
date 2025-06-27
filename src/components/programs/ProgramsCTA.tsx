@@ -2,7 +2,6 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import WaitingListForm from '../WaitingListForm';
 
 const ProgramsCTA = () => {
   return (
@@ -15,11 +14,6 @@ const ProgramsCTA = () => {
           Connect with us to learn more about our programs for schools, students, and adults, and how we can create a customised experience for your school.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <WaitingListForm>
-            <Button className="bg-dragon hover:bg-dragon-dark text-white">
-              Join Waiting List
-            </Button>
-          </WaitingListForm>
           <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
             <Link to="/partner-with-us">Schedule Consultation</Link>
           </Button>
