@@ -27,6 +27,24 @@ const HomeVideoSection = ({
 }: HomeVideoSectionProps) => {
   return (
     <section className="py-16 bg-slate-50 relative overflow-hidden">
+      {/* Top Border */}
+      <div className="absolute top-0 left-0 w-full h-3 opacity-30">
+        <img 
+          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
+          alt="" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
+      {/* Bottom Border */}
+      <div className="absolute bottom-0 left-0 w-full h-3 opacity-30">
+        <img 
+          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
+          alt="" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       {/* African Pattern Side Borders */}
       <div className="absolute left-0 top-0 bottom-0 w-8 opacity-25">
         <img 

@@ -11,22 +11,6 @@ const IntroSection = () => {
 
   return (
     <div className="py-16 bg-white relative overflow-hidden" ref={elementRef}>
-      {/* African Pattern Decorations */}
-      <div className="absolute top-8 left-8 w-16 h-16 opacity-20">
-        <img 
-          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
-          alt="" 
-          className="w-full h-full object-cover rounded-lg"
-        />
-      </div>
-      <div className="absolute bottom-8 right-8 w-20 h-12 opacity-15">
-        <img 
-          src="https://res.cloudinary.com/dng12bd0a/image/upload/v1751043470/7ee27c1f-ab9e-4f81-9513-781c149dcbb2_sagcne.png" 
-          alt="" 
-          className="w-full h-full object-cover rounded-lg"
-        />
-      </div>
-      
       <div className="container-wide text-center relative z-10">
         <div className={`transition-all duration-800 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
           <h2 className="section-heading">
