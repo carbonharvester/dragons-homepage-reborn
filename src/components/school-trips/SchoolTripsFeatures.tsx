@@ -17,7 +17,7 @@ const SchoolTripsFeatures = () => {
     description: "Meaningful community projects that create lasting impact while fostering global citizenship, leadership, and teamwork.",
     points: ["Community-identified projects with measurable outcomes, like clean water access for 100 people", "Sustainable development initiatives, such as solar energy projects", "Cross-cultural collaboration and exchange"]
   }];
-  return <section className="py-20 my-16 rounded-lg overflow-hidden bg-yellow-400">
+  return <section className="py-20 my-16 rounded-lg overflow-hidden bg-dragon-yellow">
       <div className="container-wide">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-academy font-bold mb-4 text-green-950">Educational Focus Areas</h2>
