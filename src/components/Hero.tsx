@@ -2,10 +2,15 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import useScrollVideo from '@/hooks/useScrollVideo';
 
 const Hero = () => {
   const location = useLocation();
   const isCapturingKenyaPage = location.pathname === "/programs/capturing-kenya";
+  const { videoRef } = useScrollVideo({ 
+    startOffset: 0, 
+    endOffset: window.innerHeight * 1.5 
+  });
   
   const scrollToPrograms = () => {
     const programsSection = document.getElementById('programs');
@@ -20,14 +25,13 @@ const Hero = () => {
     <section className="relative h-[80vh] min-h-[600px] flex items-center">
       {/* Black background behind the video */}
       <div className="absolute inset-0 z-0 bg-black">
-        {/* Replace image with video */}
+        {/* Scroll-controlled video */}
         <video 
+          ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover opacity-80"
-          autoPlay
           muted
-          loop
           playsInline
-          preload="auto"
+          preload="metadata"
         >
           <source src="https://res.cloudinary.com/dng12bd0a/video/upload/v1751139310/202506281908_zwdanm.mp4" type="video/mp4" />
         </video>

@@ -3,10 +3,15 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import useScrollVideo from '@/hooks/useScrollVideo';
 
 function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(() => ["transforms", "connects", "uplifts", "awakens", "challenges", "empowers"], []);
+  const { videoRef } = useScrollVideo({ 
+    startOffset: 0, 
+    endOffset: window.innerHeight * 1.5 
+  });
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -32,14 +37,13 @@ function Hero() {
     <section className="relative h-[80vh] min-h-[600px] flex items-center">
       {/* Black background behind the video */}
       <div className="absolute inset-0 z-0 bg-black">
-        {/* Replace image with video */}
+        {/* Scroll-controlled video */}
         <video 
+          ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover opacity-80"
-          autoPlay
           muted
-          loop
           playsInline
-          preload="auto"
+          preload="metadata"
         >
           <source src="https://res.cloudinary.com/dng12bd0a/video/upload/v1751139310/202506281908_zwdanm.mp4" type="video/mp4" />
         </video>
@@ -60,7 +64,7 @@ function Hero() {
                   className="absolute font-semibold text-dragon-yellow" 
                   initial={{
                     opacity: 0,
-                    y: "100"
+                    y: "30px"
                   }} 
                   transition={{
                     type: "spring",
@@ -70,7 +74,7 @@ function Hero() {
                     y: 0,
                     opacity: 1
                   } : {
-                    y: titleNumber > index ? -150 : 150,
+                    y: titleNumber > index ? "-30px" : "30px",
                     opacity: 0
                   }}
                 >
