@@ -45,7 +45,7 @@ const BlogPost = () => {
           <BlogPostHeader post={post} />
           <BlogPostContent content={post.fields.content} />
           <BlogPostShareLinks title={post.fields.title} />
-          <RelatedPosts />
+          <RelatedPosts currentPostId={post.sys.id} />
         </div>
       </main>
       <Footer />
