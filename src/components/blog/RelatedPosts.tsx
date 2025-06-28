@@ -17,10 +17,18 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ currentPostId }) => {
     queryFn: getAllBlogPosts,
   });
 
+  console.log('Current post ID:', currentPostId);
+  console.log('All blog posts:', blogPosts?.map(post => ({ id: post.sys.id, title: post.fields.title })));
+
   // Filter out the current post if its ID is provided and get up to 3 posts
   const filteredPosts = currentPostId && blogPosts
-    ? blogPosts.filter(post => post.sys.id !== currentPostId)
+    ? blogPosts.filter(post => {
+        console.log('Comparing:', post.sys.id, 'with', currentPostId);
+        return post.sys.id !== currentPostId;
+      })
     : blogPosts || [];
+  
+  console.log('Filtered posts:', filteredPosts?.map(post => ({ id: post.sys.id, title: post.fields.title })));
   
   const postsToDisplay = filteredPosts.slice(0, 3);
 
