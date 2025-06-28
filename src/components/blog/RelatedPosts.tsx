@@ -58,8 +58,8 @@ const RelatedPosts: React.FC<RelatedPostsProps> = ({ currentPostId }) => {
             <Link to="/blog">Return to Blog Home</Link>
           </Button>
         </div>
-      );
-    }
+      </div>
+    );
   }
 
   return (
