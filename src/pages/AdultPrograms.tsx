@@ -10,6 +10,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Link } from "react-router-dom";
 import { Route, Calendar, Map, Leaf } from "lucide-react";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
+import WaitingListForm from "@/components/WaitingListForm";
 
 const AdultPrograms = () => {
   // Adult trips data
@@ -109,15 +110,11 @@ const AdultPrograms = () => {
                   text="Schedule a Consultation"
                   className="btn-primary"
                 />
-                <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-                  <a 
-                    href="https://form.typeform.com/to/rtxmvp4L" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Apply Now
-                  </a>
-                </Button>
+                <WaitingListForm>
+                  <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white">
+                    Join Waiting List
+                  </Button>
+                </WaitingListForm>
               </div>
             </div>
           </div>

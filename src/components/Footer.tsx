@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import CalendlyEmbed from './CalendlyEmbed';
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
+import WaitingListForm from './WaitingListForm';
 
 const Footer = () => {
   return <footer className="bg-dragon-dark text-white pt-16 pb-8">
@@ -51,9 +52,11 @@ const Footer = () => {
                 <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="link" className="text-gray-300 hover:text-white transition-colors p-0 h-auto" />
               </li>
               <li className="mt-2">
-                <a href="https://form.typeform.com/to/rtxmvp4L" className="text-gray-300 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
-                  Apply Now
-                </a>
+                <WaitingListForm>
+                  <button className="text-gray-300 hover:text-white transition-colors text-left">
+                    Join Waiting List
+                  </button>
+                </WaitingListForm>
               </li>
               <li className="text-gray-300 mt-2">info@kapesadventures.com</li>
             </ul>
