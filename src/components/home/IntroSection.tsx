@@ -1,6 +1,8 @@
+
 import React from 'react';
 import SchoolLogosScroll from './SchoolLogosScroll';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
+
 const IntroSection = () => {
   const {
     elementRef,
@@ -9,11 +11,13 @@ const IntroSection = () => {
     threshold: 0.2,
     delay: 100
   });
-  return <div className="py-16 bg-white relative overflow-hidden" ref={elementRef}>
+
+  return (
+    <div className="py-16 bg-white relative overflow-hidden" ref={elementRef}>
       <div className="container-wide text-center relative z-10">
         <div className={`transition-all duration-800 ${isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-8'}`}>
           <h2 className="section-heading">
-            Experience Learning Through Adventure
+            Experience Learning Through Impact
           </h2>
         </div>
         
@@ -29,6 +33,8 @@ const IntroSection = () => {
           <SchoolLogosScroll />
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default IntroSection;
