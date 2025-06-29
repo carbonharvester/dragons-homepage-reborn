@@ -10,7 +10,6 @@ import SEO from "@/components/SEO";
 import BlogHero from "@/components/blog/BlogHero";
 import FeaturedPost from "@/components/blog/FeaturedPost";
 import RecentPosts from "@/components/blog/RecentPosts";
-import BlogNewsletter from "@/components/blog/BlogNewsletter";
 import BlogLoading from "@/components/blog/BlogLoading";
 import BlogError from "@/components/blog/BlogError";
 
@@ -48,8 +47,6 @@ const BlogHome = () => {
             {recentPosts.length > 0 && <RecentPosts posts={recentPosts} />}
           </>
         )}
-
-        <BlogNewsletter />
       </main>
       <Footer />
     </>
