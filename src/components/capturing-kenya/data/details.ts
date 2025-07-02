@@ -10,7 +10,7 @@ export const tripDetails = [
   },
   {
     label: "When",
-    value: "Jul 21 - Aug 10 2025 - Sold Out\nJul 1 - Jul 21 2026",
+    value: "Jul 1 - Jul 21 2026",
     icon: React.createElement(Clock, { className: "h-5 w-5 text-dragon" })
   },
   {
