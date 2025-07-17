@@ -1,6 +1,5 @@
 "use client";
 import { FC } from "react";
-import { Link } from "react-router-dom";
 
 // Types
 interface iCardItem {
@@ -13,11 +12,12 @@ interface iCardItem {
   textColor: string;
 }
 
-interface iCardProps extends Omit<iCardItem, "tag"> {
+interface iCardProps extends Omit<iCardItem, "src" | "link" | "tag"> {
   i: number;
+  src: string;
 }
 
-// Components  
+// Components
 const Card: FC<iCardProps> = ({
   title,
   description,
@@ -25,41 +25,38 @@ const Card: FC<iCardProps> = ({
   textColor,
   i,
   src,
-  link,
 }) => {
   return (
     <div className="h-screen flex items-center justify-center sticky top-0 md:p-0 px-4">
-      <Link to={link} className="block">
-        <div
-          className="relative flex flex-col h-[300px] w-[700px] py-12 px-10 md:px-12
-          rotate-0 md:h-[400px] md:w-[600px] items-center justify-center mx-auto 
-          shadow-md pr-3 pl-3 pt-3 pb-4 cursor-pointer hover:scale-105 transition-transform duration-300"
-          style={{ backgroundColor: color }}
-        >
-          <span className="font-bold relative text-5xl md:text-7xl mt-5">
-            <span
-              className="relative z-10 font-academy font-black tracking-tight"
-              style={{ color: textColor }}
-            >
-              {title}
-            </span>
-          </span>
-          <div
-            className="text-lg md:text-2xl font-medium text-center mb-0 z-50 mt-2 lowercase tracking-wide"
-            style={{ lineHeight: 1.4, color: textColor }}
+      <div
+        className="relative flex flex-col h-[300px] w-[700px] py-12 px-10 md:px-12
+        rotate-0 md:h-[400px] md:w-[600px] items-center justify-center mx-auto 
+        shadow-md pr-3 pl-3 pt-3 pb-4"
+        style={{ backgroundColor: color }}
+      >
+        <span className="font-bold relative text-5xl md:text-7xl mt-5">
+          <span
+            className="relative z-10 font-academy font-black tracking-tight"
+            style={{ color: textColor }}
           >
-            {description}
-          </div>
-          <div className="absolute inset-0 z-0">
-            <img
-              className="w-full h-full object-cover"
-              src={src}
-              alt="Background"
-              loading="lazy"
-            />
-          </div>
+            {title}
+          </span>
+        </span>
+        <div
+          className="text-lg md:text-2xl font-medium text-center mb-0 z-50 mt-2 lowercase tracking-wide"
+          style={{ lineHeight: 1.4, color: textColor }}
+        >
+          {description}
         </div>
-      </Link>
+        <div className="absolute inset-0 z-0">
+          <img
+            className="w-full h-full object-cover"
+            src={src}
+            alt="Background"
+            loading="lazy"
+          />
+        </div>
+      </div>
     </div>
   );
 };
