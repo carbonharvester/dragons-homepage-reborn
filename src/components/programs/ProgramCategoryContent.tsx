@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ProgramCard from './ProgramCard';
+import ProgramScrollCards from './ProgramScrollCards';
 import MultiYearCurriculum from './MultiYearCurriculum';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
@@ -14,7 +15,7 @@ interface ProgramCategoryContentProps {
 }
 
 const ProgramCategoryContent = ({ activeCategory, isMobile, programs, multiYearData }: ProgramCategoryContentProps) => {
-  // Helper function to render program cards in either grid or carousel
+  // Helper function to render program cards - now using scroll cards for desktop
   const renderProgramCards = (programs) => {
     if (!programs) return null;
     
@@ -37,11 +38,7 @@ const ProgramCategoryContent = ({ activeCategory, isMobile, programs, multiYearD
         </Carousel>
       );
     } else {
-      return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {programs.map((program, index) => <ProgramCard key={index} program={program} />)}
-        </div>
-      );
+      return <ProgramScrollCards programs={programs} category={activeCategory} />;
     }
   };
 
