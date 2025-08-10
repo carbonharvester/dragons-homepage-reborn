@@ -30,6 +30,8 @@ const GlobalImpactTripScorecard: React.FC = () => {
   const [entryError, setEntryError] = useState(false);
   const [sent, setSent] = useState(false);
   const [scorecardText, setScorecardText] = useState('');
+  const [bandLabel, setBandLabel] = useState('');
+  const [recommendations, setRecommendations] = useState('');
   const [userData, setUserData] = useState<UserData>({
     firstName: '',
     lastName: '',
@@ -205,6 +207,8 @@ const GlobalImpactTripScorecard: React.FC = () => {
 
     scorecard += recommendations + '\n\n';
 
+    setBandLabel(band);
+    setRecommendations(recommendations);
     setScorecardText(scorecard);
   };
 
@@ -382,15 +386,52 @@ const GlobalImpactTripScorecard: React.FC = () => {
 
         {showResults && (
           <Card className="shadow-lg">
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-center text-gray-800">Your Trip Scorecard</CardTitle>
+            <CardHeader className="text-center">
+              <CardTitle className="text-3xl font-bold text-gray-800">Your Trip Scorecard</CardTitle>
+              <div className={`mx-auto mt-3 inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold ${
+                bandLabel.startsWith('Red') ? 'bg-red-100 text-red-800' :
+                bandLabel.startsWith('Amber') ? 'bg-amber-100 text-amber-800' :
+                'bg-green-100 text-green-800'
+              }`}>
+                {bandLabel || 'Score ready'}
+              </div>
             </CardHeader>
-            <CardContent className="text-left">
-              <pre className="whitespace-pre-wrap text-gray-700 mb-8 leading-relaxed">{scorecardText}</pre>
-              <Button onClick={downloadScorecard} className="mr-4 bg-green-600 hover:bg-green-700 text-white">
-                Download PDF
-              </Button>
-              <p className="text-gray-600 mt-4">A copy has been sent to your email: {userData.email}</p>
+            <CardContent className="space-y-6 text-left">
+              <div className="text-gray-700 leading-relaxed">
+                <p className="mb-2"><strong>School:</strong> {userData.school}</p>
+                <p className="mb-4">{recommendations.replace(/^### \*\*Recommendations\*\*\s*/, '')}</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Score breakdown</h3>
+                {(() => {
+                  const { sectionScores } = calculateScore();
+                  return (
+                    <ul className="space-y-2">
+                      {Object.keys(sectionScores).map((section) => {
+                        const weight = questions.find((q) => q.section === section)?.weight || 0;
+                        const val = sectionScores[section] as number;
+                        return (
+                          <li key={section} className="flex items-center justify-between rounded-md border border-gray-200 px-3 py-2">
+                            <span className="text-gray-800">{section}</span>
+                            <span className="text-gray-600">{val.toFixed(2)} / {weight}</span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  );
+                })()}
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Button onClick={downloadScorecard} className="bg-green-600 hover:bg-green-700 text-white">
+                  Download PDF
+                </Button>
+                <Button asChild variant="secondary" className="bg-dragon-yellow text-dragon-dark hover:bg-dragon-yellow/90">
+                  <a href="https://calendly.com/kapes-adventures/30min" target="_blank" rel="noopener noreferrer">
+                    Book a free consultation
+                  </a>
+                </Button>
+              </div>
+              <p className="text-gray-600">A copy has been sent to your email: {userData.email}</p>
             </CardContent>
           </Card>
         )}
