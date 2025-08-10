@@ -226,7 +226,7 @@ const GlobalImpactTripScorecard: React.FC = () => {
             checked={userAnswers[q.id] === 2}
             onChange={() => handleAnswerChange(q.id, 2)}
           />
-          <span className="text-sm">Yes, always (2 points)</span>
+          <span className="text-sm">Yes, always</span>
         </label>
         <label className="flex items-center space-x-3 p-3 rounded-lg border border-gray-300 hover:bg-gray-100 cursor-pointer">
           <input
@@ -236,7 +236,7 @@ const GlobalImpactTripScorecard: React.FC = () => {
             checked={userAnswers[q.id] === 1}
             onChange={() => handleAnswerChange(q.id, 1)}
           />
-          <span className="text-sm">Sometimes (1 point)</span>
+          <span className="text-sm">Sometimes</span>
         </label>
         <label className="flex items-center space-x-3 p-3 rounded-lg border border-gray-300 hover:bg-gray-100 cursor-pointer">
           <input
@@ -246,7 +246,7 @@ const GlobalImpactTripScorecard: React.FC = () => {
             checked={userAnswers[q.id] === 0}
             onChange={() => handleAnswerChange(q.id, 0)}
           />
-          <span className="text-sm">No or not sure (0 points)</span>
+          <span className="text-sm">No or not sure</span>
         </label>
         <label className="flex items-center space-x-3 p-3 rounded-lg border border-gray-300 hover:bg-gray-100 cursor-pointer">
           <input
@@ -357,9 +357,6 @@ const GlobalImpactTripScorecard: React.FC = () => {
             </CardHeader>
             <CardContent>
               <div className="mb-6 md:mb-8">
-                <CardTitle className="text-lg md:text-xl font-bold text-gray-800 mb-4 md:mb-6 leading-relaxed">
-                  {questions[currentSlide].text}
-                </CardTitle>
                 {renderQuestion(questions[currentSlide])}
               </div>
               <div className="flex flex-col sm:flex-row justify-between gap-3 md:gap-4">
