@@ -9,6 +9,7 @@ interface SEOProps {
   ogImage?: string;
   ogType?: string;
   ogUrl?: string;
+  canonicalUrl?: string;
 }
 
 const SEO = ({
@@ -18,6 +19,7 @@ const SEO = ({
   ogImage = 'https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg',
   ogType = 'website',
   ogUrl = 'https://missionkapes.com',
+  canonicalUrl,
 }: SEOProps) => {
   const fullTitle = title.includes('Mission Kapes') ? title : `${title} | Mission Kapes`;
   
@@ -26,6 +28,8 @@ const SEO = ({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
+      {/** Canonical URL */}
+      <link rel="canonical" href={canonicalUrl || ogUrl} />
       
       {/* Open Graph / Social Media Meta Tags */}
       <meta property="og:title" content={fullTitle} />

@@ -12,6 +12,7 @@ import BlogPost from "@/pages/BlogPost";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 // import Podcast from "@/pages/Podcast"; - Podcast page hidden
+import ImpactScorecard from "@/pages/ImpactScorecard";
 
 // Program Categories
 import Programs from "@/pages/Programs";
@@ -90,6 +91,7 @@ const MainRoutes = () => {
       <Route path="/faq" element={<FAQ />} />
       <Route path="/health-and-safety" element={<HealthAndSafety />} />
       <Route path="/discover-kenya" element={<DiscoverKenya />} />
+      <Route path="/impact-scorecard" element={<ImpactScorecard />} />
       
       {/* 404 Catch All */}
       <Route path="*" element={<NotFound />} />

@@ -61,6 +61,11 @@ export const resourcePages = [
     description: "Explore our full range of educational programs."
   },
   {
+    title: "Global Impact Trip Scorecard",
+    href: "/impact-scorecard",
+    description: "Assess how impactful and ethical your school trips are."
+  },
+  {
     title: "FAQ",
     href: "/faq",
     description: "Find answers to your questions about our programs and services."
