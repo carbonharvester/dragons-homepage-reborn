@@ -10,6 +10,7 @@ import PodcastSection from '@/components/PodcastSection';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 import IntroSection from '@/components/home/IntroSection';
+import GlobalImpactTripScorecard from '@/components/GlobalImpactTripScorecard';
 import useSectionVisibility from '@/hooks/useSectionVisibility';
 
 const Index = () => {
@@ -44,6 +45,10 @@ const Index = () => {
         </div>
         
         <IntroSection />
+        
+        <section id="impact-scorecard" className="py-8">
+          <GlobalImpactTripScorecard />
+        </section>
         
         <div id="programs">
           {sectionsVisible['programs'] && <ProgramsSection />}
