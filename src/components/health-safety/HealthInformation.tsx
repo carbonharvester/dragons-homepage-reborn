@@ -5,7 +5,7 @@ import BulletList from "@/components/ui/BulletList";
 
 const HealthInformation = () => {
   const vaccinationItems = [
-    { content: "Yellow Fever: Required for entry for many travelers", strongText: "Yellow Fever:" },
+    { content: "Yellow Fever: not required but often recommended", strongText: "Yellow Fever:" },
     { content: "Malaria Prevention: Medication is often recommended", strongText: "Malaria Prevention:" },
     { content: "Routine Vaccinations: Ensure they're up-to-date (MMR, DPT, etc.)", strongText: "Routine Vaccinations:" },
     { content: "Additional Recommendations: Hepatitis A, Hepatitis B, Typhoid, and others based on individual factors", strongText: "Additional Recommendations:" },
