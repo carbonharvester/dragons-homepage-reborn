@@ -33,7 +33,7 @@ const BulletList: React.FC<BulletListProps> = ({
             <span className={contentClassName}>
               {item.strongText ? (
                 <>
-                  <strong>{item.strongText}</strong> {item.content.substring(item.strongText.length + 2)}
+                  <strong>{item.strongText}</strong> {item.content.substring(item.strongText.length + 1)}
                 </>
               ) : (
                 item.content
