@@ -46,9 +46,9 @@ const Index = () => {
         
         <IntroSection />
         
-        <section id="impact-scorecard" className="py-8">
+        {/* <section id="impact-scorecard" className="py-8">
           <GlobalImpactTripScorecard />
-        </section>
+        </section> */}
         
         <div id="programs">
           {sectionsVisible['programs'] && <ProgramsSection />}
