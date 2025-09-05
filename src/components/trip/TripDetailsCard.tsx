@@ -88,11 +88,11 @@ const TripDetailsCard = ({
       </div>
       
       <div className="mt-6 space-y-4">
-        {/* Join Waiting List Button - Removed for school trips */}
+        {/* Apply Now Button - Removed for school trips */}
         {!isSchoolTrip && (
           <WaitingListForm className="w-full">
             <Button className="w-full btn-primary">
-              Join Waiting List
+              Apply Now
             </Button>
           </WaitingListForm>
         )}

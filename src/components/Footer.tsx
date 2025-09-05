@@ -54,7 +54,7 @@ const Footer = () => {
               <li className="mt-2">
                 <WaitingListForm>
                   <button className="text-gray-300 hover:text-white transition-colors text-left">
-                    Join Waiting List
+                    Apply Now
                   </button>
                 </WaitingListForm>
               </li>

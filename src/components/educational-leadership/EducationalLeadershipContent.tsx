@@ -62,7 +62,7 @@ const EducationalLeadershipContent = () => {
           <div className="flex justify-center">
             <WaitingListForm>
               <Button className="bg-dragon hover:bg-dragon-dark text-white px-8 py-6 text-lg flex items-center gap-2">
-                <CalendarIcon className="h-5 w-5" /> Join Waiting List
+                <CalendarIcon className="h-5 w-5" /> Apply Now
               </Button>
             </WaitingListForm>
           </div>

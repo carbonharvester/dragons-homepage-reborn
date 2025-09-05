@@ -112,7 +112,7 @@ const AdultPrograms = () => {
                 />
                 <WaitingListForm>
                   <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white">
-                    Join Waiting List
+                    Apply Now
                   </Button>
                 </WaitingListForm>
               </div>

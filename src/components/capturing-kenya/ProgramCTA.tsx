@@ -23,7 +23,7 @@ const ProgramCTA = () => {
           <div className="flex flex-wrap justify-center gap-4">
             <WaitingListForm>
               <Button className="btn-primary bg-white text-dragon hover:bg-gray-100">
-                Join Waiting List
+                Apply Now
               </Button>
             </WaitingListForm>
             <CalendlyEmbed 

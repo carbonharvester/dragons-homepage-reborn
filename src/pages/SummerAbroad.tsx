@@ -99,7 +99,7 @@ const SummerAbroad = () => {
                 </p>
                 <WaitingListForm>
                   <Button className="btn-primary">
-                    Join Waiting List
+                    Apply Now
                   </Button>
                 </WaitingListForm>
               </div>
@@ -147,7 +147,7 @@ const SummerAbroad = () => {
               </div>
               <WaitingListForm>
                 <Button className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400">
-                  Join Waiting List
+                  Apply Now
                 </Button>
               </WaitingListForm>
             </div>

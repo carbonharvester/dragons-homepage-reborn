@@ -51,8 +51,8 @@ const WaitingListForm = ({ children, className }: WaitingListFormProps) => {
       
       if (response.ok) {
         toast({
-          title: "Welcome to our waiting list!",
-          description: "Thank you for your interest. We'll contact you when applications open in September 2025.",
+          title: "Application submitted!",
+          description: "Thank you for your interest. We'll contact you soon with more information.",
         });
         setIsOpen(false);
         (e.target as HTMLFormElement).reset();
@@ -97,9 +97,9 @@ const WaitingListForm = ({ children, className }: WaitingListFormProps) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Join Our Waiting List</DialogTitle>
+          <DialogTitle>Apply Now</DialogTitle>
           <DialogDescription>
-            We will be opening applications in September 2025. Be the first to find out when applications are available by joining our waiting list. We'll notify you as soon as applications open!
+            Ready to join us on an incredible adventure? Submit your application below and we'll get back to you with more information about our programs.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -174,7 +174,7 @@ const WaitingListForm = ({ children, className }: WaitingListFormProps) => {
             className="w-full bg-dragon hover:bg-dragon-dark text-white"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Joining..." : "Join Waiting List"}
+            {isSubmitting ? "Submitting..." : "Apply Now"}
           </Button>
         </form>
       </DialogContent>
