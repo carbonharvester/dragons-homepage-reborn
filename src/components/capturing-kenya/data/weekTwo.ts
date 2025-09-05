@@ -2,17 +2,17 @@ import { Week } from "../types";
 
 export const weekTwo: Week = {
   number: 2,
-  title: "Amboseli & Tsavo – Wildlife Photography",
+  title: "Amboseli & Tsavo – Wildlife Photography Mastery",
   subtitle: "Master Wildlife Photography Techniques",
-  description: "Develop advanced wildlife photography skills in Kenya's premier national parks, capturing elephants against Mount Kilimanjaro and exploring diverse ecosystems.",
-  base: "Amboseli National Park (days 8–11), Tsavo National Parks (days 12–14)",
+  description: "Develop advanced wildlife photography skills in Kenya's premier national parks, capturing elephants against Mount Kilimanjaro and exploring Tsavo's diverse ecosystems.",
+  base: "Amboseli National Park (days 8–10), Tsavo National Parks (days 11–14)",
   impact: "Support wildlife conservation through documentation",
   image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1749403077/A7404525_vay31o.jpg",
   highlights: [
-    "Hot air balloon sunrise photography over Amboseli",
+    "Flight from Samburu to Amboseli for aerial photography",
     "Wildlife photography with Mount Kilimanjaro backdrop",
     "Elephant herd documentation in Amboseli",
-    "Big cats and landscape photography in Tsavo",
+    "Big cats and red elephants photography in Tsavo",
     "Mzima Springs aquatic life photography"
   ],
   days: [
@@ -20,62 +20,71 @@ export const weekTwo: Week = {
       day: 8,
       title: "Flight to Amboseli National Park",
       activities: [
-        "Morning flight from Samburu to Amboseli",
+        "Morning flight from Samburu to Amboseli with aerial photography",
         "Afternoon introductory wildlife photography session",
-        "Evening game drive, focusing on wildlife at dusk"
+        "Evening game drive focusing on elephants with Mount Kilimanjaro backdrop",
+        "Workshop on landscape and wildlife composition"
       ]
     },
     {
       day: 9,
-      title: "Amboseli Hot Air Balloon Experience",
+      title: "Amboseli Wildlife Photography Intensive",
       activities: [
-        "Sunrise hot air balloon ride for stunning aerial photography",
-        "Daytime workshops on wildlife photography techniques",
-        "Afternoon game drive"
+        "Sunrise photography session with Mount Kilimanjaro views",
+        "Full-day game drive emphasizing elephant herds and behavior",
+        "Advanced telephoto lens techniques workshop",
+        "Evening photography critique and editing session"
       ]
     },
     {
       day: 10,
-      title: "Amboseli Wildlife Intensive",
+      title: "Amboseli to Tsavo West National Park",
       activities: [
-        "Full-day game drive, emphasizing elephant herds and Mount Kilimanjaro backdrop",
-        "Evening photography critique session"
+        "Final morning game drive in Amboseli",
+        "Scenic drive to Tsavo West with landscape photography stops",
+        "Afternoon arrival and first game drive in Tsavo",
+        "Evening workshop on capturing diverse ecosystems"
       ]
     },
     {
       day: 11,
-      title: "Drive to Tsavo West National Park",
+      title: "Tsavo West - Mzima Springs & Wildlife",
       activities: [
-        "Scenic road trip, stopping at notable viewpoints for landscape photography",
-        "Afternoon game drive in Tsavo West",
-        "Evening storytelling and editing workshop"
+        "Early morning wildlife photography focusing on big cats",
+        "Visit Mzima Springs for aquatic life and hippo photography",
+        "Landscape photography of Tsavo's distinctive red soil terrain",
+        "Evening game drive capturing wildlife behavior at waterholes"
       ]
     },
     {
       day: 12,
-      title: "Tsavo West National Park",
+      title: "Tsavo East National Park",
       activities: [
-        "Morning wildlife photography focusing on big cats and diverse landscapes",
-        "Visit Mzima Springs for photography of aquatic life",
-        "Evening game drive, capturing wildlife behavior"
+        "Drive to Tsavo East for red elephant photography",
+        "Full day wildlife photography in vast savannah landscapes",
+        "Workshop on capturing movement and action shots",
+        "Evening bonfire session reviewing and editing day's captures"
       ]
     },
     {
       day: 13,
-      title: "Tsavo East National Park",
+      title: "Tsavo Wildlife Documentary Project",
       activities: [
-        "Early morning drive to Tsavo East",
-        "Full day dedicated to wildlife photography and workshops",
-        "Evening bonfire session reviewing the day's captures"
+        "Morning dedicated to wildlife documentary photography",
+        "Storytelling through sequential photography workshop",
+        "Afternoon wildlife tracking and behavior documentation",
+        "Portfolio development and selection session"
       ]
     },
     {
       day: 14,
-      title: "Wildlife Reflection Day",
+      title: "Tsavo to Coast - Travel Day",
       activities: [
-        "Morning game drive",
-        "Afternoon session dedicated to editing and selecting portfolio shots"
+        "Final morning game drive in Tsavo",
+        "Scenic drive toward the Kenyan coast",
+        "Landscape photography during the journey",
+        "Evening arrival at coastal accommodation"
       ]
     }
   ]
-};
+}
