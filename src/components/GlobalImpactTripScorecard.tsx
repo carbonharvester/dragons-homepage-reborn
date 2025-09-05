@@ -3,7 +3,6 @@ import { Progress } from '@/components/ui/progress';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
-import jsPDF from 'jspdf';
 
 interface Question {
   id: string;
@@ -131,6 +130,10 @@ const GlobalImpactTripScorecard: React.FC = () => {
         'Country': userData.country,
         'Score': totalScore.toFixed(2),
         'Timestamp': new Date().toISOString(),
+        // Individual question responses
+        ...Object.fromEntries(
+          questions.map(q => [q.id, userAnswers[q.id] !== null && userAnswers[q.id] !== undefined ? userAnswers[q.id] : 'N/A'])
+        )
       };
 
       fetch(sheetURL, {
@@ -196,14 +199,7 @@ const GlobalImpactTripScorecard: React.FC = () => {
       recommendations = `### **Recommendations**\n\nYour trips are on a strong path with a solid educational and ethical base. Focus on fine-tuning weak spots, such as enhancing cultural respect sessions or optimizing travel routes for lower carbon impact. Consider publishing your framework as a model for other schools, sharing your success story to inspire broader change. Continue monitoring feedback to maintain this high standard.`;
     }
 
-    let scorecard = `## **Global Impact Trip Scorecard**\n\n**School: ${userData.school}**\n**Date: ${currentDate}**\n**Total Score: ${totalScore.toFixed(2)}/100**\n**Band: ${band}\n\n---\n\n`;
-
-    scorecard += `### **Score Breakdown**\n\n`;
-    Object.keys(sectionScores).forEach((section) => {
-      const sectionWeight = questions.find((q) => q.section === section)?.weight || 0;
-      scorecard += `- **${section}**: ${sectionScores[section].toFixed(2)}/${sectionWeight}\n`;
-    });
-    scorecard += `\n---\n\n`;
+    let scorecard = `## **Global Impact Trip Scorecard**\n\n**School: ${userData.school}**\n**Date: ${currentDate}**\n**Total Score: ${totalScore.toFixed(1)}%**\n**Band: ${band}\n\n---\n\n`;
 
     scorecard += recommendations + '\n\n';
 
@@ -212,11 +208,6 @@ const GlobalImpactTripScorecard: React.FC = () => {
     setScorecardText(scorecard);
   };
 
-  const downloadScorecard = () => {
-    const doc = new jsPDF();
-    doc.text(scorecardText, 10, 10, { maxWidth: 190 });
-    doc.save(`${userData.school}_Trip_Scorecard.pdf`);
-  };
 
   const renderQuestion = (q: Question) => (
     <div className="space-y-4">
@@ -397,41 +388,26 @@ const GlobalImpactTripScorecard: React.FC = () => {
               </div>
             </CardHeader>
             <CardContent className="space-y-6 text-left">
+              <div className="text-center mb-6">
+                <div className="text-5xl font-bold text-gray-800 mb-2">
+                  {(() => {
+                    const { totalScore } = calculateScore();
+                    return `${totalScore.toFixed(1)}%`;
+                  })()}
+                </div>
+                <p className="text-lg text-gray-600">Your Total Score</p>
+              </div>
               <div className="text-gray-700 leading-relaxed">
                 <p className="mb-2"><strong>School:</strong> {userData.school}</p>
                 <p className="mb-4">{recommendations.replace(/^### \*\*Recommendations\*\*\s*/, '')}</p>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Score breakdown</h3>
-                {(() => {
-                  const { sectionScores } = calculateScore();
-                  return (
-                    <ul className="space-y-2">
-                      {Object.keys(sectionScores).map((section) => {
-                        const weight = questions.find((q) => q.section === section)?.weight || 0;
-                        const val = sectionScores[section] as number;
-                        return (
-                          <li key={section} className="flex items-center justify-between rounded-md border border-gray-200 px-3 py-2">
-                            <span className="text-gray-800">{section}</span>
-                            <span className="text-gray-600">{val.toFixed(2)} / {weight}</span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  );
-                })()}
-              </div>
               <div className="flex flex-wrap gap-3">
-                <Button onClick={downloadScorecard} className="bg-green-600 hover:bg-green-700 text-white">
-                  Download PDF
-                </Button>
                 <Button asChild variant="secondary" className="bg-dragon-yellow text-dragon-dark hover:bg-dragon-yellow/90">
                   <a href="https://calendly.com/kapes-adventures/30min" target="_blank" rel="noopener noreferrer">
                     Book a free consultation
                   </a>
                 </Button>
               </div>
-              <p className="text-gray-600">A copy has been sent to your email: {userData.email}</p>
             </CardContent>
           </Card>
         )}
