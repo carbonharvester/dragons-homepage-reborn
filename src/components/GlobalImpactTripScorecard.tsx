@@ -130,9 +130,9 @@ const GlobalImpactTripScorecard: React.FC = () => {
         'Country': userData.country,
         'Score': totalScore.toFixed(2),
         'Timestamp': new Date().toISOString(),
-        // Individual question responses
+        // Individual question responses with full question text
         ...Object.fromEntries(
-          questions.map(q => [q.id, userAnswers[q.id] !== null && userAnswers[q.id] !== undefined ? userAnswers[q.id] : 'N/A'])
+          questions.map(q => [q.text, userAnswers[q.id] !== null && userAnswers[q.id] !== undefined ? userAnswers[q.id] : 'N/A'])
         )
       };
 
