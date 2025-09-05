@@ -120,7 +120,7 @@ const GlobalImpactTripScorecard: React.FC = () => {
     if (showResults && !sent) {
       const { totalScore } = calculateScore();
       generateScorecard();
-      const sheetURL = 'https://script.google.com/macros/s/AKfycbwoMYHfm5RliXAvtyP0YIs5dXoNTOLgBbKwjCDEFCxVs2UbL1xlyL1sveq-i-LxGQL9Zw/exec';
+      const sheetURL = 'https://script.google.com/macros/s/AKfycbw_WM228IyN2NQde40VL_vl0Ue5d5fwJ8-2Mv9dc-RFdyWCa6ojzphDtnQN4WoME3UgVw/exec';
       const payload = {
         'First Name': userData.firstName,
         'Last Name': userData.lastName,
