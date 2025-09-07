@@ -9,14 +9,45 @@ import { problemData } from './problemData';
 // Create trip itinerary data structure that matches what TripBrochureContent expects
 export const tripItinerary = [
   {
-    day: "Week 1",
-    title: "Orientation & Permaculture Foundations",
+    day: "July 3 (Thursday)",
+    title: "Arrival & Welcome",
     activities: [
       "Arrive in Nairobi and travel to training center",
+      "Welcome dinner and program orientation",
+      "Meet fellow participants and instructors",
+      "Evening cultural introduction"
+    ]
+  },
+  {
+    day: "July 4 (Saturday)",
+    title: "Team Building & Cultural Immersion",
+    activities: [
+      "Team building activities and icebreakers",
+      "Nairobi city tour and cultural exploration",
+      "Visit to local markets and food systems",
+      "Group bonding activities",
+      "Evening reflection and goal setting"
+    ]
+  },
+  {
+    day: "July 5 (Sunday)",
+    title: "Rest & Reflection",
+    activities: [
+      "Free time and personal reflection",
+      "Optional cultural activities",
+      "Journal writing and program preparation",
+      "Rest and recovery day"
+    ]
+  },
+  {
+    day: "July 7 (Monday)",
+    title: "Permaculture Theory & Farm Assessment Begin",
+    activities: [
       "Introduction to permaculture principles and ethics",
       "Site assessment and analysis techniques",
-      "Design methodology for sustainable food systems",
-      "Soil health and composting workshops"
+      "Soil health fundamentals workshop",
+      "Farm site visit and initial assessment",
+      "Design methodology introduction"
     ]
   },
   {
