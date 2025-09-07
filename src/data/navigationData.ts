@@ -51,6 +51,23 @@ export const programCategories = [
       },
     ],
   },
+  {
+    title: "Family Trips",
+    href: "/programs", // Will show family trips tab when implemented
+    description: "Adventure programs designed for families to experience together.",
+    programs: [
+      {
+        title: "Family Conservation Adventure",
+        href: "/community-conservation",
+        description: "Work together as a family to protect endangered ecosystems.",
+      },
+      {
+        title: "Family Food Systems Journey",
+        href: "/food-for-education",
+        description: "Experience sustainable food systems as a family unit.",
+      },
+    ],
+  },
   // Adult Trips category removed
 ];
 
