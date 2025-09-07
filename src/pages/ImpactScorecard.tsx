@@ -10,11 +10,11 @@ const ImpactScorecard = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Global Impact Trip Scorecard"
+        title="School Trip Impact Scorecard"
         description="Assess how impactful and ethical your school trips are, then get tailored recommendations and book a free consultation."
         ogUrl={pageUrl}
         canonicalUrl={pageUrl}
-        keywords="Global Impact Trip Scorecard, school trip audit, educational travel assessment, ethical travel, Kapes Adventures"
+        keywords="School Trip Impact Scorecard, school trip audit, educational travel assessment, ethical travel, Kapes Adventures"
       />
       <Header />
       <main>
@@ -22,7 +22,7 @@ const ImpactScorecard = () => {
           <div className="container-wide py-16 md:py-24">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-                Global Impact Trip Scorecard
+                School Trip Impact Scorecard
               </h1>
               <p className="mt-4 text-lg text-gray-700">
                 A quick, research-informed audit to gauge learning quality, ethics, and access in your school trips. Get your banded result with clear next steps.
@@ -73,7 +73,7 @@ const ImpactScorecard = () => {
         'mainEntity': [
           {
             '@type': 'Question',
-            'name': 'What does the Global Impact Trip Scorecard measure?',
+            'name': 'What does the School Trip Impact Scorecard measure?',
             'acceptedAnswer': {
               '@type': 'Answer',
               'text': 'It assesses learning goals, student voice, community partnership, evidence of learning, culture and inclusion, equity and access, planet and ethics, and safety and care.'

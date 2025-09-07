@@ -292,7 +292,7 @@ const GlobalImpactTripScorecard: React.FC = () => {
     } else {
       recommendations = `### **Recommendations**\n\nYour trips are on a strong path with a solid educational and ethical base. Focus on fine-tuning weak spots, such as enhancing cultural respect sessions or optimizing travel routes for lower carbon impact. Consider publishing your framework as a model for other schools, sharing your success story to inspire broader change. Continue monitoring feedback to maintain this high standard.`;
     }
-    let scorecard = `## **Global Impact Trip Scorecard**\n\n**School: ${userData.school}**\n**Date: ${currentDate}**\n**Total Score: ${totalScore.toFixed(1)}%**\n**Band: ${band}\n\n---\n\n`;
+    let scorecard = `## **School Trip Impact Scorecard**\n\n**School: ${userData.school}**\n**Date: ${currentDate}**\n**Total Score: ${totalScore.toFixed(1)}%**\n**Band: ${band}\n\n---\n\n`;
     scorecard += recommendations + '\n\n';
     setBandLabel(band);
     setRecommendations(recommendations);
@@ -324,7 +324,7 @@ const GlobalImpactTripScorecard: React.FC = () => {
         {showEntryForm && <Card className="bg-gradient-to-br from-gray-100 to-gray-200 border-0 shadow-xl">
             <CardHeader className="text-center pb-4 md:pb-6">
               <CardTitle className="text-2xl md:text-4xl font-bold text-gray-800 mb-3 md:mb-4">
-                Global Impact Trip Scorecard
+                School Trip Impact Scorecard
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 md:space-y-6">
