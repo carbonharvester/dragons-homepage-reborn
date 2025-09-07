@@ -34,30 +34,42 @@ export const weekOneData: WeekProps = {
     {
       day: "Sunday",
       date: "July 5",
-      title: "Water System Planning and Composting Setup",
+      title: "Rest Day",
       activities: [
-        "Morning: Theory - Water harvesting systems design",
-        "Afternoon: Begin composting system construction",
-        "Build first compost bin and gather materials",
-        "Evening workshop on soil fertility basics"
+        "Free morning - personal time and rest",
+        "Optional: Visit local markets in Nairobi",
+        "Relaxed afternoon at Ubuntu Kreative Village",
+        "Evening reflection and journaling"
       ],
       icon: Droplet
     },
     {
       day: "Monday",
       date: "July 6",
-      title: "Water Harvesting Installation - Day 1",
+      title: "Water System Planning and Composting Setup",
       activities: [
-        "Morning: Install gutters and collection points",
-        "Afternoon: Prepare site for water tank installation",
-        "Begin filter system assembly",
-        "Evening: Water conservation theory session"
+        "Morning: Theory - Water harvesting systems design",
+        "Afternoon: Begin composting system construction", 
+        "Build first compost bin and gather materials",
+        "Evening workshop on soil fertility basics"
       ],
       icon: Droplet
     },
     {
       day: "Tuesday",
       date: "July 7",
+      title: "Water Harvesting Installation - Day 1",
+      activities: [
+        "Morning: Install gutters and collection points",
+        "Afternoon: Prepare site for water tank installation",
+        "Begin filter system assembly", 
+        "Evening: Water conservation theory session"
+      ],
+      icon: Droplet
+    },
+    {
+      day: "Wednesday",
+      date: "July 8", 
       title: "Water Harvesting Installation - Day 2 & Nursery Setup",
       activities: [
         "Morning: Complete 10,000-liter tank installation",
@@ -68,28 +80,16 @@ export const weekOneData: WeekProps = {
       icon: Leaf
     },
     {
-      day: "Wednesday",
-      date: "July 8",
-      title: "Biochar Production and Bed Preparation",
-      activities: [
-        "Morning: Theory - Soil carbon and biochar benefits",
-        "Afternoon: Produce biochar (multiple small batches)",
-        "Complete 3-bin composting system",
-        "Plant 25-meter vetiver hedgerow (start)"
-      ],
-      icon: LandPlot
-    },
-    {
       day: "Thursday",
       date: "July 9",
-      title: "Community Engagement and Cultural Exchange",
+      title: "Biochar Production and Community Engagement",
       activities: [
-        "Morning: Complete vetiver planting with local students",
-        "Afternoon: Prepare raised bed area (100 sq meters)",
-        "Cultural exchange - traditional farming methods",
-        "Evening reflection and Week 2 planning"
+        "Morning: Theory - Soil carbon and biochar benefits", 
+        "Afternoon: Produce biochar (multiple small batches)",
+        "Complete 3-bin composting system",
+        "Plant 25-meter vetiver hedgerow with local students"
       ],
-      icon: School
+      icon: LandPlot
     }
   ]
 };

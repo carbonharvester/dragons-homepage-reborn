@@ -34,6 +34,18 @@ export const weekThreeData: WeekProps = {
     {
       day: "Sunday",
       date: "July 19",
+      title: "Rest Day",
+      activities: [
+        "Free morning - personal time and rest",
+        "Optional: Nature walks around Rukinga Sanctuary", 
+        "Relaxed afternoon at camp",
+        "Evening reflection and wildlife observation"
+      ],
+      icon: Trees
+    },
+    {
+      day: "Monday",
+      date: "July 20", 
       title: "Tree Planting - Phase 1",
       activities: [
         "Morning: Plant 150 native trees with proper spacing",
@@ -44,23 +56,23 @@ export const weekThreeData: WeekProps = {
       icon: Trees
     },
     {
-      day: "Monday",
-      date: "July 20",
+      day: "Tuesday", 
+      date: "July 21",
       title: "Greenhouse Setup and Seedling Theory",
       activities: [
         "Morning: Greenhouse maintenance and organization",
         "Afternoon: Prepare 100 pots with compost mixture",
-        "Theory: Seed germination and seedling care",
+        "Theory: Seed germination and seedling care", 
         "Evening: Local plant species identification workshop"
       ],
       icon: Leaf
     },
     {
-      day: "Tuesday",
-      date: "July 21",
-      title: "Tree Planting - Phase 2 and Seedling Work",
+      day: "Wednesday",
+      date: "July 22",
+      title: "Tree Planting - Phase 2 and Seedling Work", 
       activities: [
-        "Morning: Plant remaining 200 trees",
+        "Morning: Plant remaining 200 trees", 
         "Afternoon: Sow native tree seeds (baobab, moringa)",
         "Install permanent watering systems for trees",
         "Evening: Traditional ecological knowledge session"
@@ -68,26 +80,14 @@ export const weekThreeData: WeekProps = {
       icon: Trees
     },
     {
-      day: "Wednesday",
-      date: "July 22",
-      title: "Community Workshop Preparation",
+      day: "Thursday",
+      date: "July 23", 
+      title: "Community Workshop and Engagement",
       activities: [
         "Morning: Work alongside local youth on tree care",
-        "Afternoon: Prepare permaculture workshop materials",
-        "Learn about community livelihoods and challenges",
-        "Evening: Teaching methodology and cultural exchange"
-      ],
-      icon: Users
-    },
-    {
-      day: "Thursday",
-      date: "July 23",
-      title: "Student-Led Community Workshop",
-      activities: [
-        "Morning: Teach local youth permaculture principles",
-        "Afternoon: Hands-on tree planting with community",
+        "Afternoon: Teach local youth permaculture principles", 
         "Collaborative seedling care and maintenance",
-        "Evening: Reflection on community engagement"
+        "Evening: Cultural exchange and reflection"
       ],
       icon: School
     }

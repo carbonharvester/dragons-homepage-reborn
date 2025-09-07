@@ -34,62 +34,62 @@ export const weekTwoData: WeekProps = {
     {
       day: "Sunday",
       date: "July 12",
-      title: "Greywater System Design and Cultural Experience",
+      title: "Rest Day",
       activities: [
-        "Morning: Theory - Greywater recycling principles",
-        "Afternoon: Map handwashing stations and plan trenches",
-        "Begin digging trenches (Day 1)",
-        "Evening: Ngong Hills hike and cultural exchange"
+        "Free morning - personal time and rest",
+        "Optional: Explore Nairobi city center",
+        "Relaxed afternoon at Ubuntu Kreative Village",
+        "Evening reflection and planning for next week"
       ],
       icon: Droplet
     },
     {
-      day: "Monday",
+      day: "Monday", 
       date: "July 13",
-      title: "Greywater Installation and Student Prep",
+      title: "Greywater System Design and Installation",
       activities: [
-        "Morning: Complete trench digging and install pipes",
-        "Afternoon: Connect greywater system (first location)",
-        "Prepare lesson plans for teaching local students",
-        "Evening: Pedagogy workshop - Teaching practical skills"
+        "Morning: Theory - Greywater recycling principles",
+        "Afternoon: Map handwashing stations and plan trenches", 
+        "Begin digging trenches (Day 1)",
+        "Evening: Prepare lesson plans for teaching local students"
       ],
       icon: Droplet
     },
     {
       day: "Tuesday",
-      date: "July 14",
-      title: "Student-Led Workshop - Composting and Planting",
+      date: "July 14", 
+      title: "Greywater Installation and Student Prep",
+      activities: [
+        "Morning: Complete trench digging and install pipes",
+        "Afternoon: Connect greywater system (first location)",
+        "Prepare raised bed area (100 sq meters)",
+        "Evening: Pedagogy workshop - Teaching practical skills"
+      ],
+      icon: Droplet
+    },
+    {
+      day: "Wednesday",
+      date: "July 15",
+      title: "Student-Led Workshop - Composting and Planting", 
       activities: [
         "Morning: Teach local students composting techniques",
         "Afternoon: Hands-on planting workshop with students",
-        "Collaborative nursery maintenance activities",
+        "Collaborative nursery maintenance activities", 
         "Evening reflection on teaching experience"
       ],
       icon: School
     },
     {
-      day: "Wednesday",
-      date: "July 15",
-      title: "Second Greywater System and Cultural Immersion",
+      day: "Thursday", 
+      date: "July 16",
+      title: "Second Greywater System and Travel Prep",
       activities: [
         "Morning: Install second greywater system",
-        "Afternoon: Visit Nairobi National Museum",
-        "Explore Maasai Market for crafts and artistry",
-        "Evening: Cultural storytelling and reflection"
-      ],
-      icon: Building
-    },
-    {
-      day: "Thursday",
-      date: "July 16",
-      title: "Community Celebration and Travel Prep",
-      activities: [
-        "Morning: Host farm showcase for local community",
-        "Afternoon: Final documentation of Nairobi phase",
+        "Afternoon: Host farm showcase for local community",
         "Pack and prepare for travel to Tsavo",
         "Farewell dinner with Ubuntu Kreative Village community"
       ],
-      icon: MapPinned
+      icon: Building
     }
   ]
 };

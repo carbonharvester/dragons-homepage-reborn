@@ -22,45 +22,57 @@ export const weekFourData: WeekProps = {
     {
       day: "Saturday",
       date: "July 25",
-      title: "Agroforestry Maintenance and Documentation",
-      activities: [
-        "Morning: Complete drip irrigation installation",
-        "Afternoon: Apply compost to all tree bases",
-        "Monitor tree health and document growth data",
-        "Create maintenance guide for community use"
-      ],
-      icon: Trees
-    },
-    {
-      day: "Sunday",
-      date: "July 26",
       title: "Tsavo East National Park - Conservation Focus",
       activities: [
         "Full day educational excursion to Tsavo East",
-        "Meet with park rangers about anti-poaching efforts",
+        "Meet with park rangers about anti-poaching efforts", 
         "Learn about wildlife conservation challenges",
         "Evening: Wildlife photography and observation"
       ],
       icon: TreeDeciduous
     },
     {
+      day: "Sunday", 
+      date: "July 26",
+      title: "Rest Day",
+      activities: [
+        "Free morning - personal time and rest",
+        "Optional: Explore Wildlife Works facilities",
+        "Relaxed afternoon at camp", 
+        "Evening reflection and journaling"
+      ],
+      icon: TreeDeciduous
+    },
+    {
       day: "Monday",
       date: "July 27",
+      title: "Agroforestry Maintenance and Documentation", 
+      activities: [
+        "Morning: Complete drip irrigation installation",
+        "Afternoon: Apply compost to all tree bases", 
+        "Monitor tree health and document growth data",
+        "Create maintenance guide for community use"
+      ],
+      icon: Trees
+    },
+    {
+      day: "Tuesday", 
+      date: "July 28",
       title: "Community Presentation and Knowledge Transfer",
       activities: [
         "Morning: Present project results to community leaders",
-        "Afternoon: Distribute seedlings and maintenance guides",
+        "Afternoon: Distribute seedlings and maintenance guides", 
         "Train community youth on greenhouse care",
         "Evening: Feedback collection and program evaluation"
       ],
       icon: Handshake
     },
     {
-      day: "Tuesday",
-      date: "July 28",
+      day: "Wednesday",
+      date: "July 29", 
       title: "Cultural Immersion and Final Celebration",
       activities: [
-        "Morning: Visit local villages in Kasigau Corridor",
+        "Morning: Visit local villages in Kasigau Corridor", 
         "Afternoon: Traditional crafting and cooking workshops",
         "Community lunch and cultural performances",
         "Evening: Farewell celebration with Wildlife Works staff"
@@ -68,25 +80,13 @@ export const weekFourData: WeekProps = {
       icon: Users
     },
     {
-      day: "Wednesday",
-      date: "July 29",
-      title: "Program Documentation and Reflection",
-      activities: [
-        "Morning: Complete final project documentation",
-        "Afternoon: Group reflection on program impact",
-        "Prepare presentations for return home",
-        "Evening: Personal journaling and goal setting"
-      ],
-      icon: Handshake
-    },
-    {
-      day: "Thursday",
+      day: "Thursday", 
       date: "July 30",
-      title: "Return to Nairobi and Final Reflection",
+      title: "Program Documentation and Return to Nairobi",
       activities: [
-        "Morning: Travel back to Nairobi",
-        "Afternoon: Check-in at Ubuntu Kreative Village",
-        "Final group reflection and program evaluation",
+        "Morning: Complete final project documentation and reflection",
+        "Afternoon: Travel back to Nairobi", 
+        "Check-in at Ubuntu Kreative Village",
         "Farewell dinner at local restaurant"
       ],
       icon: MapPinned
