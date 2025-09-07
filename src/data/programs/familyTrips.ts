@@ -1,0 +1,42 @@
+import { Heart, Globe } from "lucide-react";
+
+export const familyTrips = [
+  {
+    title: "Family Conservation Adventure",
+    description: "A week-long conservation experience where families work together alongside local experts to protect endangered ecosystems while learning traditional ecological knowledge.",
+    duration: "7 Days",
+    season: "Year Round",
+    location: "Tsavo East, Kenya",
+    image: "/lovable-uploads/39251f62-b5a3-49bb-a861-ede7fdc3f6cf.png",
+    price: "From $2,800 per person",
+    link: "/community-conservation",
+    icon: Heart,
+    highlights: [
+      "Family-friendly conservation activities",
+      "Wildlife monitoring suitable for all ages",
+      "Cultural exchanges with local communities",
+      "Traditional skills workshops",
+      "Safari experiences for the whole family"
+    ],
+    perfectFor: "Families with children aged 8+, environmentally conscious parents, active families, those seeking meaningful travel experiences together"
+  },
+  {
+    title: "Family Food Systems Journey",
+    description: "Experience sustainable food systems as a family while contributing to food security initiatives and learning about traditional and modern agricultural practices in Kenya.",
+    duration: "7 Days", 
+    season: "Year Round",
+    location: "Tsavo, Kenya",
+    image: "/lovable-uploads/5de3bb89-b98b-471d-b489-b486b74a96b8.png",
+    price: "From $2,600 per person",
+    link: "/food-for-education",
+    icon: Globe,
+    highlights: [
+      "Family-friendly farming activities",
+      "Traditional cooking workshops",
+      "School feeding program participation",
+      "Community garden projects",
+      "Cultural immersion experiences"
+    ],
+    perfectFor: "Families interested in sustainable agriculture, parents wanting to teach kids about food systems, active families, those passionate about making a difference"
+  }
+];

@@ -5,6 +5,7 @@ import { programCategories } from '@/data/programsData';
 import SchoolTripsTab from './SchoolTripsTab';
 import SummerAbroadTab from './SummerAbroadTab';
 import EducatorTripsTab from './EducatorTripsTab';
+import FamilyTripsTab from './FamilyTripsTab';
 
 const TabsSection = () => {
   // Filter out multi-year curriculum from the categories
@@ -34,6 +35,10 @@ const TabsSection = () => {
 
       <TabsContent value="educator-trips" className="mt-8">
         <EducatorTripsTab />
+      </TabsContent>
+
+      <TabsContent value="family-trips" className="mt-8">
+        <FamilyTripsTab />
       </TabsContent>
     </Tabs>
   );

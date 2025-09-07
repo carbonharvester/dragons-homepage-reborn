@@ -5,6 +5,7 @@ import { summerAbroad } from './programs/summerAbroad';
 import { adultTrips } from './programs/adultTrips';
 import { multiYearProgram } from './programs/multiYearProgram';
 import { educatorTrips } from './programs/educatorTrips';
+import { familyTrips } from './programs/familyTrips';
 
 export {
   programCategories,
@@ -12,5 +13,6 @@ export {
   summerAbroad,
   adultTrips,
   multiYearProgram,
-  educatorTrips
+  educatorTrips,
+  familyTrips
 };
