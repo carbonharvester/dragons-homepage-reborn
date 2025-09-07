@@ -22,14 +22,15 @@ export const weekOneData: WeekProps = {
     {
       day: "Saturday",
       date: "July 4",
-      title: "Permaculture Theory and Farm Assessment",
+      title: "Team Building & Cultural Immersion",
       activities: [
-        "Morning: Outdoor classroom - Permaculture principles and ethics",
-        "Afternoon: Site assessment with local staff",
-        "Soil testing and analysis workshop",
+        "Team building activities and icebreakers",
+        "Nairobi city tour and cultural exploration",
+        "Visit to local markets and food systems",
+        "Group bonding activities",
         "Evening reflection and goal setting"
       ],
-      icon: LandPlot
+      icon: School
     },
     {
       day: "Sunday",
@@ -46,36 +47,37 @@ export const weekOneData: WeekProps = {
     {
       day: "Monday",
       date: "July 6",
-      title: "Water System Planning and Composting Setup",
+      title: "Permaculture Theory & Farm Assessment Begin",
       activities: [
-        "Morning: Theory - Water harvesting systems design",
-        "Afternoon: Begin composting system construction", 
-        "Build first compost bin and gather materials",
-        "Evening workshop on soil fertility basics"
+        "Introduction to permaculture principles and ethics",
+        "Site assessment and analysis techniques", 
+        "Soil health fundamentals workshop",
+        "Farm site visit and initial assessment",
+        "Design methodology introduction"
       ],
-      icon: Droplet
+      icon: LandPlot
     },
     {
       day: "Tuesday",
       date: "July 7",
-      title: "Water Harvesting Installation - Day 1",
+      title: "Water System Planning & Installation Begin",
       activities: [
-        "Morning: Install gutters and collection points",
-        "Afternoon: Prepare site for water tank installation",
-        "Begin filter system assembly", 
-        "Evening: Water conservation theory session"
+        "Morning: Water harvesting systems design theory",
+        "Begin composting system construction",
+        "Afternoon: Install gutters and collection points",
+        "Evening workshop on soil fertility basics"
       ],
       icon: Droplet
     },
     {
       day: "Wednesday",
       date: "July 8", 
-      title: "Water Harvesting Installation - Day 2 & Nursery Setup",
+      title: "Water System Completion & Nursery Setup",
       activities: [
-        "Morning: Complete 10,000-liter tank installation",
-        "Afternoon: Connect filters and test system",
-        "Build nursery table with shade cloth",
-        "Evening: Plant propagation workshop"
+        "Morning: Prepare site for water tank installation",
+        "Afternoon: Complete 10,000-liter tank installation and filters",
+        "Begin filter system assembly and test system",
+        "Build nursery table with shade cloth"
       ],
       icon: Leaf
     },
