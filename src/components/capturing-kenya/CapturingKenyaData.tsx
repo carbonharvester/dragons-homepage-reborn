@@ -67,6 +67,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
               perfectFor={perfectFor}
               description={capturingDescription}
               projectGoals={capturingProjectGoals}
+              isSummerAbroad={true}
             />
             
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}

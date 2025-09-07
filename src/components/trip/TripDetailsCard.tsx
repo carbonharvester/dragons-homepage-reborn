@@ -19,11 +19,13 @@ const iconMap: Record<string, React.ElementType> = {
 interface TripDetailsCardProps {
   tripDetails: TripDetail[];
   isSchoolTrip?: boolean;
+  isSummerAbroad?: boolean;
 }
 
 const TripDetailsCard = ({
   tripDetails,
-  isSchoolTrip = false
+  isSchoolTrip = false,
+  isSummerAbroad = false
 }: TripDetailsCardProps) => {
   const renderIcon = (icon: React.ReactNode | string) => {
     if (typeof icon === 'string') {
@@ -97,7 +99,10 @@ const TripDetailsCard = ({
           </WaitingListForm>
         )}
         
-        <CalendlyEmbed url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" text="Schedule Consultation" variant="outline" className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow" />
+        {/* Schedule Consultation - Hidden for summer abroad programs */}
+        {!isSummerAbroad && (
+          <CalendlyEmbed url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" text="Schedule Consultation" variant="outline" className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow" />
+        )}
       </div>
     </div>
   );

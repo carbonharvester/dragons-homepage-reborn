@@ -66,6 +66,7 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
               perfectFor={perfectFor}
               description={feedingDescription}
               projectGoals={feedingProjectGoals}
+              isSummerAbroad={true}
             />
             
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
