@@ -97,7 +97,7 @@ const TripDetailsCard = ({
           </WaitingListForm>
         )}
         
-        <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="outline" className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow" />
+        <CalendlyEmbed url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" text="Schedule Consultation" variant="outline" className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow" />
       </div>
     </div>
   );

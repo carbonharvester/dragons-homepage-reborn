@@ -22,7 +22,7 @@ const TripCTA = ({
       </p>
       <div className="flex flex-wrap justify-center gap-4">
         <Button variant="secondary" size="lg" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400" asChild>
-          <a href="https://calendly.com/kapes-adventures/30min" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
+          <a href="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
         </Button>
       </div>
     </div>

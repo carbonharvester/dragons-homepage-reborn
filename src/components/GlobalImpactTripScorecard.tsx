@@ -413,7 +413,7 @@ const GlobalImpactTripScorecard: React.FC = () => {
               </div>
               <div className="flex flex-wrap gap-3">
                 <Button asChild variant="secondary" className="bg-dragon-yellow text-dragon-dark hover:bg-dragon-yellow/90">
-                  <a href="https://calendly.com/kapes-adventures/30min" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" target="_blank" rel="noopener noreferrer">
                     Book a free consultation
                   </a>
                 </Button>

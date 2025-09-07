@@ -24,8 +24,8 @@ const SchoolTripsCTA = () => {
             asChild
           >
             <a 
-              href="https://calendly.com/kapes-adventures/30min" 
-              target="_blank" 
+              href="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" 
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center"
             >

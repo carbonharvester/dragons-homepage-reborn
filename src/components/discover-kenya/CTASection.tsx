@@ -14,7 +14,7 @@ const CTASection = () => {
               Explore Our Programs
             </Link>
             <CalendlyEmbed 
-              url="https://calendly.com/kapesuniforms/discoverymeeting"
+              url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
               text="Schedule Consultation"
               variant="secondary"
               className="bg-white text-dragon hover:bg-gray-100 h-12 w-full sm:w-auto"

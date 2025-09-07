@@ -8,7 +8,7 @@ const ProgramCTA = () => {
       <h2 className="text-2xl font-bold text-dragon-dark mb-6">Ready to Make a Difference?</h2>
       <div className="flex justify-center">
         <CalendlyEmbed
-          url="https://calendly.com/kapesuniforms/discoverymeeting"
+          url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
           text="Schedule a Consultation"
           variant="default"
           className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400"

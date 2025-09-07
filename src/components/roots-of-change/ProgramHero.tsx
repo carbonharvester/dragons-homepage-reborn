@@ -28,7 +28,7 @@ const ProgramHero = () => {
               <Link to="/programs/feeding-the-future/itinerary">Explore Full Itinerary</Link>
             </Button>
             <CalendlyEmbed 
-              url="https://calendly.com/kapesuniforms/discoverymeeting"
+              url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
               text="Schedule Consultation"
               variant="outline"
               className="bg-white text-dragon hover:bg-gray-100"

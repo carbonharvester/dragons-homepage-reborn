@@ -153,7 +153,7 @@ const WhyChooseUs = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="btn-primary whitespace-nowrap" onClick={scrollToPrograms}>Find Your Program</Button>
-            <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400 whitespace-nowrap transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95" />
+            <CalendlyEmbed url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" text="Schedule Consultation" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400 whitespace-nowrap transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95" />
           </div>
         </div>
       </div>

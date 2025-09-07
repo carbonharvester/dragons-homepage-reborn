@@ -51,7 +51,7 @@ const DesktopNavigation = () => {
       </div>
       
       <CalendlyEmbed 
-        url="https://calendly.com/kapesuniforms/discoverymeeting"
+        url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
         text="Schedule Consultation"
         variant="default"
         size="sm"

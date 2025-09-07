@@ -106,7 +106,7 @@ const AdultPrograms = () => {
               </p>
               <div className="flex justify-center flex-wrap gap-4">
                 <CalendlyEmbed
-                  url="https://calendly.com/kapesuniforms/discoverymeeting"
+                  url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
                   text="Schedule a Consultation"
                   className="btn-primary"
                 />

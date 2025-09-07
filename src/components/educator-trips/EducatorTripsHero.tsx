@@ -29,7 +29,7 @@ const EducatorTripsHero = () => {
             </Button>
             <Button className="bg-dragon-yellow text-dragon-dark hover:bg-dragon-yellow/90 shadow-lg" asChild>
               <CalendlyEmbed 
-                url="https://calendly.com/kapesuniforms/discoverymeeting"
+                url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
                 text="Schedule a Consultation"
               />
             </Button>

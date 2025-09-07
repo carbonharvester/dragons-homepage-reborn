@@ -13,7 +13,7 @@ const EducatorTripsCTA = () => {
       <div className="flex justify-center">
         <Button className="bg-white text-dragon hover:bg-dragon-beige hover:text-dragon transition-colors" asChild>
           <CalendlyEmbed 
-            url="https://calendly.com/kapesuniforms/discoverymeeting"
+            url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
             text="Schedule a Consultation"
           />
         </Button>

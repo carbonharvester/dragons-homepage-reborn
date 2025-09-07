@@ -32,7 +32,7 @@ const ImpactScorecard = () => {
                   <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white">Start the Scorecard</Button>
                 </a>
                 <Button asChild variant="secondary" className="bg-dragon-yellow text-dragon-dark hover:bg-dragon-yellow/90">
-                  <a href="https://calendly.com/kapes-adventures/30min" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" target="_blank" rel="noopener noreferrer">
                     Book a free consultation
                   </a>
                 </Button>

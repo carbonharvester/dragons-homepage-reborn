@@ -110,7 +110,7 @@ const ProgramItinerary = ({
         <div className="mt-8 text-center">
           <p className="text-dragon-gray mb-4">Ready to embark on this creative journey?</p>
           <div className="flex justify-center">
-            <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Apply Now" className="btn-primary" />
+            <CalendlyEmbed url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" text="Apply Now" className="btn-primary" />
           </div>
         </div>
       </div>

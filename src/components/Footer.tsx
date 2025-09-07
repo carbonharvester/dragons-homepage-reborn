@@ -49,7 +49,7 @@ const Footer = () => {
             <h4 className="text-base font-bold mb-4">Get in touch</h4>
             <ul className="space-y-2.5 text-sm">
               <li className="mt-0">
-                <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="link" className="text-gray-300 hover:text-white transition-colors p-0 h-auto" />
+                <CalendlyEmbed url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" text="Schedule Consultation" variant="link" className="text-gray-300 hover:text-white transition-colors p-0 h-auto" />
               </li>
               <li className="mt-2">
                 <WaitingListForm>

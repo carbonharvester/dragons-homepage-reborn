@@ -135,7 +135,7 @@ const MobileMenu = ({
           </div>
           
           <CalendlyEmbed 
-            url="https://calendly.com/kapesuniforms/discoverymeeting"
+            url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
             text="Schedule Consultation"
             variant="default" 
             className="bg-dragon text-white py-2 px-4 rounded text-center"

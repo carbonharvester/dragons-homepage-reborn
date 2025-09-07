@@ -16,7 +16,7 @@ const CTASection = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
           <CalendlyEmbed 
-            url="https://calendly.com/kapesuniforms/discoverymeeting"
+            url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
             text="Get Free Consultation"
             variant="secondary"
             size="lg"
