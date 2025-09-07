@@ -1,6 +1,6 @@
 
 import { WeekProps } from "../../types";
-import { Trees, Leaf, Users, School, Handshake, TreeDeciduous } from "lucide-react";
+import { Trees, Leaf, Users, School, Handshake, TreeDeciduous, MapPinned } from "lucide-react";
 
 export const weekThreeData: WeekProps = {
   title: "Week 3",
@@ -10,86 +10,86 @@ export const weekThreeData: WeekProps = {
     {
       day: "Friday",
       date: "July 17",
-      title: "Agroforestry - Tree Planting",
+      title: "Travel and Tsavo Orientation",
       activities: [
-        "Plant 500 native trees for carbon credits",
-        "Prepare planting sites with compost",
-        "Mulch trees and set up watering systems",
-        "Evening workshop on carbon credits"
+        "Morning: Travel to Wildlife Works, Rukinga Sanctuary",
+        "Afternoon: Check-in at camp and site orientation",
+        "Introduction to agroforestry and greenhouse projects",
+        "Evening: Tsavo ecosystem and conservation overview"
       ],
-      icon: Trees
+      icon: MapPinned
     },
     {
       day: "Saturday",
       date: "July 18",
-      title: "Greenhouse - Seedling Propagation",
+      title: "Agroforestry Theory and Site Preparation",
       activities: [
-        "Prepare 200 pots with compost",
-        "Sow native tree seeds like baobab and moringa",
-        "Maintain greenhouse and organize nursery",
-        "Evening workshop on seedling care"
+        "Morning: Outdoor classroom - Agroforestry principles",
+        "Afternoon: Site assessment for tree planting areas",
+        "Prepare planting sites and gather materials",
+        "Evening: Carbon credits and climate change workshop"
       ],
-      icon: Leaf
+      icon: Trees
     },
     {
       day: "Sunday",
       date: "July 19",
-      title: "Community Engagement and Workshop Preparation",
+      title: "Tree Planting - Phase 1",
       activities: [
-        "Join local youth in agroforestry tasks",
-        "Learn about community livelihoods",
-        "Prepare permaculture workshop for local youth",
-        "Evening reflection session"
+        "Morning: Plant 150 native trees with proper spacing",
+        "Afternoon: Mulch trees and set up temporary watering",
+        "Learn tree identification and growth requirements",
+        "Evening: Community conservation stories"
       ],
-      icon: Users
+      icon: Trees
     },
     {
       day: "Monday",
       date: "July 20",
-      title: "Student-Led Workshop for Tsavo Youth",
+      title: "Greenhouse Setup and Seedling Theory",
       activities: [
-        "Teach local youth about permaculture principles",
-        "Use hands-on activities for tree care and soil health",
-        "Plant trees or maintain seedlings together",
-        "Evening workshop on community conservation"
+        "Morning: Greenhouse maintenance and organization",
+        "Afternoon: Prepare 100 pots with compost mixture",
+        "Theory: Seed germination and seedling care",
+        "Evening: Local plant species identification workshop"
       ],
-      icon: School
+      icon: Leaf
     },
     {
       day: "Tuesday",
       date: "July 21",
-      title: "Agroforestry Maintenance and Data Collection",
+      title: "Tree Planting - Phase 2 and Seedling Work",
       activities: [
-        "Weed around trees and apply mulch",
-        "Check water systems and monitor growth",
-        "Collect data for carbon credit program",
-        "Evening reflection on agroforestry impact"
+        "Morning: Plant remaining 200 trees",
+        "Afternoon: Sow native tree seeds (baobab, moringa)",
+        "Install permanent watering systems for trees",
+        "Evening: Traditional ecological knowledge session"
       ],
       icon: Trees
     },
     {
       day: "Wednesday",
       date: "July 22",
-      title: "Tsavo East National Park",
+      title: "Community Workshop Preparation",
       activities: [
-        "Guided game drive in Tsavo East",
-        "Observe elephants, lions, and buffalo",
-        "Learn about savanna ecosystems",
-        "Evening stargazing activity"
+        "Morning: Work alongside local youth on tree care",
+        "Afternoon: Prepare permaculture workshop materials",
+        "Learn about community livelihoods and challenges",
+        "Evening: Teaching methodology and cultural exchange"
       ],
-      icon: TreeDeciduous
+      icon: Users
     },
     {
       day: "Thursday",
       date: "July 23",
-      title: "Rest and Community Cultural Day",
+      title: "Student-Led Community Workshop",
       activities: [
-        "Morning rest and journaling time",
-        "Participate in community cultural events",
-        "Experience Maasai dance and storytelling",
-        "Group reflection on Week 3"
+        "Morning: Teach local youth permaculture principles",
+        "Afternoon: Hands-on tree planting with community",
+        "Collaborative seedling care and maintenance",
+        "Evening: Reflection on community engagement"
       ],
-      icon: Handshake
+      icon: School
     }
   ]
 };

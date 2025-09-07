@@ -14,81 +14,82 @@ export const weekOneData: WeekProps = {
       activities: [
         "Arrive in Nairobi, transfer to Ubuntu Kreative Village",
         "Welcome dinner with traditional Kenyan dishes",
-        "Program orientation and team assignments",
+        "Program orientation and team introductions",
+        "Site safety briefing and equipment overview"
       ],
       icon: MapPinned
     },
     {
       day: "Saturday",
       date: "July 4",
-      title: "Farm Assessment and Water Harvesting",
+      title: "Permaculture Theory and Farm Assessment",
       activities: [
-        "Assess existing farm with local staff",
-        "Install/upgrade water harvesting system",
-        "Set up 10,000-liter tank, gutters, and filters",
-        "Evening workshop on permaculture principles"
-      ],
-      icon: Droplet
-    },
-    {
-      day: "Sunday",
-      date: "July 5",
-      title: "Composting and Biochar",
-      activities: [
-        "Assess farm area",
-        "Build 3-bin composting system",
-        "Produce 40-60 liters of biochar",
-        "Evening workshop on soil fertility"
+        "Morning: Outdoor classroom - Permaculture principles and ethics",
+        "Afternoon: Site assessment with local staff",
+        "Soil testing and analysis workshop",
+        "Evening reflection and goal setting"
       ],
       icon: LandPlot
     },
     {
+      day: "Sunday",
+      date: "July 5",
+      title: "Water System Planning and Composting Setup",
+      activities: [
+        "Morning: Theory - Water harvesting systems design",
+        "Afternoon: Begin composting system construction",
+        "Build first compost bin and gather materials",
+        "Evening workshop on soil fertility basics"
+      ],
+      icon: Droplet
+    },
+    {
       day: "Monday",
       date: "July 6",
-      title: "Vetiver and Nursery Setup",
+      title: "Water Harvesting Installation - Day 1",
       activities: [
-        "Plant 50-meter vetiver hedgerow",
-        "Build nursery table with shade cloth",
-        "Prepare 30 pots for onions and tomatoes",
-        "Evening cultural activity"
+        "Morning: Install gutters and collection points",
+        "Afternoon: Prepare site for water tank installation",
+        "Begin filter system assembly",
+        "Evening: Water conservation theory session"
       ],
-      icon: Leaf
+      icon: Droplet
     },
     {
       day: "Tuesday",
       date: "July 7",
-      title: "Vegetable Beds and Community Engagement",
+      title: "Water Harvesting Installation - Day 2 & Nursery Setup",
       activities: [
-        "Clear 200 sq meter plot for raised beds",
-        "Build 20 raised beds for onions and tomatoes",
-        "Collaborate with local students on farm tasks",
-        "Evening reflection session"
+        "Morning: Complete 10,000-liter tank installation",
+        "Afternoon: Connect filters and test system",
+        "Build nursery table with shade cloth",
+        "Evening: Plant propagation workshop"
       ],
-      icon: School
+      icon: Leaf
     },
     {
       day: "Wednesday",
       date: "July 8",
-      title: "Nairobi National Park",
+      title: "Biochar Production and Bed Preparation",
       activities: [
-        "Guided game drive in Nairobi National Park",
-        "Learn about conservation and Kenya's ecosystems",
-        "Picnic lunch in the park",
-        "Optional visit to animal orphanage"
+        "Morning: Theory - Soil carbon and biochar benefits",
+        "Afternoon: Produce biochar (multiple small batches)",
+        "Complete 3-bin composting system",
+        "Plant 25-meter vetiver hedgerow (start)"
       ],
-      icon: Trees
+      icon: LandPlot
     },
     {
       day: "Thursday",
       date: "July 9",
-      title: "Ngong Hills Hike",
+      title: "Community Engagement and Cultural Exchange",
       activities: [
-        "Guided hike across Ngong Hills",
-        "Enjoy views of the Great Rift Valley",
-        "Learn about local flora, fauna, and Maasai culture",
-        "Group reflection and goal setting for Week 2"
+        "Morning: Complete vetiver planting with local students",
+        "Afternoon: Prepare raised bed area (100 sq meters)",
+        "Cultural exchange - traditional farming methods",
+        "Evening reflection and Week 2 planning"
       ],
-      icon: Mountain
+      icon: School
     }
   ]
 };
