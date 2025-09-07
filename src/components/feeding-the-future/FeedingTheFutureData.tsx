@@ -85,7 +85,7 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
               tripHighlights={[]}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
-              tripItinerary={tripItinerary}
+              tripItinerary={[]} // Empty to hide Sample Itinerary section
               programData={programData}
               perfectFor={perfectFor}
               description={feedingDescription}
@@ -95,6 +95,7 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
               hideStudentStories={true} // Hide student stories section
+              isSummerAbroad={true}
             />
           </div>
         </>

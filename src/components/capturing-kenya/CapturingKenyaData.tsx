@@ -89,7 +89,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
               tripHighlights={[]}
               galleryImages={galleryImages}
               learningOutcomes={learningOutcomes}
-              tripItinerary={[]}
+              tripItinerary={[]} // Empty to hide Sample Itinerary section
               programData={programData}
               perfectFor={perfectFor}
               description={capturingDescription}
@@ -100,6 +100,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
               hideStudentStories={true} // Hide student stories section
+              isSummerAbroad={true}
             />
           </div>
         </>

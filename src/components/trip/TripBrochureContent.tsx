@@ -65,6 +65,7 @@ interface TripBrochureContentProps {
   hideStudentStories?: boolean;
   isSchoolTrip?: boolean;
   hideProgramBrochure?: boolean;
+  isSummerAbroad?: boolean;
 }
 
 const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
@@ -85,7 +86,8 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
   isEducatorTrip = false,
   hideStudentStories = false,
   isSchoolTrip = false,
-  hideProgramBrochure = false
+  hideProgramBrochure = false,
+  isSummerAbroad = false
 }: TripBrochureContentProps) => {
   const isMobile = useIsMobile();
   
@@ -110,8 +112,8 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {/* Photo Gallery - Using consolidated component */}
       <ScrollableGallery images={galleryImages} />
       
-      {/* Sample Itinerary */}
-      <TripItinerary itineraryDays={tripItinerary} />
+      {/* Sample Itinerary - Hidden for summer abroad programs */}
+      {tripItinerary.length > 0 && <TripItinerary itineraryDays={tripItinerary} />}
       
       {/* Program Brochure */}
       {!hideProgramBrochure && <ProgramBrochure program={programData} pdfLink={pdfBrochureLink} />}
@@ -120,7 +122,7 @@ const TripBrochureContent: React.FC<TripBrochureContentProps> = ({
       {!isEducatorTrip && !hideStudentStories && <Testimonials />}
       
       {/* CTA Section */}
-      <TripCTA isSchoolTrip={isSchoolTrip} />
+      <TripCTA isSchoolTrip={isSchoolTrip} isSummerAbroad={isSummerAbroad} />
     </div>;
 };
 

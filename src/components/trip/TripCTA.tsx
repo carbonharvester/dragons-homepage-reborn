@@ -2,13 +2,16 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import CalendlyEmbed from '../CalendlyEmbed';
+import WaitingListForm from '../WaitingListForm';
 
 interface TripCTAProps {
   isSchoolTrip?: boolean;
+  isSummerAbroad?: boolean;
 }
 
 const TripCTA = ({
-  isSchoolTrip = true
+  isSchoolTrip = true,
+  isSummerAbroad = false
 }: TripCTAProps) => {
   return (
     <div className="bg-dragon text-white rounded-lg p-6 md:p-12 text-center mb-16 mt-20 w-full">
@@ -21,9 +24,17 @@ const TripCTA = ({
           : "Join us on this transformative journey to address real-world challenges through sustainable practices while providing your students with an unforgettable educational experience."}
       </p>
       <div className="flex flex-wrap justify-center gap-4">
-        <Button variant="secondary" size="lg" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400" asChild>
-          <a href="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
-        </Button>
+        {isSummerAbroad ? (
+          <WaitingListForm>
+            <Button variant="secondary" size="lg" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400">
+              Apply Now
+            </Button>
+          </WaitingListForm>
+        ) : (
+          <Button variant="secondary" size="lg" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400" asChild>
+            <a href="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" target="_blank" rel="noopener noreferrer">Schedule Consultation</a>
+          </Button>
+        )}
       </div>
     </div>
   );
