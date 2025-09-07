@@ -4,12 +4,12 @@ import { Droplet, Trees, Handshake, TreeDeciduous, Users, MapPinned } from "luci
 
 export const weekFourData: WeekProps = {
   title: "Week 4",
-  dates: "August 18 - August 25, 2025",
+  dates: "July 24 - July 31, 2025",
   focus: "Sustainability and Program Wrap-Up",
   days: [
     {
-      day: "Monday",
-      date: "August 18",
+      day: "Friday",
+      date: "July 24",
       title: "Greenhouse Sustainability",
       activities: [
         "Install drip irrigation for seedlings",
@@ -20,8 +20,8 @@ export const weekFourData: WeekProps = {
       icon: Droplet
     },
     {
-      day: "Tuesday",
-      date: "August 19",
+      day: "Saturday",
+      date: "July 25",
       title: "Agroforestry Finalization",
       activities: [
         "Apply compost to tree bases",
@@ -32,8 +32,8 @@ export const weekFourData: WeekProps = {
       icon: Trees
     },
     {
-      day: "Wednesday",
-      date: "August 20",
+      day: "Sunday",
+      date: "July 26",
       title: "Community Presentation and Feedback",
       activities: [
         "Present project contributions to community leaders",
@@ -44,8 +44,8 @@ export const weekFourData: WeekProps = {
       icon: Handshake
     },
     {
-      day: "Thursday",
-      date: "August 21",
+      day: "Monday",
+      date: "July 27",
       title: "Final Community Celebration",
       activities: [
         "Showcase agroforestry plots and greenhouse",
@@ -56,8 +56,8 @@ export const weekFourData: WeekProps = {
       icon: Handshake
     },
     {
-      day: "Friday",
-      date: "August 22",
+      day: "Tuesday",
+      date: "July 28",
       title: "Tsavo East Conservation Day",
       activities: [
         "Full day excursion to Tsavo East National Park",
@@ -68,8 +68,8 @@ export const weekFourData: WeekProps = {
       icon: TreeDeciduous
     },
     {
-      day: "Saturday",
-      date: "August 23",
+      day: "Wednesday",
+      date: "July 29",
       title: "Kasigau Cultural Immersion",
       activities: [
         "Visit local villages in Kasigau Corridor",
@@ -80,14 +80,26 @@ export const weekFourData: WeekProps = {
       icon: Users
     },
     {
-      day: "Sunday",
-      date: "August 24",
+      day: "Thursday",
+      date: "July 30",
       title: "Travel to Nairobi and Farewell Dinner",
       activities: [
         "Morning departure for Nairobi",
-        "Check-in at Wildebeest Eco Camp",
+        "Check-in at Ubuntu Kreative Village",
         "Final group reflection and celebration",
         "Farewell dinner at local restaurant"
+      ],
+      icon: MapPinned
+    },
+    {
+      day: "Friday",
+      date: "July 31",
+      title: "Departure",
+      activities: [
+        "Final breakfast and program wrap-up",
+        "Transfer to Nairobi airport",
+        "Departure to home countries",
+        "Safe travels and program completion"
       ],
       icon: MapPinned
     }

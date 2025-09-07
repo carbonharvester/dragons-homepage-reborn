@@ -4,12 +4,12 @@ import { Trees, Leaf, Users, School, Handshake, TreeDeciduous } from "lucide-rea
 
 export const weekThreeData: WeekProps = {
   title: "Week 3",
-  dates: "August 11 - August 18, 2025",
+  dates: "July 17 - July 23, 2025",
   focus: "Agroforestry and Greenhouse Work",
   days: [
     {
-      day: "Monday",
-      date: "August 11",
+      day: "Friday",
+      date: "July 17",
       title: "Agroforestry - Tree Planting",
       activities: [
         "Plant 500 native trees for carbon credits",
@@ -20,8 +20,8 @@ export const weekThreeData: WeekProps = {
       icon: Trees
     },
     {
-      day: "Tuesday",
-      date: "August 12",
+      day: "Saturday",
+      date: "July 18",
       title: "Greenhouse - Seedling Propagation",
       activities: [
         "Prepare 200 pots with compost",
@@ -32,8 +32,8 @@ export const weekThreeData: WeekProps = {
       icon: Leaf
     },
     {
-      day: "Wednesday",
-      date: "August 13",
+      day: "Sunday",
+      date: "July 19",
       title: "Community Engagement and Workshop Preparation",
       activities: [
         "Join local youth in agroforestry tasks",
@@ -44,8 +44,8 @@ export const weekThreeData: WeekProps = {
       icon: Users
     },
     {
-      day: "Thursday",
-      date: "August 14",
+      day: "Monday",
+      date: "July 20",
       title: "Student-Led Workshop for Tsavo Youth",
       activities: [
         "Teach local youth about permaculture principles",
@@ -56,8 +56,8 @@ export const weekThreeData: WeekProps = {
       icon: School
     },
     {
-      day: "Friday",
-      date: "August 15",
+      day: "Tuesday",
+      date: "July 21",
       title: "Agroforestry Maintenance and Data Collection",
       activities: [
         "Weed around trees and apply mulch",
@@ -68,8 +68,8 @@ export const weekThreeData: WeekProps = {
       icon: Trees
     },
     {
-      day: "Saturday",
-      date: "August 16",
+      day: "Wednesday",
+      date: "July 22",
       title: "Tsavo East National Park",
       activities: [
         "Guided game drive in Tsavo East",
@@ -80,8 +80,8 @@ export const weekThreeData: WeekProps = {
       icon: TreeDeciduous
     },
     {
-      day: "Sunday",
-      date: "August 17",
+      day: "Thursday",
+      date: "July 23",
       title: "Rest and Community Cultural Day",
       activities: [
         "Morning rest and journaling time",

@@ -4,23 +4,23 @@ import { MapPinned, Droplet, LandPlot, Leaf, School, Trees, Mountain } from "luc
 
 export const weekOneData: WeekProps = {
   title: "Week 1",
-  dates: "July 28 - August 4, 2025",
+  dates: "July 3 - July 9, 2025",
   focus: "Farm Establishment and Community Building",
   days: [
     {
-      day: "Monday",
-      date: "July 28",
+      day: "Friday",
+      date: "July 3",
       title: "Arrival and Orientation",
       activities: [
-        "Arrive in Nairobi, transfer to Wildebeest Eco Camp",
+        "Arrive in Nairobi, transfer to Ubuntu Kreative Village",
         "Welcome dinner with traditional Kenyan dishes",
         "Program orientation and team assignments",
       ],
       icon: MapPinned
     },
     {
-      day: "Tuesday",
-      date: "July 29",
+      day: "Saturday",
+      date: "July 4",
       title: "Farm Assessment and Water Harvesting",
       activities: [
         "Assess existing farm with local staff",
@@ -31,8 +31,8 @@ export const weekOneData: WeekProps = {
       icon: Droplet
     },
     {
-      day: "Wednesday",
-      date: "July 30",
+      day: "Sunday",
+      date: "July 5",
       title: "Composting and Biochar",
       activities: [
         "Assess farm area",
@@ -43,8 +43,8 @@ export const weekOneData: WeekProps = {
       icon: LandPlot
     },
     {
-      day: "Thursday",
-      date: "July 31",
+      day: "Monday",
+      date: "July 6",
       title: "Vetiver and Nursery Setup",
       activities: [
         "Plant 50-meter vetiver hedgerow",
@@ -55,8 +55,8 @@ export const weekOneData: WeekProps = {
       icon: Leaf
     },
     {
-      day: "Friday",
-      date: "August 1",
+      day: "Tuesday",
+      date: "July 7",
       title: "Vegetable Beds and Community Engagement",
       activities: [
         "Clear 200 sq meter plot for raised beds",
@@ -67,8 +67,8 @@ export const weekOneData: WeekProps = {
       icon: School
     },
     {
-      day: "Saturday",
-      date: "August 2",
+      day: "Wednesday",
+      date: "July 8",
       title: "Nairobi National Park",
       activities: [
         "Guided game drive in Nairobi National Park",
@@ -79,8 +79,8 @@ export const weekOneData: WeekProps = {
       icon: Trees
     },
     {
-      day: "Sunday",
-      date: "August 3",
+      day: "Thursday",
+      date: "July 9",
       title: "Ngong Hills Hike",
       activities: [
         "Guided hike across Ngong Hills",

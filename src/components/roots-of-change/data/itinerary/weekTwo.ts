@@ -4,12 +4,12 @@ import { Droplet, Leaf, School, Handshake, MapPinned, Building } from "lucide-re
 
 export const weekTwoData: WeekProps = {
   title: "Week 2",
-  dates: "August 4 - August 11, 2025",
+  dates: "July 10 - July 16, 2025",
   focus: "Farm Expansion and Community Workshops",
   days: [
     {
-      day: "Monday",
-      date: "August 4",
+      day: "Friday",
+      date: "July 10",
       title: "Greywater System and Bed Expansion",
       activities: [
         "Install greywater recycling system",
@@ -20,8 +20,8 @@ export const weekTwoData: WeekProps = {
       icon: Droplet
     },
     {
-      day: "Tuesday",
-      date: "August 5",
+      day: "Saturday",
+      date: "July 11",
       title: "Greywater System and Crop Diversification",
       activities: [
         "Install greywater system for second location",
@@ -32,8 +32,8 @@ export const weekTwoData: WeekProps = {
       icon: Leaf
     },
     {
-      day: "Wednesday",
-      date: "August 6",
+      day: "Sunday",
+      date: "July 12",
       title: "Student-Led Workshop",
       activities: [
         "Teach local students about composting and planting",
@@ -44,8 +44,8 @@ export const weekTwoData: WeekProps = {
       icon: School
     },
     {
-      day: "Thursday",
-      date: "August 7",
+      day: "Monday",
+      date: "July 13",
       title: "Student-Led Workshop and Farm Maintenance",
       activities: [
         "Teach students about water harvesting",
@@ -56,8 +56,8 @@ export const weekTwoData: WeekProps = {
       icon: Handshake
     },
     {
-      day: "Friday",
-      date: "August 8",
+      day: "Tuesday",
+      date: "July 14",
       title: "Food For Education and Community Celebration",
       activities: [
         "Visit Food For Education facilities",
@@ -68,8 +68,8 @@ export const weekTwoData: WeekProps = {
       icon: Handshake
     },
     {
-      day: "Saturday",
-      date: "August 9",
+      day: "Wednesday",
+      date: "July 15",
       title: "Nairobi National Museum and Maasai Market",
       activities: [
         "Explore exhibits on Kenyan history and culture",
@@ -80,8 +80,8 @@ export const weekTwoData: WeekProps = {
       icon: Building
     },
     {
-      day: "Sunday",
-      date: "August 10",
+      day: "Thursday",
+      date: "July 16",
       title: "Travel to Tsavo and Wildlife Works Orientation",
       activities: [
         "Travel to Wildlife Works, Rukinga Sanctuary",
