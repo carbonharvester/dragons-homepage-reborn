@@ -4,6 +4,7 @@ import { learningOutcomes } from './learningOutcomes';
 import { galleryImages } from './gallery';
 import { tripHighlights } from './highlights';
 import { programData } from './programInfo';
+import { problemData } from './problemData';
 
 // Create trip itinerary data structure that matches what TripBrochureContent expects
 export const tripItinerary = [
@@ -60,5 +61,6 @@ export {
   learningOutcomes,
   galleryImages,
   tripHighlights,
-  programData
+  programData,
+  problemData
 };

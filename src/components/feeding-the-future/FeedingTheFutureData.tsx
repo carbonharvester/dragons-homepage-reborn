@@ -13,6 +13,7 @@ import { tripHighlights } from './data/highlights';
 import { tripItinerary } from './data/index';
 import ProgramItinerary from '../roots-of-change/ProgramItinerary';
 import ProgramLocations from '../roots-of-change/ProgramLocations';
+import ProblemSection from './ProblemSection';
 
 interface FeedingTheFutureDataProps {
   heroOnly?: boolean;
@@ -68,7 +69,12 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
               projectGoals={feedingProjectGoals}
               isSummerAbroad={true}
             />
+          </div>
             
+          {/* Problem Section */}
+          <ProblemSection />
+          
+          <div className="container py-[6px]">
             {/* Trip Highlights with explicit heading - only show if we're not on mobile */}
             {!isMobile && <TripHighlightsWrapper />}
             
