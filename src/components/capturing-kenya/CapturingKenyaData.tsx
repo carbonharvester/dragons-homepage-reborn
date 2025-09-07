@@ -100,6 +100,7 @@ const CapturingKenyaData: React.FC<CapturingKenyaDataProps> = ({
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
               hideStudentStories={true} // Hide student stories section
+              hideProgramBrochure={true} // Hide program brochure section for summer programs
               isSummerAbroad={true}
             />
           </div>

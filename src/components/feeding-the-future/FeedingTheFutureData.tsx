@@ -95,6 +95,7 @@ const FeedingTheFutureData: React.FC<FeedingTheFutureDataProps> = ({
               pdfBrochureLink={pdfBrochureLink}
               customThumbnails={customThumbnails}
               hideStudentStories={true} // Hide student stories section
+              hideProgramBrochure={true} // Hide program brochure section for summer programs
               isSummerAbroad={true}
             />
           </div>
