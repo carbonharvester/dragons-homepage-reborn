@@ -87,7 +87,7 @@ export const weekFourData: WeekProps = {
         "Morning: Complete final project documentation and reflection",
         "Afternoon: Travel back to Nairobi", 
         "Check-in at Ubuntu Kreative Village",
-        "Farewell dinner at local restaurant"
+        "Farewell pizza making night at Ubuntu"
       ],
       icon: MapPinned
     },
