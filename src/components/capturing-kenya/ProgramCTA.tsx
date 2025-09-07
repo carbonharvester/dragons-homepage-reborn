@@ -26,12 +26,7 @@ const ProgramCTA = () => {
                 Apply Now
               </Button>
             </WaitingListForm>
-            <CalendlyEmbed 
-              url="https://calendly.com/kapesuniforms/discoverymeeting"
-              text="Schedule Consultation"
-              variant="secondary"
-              className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400"
-            />
+            {/* Schedule Consultation removed for student-focused program */}
           </div>
         </div>
       </div>

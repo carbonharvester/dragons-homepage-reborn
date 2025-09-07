@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 const ItineraryCTA = () => {
   return (
@@ -11,15 +10,7 @@ const ItineraryCTA = () => {
         Our itinerary is carefully crafted to provide a balance of learning, exploration, and community impact.
         Each day is designed to build your skills while immersing you in Kenya's diverse environments and cultures.
       </p>
-      <div className="flex flex-wrap justify-center gap-4">
-        {/* Apply Now button removed since this is a school trip */}
-        <CalendlyEmbed 
-          url="https://calendly.com/kapesuniforms/discoverymeeting"
-          text="Schedule Consultation"
-          variant="outline"
-          className="border-dragon text-dragon hover:bg-dragon hover:text-white font-gothic uppercase tracking-wide"
-        />
-      </div>
+      {/* CTA buttons removed for student-focused summer program */}
     </div>
   );
 };

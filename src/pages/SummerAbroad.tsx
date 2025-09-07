@@ -5,7 +5,6 @@ import SEO from '@/components/SEO';
 import { summerAbroad } from '@/data/programsData';
 import ProgramCard from '@/components/programs/ProgramCard';
 import { Button } from '@/components/ui/button';
-import CalendlyEmbed from '@/components/CalendlyEmbed';
 import WaitingListForm from '@/components/WaitingListForm';
 import { Calendar, Users, MapPin } from "lucide-react";
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
@@ -31,9 +30,7 @@ const SummerAbroad = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">Summer Abroad Programs</h1>
               <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">Unforgettable 3-4 week summer experiences for ages 17–21, combining adventure, learning, and positive impact in Africa's stunning landscapes.</p>
               
-              <div className="flex flex-wrap gap-4">
-                <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule a Consultation" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400 px-6 py-3 rounded-md font-medium transition-colors duration-200" />
-              </div>
+              {/* Schedule Consultation removed for student-focused programs */}
             </div>
           </div>
         </section>

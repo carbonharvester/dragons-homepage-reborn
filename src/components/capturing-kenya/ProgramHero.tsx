@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 const ProgramHero = () => {
   return (
@@ -27,12 +26,7 @@ const ProgramHero = () => {
             <Button className="btn-primary" asChild>
               <Link to="/programs/capturing-kenya/itinerary">Explore Full Itinerary</Link>
             </Button>
-            <CalendlyEmbed 
-              url="https://calendly.com/kapesuniforms/discoverymeeting"
-              text="Schedule Consultation"
-              variant="outline"
-              className="bg-white text-dragon hover:bg-gray-100"
-            />
+            {/* Schedule Consultation removed for student-focused program */}
           </div>
         </div>
       </div>

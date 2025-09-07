@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import CalendlyEmbed from "@/components/CalendlyEmbed";
 import { DollarSign, Users } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -86,9 +85,7 @@ const ProgramOverview = ({
                 </div>
               </div>
               
-              <div className="mt-6 space-y-4">
-                <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="outline" className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow" />
-              </div>
+              {/* Schedule Consultation removed for student-focused program */}
             </div>
           </div>
           
@@ -136,9 +133,7 @@ const ProgramOverview = ({
               </div>
             </div>
             
-            <div className="mt-6 space-y-4">
-              <CalendlyEmbed url="https://calendly.com/kapesuniforms/discoverymeeting" text="Schedule Consultation" variant="outline" className="w-full bg-dragon-yellow text-dragon-dark hover:bg-amber-400 border-dragon-yellow" />
-            </div>
+            {/* Schedule Consultation removed for student-focused program */}
           </div>
         </div>
       </div>
