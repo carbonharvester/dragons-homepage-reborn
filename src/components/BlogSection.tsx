@@ -32,7 +32,7 @@ const BlogSection = () => {
       <section className="py-16 bg-dragon-beige/30">
         <div className="container-wide">
           <BlogSectionHeader 
-            title="Latest From Our Founder's Blog" 
+            title="Latest From Our Blog" 
             subtitle="Personal insights, stories, and reflections from the founder on transformative educational travel and cultural immersion experiences."
           />
 
@@ -88,7 +88,7 @@ const BlogSection = () => {
     <section className="py-20 bg-dragon-beige/30">
       <div className="container-wide">
         <BlogSectionHeader 
-          title="Latest From Our Founder's Blog" 
+          title="Latest From Our Blog" 
           subtitle="Personal insights, stories, and reflections from the founder on transformative educational travel and cultural immersion experiences."
         />
 
