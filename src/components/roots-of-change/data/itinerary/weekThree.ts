@@ -22,12 +22,12 @@ export const weekThreeData: WeekProps = {
     {
       day: "Saturday",
       date: "July 18",
-      title: "Agroforestry Theory and Site Preparation",
+      title: "Tsavo East National Park",
       activities: [
-        "Morning: Outdoor classroom - Agroforestry principles",
-        "Afternoon: Site assessment for tree planting areas",
-        "Prepare planting sites and gather materials",
-        "Evening: Carbon credits and climate change workshop"
+        "Full day educational excursion to Tsavo East National Park",
+        "Wildlife observation and photography",
+        "Learn about wildlife conservation and anti-poaching efforts", 
+        "Evening: Wildlife photography review and reflection"
       ],
       icon: Trees
     },

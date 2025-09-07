@@ -22,11 +22,11 @@ export const weekFourData: WeekProps = {
     {
       day: "Saturday",
       date: "July 25",
-      title: "Tsavo East National Park - Conservation Focus",
+      title: "Tsavo West National Park",
       activities: [
-        "Full day educational excursion to Tsavo East",
-        "Meet with park rangers about anti-poaching efforts", 
-        "Learn about wildlife conservation challenges",
+        "Full day educational excursion to Tsavo West National Park",
+        "Visit Mzima Springs and observe hippos and crocodiles",
+        "Learn about different ecosystem within Tsavo West", 
         "Evening: Wildlife photography and observation"
       ],
       icon: TreeDeciduous
