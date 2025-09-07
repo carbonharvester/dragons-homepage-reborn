@@ -20,8 +20,7 @@ const CapturingKenyaItinerary = () => {
   const [expandedWeeks, setExpandedWeeks] = useState<Record<string, boolean>>({
     'week1': true, // First week expanded by default
     'week2': false,
-    'week3': false,
-    'week4': false
+    'week3': false
   });
 
   // Toggle week details
@@ -36,7 +35,7 @@ const CapturingKenyaItinerary = () => {
     <div className="min-h-screen flex flex-col">
       <SEO 
         title="Capturing Kenya Program Itinerary"
-        description="Detailed day-by-day itinerary for our 4-week photography and videography immersion program across Kenya's most stunning locations."
+        description="Detailed day-by-day itinerary for our 3-week photography and videography immersion program across Kenya's most stunning locations."
         keywords="Kenya itinerary, photography program, wildlife photography, travel itinerary, educational program"
       />
       <Header />
@@ -44,8 +43,8 @@ const CapturingKenyaItinerary = () => {
         <ItineraryHero 
           title="Capturing Kenya"
           subtitle="Full Program Itinerary"
-          duration="4 Weeks (Summer)"
-          days={28}
+          duration="3 Weeks (Summer)"
+          days={21}
           location="Kenya"
         />
 
@@ -57,7 +56,7 @@ const CapturingKenyaItinerary = () => {
           <div className="container-wide">
             <ItineraryIntro 
               title="Detailed Program Itinerary"
-              description="Our 4-week Capturing Kenya program takes you through stunning landscapes, wildlife encounters, and cultural 
+              description="Our 3-week Capturing Kenya program takes you through stunning landscapes, wildlife encounters, and cultural 
               immersion while developing your photography and videography skills. Below is our comprehensive day-by-day itinerary."
             />
             
