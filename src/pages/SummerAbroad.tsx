@@ -8,15 +8,12 @@ import { Button } from '@/components/ui/button';
 import WaitingListForm from '@/components/WaitingListForm';
 import { Calendar, Users, MapPin } from "lucide-react";
 import ParentPageNavigation from '@/components/navigation/ParentPageNavigation';
-
 const SummerAbroad = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <SEO title="Summer Abroad Programs" description="Immersive summer programs in Kenya for students looking to expand their horizons through cultural experiences and educational adventures." keywords="summer abroad, student travel, Kenya, cultural immersion, educational travel, summer programs" />
       <Header />
       <main>
@@ -28,7 +25,7 @@ const SummerAbroad = () => {
           <div className="container-wide relative z-10 text-white">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4 hero-heading">Summer Abroad Programs</h1>
-              <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">Unforgettable 3-4 week summer experiences for ages 17–21, combining adventure, learning, and positive impact in Africa's stunning landscapes.</p>
+              <p className="text-lg md:text-xl opacity-90 mb-6 max-w-2xl">Unforgettable 3-4 week summer experiences for ages 16–21, combining adventure, learning, and positive impact in Africa's stunning landscapes.</p>
               
               {/* Schedule Consultation removed for student-focused programs */}
             </div>
@@ -115,11 +112,9 @@ const SummerAbroad = () => {
             
             {/* Display Summer Abroad Programs */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-              {summerAbroad.map((program, index) => (
-                <div key={index} className="h-full">
+              {summerAbroad.map((program, index) => <div key={index} className="h-full">
                   <ProgramCard program={program} />
-                </div>
-              ))}
+                </div>)}
             </div>
 
             {/* A Day in the Life Section */}
@@ -152,8 +147,6 @@ const SummerAbroad = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default SummerAbroad;
