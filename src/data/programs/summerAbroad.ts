@@ -10,7 +10,7 @@ export const summerAbroad = [
     image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747129548/WhatsApp_Image_2025-05-13_at_12.12.32_2_qbmzae.jpg", 
     link: "/programs/feeding-the-future", 
     icon: Globe, 
-    ageGroup: "17-21", 
+    ageGroup: "16-21",
     location: "Kenya" 
   },
   { 

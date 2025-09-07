@@ -20,7 +20,7 @@ export const tripDetails = [
   },
   {
     label: "Ages",
-    value: "16-20",
+    value: "16-21",
     icon: React.createElement(Users, { className: "h-5 w-5 text-dragon" })
   },
   {
@@ -35,4 +35,4 @@ export const tripDetails = [
   }
 ];
 
-export const perfectFor = "Aged 16-20, Passionate About Sustainability, Enjoy Cultural Immersion, Interest in Agriculture, Active & Hands-on Learners, Open to New Experiences";
+export const perfectFor = "Aged 16-21, Passionate About Sustainability, Enjoy Cultural Immersion, Interest in Agriculture, Active & Hands-on Learners, Open to New Experiences";
