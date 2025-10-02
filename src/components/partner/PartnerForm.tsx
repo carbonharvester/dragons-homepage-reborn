@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 const PartnerForm = () => {
@@ -16,8 +17,14 @@ const PartnerForm = () => {
       <div className="container-wide">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Become a Partner</h2>
-          <p className="text-lg text-gray-300">
+          <p className="text-lg text-gray-300 mb-4">
             Fill out the form below to start a conversation about our partnership opportunities.
+          </p>
+          <p className="text-sm text-gray-400">
+            Already booked a trip with us?{" "}
+            <Link to="/trip-registration" className="text-dragon-yellow hover:underline font-semibold">
+              Register your participants here
+            </Link>
           </p>
         </div>
 
