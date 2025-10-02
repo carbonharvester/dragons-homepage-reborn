@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      trip_participants: {
+        Row: {
+          allergies: string | null
+          created_at: string
+          date_of_birth: string
+          dietary_requirements: string | null
+          first_name: string
+          id: string
+          last_name: string
+          meal_code: string | null
+          middle_name: string | null
+          nationality: string
+          passport_expiry_date: string
+          passport_image_url: string | null
+          passport_number: string
+          school: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          allergies?: string | null
+          created_at?: string
+          date_of_birth: string
+          dietary_requirements?: string | null
+          first_name: string
+          id?: string
+          last_name: string
+          meal_code?: string | null
+          middle_name?: string | null
+          nationality: string
+          passport_expiry_date: string
+          passport_image_url?: string | null
+          passport_number: string
+          school?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          allergies?: string | null
+          created_at?: string
+          date_of_birth?: string
+          dietary_requirements?: string | null
+          first_name?: string
+          id?: string
+          last_name?: string
+          meal_code?: string | null
+          middle_name?: string | null
+          nationality?: string
+          passport_expiry_date?: string
+          passport_image_url?: string | null
+          passport_number?: string
+          school?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

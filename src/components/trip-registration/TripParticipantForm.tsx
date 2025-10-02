@@ -44,6 +44,7 @@ const TripParticipantForm = () => {
     middleName: '',
     lastName: '',
     dateOfBirth: '',
+    school: '',
     nationality: '',
     passportNumber: '',
     passportExpiryDate: '',
@@ -111,6 +112,7 @@ const TripParticipantForm = () => {
           middle_name: formData.middleName || null,
           last_name: formData.lastName,
           date_of_birth: formData.dateOfBirth,
+          school: formData.school,
           nationality: formData.nationality,
           passport_number: formData.passportNumber,
           passport_expiry_date: formData.passportExpiryDate,
@@ -135,6 +137,7 @@ const TripParticipantForm = () => {
         middleName: '',
         lastName: '',
         dateOfBirth: '',
+        school: '',
         nationality: '',
         passportNumber: '',
         passportExpiryDate: '',
@@ -220,6 +223,17 @@ const TripParticipantForm = () => {
                       onChange={(e) => handleInputChange('dateOfBirth', e.target.value)}
                     />
                   </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="school">School *</Label>
+                  <Input
+                    id="school"
+                    required
+                    value={formData.school}
+                    onChange={(e) => handleInputChange('school', e.target.value)}
+                    placeholder="Enter school name"
+                  />
                 </div>
               </div>
 
