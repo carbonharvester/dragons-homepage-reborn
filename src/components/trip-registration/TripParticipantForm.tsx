@@ -54,6 +54,10 @@ const TripParticipantForm = () => {
     allergies: '',
     dietaryRequirements: '',
     mealCode: '',
+    emergencyContactName: '',
+    emergencyContactRelationship: '',
+    emergencyContactPhone: '',
+    emergencyContactEmail: '',
     mediaConsent: false
   });
 
@@ -124,6 +128,10 @@ const TripParticipantForm = () => {
           allergies: formData.allergies || null,
           dietary_requirements: formData.dietaryRequirements || null,
           meal_code: formData.mealCode || null,
+          emergency_contact_name: formData.emergencyContactName || null,
+          emergency_contact_relationship: formData.emergencyContactRelationship || null,
+          emergency_contact_phone: formData.emergencyContactPhone || null,
+          emergency_contact_email: formData.emergencyContactEmail || null,
           passport_image_url: passportImageUrl,
           media_consent: formData.mediaConsent
         });
@@ -148,6 +156,10 @@ const TripParticipantForm = () => {
             allergies: formData.allergies,
             dietaryRequirements: formData.dietaryRequirements,
             mealCode: formData.mealCode,
+            emergencyContactName: formData.emergencyContactName,
+            emergencyContactRelationship: formData.emergencyContactRelationship,
+            emergencyContactPhone: formData.emergencyContactPhone,
+            emergencyContactEmail: formData.emergencyContactEmail,
             mediaConsent: formData.mediaConsent
           }
         });
@@ -180,6 +192,10 @@ const TripParticipantForm = () => {
         allergies: '',
         dietaryRequirements: '',
         mealCode: '',
+        emergencyContactName: '',
+        emergencyContactRelationship: '',
+        emergencyContactPhone: '',
+        emergencyContactEmail: '',
         mediaConsent: false
       });
       setPassportFile(null);
@@ -397,6 +413,61 @@ const TripParticipantForm = () => {
                       Emirates Dietary Requirements
                     </a>
                   </p>
+                </div>
+              </div>
+
+              {/* Emergency Contact */}
+              <div className="space-y-4 pt-6 border-t border-border">
+                <h3 className="text-xl font-semibold text-dragon">Emergency Contact</h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="emergencyContactName">Contact Name *</Label>
+                    <Input
+                      id="emergencyContactName"
+                      required
+                      value={formData.emergencyContactName}
+                      onChange={(e) => handleInputChange('emergencyContactName', e.target.value)}
+                      placeholder="Enter emergency contact name"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="emergencyContactRelationship">Relationship *</Label>
+                    <Input
+                      id="emergencyContactRelationship"
+                      required
+                      value={formData.emergencyContactRelationship}
+                      onChange={(e) => handleInputChange('emergencyContactRelationship', e.target.value)}
+                      placeholder="e.g., Parent, Guardian"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="emergencyContactPhone">Phone Number *</Label>
+                    <Input
+                      id="emergencyContactPhone"
+                      type="tel"
+                      required
+                      value={formData.emergencyContactPhone}
+                      onChange={(e) => handleInputChange('emergencyContactPhone', e.target.value)}
+                      placeholder="Enter phone number"
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="emergencyContactEmail">Email Address *</Label>
+                    <Input
+                      id="emergencyContactEmail"
+                      type="email"
+                      required
+                      value={formData.emergencyContactEmail}
+                      onChange={(e) => handleInputChange('emergencyContactEmail', e.target.value)}
+                      placeholder="Enter email address"
+                    />
+                  </div>
                 </div>
               </div>
 
