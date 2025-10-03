@@ -132,6 +132,35 @@ const TripParticipantForm = () => {
         throw insertError;
       }
 
+      // Send data to Google Sheets
+      try {
+        const { error: functionError } = await supabase.functions.invoke('send-to-google-sheets', {
+          body: {
+            firstName: formData.firstName,
+            middleName: formData.middleName,
+            lastName: formData.lastName,
+            dateOfBirth: formData.dateOfBirth,
+            school: formData.school,
+            trip: formData.trip,
+            nationality: formData.nationality,
+            passportNumber: formData.passportNumber,
+            passportExpiryDate: formData.passportExpiryDate,
+            allergies: formData.allergies,
+            dietaryRequirements: formData.dietaryRequirements,
+            mealCode: formData.mealCode,
+            mediaConsent: formData.mediaConsent
+          }
+        });
+
+        if (functionError) {
+          console.error('Error sending to Google Sheets:', functionError);
+          // Don't throw - we still want to show success since data is saved
+        }
+      } catch (sheetError) {
+        console.error('Failed to send to Google Sheets:', sheetError);
+        // Don't throw - we still want to show success since data is saved
+      }
+
       toast({
         title: "Success!",
         description: "Trip participant information submitted successfully."

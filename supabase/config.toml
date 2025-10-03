@@ -1,1 +1,4 @@
 project_id = "pybpwvzsusuthxpobtin"
+
+[functions.send-to-google-sheets]
+verify_jwt = false
