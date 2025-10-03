@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -51,7 +52,8 @@ const TripParticipantForm = () => {
     passportExpiryDate: '',
     allergies: '',
     dietaryRequirements: '',
-    mealCode: ''
+    mealCode: '',
+    mediaConsent: false
   });
 
   const handleInputChange = (field: string, value: string) => {
@@ -121,7 +123,8 @@ const TripParticipantForm = () => {
           allergies: formData.allergies || null,
           dietary_requirements: formData.dietaryRequirements || null,
           meal_code: formData.mealCode || null,
-          passport_image_url: passportImageUrl
+          passport_image_url: passportImageUrl,
+          media_consent: formData.mediaConsent
         });
 
       if (insertError) {
@@ -146,7 +149,8 @@ const TripParticipantForm = () => {
         passportExpiryDate: '',
         allergies: '',
         dietaryRequirements: '',
-        mealCode: ''
+        mealCode: '',
+        mediaConsent: false
       });
       setPassportFile(null);
 
@@ -363,6 +367,36 @@ const TripParticipantForm = () => {
                       Emirates Dietary Requirements
                     </a>
                   </p>
+                </div>
+              </div>
+
+              {/* Media Consent */}
+              <div className="space-y-4 pt-6 border-t border-border">
+                <div className="flex items-start space-x-3">
+                  <Checkbox 
+                    id="mediaConsent"
+                    checked={formData.mediaConsent}
+                    onCheckedChange={(checked) => handleInputChange('mediaConsent', checked as boolean)}
+                    required
+                  />
+                  <div className="space-y-1">
+                    <Label 
+                      htmlFor="mediaConsent" 
+                      className="text-base font-medium cursor-pointer"
+                    >
+                      I consent to photos and videos being taken during the trip *
+                    </Label>
+                    <p className="text-sm text-muted-foreground">
+                      <Link 
+                        to="/media-consent-policy" 
+                        target="_blank"
+                        className="text-dragon hover:underline"
+                      >
+                        Learn more about our photo and video policy
+                      </Link>
+                      {" "}- Photos and videos will only be used for marketing and promotion of Kapes Adventures trips.
+                    </p>
+                  </div>
                 </div>
               </div>
 

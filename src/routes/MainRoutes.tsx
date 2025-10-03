@@ -13,6 +13,7 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import Auth from "@/pages/Auth";
 import TripRegistration from "@/pages/TripRegistration";
+import MediaConsentPolicy from "@/pages/MediaConsentPolicy";
 // import Podcast from "@/pages/Podcast"; - Podcast page hidden
 import ImpactScorecard from "@/pages/ImpactScorecard";
 
@@ -61,6 +62,7 @@ const MainRoutes = () => {
       <Route path="/terms-of-service" element={<TermsOfService />} />
       <Route path="/auth" element={<Auth />} />
       <Route path="/trip-registration" element={<TripRegistration />} />
+      <Route path="/media-consent-policy" element={<MediaConsentPolicy />} />
       {/* Podcast route removed */}
       
       {/* Program Categories */}
