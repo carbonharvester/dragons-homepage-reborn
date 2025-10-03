@@ -506,9 +506,9 @@ const TripParticipantForm = () => {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="bg-dragon hover:bg-dragon-dark text-white px-8 py-6 text-lg"
+                  className="bg-dragon-yellow hover:bg-dragon-yellow/90 text-dragon-dark px-8 py-6 text-lg"
                 >
-                  {isSubmitting ? "Submitting..." : "Submit Participant Information"}
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </Button>
               </div>
             </form>
