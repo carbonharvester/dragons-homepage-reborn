@@ -376,7 +376,7 @@ const TripParticipantForm = () => {
                   <Checkbox 
                     id="mediaConsent"
                     checked={formData.mediaConsent}
-                    onCheckedChange={(checked) => handleInputChange('mediaConsent', checked as boolean)}
+                    onCheckedChange={(checked) => setFormData(prev => ({ ...prev, mediaConsent: checked === true }))}
                     required
                   />
                   <div className="space-y-1">
