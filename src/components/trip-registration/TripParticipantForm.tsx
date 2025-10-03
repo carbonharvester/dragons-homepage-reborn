@@ -12,6 +12,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Upload } from "lucide-react";
 
 const mealCodes = [
+  { value: "STND", label: "Standard Meal" },
   { value: "AVML", label: "Asian Vegetarian Meal" },
   { value: "BBML", label: "Baby Meal" },
   { value: "BLML", label: "Bland Meal" },
