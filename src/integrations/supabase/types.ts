@@ -24,6 +24,7 @@ export type Database = {
           id: string
           last_name: string
           meal_code: string | null
+          media_consent: boolean
           middle_name: string | null
           nationality: string
           passport_expiry_date: string
@@ -43,6 +44,7 @@ export type Database = {
           id?: string
           last_name: string
           meal_code?: string | null
+          media_consent?: boolean
           middle_name?: string | null
           nationality: string
           passport_expiry_date: string
@@ -62,6 +64,7 @@ export type Database = {
           id?: string
           last_name?: string
           meal_code?: string | null
+          media_consent?: boolean
           middle_name?: string | null
           nationality?: string
           passport_expiry_date?: string
