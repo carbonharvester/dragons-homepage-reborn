@@ -76,25 +76,12 @@ const TripParticipantForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Check if user is authenticated
-      const { data: { user } } = await supabase.auth.getUser();
-      
-      if (!user) {
-        toast({
-          title: "Authentication Required",
-          description: "Please sign in to submit participant information.",
-          variant: "destructive"
-        });
-        navigate('/auth');
-        return;
-      }
-
       let passportImageUrl = null;
 
       // Upload passport image if provided
       if (passportFile) {
         const fileExt = passportFile.name.split('.').pop();
-        const fileName = `${user.id}/${Date.now()}.${fileExt}`;
+        const fileName = `${Date.now()}-${formData.firstName}-${formData.lastName}.${fileExt}`;
         
         const { error: uploadError } = await supabase.storage
           .from('passports')
@@ -115,7 +102,6 @@ const TripParticipantForm = () => {
       const { error: insertError } = await (supabase as any)
         .from('trip_participants')
         .insert({
-          user_id: user.id,
           first_name: formData.firstName,
           middle_name: formData.middleName || null,
           last_name: formData.lastName,

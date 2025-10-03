@@ -37,7 +37,7 @@ export type Database = {
           school: string | null
           trip: string | null
           updated_at: string
-          user_id: string
+          user_id: string | null
         }
         Insert: {
           allergies?: string | null
@@ -61,7 +61,7 @@ export type Database = {
           school?: string | null
           trip?: string | null
           updated_at?: string
-          user_id: string
+          user_id?: string | null
         }
         Update: {
           allergies?: string | null
@@ -85,7 +85,7 @@ export type Database = {
           school?: string | null
           trip?: string | null
           updated_at?: string
-          user_id?: string
+          user_id?: string | null
         }
         Relationships: []
       }
