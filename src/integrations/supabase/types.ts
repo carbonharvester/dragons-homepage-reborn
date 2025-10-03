@@ -30,6 +30,7 @@ export type Database = {
           passport_image_url: string | null
           passport_number: string
           school: string | null
+          trip: string | null
           updated_at: string
           user_id: string
         }
@@ -48,6 +49,7 @@ export type Database = {
           passport_image_url?: string | null
           passport_number: string
           school?: string | null
+          trip?: string | null
           updated_at?: string
           user_id: string
         }
@@ -66,6 +68,7 @@ export type Database = {
           passport_image_url?: string | null
           passport_number?: string
           school?: string | null
+          trip?: string | null
           updated_at?: string
           user_id?: string
         }

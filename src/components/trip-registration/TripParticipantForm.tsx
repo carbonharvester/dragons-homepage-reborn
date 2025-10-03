@@ -45,6 +45,7 @@ const TripParticipantForm = () => {
     lastName: '',
     dateOfBirth: '',
     school: '',
+    trip: '',
     nationality: '',
     passportNumber: '',
     passportExpiryDate: '',
@@ -113,6 +114,7 @@ const TripParticipantForm = () => {
           last_name: formData.lastName,
           date_of_birth: formData.dateOfBirth,
           school: formData.school,
+          trip: formData.trip,
           nationality: formData.nationality,
           passport_number: formData.passportNumber,
           passport_expiry_date: formData.passportExpiryDate,
@@ -138,6 +140,7 @@ const TripParticipantForm = () => {
         lastName: '',
         dateOfBirth: '',
         school: '',
+        trip: '',
         nationality: '',
         passportNumber: '',
         passportExpiryDate: '',
@@ -234,6 +237,19 @@ const TripParticipantForm = () => {
                     onChange={(e) => handleInputChange('school', e.target.value)}
                     placeholder="Enter school name"
                   />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="trip">Trip *</Label>
+                  <Select value={formData.trip} onValueChange={(value) => handleInputChange('trip', value)} required>
+                    <SelectTrigger className="bg-background">
+                      <SelectValue placeholder="Select a trip" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-background border border-border z-50">
+                      <SelectItem value="Fairgreen Kenya 2025">Fairgreen Kenya 2025</SelectItem>
+                      <SelectItem value="BISJ Kenya 2025">BISJ Kenya 2025</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
 
