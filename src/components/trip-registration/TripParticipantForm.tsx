@@ -70,6 +70,7 @@ const TripParticipantForm = () => {
     middleName: '',
     lastName: '',
     dateOfBirth: '',
+    gender: '',
     school: '',
     trip: '',
     nationality: '',
@@ -130,6 +131,7 @@ const TripParticipantForm = () => {
           middle_name: formData.middleName || null,
           last_name: formData.lastName,
           date_of_birth: formData.dateOfBirth,
+          gender: formData.gender,
           school: formData.school,
           trip: formData.trip,
           nationality: formData.nationality,
@@ -161,6 +163,7 @@ const TripParticipantForm = () => {
         middleName: '',
         lastName: '',
         dateOfBirth: '',
+        gender: '',
         school: '',
         trip: '',
         nationality: '',
@@ -253,6 +256,21 @@ const TripParticipantForm = () => {
                       onChange={(e) => handleInputChange('dateOfBirth', e.target.value)}
                     />
                   </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="gender">Gender *</Label>
+                  <Select value={formData.gender} onValueChange={(value) => handleInputChange('gender', value)} required>
+                    <SelectTrigger className="bg-background">
+                      <SelectValue placeholder="Select gender" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-background z-50">
+                      <SelectItem value="Male">Male</SelectItem>
+                      <SelectItem value="Female">Female</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                      <SelectItem value="Prefer not to say">Prefer not to say</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div className="space-y-2">
