@@ -103,7 +103,7 @@ const MobileMenu = ({
             About Us
           </Link>
           
-          <Link to="/student/signup" className="py-2 text-dragon-dark" onClick={toggleMenu}>
+          <Link to="/student" className="py-2 text-dragon-dark" onClick={toggleMenu}>
             Student Portal
           </Link>
           

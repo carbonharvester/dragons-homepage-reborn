@@ -15,27 +15,26 @@ const StudentLogin = () => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState("");
-  const [linkSent, setLinkSent] = useState(false);
+  const [password, setPassword] = useState("");
 
-  const handleSendMagicLink = async (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      const { error } = await supabase.auth.signInWithOtp({
+      const { error } = await supabase.auth.signInWithPassword({
         email,
-        options: {
-          emailRedirectTo: `${window.location.origin}/student/dashboard`,
-        },
+        password,
       });
 
       if (error) throw error;
 
-      setLinkSent(true);
       toast({
-        title: "Check your email!",
-        description: "We've sent you a magic link to sign in.",
+        title: "Welcome back!",
+        description: "Redirecting to your dashboard...",
       });
+
+      navigate("/student/dashboard");
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -60,56 +59,47 @@ const StudentLogin = () => {
             <CardHeader>
               <CardTitle>Student Login</CardTitle>
               <CardDescription>
-                {linkSent 
-                  ? "Check your email for the login link" 
-                  : "Enter your email to receive a magic link"}
+                Sign in to your Kapes Adventures account
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {!linkSent ? (
-                <form onSubmit={handleSendMagicLink} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="student@school.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                  </div>
-                  <Button type="submit" className="w-full" disabled={isLoading}>
-                    {isLoading ? "Sending..." : "Send Magic Link"}
-                  </Button>
-                  <p className="text-sm text-muted-foreground text-center">
-                    Don't have an account?{" "}
-                    <Button
-                      variant="link"
-                      className="p-0"
-                      onClick={() => navigate("/student/signup")}
-                    >
-                      Sign up
-                    </Button>
-                  </p>
-                </form>
-              ) : (
-                <div className="text-center space-y-4">
-                  <p className="text-sm text-muted-foreground">
-                    We've sent a login link to <strong>{email}</strong>
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Click the link in the email to sign in. You can close this page.
-                  </p>
-                  <Button
-                    variant="outline"
-                    onClick={() => setLinkSent(false)}
-                    className="w-full"
-                  >
-                    Send Another Link
-                  </Button>
+              <form onSubmit={handleLogin} className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email Address</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="student@school.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
                 </div>
-              )}
+                <div className="space-y-2">
+                  <Label htmlFor="password">Password</Label>
+                  <Input
+                    id="password"
+                    type="password"
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                </div>
+                <Button type="submit" className="w-full" disabled={isLoading}>
+                  {isLoading ? "Signing in..." : "Sign In"}
+                </Button>
+                <p className="text-sm text-muted-foreground text-center">
+                  Don't have an account?{" "}
+                  <Button
+                    variant="link"
+                    className="p-0"
+                    onClick={() => navigate("/student/signup")}
+                  >
+                    Sign up
+                  </Button>
+                </p>
+              </form>
             </CardContent>
           </Card>
         </main>

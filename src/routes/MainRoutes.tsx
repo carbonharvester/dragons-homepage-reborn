@@ -14,6 +14,7 @@ import TermsOfService from "@/pages/TermsOfService";
 import Auth from "@/pages/Auth";
 import TripRegistration from "@/pages/TripRegistration";
 import MediaConsentPolicy from "@/pages/MediaConsentPolicy";
+import StudentPortal from "@/pages/StudentPortal";
 import StudentSignup from "@/pages/StudentSignup";
 import StudentLogin from "@/pages/StudentLogin";
 import StudentDashboard from "@/pages/StudentDashboard";
@@ -69,6 +70,7 @@ const MainRoutes = () => {
       {/* Podcast route removed */}
       
       {/* Student Portal Routes */}
+      <Route path="/student" element={<StudentPortal />} />
       <Route path="/student/signup" element={<StudentSignup />} />
       <Route path="/student/login" element={<StudentLogin />} />
       <Route path="/student/dashboard" element={<StudentDashboard />} />

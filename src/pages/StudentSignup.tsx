@@ -14,48 +14,17 @@ const StudentSignup = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
-  const [step, setStep] = useState<"email" | "details">("email");
-  const [email, setEmail] = useState("");
   
   const [formData, setFormData] = useState({
+    email: "",
+    password: "",
     firstName: "",
     lastName: "",
     schoolCode: "",
     referralCode: "",
   });
 
-  const handleSendMagicLink = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      const { error } = await supabase.auth.signInWithOtp({
-        email,
-        options: {
-          emailRedirectTo: `${window.location.origin}/student/complete-profile`,
-        },
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Check your email!",
-        description: "We've sent you a magic link to sign in.",
-      });
-      
-      setStep("details");
-    } catch (error: any) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: error.message,
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleCompleteProfile = async (e: React.FormEvent) => {
+  const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
@@ -71,9 +40,14 @@ const StudentSignup = () => {
         throw new Error("Invalid school code. Please check with your school.");
       }
 
-      // Get current user
-      const { data: { user }, error: userError } = await supabase.auth.getUser();
-      if (userError || !user) throw new Error("Not authenticated");
+      // Create auth user
+      const { data: { user }, error: signUpError } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+      });
+
+      if (signUpError) throw signUpError;
+      if (!user) throw new Error("Failed to create account");
 
       // Generate unique referral code
       const referralCode = `${formData.firstName.substring(0, 3).toUpperCase()}${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
@@ -90,10 +64,18 @@ const StudentSignup = () => {
         if (referrer) {
           referredByStudentId = referrer.id;
           
-          // Award referral credit
+          // Award referral credit (increment existing credits)
+          const { data: currentReferrer } = await supabase
+            .from("students")
+            .select("referral_credits_aed")
+            .eq("id", referrer.id)
+            .single();
+          
           await supabase
             .from("students")
-            .update({ referral_credits_aed: 250 })
+            .update({ 
+              referral_credits_aed: (currentReferrer?.referral_credits_aed || 0) + 250 
+            })
             .eq("id", referrer.id);
         }
       }
@@ -151,41 +133,34 @@ const StudentSignup = () => {
             <CardHeader>
               <CardTitle>Student Sign Up</CardTitle>
               <CardDescription>
-                {step === "email" 
-                  ? "Enter your email to get started" 
-                  : "Complete your profile"}
+                Create your account to join amazing adventures
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {step === "email" ? (
-                <form onSubmit={handleSendMagicLink} className="space-y-4">
+              <form onSubmit={handleSignup} className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Address</Label>
                     <Input
                       id="email"
                       type="email"
                       placeholder="student@school.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full" disabled={isLoading}>
-                    {isLoading ? "Sending..." : "Send Magic Link"}
-                  </Button>
-                  <p className="text-sm text-muted-foreground text-center">
-                    Already have an account?{" "}
-                    <Button
-                      variant="link"
-                      className="p-0"
-                      onClick={() => navigate("/student/login")}
-                    >
-                      Sign in
-                    </Button>
-                  </p>
-                </form>
-              ) : (
-                <form onSubmit={handleCompleteProfile} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="password">Password</Label>
+                    <Input
+                      id="password"
+                      type="password"
+                      placeholder="Create a secure password"
+                      value={formData.password}
+                      onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                      required
+                      minLength={6}
+                    />
+                  </div>
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name</Label>
                     <Input
@@ -230,10 +205,19 @@ const StudentSignup = () => {
                     </p>
                   </div>
                   <Button type="submit" className="w-full" disabled={isLoading}>
-                    {isLoading ? "Creating Profile..." : "Complete Sign Up"}
+                    {isLoading ? "Creating Account..." : "Sign Up"}
                   </Button>
+                  <p className="text-sm text-muted-foreground text-center">
+                    Already have an account?{" "}
+                    <Button
+                      variant="link"
+                      className="p-0"
+                      onClick={() => navigate("/student/login")}
+                    >
+                      Sign in
+                    </Button>
+                  </p>
                 </form>
-              )}
             </CardContent>
           </Card>
         </main>
