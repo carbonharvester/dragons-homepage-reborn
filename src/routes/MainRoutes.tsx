@@ -103,6 +103,7 @@ const MainRoutes = () => {
       <Route path="/student/interests" element={<MyInterests />} />
       
       {/* Parent Portal Routes */}
+      <Route path="/parent" element={<ParentPortal />} />
       <Route path="/parent/signup" element={<ParentSignup />} />
       <Route path="/parent/login" element={<ParentLogin />} />
       <Route path="/parent/dashboard" element={<ParentDashboard />} />
@@ -110,7 +111,6 @@ const MainRoutes = () => {
       <Route path="/parent/children/add" element={<AddChild />} />
       <Route path="/parent/booking" element={<DirectBooking />} />
       <Route path="/parent/booking/:bookingId/documents" element={<BookingDocuments />} />
-      <Route path="/parent-portal" element={<ParentPortal />} />
       
       {/* Admin Portal Routes */}
       <Route path="/admin/login" element={<AdminLogin />} />
