@@ -38,6 +38,14 @@ const DesktopNavigation = () => {
         Student Portal
       </Link>
       
+      <Link to="/parent" className="py-2 px-3 text-dragon-dark hover:text-dragon transition-colors">
+        Parent Portal
+      </Link>
+      
+      <Link to="/admin/login" className="py-2 px-3 text-dragon-dark hover:text-dragon transition-colors">
+        Admin Login
+      </Link>
+      
       <div
         className="relative"
         onMouseEnter={() => setResourcesMenuOpen(true)}

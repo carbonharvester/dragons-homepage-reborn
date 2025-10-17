@@ -107,6 +107,14 @@ const MobileMenu = ({
             Student Portal
           </Link>
           
+          <Link to="/parent" className="py-2 text-dragon-dark" onClick={toggleMenu}>
+            Parent Portal
+          </Link>
+          
+          <Link to="/admin/login" className="py-2 text-dragon-dark" onClick={toggleMenu}>
+            Admin Login
+          </Link>
+          
           <div>
             <button 
               className="flex items-center justify-between w-full py-2 text-dragon-dark"
