@@ -83,10 +83,16 @@ const CreateTemplate = () => {
     setIsLoading(true);
 
     try {
+      const cleanedData = {
+        ...formData,
+        inclusions: formData.inclusions.filter(i => i.trim()),
+        exclusions: formData.exclusions.filter(i => i.trim()),
+      };
+
       if (templateId) {
         const { error } = await supabase
           .from("trip_templates")
-          .update(formData)
+          .update(cleanedData)
           .eq("id", templateId);
 
         if (error) throw error;
@@ -94,7 +100,7 @@ const CreateTemplate = () => {
       } else {
         const { error } = await supabase
           .from("trip_templates")
-          .insert([formData]);
+          .insert([cleanedData]);
 
         if (error) throw error;
         toast.success("Template created successfully");
@@ -195,7 +201,7 @@ const CreateTemplate = () => {
                 <Textarea
                   id="included"
                   value={formData.inclusions.join('\n')}
-                  onChange={(e) => setFormData({ ...formData, inclusions: e.target.value.split('\n').filter(i => i.trim()) })}
+                  onChange={(e) => setFormData({ ...formData, inclusions: e.target.value.split('\n') })}
                   rows={3}
                   placeholder="One item per line"
                 />
@@ -206,7 +212,7 @@ const CreateTemplate = () => {
                 <Textarea
                   id="excluded"
                   value={formData.exclusions.join('\n')}
-                  onChange={(e) => setFormData({ ...formData, exclusions: e.target.value.split('\n').filter(i => i.trim()) })}
+                  onChange={(e) => setFormData({ ...formData, exclusions: e.target.value.split('\n') })}
                   rows={3}
                   placeholder="One item per line"
                 />
