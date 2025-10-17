@@ -27,6 +27,12 @@ import ManageTrips from "@/pages/admin/ManageTrips";
 import CreateTrip from "@/pages/admin/CreateTrip";
 import ManageTemplates from "@/pages/admin/ManageTemplates";
 import ParentPortal from "@/pages/ParentPortal";
+import ParentSignup from "@/pages/ParentSignup";
+import ParentLogin from "@/pages/ParentLogin";
+import ParentDashboard from "@/pages/ParentDashboard";
+import ParentBrowseTrips from "@/pages/parent/BrowseTrips";
+import AddChild from "@/pages/parent/AddChild";
+import DirectBooking from "@/pages/parent/DirectBooking";
 // import Podcast from "@/pages/Podcast"; - Podcast page hidden
 import ImpactScorecard from "@/pages/ImpactScorecard";
 
@@ -86,6 +92,15 @@ const MainRoutes = () => {
       <Route path="/student/trips" element={<BrowseTrips />} />
       <Route path="/student/interests" element={<MyInterests />} />
       
+      {/* Parent Portal Routes */}
+      <Route path="/parent/signup" element={<ParentSignup />} />
+      <Route path="/parent/login" element={<ParentLogin />} />
+      <Route path="/parent/dashboard" element={<ParentDashboard />} />
+      <Route path="/parent/trips" element={<ParentBrowseTrips />} />
+      <Route path="/parent/children/add" element={<AddChild />} />
+      <Route path="/parent/booking" element={<DirectBooking />} />
+      <Route path="/parent-portal" element={<ParentPortal />} />
+      
       {/* Admin Portal Routes */}
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
@@ -93,7 +108,6 @@ const MainRoutes = () => {
       <Route path="/admin/trips" element={<ManageTrips />} />
       <Route path="/admin/trips/create" element={<CreateTrip />} />
       <Route path="/admin/templates" element={<ManageTemplates />} />
-      <Route path="/parent-portal" element={<ParentPortal />} />
       
       {/* Program Categories */}
       <Route path="/programs" element={<Programs />} />

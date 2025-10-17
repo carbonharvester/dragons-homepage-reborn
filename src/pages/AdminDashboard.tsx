@@ -188,6 +188,19 @@ const AdminDashboard = () => {
               </CardContent>
             </Card>
 
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate("/admin/templates")}>
+              <CardHeader>
+                <Package className="h-8 w-8 text-dragon mb-2" />
+                <CardTitle>Trip Templates</CardTitle>
+                <CardDescription>
+                  Manage reusable trip templates
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full">Trip Templates</Button>
+              </CardContent>
+            </Card>
+
             {userRole === "super_admin" && (
               <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate("/admin/addons")}>
                 <CardHeader>
