@@ -14,6 +14,500 @@ export type Database = {
   }
   public: {
     Tables: {
+      addons: {
+        Row: {
+          active: boolean
+          addon_type: string
+          created_at: string
+          description: string | null
+          display_order: number | null
+          id: string
+          is_subscription: boolean
+          name: string
+          price_aed: number
+          stripe_price_id: string | null
+          stripe_product_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          addon_type: string
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_subscription?: boolean
+          name: string
+          price_aed: number
+          stripe_price_id?: string | null
+          stripe_product_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          addon_type?: string
+          created_at?: string
+          description?: string | null
+          display_order?: number | null
+          id?: string
+          is_subscription?: boolean
+          name?: string
+          price_aed?: number
+          stripe_price_id?: string | null
+          stripe_product_id?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      booking_addons: {
+        Row: {
+          addon_id: string
+          booking_id: string
+          created_at: string
+          id: string
+          price_aed: number
+          quantity: number
+          stripe_subscription_id: string | null
+        }
+        Insert: {
+          addon_id: string
+          booking_id: string
+          created_at?: string
+          id?: string
+          price_aed: number
+          quantity?: number
+          stripe_subscription_id?: string | null
+        }
+        Update: {
+          addon_id?: string
+          booking_id?: string
+          created_at?: string
+          id?: string
+          price_aed?: number
+          quantity?: number
+          stripe_subscription_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "booking_addons_addon_id_fkey"
+            columns: ["addon_id"]
+            isOneToOne: false
+            referencedRelation: "addons"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "booking_addons_booking_id_fkey"
+            columns: ["booking_id"]
+            isOneToOne: false
+            referencedRelation: "bookings"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      bookings: {
+        Row: {
+          addons_total_aed: number
+          allergies: string | null
+          amount_paid_aed: number
+          base_price_aed: number
+          booked_at: string
+          cancellation_reason: string | null
+          cancelled_at: string | null
+          created_at: string
+          deposit_amount_aed: number | null
+          dietary_requirements: string | null
+          emergency_contact_email: string | null
+          emergency_contact_name: string
+          emergency_contact_phone: string
+          emergency_contact_relationship: string
+          id: string
+          interest_id: string | null
+          meal_code: string | null
+          media_consent: boolean
+          medical_notes: string | null
+          parent_id: string
+          passport_expiry_date: string | null
+          passport_image_url: string | null
+          passport_nationality: string | null
+          passport_number: string | null
+          payment_status: string
+          payment_type: string | null
+          referral_discount_aed: number
+          status: string
+          stripe_payment_intent_id: string | null
+          student_date_of_birth: string | null
+          student_first_name: string
+          student_gender: string | null
+          student_id: string
+          student_last_name: string
+          terms_accepted: boolean
+          total_price_aed: number
+          trip_id: string
+          updated_at: string
+        }
+        Insert: {
+          addons_total_aed?: number
+          allergies?: string | null
+          amount_paid_aed?: number
+          base_price_aed: number
+          booked_at?: string
+          cancellation_reason?: string | null
+          cancelled_at?: string | null
+          created_at?: string
+          deposit_amount_aed?: number | null
+          dietary_requirements?: string | null
+          emergency_contact_email?: string | null
+          emergency_contact_name: string
+          emergency_contact_phone: string
+          emergency_contact_relationship: string
+          id?: string
+          interest_id?: string | null
+          meal_code?: string | null
+          media_consent?: boolean
+          medical_notes?: string | null
+          parent_id: string
+          passport_expiry_date?: string | null
+          passport_image_url?: string | null
+          passport_nationality?: string | null
+          passport_number?: string | null
+          payment_status?: string
+          payment_type?: string | null
+          referral_discount_aed?: number
+          status?: string
+          stripe_payment_intent_id?: string | null
+          student_date_of_birth?: string | null
+          student_first_name: string
+          student_gender?: string | null
+          student_id: string
+          student_last_name: string
+          terms_accepted?: boolean
+          total_price_aed: number
+          trip_id: string
+          updated_at?: string
+        }
+        Update: {
+          addons_total_aed?: number
+          allergies?: string | null
+          amount_paid_aed?: number
+          base_price_aed?: number
+          booked_at?: string
+          cancellation_reason?: string | null
+          cancelled_at?: string | null
+          created_at?: string
+          deposit_amount_aed?: number | null
+          dietary_requirements?: string | null
+          emergency_contact_email?: string | null
+          emergency_contact_name?: string
+          emergency_contact_phone?: string
+          emergency_contact_relationship?: string
+          id?: string
+          interest_id?: string | null
+          meal_code?: string | null
+          media_consent?: boolean
+          medical_notes?: string | null
+          parent_id?: string
+          passport_expiry_date?: string | null
+          passport_image_url?: string | null
+          passport_nationality?: string | null
+          passport_number?: string | null
+          payment_status?: string
+          payment_type?: string | null
+          referral_discount_aed?: number
+          status?: string
+          stripe_payment_intent_id?: string | null
+          student_date_of_birth?: string | null
+          student_first_name?: string
+          student_gender?: string | null
+          student_id?: string
+          student_last_name?: string
+          terms_accepted?: boolean
+          total_price_aed?: number
+          trip_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookings_interest_id_fkey"
+            columns: ["interest_id"]
+            isOneToOne: false
+            referencedRelation: "student_interests"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "bookings_parent_id_fkey"
+            columns: ["parent_id"]
+            isOneToOne: false
+            referencedRelation: "parents"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "bookings_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "bookings_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
+            referencedRelation: "trips"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      parents: {
+        Row: {
+          address_line1: string | null
+          address_line2: string | null
+          auth_user_id: string
+          city: string | null
+          country: string | null
+          created_at: string
+          email: string
+          first_name: string
+          id: string
+          last_name: string
+          phone: string | null
+          postal_code: string | null
+          updated_at: string
+        }
+        Insert: {
+          address_line1?: string | null
+          address_line2?: string | null
+          auth_user_id: string
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          email: string
+          first_name: string
+          id?: string
+          last_name: string
+          phone?: string | null
+          postal_code?: string | null
+          updated_at?: string
+        }
+        Update: {
+          address_line1?: string | null
+          address_line2?: string | null
+          auth_user_id?: string
+          city?: string | null
+          country?: string | null
+          created_at?: string
+          email?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          phone?: string | null
+          postal_code?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      school_trips: {
+        Row: {
+          created_at: string
+          custom_price_aed: number | null
+          id: string
+          school_id: string
+          trip_id: string
+        }
+        Insert: {
+          created_at?: string
+          custom_price_aed?: number | null
+          id?: string
+          school_id: string
+          trip_id: string
+        }
+        Update: {
+          created_at?: string
+          custom_price_aed?: number | null
+          id?: string
+          school_id?: string
+          trip_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "school_trips_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "school_trips_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
+            referencedRelation: "trips"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      schools: {
+        Row: {
+          active: boolean
+          contact_email: string | null
+          contact_phone: string | null
+          created_at: string
+          enrollment_code: string
+          id: string
+          location: string | null
+          name: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          contact_email?: string | null
+          contact_phone?: string | null
+          created_at?: string
+          enrollment_code: string
+          id?: string
+          location?: string | null
+          name: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          contact_email?: string | null
+          contact_phone?: string | null
+          created_at?: string
+          enrollment_code?: string
+          id?: string
+          location?: string | null
+          name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      student_interests: {
+        Row: {
+          created_at: string
+          id: string
+          notes: string | null
+          parent_notified_at: string | null
+          priority: number | null
+          registered_at: string
+          status: string
+          student_id: string
+          trip_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          parent_notified_at?: string | null
+          priority?: number | null
+          registered_at?: string
+          status?: string
+          student_id: string
+          trip_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          notes?: string | null
+          parent_notified_at?: string | null
+          priority?: number | null
+          registered_at?: string
+          status?: string
+          student_id?: string
+          trip_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "student_interests_student_id_fkey"
+            columns: ["student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "student_interests_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
+            referencedRelation: "trips"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      students: {
+        Row: {
+          active: boolean
+          auth_user_id: string | null
+          created_at: string
+          date_of_birth: string | null
+          email: string
+          first_name: string
+          gender: string | null
+          id: string
+          last_name: string
+          parent_email: string | null
+          parent_id: string | null
+          parent_invited_at: string | null
+          parent_linked_at: string | null
+          referral_code: string
+          referral_credits_aed: number
+          referred_by_student_id: string | null
+          school_id: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          auth_user_id?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          email: string
+          first_name: string
+          gender?: string | null
+          id?: string
+          last_name: string
+          parent_email?: string | null
+          parent_id?: string | null
+          parent_invited_at?: string | null
+          parent_linked_at?: string | null
+          referral_code: string
+          referral_credits_aed?: number
+          referred_by_student_id?: string | null
+          school_id: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          auth_user_id?: string | null
+          created_at?: string
+          date_of_birth?: string | null
+          email?: string
+          first_name?: string
+          gender?: string | null
+          id?: string
+          last_name?: string
+          parent_email?: string | null
+          parent_id?: string | null
+          parent_invited_at?: string | null
+          parent_linked_at?: string | null
+          referral_code?: string
+          referral_credits_aed?: number
+          referred_by_student_id?: string | null
+          school_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "students_referred_by_student_id_fkey"
+            columns: ["referred_by_student_id"]
+            isOneToOne: false
+            referencedRelation: "students"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "students_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       trip_participants: {
         Row: {
           allergies: string | null
@@ -92,15 +586,132 @@ export type Database = {
         }
         Relationships: []
       }
+      trips: {
+        Row: {
+          age_max: number | null
+          age_min: number | null
+          base_price_aed: number
+          booking_closes_at: string | null
+          booking_opens_at: string | null
+          created_at: string
+          description: string | null
+          destination: string
+          duration_days: number
+          exclusions: string[] | null
+          gallery_images: string[] | null
+          hero_image_url: string | null
+          id: string
+          inclusions: string[] | null
+          interest_closes_at: string | null
+          interest_opens_at: string | null
+          max_participants: number | null
+          status: string
+          title: string
+          trip_end_date: string
+          trip_start_date: string
+          updated_at: string
+        }
+        Insert: {
+          age_max?: number | null
+          age_min?: number | null
+          base_price_aed: number
+          booking_closes_at?: string | null
+          booking_opens_at?: string | null
+          created_at?: string
+          description?: string | null
+          destination: string
+          duration_days: number
+          exclusions?: string[] | null
+          gallery_images?: string[] | null
+          hero_image_url?: string | null
+          id?: string
+          inclusions?: string[] | null
+          interest_closes_at?: string | null
+          interest_opens_at?: string | null
+          max_participants?: number | null
+          status?: string
+          title: string
+          trip_end_date: string
+          trip_start_date: string
+          updated_at?: string
+        }
+        Update: {
+          age_max?: number | null
+          age_min?: number | null
+          base_price_aed?: number
+          booking_closes_at?: string | null
+          booking_opens_at?: string | null
+          created_at?: string
+          description?: string | null
+          destination?: string
+          duration_days?: number
+          exclusions?: string[] | null
+          gallery_images?: string[] | null
+          hero_image_url?: string | null
+          id?: string
+          inclusions?: string[] | null
+          interest_closes_at?: string | null
+          interest_opens_at?: string | null
+          max_participants?: number | null
+          status?: string
+          title?: string
+          trip_end_date?: string
+          trip_start_date?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          school_id: string | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          school_id?: string | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          school_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_roles_school_id_fkey"
+            columns: ["school_id"]
+            isOneToOne: false
+            referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_user_school_id: {
+        Args: { _user_id: string }
+        Returns: string
+      }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "super_admin" | "school_admin" | "parent" | "student"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -227,6 +838,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["super_admin", "school_admin", "parent", "student"],
+    },
   },
 } as const
