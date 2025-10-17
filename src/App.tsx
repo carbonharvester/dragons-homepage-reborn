@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -9,19 +9,17 @@ import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
-const App = () => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <HelmetProvider>
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
         <Toaster />
         <Sonner />
-        <BrowserRouter>
-          <ScrollToTop />
-          <MainRoutes />
-        </BrowserRouter>
-      </HelmetProvider>
-    </QueryClientProvider>
-  );
-};
+        <MainRoutes />
+      </BrowserRouter>
+    </HelmetProvider>
+  </QueryClientProvider>
+);
 
 export default App;
