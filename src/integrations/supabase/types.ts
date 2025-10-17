@@ -586,6 +586,60 @@ export type Database = {
         }
         Relationships: []
       }
+      trip_templates: {
+        Row: {
+          age_max: number | null
+          age_min: number | null
+          base_price_aed: number
+          created_at: string | null
+          created_by: string | null
+          description: string | null
+          destination: string
+          duration_days: number
+          exclusions: string[] | null
+          id: string
+          inclusions: string[] | null
+          itinerary: Json | null
+          max_participants: number | null
+          name: string
+          updated_at: string | null
+        }
+        Insert: {
+          age_max?: number | null
+          age_min?: number | null
+          base_price_aed: number
+          created_at?: string | null
+          created_by?: string | null
+          description?: string | null
+          destination: string
+          duration_days: number
+          exclusions?: string[] | null
+          id?: string
+          inclusions?: string[] | null
+          itinerary?: Json | null
+          max_participants?: number | null
+          name: string
+          updated_at?: string | null
+        }
+        Update: {
+          age_max?: number | null
+          age_min?: number | null
+          base_price_aed?: number
+          created_at?: string | null
+          created_by?: string | null
+          description?: string | null
+          destination?: string
+          duration_days?: number
+          exclusions?: string[] | null
+          id?: string
+          inclusions?: string[] | null
+          itinerary?: Json | null
+          max_participants?: number | null
+          name?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       trips: {
         Row: {
           age_max: number | null
@@ -604,6 +658,7 @@ export type Database = {
           inclusions: string[] | null
           interest_closes_at: string | null
           interest_opens_at: string | null
+          itinerary: Json | null
           max_participants: number | null
           status: string
           title: string
@@ -628,6 +683,7 @@ export type Database = {
           inclusions?: string[] | null
           interest_closes_at?: string | null
           interest_opens_at?: string | null
+          itinerary?: Json | null
           max_participants?: number | null
           status?: string
           title: string
@@ -652,6 +708,7 @@ export type Database = {
           inclusions?: string[] | null
           interest_closes_at?: string | null
           interest_opens_at?: string | null
+          itinerary?: Json | null
           max_participants?: number | null
           status?: string
           title?: string

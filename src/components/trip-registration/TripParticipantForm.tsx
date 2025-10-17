@@ -1,296 +1,210 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Card } from "@/components/ui/card";
+import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { useToast } from "@/components/ui/use-toast";
-import { supabase } from "@/integrations/supabase/client";
-import { Upload } from "lucide-react";
-
-const countries = [
-  "Afghan", "Albanian", "Algerian", "American", "Andorran", "Angolan", "Antiguans", "Argentinean", "Armenian", "Australian",
-  "Austrian", "Azerbaijani", "Bahamian", "Bahraini", "Bangladeshi", "Barbadian", "Barbudans", "Batswana", "Belarusian",
-  "Belgian", "Belizean", "Beninese", "Bhutanese", "Bolivian", "Bosnian", "Brazilian", "British", "Bruneian", "Bulgarian",
-  "Burkinabe", "Burmese", "Burundian", "Cambodian", "Cameroonian", "Canadian", "Cape Verdean", "Central African", "Chadian",
-  "Chilean", "Chinese", "Colombian", "Comoran", "Congolese", "Costa Rican", "Croatian", "Cuban", "Cypriot", "Czech",
-  "Danish", "Djibouti", "Dominican", "Dutch", "East Timorese", "Ecuadorean", "Egyptian", "Emirian", "Equatorial Guinean",
-  "Eritrean", "Estonian", "Ethiopian", "Fijian", "Filipino", "Finnish", "French", "Gabonese", "Gambian", "Georgian",
-  "German", "Ghanaian", "Greek", "Grenadian", "Guatemalan", "Guinea-Bissauan", "Guinean", "Guyanese", "Haitian", "Herzegovinian",
-  "Honduran", "Hungarian", "I-Kiribati", "Icelander", "Indian", "Indonesian", "Iranian", "Iraqi", "Irish", "Israeli",
-  "Italian", "Ivorian", "Jamaican", "Japanese", "Jordanian", "Kazakhstani", "Kenyan", "Kittian and Nevisian", "Kuwaiti",
-  "Kyrgyz", "Laotian", "Latvian", "Lebanese", "Liberian", "Libyan", "Liechtensteiner", "Lithuanian", "Luxembourger",
-  "Macedonian", "Malagasy", "Malawian", "Malaysian", "Maldivan", "Malian", "Maltese", "Marshallese", "Mauritanian",
-  "Mauritian", "Mexican", "Micronesian", "Moldovan", "Monacan", "Mongolian", "Moroccan", "Mosotho", "Motswana", "Mozambican",
-  "Namibian", "Nauruan", "Nepalese", "New Zealander", "Nicaraguan", "Nigerian", "Nigerien", "North Korean", "Northern Irish",
-  "Norwegian", "Omani", "Pakistani", "Palauan", "Panamanian", "Papua New Guinean", "Paraguayan", "Peruvian", "Polish",
-  "Portuguese", "Qatari", "Romanian", "Russian", "Rwandan", "Saint Lucian", "Salvadoran", "Samoan", "San Marinese",
-  "Sao Tomean", "Saudi", "Scottish", "Senegalese", "Serbian", "Seychellois", "Sierra Leonean", "Singaporean", "Slovakian",
-  "Slovenian", "Solomon Islander", "Somali", "South African", "South Korean", "Spanish", "Sri Lankan", "Sudanese",
-  "Surinamer", "Swazi", "Swedish", "Swiss", "Syrian", "Taiwanese", "Tajik", "Tanzanian", "Thai", "Togolese", "Tongan",
-  "Trinidadian or Tobagonian", "Tunisian", "Turkish", "Tuvaluan", "Ugandan", "Ukrainian", "Uruguayan", "Uzbekistani",
-  "Venezuelan", "Vietnamese", "Welsh", "Yemenite", "Zambian", "Zimbabwean"
-];
-
-const mealCodes = [
-  { value: "STND", label: "Standard Meal" },
-  { value: "AVML", label: "Asian Vegetarian Meal" },
-  { value: "BBML", label: "Baby Meal" },
-  { value: "BLML", label: "Bland Meal" },
-  { value: "CHML", label: "Child Meal" },
-  { value: "DBML", label: "Diabetic Meal" },
-  { value: "FPML", label: "Fruit Platter Meal" },
-  { value: "GFML", label: "Gluten Intolerant Meal" },
-  { value: "HNML", label: "Hindu Non-Vegetarian Meal" },
-  { value: "KSML", label: "Kosher Meal" },
-  { value: "LCML", label: "Low Calorie Meal" },
-  { value: "LFML", label: "Low Fat Meal" },
-  { value: "LSML", label: "Low Salt Meal" },
-  { value: "MOML", label: "Muslim Meal" },
-  { value: "NLML", label: "Non Lactose Meal" },
-  { value: "ORML", label: "Oriental Meal" },
-  { value: "RVML", label: "Raw Vegetarian Meal" },
-  { value: "SFML", label: "Seafood Meal" },
-  { value: "VGML", label: "Vegan Meal" },
-  { value: "VJML", label: "Vegetarian Jain Meal" },
-  { value: "VLML", label: "Vegetarian Lacto-Ovo Meal" }
-];
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const TripParticipantForm = () => {
   const navigate = useNavigate();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [passportFile, setPassportFile] = useState<File | null>(null);
-  
+  const [searchParams] = useSearchParams();
+  const [isLoading, setIsLoading] = useState(false);
+  const [mediaConsent, setMediaConsent] = useState(false);
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
+  const [interest, setInterest] = useState<any>(null);
+  const [trip, setTrip] = useState<any>(null);
+
+  const interestId = searchParams.get("interest");
+
   const [formData, setFormData] = useState({
-    firstName: '',
-    middleName: '',
-    lastName: '',
-    dateOfBirth: '',
-    gender: '',
-    school: '',
-    trip: '',
-    nationality: '',
-    passportNumber: '',
-    passportExpiryDate: '',
-    allergies: '',
-    dietaryRequirements: '',
-    mealCode: '',
-    emergencyContactName: '',
-    emergencyContactRelationship: '',
-    emergencyContactPhone: '',
-    emergencyContactEmail: '',
-    mediaConsent: false
+    firstName: "",
+    middleName: "",
+    lastName: "",
+    dateOfBirth: "",
+    nationality: "",
+    passportNumber: "",
+    passportExpiryDate: "",
+    school: "",
+    trip: "",
+    allergies: "",
+    dietaryRequirements: "",
+    mealCode: "",
+    emergencyContactName: "",
+    emergencyContactRelationship: "",
+    emergencyContactPhone: "",
+    emergencyContactEmail: "",
+    gender: "",
   });
 
-  const handleInputChange = (field: string, value: string | boolean) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
+  useEffect(() => {
+    if (interestId) {
+      loadInterestData();
+    }
+  }, [interestId]);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setPassportFile(e.target.files[0]);
+  const loadInterestData = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("student_interests")
+        .select(`
+          *,
+          student:students(*,school:schools(name)),
+          trip:trips(*)
+        `)
+        .eq("id", interestId)
+        .single();
+
+      if (error) throw error;
+
+      setInterest(data);
+      setTrip(data.trip);
+      setFormData(prev => ({
+        ...prev,
+        firstName: data.student.first_name,
+        lastName: data.student.last_name,
+        school: data.student.school.name,
+        trip: data.trip.title,
+      }));
+    } catch (error: any) {
+      toast.error("Failed to load booking details");
+      console.error(error);
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
+    
+    if (!mediaConsent) {
+      toast.error("Please provide media consent to continue");
+      return;
+    }
+
+    if (!termsAccepted) {
+      toast.error("Please accept the terms and conditions to continue");
+      return;
+    }
+
+    setIsLoading(true);
 
     try {
-      let passportImageUrl = null;
-
-      // Upload passport image if provided
-      if (passportFile) {
-        const fileExt = passportFile.name.split('.').pop();
-        const fileName = `${Date.now()}-${formData.firstName}-${formData.lastName}.${fileExt}`;
-        
-        const { error: uploadError } = await supabase.storage
-          .from('passports')
-          .upload(fileName, passportFile);
-
-        if (uploadError) {
-          throw uploadError;
-        }
-
-        const { data: { publicUrl } } = supabase.storage
-          .from('passports')
-          .getPublicUrl(fileName);
-        
-        passportImageUrl = publicUrl;
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        toast.error("Please log in to continue");
+        navigate("/student/login");
+        return;
       }
 
-      // Insert participant data
-      const { error: insertError } = await (supabase as any)
-        .from('trip_participants')
-        .insert({
-          first_name: formData.firstName,
-          middle_name: formData.middleName || null,
-          last_name: formData.lastName,
-          date_of_birth: formData.dateOfBirth,
-          gender: formData.gender,
-          school: formData.school,
-          trip: formData.trip,
-          nationality: formData.nationality,
-          passport_number: formData.passportNumber,
-          passport_expiry_date: formData.passportExpiryDate,
-          allergies: formData.allergies || null,
-          dietary_requirements: formData.dietaryRequirements || null,
-          meal_code: formData.mealCode || null,
-          emergency_contact_name: formData.emergencyContactName || null,
-          emergency_contact_relationship: formData.emergencyContactRelationship || null,
-          emergency_contact_phone: formData.emergencyContactPhone || null,
-          emergency_contact_email: formData.emergencyContactEmail || null,
-          passport_image_url: passportImageUrl,
-          media_consent: formData.mediaConsent
-        });
-
-      if (insertError) {
-        throw insertError;
-      }
-
-      toast({
-        title: "Success!",
-        description: "Trip participant information submitted successfully."
+      const { error } = await supabase.from("trip_participants").insert({
+        first_name: formData.firstName,
+        middle_name: formData.middleName || null,
+        last_name: formData.lastName,
+        date_of_birth: formData.dateOfBirth,
+        nationality: formData.nationality,
+        passport_number: formData.passportNumber,
+        passport_expiry_date: formData.passportExpiryDate,
+        allergies: formData.allergies || null,
+        dietary_requirements: formData.dietaryRequirements || null,
+        meal_code: formData.mealCode || null,
+        emergency_contact_name: formData.emergencyContactName,
+        emergency_contact_relationship: formData.emergencyContactRelationship,
+        emergency_contact_phone: formData.emergencyContactPhone,
+        emergency_contact_email: formData.emergencyContactEmail || null,
+        gender: formData.gender,
+        school: formData.school,
+        trip: formData.trip,
+        media_consent: mediaConsent,
+        user_id: session.user.id
       });
 
-      // Reset form
-      setFormData({
-        firstName: '',
-        middleName: '',
-        lastName: '',
-        dateOfBirth: '',
-        gender: '',
-        school: '',
-        trip: '',
-        nationality: '',
-        passportNumber: '',
-        passportExpiryDate: '',
-        allergies: '',
-        dietaryRequirements: '',
-        mealCode: '',
-        emergencyContactName: '',
-        emergencyContactRelationship: '',
-        emergencyContactPhone: '',
-        emergencyContactEmail: '',
-        mediaConsent: false
-      });
-      setPassportFile(null);
+      if (error) throw error;
 
+      toast.success("Registration submitted successfully!");
+      navigate("/student/dashboard");
     } catch (error: any) {
-      console.error('Error submitting form:', error);
-      toast({
-        title: "Submission Failed",
-        description: error.message || "An error occurred while submitting the form.",
-        variant: "destructive"
-      });
+      toast.error("Failed to submit registration");
+      console.error(error);
     } finally {
-      setIsSubmitting(false);
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-dragon-dark to-dragon py-12 px-4">
-      <div className="container-wide max-w-3xl mx-auto">
-        <Card className="border-dragon-yellow/20">
-          <CardHeader className="space-y-4">
-            <CardTitle className="text-3xl font-academy text-dragon">
-              Trip Participant Registration
-            </CardTitle>
-            <CardDescription className="text-base">
-              Please complete this form for each child attending the trip. All information is stored securely and will only be accessed by our team.
-            </CardDescription>
-          </CardHeader>
-          
-          <CardContent>
+    <>
+      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 py-12">
+        <div className="container max-w-4xl mx-auto px-4">
+          <Card className="p-8">
+            <h1 className="text-3xl font-academy-bold mb-2 text-center">Complete Trip Booking</h1>
+            {trip && (
+              <p className="text-center text-muted-foreground mb-6">
+                {trip.title} - {trip.destination}
+              </p>
+            )}
+            
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Personal Information */}
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-dragon">Personal Information</h3>
+                <h3 className="text-xl font-semibold">Personal Information</h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName">First Name *</Label>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label>First Name *</Label>
                     <Input
-                      id="firstName"
-                      required
                       value={formData.firstName}
-                      onChange={(e) => handleInputChange('firstName', e.target.value)}
-                      placeholder="Enter first name"
+                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                      required
                     />
                   </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="middleName">Middle Name</Label>
+                  <div>
+                    <Label>Middle Name</Label>
                     <Input
-                      id="middleName"
                       value={formData.middleName}
-                      onChange={(e) => handleInputChange('middleName', e.target.value)}
-                      placeholder="Enter middle name (optional)"
+                      onChange={(e) => setFormData({ ...formData, middleName: e.target.value })}
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName">Last Name *</Label>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label>Last Name *</Label>
                     <Input
-                      id="lastName"
-                      required
                       value={formData.lastName}
-                      onChange={(e) => handleInputChange('lastName', e.target.value)}
-                      placeholder="Enter last name"
+                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                      required
                     />
                   </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="dateOfBirth">Date of Birth *</Label>
+                  <div>
+                    <Label>Date of Birth *</Label>
                     <Input
-                      id="dateOfBirth"
                       type="date"
-                      required
                       value={formData.dateOfBirth}
-                      onChange={(e) => handleInputChange('dateOfBirth', e.target.value)}
+                      onChange={(e) => setFormData({ ...formData, dateOfBirth: e.target.value })}
+                      required
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="gender">Gender *</Label>
-                  <Select value={formData.gender} onValueChange={(value) => handleInputChange('gender', value)} required>
-                    <SelectTrigger className="bg-background">
+                <div>
+                  <Label>Gender *</Label>
+                  <Select value={formData.gender} onValueChange={(value) => setFormData({ ...formData, gender: value })}>
+                    <SelectTrigger>
                       <SelectValue placeholder="Select gender" />
                     </SelectTrigger>
-                    <SelectContent className="bg-background z-50">
+                    <SelectContent>
                       <SelectItem value="Male">Male</SelectItem>
                       <SelectItem value="Female">Female</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="school">School *</Label>
-                  <Input
-                    id="school"
-                    required
-                    value={formData.school}
-                    onChange={(e) => handleInputChange('school', e.target.value)}
-                    placeholder="Enter school name"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="trip">Trip *</Label>
-                  <Select value={formData.trip} onValueChange={(value) => handleInputChange('trip', value)} required>
-                    <SelectTrigger className="bg-background">
-                      <SelectValue placeholder="Select a trip" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-background border border-border z-50">
-                      <SelectItem value="Fairgreen Kenya 2025">Fairgreen Kenya 2025</SelectItem>
-                      <SelectItem value="BISJ Kenya 2025">BISJ Kenya 2025</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -298,222 +212,199 @@ const TripParticipantForm = () => {
 
               {/* Passport Information */}
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-dragon">Passport Information</h3>
+                <h3 className="text-xl font-semibold">Passport Information</h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="nationality">Nationality *</Label>
-                    <Select value={formData.nationality} onValueChange={(value) => handleInputChange('nationality', value)} required>
-                      <SelectTrigger className="bg-background">
-                        <SelectValue placeholder="Select nationality" />
-                      </SelectTrigger>
-                      <SelectContent className="bg-background max-h-[300px] z-50">
-                        {countries.map((country) => (
-                          <SelectItem key={country} value={country}>
-                            {country}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="passportNumber">Passport Number *</Label>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label>Nationality *</Label>
                     <Input
-                      id="passportNumber"
+                      value={formData.nationality}
+                      onChange={(e) => setFormData({ ...formData, nationality: e.target.value })}
                       required
+                    />
+                  </div>
+                  <div>
+                    <Label>Passport Number *</Label>
+                    <Input
                       value={formData.passportNumber}
-                      onChange={(e) => handleInputChange('passportNumber', e.target.value)}
-                      placeholder="Enter passport number"
+                      onChange={(e) => setFormData({ ...formData, passportNumber: e.target.value })}
+                      required
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="passportExpiryDate">Passport Expiry Date *</Label>
-                    <Input
-                      id="passportExpiryDate"
-                      type="date"
-                      required
-                      value={formData.passportExpiryDate}
-                      onChange={(e) => handleInputChange('passportExpiryDate', e.target.value)}
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="passportImage">Passport Image Upload</Label>
-                    <div className="relative">
-                      <Input
-                        id="passportImage"
-                        type="file"
-                        accept="image/*"
-                        onChange={handleFileChange}
-                        className="cursor-pointer"
-                      />
-                      <Upload className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
-                    </div>
-                    {passportFile && (
-                      <p className="text-sm text-muted-foreground">{passportFile.name}</p>
-                    )}
-                  </div>
+                <div>
+                  <Label>Passport Expiry Date *</Label>
+                  <Input
+                    type="date"
+                    value={formData.passportExpiryDate}
+                    onChange={(e) => setFormData({ ...formData, passportExpiryDate: e.target.value })}
+                    required
+                  />
                 </div>
               </div>
 
               {/* Medical & Dietary Information */}
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-dragon">Medical & Dietary Information</h3>
+                <h3 className="text-xl font-semibold">Medical & Dietary Information</h3>
                 
-                <div className="space-y-2">
-                  <Label htmlFor="allergies">Allergies</Label>
+                <div>
+                  <Label>Allergies</Label>
                   <Textarea
-                    id="allergies"
                     value={formData.allergies}
-                    onChange={(e) => handleInputChange('allergies', e.target.value)}
-                    placeholder="Please list any allergies (optional)"
+                    onChange={(e) => setFormData({ ...formData, allergies: e.target.value })}
+                    placeholder="Please list any allergies"
                     rows={3}
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="dietaryRequirements">Dietary Requirements</Label>
+                <div>
+                  <Label>Dietary Requirements</Label>
                   <Textarea
-                    id="dietaryRequirements"
                     value={formData.dietaryRequirements}
-                    onChange={(e) => handleInputChange('dietaryRequirements', e.target.value)}
-                    placeholder="Please describe any dietary requirements (optional)"
+                    onChange={(e) => setFormData({ ...formData, dietaryRequirements: e.target.value })}
+                    placeholder="Please describe any dietary requirements"
                     rows={3}
                   />
                 </div>
 
-                <div className="space-y-2">
-                  <Label htmlFor="mealCode">Special Meal Code (if applicable)</Label>
-                  <Select value={formData.mealCode} onValueChange={(value) => handleInputChange('mealCode', value)}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a meal code (optional)" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {mealCodes.map((meal) => (
-                        <SelectItem key={meal.value} value={meal.value}>
-                          {meal.value} - {meal.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <p className="text-xs text-muted-foreground">
-                    For more information about meal codes, visit{" "}
-                    <a 
-                      href="https://www.emirates.com/ae/english/before-you-fly/travel/dietary-requirements/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-dragon hover:underline"
-                    >
-                      Emirates Dietary Requirements
-                    </a>
-                  </p>
+                <div>
+                  <Label>Special Meal Code (if applicable)</Label>
+                  <Input
+                    value={formData.mealCode}
+                    onChange={(e) => setFormData({ ...formData, mealCode: e.target.value })}
+                    placeholder="e.g., VGML, KSML"
+                  />
                 </div>
               </div>
 
               {/* Emergency Contact */}
-              <div className="space-y-4 pt-6 border-t border-border">
-                <h3 className="text-xl font-semibold text-dragon">Emergency Contact</h3>
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">Emergency Contact</h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="emergencyContactName">Contact Name *</Label>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label>Name *</Label>
                     <Input
-                      id="emergencyContactName"
-                      required
                       value={formData.emergencyContactName}
-                      onChange={(e) => handleInputChange('emergencyContactName', e.target.value)}
-                      placeholder="Enter emergency contact name"
+                      onChange={(e) => setFormData({ ...formData, emergencyContactName: e.target.value })}
+                      required
                     />
                   </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="emergencyContactRelationship">Relationship *</Label>
+                  <div>
+                    <Label>Relationship *</Label>
                     <Input
-                      id="emergencyContactRelationship"
-                      required
                       value={formData.emergencyContactRelationship}
-                      onChange={(e) => handleInputChange('emergencyContactRelationship', e.target.value)}
-                      placeholder="e.g., Parent, Guardian"
+                      onChange={(e) => setFormData({ ...formData, emergencyContactRelationship: e.target.value })}
+                      required
                     />
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="emergencyContactPhone">Phone Number *</Label>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <Label>Phone *</Label>
                     <Input
-                      id="emergencyContactPhone"
                       type="tel"
-                      required
                       value={formData.emergencyContactPhone}
-                      onChange={(e) => handleInputChange('emergencyContactPhone', e.target.value)}
-                      placeholder="Enter phone number"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="emergencyContactEmail">Email Address *</Label>
-                    <Input
-                      id="emergencyContactEmail"
-                      type="email"
+                      onChange={(e) => setFormData({ ...formData, emergencyContactPhone: e.target.value })}
                       required
+                    />
+                  </div>
+                  <div>
+                    <Label>Email</Label>
+                    <Input
+                      type="email"
                       value={formData.emergencyContactEmail}
-                      onChange={(e) => handleInputChange('emergencyContactEmail', e.target.value)}
-                      placeholder="Enter email address"
+                      onChange={(e) => setFormData({ ...formData, emergencyContactEmail: e.target.value })}
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Media Consent */}
-              <div className="space-y-4 pt-6 border-t border-border">
-                <div className="flex items-start space-x-3">
-                  <Checkbox 
-                    id="mediaConsent"
-                    checked={formData.mediaConsent}
-                    onCheckedChange={(checked) => setFormData(prev => ({ ...prev, mediaConsent: checked === true }))}
-                    required
+              {/* Consent & Terms */}
+              <div className="space-y-4">
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="media-consent"
+                    checked={mediaConsent}
+                    onCheckedChange={(checked) => setMediaConsent(checked as boolean)}
                   />
-                  <div className="space-y-1">
-                    <Label 
-                      htmlFor="mediaConsent" 
-                      className="text-base font-medium cursor-pointer"
+                  <label
+                    htmlFor="media-consent"
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    I consent to photos and videos being taken during the trip for promotional purposes
+                  </label>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="terms"
+                    checked={termsAccepted}
+                    onCheckedChange={(checked) => setTermsAccepted(checked as boolean)}
+                  />
+                  <label
+                    htmlFor="terms"
+                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    I accept the{" "}
+                    <button
+                      type="button"
+                      onClick={() => setShowTerms(true)}
+                      className="text-primary underline"
                     >
-                      I consent to photos and videos being taken during the trip *
-                    </Label>
-                    <p className="text-sm text-muted-foreground">
-                      <Link 
-                        to="/media-consent-policy" 
-                        target="_blank"
-                        className="text-dragon hover:underline"
-                      >
-                        Learn more about our photo and video policy
-                      </Link>
-                      {" "}- Photos and videos will only be used for marketing and promotion of Kapes Adventures trips.
-                    </p>
-                  </div>
+                      terms and conditions
+                    </button>
+                  </label>
                 </div>
               </div>
 
-              {/* Submit Button */}
-              <div className="flex justify-center pt-6">
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="bg-dragon-yellow hover:bg-dragon-yellow/90 text-dragon-dark px-8 py-6 text-lg"
-                >
-                  {isSubmitting ? "Submitting..." : "Submit"}
-                </Button>
-              </div>
+              <Button type="submit" className="w-full" disabled={isLoading}>
+                {isLoading ? "Submitting..." : "Proceed to Payment"}
+              </Button>
             </form>
-          </CardContent>
-        </Card>
+          </Card>
+        </div>
       </div>
-    </div>
+
+      <Dialog open={showTerms} onOpenChange={setShowTerms}>
+        <DialogContent className="max-w-3xl max-h-[80vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Terms and Conditions</DialogTitle>
+            <DialogDescription>
+              Please read and accept the following terms and conditions
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4 text-sm">
+            <section>
+              <h3 className="font-semibold mb-2">1. Booking and Payment</h3>
+              <p>A deposit is required to confirm your booking. Full payment must be received before the trip departure date.</p>
+            </section>
+            <section>
+              <h3 className="font-semibold mb-2">2. Cancellation Policy</h3>
+              <p>Cancellations made more than 60 days before departure: 50% refund. Cancellations made less than 60 days before departure: no refund.</p>
+            </section>
+            <section>
+              <h3 className="font-semibold mb-2">3. Travel Documents</h3>
+              <p>Participants are responsible for ensuring all travel documents (passport, visas) are valid and up to date.</p>
+            </section>
+            <section>
+              <h3 className="font-semibold mb-2">4. Health and Safety</h3>
+              <p>Participants must disclose any medical conditions or dietary requirements. Kapes Adventures reserves the right to refuse participation if health concerns pose a risk.</p>
+            </section>
+            <section>
+              <h3 className="font-semibold mb-2">5. Behavior and Conduct</h3>
+              <p>Participants are expected to behave respectfully. Kapes Adventures reserves the right to send home any participant whose behavior is deemed inappropriate.</p>
+            </section>
+            <section>
+              <h3 className="font-semibold mb-2">6. Liability</h3>
+              <p>Kapes Adventures is not liable for loss, damage, or injury during the trip, except where caused by our negligence.</p>
+            </section>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 

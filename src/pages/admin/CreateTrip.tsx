@@ -10,7 +10,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
-import { ArrowLeft, Plus, X } from "lucide-react";
+import { ArrowLeft, Plus, X, Save } from "lucide-react";
+import { ItineraryBuilder } from "@/components/admin/ItineraryBuilder";
 
 interface School {
   id: string;
@@ -25,6 +26,9 @@ const CreateTrip = () => {
   const [selectedSchools, setSelectedSchools] = useState<string[]>([]);
   const [inclusions, setInclusions] = useState<string[]>([""]);
   const [exclusions, setExclusions] = useState<string[]>([""]);
+  const [itinerary, setItinerary] = useState<any[]>([]);
+  const [templates, setTemplates] = useState<any[]>([]);
+  const [selectedTemplate, setSelectedTemplate] = useState<string>("");
 
   const [formData, setFormData] = useState({
     title: "",
@@ -47,6 +51,7 @@ const CreateTrip = () => {
   useEffect(() => {
     checkAuth();
     loadSchools();
+    loadTemplates();
   }, []);
 
   const checkAuth = async () => {
@@ -81,6 +86,79 @@ const CreateTrip = () => {
       toast({
         variant: "destructive",
         title: "Error loading schools",
+        description: error.message,
+      });
+    }
+  };
+
+  const loadTemplates = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("trip_templates")
+        .select("*")
+        .order("name");
+
+      if (error) throw error;
+      setTemplates(data || []);
+    } catch (error: any) {
+      console.error("Failed to load templates:", error);
+    }
+  };
+
+  const loadFromTemplate = (templateId: string) => {
+    const template = templates.find(t => t.id === templateId);
+    if (!template) return;
+
+    setFormData({
+      ...formData,
+      destination: template.destination,
+      duration_days: template.duration_days,
+      base_price_aed: template.base_price_aed,
+      age_min: template.age_min || 13,
+      age_max: template.age_max || 18,
+      max_participants: template.max_participants || 30,
+      description: template.description || "",
+    });
+    setInclusions(template.inclusions || [""]);
+    setExclusions(template.exclusions || [""]);
+    setItinerary(template.itinerary || []);
+    toast({
+      title: "Template loaded successfully",
+    });
+  };
+
+  const saveAsTemplate = async () => {
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) return;
+
+      const templateName = prompt("Enter template name:");
+      if (!templateName) return;
+
+      const { error } = await supabase.from("trip_templates").insert({
+        name: templateName,
+        description: formData.description,
+        destination: formData.destination,
+        duration_days: formData.duration_days,
+        base_price_aed: formData.base_price_aed,
+        age_min: formData.age_min,
+        age_max: formData.age_max,
+        max_participants: formData.max_participants,
+        inclusions: inclusions.filter(i => i.trim()),
+        exclusions: exclusions.filter(e => e.trim()),
+        itinerary: itinerary,
+        created_by: session.user.id
+      });
+
+      if (error) throw error;
+      toast({
+        title: "Template saved successfully",
+      });
+      loadTemplates();
+    } catch (error: any) {
+      toast({
+        variant: "destructive",
+        title: "Failed to save template",
         description: error.message,
       });
     }
@@ -136,6 +214,7 @@ const CreateTrip = () => {
           ...formData,
           inclusions: inclusions.filter(i => i.trim() !== ""),
           exclusions: exclusions.filter(e => e.trim() !== ""),
+          itinerary: itinerary,
         })
         .select()
         .single();
@@ -187,6 +266,40 @@ const CreateTrip = () => {
 
         <main className="container mx-auto px-4 py-8 max-w-4xl">
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Template Selector */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Load from Template (Optional)</CardTitle>
+                <CardDescription>Start with a pre-configured template</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex gap-2">
+                  <Select value={selectedTemplate} onValueChange={(value) => {
+                    setSelectedTemplate(value);
+                    loadFromTemplate(value);
+                  }}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select a template" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {templates.map(template => (
+                        <SelectItem key={template.id} value={template.id}>
+                          {template.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => navigate("/admin/templates")}
+                  >
+                    Manage Templates
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Basic Info */}
             <Card>
               <CardHeader>
@@ -462,6 +575,20 @@ const CreateTrip = () => {
               </CardContent>
             </Card>
 
+            {/* Itinerary */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Sample Itinerary</CardTitle>
+                <CardDescription>Create a day-by-day itinerary for the trip</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ItineraryBuilder
+                  itinerary={itinerary}
+                  onChange={setItinerary}
+                />
+              </CardContent>
+            </Card>
+
             {/* School Assignment */}
             <Card>
               <CardHeader>
@@ -482,9 +609,12 @@ const CreateTrip = () => {
                           checked={selectedSchools.includes(school.id)}
                           onCheckedChange={() => handleSchoolToggle(school.id)}
                         />
-                        <Label htmlFor={school.id} className="cursor-pointer">
+                        <label
+                          htmlFor={school.id}
+                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer"
+                        >
                           {school.name}
-                        </Label>
+                        </label>
                       </div>
                     ))}
                   </div>
@@ -492,15 +622,21 @@ const CreateTrip = () => {
               </CardContent>
             </Card>
 
-            {/* Submit */}
             <div className="flex gap-4">
+              <Button
+                variant="outline"
+                type="button"
+                onClick={() => navigate("/admin/trips")}
+              >
+                Cancel
+              </Button>
               <Button
                 type="button"
                 variant="outline"
-                onClick={() => navigate("/admin/trips")}
-                disabled={isLoading}
+                onClick={saveAsTemplate}
               >
-                Cancel
+                <Save className="w-4 h-4 mr-2" />
+                Save as Template
               </Button>
               <Button type="submit" disabled={isLoading}>
                 {isLoading ? "Creating..." : "Create Trip"}

@@ -25,6 +25,8 @@ import AdminDashboard from "@/pages/AdminDashboard";
 import ManageSchools from "@/pages/admin/ManageSchools";
 import ManageTrips from "@/pages/admin/ManageTrips";
 import CreateTrip from "@/pages/admin/CreateTrip";
+import ManageTemplates from "@/pages/admin/ManageTemplates";
+import ParentPortal from "@/pages/ParentPortal";
 // import Podcast from "@/pages/Podcast"; - Podcast page hidden
 import ImpactScorecard from "@/pages/ImpactScorecard";
 
@@ -90,6 +92,8 @@ const MainRoutes = () => {
       <Route path="/admin/schools" element={<ManageSchools />} />
       <Route path="/admin/trips" element={<ManageTrips />} />
       <Route path="/admin/trips/create" element={<CreateTrip />} />
+      <Route path="/admin/templates" element={<ManageTemplates />} />
+      <Route path="/parent-portal" element={<ParentPortal />} />
       
       {/* Program Categories */}
       <Route path="/programs" element={<Programs />} />
