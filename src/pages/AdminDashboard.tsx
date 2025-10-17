@@ -201,19 +201,6 @@ const AdminDashboard = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate("/admin/documents")}>
-              <CardHeader>
-                <FileText className="h-8 w-8 text-dragon mb-2" />
-                <CardTitle>Review Documents</CardTitle>
-                <CardDescription>
-                  Review and approve trip documents
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button className="w-full">Review Documents</Button>
-              </CardContent>
-            </Card>
-
             {userRole === "super_admin" && (
               <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate("/admin/addons")}>
                 <CardHeader>
