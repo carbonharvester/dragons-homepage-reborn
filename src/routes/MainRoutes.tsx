@@ -14,6 +14,9 @@ import TermsOfService from "@/pages/TermsOfService";
 import Auth from "@/pages/Auth";
 import TripRegistration from "@/pages/TripRegistration";
 import MediaConsentPolicy from "@/pages/MediaConsentPolicy";
+import StudentSignup from "@/pages/StudentSignup";
+import StudentLogin from "@/pages/StudentLogin";
+import StudentDashboard from "@/pages/StudentDashboard";
 // import Podcast from "@/pages/Podcast"; - Podcast page hidden
 import ImpactScorecard from "@/pages/ImpactScorecard";
 
@@ -64,6 +67,11 @@ const MainRoutes = () => {
       <Route path="/trip-registration" element={<TripRegistration />} />
       <Route path="/media-consent-policy" element={<MediaConsentPolicy />} />
       {/* Podcast route removed */}
+      
+      {/* Student Portal Routes */}
+      <Route path="/student/signup" element={<StudentSignup />} />
+      <Route path="/student/login" element={<StudentLogin />} />
+      <Route path="/student/dashboard" element={<StudentDashboard />} />
       
       {/* Program Categories */}
       <Route path="/programs" element={<Programs />} />

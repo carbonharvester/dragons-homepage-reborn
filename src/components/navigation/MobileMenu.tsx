@@ -103,6 +103,10 @@ const MobileMenu = ({
             About Us
           </Link>
           
+          <Link to="/student/signup" className="py-2 text-dragon-dark" onClick={toggleMenu}>
+            Student Portal
+          </Link>
+          
           <div>
             <button 
               className="flex items-center justify-between w-full py-2 text-dragon-dark"

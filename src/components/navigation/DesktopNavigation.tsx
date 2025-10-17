@@ -34,7 +34,11 @@ const DesktopNavigation = () => {
         About Us
       </Link>
       
-      <div 
+      <Link to="/student/signup" className="py-2 px-3 text-dragon-dark hover:text-dragon transition-colors">
+        Student Portal
+      </Link>
+      
+      <div
         className="relative"
         onMouseEnter={() => setResourcesMenuOpen(true)}
         onMouseLeave={() => setResourcesMenuOpen(false)}
