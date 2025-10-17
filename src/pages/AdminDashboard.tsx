@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
-import { School, MapPin, Package, Users, ShieldCheck } from "lucide-react";
+import { School, MapPin, Package, Users, ShieldCheck, FileText } from "lucide-react";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -198,6 +198,19 @@ const AdminDashboard = () => {
               </CardHeader>
               <CardContent>
                 <Button className="w-full">Trip Templates</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate("/admin/documents")}>
+              <CardHeader>
+                <FileText className="h-8 w-8 text-dragon mb-2" />
+                <CardTitle>Review Documents</CardTitle>
+                <CardDescription>
+                  Review and approve trip documents
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full">Review Documents</Button>
               </CardContent>
             </Card>
 

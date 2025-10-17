@@ -12,6 +12,7 @@ const ParentDashboard = () => {
   const [parent, setParent] = useState<any>(null);
   const [children, setChildren] = useState<any[]>([]);
   const [interests, setInterests] = useState<any[]>([]);
+  const [bookings, setBookings] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -57,6 +58,20 @@ const ParentDashboard = () => {
         if (interestsError) throw interestsError;
         setInterests(interestsData || []);
       }
+
+      // Load bookings
+      const { data: bookingsData, error: bookingsError } = await supabase
+        .from("bookings")
+        .select(`
+          *,
+          trip:trips(title, destination, trip_start_date),
+          booking_documents:booking_documents(id, document_type, status)
+        `)
+        .eq("parent_id", parentData.id)
+        .order("created_at", { ascending: false });
+
+      if (bookingsError) throw bookingsError;
+      setBookings(bookingsData || []);
     } catch (error: any) {
       console.error("Error loading dashboard:", error);
       toast.error("Failed to load dashboard");
@@ -193,6 +208,55 @@ const ParentDashboard = () => {
               )}
             </Card>
           </div>
+
+          {bookings.length > 0 && (
+            <Card className="p-6 mt-6">
+              <h2 className="text-xl font-semibold mb-4">Your Bookings</h2>
+              <div className="space-y-4">
+                {bookings.map((booking) => {
+                  const pendingDocs = booking.booking_documents?.filter((d: any) => d.status === 'pending').length || 0;
+                  const approvedDocs = booking.booking_documents?.filter((d: any) => d.status === 'approved').length || 0;
+                  const totalDocs = booking.booking_documents?.length || 0;
+
+                  return (
+                    <div key={booking.id} className="border rounded-lg p-4">
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1">
+                          <p className="font-semibold">{booking.trip?.title}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {booking.student_first_name} {booking.student_last_name}
+                          </p>
+                          <p className="text-xs text-muted-foreground mt-1">
+                            Departure: {new Date(booking.trip?.trip_start_date).toLocaleDateString()}
+                          </p>
+                          <div className="flex gap-2 mt-2">
+                            <span className={`text-xs px-2 py-1 rounded ${
+                              booking.payment_status === 'paid' 
+                                ? 'bg-green-100 text-green-800' 
+                                : 'bg-yellow-100 text-yellow-800'
+                            }`}>
+                              Payment: {booking.payment_status}
+                            </span>
+                            <span className="text-xs px-2 py-1 rounded bg-blue-100 text-blue-800">
+                              Documents: {approvedDocs}/{totalDocs || 'None'} approved
+                            </span>
+                          </div>
+                        </div>
+                        <Button
+                          size="sm"
+                          asChild
+                        >
+                          <Link to={`/parent/booking/${booking.id}/documents`}>
+                            Upload Documents
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </Card>
+          )}
         </div>
       </div>
     </>
