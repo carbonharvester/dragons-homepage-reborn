@@ -33,14 +33,12 @@ const AdminLogin = () => {
 
         if (error) throw error;
 
-        // Create super_admin role for new user
+        // Use secure function to create admin role (bypasses RLS)
         if (data.user) {
-          const { error: roleError } = await supabase
-            .from("user_roles")
-            .insert({
-              user_id: data.user.id,
-              role: "super_admin"
-            });
+          const { error: roleError } = await supabase.rpc('create_admin_user', {
+            user_email: email,
+            user_password: password
+          });
 
           if (roleError) throw roleError;
         }

@@ -925,6 +925,10 @@ export type Database = {
       }
     }
     Functions: {
+      create_admin_user: {
+        Args: { user_email: string; user_password: string }
+        Returns: Json
+      }
       get_user_school_id: {
         Args: { _user_id: string }
         Returns: string
