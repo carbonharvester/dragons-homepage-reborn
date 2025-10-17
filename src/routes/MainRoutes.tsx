@@ -35,6 +35,10 @@ import AddChild from "@/pages/parent/AddChild";
 import DirectBooking from "@/pages/parent/DirectBooking";
 import BookingDocuments from "@/pages/parent/BookingDocuments";
 import ReviewDocuments from "@/pages/admin/ReviewDocuments";
+import TripCapacity from "@/pages/admin/TripCapacity";
+import TripAttendance from "@/pages/admin/TripAttendance";
+import Analytics from "@/pages/admin/Analytics";
+import ExportParticipants from "@/pages/admin/ExportParticipants";
 // import Podcast from "@/pages/Podcast"; - Podcast page hidden
 import ImpactScorecard from "@/pages/ImpactScorecard";
 import ScorecardLanding from "@/pages/ScorecardLanding";
@@ -116,6 +120,10 @@ const MainRoutes = () => {
       <Route path="/admin/trips/create" element={<CreateTrip />} />
       <Route path="/admin/templates" element={<ManageTemplates />} />
       <Route path="/admin/documents" element={<ReviewDocuments />} />
+      <Route path="/admin/capacity" element={<TripCapacity />} />
+      <Route path="/admin/attendance/:tripId" element={<TripAttendance />} />
+      <Route path="/admin/analytics" element={<Analytics />} />
+      <Route path="/admin/export" element={<ExportParticipants />} />
       
       {/* Program Categories */}
       <Route path="/programs" element={<Programs />} />

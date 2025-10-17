@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
-import { School, MapPin, Package, Users, ShieldCheck, FileText } from "lucide-react";
+import { School, MapPin, Package, Users, FileText, BarChart, Download, UserCheck } from "lucide-react";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -242,9 +242,48 @@ const AdminDashboard = () => {
               </CardContent>
             </Card>
 
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate("/admin/capacity")}>
+              <CardHeader>
+                <Users className="h-8 w-8 text-dragon mb-2" />
+                <CardTitle>Trip Capacity</CardTitle>
+                <CardDescription>
+                  Manage capacity and waitlists
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full">Manage Capacity</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate("/admin/analytics")}>
+              <CardHeader>
+                <BarChart className="h-8 w-8 text-dragon mb-2" />
+                <CardTitle>Analytics</CardTitle>
+                <CardDescription>
+                  View reports and insights
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full">View Analytics</Button>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate("/admin/export")}>
+              <CardHeader>
+                <Download className="h-8 w-8 text-dragon mb-2" />
+                <CardTitle>Export Data</CardTitle>
+                <CardDescription>
+                  Export participant lists
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full">Export Data</Button>
+              </CardContent>
+            </Card>
+
             <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate("/admin/bookings")}>
               <CardHeader>
-                <ShieldCheck className="h-8 w-8 text-dragon mb-2" />
+                <UserCheck className="h-8 w-8 text-dragon mb-2" />
                 <CardTitle>View Bookings</CardTitle>
                 <CardDescription>
                   Monitor payments and confirmations

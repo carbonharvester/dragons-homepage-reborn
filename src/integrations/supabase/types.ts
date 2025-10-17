@@ -313,6 +313,13 @@ export type Database = {
             foreignKeyName: "bookings_trip_id_fkey"
             columns: ["trip_id"]
             isOneToOne: false
+            referencedRelation: "trip_analytics"
+            referencedColumns: ["trip_id"]
+          },
+          {
+            foreignKeyName: "bookings_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
             referencedRelation: "trips"
             referencedColumns: ["id"]
           },
@@ -400,6 +407,13 @@ export type Database = {
             foreignKeyName: "school_trips_trip_id_fkey"
             columns: ["trip_id"]
             isOneToOne: false
+            referencedRelation: "trip_analytics"
+            referencedColumns: ["trip_id"]
+          },
+          {
+            foreignKeyName: "school_trips_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
             referencedRelation: "trips"
             referencedColumns: ["id"]
           },
@@ -452,6 +466,8 @@ export type Database = {
           status: string
           student_id: string
           trip_id: string
+          waitlist_position: number | null
+          waitlisted_at: string | null
         }
         Insert: {
           created_at?: string
@@ -463,6 +479,8 @@ export type Database = {
           status?: string
           student_id: string
           trip_id: string
+          waitlist_position?: number | null
+          waitlisted_at?: string | null
         }
         Update: {
           created_at?: string
@@ -474,6 +492,8 @@ export type Database = {
           status?: string
           student_id?: string
           trip_id?: string
+          waitlist_position?: number | null
+          waitlisted_at?: string | null
         }
         Relationships: [
           {
@@ -482,6 +502,13 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "students"
             referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "student_interests_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
+            referencedRelation: "trip_analytics"
+            referencedColumns: ["trip_id"]
           },
           {
             foreignKeyName: "student_interests_trip_id_fkey"
@@ -566,6 +593,67 @@ export type Database = {
             columns: ["school_id"]
             isOneToOne: false
             referencedRelation: "schools"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      trip_attendance: {
+        Row: {
+          booking_id: string
+          created_at: string
+          date: string
+          id: string
+          marked_at: string
+          marked_by: string | null
+          notes: string | null
+          status: string
+          trip_id: string
+          updated_at: string
+        }
+        Insert: {
+          booking_id: string
+          created_at?: string
+          date: string
+          id?: string
+          marked_at?: string
+          marked_by?: string | null
+          notes?: string | null
+          status: string
+          trip_id: string
+          updated_at?: string
+        }
+        Update: {
+          booking_id?: string
+          created_at?: string
+          date?: string
+          id?: string
+          marked_at?: string
+          marked_by?: string | null
+          notes?: string | null
+          status?: string
+          trip_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "trip_attendance_booking_id_fkey"
+            columns: ["booking_id"]
+            isOneToOne: false
+            referencedRelation: "bookings"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "trip_attendance_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
+            referencedRelation: "trip_analytics"
+            referencedColumns: ["trip_id"]
+          },
+          {
+            foreignKeyName: "trip_attendance_trip_id_fkey"
+            columns: ["trip_id"]
+            isOneToOne: false
+            referencedRelation: "trips"
             referencedColumns: ["id"]
           },
         ]
@@ -814,7 +902,27 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      trip_analytics: {
+        Row: {
+          collected_revenue_aed: number | null
+          confirmed_bookings: number | null
+          destination: string | null
+          documents_approved: number | null
+          documents_submitted: number | null
+          max_participants: number | null
+          paid_bookings: number | null
+          status: string | null
+          title: string | null
+          total_bookings: number | null
+          total_interests: number | null
+          total_revenue_aed: number | null
+          trip_end_date: string | null
+          trip_id: string | null
+          trip_start_date: string | null
+          waitlist_count: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       get_user_school_id: {
