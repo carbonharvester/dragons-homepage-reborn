@@ -26,6 +26,7 @@ import ManageSchools from "@/pages/admin/ManageSchools";
 import ManageTrips from "@/pages/admin/ManageTrips";
 import CreateTrip from "@/pages/admin/CreateTrip";
 import ManageTemplates from "@/pages/admin/ManageTemplates";
+import CreateTemplate from "@/pages/admin/CreateTemplate";
 import ManageAddons from "@/pages/admin/ManageAddons";
 import ViewStudents from "@/pages/admin/ViewStudents";
 import ViewTrip from "@/pages/admin/ViewTrip";
@@ -124,6 +125,8 @@ const MainRoutes = () => {
       <Route path="/admin/trips/create" element={<CreateTrip />} />
       <Route path="/admin/trips/view/:tripId" element={<ViewTrip />} />
       <Route path="/admin/templates" element={<ManageTemplates />} />
+      <Route path="/admin/templates/create" element={<CreateTemplate />} />
+      <Route path="/admin/templates/edit/:templateId" element={<CreateTemplate />} />
       <Route path="/admin/addons" element={<ManageAddons />} />
       <Route path="/admin/students" element={<ViewStudents />} />
       <Route path="/admin/documents" element={<ReviewDocuments />} />
