@@ -4,42 +4,46 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Switch } from "@/components/ui/switch";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
-import { ArrowLeft, Plus, Copy, Edit } from "lucide-react";
+import { ArrowLeft, Plus, Edit } from "lucide-react";
 
-interface School {
+interface Addon {
   id: string;
   name: string;
-  enrollment_code: string;
-  location: string;
-  contact_email: string;
-  contact_phone: string;
+  description: string | null;
+  price_aed: number;
+  addon_type: string;
   active: boolean;
-  created_at: string;
+  display_order: number;
+  is_subscription: boolean;
 }
 
-const ManageSchools = () => {
+const ManageAddons = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [schools, setSchools] = useState<School[]>([]);
+  const [addons, setAddons] = useState<Addon[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [editingSchool, setEditingSchool] = useState<School | null>(null);
+  const [editingAddon, setEditingAddon] = useState<Addon | null>(null);
   const [formData, setFormData] = useState({
     name: "",
-    location: "",
-    contact_email: "",
-    contact_phone: "",
+    description: "",
+    price_aed: "",
+    addon_type: "insurance",
     active: true,
+    display_order: 0,
+    is_subscription: false,
   });
 
   useEffect(() => {
     checkAuth();
-    loadSchools();
+    loadAddons();
   }, []);
 
   const checkAuth = async () => {
@@ -65,15 +69,15 @@ const ManageSchools = () => {
     }
   };
 
-  const loadSchools = async () => {
+  const loadAddons = async () => {
     try {
       const { data, error } = await supabase
-        .from("schools")
+        .from("addons")
         .select("*")
-        .order("created_at", { ascending: false });
+        .order("display_order", { ascending: true });
 
       if (error) throw error;
-      setSchools(data || []);
+      setAddons(data || []);
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -85,48 +89,55 @@ const ManageSchools = () => {
     }
   };
 
-  const generateEnrollmentCode = () => {
-    return `SCH${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
-  };
-
-  const handleCreateSchool = async () => {
+  const handleSaveAddon = async () => {
     try {
-      if (editingSchool) {
-        // Update existing school
+      const addonData = {
+        name: formData.name,
+        description: formData.description || null,
+        price_aed: parseFloat(formData.price_aed),
+        addon_type: formData.addon_type,
+        active: formData.active,
+        display_order: formData.display_order,
+        is_subscription: formData.is_subscription,
+      };
+
+      if (editingAddon) {
         const { error } = await supabase
-          .from("schools")
-          .update(formData)
-          .eq("id", editingSchool.id);
+          .from("addons")
+          .update(addonData)
+          .eq("id", editingAddon.id);
 
         if (error) throw error;
 
         toast({
-          title: "School updated!",
-          description: "School information has been updated.",
+          title: "Add-on updated!",
+          description: "Add-on has been updated successfully.",
         });
       } else {
-        // Create new school
-        const enrollmentCode = generateEnrollmentCode();
-        
         const { error } = await supabase
-          .from("schools")
-          .insert({
-            ...formData,
-            enrollment_code: enrollmentCode,
-          });
+          .from("addons")
+          .insert(addonData);
 
         if (error) throw error;
 
         toast({
-          title: "School created!",
-          description: `Enrollment code: ${enrollmentCode}`,
+          title: "Add-on created!",
+          description: "New add-on has been created.",
         });
       }
 
       setIsDialogOpen(false);
-      setEditingSchool(null);
-      setFormData({ name: "", location: "", contact_email: "", contact_phone: "", active: true });
-      loadSchools();
+      setEditingAddon(null);
+      setFormData({
+        name: "",
+        description: "",
+        price_aed: "",
+        addon_type: "insurance",
+        active: true,
+        display_order: 0,
+        is_subscription: false,
+      });
+      loadAddons();
     } catch (error: any) {
       toast({
         variant: "destructive",
@@ -136,29 +147,23 @@ const ManageSchools = () => {
     }
   };
 
-  const handleEditSchool = (school: School) => {
-    setEditingSchool(school);
+  const handleEditAddon = (addon: Addon) => {
+    setEditingAddon(addon);
     setFormData({
-      name: school.name,
-      location: school.location || "",
-      contact_email: school.contact_email || "",
-      contact_phone: school.contact_phone || "",
-      active: school.active,
+      name: addon.name,
+      description: addon.description || "",
+      price_aed: addon.price_aed.toString(),
+      addon_type: addon.addon_type,
+      active: addon.active,
+      display_order: addon.display_order,
+      is_subscription: addon.is_subscription,
     });
     setIsDialogOpen(true);
   };
 
-  const copyEnrollmentCode = (code: string) => {
-    navigator.clipboard.writeText(code);
-    toast({
-      title: "Copied!",
-      description: "Enrollment code copied to clipboard",
-    });
-  };
-
   return (
     <>
-      <SEO title="Manage Schools | Admin" description="Manage schools and enrollment codes" />
+      <SEO title="Manage Add-Ons | Admin" description="Manage trip add-ons and extras" />
       <div className="min-h-screen bg-gray-50">
         <header className="bg-white border-b">
           <div className="container mx-auto px-4 py-4">
@@ -166,7 +171,7 @@ const ManageSchools = () => {
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Dashboard
             </Button>
-            <h1 className="text-2xl font-bold text-dragon-dark">Manage Schools</h1>
+            <h1 className="text-2xl font-bold text-dragon-dark">Manage Add-Ons</h1>
           </div>
         </header>
 
@@ -174,26 +179,26 @@ const ManageSchools = () => {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
               <div>
-                <CardTitle>Schools</CardTitle>
-                <CardDescription>Create and manage school accounts</CardDescription>
+                <CardTitle>Trip Add-Ons</CardTitle>
+                <CardDescription>Manage insurance, kits, and other extras</CardDescription>
               </div>
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button>
                     <Plus className="mr-2 h-4 w-4" />
-                    Add School
+                    Add New
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
                   <DialogHeader>
-                    <DialogTitle>{editingSchool ? "Edit School" : "Create New School"}</DialogTitle>
+                    <DialogTitle>{editingAddon ? "Edit Add-On" : "Create New Add-On"}</DialogTitle>
                     <DialogDescription>
-                      {editingSchool ? "Update school information" : "Add a school and generate an enrollment code"}
+                      {editingAddon ? "Update add-on information" : "Add a new trip extra"}
                     </DialogDescription>
                   </DialogHeader>
                   <div className="space-y-4 py-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">School Name</Label>
+                      <Label htmlFor="name">Name</Label>
                       <Input
                         id="name"
                         value={formData.name}
@@ -202,93 +207,98 @@ const ManageSchools = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="location">Location</Label>
-                      <Input
-                        id="location"
-                        value={formData.location}
-                        onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                      <Label htmlFor="description">Description</Label>
+                      <Textarea
+                        id="description"
+                        value={formData.description}
+                        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Contact Email</Label>
+                      <Label htmlFor="price">Price (AED)</Label>
                       <Input
-                        id="email"
-                        type="email"
-                        value={formData.contact_email}
-                        onChange={(e) => setFormData({ ...formData, contact_email: e.target.value })}
+                        id="price"
+                        type="number"
+                        value={formData.price_aed}
+                        onChange={(e) => setFormData({ ...formData, price_aed: e.target.value })}
+                        required
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Contact Phone</Label>
+                      <Label htmlFor="type">Type</Label>
                       <Input
-                        id="phone"
-                        value={formData.contact_phone}
-                        onChange={(e) => setFormData({ ...formData, contact_phone: e.target.value })}
+                        id="type"
+                        value={formData.addon_type}
+                        onChange={(e) => setFormData({ ...formData, addon_type: e.target.value })}
+                        placeholder="e.g., insurance, kit, equipment"
                       />
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Switch
+                        id="active"
+                        checked={formData.active}
+                        onCheckedChange={(checked) => setFormData({ ...formData, active: checked })}
+                      />
+                      <Label htmlFor="active">Active</Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Switch
+                        id="subscription"
+                        checked={formData.is_subscription}
+                        onCheckedChange={(checked) => setFormData({ ...formData, is_subscription: checked })}
+                      />
+                      <Label htmlFor="subscription">Is Subscription</Label>
                     </div>
                   </div>
                   <DialogFooter>
                     <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
                       Cancel
                     </Button>
-                    <Button onClick={handleCreateSchool}>Create School</Button>
+                    <Button onClick={handleSaveAddon}>
+                      {editingAddon ? "Update" : "Create"}
+                    </Button>
                   </DialogFooter>
                 </DialogContent>
               </Dialog>
             </CardHeader>
             <CardContent>
               {isLoading ? (
-                <p>Loading schools...</p>
-              ) : schools.length === 0 ? (
+                <p>Loading add-ons...</p>
+              ) : addons.length === 0 ? (
                 <p className="text-center text-muted-foreground py-8">
-                  No schools yet. Create your first school to get started.
+                  No add-ons yet. Create your first add-on to get started.
                 </p>
               ) : (
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead>School Name</TableHead>
-                      <TableHead>Enrollment Code</TableHead>
-                      <TableHead>Location</TableHead>
-                      <TableHead>Contact</TableHead>
+                      <TableHead>Name</TableHead>
+                      <TableHead>Type</TableHead>
+                      <TableHead>Price (AED)</TableHead>
                       <TableHead>Status</TableHead>
                       <TableHead>Actions</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {schools.map((school) => (
-                      <TableRow key={school.id}>
-                        <TableCell className="font-medium">{school.name}</TableCell>
-                        <TableCell>
-                          <div className="flex items-center gap-2">
-                            <code className="bg-dragon-beige px-2 py-1 rounded text-sm">
-                              {school.enrollment_code}
-                            </code>
-                            <Button
-                              size="sm"
-                              variant="ghost"
-                              onClick={() => copyEnrollmentCode(school.enrollment_code)}
-                            >
-                              <Copy className="h-3 w-3" />
-                            </Button>
-                          </div>
-                        </TableCell>
-                        <TableCell>{school.location || "-"}</TableCell>
-                        <TableCell>{school.contact_email || "-"}</TableCell>
+                    {addons.map((addon) => (
+                      <TableRow key={addon.id}>
+                        <TableCell className="font-medium">{addon.name}</TableCell>
+                        <TableCell>{addon.addon_type}</TableCell>
+                        <TableCell>{addon.price_aed.toLocaleString()}</TableCell>
                         <TableCell>
                           <span className={`px-2 py-1 rounded text-xs ${
-                            school.active 
+                            addon.active 
                               ? "bg-green-100 text-green-800" 
                               : "bg-gray-100 text-gray-800"
                           }`}>
-                            {school.active ? "Active" : "Inactive"}
+                            {addon.active ? "Active" : "Inactive"}
                           </span>
                         </TableCell>
                         <TableCell>
                           <Button
                             size="sm"
                             variant="outline"
-                            onClick={() => handleEditSchool(school)}
+                            onClick={() => handleEditAddon(addon)}
                           >
                             <Edit className="h-3 w-3" />
                           </Button>
@@ -306,4 +316,4 @@ const ManageSchools = () => {
   );
 };
 
-export default ManageSchools;
+export default ManageAddons;

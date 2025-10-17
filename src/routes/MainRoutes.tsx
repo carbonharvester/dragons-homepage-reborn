@@ -26,6 +26,9 @@ import ManageSchools from "@/pages/admin/ManageSchools";
 import ManageTrips from "@/pages/admin/ManageTrips";
 import CreateTrip from "@/pages/admin/CreateTrip";
 import ManageTemplates from "@/pages/admin/ManageTemplates";
+import ManageAddons from "@/pages/admin/ManageAddons";
+import ViewStudents from "@/pages/admin/ViewStudents";
+import ViewTrip from "@/pages/admin/ViewTrip";
 import ParentPortal from "@/pages/ParentPortal";
 import ParentSignup from "@/pages/ParentSignup";
 import ParentLogin from "@/pages/ParentLogin";
@@ -118,7 +121,10 @@ const MainRoutes = () => {
       <Route path="/admin/schools" element={<ManageSchools />} />
       <Route path="/admin/trips" element={<ManageTrips />} />
       <Route path="/admin/trips/create" element={<CreateTrip />} />
+      <Route path="/admin/trips/view/:tripId" element={<ViewTrip />} />
       <Route path="/admin/templates" element={<ManageTemplates />} />
+      <Route path="/admin/addons" element={<ManageAddons />} />
+      <Route path="/admin/students" element={<ViewStudents />} />
       <Route path="/admin/documents" element={<ReviewDocuments />} />
       <Route path="/admin/capacity" element={<TripCapacity />} />
       <Route path="/admin/attendance/:tripId" element={<TripAttendance />} />
