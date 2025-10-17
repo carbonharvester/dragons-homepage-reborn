@@ -21,6 +21,8 @@ import StudentDashboard from "@/pages/StudentDashboard";
 import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
 import ManageSchools from "@/pages/admin/ManageSchools";
+import ManageTrips from "@/pages/admin/ManageTrips";
+import CreateTrip from "@/pages/admin/CreateTrip";
 // import Podcast from "@/pages/Podcast"; - Podcast page hidden
 import ImpactScorecard from "@/pages/ImpactScorecard";
 
@@ -82,6 +84,8 @@ const MainRoutes = () => {
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route path="/admin/dashboard" element={<AdminDashboard />} />
       <Route path="/admin/schools" element={<ManageSchools />} />
+      <Route path="/admin/trips" element={<ManageTrips />} />
+      <Route path="/admin/trips/create" element={<CreateTrip />} />
       
       {/* Program Categories */}
       <Route path="/programs" element={<Programs />} />
