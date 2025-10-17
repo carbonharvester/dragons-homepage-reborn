@@ -17,7 +17,6 @@ interface School {
   enrollment_code: string;
   location: string;
   contact_email: string;
-  contact_phone: string;
   active: boolean;
   created_at: string;
 }
@@ -33,7 +32,6 @@ const ManageSchools = () => {
     name: "",
     location: "",
     contact_email: "",
-    contact_phone: "",
     active: true,
   });
 
@@ -125,7 +123,7 @@ const ManageSchools = () => {
 
       setIsDialogOpen(false);
       setEditingSchool(null);
-      setFormData({ name: "", location: "", contact_email: "", contact_phone: "", active: true });
+      setFormData({ name: "", location: "", contact_email: "", active: true });
       loadSchools();
     } catch (error: any) {
       toast({
@@ -142,7 +140,6 @@ const ManageSchools = () => {
       name: school.name,
       location: school.location || "",
       contact_email: school.contact_email || "",
-      contact_phone: school.contact_phone || "",
       active: school.active,
     });
     setIsDialogOpen(true);
@@ -216,14 +213,6 @@ const ManageSchools = () => {
                         type="email"
                         value={formData.contact_email}
                         onChange={(e) => setFormData({ ...formData, contact_email: e.target.value })}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Contact Phone</Label>
-                      <Input
-                        id="phone"
-                        value={formData.contact_phone}
-                        onChange={(e) => setFormData({ ...formData, contact_phone: e.target.value })}
                       />
                     </div>
                   </div>
