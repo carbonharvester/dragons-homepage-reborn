@@ -18,6 +18,8 @@ import StudentPortal from "@/pages/StudentPortal";
 import StudentSignup from "@/pages/StudentSignup";
 import StudentLogin from "@/pages/StudentLogin";
 import StudentDashboard from "@/pages/StudentDashboard";
+import BrowseTrips from "@/pages/student/BrowseTrips";
+import MyInterests from "@/pages/student/MyInterests";
 import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
 import ManageSchools from "@/pages/admin/ManageSchools";
@@ -79,6 +81,8 @@ const MainRoutes = () => {
       <Route path="/student/signup" element={<StudentSignup />} />
       <Route path="/student/login" element={<StudentLogin />} />
       <Route path="/student/dashboard" element={<StudentDashboard />} />
+      <Route path="/student/trips" element={<BrowseTrips />} />
+      <Route path="/student/interests" element={<MyInterests />} />
       
       {/* Admin Portal Routes */}
       <Route path="/admin/login" element={<AdminLogin />} />

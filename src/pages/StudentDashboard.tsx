@@ -24,6 +24,7 @@ const StudentDashboard = () => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(true);
   const [student, setStudent] = useState<StudentProfile | null>(null);
+  const [interestsCount, setInterestsCount] = useState(0);
 
   useEffect(() => {
     checkAuth();
@@ -52,6 +53,14 @@ const StudentDashboard = () => {
       }
 
       setStudent(studentData);
+      
+      // Fetch interests count
+      const { count } = await supabase
+        .from("student_interests")
+        .select("*", { count: "exact", head: true })
+        .eq("student_id", studentData.id);
+      
+      setInterestsCount(count || 0);
     } catch (error) {
       console.error("Auth check error:", error);
       navigate("/student/login");
@@ -163,7 +172,7 @@ const StudentDashboard = () => {
                   <Calendar className="h-4 w-4 text-muted-foreground" />
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">0</div>
+                  <div className="text-2xl font-bold">{interestsCount}</div>
                   <p className="text-xs text-muted-foreground mt-1">
                     Trips you're interested in
                   </p>
