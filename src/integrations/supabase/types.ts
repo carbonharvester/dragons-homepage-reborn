@@ -325,6 +325,33 @@ export type Database = {
           },
         ]
       }
+      data_migrations: {
+        Row: {
+          error_count: number | null
+          error_details: Json | null
+          executed_at: string | null
+          id: string
+          migration_name: string
+          success_count: number | null
+        }
+        Insert: {
+          error_count?: number | null
+          error_details?: Json | null
+          executed_at?: string | null
+          id?: string
+          migration_name: string
+          success_count?: number | null
+        }
+        Update: {
+          error_count?: number | null
+          error_details?: Json | null
+          executed_at?: string | null
+          id?: string
+          migration_name?: string
+          success_count?: number | null
+        }
+        Relationships: []
+      }
       parents: {
         Row: {
           address_line1: string | null
@@ -939,6 +966,14 @@ export type Database = {
           _user_id: string
         }
         Returns: boolean
+      }
+      import_trip_participants: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          error_count: number
+          errors: Json
+          success_count: number
+        }[]
       }
     }
     Enums: {

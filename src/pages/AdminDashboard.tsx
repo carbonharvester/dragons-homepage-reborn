@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import SEO from "@/components/SEO";
-import { School, MapPin, Package, Users, FileText, BarChart, Download, UserCheck } from "lucide-react";
+import { School, MapPin, Package, Users, FileText, BarChart, Download, UserCheck, Upload } from "lucide-react";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -280,6 +280,21 @@ const AdminDashboard = () => {
                 <Button className="w-full">View Bookings</Button>
               </CardContent>
             </Card>
+
+            {userRole === "super_admin" && (
+              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate("/admin/import-participants")}>
+                <CardHeader>
+                  <Upload className="h-8 w-8 text-dragon mb-2" />
+                  <CardTitle>Import Participants</CardTitle>
+                  <CardDescription>
+                    Import existing trip participant data
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button className="w-full">Import Data</Button>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </main>
       </div>

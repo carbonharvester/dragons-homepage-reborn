@@ -29,6 +29,7 @@ import ManageTemplates from "@/pages/admin/ManageTemplates";
 import ManageAddons from "@/pages/admin/ManageAddons";
 import ViewStudents from "@/pages/admin/ViewStudents";
 import ViewTrip from "@/pages/admin/ViewTrip";
+import ImportParticipants from "@/pages/admin/ImportParticipants";
 import ParentPortal from "@/pages/ParentPortal";
 import ParentSignup from "@/pages/ParentSignup";
 import ParentLogin from "@/pages/ParentLogin";
@@ -130,6 +131,7 @@ const MainRoutes = () => {
       <Route path="/admin/attendance/:tripId" element={<TripAttendance />} />
       <Route path="/admin/analytics" element={<Analytics />} />
       <Route path="/admin/export" element={<ExportParticipants />} />
+      <Route path="/admin/import-participants" element={<ImportParticipants />} />
       
       {/* Program Categories */}
       <Route path="/programs" element={<Programs />} />
