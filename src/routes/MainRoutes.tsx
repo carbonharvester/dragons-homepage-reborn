@@ -35,6 +35,10 @@ import AddChild from "@/pages/parent/AddChild";
 import DirectBooking from "@/pages/parent/DirectBooking";
 // import Podcast from "@/pages/Podcast"; - Podcast page hidden
 import ImpactScorecard from "@/pages/ImpactScorecard";
+import ScorecardLanding from "@/pages/ScorecardLanding";
+import ScorecardQuiz from "@/pages/ScorecardQuiz";
+import ScorecardLeadCapture from "@/pages/ScorecardLeadCapture";
+import ScorecardResults from "@/pages/ScorecardResults";
 
 // Program Categories
 import Programs from "@/pages/Programs";
@@ -142,6 +146,12 @@ const MainRoutes = () => {
       <Route path="/health-and-safety" element={<HealthAndSafety />} />
       <Route path="/discover-kenya" element={<DiscoverKenya />} />
       <Route path="/impact-scorecard" element={<ImpactScorecard />} />
+      
+      {/* Scorecard Routes */}
+      <Route path="/scorecard" element={<ScorecardLanding />} />
+      <Route path="/scorecard/quiz" element={<ScorecardQuiz />} />
+      <Route path="/scorecard/lead-capture" element={<ScorecardLeadCapture />} />
+      <Route path="/scorecard/results" element={<ScorecardResults />} />
       
       {/* 404 Catch All */}
       <Route path="*" element={<NotFound />} />
