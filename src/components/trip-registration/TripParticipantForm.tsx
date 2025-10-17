@@ -107,7 +107,10 @@ const TripParticipantForm = () => {
         return;
       }
 
-      const { error } = await supabase.from("trip_participants").insert({
+      // Generate booking reference
+      const bookingReference = `KA${Date.now().toString().slice(-8)}`;
+
+      const { error: insertError } = await supabase.from("trip_participants").insert({
         first_name: formData.firstName,
         middle_name: formData.middleName || null,
         last_name: formData.lastName,
@@ -129,9 +132,35 @@ const TripParticipantForm = () => {
         user_id: session.user.id
       });
 
-      if (error) throw error;
+      if (insertError) throw insertError;
 
-      toast.success("Registration submitted successfully!");
+      // Get parent details for email
+      const { data: parentData } = await supabase
+        .from("parents")
+        .select("first_name, last_name, email")
+        .eq("auth_user_id", session.user.id)
+        .single();
+
+      if (parentData && trip) {
+        // Send booking confirmation email
+        try {
+          await supabase.functions.invoke("send-booking-confirmation", {
+            body: {
+              parentEmail: parentData.email,
+              parentName: `${parentData.first_name} ${parentData.last_name}`,
+              childName: `${formData.firstName} ${formData.lastName}`,
+              tripName: trip.title,
+              tripDates: `${trip.start_date} to ${trip.end_date}`,
+              bookingReference: bookingReference,
+            },
+          });
+        } catch (emailError) {
+          console.error("Failed to send confirmation email:", emailError);
+          // Don't block the registration if email fails
+        }
+      }
+
+      toast.success("Registration submitted successfully! Check your email for confirmation.");
       navigate("/student/dashboard");
     } catch (error: any) {
       toast.error("Failed to submit registration");
