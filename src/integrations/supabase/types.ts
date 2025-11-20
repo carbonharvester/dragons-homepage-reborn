@@ -956,10 +956,7 @@ export type Database = {
         Args: { user_email: string; user_password: string }
         Returns: Json
       }
-      get_user_school_id: {
-        Args: { _user_id: string }
-        Returns: string
-      }
+      get_user_school_id: { Args: { _user_id: string }; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -968,7 +965,7 @@ export type Database = {
         Returns: boolean
       }
       import_trip_participants: {
-        Args: Record<PropertyKey, never>
+        Args: never
         Returns: {
           error_count: number
           errors: Json
