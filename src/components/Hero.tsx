@@ -24,8 +24,7 @@ const Hero = () => {
           playsInline
           preload="auto"
         >
-          {/* TODO: Replace with Cloudinary URL after uploading the 445MB video for production */}
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dng12bd0a/video/upload/v1768975922/full_film_highlight_nov_2025_1_j3lear.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/70"></div>
       </div>
