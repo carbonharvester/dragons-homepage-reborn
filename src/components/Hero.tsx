@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Ensure video plays on mobile
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay failed, video will show poster image
+      });
+    }
+  }, []);
+
   const scrollToNext = () => {
     const nextSection = document.getElementById('what-we-do');
     if (nextSection) {
@@ -17,12 +29,14 @@ const Hero = () => {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
+          ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover opacity-60"
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
+          poster="https://res.cloudinary.com/dng12bd0a/image/upload/v1768976012/KAPESVoifriday_klein-124_mayzid.jpg"
         >
           <source src="https://res.cloudinary.com/dng12bd0a/video/upload/v1768975922/full_film_highlight_nov_2025_1_j3lear.mp4" type="video/mp4" />
         </video>
