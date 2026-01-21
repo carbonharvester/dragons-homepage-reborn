@@ -47,6 +47,7 @@ import ExportParticipants from "@/pages/admin/ExportParticipants";
 // import Podcast from "@/pages/Podcast"; - Podcast page hidden
 import ImpactScorecard from "@/pages/ImpactScorecard";
 import ScorecardLanding from "@/pages/ScorecardLanding";
+import ScorecardIntro from "@/pages/ScorecardIntro";
 import ScorecardQuiz from "@/pages/ScorecardQuiz";
 import ScorecardLeadCapture from "@/pages/ScorecardLeadCapture";
 import ScorecardResults from "@/pages/ScorecardResults";
@@ -61,7 +62,7 @@ import AdultPrograms from "@/pages/AdultPrograms";
 import EducatorTrips from "@/pages/EducatorTrips";
 
 // School Trip Programs
-import FoodForEducation from "@/pages/FoodForEducation";
+import Seeds2Education from "@/pages/Seeds2Education";
 import CommunityConservation from "@/pages/CommunityConservation";
 import EmpoweringWomen from "@/pages/EmpoweringWomen";
 
@@ -81,6 +82,7 @@ import PermacultureDesignCourse from "@/pages/PermacultureDesignCourse";
 import FAQ from "@/pages/FAQ";
 import HealthAndSafety from "@/pages/HealthAndSafety";
 import DiscoverKenya from "@/pages/DiscoverKenya";
+import Impact from "@/pages/Impact";
 
 const MainRoutes = () => {
   return (
@@ -146,7 +148,8 @@ const MainRoutes = () => {
       <Route path="/educator-trips" element={<EducatorTrips />} />
       
       {/* School Trip Programs */}
-      <Route path="/programs/food-for-education" element={<FoodForEducation />} />
+      <Route path="/programs/seeds2education" element={<Seeds2Education />} />
+      <Route path="/programs/food-for-education" element={<Navigate to="/programs/seeds2education" replace />} />
       <Route path="/programs/community-conservation" element={<CommunityConservation />} />
       <Route path="/programs/empowering-women" element={<EmpoweringWomen />} />
       
@@ -165,6 +168,7 @@ const MainRoutes = () => {
       <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
       
       {/* Resource Pages */}
+      <Route path="/impact" element={<Impact />} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/health-and-safety" element={<HealthAndSafety />} />
       <Route path="/discover-kenya" element={<DiscoverKenya />} />
@@ -172,6 +176,7 @@ const MainRoutes = () => {
       
       {/* Scorecard Routes */}
       <Route path="/scorecard" element={<ScorecardLanding />} />
+      <Route path="/scorecard/start" element={<ScorecardIntro />} />
       <Route path="/scorecard/quiz" element={<ScorecardQuiz />} />
       <Route path="/scorecard/lead-capture" element={<ScorecardLeadCapture />} />
       <Route path="/scorecard/results" element={<ScorecardResults />} />

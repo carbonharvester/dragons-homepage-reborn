@@ -22,13 +22,13 @@ const CTASection = () => {
             size="lg"
             className="bg-dragon-yellow text-dragon-dark hover:bg-dragon-yellow/90 shadow-lg min-h-[48px] touch-manipulation w-full sm:w-auto transition-colors duration-200"
           />
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="bg-transparent border-white text-white hover:bg-white hover:text-dragon transition-all duration-300 min-h-[48px] touch-manipulation w-full sm:w-auto" 
+          <Button
+            variant="outline"
+            size="lg"
+            className="bg-transparent border-white text-white hover:bg-white hover:text-dragon transition-all duration-300 min-h-[48px] touch-manipulation w-full sm:w-auto"
             asChild
           >
-            <Link to="/partner-with-us">Request Information</Link>
+            <Link to="/faq">Learn More</Link>
           </Button>
         </div>
       </div>

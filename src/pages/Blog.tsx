@@ -31,7 +31,7 @@ const BlogHome = () => {
         keywords="founder blog, educational travel, student trips, mission kapes founder, Africa travel"
       />
       <Header />
-      <main className="pt-8 pb-16">
+      <main className="pt-16 pb-16">
         <BlogHero 
           title="Founder's Blog" 
           description="Personal insights, stories, and reflections from the founder on transformative educational travel and cultural immersion experiences."

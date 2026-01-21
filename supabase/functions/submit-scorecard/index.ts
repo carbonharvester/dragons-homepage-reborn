@@ -9,8 +9,9 @@ interface ScorecardSubmission {
   name: string;
   role: string;
   school: string;
-  country: string;
+  country?: string;
   email: string;
+  phone?: string;
   totalScore: number;
   answers: Record<string, number>;
   submittedAt: string;
@@ -41,10 +42,10 @@ serve(async (req) => {
       );
     }
 
-    // Determine score category
-    let category = "Falling Behind";
-    if (submission.totalScore >= 65) category = "Global Impact Leader";
-    else if (submission.totalScore >= 45) category = "Emerging Changemaker";
+    // Determine score category (based on 80 max score)
+    let category = "Wake-Up Call";
+    if (submission.totalScore >= 64) category = "Impact Leader";
+    else if (submission.totalScore >= 48) category = "Room to Grow";
 
     // Format data for Google Sheets
     const sheetData = {
@@ -52,9 +53,12 @@ serve(async (req) => {
       name: submission.name,
       role: submission.role,
       school: submission.school,
-      country: submission.country,
+      country: submission.country || '',
       email: submission.email,
+      phone: submission.phone || '',
       score: submission.totalScore,
+      maxScore: 80,
+      percentage: Math.round((submission.totalScore / 80) * 100),
       category: category,
       answers: JSON.stringify(submission.answers)
     };

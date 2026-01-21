@@ -1,111 +1,66 @@
+// Simplified, impact-first navigation structure inspired by Justdiggit
+
+export const whatWeDoItems = [
+  {
+    title: "Our Approach",
+    href: "/about",
+    description: "How we create lasting change through experiential travel.",
+  },
+  {
+    title: "Impact Areas",
+    href: "/impact",
+    description: "Food security, water access, conservation, and education.",
+  },
+  {
+    title: "Community Partners",
+    href: "/impact#partners",
+    description: "The local organizations we work with.",
+  },
+];
 
 export const programCategories = [
   {
     title: "School Trips",
     href: "/school-trips",
-    description: "Experiential learning trips for K-12 schools.",
-    programs: [
-      {
-        title: "Community Conservation",
-        href: "/programs/community-conservation",
-        description: "Protect endangered ecosystems with local conservation experts.",
-      },
-      {
-        title: "Food For Education",
-        href: "/programs/food-for-education",
-        description: "Address food security challenges through sustainable agriculture initiatives.",
-      },
-      {
-        title: "Water Empowering Women",
-        href: "/programs/empowering-women",
-        description: "Support women-led initiatives focusing on education and leadership.",
-      },
-    ],
+    description: "Transformative journeys for students aged 12-18.",
+    impact: "350+ students impacted",
   },
   {
-    title: "Summer Abroad",
+    title: "Summer Programs",
     href: "/summer-abroad",
-    description: "Immersive summer programs in Kenya for students.",
-    programs: [
-      {
-        title: "Feeding the Future",
-        href: "/programs/feeding-the-future",
-        description: "Address food security through sustainable agriculture in rural communities.",
-      },
-      {
-        title: "Capturing Kenya",
-        href: "/programs/capturing-kenya",
-        description: "Develop photography skills while documenting Kenya's landscapes and cultures.",
-      },
-    ],
+    description: "Immersive 2-week experiences during school breaks.",
+    impact: "Photography & permaculture tracks",
   },
   {
-    title: "Educator Trips",
+    title: "Educator Journeys",
     href: "/educator-trips",
-    description: "Professional development trips designed specifically for teachers and school staff.",
-    programs: [
-      {
-        title: "Educational Leadership",
-        href: "/programs/educational-leadership",
-        description: "Explore educational leadership through cultural immersion and collaborative learning.",
-      },
-    ],
+    description: "Professional development that expands perspectives.",
+    impact: "CPD certified",
   },
-  {
-    title: "Family Trips",
-    href: "/programs", // Will show family trips tab when implemented
-    description: "Adventure programs designed for families to experience together.",
-    programs: [
-      {
-        title: "Family Conservation Adventure",
-        href: "/community-conservation",
-        description: "Work together as a family to protect endangered ecosystems.",
-      },
-      {
-        title: "Family Food Systems Journey",
-        href: "/food-for-education",
-        description: "Experience sustainable food systems as a family unit.",
-      },
-    ],
-  },
-  // Adult Trips category removed
 ];
+
+// Partner items removed from header navigation - now only in footer
+export const partnerItems: { title: string; href: string; description: string }[] = [];
 
 export const resourcePages = [
   {
-    title: "All Programs",
-    href: "/programs",
-    description: "Explore our full range of educational programs."
-  },
-  {
-    title: "School Trip Impact Scorecard",
-    href: "/impact-scorecard",
-    description: "Assess how impactful and ethical your school trips are."
+    title: "Stories",
+    href: "/blog",
+    description: "Voices from our community.",
   },
   {
     title: "FAQ",
     href: "/faq",
-    description: "Find answers to your questions about our programs and services."
+    description: "Common questions answered.",
   },
   {
     title: "Health & Safety",
     href: "/health-and-safety",
-    description: "Learn about our comprehensive health and safety protocols."
+    description: "Our safety protocols and standards.",
   },
   {
     title: "Discover Kenya",
     href: "/discover-kenya",
-    description: "Explore the incredible diversity of landscapes, wildlife, and culture in Kenya."
-  },
-  // Podcast entry removed
-  {
-    title: "Blog",
-    href: "/blog",
-    description: "Read our latest articles and insights about travel and education in Kenya."
-  },
-  {
-    title: "Partner with Us",
-    href: "/partner-with-us",
-    description: "Learn how to collaborate with us on educational travel programs."
+    description: "About the country we call home.",
   },
 ];

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import FoodForEducationData from '../food-for-education/FoodForEducationData';
+import Seeds2EducationData from '../seeds2education/Seeds2EducationData';
 import EmpoweringWomenData from '../empowering-women/EmpoweringWomenData';
 import CommunityConservationData from '../community-conservation/CommunityConservationData';
 import FeedingTheFutureData from '../feeding-the-future/FeedingTheFutureData';
@@ -16,11 +16,11 @@ interface BrochureDataProps {
 }
 
 interface TripBrochureWrapperProps extends BrochureDataProps {
-  tripType?: 'food-for-education' | 'empowering-women' | 'community-conservation' | 'feeding-the-future' | 'capturing-kenya' | 'educational-leadership';
+  tripType?: 'seeds2education' | 'empowering-women' | 'community-conservation' | 'feeding-the-future' | 'capturing-kenya' | 'educational-leadership';
 }
 
-const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({ 
-  tripType = 'food-for-education',
+const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({
+  tripType = 'seeds2education',
   heroOnly = false,
   contentOnly = false,
   navigationOnly = false,
@@ -31,11 +31,11 @@ const TripBrochureWrapper: React.FC<TripBrochureWrapperProps> = ({
   
   return (
     <div className={wrapperClass}>
-      {tripType === 'food-for-education' && (
-        <FoodForEducationData 
-          heroOnly={heroOnly} 
+      {tripType === 'seeds2education' && (
+        <Seeds2EducationData
+          heroOnly={heroOnly}
           contentOnly={contentOnly}
-          navigationOnly={navigationOnly} 
+          navigationOnly={navigationOnly}
           customThumbnails={customThumbnails}
         />
       )}

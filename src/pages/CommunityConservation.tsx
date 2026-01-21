@@ -15,7 +15,7 @@ const CommunityConservation = () => {
       />
       <Header />
       
-      <main>
+      <main className="pt-16">
         {/* Hero section is part of TripBrochureWrapper */}
         <TripBrochureWrapper tripType="community-conservation" heroOnly={true} />
         

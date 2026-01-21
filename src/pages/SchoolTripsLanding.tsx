@@ -27,7 +27,7 @@ const SchoolTripsLanding = () => {
       <SchoolTripsStructuredData />
       <Header />
       
-      <main>
+      <main className="pt-16">
         <HeroSection />
         <IntroSection />
         <BenefitsSection />

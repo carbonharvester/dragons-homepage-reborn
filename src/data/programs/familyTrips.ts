@@ -28,7 +28,7 @@ export const familyTrips = [
     location: "Tsavo, Kenya",
     image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg",
     price: "From $2,600 per person",
-    link: "/food-for-education",
+    link: "/programs/seeds2education",
     icon: Globe,
     highlights: [
       "Family-friendly farming activities",

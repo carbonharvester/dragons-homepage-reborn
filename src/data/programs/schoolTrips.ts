@@ -2,13 +2,13 @@
 import { Globe } from "lucide-react";
 
 export const schoolTrips = [
-  { 
-    title: "Food For Education", 
-    duration: "8 Days", 
-    season: "Jan-Oct", 
-    description: "Transform unused school land into vibrant gardens using permaculture farming techniques. Students will create sustainable food systems to provide nutritious meals for local children, fostering long-term food security and community resilience.", 
-    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg", 
-    link: "/programs/food-for-education", 
+  {
+    title: "Seeds2Education",
+    duration: "8 Days",
+    season: "Jan-Oct",
+    description: "Transform unused school land into vibrant gardens using permaculture farming techniques. Students will create sustainable food systems to provide nutritious meals for local children, fostering long-term food security and community resilience.",
+    image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119030/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg",
+    link: "/programs/seeds2education",
     icon: Globe,
     ageGroup: "Ages 15-18"
   },
@@ -30,6 +30,6 @@ export const schoolTrips = [
     image: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747129047/Collection_5_s7opwi.jpg", 
     link: "/programs/community-conservation", 
     icon: Globe,
-    ageGroup: "Ages 12-15"
+    ageGroup: "Ages 12-16"
   }
 ];

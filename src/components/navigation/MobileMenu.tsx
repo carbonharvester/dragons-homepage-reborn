@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import CalendlyEmbed from '../CalendlyEmbed';
-import { programCategories } from '@/data/navigationData';
+import { ChevronDown, ChevronUp, X } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { programCategories, whatWeDoItems } from '@/data/navigationData';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -16,144 +15,144 @@ interface MobileMenuProps {
 
 const MobileMenu = ({
   isMenuOpen,
-  mobileProgramsExpanded,
-  mobileResourcesExpanded,
-  toggleMobilePrograms,
-  toggleMobileResources,
   toggleMenu
 }: MobileMenuProps) => {
-  const [expandedCategories, setExpandedCategories] = useState<{[key: string]: boolean}>({});
+  const [whatWeDoExpanded, setWhatWeDoExpanded] = useState(false);
+  const [programsExpanded, setProgramsExpanded] = useState(false);
 
-  const toggleCategory = (categoryTitle: string) => {
-    setExpandedCategories(prev => ({
-      ...prev,
-      [categoryTitle]: !prev[categoryTitle]
-    }));
-  };
+  if (!isMenuOpen) return null;
 
   return (
-    <div className={`lg:hidden bg-white overflow-hidden transition-all duration-300 ${
-      isMenuOpen ? "max-h-[1000px] border-t border-gray-100" : "max-h-0"
-    }`}>
-      <div className="container-wide py-4">
-        <nav className="flex flex-col space-y-4">
-          <div>
-            <button 
-              className="flex items-center justify-between w-full py-2 text-dragon-dark"
-              onClick={toggleMobilePrograms}
-              aria-expanded={mobileProgramsExpanded}
-            >
-              <span>Programs</span>
-              {mobileProgramsExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-            </button>
-            
-            {mobileProgramsExpanded && (
-              <div className="pl-4 mt-2 space-y-2 border-l-2 border-dragon-beige">
-                <Link to="/programs" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  All Programs
-                </Link>
-                
-                {programCategories.map((category) => (
-                  <div key={category.title} className="py-1">
-                    <div className="flex items-center justify-between">
-                      <Link 
-                        to={category.href} 
-                        className="block py-1 text-dragon-dark"
-                        onClick={toggleMenu}
-                      >
-                        {category.title}
-                      </Link>
-                      {category.programs && category.programs.length > 0 && (
-                        <button 
-                          onClick={(e) => {
-                            e.preventDefault();
-                            toggleCategory(category.title);
-                          }}
-                          className="p-1"
-                        >
-                          {expandedCategories[category.title] ? 
-                            <ChevronUp size={16} /> : 
-                            <ChevronDown size={16} />
-                          }
-                        </button>
-                      )}
-                    </div>
-                    
-                    {expandedCategories[category.title] && category.programs && (
-                      <div className="pl-3 mt-1 space-y-1 border-l border-dragon-beige">
-                        {category.programs.map((program) => (
-                          <Link 
-                            key={program.title}
-                            to={program.href}
-                            className="block py-1 text-sm text-dragon-dark"
-                            onClick={toggleMenu}
-                          >
-                            {program.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-          
-          <Link to="/about" className="py-2 text-dragon-dark" onClick={toggleMenu}>
-            About Us
-          </Link>
-          
-          <Link to="/student" className="py-2 text-dragon-dark" onClick={toggleMenu}>
-            Student Portal
-          </Link>
-          
-          <Link to="/parent" className="py-2 text-dragon-dark" onClick={toggleMenu}>
-            Parent Portal
-          </Link>
-          
-          <Link to="/admin/login" className="py-2 text-dragon-dark" onClick={toggleMenu}>
-            Admin Login
-          </Link>
-          
-          <div>
-            <button 
-              className="flex items-center justify-between w-full py-2 text-dragon-dark"
-              onClick={toggleMobileResources}
-              aria-expanded={mobileResourcesExpanded}
-            >
-              <span>Resources</span>
-              {mobileResourcesExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-            </button>
-            
-            {mobileResourcesExpanded && (
-              <div className="pl-4 mt-2 space-y-2 border-l-2 border-dragon-beige">
-                <Link to="/blog" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Blog
-                </Link>
-                <Link to="/discover-kenya" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Discover Kenya
-                </Link>
-                <Link to="/health-and-safety" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Health & Safety
-                </Link>
-                <Link to="/partner-with-us" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  Partner With Us
-                </Link>
-                <Link to="/faq" className="block py-2 text-dragon-dark" onClick={toggleMenu}>
-                  FAQ
-                </Link>
-              </div>
-            )}
-          </div>
-          
-          <CalendlyEmbed 
-            url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
-            text="Schedule Consultation"
-            variant="default" 
-            className="bg-dragon text-white py-2 px-4 rounded text-center"
-            onClick={toggleMenu}
+    <div className="lg:hidden fixed inset-0 z-50 bg-white">
+      {/* Header with close button */}
+      <div className="flex justify-between items-center px-6 py-4 border-b border-gray-100">
+        <Link to="/" onClick={toggleMenu}>
+          <img
+            src="/lovable-uploads/9cdd3641-0b63-46d4-9b2d-9e6d3a85f70e.png"
+            alt="Kapes Adventures"
+            className="h-10"
           />
-        </nav>
+        </Link>
+        <button
+          onClick={toggleMenu}
+          className="p-2 text-kapes-charcoal hover:text-kapes-orange transition-colors"
+          aria-label="Close menu"
+        >
+          <X size={24} />
+        </button>
+      </div>
+
+      {/* Navigation Links */}
+      <nav className="px-6 py-6 overflow-y-auto max-h-[calc(100vh-180px)]">
+        {/* What We Do */}
+        <div className="border-b border-gray-100 py-4">
+          <button
+            onClick={() => setWhatWeDoExpanded(!whatWeDoExpanded)}
+            className="flex items-center justify-between w-full text-lg font-semibold text-kapes-charcoal"
+          >
+            What We Do
+            {whatWeDoExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+          </button>
+          {whatWeDoExpanded && (
+            <div className="mt-3 space-y-3 pl-4">
+              {whatWeDoItems.map((item) => (
+                <Link
+                  key={item.title}
+                  to={item.href}
+                  onClick={toggleMenu}
+                  className="block"
+                >
+                  <span className="font-medium text-kapes-charcoal">{item.title}</span>
+                  <span className="block text-sm text-gray-500">{item.description}</span>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Programs */}
+        <div className="border-b border-gray-100 py-4">
+          <button
+            onClick={() => setProgramsExpanded(!programsExpanded)}
+            className="flex items-center justify-between w-full text-lg font-semibold text-kapes-charcoal"
+          >
+            Programs
+            {programsExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+          </button>
+          {programsExpanded && (
+            <div className="mt-3 space-y-4 pl-4">
+              <Link
+                to="/programs"
+                onClick={toggleMenu}
+                className="block font-medium text-kapes-charcoal"
+              >
+                All Programs
+              </Link>
+              {programCategories.map((program) => (
+                <Link
+                  key={program.title}
+                  to={program.href}
+                  onClick={toggleMenu}
+                  className="block"
+                >
+                  <span className="font-medium text-kapes-charcoal">{program.title}</span>
+                  <span className="block text-sm text-gray-500">{program.description}</span>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Our Impact - Direct Link */}
+        <div className="border-b border-gray-100 py-4">
+          <Link
+            to="/impact"
+            onClick={toggleMenu}
+            className="text-lg font-semibold text-kapes-charcoal"
+          >
+            Our Impact
+          </Link>
+        </div>
+
+        {/* Stories - Direct Link */}
+        <div className="border-b border-gray-100 py-4">
+          <Link
+            to="/blog"
+            onClick={toggleMenu}
+            className="text-lg font-semibold text-kapes-charcoal"
+          >
+            Stories
+          </Link>
+        </div>
+
+        {/* Trip Scorecard - Direct Link */}
+        <div className="border-b border-gray-100 py-4">
+          <Link
+            to="/scorecard"
+            onClick={toggleMenu}
+            className="text-lg font-semibold text-kapes-orange"
+          >
+            Trip Scorecard
+          </Link>
+        </div>
+      </nav>
+
+      {/* Fixed CTA at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 bg-white border-t border-gray-100 space-y-3">
+        <Button
+          variant="outline"
+          className="w-full border-2 border-kapes-orange text-kapes-orange hover:bg-kapes-orange hover:text-white text-lg py-6"
+          asChild
+        >
+          <Link to="/scorecard" onClick={toggleMenu}>
+            Trip Scorecard
+          </Link>
+        </Button>
+        <Button className="w-full btn-action text-lg py-6" asChild>
+          <Link to="/programs" onClick={toggleMenu}>
+            Get Involved
+          </Link>
+        </Button>
       </div>
     </div>
   );

@@ -14,9 +14,9 @@ export const tripItinerary = [
   },
   {
     day: "Day 2",
-    title: "Food For Education & Kirigu Primary School",
+    title: "Seeds2Education & Kirigu Primary School",
     activities: [
-      "Meet with Food For Education representatives to learn about combating food insecurity",
+      "Meet with Seeds2Education representatives to learn about combating food insecurity",
       "Visit Kirigu Primary School, where Kapes provides free uniforms to enhance education access",
       "Observe the sustainable garden established by Kapes student cohorts",
       "Participate in meal preparation and serving food to students",

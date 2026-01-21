@@ -72,6 +72,20 @@ export default {
 					navy: '#1D3557',
 					gray: '#4A5568',
 					sand: '#E2D9C2',
+				},
+				// New accent colors for impact-first design (Justdiggit-inspired)
+				kapes: {
+					orange: '#FF7700',      // Justdiggit warm orange
+					cream: '#FAFAF8',       // Clean warm white
+					charcoal: '#1A1A1A',    // Near-black for text
+					sand: '#F5F0E5',        // Warm background
+				},
+				// Impact category colors
+				impact: {
+					blue: '#3B82F6',        // Water/conservation
+					green: '#22C55E',       // Environment/food
+					purple: '#8B5CF6',      // Education
+					rose: '#F43F5E',        // Community/women
 				}
 			},
 			borderRadius: {

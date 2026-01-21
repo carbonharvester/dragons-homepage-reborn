@@ -1,74 +1,124 @@
-
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import ProgramsMenu from './ProgramsMenu';
-import ResourcesMenu from './ResourcesMenu';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
-import CalendlyEmbed from '../CalendlyEmbed';
+import { programCategories, whatWeDoItems } from '@/data/navigationData';
 
 const DesktopNavigation = () => {
-  const [programsMenuOpen, setProgramsMenuOpen] = useState(false);
-  const [resourcesMenuOpen, setResourcesMenuOpen] = useState(false);
-  
+  const [whatWeDoOpen, setWhatWeDoOpen] = useState(false);
+  const [programsOpen, setProgramsOpen] = useState(false);
+
   return (
-    <nav className="hidden lg:flex items-center space-x-1">
-      {/* Main navigation items */}
-      <div 
-        className="relative"
-        onMouseEnter={() => setProgramsMenuOpen(true)}
-        onMouseLeave={() => setProgramsMenuOpen(false)}
-      >
-        <button
-          className="flex items-center py-2 px-3 text-dragon-dark hover:text-dragon transition-colors"
-        >
-          <span>Programs</span>
-          <ChevronDown size={16} className="ml-1" />
-        </button>
-        {/* Invisible bridge to prevent gap between button and menu */}
-        <div className="absolute h-4 w-full left-0 top-full"></div>
-        {programsMenuOpen && <ProgramsMenu />}
-      </div>
-      
-      <Link to="/about" className="py-2 px-3 text-dragon-dark hover:text-dragon transition-colors">
-        About Us
-      </Link>
-      
-      <Link to="/student" className="py-2 px-3 text-dragon-dark hover:text-dragon transition-colors">
-        Student Portal
-      </Link>
-      
-      <Link to="/parent" className="py-2 px-3 text-dragon-dark hover:text-dragon transition-colors">
-        Parent Portal
-      </Link>
-      
-      <Link to="/admin/login" className="py-2 px-3 text-dragon-dark hover:text-dragon transition-colors">
-        Admin Login
-      </Link>
-      
+    <nav className="hidden lg:flex items-center gap-1">
+      {/* What We Do */}
       <div
         className="relative"
-        onMouseEnter={() => setResourcesMenuOpen(true)}
-        onMouseLeave={() => setResourcesMenuOpen(false)}
+        onMouseEnter={() => setWhatWeDoOpen(true)}
+        onMouseLeave={() => setWhatWeDoOpen(false)}
       >
-        <button
-          className="flex items-center py-2 px-3 text-dragon-dark hover:text-dragon transition-colors"
-        >
-          <span>Resources</span>
-          <ChevronDown size={16} className="ml-1" />
+        <button className="flex items-center py-2 px-4 text-kapes-charcoal hover:text-kapes-orange font-medium transition-colors">
+          What We Do
+          <ChevronDown size={16} className={`ml-1 transition-transform ${whatWeDoOpen ? 'rotate-180' : ''}`} />
         </button>
-        {/* Invisible bridge to prevent gap between button and menu */}
-        <div className="absolute h-4 w-full left-0 top-full"></div>
-        {resourcesMenuOpen && <ResourcesMenu />}
+        {whatWeDoOpen && (
+          <>
+            <div className="absolute h-2 w-full left-0 top-full" />
+            <div className="absolute left-0 top-[calc(100%+8px)] w-72 bg-white rounded-2xl shadow-xl border border-gray-100 py-3 z-50">
+              {whatWeDoItems.map((item) => (
+                <Link
+                  key={item.title}
+                  to={item.href}
+                  className="block px-5 py-3 hover:bg-kapes-cream transition-colors"
+                >
+                  <span className="font-semibold text-kapes-charcoal block">{item.title}</span>
+                  <span className="text-sm text-gray-500">{item.description}</span>
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
       </div>
-      
-      <CalendlyEmbed 
-        url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
-        text="Schedule Consultation"
-        variant="default"
-        size="sm"
-        className="ml-2 bg-dragon hover:bg-dragon-dark"
-      />
+
+      {/* Programs */}
+      <div
+        className="relative"
+        onMouseEnter={() => setProgramsOpen(true)}
+        onMouseLeave={() => setProgramsOpen(false)}
+      >
+        <button className="flex items-center py-2 px-4 text-kapes-charcoal hover:text-kapes-orange font-medium transition-colors">
+          Programs
+          <ChevronDown size={16} className={`ml-1 transition-transform ${programsOpen ? 'rotate-180' : ''}`} />
+        </button>
+        {programsOpen && (
+          <>
+            <div className="absolute h-2 w-full left-0 top-full" />
+            <div className="absolute left-0 top-[calc(100%+8px)] w-80 bg-white rounded-2xl shadow-xl border border-gray-100 py-3 z-50">
+              <Link
+                to="/programs"
+                className="block px-5 py-3 hover:bg-kapes-cream transition-colors border-b border-gray-100"
+              >
+                <span className="font-semibold text-kapes-charcoal">All Programs</span>
+              </Link>
+              {programCategories.map((program) => (
+                <Link
+                  key={program.title}
+                  to={program.href}
+                  className="block px-5 py-3 hover:bg-kapes-cream transition-colors"
+                >
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="font-semibold text-kapes-charcoal block">{program.title}</span>
+                      <span className="text-sm text-gray-500">{program.description}</span>
+                    </div>
+                  </div>
+                  {program.impact && (
+                    <span className="inline-block mt-2 text-xs font-medium text-kapes-orange bg-kapes-orange/10 px-2 py-1 rounded-full">
+                      {program.impact}
+                    </span>
+                  )}
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Our Impact - Direct Link */}
+      <Link
+        to="/impact"
+        className="py-2 px-4 text-kapes-charcoal hover:text-kapes-orange font-medium transition-colors"
+      >
+        Our Impact
+      </Link>
+
+      {/* Stories Link */}
+      <Link
+        to="/blog"
+        className="py-2 px-4 text-kapes-charcoal hover:text-kapes-orange font-medium transition-colors"
+      >
+        Stories
+      </Link>
+
+      {/* Trip Scorecard CTA */}
+      <Button
+        variant="outline"
+        className="ml-2 border-2 border-kapes-orange text-kapes-orange hover:bg-kapes-orange hover:text-white font-semibold"
+        asChild
+      >
+        <Link to="/scorecard">
+          Trip Scorecard
+        </Link>
+      </Button>
+
+      {/* Primary CTA */}
+      <Button
+        className="ml-2 btn-action"
+        asChild
+      >
+        <Link to="/programs">
+          Get Involved
+        </Link>
+      </Button>
     </nav>
   );
 };

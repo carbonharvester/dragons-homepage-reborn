@@ -9,12 +9,11 @@ const ResourcesMenu = () => {
     resource.title !== "All Programs" && resource.title !== "Podcast"
   );
   
-  // Define the order to match the footer
+  // Define the order to match the footer (Partner with Us removed entirely - not relevant for schools/students/parents)
   const orderedResourceTitles = [
-    "Blog", 
+    "Blog",
     "Discover Kenya",
     "Health & Safety",
-    "Partner with Us",
     "FAQ"
   ];
   

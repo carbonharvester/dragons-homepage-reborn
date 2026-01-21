@@ -313,7 +313,7 @@ const CreateTrip = () => {
                     id="title"
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    placeholder="e.g., Food For Education"
+                    placeholder="e.g., Seeds2Education"
                     required
                   />
                 </div>

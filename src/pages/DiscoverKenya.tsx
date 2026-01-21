@@ -19,7 +19,7 @@ const DiscoverKenya = () => {
         keywords="Kenya, safari, wildlife, landscapes, culture, travel, Africa"
       />
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow pt-16">
         <HeroSection />
         <AboutKenya />
         <WildlifeSection />

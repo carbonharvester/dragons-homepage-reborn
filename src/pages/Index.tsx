@@ -1,69 +1,40 @@
-
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
-import { Hero } from '@/components/ui/animated-hero';
-import HomeVideoSection from '@/components/HomeVideoSection';
+import Hero from '@/components/Hero';
+import HowItWorks from '@/components/HowItWorks';
 import ProgramsSection from '@/components/ProgramsSection';
-import WhyChooseUs from '@/components/WhyChooseUs';
-import BlogSection from '@/components/BlogSection';
-import PodcastSection from '@/components/PodcastSection';
+import StoriesSection from '@/components/StoriesSection';
+import TrustSection from '@/components/TrustSection';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
-import IntroSection from '@/components/home/IntroSection';
-import GlobalImpactTripScorecard from '@/components/GlobalImpactTripScorecard';
-import useSectionVisibility from '@/hooks/useSectionVisibility';
 
 const Index = () => {
-  const sectionIds = ['video-section', 'programs', 'why-choose-us', 'blog-section'];
-  const sectionsVisible = useSectionVisibility(sectionIds);
-  
-  // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEO />
       <Header />
-      
-      <main>
+
+      <main className="pt-16">
+        {/* Hero - Impact-first statement with key metrics */}
         <Hero />
-        
-        <div id="video-section">
-          {sectionsVisible['video-section'] && 
-            <HomeVideoSection 
-              videoUrl="https://cdn.shopify.com/videos/c/o/v/44b5817ef9b647a5a68e4ffd1c092f05.mp4" 
-              title="Kapes Impact Adventures" 
-              description="Watch how our immersive programs transform students through cultural exchange and authentic experiences." 
-              autoPlay={false}
-              muted={false}
-              showPreview={true}
-              autoplayOnScroll={false}
-            />
-          }
-        </div>
-        
-        <IntroSection />
-        
-        {/* <section id="impact-scorecard" className="py-8">
-          <GlobalImpactTripScorecard />
-        </section> */}
-        
-        <div id="programs">
-          {sectionsVisible['programs'] && <ProgramsSection />}
-        </div>
-        
-        <div id="why-choose-us">
-          {sectionsVisible['why-choose-us'] && <WhyChooseUs />}
-        </div>
-        
-        <PodcastSection />
-        
-        <div id="blog-section">
-          {sectionsVisible['blog-section'] && <BlogSection />}
-        </div>
+
+        {/* Two Programs - Seeds2Education & Water Empowering Women */}
+        <HowItWorks />
+
+        {/* Programs - "Join a journey" */}
+        <ProgramsSection />
+
+        {/* Stories/Testimonials */}
+        <StoriesSection />
+
+        {/* Trust Section - Partner logos */}
+        <TrustSection />
       </main>
+
       <Footer />
     </div>
   );

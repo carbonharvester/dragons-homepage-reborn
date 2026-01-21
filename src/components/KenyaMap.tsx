@@ -87,7 +87,7 @@ const KenyaMap = () => {
       }).setHTML(`
           <div class="px-2 py-1 text-xs font-semibold text-dragon-dark">
             <strong>Kirigu Primary School</strong>
-            <div class="text-[10px] text-gray-600">Food For Education Project</div>
+            <div class="text-[10px] text-gray-600">Seeds2Education Project</div>
           </div>
         `);
       new mapboxgl.Marker(kirigiMarkerElement).setLngLat([kirigu.lng, kirigu.lat]).setPopup(popup).addTo(newMap);

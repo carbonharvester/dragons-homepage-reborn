@@ -41,11 +41,11 @@ const ResourcesSection = () => {
               >
                 Frequently Asked Questions
               </Link>
-              <Link 
-                to="/partner-with-us" 
+              <Link
+                to="/about"
                 className="block text-dragon hover:text-dragon-dark underline transition-colors duration-200 text-center sm:text-left"
               >
-                Partnership Information
+                About Kapes Adventures
               </Link>
             </div>
           </div>
@@ -99,11 +99,11 @@ const ResourcesSection = () => {
               >
                 Women's Empowerment
               </Link>
-              <Link 
-                to="/programs/food-for-education" 
+              <Link
+                to="/programs/seeds2education"
                 className="block text-dragon hover:text-dragon-dark underline transition-colors duration-200 text-center sm:text-left"
               >
-                Food Security Initiatives
+                Seeds2Education
               </Link>
             </div>
           </div>

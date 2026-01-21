@@ -98,12 +98,24 @@
 }
 
 @layer components {
+  /* Primary button - Justdiggit style pill shape */
   .btn-primary {
-    @apply bg-dragon text-white hover:bg-dragon-dark px-6 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95;
+    @apply bg-kapes-charcoal text-white hover:bg-black px-8 py-4 rounded-full font-bold transition-all duration-200 text-base tracking-wide;
   }
-  
+
+  /* Action button - warm orange pill (Justdiggit-inspired) */
+  .btn-action {
+    @apply bg-kapes-orange text-white hover:bg-orange-600 px-8 py-4 rounded-full font-bold transition-all duration-200 text-base tracking-wide;
+  }
+
+  /* Secondary button */
   .btn-secondary {
-    @apply bg-dragon-yellow text-dragon-dark hover:bg-amber-400 px-6 py-3 rounded-md font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95;
+    @apply bg-white text-kapes-charcoal hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition-all duration-200 text-base tracking-wide border-2 border-kapes-charcoal;
+  }
+
+  /* Ghost/outline button */
+  .btn-ghost {
+    @apply border-2 border-white text-white hover:bg-white hover:text-kapes-charcoal px-8 py-4 rounded-full font-bold transition-all duration-200;
   }
   
   .container-wide {

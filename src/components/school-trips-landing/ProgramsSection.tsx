@@ -13,7 +13,7 @@ const ProgramsSection = () => {
             Our Educational School Trip Programs
           </h2>
           <p className="text-lg sm:text-xl text-dragon-gray max-w-3xl mx-auto leading-relaxed">
-            Each 8-day program is designed around a specific theme, allowing students to dive deep into important global issues while developing practical skills.
+            Each program is designed around a specific theme, allowing students to dive deep into important global issues while developing practical skills.
           </p>
         </div>
         

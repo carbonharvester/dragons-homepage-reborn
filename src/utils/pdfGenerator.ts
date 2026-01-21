@@ -90,7 +90,7 @@ export const generateProgramBrochure = (programName: string, programData: any) =
   
   const days = [
     { day: 'Day 1', activity: 'Arrival in Nairobi and orientation' },
-    { day: 'Day 2', activity: 'Visit to Food For Education facilities' },
+    { day: 'Day 2', activity: 'Visit to Seeds2Education facilities' },
     { day: 'Day 3', activity: 'Water harvesting and composting systems setup' },
     { day: 'Day 4', activity: 'Vegetable beds preparation and planting' },
     { day: 'Day 5', activity: 'Project completion and handover ceremony' }

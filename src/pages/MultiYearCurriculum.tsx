@@ -28,7 +28,7 @@ const MultiYearCurriculumPage = () => {
         keywords="multi-year curriculum, educational travel, global citizenship, student development, progressive learning, africa travel" 
       />
       <Header />
-      <main>
+      <main className="pt-16">
         <HeroSection imgTimestamp={imgTimestamp} />
         
         <div className="container-wide py-8">

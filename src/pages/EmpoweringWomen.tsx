@@ -15,7 +15,7 @@ const EmpoweringWomen = () => {
       />
       <Header />
       
-      <main>
+      <main className="pt-16">
         {/* Hero section is part of TripBrochureWrapper */}
         <TripBrochureWrapper tripType="empowering-women" heroOnly={true} />
         

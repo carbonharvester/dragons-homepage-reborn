@@ -247,9 +247,9 @@ const StudentPortal = () => {
               >
                 View FAQ
               </Button>
-              <Button 
+              <Button
                 size="lg"
-                onClick={() => navigate("/partner-with-us")}
+                onClick={() => window.open("https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone", "_blank")}
               >
                 Contact Us
               </Button>

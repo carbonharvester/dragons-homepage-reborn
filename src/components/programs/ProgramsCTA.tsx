@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const ProgramsCTA = () => {
   return (
@@ -15,7 +14,9 @@ const ProgramsCTA = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button variant="outline" className="border-dragon text-dragon hover:bg-dragon hover:text-white" asChild>
-            <Link to="/partner-with-us">Schedule Consultation</Link>
+            <a href="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" target="_blank" rel="noopener noreferrer">
+              Schedule Consultation
+            </a>
           </Button>
         </div>
       </div>

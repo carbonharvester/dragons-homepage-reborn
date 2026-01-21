@@ -29,7 +29,7 @@ const PermacultureDesignCourse = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main>
+      <main className="pt-16">
         {/* Hero Section */}
         <section className="relative h-[70vh] bg-dragon-beige overflow-hidden">
           <div className="absolute inset-0">
@@ -56,7 +56,7 @@ const PermacultureDesignCourse = () => {
                   This 10-day Permaculture Design Course (PDC) combines traditional permaculture education with hands-on service projects that directly benefit local Kenyan communities. Unlike standard PDCs, this unique program allows you to immediately apply your knowledge to real-world challenges.
                 </p>
                 <p className="text-lg text-dragon-gray mb-6">
-                  Working alongside local experts and community members, you'll help expand our Food For Education initiative by designing and implementing sustainable food systems. This course offers internationally recognized certification while making a lasting difference in areas facing food insecurity.
+                  Working alongside local experts and community members, you'll help expand our Seeds2Education initiative by designing and implementing sustainable food systems. This course offers internationally recognized certification while making a lasting difference in areas facing food insecurity.
                 </p>
                 <div className="flex flex-wrap gap-4 mt-8">
                   <div className="flex items-center bg-dragon-beige px-4 py-2 rounded-full">

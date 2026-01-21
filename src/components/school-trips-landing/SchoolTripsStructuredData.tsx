@@ -41,7 +41,7 @@ const SchoolTripsStructuredData = () => {
     },
     offers: {
       "@type": "Offer",
-      description: "8-day educational programs including Food for Education, Community Conservation, and Empowering Young Women",
+      description: "Educational programs including Food for Education, Community Conservation, and Empowering Young Women",
       priceRange: "Contact for pricing"
     },
     hasOfferCatalog: {

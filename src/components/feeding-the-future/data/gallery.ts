@@ -33,12 +33,12 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119192/WhatsApp_Image_2025-05-13_at_12.07.57_2_p5yzxl.jpg",
-    alt: "Food For Education Truck",
+    alt: "Seeds2Education Truck",
     className: "col-span-12 md:col-span-4 h-64 overflow-hidden rounded-lg"
   },
   {
     src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119193/WhatsApp_Image_2025-05-12_at_23.45.46_blqukw.jpg",
-    alt: "Food For Education Warehouse",
+    alt: "Seeds2Education Warehouse",
     className: "col-span-12 md:col-span-4 h-64 overflow-hidden rounded-lg"
   },
   {
@@ -48,7 +48,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119192/WhatsApp_Image_2025-05-13_at_12.08.32_1_aoxpij.jpg",
-    alt: "Food For Education Kitchen",
+    alt: "Seeds2Education Kitchen",
     className: "col-span-12 md:col-span-6 h-64 overflow-hidden rounded-lg"
   },
   {
@@ -58,12 +58,12 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119195/WhatsApp_Image_2025-05-13_at_12.08.32_c9pnh8.jpg",
-    alt: "Food For Education Workers in Kitchen",
+    alt: "Seeds2Education Workers in Kitchen",
     className: "col-span-12 md:col-span-4 h-64 overflow-hidden rounded-lg"
   },
   {
     src: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747119198/WhatsApp_Image_2025-05-13_at_12.08.33_e31lqv.jpg",
-    alt: "Food For Education Large Kitchen",
+    alt: "Seeds2Education Large Kitchen",
     className: "col-span-12 md:col-span-4 h-64 overflow-hidden rounded-lg"
   },
   {

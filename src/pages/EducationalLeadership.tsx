@@ -15,7 +15,7 @@ const EducationalLeadership = () => {
       />
       <Header />
       
-      <main>
+      <main className="pt-16">
         {/* Hero section is part of TripBrochureWrapper */}
         <TripBrochureWrapper tripType="educational-leadership" heroOnly={true} />
         

@@ -1,6 +1,6 @@
 
 export const programData = {
-  title: "Food For Education",
+  title: "Seeds2Education",
   description: "Transform unused school land into productive gardens while addressing food insecurity through sustainable agriculture.",
   duration: "8 Days",
   season: "Jan-Oct",

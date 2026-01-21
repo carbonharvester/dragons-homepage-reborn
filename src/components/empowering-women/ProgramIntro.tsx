@@ -13,7 +13,7 @@ const ProgramIntro = () => {
       </p>
       
       <p className="mb-4">
-        Based near Voi in the Tsavo Conservancy, this immersive 8-day journey combines a Tsavo safari and a hike 
+        Based near Voi in the Tsavo Conservancy, this immersive journey combines a Tsavo safari and a hike 
         with meaningful cultural exchange. Students will participate in the daily lives of rural Kenyan women, learning about 
         the water challenges they face and contributing to sustainable solutions through water tank installation.
       </p>
