@@ -134,7 +134,7 @@ const TermsOfService = () => {
                 For questions about these Terms of Service, please contact:
               </p>
               <p className="mb-2"><strong>Kapes Adventures LLC</strong></p>
-              <p className="mb-2">Email: info@kapesadventures.com</p>
+              <p className="mb-2">Email: hello@kapesadventures.com</p>
               <p className="mb-4">United Arab Emirates</p>
             </section>
           </div>

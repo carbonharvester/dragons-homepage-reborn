@@ -108,7 +108,7 @@ export const generateProgramBrochure = (programName: string, programData: any) =
   pdf.setTextColor(primaryColor);
   pdf.text('Contact us for more information:', 20, yPosition);
   yPosition += 7;
-  pdf.text('Email: info@kapesadventures.com', 20, yPosition);
+  pdf.text('Email: hello@kapesadventures.com', 20, yPosition);
   yPosition += 7;
   pdf.text('Website: www.kapesadventures.com', 20, yPosition);
   
