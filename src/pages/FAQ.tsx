@@ -195,7 +195,7 @@ const FAQ = () => {
                 Contact us directly and our team will be happy to help you with any questions you may have.
               </p>
               <Button className="btn-action text-lg h-14 px-10" asChild>
-                <a href="mailto:hello@kapesadventures.com">
+                <a href="mailto:matthew@kapesadventures.com">
                   Email Us
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>

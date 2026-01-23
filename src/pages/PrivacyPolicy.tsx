@@ -105,7 +105,7 @@ const PrivacyPolicy = () => {
                 If you have questions about this Privacy Policy, please contact us at:
               </p>
               <p className="mb-2"><strong>Kapes Adventures LLC</strong></p>
-              <p className="mb-2">Email: hello@kapesadventures.com</p>
+              <p className="mb-2">Email: matthew@kapesadventures.com</p>
               <p className="mb-4">United Arab Emirates</p>
             </section>
           </div>

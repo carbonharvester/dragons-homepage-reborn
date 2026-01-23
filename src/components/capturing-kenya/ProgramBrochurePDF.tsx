@@ -166,7 +166,7 @@ const CapturingKenyaBrochure = () => {
     pdf.setFontSize(10);
     pdf.setTextColor(primaryColor);
     pdf.text('Contact us for more information:', 20, 270);
-    pdf.text('Email: hello@kapesadventures.com', 20, 277);
+    pdf.text('Email: matthew@kapesadventures.com', 20, 277);
     pdf.text('Website: www.kapesadventures.com', 20, 284);
     
     // Add page number

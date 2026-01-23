@@ -124,7 +124,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="mailto:hello@kapesadventures.com"
+                    href="mailto:matthew@kapesadventures.com"
                     className="text-white/70 hover:text-kapes-orange transition-colors"
                   >
                     Contact
