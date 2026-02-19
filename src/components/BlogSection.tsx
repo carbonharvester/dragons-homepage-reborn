@@ -21,19 +21,17 @@ const BlogSection = () => {
   const { posts, isLoading, error, isEmpty } = useBlogPosts(3);
   const isMobile = useIsMobile();
 
-  // If loading or error, show minimal content
   if (isLoading || error || isEmpty) {
     return <BlogSectionLoading />;
   }
 
-  // On mobile, render a carousel
   if (isMobile) {
     return (
       <section className="py-16 bg-dragon-beige/30">
         <div className="container-wide">
-          <BlogSectionHeader 
-            title="Latest From Our Blog" 
-            subtitle="Personal insights, stories, and reflections from the founder on transformative educational travel and cultural immersion experiences."
+          <BlogSectionHeader
+            title="Latest From Our Blog"
+            subtitle="Insights on ethical school travel, community-led impact, and planning trips that actually work."
           />
 
           <Carousel className="w-full" opts={{ loop: true }}>
@@ -42,27 +40,27 @@ const BlogSection = () => {
                 <CarouselItem key={index} className="basis-full">
                   <div className="bg-white rounded-lg overflow-hidden shadow-md h-full">
                     <div className="h-48 overflow-hidden">
-                      <img 
-                        src={getImageUrl(post.fields.featuredImage)}
-                        alt={post.fields.title}
+                      <img
+                        src={getImageUrl(post.featuredImage)}
+                        alt={post.title}
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     </div>
                     <div className="p-5">
                       <div className="flex items-center mb-2">
                         <span className="bg-dragon-light/10 text-dragon text-xs font-medium px-2 py-1 rounded-full">
-                          {post.fields.category}
+                          {post.category}
                         </span>
                         <div className="flex items-center text-dragon-gray text-xs ml-2">
                           <Calendar className="h-3 w-3 mr-1" />
-                          <span>{formatDate(post.fields.date)}</span>
+                          <span>{formatDate(post.date)}</span>
                         </div>
                       </div>
                       <h3 className="text-lg font-bold mb-2 text-dragon-dark line-clamp-2">
-                        <Link to={`/blog/${post.fields.slug}`}>{post.fields.title}</Link>
+                        <Link to={`/blog/${post.slug}`}>{post.title}</Link>
                       </h3>
                       <p className="text-sm text-dragon-gray mb-4 line-clamp-3">
-                        {post.fields.excerpt}
+                        {post.excerpt}
                       </p>
                     </div>
                   </div>
@@ -83,13 +81,12 @@ const BlogSection = () => {
     );
   }
 
-  // On desktop, use the original grid layout
   return (
     <section className="py-20 bg-dragon-beige/30">
       <div className="container-wide">
-        <BlogSectionHeader 
-          title="Latest From Our Blog" 
-          subtitle="Personal insights, stories, and reflections from the founder on transformative educational travel and cultural immersion experiences."
+        <BlogSectionHeader
+          title="Latest From Our Blog"
+          subtitle="Insights on ethical school travel, community-led impact, and planning trips that actually work."
         />
 
         <BlogGrid posts={posts} />

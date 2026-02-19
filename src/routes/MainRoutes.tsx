@@ -83,6 +83,20 @@ import FAQ from "@/pages/FAQ";
 import HealthAndSafety from "@/pages/HealthAndSafety";
 import DiscoverKenya from "@/pages/DiscoverKenya";
 import Impact from "@/pages/Impact";
+import LandingPage from "@/pages/LandingPage";
+import LPAntiVoluntourism from "@/pages/LPAntiVoluntourism";
+import LPYearRoundImpact from "@/pages/LPYearRoundImpact";
+import LPMirrorTest from "@/pages/LPMirrorTest";
+import LPCommunityLed from "@/pages/LPCommunityLed";
+import LPEducators from "@/pages/LPEducators";
+
+// Programmatic SEO
+import LocationLandingPage from "@/pages/LocationLandingPage";
+
+// Lead Magnet Pages
+import TransparencyChecklist from "@/pages/TransparencyChecklist";
+import EthicalPlanningGuide from "@/pages/EthicalPlanningGuide";
+import ImpactReport from "@/pages/ImpactReport";
 
 const MainRoutes = () => {
   return (
@@ -168,12 +182,25 @@ const MainRoutes = () => {
       <Route path="/programs/permaculture-design-course" element={<PermacultureDesignCourse />} />
       
       {/* Resource Pages */}
+      <Route path="/get-started" element={<LandingPage />} />
       <Route path="/impact" element={<Impact />} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/health-and-safety" element={<HealthAndSafety />} />
       <Route path="/discover-kenya" element={<DiscoverKenya />} />
       <Route path="/impact-scorecard" element={<ImpactScorecard />} />
       
+      {/* Angle-Specific Landing Pages */}
+      <Route path="/lp/anti-voluntourism" element={<LPAntiVoluntourism />} />
+      <Route path="/lp/year-round-impact" element={<LPYearRoundImpact />} />
+      <Route path="/lp/mirror-test" element={<LPMirrorTest />} />
+      <Route path="/lp/community-led" element={<LPCommunityLed />} />
+      <Route path="/lp/educators" element={<LPEducators />} />
+
+      {/* Lead Magnet Pages */}
+      <Route path="/resources/transparency-checklist" element={<TransparencyChecklist />} />
+      <Route path="/resources/ethical-planning-guide" element={<EthicalPlanningGuide />} />
+      <Route path="/resources/impact-report" element={<ImpactReport />} />
+
       {/* Scorecard Routes */}
       <Route path="/scorecard" element={<ScorecardLanding />} />
       <Route path="/scorecard/start" element={<ScorecardIntro />} />
@@ -181,6 +208,9 @@ const MainRoutes = () => {
       <Route path="/scorecard/lead-capture" element={<ScorecardLeadCapture />} />
       <Route path="/scorecard/results" element={<ScorecardResults />} />
       
+      {/* Programmatic SEO — Location Landing Pages */}
+      <Route path="/trips-from/:locationSlug" element={<LocationLandingPage />} />
+
       {/* 404 Catch All */}
       <Route path="*" element={<NotFound />} />
     </Routes>

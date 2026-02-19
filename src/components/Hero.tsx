@@ -51,18 +51,18 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="max-w-5xl mx-auto"
         >
-          {/* Bold Statement - Education-focused */}
+          {/* Bold Statement - Anti-voluntourism hook */}
           <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-academy leading-[0.9] tracking-tight mb-8">
-            Breaking barriers
+            Your students don't need
             <br />
-            <span className="text-kapes-orange">to education</span>
+            <span className="text-kapes-orange">to save Africa</span>
           </h1>
 
-          {/* Impact-first subline */}
+          {/* Mechanism subline - year-round programs */}
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Hungry children can't learn. Communities without water can't thrive.
-            Our student trips tackle these barriers head-on, feeding schools and
-            empowering women with water access.
+            We run year-round programs feeding schools and building water access
+            for women across Kenya. Your students don't parachute in for two
+            weeks — they join work that's already changing communities.
           </p>
 
           {/* CTA */}
@@ -73,10 +73,10 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button className="btn-action text-lg px-12 py-6" asChild>
-              <Link to="/impact">See Our Impact</Link>
+              <Link to="/school-trips">See How Trips Work</Link>
             </Button>
             <Button className="btn-ghost text-lg px-12 py-6" asChild>
-              <Link to="/school-trips">Explore Trips</Link>
+              <Link to="/scorecard">Take the 5-Min Assessment</Link>
             </Button>
           </motion.div>
         </motion.div>

@@ -2,51 +2,36 @@
 import React from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getAllBlogPosts } from '@/services/contentful';
-import { useQuery } from '@tanstack/react-query';
+import { getAllBlogPosts } from '@/services/blogService';
 import SEO from "@/components/SEO";
 
-// Import our new components
 import BlogHero from "@/components/blog/BlogHero";
 import FeaturedPost from "@/components/blog/FeaturedPost";
 import RecentPosts from "@/components/blog/RecentPosts";
-import BlogLoading from "@/components/blog/BlogLoading";
-import BlogError from "@/components/blog/BlogError";
 
 const BlogHome = () => {
-  const { data: allPosts, isLoading, error } = useQuery({
-    queryKey: ['blogPosts'],
-    queryFn: getAllBlogPosts,
-  });
-
-  // Get featured post and recent posts
-  const featuredPost = allPosts && allPosts.length > 0 ? allPosts[0] : null;
-  const recentPosts = allPosts && allPosts.length > 1 ? allPosts.slice(1, 4) : [];
+  const allPosts = getAllBlogPosts();
+  const featuredPost = allPosts.length > 0 ? allPosts[0] : null;
+  const recentPosts = allPosts.length > 1 ? allPosts.slice(1, 4) : [];
 
   return (
     <>
-      <SEO 
-        title="Founder's Blog | Mission Kapes"
-        description="Personal insights, stories, and reflections from the founder of Mission Kapes on educational travel and cultural immersion experiences."
-        keywords="founder blog, educational travel, student trips, mission kapes founder, Africa travel"
+      <SEO
+        title="Blog | Kapes Adventures"
+        description="Insights on ethical school travel, community-led impact, and how to plan trips that actually benefit the communities you visit."
+        keywords="ethical school trips, service learning, voluntourism, school trip planning, Kenya school trips"
       />
       <Header />
       <main className="pt-16 pb-16">
-        <BlogHero 
-          title="Founder's Blog" 
-          description="Personal insights, stories, and reflections from the founder on transformative educational travel and cultural immersion experiences."
+        <BlogHero
+          title="Blog"
+          description="Insights on ethical school travel, community-led impact, and planning trips that actually work — for students and communities."
         />
 
-        {isLoading ? (
-          <BlogLoading />
-        ) : error ? (
-          <BlogError />
-        ) : (
-          <>
-            {featuredPost && <FeaturedPost post={featuredPost} />}
-            {recentPosts.length > 0 && <RecentPosts posts={recentPosts} />}
-          </>
-        )}
+        <>
+          {featuredPost && <FeaturedPost post={featuredPost} />}
+          {recentPosts.length > 0 && <RecentPosts posts={recentPosts} />}
+        </>
       </main>
       <Footer />
     </>

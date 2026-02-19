@@ -27,9 +27,9 @@ export default defineConfig(({ mode }) => ({
   },
   define: {
     // Make sure environment variables are properly replaced at build time
-    'import.meta.env.VITE_CONTENTFUL_SPACE_ID': 
+    'import.meta.env.VITE_CONTENTFUL_SPACE_ID':
       JSON.stringify(process.env.VITE_CONTENTFUL_SPACE_ID || 'qz62f406e9mz'),
-    'import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN': 
+    'import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN':
       JSON.stringify(process.env.VITE_CONTENTFUL_ACCESS_TOKEN || 'BRPK9lPK68qkH-hZOKuzIEM2yAQN7HoVwfrgUL8h1dc'),
   },
 }));

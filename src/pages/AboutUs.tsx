@@ -12,31 +12,31 @@ const values = [
   {
     icon: Heart,
     title: 'Authenticity',
-    description: 'Creating genuine connections between students and communities.',
+    description: 'No staged encounters. Students join real work alongside the people who do it every day.',
     color: 'bg-impact-rose',
   },
   {
     icon: Leaf,
     title: 'Sustainability',
-    description: 'Ensuring our programs benefit local environments and economies.',
+    description: 'Programs that run year-round — not projects that stop when the bus leaves.',
     color: 'bg-impact-green',
   },
   {
     icon: Users,
     title: 'Reciprocity',
-    description: 'Building mutually beneficial partnerships with communities.',
+    description: 'Kenyan teams lead every project. Your students arrive as learners, not saviours.',
     color: 'bg-kapes-orange',
   },
   {
     icon: Sparkles,
     title: 'Transformation',
-    description: 'Facilitating deep learning that changes perspectives.',
+    description: 'Students return with questions, not hero stories. That shift lasts.',
     color: 'bg-impact-purple',
   },
   {
     icon: Equal,
     title: 'Equality',
-    description: 'Promoting fairness and inclusion in every cultural exchange.',
+    description: 'Revenue stays in communities. Local families benefit — not international operators.',
     color: 'bg-impact-blue',
   },
 ];
@@ -73,12 +73,13 @@ const AboutUs = () => {
               className="text-center max-w-4xl mx-auto"
             >
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-academy text-white leading-[0.95]">
-                Travel that
+                We were in Kenya
                 <br />
-                <span className="text-kapes-orange">transforms</span>
+                <span className="text-kapes-orange">before your first trip</span>
               </h1>
               <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto mt-8">
-                Reconnecting students with communities, nature, and what truly matters.
+                We run year-round education, food security, and water programs across Kenya.
+                Student trips are how schools join the work — not how the work begins.
               </p>
             </motion.div>
           </div>
@@ -135,20 +136,21 @@ const AboutUs = () => {
 
                 <div className="space-y-4 text-lg text-dragon-gray leading-relaxed">
                   <p>
-                    Our story began with <strong className="text-kapes-charcoal">Kapes Uniforms</strong>,
-                    founded by Matthew Benjamin in 2020 with a dual purpose: to transform the uniform
-                    industry through sustainable practices and break down barriers to education.
+                    In 2020, Matthew Benjamin founded <strong className="text-kapes-charcoal">Kapes Uniforms</strong> with
+                    a dual purpose: transform the uniform industry through sustainable practices
+                    and break down barriers to education.
                   </p>
                   <p>
-                    In 2021, Matthew discovered a revolutionary carbon offset project in Kenya's
-                    Kasigau Corridor, home to the world's first carbon neutral factory. Seeing how
-                    environmental conservation and community development could work hand in hand
-                    planted a seed.
+                    A year later, he stood in Kenya's Kasigau Corridor — home to the world's
+                    first carbon neutral factory — and saw something that changed everything:
+                    environmental conservation and community development working hand in hand.
+                    Not as theory. As daily reality.
                   </p>
                   <p>
-                    A year later, <strong className="text-kapes-charcoal">Kapes Adventures</strong> was
-                    born. We focus on Africa because it offers profound learning opportunities. Our
-                    trips transform both participants and partner communities.
+                    That planted a seed. By 2022, <strong className="text-kapes-charcoal">Kapes
+                    Adventures</strong> was born. Not as a trip company that bolted on a service
+                    component. As a community development organisation that invites schools to
+                    join the work.
                   </p>
                 </div>
 
@@ -184,10 +186,9 @@ const AboutUs = () => {
                   Our Mission
                 </h3>
                 <p className="text-lg text-dragon-gray leading-relaxed">
-                  To reconnect young people with nature, communities, and purpose through
-                  transformative experiences that cultivate cultural understanding, environmental
-                  stewardship, and global citizenship, while breaking down barriers to education
-                  across Africa.
+                  Run year-round programs that feed schools, build water access, and
+                  keep girls in education across Kenya — then invite students from
+                  around the world to join the work that's already happening.
                 </p>
               </motion.div>
 
@@ -206,9 +207,10 @@ const AboutUs = () => {
                   Our Vision
                 </h3>
                 <p className="text-lg text-white/90 leading-relaxed">
-                  A world where young people are empowered by deep connections to nature, vibrant
-                  communities, and a global mindset to collaboratively shape a sustainable and
-                  equitable future, where every child has access to a full education.
+                  A future where school trips don't extract from communities — they
+                  strengthen them. Where students return home not with hero stories,
+                  but with a deeper understanding of what it means to show up, listen,
+                  and contribute to work that outlasts their visit.
                 </p>
               </motion.div>
             </div>
@@ -268,10 +270,10 @@ const AboutUs = () => {
             >
               <Quote className="w-16 h-16 text-kapes-orange/30 mx-auto mb-6" />
               <blockquote className="text-xl md:text-2xl lg:text-3xl text-white leading-relaxed mb-8 font-light italic">
-                "Experiential learning helps bring to life the things we can only do in theory.
-                Seeing these enterprises firsthand, understanding how they contribute to a better
-                world—the children can only do that firsthand, and it will change them as much as
-                it's changed me."
+                "Experiential learning helps bring to life the things we can only do
+                in theory. Seeing these enterprises firsthand, understanding how they
+                contribute to a better world — the children can only do that firsthand,
+                and it will change them as much as it's changed me."
               </blockquote>
               <div className="text-white/80">
                 <div className="font-semibold text-lg">Brett Girven</div>
@@ -291,17 +293,22 @@ const AboutUs = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl md:text-5xl font-academy text-kapes-charcoal mb-6">
-                Ready to Transform Your Students?
+                Ready to join the work?
               </h2>
               <p className="text-xl text-dragon-gray max-w-2xl mx-auto mb-8">
-                Join the growing community of schools creating life-changing experiences for
-                their students.
+                Our programs run year-round. Your students join when the time is
+                right — and the community benefits long after they leave.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="btn-action text-lg h-14 px-10" asChild>
-                  <Link to="/programs">
-                    Explore Programs
+                  <Link to="/school-trips">
+                    See How Trips Work
                     <ArrowRight className="ml-2 w-5 h-5" />
+                  </Link>
+                </Button>
+                <Button className="btn-ghost text-lg h-14 px-10 border-kapes-charcoal text-kapes-charcoal hover:bg-kapes-charcoal hover:text-white" asChild>
+                  <Link to="/scorecard">
+                    Take the 5-Min Assessment
                   </Link>
                 </Button>
               </div>

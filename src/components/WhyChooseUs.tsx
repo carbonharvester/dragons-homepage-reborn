@@ -7,28 +7,28 @@ import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 const features = [{
   icon: <MapPin className="h-10 w-10 text-dragon transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />,
-  title: "Tailored Itineraries",
-  description: "Structured day-by-day programs that balance immersive learning, cultural exchange, and direct community impact, with clear goals and activities designed to inspire students and empower African communities."
+  title: "Year-Round Programs",
+  description: "Your students join Seeds2Education gardens, water cooperatives, and school feeding programs that run 365 days a year. Not pop-up projects built for visitors."
 }, {
   icon: <Users className="h-10 w-10 text-dragon transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />,
-  title: "Flexible Group Sizes",
-  description: "We accommodate groups of 10 to 30 students, with tailored options for larger groups, guided by 2 dedicated leaders and trained local rangers to ensure personalised, transformative experiences."
+  title: "10–30 Students, Local Rangers",
+  description: "Small enough for real relationships. Every group is guided by 2 dedicated leaders and trained local rangers — people who live here, not fly in."
 }, {
   icon: <BookOpen className="h-10 w-10 text-dragon transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />,
-  title: "Educational Focus",
-  description: "Hands-on permaculture education, sustainability principles, and social entrepreneurship through real-world projects with local African experts, inspiring students to become global change-makers."
+  title: "Curriculum Before the Flight",
+  description: "Pre-trip modules, on-ground learning with Kenyan experts, post-trip reflection tied to SDGs and CAS hours. Not adventure with a service sticker."
 }, {
   icon: <Shield className="h-10 w-10 text-dragon transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />,
-  title: "Safety & Support",
-  description: "Comprehensive risk management, 24/7 local staff support, and experienced trip leaders ensure student wellbeing, so they can fully embrace their transformative journey in Africa."
+  title: "24/7 Local Staff",
+  description: "We share our risk management, health standards, and emergency plans with parents upfront. No surprises. Transparent protocols from day one."
 }, {
   icon: <LineChart className="h-10 w-10 text-dragon transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />,
-  title: "Measurable Impact",
-  description: "Concrete outcomes like reducing school absenteeism, providing daily meals to students, and creating economic opportunities that foster long-term prosperity in local communities."
+  title: "Meals Served. Gardens Built.",
+  description: "We track what matters: daily meals provided, water infrastructure built, girls kept in school. Tangible community outcomes — not just student satisfaction surveys."
 }, {
   icon: <Star className="h-10 w-10 text-dragon transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />,
-  title: "Transformative Experiences",
-  description: "Life-changing journeys that foster leadership, cultural understanding, and a deep commitment to global citizenship, while empowering communities through sustainable impact."
+  title: "Students Learn. Communities Lead.",
+  description: "Your students don't arrive as helpers. They arrive as learners — working alongside Kenyan teams who lead every project and continue the work year-round."
 }];
 
 const Feature = ({
@@ -102,7 +102,7 @@ const WhyChooseUs = () => {
           <h2 className="section-heading">
             Why Kapes?
           </h2>
-          <p className="section-subheading mx-auto">We believe travel transforms lives and builds bridges between cultures. Our unique programs immerse students in authentic African experiences, inspiring personal growth while creating sustainable impact for communities, setting us apart in educational travel.</p>
+          <p className="section-subheading mx-auto">Other trip companies build projects for visitors. We run year-round community programs in Kenya — and invite your students to join the work that's already happening.</p>
         </div>
 
         {/* Add decorative border to the features grid container */}
@@ -148,11 +148,11 @@ const WhyChooseUs = () => {
 
         <div className={`mt-16 bg-dragon-sand p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between transition-all duration-800 hover:shadow-xl ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`} style={{ transitionDelay: '800ms' }}>
           <div className="mb-6 md:mb-0 md:mr-6 text-center md:text-left">
-            <h3 className="text-2xl text-dragon-dark mb-2 font-extrabold underline-animate">Ready for your next adventure?</h3>
-            <p className="text-dragon-gray">Connect with a program coordinator to find the transformative journey that's right for your school.</p>
+            <h3 className="text-2xl text-dragon-dark mb-2 font-extrabold underline-animate">Ready to join the work?</h3>
+            <p className="text-dragon-gray">Talk to our Kenya team about which program fits your school's goals.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button className="btn-primary whitespace-nowrap" onClick={scrollToPrograms}>Find Your Program</Button>
+            <Button className="btn-primary whitespace-nowrap" onClick={scrollToPrograms}>Find Your Trip</Button>
             <CalendlyEmbed url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" text="Schedule Consultation" className="bg-dragon-yellow text-dragon-dark hover:bg-amber-400 whitespace-nowrap transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95" />
           </div>
         </div>

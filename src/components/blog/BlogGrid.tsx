@@ -1,10 +1,10 @@
 
 import React from 'react';
 import BlogCard from './BlogCard';
-import { ContentfulBlogPost } from '@/services/contentful';
+import { BlogPost } from '@/services/blogService';
 
 interface BlogGridProps {
-  posts: ContentfulBlogPost[];
+  posts: BlogPost[];
 }
 
 const BlogGrid: React.FC<BlogGridProps> = ({ posts }) => {
@@ -15,7 +15,7 @@ const BlogGrid: React.FC<BlogGridProps> = ({ posts }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {posts.map(post => (
-        <BlogCard key={post.sys.id} post={post} />
+        <BlogCard key={post.id} post={post} />
       ))}
     </div>
   );

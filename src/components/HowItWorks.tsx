@@ -17,9 +17,9 @@ const HowItWorks = () => {
           className="text-center mb-8"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-academy text-kapes-charcoal leading-tight">
-            The barriers are real.
+            The impact doesn't start when
             <br />
-            <span className="text-kapes-orange">So is the solution.</span>
+            <span className="text-kapes-orange">your students arrive.</span>
           </h2>
         </motion.div>
 
@@ -30,9 +30,9 @@ const HowItWorks = () => {
           transition={{ delay: 0.1, duration: 0.6 }}
           className="text-xl text-dragon-gray text-center max-w-3xl mx-auto mb-16"
         >
-          In Kenya, millions of children face two critical barriers to education:
-          hunger and lack of water access. Our programs tackle both,
-          creating lasting change while transforming your students.
+          Most trip companies build projects for visitors. We build programs
+          for communities — then invite your students to join. These programs
+          run year-round, with or without a school group on the ground.
         </motion.p>
 
         {/* Two Programs */}
@@ -63,8 +63,9 @@ const HowItWorks = () => {
                     Seeds2Education
                   </h3>
                   <p className="text-white/80 text-lg mb-4">
-                    Students build permaculture gardens that feed 200+ children daily.
-                    Hunger is the #1 barrier to learning. We're solving it.
+                    Year-round permaculture gardens feeding 200+ children daily
+                    at partner schools. Hunger is the #1 barrier to learning.
+                    Your students help expand what's already working.
                   </p>
                   <div className="flex items-center text-kapes-orange font-semibold">
                     Learn more <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -102,8 +103,9 @@ const HowItWorks = () => {
                     Water Empowering Women
                   </h3>
                   <p className="text-white/80 text-lg mb-4">
-                    Partner with women-led cooperatives building water infrastructure.
-                    When women have water, girls stay in school.
+                    Women-led cooperatives building water infrastructure year-round.
+                    When women have water, girls stay in school. Your students
+                    work alongside the women leading this.
                   </p>
                   <div className="flex items-center text-kapes-orange font-semibold">
                     Learn more <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

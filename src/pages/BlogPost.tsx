@@ -3,39 +3,38 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getBlogPostBySlug } from '@/services/contentful';
-import { useQuery } from '@tanstack/react-query';
+import SEO from "@/components/SEO";
+import { getBlogPostBySlug } from '@/services/blogService';
 
-// Import our new components
 import BlogPostHero from '@/components/blog/BlogPostHero';
 import BlogPostHeader from '@/components/blog/BlogPostHeader';
 import BlogPostContent from '@/components/blog/BlogPostContent';
+import BlogInlineCTA from '@/components/blog/BlogInlineCTA';
 import BlogPostShareLinks from '@/components/blog/BlogPostShareLinks';
 import RelatedPosts from '@/components/blog/RelatedPosts';
+import BlogPostCTA from '@/components/blog/BlogPostCTA';
 import BlogPostNavigation from '@/components/blog/BlogPostNavigation';
-import BlogPostLoading from '@/components/blog/BlogPostLoading';
 import BlogPostError from '@/components/blog/BlogPostError';
+import BlogStickyCTA from '@/components/blog/BlogStickyCTA';
+import LeadMagnetPopup from '@/components/LeadMagnetPopup';
 
 const BlogPost = () => {
   const { postId } = useParams();
+  const post = getBlogPostBySlug(postId || '');
 
-  const { data: post, isLoading, error } = useQuery({
-    queryKey: ['blogPost', postId],
-    queryFn: () => getBlogPostBySlug(postId || ''),
-  });
-
-  // If post is loading, show loading component
-  if (isLoading) {
-    return <BlogPostLoading />;
-  }
-
-  // If post doesn't exist or there's an error, show error component
-  if (error || !post) {
+  if (!post) {
     return <BlogPostError />;
   }
 
   return (
     <>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        canonicalUrl={`https://missionkapes.com/blog/${post.slug}`}
+        ogUrl={`https://missionkapes.com/blog/${post.slug}`}
+        ogImage={post.featuredImage}
+      />
       <Header />
       <main className="pb-16">
         <BlogPostHero post={post} />
@@ -43,12 +42,16 @@ const BlogPost = () => {
         <div className="container-wide max-w-4xl">
           <BlogPostNavigation />
           <BlogPostHeader post={post} />
-          <BlogPostContent content={post.fields.content} />
-          <BlogPostShareLinks title={post.fields.title} />
-          <RelatedPosts currentPostId={post.sys.id} />
+          <BlogPostContent content={post.content} />
+          <BlogInlineCTA category={post.category} />
+          <BlogPostShareLinks title={post.title} />
+          <RelatedPosts currentPostId={post.id} />
+          <BlogPostCTA />
         </div>
       </main>
       <Footer />
+      <BlogStickyCTA />
+      <LeadMagnetPopup />
     </>
   );
 };

@@ -58,24 +58,26 @@ const TheProblem = () => {
             </span>
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-academy text-kapes-charcoal mt-3 mb-6 leading-tight">
-              Communities need more than tourists—they need partners
+              Most school trips call it "service learning"
             </h2>
 
             <div className="space-y-4 text-lg text-dragon-gray leading-relaxed">
               <p>
-                Across Kenya, rural communities face interconnected challenges:
-                <strong className="text-kapes-charcoal"> food insecurity, limited water access,
-                and few economic opportunities</strong>—especially for women.
+                But the service is designed for the student, not the community.
+                Projects get built for visitors. When the bus leaves,
+                <strong className="text-kapes-charcoal"> the project stops.</strong>
               </p>
 
               <p>
-                Traditional tourism often bypasses these communities entirely.
-                Travelers see wildlife but never connect with the people who share
-                this land. Money flows to big operators, not local families.
+                Meanwhile, money flows to international operators, not local families.
+                Students observe poverty but never learn why it exists. Parents can't
+                explain what the trip actually accomplished.
               </p>
 
               <p>
-                <strong className="text-kapes-charcoal">We believe travel can do better.</strong>
+                <strong className="text-kapes-charcoal">We built Kapes differently.</strong> Our
+                programs run year-round with Kenyan-led teams. School trips plug into
+                existing work — not the other way around.
               </p>
             </div>
 
@@ -110,7 +112,7 @@ const TheProblem = () => {
               className="mt-10"
             >
               <Button className="btn-action" asChild>
-                <Link to="/about">Learn How We're Different</Link>
+                <Link to="/about">See Why Schools Choose Us</Link>
               </Button>
             </motion.div>
           </motion.div>
