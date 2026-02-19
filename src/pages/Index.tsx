@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import ImpactStrip from '@/components/ImpactStrip';
 import HowItWorks from '@/components/HowItWorks';
+import GetStartedProcess from '@/components/GetStartedProcess';
 import ProgramsSection from '@/components/ProgramsSection';
 import StoriesSection from '@/components/StoriesSection';
+import BlogSection from '@/components/BlogSection';
 import TrustSection from '@/components/TrustSection';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
@@ -19,17 +22,26 @@ const Index = () => {
       <Header />
 
       <main className="pt-16">
-        {/* Hero - Impact-first statement with key metrics */}
+        {/* Hero - Impact-first statement */}
         <Hero />
+
+        {/* Impact Numbers - Animated counters */}
+        <ImpactStrip />
 
         {/* Two Programs - Seeds2Education & Water Empowering Women */}
         <HowItWorks />
+
+        {/* How to Get Started - 3-step process */}
+        <GetStartedProcess />
 
         {/* Programs - "Join a journey" */}
         <ProgramsSection />
 
         {/* Stories/Testimonials */}
         <StoriesSection />
+
+        {/* Blog Preview - Latest 3 posts */}
+        <BlogSection />
 
         {/* Trust Section - Partner logos */}
         <TrustSection />

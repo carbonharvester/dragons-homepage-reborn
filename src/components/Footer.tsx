@@ -10,26 +10,24 @@ const Footer = () => {
       <div className="py-16 md:py-24 border-b border-white/10">
         <div className="container-wide text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-academy mb-6">
-            Ready to create
+            Talk to our
             <br />
-            <span className="text-kapes-orange">impact?</span>
+            <span className="text-kapes-orange">Kenya team</span>
           </h2>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
-            Whether you're a school, educator, or individual traveler,
-            we'll design a journey that transforms lives.
+            Book a free 20-minute call. We'll answer your questions and
+            share how other schools have partnered with us.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="btn-action text-lg px-10 py-6" asChild>
-              <Link to="/programs">
-                Explore Programs
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-            <Button className="btn-ghost text-lg px-10 py-6" asChild>
+          <div className="flex flex-col items-center gap-4">
+            <Button className="btn-action text-lg px-12 py-6" asChild>
               <a href="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone" target="_blank" rel="noopener noreferrer">
                 Schedule a Call
+                <ArrowRight className="ml-2 w-5 h-5" />
               </a>
             </Button>
+            <Link to="/scorecard" className="text-white/60 hover:text-kapes-orange transition-colors text-sm">
+              Or take the 5-minute scorecard first →
+            </Link>
           </div>
         </div>
       </div>
