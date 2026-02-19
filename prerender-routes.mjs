@@ -33,6 +33,12 @@ const blogSlugs = [
   "beyond-giving-creating-social-impact-without-fueling-the-false-african-narrative",
   "tacklingfoodsecuritythrougheducationinkenya",
   "empowering-children-and-building-sustainable-communities-through-free-uniforms",
+  // New SEO blog posts
+  "ib-cas-trip-ideas",
+  "kenya-school-trip-safety",
+  "service-learning-curriculum-integration",
+  "best-service-learning-trips",
+  "global-citizenship-school-travel",
 ];
 
 // Static public routes
