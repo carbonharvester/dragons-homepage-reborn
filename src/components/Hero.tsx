@@ -7,7 +7,6 @@ import { ChevronDown } from "lucide-react";
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Ensure video plays on mobile
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -26,11 +25,11 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center bg-black">
-      {/* Video Background */}
+      {/* Video Background — lighter overlay for more image-forward feel */}
       <div className="absolute inset-0 z-0">
         <video
           ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover opacity-60"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
           autoPlay
           muted
           loop
@@ -40,7 +39,7 @@ const Hero = () => {
         >
           <source src="https://res.cloudinary.com/dng12bd0a/video/upload/v1768975922/full_film_highlight_nov_2025_1_j3lear.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60"></div>
       </div>
 
       {/* Main Content */}
@@ -51,21 +50,18 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="max-w-5xl mx-auto"
         >
-          {/* Bold Statement - Anti-voluntourism hook */}
           <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-academy leading-[0.9] tracking-tight mb-8">
             Your students don't need
             <br />
             <span className="text-kapes-orange">to save Africa</span>
           </h1>
 
-          {/* Mechanism subline - year-round programs */}
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
             We run year-round programs feeding schools and building water access
             for women across Kenya. Your students don't parachute in for two
             weeks — they join work that's already changing communities.
           </p>
 
-          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -41,20 +41,59 @@ const ProgramsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-academy text-kapes-charcoal leading-tight">
-            Join a
+            Explore our
             <br />
-            <span className="text-kapes-orange">journey</span>
+            <span className="text-kapes-orange">programs</span>
           </h2>
-          <p className="text-xl text-dragon-gray mt-6 max-w-2xl mx-auto">
-            Every program is designed to create meaningful impact for both travelers and communities.
+          <p className="text-lg md:text-xl text-dragon-gray mt-6 max-w-2xl mx-auto">
+            Every program creates meaningful impact for both travelers and communities.
           </p>
         </motion.div>
+      </div>
 
-        {/* Programs Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+      {/* Mobile: horizontal scroll carousel */}
+      <div className="md:hidden">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-smooth px-5 pb-4 -mx-0 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
+          {programs.map((program) => (
+            <Link
+              key={program.title}
+              to={program.link}
+              className="flex-shrink-0 w-[75vw] snap-center group"
+            >
+              <div className="bg-white rounded-2xl overflow-hidden shadow-sm h-full">
+                <div className="relative overflow-hidden aspect-[4/3]">
+                  <img
+                    src={program.image}
+                    alt={program.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-kapes-charcoal">
+                    {program.tag}
+                  </div>
+                </div>
+                <div className="p-5">
+                  <div className="flex items-baseline justify-between mb-1.5">
+                    <h3 className="text-xl font-academy text-kapes-charcoal">
+                      {program.title}
+                    </h3>
+                    <span className="text-xs text-dragon-gray">{program.subtitle}</span>
+                  </div>
+                  <p className="text-dragon-gray text-sm leading-relaxed">
+                    {program.description}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop: grid */}
+      <div className="container-wide">
+        <div className="hidden md:grid md:grid-cols-3 gap-8 mb-12">
           {programs.map((program, index) => (
             <motion.div
               key={program.title}
@@ -64,8 +103,7 @@ const ProgramsSection = () => {
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
               <Link to={program.link} className="block group h-full">
-                <div className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                  {/* Image */}
+                <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 h-full flex flex-col">
                   <div className="relative overflow-hidden aspect-[4/3]">
                     <img
                       src={program.image}
@@ -76,8 +114,6 @@ const ProgramsSection = () => {
                       {program.tag}
                     </div>
                   </div>
-
-                  {/* Content */}
                   <div className="p-6 flex-1 flex flex-col">
                     <div className="flex items-baseline justify-between mb-2">
                       <h3 className="text-2xl font-academy text-kapes-charcoal group-hover:text-kapes-orange transition-colors">
@@ -85,7 +121,7 @@ const ProgramsSection = () => {
                       </h3>
                       <span className="text-sm text-dragon-gray">{program.subtitle}</span>
                     </div>
-                    <p className="text-dragon-gray flex-1">
+                    <p className="text-dragon-gray flex-1 leading-relaxed">
                       {program.description}
                     </p>
                     <div className="mt-4 flex items-center text-kapes-orange font-medium group-hover:gap-2 transition-all">
@@ -104,7 +140,7 @@ const ProgramsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-center"
+          className="text-center mt-8 md:mt-0"
         >
           <Button className="btn-action text-lg px-12 py-6" asChild>
             <Link to="/programs">View All Programs</Link>

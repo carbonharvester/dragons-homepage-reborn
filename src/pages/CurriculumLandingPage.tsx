@@ -247,7 +247,7 @@ function HeroSection({ data }: { data: CurriculumPageData }) {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <CalendlyEmbed
-              text="Talk to Our Kenya Team"
+              text="Book a Call"
               className="btn-action"
             />
             <Button
@@ -590,7 +590,7 @@ function FinalCTASection({ data }: { data: CurriculumPageData }) {
           <p className="text-xl text-white/80 mb-10">{data.ctaSubtext}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CalendlyEmbed
-              text="Talk to Our Kenya Team"
+              text="Book a Call"
               className="btn-action text-lg h-14 px-10"
             />
             <Button

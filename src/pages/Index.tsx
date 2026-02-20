@@ -8,6 +8,7 @@ import ProgramsSection from '@/components/ProgramsSection';
 import StoriesSection from '@/components/StoriesSection';
 import BlogSection from '@/components/BlogSection';
 import TrustSection from '@/components/TrustSection';
+import PhotoStrip from '@/components/PhotoStrip';
 import Footer from '@/components/Footer';
 import SEO from '@/components/SEO';
 
@@ -27,6 +28,9 @@ const Index = () => {
 
         {/* Impact Numbers - Animated counters */}
         <ImpactStrip />
+
+        {/* Photo Grid - Image-forward strip */}
+        <PhotoStrip />
 
         {/* Two Programs - Seeds2Education & Water Empowering Women */}
         <HowItWorks />

@@ -149,7 +149,7 @@ const WhyChooseUs = () => {
         <div className={`mt-16 bg-dragon-sand p-8 md:p-12 rounded-lg flex flex-col md:flex-row items-center justify-between transition-all duration-800 hover:shadow-xl ${isVisible ? 'animate-scale-in' : 'opacity-0 scale-95'}`} style={{ transitionDelay: '800ms' }}>
           <div className="mb-6 md:mb-0 md:mr-6 text-center md:text-left">
             <h3 className="text-2xl text-dragon-dark mb-2 font-extrabold underline-animate">Ready to join the work?</h3>
-            <p className="text-dragon-gray">Talk to our Kenya team about which program fits your school's goals.</p>
+            <p className="text-dragon-gray">Talk to our team about which program fits your school's goals.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button className="btn-primary whitespace-nowrap" onClick={scrollToPrograms}>Find Your Trip</Button>

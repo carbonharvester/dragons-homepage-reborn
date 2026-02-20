@@ -29,7 +29,7 @@ const metrics = [
   { number: 200, suffix: "+", label: "children fed daily" },
   { number: 72, suffix: "%", label: "revenue stays in Kenya" },
   { number: 365, suffix: "", label: "days/year operations" },
-  { number: 12, suffix: "", label: "Kenyan staff year-round" },
+  { number: 12, suffix: "", label: "Kenyan partners on the ground" },
 ];
 
 const ImpactStrip = () => {

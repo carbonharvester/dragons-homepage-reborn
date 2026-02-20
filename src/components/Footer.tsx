@@ -10,9 +10,9 @@ const Footer = () => {
       <div className="py-16 md:py-24 border-b border-white/10">
         <div className="container-wide text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-academy mb-6">
-            Talk to our
+            Let's start a
             <br />
-            <span className="text-kapes-orange">Kenya team</span>
+            <span className="text-kapes-orange">conversation</span>
           </h2>
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-8">
             Book a free 20-minute call. We'll answer your questions and

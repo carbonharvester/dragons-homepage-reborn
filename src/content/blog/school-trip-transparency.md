@@ -74,4 +74,4 @@ If your current trip provider is transparent about pricing — great. Keep worki
 
 **Want to evaluate your current program?** The [Impact Scorecard](/scorecard) scores your trips across 5 dimensions in 5 minutes — including financial transparency.
 
-**Ready to talk about transparent pricing?** [Book a call](calendly link) with our Kenya team. We'll share our actual numbers.
+**Ready to talk about transparent pricing?** [Book a call](calendly link) with our team. We'll share our actual numbers.

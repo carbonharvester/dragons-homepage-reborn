@@ -361,14 +361,14 @@ const SecondaryCTASection = () => (
           <span className="text-kapes-orange">talk to someone?</span>
         </h2>
         <p className="text-xl text-dragon-gray mb-10">
-          Our Kenya team can walk you through the guide, answer questions about
+          Our team can walk you through the guide, answer questions about
           ethical trip planning, or help you evaluate your current provider.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <CalendlyEmbed
             url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
-            text="Talk to Our Kenya Team"
+            text="Book a Call"
             className="btn-action text-lg px-10 py-6"
           />
           <Button className="btn-ghost text-lg px-10 py-6" asChild>

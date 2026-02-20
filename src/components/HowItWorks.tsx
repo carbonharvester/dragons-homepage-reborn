@@ -12,7 +12,7 @@ const programs = [
     link: "/programs/seeds2education",
     icon: Utensils,
     iconBg: "bg-impact-green",
-    tag: "School Trip",
+    tag: "Year-Round Program",
   },
   {
     title: "Water Empowering Women",
@@ -21,7 +21,7 @@ const programs = [
     link: "/programs/empowering-women",
     icon: Droplets,
     iconBg: "bg-impact-rose",
-    tag: "School Trip",
+    tag: "Year-Round Program",
   },
 ];
 
@@ -56,7 +56,7 @@ const HowItWorks = () => {
           run year-round, with or without a school group on the ground.
         </motion.p>
 
-        {/* Two Programs */}
+        {/* Two Programs — Clean card layout, no text overlay */}
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-16">
           {programs.map((program, index) => {
             const Icon = program.icon;
@@ -70,53 +70,30 @@ const HowItWorks = () => {
                 className="group"
               >
                 <Link to={program.link} className="block">
-                  {/* Mobile: stacked card layout */}
-                  <div className="md:hidden rounded-2xl overflow-hidden bg-white shadow-sm">
-                    <div className="relative">
+                  <div className="rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    {/* Image — no overlay */}
+                    <div className="relative overflow-hidden">
                       <img
                         src={program.image}
                         alt={`${program.title} program`}
-                        className="w-full aspect-[16/10] object-cover"
+                        className="w-full aspect-[16/10] object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute top-4 left-4 flex items-center gap-2">
                         <div className={`w-8 h-8 ${program.iconBg} rounded-full flex items-center justify-center`}>
                           <Icon className="w-4 h-4 text-white" />
                         </div>
-                        <span className="text-white text-sm font-medium drop-shadow-lg">{program.tag}</span>
+                        <span className="bg-white/90 backdrop-blur-sm text-kapes-charcoal text-sm font-medium px-3 py-1 rounded-full">
+                          {program.tag}
+                        </span>
                       </div>
                     </div>
-                    <div className="p-5">
-                      <h3 className="text-2xl font-academy text-kapes-charcoal mb-2">
-                        {program.title}
-                      </h3>
-                      <p className="text-dragon-gray text-base mb-3">
-                        {program.description}
-                      </p>
-                      <div className="flex items-center text-kapes-orange font-semibold text-sm">
-                        Learn more <ArrowRight className="ml-1 w-4 h-4" />
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Desktop: overlay layout */}
-                  <div className="hidden md:block relative rounded-3xl overflow-hidden">
-                    <img
-                      src={program.image}
-                      alt={`${program.title} program`}
-                      className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className={`w-12 h-12 ${program.iconBg} rounded-full flex items-center justify-center`}>
-                          <Icon className="w-6 h-6 text-white" />
-                        </div>
-                        <span className="text-white/80 font-medium">{program.tag}</span>
-                      </div>
-                      <h3 className="text-3xl md:text-4xl font-academy text-white mb-3">
+                    {/* Content — below image */}
+                    <div className="p-6 md:p-8">
+                      <h3 className="text-2xl md:text-3xl font-academy text-kapes-charcoal mb-3 group-hover:text-kapes-orange transition-colors">
                         {program.title}
                       </h3>
-                      <p className="text-white/80 text-lg mb-4">
+                      <p className="text-dragon-gray text-base md:text-lg mb-4 leading-relaxed">
                         {program.description}
                       </p>
                       <div className="flex items-center text-kapes-orange font-semibold">

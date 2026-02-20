@@ -222,7 +222,7 @@ const GeographySchoolTrips = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <CalendlyEmbed
-                  text="Talk to Our Kenya Team"
+                  text="Book a Call"
                   className="btn-action"
                 />
                 <Button
@@ -561,7 +561,7 @@ const GeographySchoolTrips = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <CalendlyEmbed
-                  text="Talk to Our Kenya Team"
+                  text="Book a Call"
                   className="btn-action text-lg h-14 px-10"
                 />
                 <Button

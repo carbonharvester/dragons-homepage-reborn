@@ -158,7 +158,7 @@ const LPYearRoundImpact = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <CalendlyEmbed
                 url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
-                text="Talk to Our Kenya Team"
+                text="Book a Call"
                 className="btn-action text-lg px-10 py-6"
               />
               <Button className="btn-ghost text-lg h-14 px-8" asChild>
@@ -729,7 +729,7 @@ const LPYearRoundImpact = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CalendlyEmbed
                 url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
-                text="Talk to Our Kenya Team"
+                text="Book a Call"
                 className="btn-action text-lg px-10 py-6"
               />
               <Button className="btn-ghost text-lg h-14 px-8" asChild>

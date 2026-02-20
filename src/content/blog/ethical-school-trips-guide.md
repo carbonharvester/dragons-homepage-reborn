@@ -132,7 +132,7 @@ If you're planning a school trip and want to do it right, here's where to start:
 
 **If you want to evaluate your current program:** Take the [Impact Scorecard](/scorecard) — a free 5-minute assessment that scores your trips across 5 dimensions.
 
-**If you're ready to explore a partnership:** [Talk to our Kenya team](calendly link) — a 20-minute conversation about what's possible for your school. No pitch. Just information.
+**If you're ready to explore a partnership:** [Book a call with us](calendly link) — a 20-minute conversation about what's possible for your school. No pitch. Just information.
 
 The bar for ethical school travel isn't impossibly high. It just requires asking the right questions — and choosing providers who welcome them.
 

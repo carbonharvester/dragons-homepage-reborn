@@ -45,7 +45,6 @@ const StoriesSection = () => {
   return (
     <section className="py-24 md:py-32 bg-kapes-sand">
       <div className="container-wide">
-        {/* Section Header - Justdiggit style */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +59,6 @@ const StoriesSection = () => {
           </h2>
         </motion.div>
 
-        {/* Featured Story - Clean layout */}
         <div className="max-w-5xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
@@ -69,57 +67,52 @@ const StoriesSection = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="grid lg:grid-cols-2 gap-12 items-center"
+              className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center"
             >
-              {/* Image */}
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden">
-                  <img
-                    src={currentStory.image}
-                    alt={currentStory.name}
-                    className="w-full h-[400px] md:h-[500px] object-cover"
-                  />
-                </div>
+              {/* Image — clean, no overlay */}
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src={currentStory.image}
+                  alt={currentStory.name}
+                  className="w-full h-[350px] md:h-[450px] object-cover"
+                />
               </div>
 
               {/* Content */}
-              <div>
-                {/* Quote */}
-                <blockquote className="text-2xl md:text-3xl text-kapes-charcoal leading-relaxed mb-8">
-                  "{currentStory.quote}"
+              <div className="flex flex-col justify-center">
+                <blockquote className="text-2xl md:text-3xl text-kapes-charcoal leading-relaxed mb-8 font-academy">
+                  &ldquo;{currentStory.quote}&rdquo;
                 </blockquote>
 
-                {/* Attribution */}
                 <div>
-                  <div className="font-bold text-xl text-kapes-charcoal">
+                  <div className="font-bold text-lg text-kapes-charcoal">
                     {currentStory.name}
                   </div>
-                  <div className="text-dragon-gray text-lg">{currentStory.role}</div>
+                  <div className="text-dragon-gray">{currentStory.role}</div>
                 </div>
               </div>
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation - Minimal */}
+          {/* Navigation */}
           <div className="flex items-center justify-center gap-4 mt-12">
             <button
               onClick={prevStory}
-              className="w-12 h-12 rounded-full bg-kapes-charcoal text-white flex items-center justify-center hover:bg-black transition-colors"
+              className="w-11 h-11 rounded-full border-2 border-kapes-charcoal/20 text-kapes-charcoal flex items-center justify-center hover:border-kapes-charcoal hover:bg-kapes-charcoal hover:text-white transition-all"
               aria-label="Previous story"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
 
-            {/* Dots */}
             <div className="flex gap-2">
               {stories.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  className={`h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? 'bg-kapes-orange w-6'
-                      : 'bg-kapes-charcoal/30'
+                      ? 'bg-kapes-orange w-8'
+                      : 'bg-kapes-charcoal/20 w-2'
                   }`}
                   aria-label={`Go to story ${index + 1}`}
                 />
@@ -128,7 +121,7 @@ const StoriesSection = () => {
 
             <button
               onClick={nextStory}
-              className="w-12 h-12 rounded-full bg-kapes-charcoal text-white flex items-center justify-center hover:bg-black transition-colors"
+              className="w-11 h-11 rounded-full border-2 border-kapes-charcoal/20 text-kapes-charcoal flex items-center justify-center hover:border-kapes-charcoal hover:bg-kapes-charcoal hover:text-white transition-all"
               aria-label="Next story"
             >
               <ChevronRight className="w-5 h-5" />

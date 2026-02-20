@@ -38,7 +38,7 @@ Not a price range. Not "approximately." A line-item breakdown showing where ever
 
 Not "we work with local partners." Specifically: are the people in the community being paid, and are they making decisions?
 
-**Good answer:** "Our Kenya team of 12 are all Kenyan nationals. They're employed year-round with benefits. Community coordinators design program priorities. Here are their names and roles."
+**Good answer:** "Our team of 12 Kenyan partners and trip leaders are all Kenyan nationals. They're employed year-round with benefits. Community coordinators design program priorities. Here are their names and roles."
 
 **Red flag:** "We hire local guides and translators for each visit" (seasonal, not leadership). Or: "Our experienced Western team manages the programs" (locals are props).
 
@@ -78,7 +78,7 @@ Not "we give back to communities." A number.
 
 The year-round test. Simple. Devastating.
 
-**Good answer:** "Between visits, our Kenya team runs the same programs: school feeding, water cooperatives, permaculture gardens. We can show you monthly reports. The work doesn't stop."
+**Good answer:** "Between visits, our Kenyan partners run the same programs: school feeding, water cooperatives, permaculture gardens. We can show you monthly reports. The work doesn't stop."
 
 **Red flag:** "We use the off-season to prepare for upcoming groups" (the program is the trips). Or: "Our local partners maintain the projects" (who? how? with what funding?).
 

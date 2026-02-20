@@ -436,7 +436,7 @@ const FinalCTASection = () => (
           <ScorecardCTA />
           <CalendlyEmbed
             url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
-            text="Talk to Our Kenya Team"
+            text="Book a Call"
             className="btn-action text-lg px-10 py-6"
           />
         </div>

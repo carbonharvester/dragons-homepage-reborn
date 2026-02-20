@@ -382,7 +382,7 @@ export function generateEthicalPlanningGuide(): void {
   pdf.text('Ready to put this guide into practice?', 105, y + 12, { align: 'center' });
   pdf.setFontSize(10);
   pdf.text('Take the 5-minute Impact Scorecard: kapesadventures.com/scorecard', 105, y + 20, { align: 'center' });
-  pdf.text('Or talk to our Kenya team: kapesadventures.com', 105, y + 26, { align: 'center' });
+  pdf.text('Or talk to our team: kapesadventures.com', 105, y + 26, { align: 'center' });
 
   addFooter(pdf, pageNum.current, totalPages);
   pdf.save('Kapes-Ethical-School-Trip-Planning-Guide.pdf');
@@ -569,7 +569,7 @@ export function generateImpactReport(): void {
   pdf.setTextColor(CHARCOAL);
   pdf.text('Want to be part of the 2026 story?', 105, y + 12, { align: 'center' });
   pdf.setFontSize(10);
-  pdf.text('Talk to our Kenya team: kapesadventures.com/scorecard', 105, y + 20, { align: 'center' });
+  pdf.text('Talk to our team: kapesadventures.com/scorecard', 105, y + 20, { align: 'center' });
 
   addFooter(pdf, pageNum.current, totalPages);
   pdf.save('Kapes-2025-Impact-Report.pdf');

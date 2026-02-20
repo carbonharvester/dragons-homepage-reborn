@@ -265,7 +265,7 @@ export const comparisonPages: ComparisonPageData[] = [
       },
       {
         title: "Communication",
-        content: "Staying connected is important for safety and parent peace of mind.\n\nWiFi availability — WiFi is available at accommodation. It may be limited or unavailable at some program sites and during excursions.\n\nLocal SIM cards — we can arrange local SIM cards for teachers/group leaders. Kenyan mobile coverage is generally good in our operating areas.\n\nParent communication schedule — we establish a regular communication schedule before departure. Daily photo updates and brief status messages keep parents informed without overwhelming them.\n\nEmergency contact chain — a clear emergency contact chain is established before departure. Parents receive a 24/7 emergency number that connects directly to our Kenya team and UK support."
+        content: "Staying connected is important for safety and parent peace of mind.\n\nWiFi availability — WiFi is available at accommodation. It may be limited or unavailable at some program sites and during excursions.\n\nLocal SIM cards — we can arrange local SIM cards for teachers/group leaders. Kenyan mobile coverage is generally good in our operating areas.\n\nParent communication schedule — we establish a regular communication schedule before departure. Daily photo updates and brief status messages keep parents informed without overwhelming them.\n\nEmergency contact chain — a clear emergency contact chain is established before departure. Parents receive a 24/7 emergency number that connects directly to our team on the ground and UK support."
       },
       {
         title: "Risk Assessment",
@@ -299,13 +299,13 @@ export const comparisonPages: ComparisonPageData[] = [
       },
       {
         question: "How do we communicate with parents during the trip?",
-        answer: "We establish a parent communication plan before departure. This typically includes daily photo updates via a secure platform, a regular text/email update from the group leader, and a 24/7 emergency phone number that connects to our Kenya team. WiFi is available at accommodation for students to message home."
+        answer: "We establish a parent communication plan before departure. This typically includes daily photo updates via a secure platform, a regular text/email update from the group leader, and a 24/7 emergency phone number that connects to our team on the ground. WiFi is available at accommodation for students to message home."
       }
     ],
     ctaHeadline: "Want to see our full safety protocols?",
-    ctaSubtext: "Review our comprehensive health and safety documentation, or schedule a call with our Kenya team to discuss your specific concerns.",
+    ctaSubtext: "Review our comprehensive health and safety documentation, or schedule a call with our team to discuss your specific concerns.",
     primaryCTA: { label: "See Our Full Safety Protocols", url: "/health-and-safety" },
-    secondaryCTA: { label: "Talk to Our Kenya Team", url: "calendly" }
+    secondaryCTA: { label: "Book a Call", url: "calendly" }
   },
 
   // 5. Kenya School Trip Visa Requirements

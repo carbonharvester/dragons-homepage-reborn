@@ -58,7 +58,7 @@ export default function LocationHero({ data }: LocationHeroProps) {
               variant="ghost"
               className="border border-white text-white hover:bg-white/10"
             >
-              <Link to="/contact">Talk to Our Kenya Team</Link>
+              <Link to="/contact">Book a Call</Link>
             </Button>
           </div>
         </motion.div>

@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Cloned reference repos
+video/remotion-ref/
+video/remotion-skills/
+
+# Screenshots
+competitor-screenshots/
