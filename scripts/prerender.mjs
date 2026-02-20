@@ -127,8 +127,36 @@ async function renderRoute(route) {
       { timeout: 8000 }
     ).catch(() => {});
 
-    // Extra buffer for any remaining async rendering
+    // Scroll through the entire page to trigger all whileInView animations
+    await page.evaluate(async () => {
+      const delay = (ms) => new Promise((r) => setTimeout(r, ms));
+      const scrollHeight = document.documentElement.scrollHeight;
+      const viewportHeight = window.innerHeight;
+      // Scroll in increments to trigger IntersectionObserver
+      for (let y = 0; y <= scrollHeight; y += viewportHeight * 0.7) {
+        window.scrollTo(0, y);
+        await delay(150);
+      }
+      // Scroll to very bottom then back to top
+      window.scrollTo(0, scrollHeight);
+      await delay(300);
+      window.scrollTo(0, 0);
+      await delay(300);
+    });
+
+    // Extra buffer for animations to complete
     await new Promise((r) => setTimeout(r, 1500));
+
+    // Force all Framer Motion elements to be visible (remove opacity:0 / transforms)
+    await page.evaluate(() => {
+      document.querySelectorAll('[style]').forEach((el) => {
+        const style = el.getAttribute('style') || '';
+        if (style.includes('opacity: 0') || style.includes('opacity:0')) {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        }
+      });
+    });
 
     // Extract the actual DOM title and meta description (react-helmet updates these)
     const seoData = await page.evaluate(() => ({
@@ -152,9 +180,10 @@ async function renderRoute(route) {
     }
 
     // Patch the static meta description with the page-specific one
-    if (seoData.description && !seoData.description.includes("Asia, Africa, and Latin America")) {
+    const staticDesc = "Ethical, community-led school trips to Kenya.";
+    if (seoData.description && !seoData.description.startsWith("Ethical, community-led school trips")) {
       html = html.replace(
-        /<meta name="description" content="Transformative student travel programs in Asia, Africa, and Latin America[^"]*">/,
+        /<meta name="description" content="Ethical, community-led school trips to Kenya\.[^"]*">/,
         `<meta name="description" content="${seoData.description.replace(/"/g, '&quot;')}">`
       );
     }
