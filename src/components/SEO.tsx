@@ -18,7 +18,7 @@ const SEO = ({
   keywords = 'educational travel, student trips, cultural immersion, Kenya, Africa travel, sustainable tourism',
   ogImage = 'https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg',
   ogType = 'website',
-  ogUrl = 'https://missionkapes.com',
+  ogUrl = 'https://kapesadventures.com',
   canonicalUrl,
 }: SEOProps) => {
   const fullTitle = title.includes('Mission Kapes') ? title : `${title} | Mission Kapes`;

@@ -11,7 +11,9 @@ import { createServer } from "http";
 import { readFileSync, writeFileSync, mkdirSync, existsSync, unlinkSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
-import puppeteer from "puppeteer";
+import puppeteerCore from "puppeteer-core";
+import puppeteerFull from "puppeteer";
+import chromium from "@sparticuz/chromium";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = join(__dirname, "..", "dist");
@@ -71,13 +73,21 @@ await new Promise((resolve) => server.listen(PORT, resolve));
 console.log(`  Server running on http://localhost:${PORT}`);
 
 // --- 2. Launch Puppeteer ---
-const browser = await puppeteer.launch({
-  headless: true,
-  args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu", "--disable-dev-shm-usage"],
-  ...(process.env.PUPPETEER_EXECUTABLE_PATH && {
-    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-  }),
-});
+// Use @sparticuz/chromium on CI (Netlify), regular puppeteer locally
+const isCI = process.env.CI || process.env.NETLIFY;
+let browser;
+if (isCI) {
+  browser = await puppeteerCore.launch({
+    args: [...chromium.args, "--disable-dev-shm-usage"],
+    executablePath: await chromium.executablePath(),
+    headless: chromium.headless,
+  });
+} else {
+  browser = await puppeteerFull.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu", "--disable-dev-shm-usage"],
+  });
+}
 
 let completed = 0;
 let failed = 0;
@@ -281,7 +291,7 @@ if (failedRoutes.length > 0) {
 console.log(`\n  Done! ${completed} pages pre-rendered, ${failed} failed.\n`);
 
 // --- 4. Generate sitemap.xml ---
-const SITE_URL = "https://missionkapes.com";
+const SITE_URL = "https://kapesadventures.com";
 const today = new Date().toISOString().split("T")[0];
 
 const sitemapEntries = prerenderRoutes.map((route) => {

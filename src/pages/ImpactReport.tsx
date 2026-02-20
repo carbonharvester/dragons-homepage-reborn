@@ -352,8 +352,8 @@ const ImpactReport = () => {
         title="2025 Annual Community Impact Report | Kapes Adventures"
         description="Every meal served. Every garden planted. Every woman empowered. Download the full 2025 Community Impact Report and see where your partnership goes."
         keywords="impact report, community impact, Kenya programs, Kapes Adventures, annual report 2025, Seeds2Education, Water Empowering Women"
-        ogUrl="https://missionkapes.com/resources/impact-report"
-        canonicalUrl="https://missionkapes.com/resources/impact-report"
+        ogUrl="https://kapesadventures.com/resources/impact-report"
+        canonicalUrl="https://kapesadventures.com/resources/impact-report"
       />
       <Header />
 

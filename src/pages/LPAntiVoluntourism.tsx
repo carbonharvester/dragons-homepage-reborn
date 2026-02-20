@@ -1017,8 +1017,8 @@ const LPAntiVoluntourism = () => {
         title="The Antidote to Voluntourism | Kapes Adventures"
         description="Your students don't need to save Africa. Kapes Adventures runs year-round programs feeding schools and building water access for women. Students join work that's already changing communities — not pop-up projects built for visitors."
         keywords="anti-voluntourism, ethical school trips, Kenya school programs, service learning alternative, responsible travel, Kapes Adventures"
-        ogUrl="https://missionkapes.com/anti-voluntourism"
-        canonicalUrl="https://missionkapes.com/anti-voluntourism"
+        ogUrl="https://kapesadventures.com/anti-voluntourism"
+        canonicalUrl="https://kapesadventures.com/anti-voluntourism"
       />
       <Header />
 

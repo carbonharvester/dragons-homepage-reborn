@@ -159,8 +159,8 @@ const CurriculumLandingPage = () => {
         title={data.pageTitle}
         description={data.metaDescription}
         keywords={`${data.subject} school trips Kenya, ${data.slug.replace(/-/g, " ")}, ethical school trips Kenya, ${data.targetAudience}`}
-        ogUrl={`https://missionkapes.com/${data.slug}`}
-        canonicalUrl={`https://missionkapes.com/${data.slug}`}
+        ogUrl={`https://kapesadventures.com/${data.slug}`}
+        canonicalUrl={`https://kapesadventures.com/${data.slug}`}
       />
       <Helmet>
         <script type="application/ld+json">

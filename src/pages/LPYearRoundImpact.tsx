@@ -102,7 +102,7 @@ const faqs = [
 /* ─── Component ─── */
 const LPYearRoundImpact = () => {
   const [openFaq, setOpenFaq] = React.useState<number | null>(null);
-  const pageUrl = 'https://missionkapes.com/year-round-impact';
+  const pageUrl = 'https://kapesadventures.com/year-round-impact';
 
   return (
     <>

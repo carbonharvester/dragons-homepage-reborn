@@ -388,8 +388,8 @@ const EthicalPlanningGuide = () => {
         title="The Ethical School Trip Planning Guide | Kapes Adventures"
         description="Download the free 40+ page guide with 8 chapters of frameworks, checklists, and practical tools to plan school trips that create real community impact — without the voluntourism pitfalls."
         keywords="ethical school trip planning, voluntourism guide, school trip checklist, responsible travel education, Kapes Adventures"
-        ogUrl="https://missionkapes.com/resources/ethical-planning-guide"
-        canonicalUrl="https://missionkapes.com/resources/ethical-planning-guide"
+        ogUrl="https://kapesadventures.com/resources/ethical-planning-guide"
+        canonicalUrl="https://kapesadventures.com/resources/ethical-planning-guide"
       />
       <Header />
 

@@ -6,7 +6,7 @@ const SchoolTripsStructuredData = () => {
   const organizationData = {
     name: "Mission Kapes",
     description: "Educational travel programs and school trips to Kenya offering cultural immersion, community service, and wildlife conservation experiences.",
-    url: "https://missionkapes.com",
+    url: "https://kapesadventures.com",
     logo: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg",
     contactPoint: {
       "@type": "ContactPoint",
@@ -31,7 +31,7 @@ const SchoolTripsStructuredData = () => {
     provider: {
       "@type": "Organization",
       name: "Mission Kapes",
-      url: "https://missionkapes.com"
+      url: "https://kapesadventures.com"
     },
     serviceType: "Educational Travel",
     areaServed: "International",

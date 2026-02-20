@@ -374,8 +374,8 @@ const TransparencyChecklist = () => {
         title="7 Questions to Ask Your Trip Provider | Free Checklist | Kapes Adventures"
         description="Download the free checklist: 7 questions your trip provider hopes you never ask. Instantly reveal red flags before you book. Used by international schools across the Middle East, Asia & Africa."
         keywords="trip provider checklist, school trip transparency, ethical travel questions, voluntourism red flags, Kapes Adventures"
-        ogUrl="https://missionkapes.com/resources/transparency-checklist"
-        canonicalUrl="https://missionkapes.com/resources/transparency-checklist"
+        ogUrl="https://kapesadventures.com/resources/transparency-checklist"
+        canonicalUrl="https://kapesadventures.com/resources/transparency-checklist"
       />
       <Header />
 

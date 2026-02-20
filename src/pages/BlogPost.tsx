@@ -31,8 +31,8 @@ const BlogPost = () => {
       <SEO
         title={post.title}
         description={post.excerpt}
-        canonicalUrl={`https://missionkapes.com/blog/${post.slug}`}
-        ogUrl={`https://missionkapes.com/blog/${post.slug}`}
+        canonicalUrl={`https://kapesadventures.com/blog/${post.slug}`}
+        ogUrl={`https://kapesadventures.com/blog/${post.slug}`}
         ogImage={post.featuredImage}
       />
       <Header />

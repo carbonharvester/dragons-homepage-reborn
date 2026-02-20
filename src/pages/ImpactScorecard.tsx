@@ -6,7 +6,7 @@ import GlobalImpactTripScorecard from '@/components/GlobalImpactTripScorecard';
 import { Button } from '@/components/ui/button';
 
 const ImpactScorecard = () => {
-  const pageUrl = 'https://missionkapes.com/impact-scorecard';
+  const pageUrl = 'https://kapesadventures.com/impact-scorecard';
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 

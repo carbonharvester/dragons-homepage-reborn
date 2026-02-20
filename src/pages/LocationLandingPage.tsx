@@ -31,8 +31,8 @@ const LocationLandingPage = () => {
         title={data.pageTitle}
         description={data.metaDescription}
         keywords={`${data.tripTerm} Kenya, school trips to Kenya from ${data.city}, ethical school trips ${data.city}, service learning Kenya, ${data.curriculumLinks.join(', ')}`}
-        canonicalUrl={`https://missionkapes.com/trips-from/${data.slug}`}
-        ogUrl={`https://missionkapes.com/trips-from/${data.slug}`}
+        canonicalUrl={`https://kapesadventures.com/trips-from/${data.slug}`}
+        ogUrl={`https://kapesadventures.com/trips-from/${data.slug}`}
       />
       <Header />
       <main>

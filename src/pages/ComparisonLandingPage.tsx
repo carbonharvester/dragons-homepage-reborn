@@ -124,8 +124,8 @@ const ComparisonLandingPage = () => {
       <SEO
         title={data.pageTitle}
         description={data.metaDescription}
-        canonicalUrl={`https://missionkapes.com/${data.slug}`}
-        ogUrl={`https://missionkapes.com/${data.slug}`}
+        canonicalUrl={`https://kapesadventures.com/${data.slug}`}
+        ogUrl={`https://kapesadventures.com/${data.slug}`}
       />
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>

@@ -157,8 +157,8 @@ const GeographySchoolTrips = () => {
         title="GCSE Geography School Trips to Kenya | Curriculum-Aligned Field Study"
         description="Plan a GCSE or A-Level Geography field trip to Kenya with real curriculum integration. Students study coastal ecosystems, water management, food security, and sustainable development — not voluntourism with a geography sticker."
         keywords="GCSE geography trip Kenya, geography field trip Kenya, A-Level geography trip Africa, geography school expedition Kenya, field study Kenya, physical geography trip"
-        ogUrl="https://missionkapes.com/geography-school-trips-to-kenya"
-        canonicalUrl="https://missionkapes.com/geography-school-trips-to-kenya"
+        ogUrl="https://kapesadventures.com/geography-school-trips-to-kenya"
+        canonicalUrl="https://kapesadventures.com/geography-school-trips-to-kenya"
       />
       <Helmet>
         <script type="application/ld+json">
