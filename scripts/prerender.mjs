@@ -73,7 +73,10 @@ console.log(`  Server running on http://localhost:${PORT}`);
 // --- 2. Launch Puppeteer ---
 const browser = await puppeteer.launch({
   headless: true,
-  args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu"],
+  args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu", "--disable-dev-shm-usage"],
+  ...(process.env.PUPPETEER_EXECUTABLE_PATH && {
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+  }),
 });
 
 let completed = 0;
