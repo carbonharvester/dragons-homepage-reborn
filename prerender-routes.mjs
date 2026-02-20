@@ -99,6 +99,26 @@ const staticRoutes = [
   "/scorecard/quiz",
   "/scorecard/lead-capture",
   "/scorecard/results",
+
+  // Tier 2: Curriculum-Aligned SEO Pages
+  "/geography-school-trips-to-kenya",
+  "/biology-school-trips-to-kenya",
+  "/ib-cas-trips-to-kenya",
+  "/global-citizenship-school-trips-kenya",
+  "/environmental-science-school-trips-kenya",
+  "/history-school-trips-to-kenya",
+  "/service-learning-programs-kenya-middle-school",
+  "/service-learning-programs-kenya-high-school",
+
+  // Tier 3: Comparison & Decision SEO Pages
+  "/ethical-school-trips-vs-voluntourism",
+  "/school-trip-to-kenya-cost-breakdown",
+  "/how-to-plan-an-ethical-school-trip-to-kenya",
+  "/school-trip-kenya-safety-guide",
+  "/kenya-school-trip-visa-requirements",
+  "/best-time-to-visit-kenya-for-school-trips",
+  "/school-trip-kenya-packing-list",
+  "/school-trip-provider-comparison-kenya",
 ];
 
 export const prerenderRoutes = [
