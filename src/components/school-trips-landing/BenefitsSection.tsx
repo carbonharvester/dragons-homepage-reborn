@@ -43,7 +43,7 @@ const BenefitsSection = () => {
       <div className="container-wide px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dragon-dark mb-4 leading-tight">
-            Why Choose Mission Kapes for Your School Trip?
+            Why Choose Kapes Adventures for Your School Trip?
           </h2>
           <p className="text-lg sm:text-xl text-dragon-gray max-w-3xl mx-auto leading-relaxed">
             We specialize in creating transformative educational experiences that align with your curriculum goals while ensuring student safety and meaningful impact. 
@@ -79,7 +79,7 @@ const BenefitsSection = () => {
               Trusted by Top International Schools
             </h3>
             <p className="text-base sm:text-lg text-dragon-gray max-w-2xl mx-auto leading-relaxed">
-              Leading educational institutions worldwide choose Mission Kapes for transformative student experiences.
+              Leading educational institutions worldwide choose Kapes Adventures for transformative student experiences.
             </p>
           </div>
           <div className="overflow-hidden">

@@ -132,9 +132,7 @@ async function renderRoute(route) {
         return (
           t &&
           t !== "Kapes Adventures | Travel That Transforms" &&
-          t !== "" &&
-          // Also wait for it to move past the SEO component default
-          t !== "Mission Kapes | Authentic Immersion Programs"
+          t !== ""
         );
       },
       { timeout: 8000 }

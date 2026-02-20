@@ -4,7 +4,7 @@ import StructuredData from '@/components/seo/StructuredData';
 
 const SchoolTripsStructuredData = () => {
   const organizationData = {
-    name: "Mission Kapes",
+    name: "Kapes Adventures",
     description: "Educational travel programs and school trips to Kenya offering cultural immersion, community service, and wildlife conservation experiences.",
     url: "https://kapesadventures.com",
     logo: "https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg",
@@ -30,7 +30,7 @@ const SchoolTripsStructuredData = () => {
     description: "Transformative educational school trips to Kenya featuring curriculum-aligned programs with cultural immersion, community service, and wildlife conservation.",
     provider: {
       "@type": "Organization",
-      name: "Mission Kapes",
+      name: "Kapes Adventures",
       url: "https://kapesadventures.com"
     },
     serviceType: "Educational Travel",

@@ -12,7 +12,7 @@ const CTASection = () => {
           Ready to Transform Your Students' Education?
         </h2>
         <p className="text-lg sm:text-xl mb-6 sm:mb-8 max-w-3xl mx-auto opacity-90 leading-relaxed">
-          Join leading international schools who have chosen Mission Kapes for life-changing educational experiences. Contact us today for a free consultation and custom program proposal.
+          Join leading international schools who have chosen Kapes Adventures for life-changing educational experiences. Contact us today for a free consultation and custom program proposal.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
           <CalendlyEmbed 

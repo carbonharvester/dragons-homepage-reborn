@@ -13,15 +13,15 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = 'Mission Kapes | Authentic Immersion Programs',
-  description = 'Transformative student travel programs in Africa offering cultural immersion, wilderness adventure, and educational experiences.',
-  keywords = 'educational travel, student trips, cultural immersion, Kenya, Africa travel, sustainable tourism',
+  title = 'Kapes Adventures | Travel That Transforms',
+  description = 'Ethical, community-led school trips to Kenya. Year-round programs feeding schools and building water access — your students join work that\'s already changing communities.',
+  keywords = 'educational travel, school trips Kenya, ethical travel, community-led trips, sustainable tourism',
   ogImage = 'https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg',
   ogType = 'website',
   ogUrl = 'https://kapesadventures.com',
   canonicalUrl,
 }: SEOProps) => {
-  const fullTitle = title.includes('Mission Kapes') ? title : `${title} | Mission Kapes`;
+  const fullTitle = title.includes('Kapes Adventures') ? title : `${title} | Kapes Adventures`;
   
   return (
     <Helmet>

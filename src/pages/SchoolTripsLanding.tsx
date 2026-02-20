@@ -20,7 +20,7 @@ const SchoolTripsLanding = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="Educational School Trips to Kenya | Mission Kapes"
+        title="Educational School Trips to Kenya | Kapes Adventures"
         description="Transform your students with immersive educational school trips to Kenya. Curriculum-aligned programs featuring cultural immersion, community service, and wildlife conservation. Safe, impactful, and unforgettable learning experiences."
         keywords="school trips Kenya, educational travel Kenya, student trips Africa, curriculum school trips, cultural immersion programs, service learning trips, school travel Kenya, educational tours Kenya"
       />
