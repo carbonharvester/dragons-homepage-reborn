@@ -53,8 +53,8 @@ const impactCategories = [
     id: 'conservation',
     title: 'Conservation',
     icon: TreePine,
-    color: 'bg-dragon',
-    textColor: 'text-dragon',
+    color: 'bg-impact-green',
+    textColor: 'text-impact-green',
     stats: [
       { number: '1,000+', label: 'Trees planted' },
       { number: '50+', label: 'Tons CO2 offset' },
@@ -279,7 +279,7 @@ const Impact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-dragon">
+      <section className="py-24 md:py-32 bg-kapes-charcoal">
         <div className="container-wide text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

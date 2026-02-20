@@ -19,7 +19,7 @@ const FAQ = () => {
       <Header />
       <main className="flex-grow pt-16">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-28 bg-dragon-dark overflow-hidden">
+        <section className="relative py-24 md:py-32 bg-kapes-charcoal overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,107,53,0.3),_transparent_70%)]" />
           </div>
@@ -34,7 +34,7 @@ const FAQ = () => {
               <span className="text-kapes-orange font-semibold text-sm uppercase tracking-wider">
                 Get Answers
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-academy text-white mt-3 mb-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-academy text-white mt-3 mb-6">
                 Frequently Asked <span className="text-kapes-orange">Questions</span>
               </h1>
               <p className="text-lg md:text-xl text-white/80">
@@ -45,7 +45,7 @@ const FAQ = () => {
         </section>
 
         {/* FAQ Content */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-24 md:py-32 bg-white">
           <div className="container-wide max-w-4xl">
             {/* Program Questions */}
             <motion.div

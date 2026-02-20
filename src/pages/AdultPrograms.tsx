@@ -40,7 +40,7 @@ const AdultPrograms = () => {
       <Header />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative py-24 md:py-32 bg-dragon-dark overflow-hidden">
+        <section className="relative py-32 md:py-40 bg-kapes-charcoal overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div
               className="absolute inset-0 bg-cover bg-center opacity-70"
@@ -48,7 +48,7 @@ const AdultPrograms = () => {
                 backgroundImage: `url('https://images.unsplash.com/photo-1603202662747-00e33e7d1468?q=80&w=2069&auto=format')`,
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-dragon-dark/20 to-dragon-dark/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-kapes-charcoal/20 to-kapes-charcoal/60" />
           </div>
 
           <div className="container-wide relative z-10 pt-8">
@@ -61,7 +61,7 @@ const AdultPrograms = () => {
               <span className="text-kapes-orange font-semibold text-sm uppercase tracking-wider">
                 For Curious Adults
               </span>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-academy text-white mt-3 mb-6">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-academy text-white mt-3 mb-6">
                 Educational Adventures <span className="text-kapes-orange">For Adults</span>
               </h1>
               <p className="text-xl text-white/80 max-w-2xl mb-8">
@@ -87,7 +87,7 @@ const AdultPrograms = () => {
                 >
                   <Button
                     variant="outline"
-                    className="border-2 border-white text-white hover:bg-white hover:text-dragon text-lg h-14 px-8"
+                    className="border-2 border-white text-white hover:bg-white hover:text-kapes-charcoal text-lg h-14 px-8"
                   >
                     Schedule a Consultation
                   </Button>
@@ -118,7 +118,7 @@ const AdultPrograms = () => {
         </section>
 
         {/* Programs Section */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-24 md:py-32 bg-white">
           <div className="container-wide">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -187,7 +187,7 @@ const AdultPrograms = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-dragon to-dragon-dark rounded-2xl p-8 md:p-12 text-white"
+              className="bg-kapes-charcoal rounded-2xl p-8 md:p-12 text-white"
             >
               <div className="text-center mb-10">
                 <h3 className="text-2xl md:text-3xl font-academy mb-4">Custom Trips for Groups</h3>
@@ -238,7 +238,7 @@ const AdultPrograms = () => {
                 <WaitingListForm>
                   <Button
                     variant="outline"
-                    className="border-2 border-white text-white hover:bg-white hover:text-dragon text-lg h-14 px-8"
+                    className="border-2 border-white text-white hover:bg-white hover:text-kapes-charcoal text-lg h-14 px-8"
                   >
                     Apply Now
                   </Button>
