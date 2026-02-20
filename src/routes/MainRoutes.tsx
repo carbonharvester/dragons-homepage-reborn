@@ -92,6 +92,11 @@ import LPEducators from "@/pages/LPEducators";
 
 // Programmatic SEO
 import LocationLandingPage from "@/pages/LocationLandingPage";
+import GeographySchoolTrips from "@/pages/GeographySchoolTrips";
+import CurriculumLandingPage from "@/pages/CurriculumLandingPage";
+
+// Tier 3: Comparison & Decision SEO Pages
+import ComparisonLandingPage from "@/pages/ComparisonLandingPage";
 
 // Lead Magnet Pages
 import TransparencyChecklist from "@/pages/TransparencyChecklist";
@@ -210,6 +215,26 @@ const MainRoutes = () => {
       
       {/* Programmatic SEO — Location Landing Pages */}
       <Route path="/trips-from/:locationSlug" element={<LocationLandingPage />} />
+      <Route path="/geography-school-trips-to-kenya" element={<GeographySchoolTrips />} />
+
+      {/* Tier 2: Curriculum-Aligned SEO Pages */}
+      <Route path="/biology-school-trips-to-kenya" element={<CurriculumLandingPage />} />
+      <Route path="/ib-cas-trips-to-kenya" element={<CurriculumLandingPage />} />
+      <Route path="/global-citizenship-school-trips-kenya" element={<CurriculumLandingPage />} />
+      <Route path="/environmental-science-school-trips-kenya" element={<CurriculumLandingPage />} />
+      <Route path="/history-school-trips-to-kenya" element={<CurriculumLandingPage />} />
+      <Route path="/service-learning-programs-kenya-middle-school" element={<CurriculumLandingPage />} />
+      <Route path="/service-learning-programs-kenya-high-school" element={<CurriculumLandingPage />} />
+
+      {/* Tier 3: Comparison & Decision SEO Pages */}
+      <Route path="/ethical-school-trips-vs-voluntourism" element={<ComparisonLandingPage />} />
+      <Route path="/school-trip-to-kenya-cost-breakdown" element={<ComparisonLandingPage />} />
+      <Route path="/how-to-plan-an-ethical-school-trip-to-kenya" element={<ComparisonLandingPage />} />
+      <Route path="/school-trip-kenya-safety-guide" element={<ComparisonLandingPage />} />
+      <Route path="/kenya-school-trip-visa-requirements" element={<ComparisonLandingPage />} />
+      <Route path="/best-time-to-visit-kenya-for-school-trips" element={<ComparisonLandingPage />} />
+      <Route path="/school-trip-kenya-packing-list" element={<ComparisonLandingPage />} />
+      <Route path="/school-trip-provider-comparison-kenya" element={<ComparisonLandingPage />} />
 
       {/* 404 Catch All */}
       <Route path="*" element={<NotFound />} />
