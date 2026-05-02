@@ -44,7 +44,9 @@ const BLOG_POSTS = [
   {slug:"tacklingfoodsecuritythrougheducationinkenya", title:"Tackling Food Security Through Education", date:"2025-05-07", category:"Education", readTime:"5 min", author:"Matthew Benjamin", excerpt:"How Kapes Adventures has turned unused school land into thriving gardens since 2023 — and what daily meals do for hundreds of students who weren't eating before.", img:"https://images.ctfassets.net/qz62f406e9mz/1sFw3iYEB4ufDcmAqZoXi1/a4afa51208ec5fa73d513d03d64b230e/WhatsApp_Image_2025-05-13_at_12.12.32__1_.jpeg"},
 ];
 
-const BLOG_BASE_URL = "https://www.kapesadventures.com/blog";
+// Use the auto-generated full-content blog posts loaded from blog-data.js
+// (window.BLOG_POSTS is set by that file at <head> time, before JSX loads.)
+const FULL_BLOG_POSTS = (typeof window !== "undefined" && window.BLOG_POSTS) ? window.BLOG_POSTS : BLOG_POSTS;
 
 function StoriesHero(){
   return (
@@ -87,12 +89,14 @@ function fmtDate(s){
   return d.toLocaleDateString("en-GB", {day:"numeric", month:"short", year:"numeric"});
 }
 
-function BlogCard({ p }){
-  const url = `${BLOG_BASE_URL}/${p.slug}`;
+function BlogCard({ p, onOpen }){
+  const img = p.featuredImage || p.img;
   return (
-    <a href={url} target="_blank" rel="noopener noreferrer" style={{background:"var(--cream)", border:"1px solid var(--line)", display:"flex", flexDirection:"column", textDecoration:"none", color:"inherit", transition:"transform .2s, box-shadow .2s"}}>
+    <div onClick={onOpen} style={{background:"var(--cream)", border:"1px solid var(--line)", display:"flex", flexDirection:"column", cursor:"pointer", transition:"transform .2s, box-shadow .2s"}}
+         onMouseEnter={(e)=>{e.currentTarget.style.transform="translateY(-2px)"; e.currentTarget.style.boxShadow="0 12px 24px -16px rgba(0,0,0,.18)";}}
+         onMouseLeave={(e)=>{e.currentTarget.style.transform="translateY(0)"; e.currentTarget.style.boxShadow="none";}}>
       <div style={{aspectRatio:"4/3", overflow:"hidden", background:"var(--charcoal)"}}>
-        <img className="kapes" src={p.img} alt="" style={{width:"100%", height:"100%", objectFit:"cover", display:"block"}}/>
+        {img ? <img className="kapes" src={img} alt="" style={{width:"100%", height:"100%", objectFit:"cover", display:"block"}}/> : null}
       </div>
       <div style={{padding:22, display:"flex", flexDirection:"column", gap:10, flex:1}}>
         <div style={{display:"flex", justifyContent:"space-between", alignItems:"center", gap:10}}>
@@ -106,24 +110,73 @@ function BlogCard({ p }){
           <span style={{color:"var(--charcoal)"}}>Read →</span>
         </div>
       </div>
-    </a>
+    </div>
   );
 }
 
-function BlogIndex({ onOpenFounder }){
+function BlogIndex({ onOpenFounder, onOpenPost }){
   return (
     <section className="section" style={{padding:"64px 0 96px", background:"var(--cream)"}}>
       <div className="container">
         <FeaturedFounderCard s={FOUNDER_NOTE} onOpen={onOpenFounder}/>
         <div style={{display:"flex", justifyContent:"space-between", alignItems:"baseline", marginBottom:24, flexWrap:"wrap", gap:12}}>
           <h2 className="display" style={{fontSize:"clamp(24px,2.4vw,34px)", margin:0}}>From the blog</h2>
-          <div style={{fontSize:12, letterSpacing:".08em", textTransform:"uppercase", color:"var(--muted)", fontWeight:600}}>{BLOG_POSTS.length} posts · imported from kapesadventures.com</div>
+          <div style={{fontSize:12, letterSpacing:".08em", textTransform:"uppercase", color:"var(--muted)", fontWeight:600}}>{FULL_BLOG_POSTS.length} posts</div>
         </div>
         <div style={{display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(300px, 1fr))", gap:20}}>
-          {BLOG_POSTS.map(p=> <BlogCard key={p.slug} p={p}/>)}
+          {FULL_BLOG_POSTS.map(p=> <BlogCard key={p.slug} p={p} onOpen={()=>onOpenPost(p)}/>)}
         </div>
       </div>
     </section>
+  );
+}
+
+function BlogPost({ p, onBack }){
+  // Render the markdown body via marked.js (loaded in index.html)
+  const html = React.useMemo(()=>{
+    if (!p.body) return "";
+    if (typeof window !== "undefined" && window.marked) {
+      window.marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
+      return window.marked.parse(p.body);
+    }
+    return `<pre style="white-space:pre-wrap;">${(p.body||"").replace(/[<>&]/g, c=>({"<":"&lt;",">":"&gt;","&":"&amp;"}[c]))}</pre>`;
+  }, [p.body]);
+  return (
+    <div>
+      <section style={{padding:"24px 0", background:"var(--cream)", borderBottom:"1px solid var(--line)"}}>
+        <div className="container" style={{fontSize:12, color:"var(--muted)", letterSpacing:".06em"}}>
+          <span style={{cursor:"pointer"}} onClick={onBack}>Blog</span> / <span style={{color:"var(--charcoal)"}}>{p.category}</span>
+        </div>
+      </section>
+      <article style={{padding:"64px 0 40px", background:"var(--cream)"}}>
+        <div className="container" style={{maxWidth:760, margin:"0 auto"}}>
+          <div style={{fontSize:11, letterSpacing:".16em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700, marginBottom:14}}>{p.category} · {fmtDate(p.date)}</div>
+          <h1 className="display" style={{fontSize:"clamp(36px,4vw,56px)", lineHeight:1.05, marginBottom:24}}>{p.title}</h1>
+          {p.excerpt && <p style={{fontSize:20, lineHeight:1.5, color:"var(--ink-2)", fontFamily:"var(--serif)", fontStyle:"italic", borderLeft:"3px solid var(--orange)", paddingLeft:20, margin:"0 0 36px"}}>{p.excerpt}</p>}
+          <div style={{display:"flex", gap:16, alignItems:"center", paddingBottom:28, borderBottom:"1px solid var(--line)", marginBottom:36}}>
+            <div style={{width:42, height:42, borderRadius:50, background:"var(--charcoal)", color:"#fff", display:"flex", alignItems:"center", justifyContent:"center", fontFamily:"var(--display)", fontSize:13}}>{(p.author||"KA").split(" ").map(x=>x[0]).slice(0,2).join("")}</div>
+            <div>
+              <div style={{fontSize:13, fontWeight:700}}>{p.author || "Kapes Adventures"}</div>
+              <div style={{fontSize:11, color:"var(--muted)", letterSpacing:".06em", textTransform:"uppercase"}}>{p.authorTitle || "Founder"} · {p.readTime}</div>
+            </div>
+          </div>
+        </div>
+        {p.featuredImage && (
+          <div className="container" style={{maxWidth:920, margin:"0 auto 40px"}}>
+            <div style={{aspectRatio:"16/9", overflow:"hidden", borderRadius:4}}>
+              <img className="kapes" src={p.featuredImage}/>
+            </div>
+          </div>
+        )}
+        <div className="container" style={{maxWidth:760, margin:"0 auto"}}>
+          <div className="blog-body" style={{fontFamily:"var(--serif)", fontSize:17, lineHeight:1.75, color:"#1a1a1a"}} dangerouslySetInnerHTML={{__html: html}}/>
+          <div style={{marginTop:40, display:"flex", gap:16, alignItems:"center", flexWrap:"wrap"}}>
+            <button className="btn-pill btn-ghost" style={{padding:"12px 20px"}} onClick={onBack}>← Back to blog</button>
+            <button className="btn-pill btn-action" style={{padding:"12px 20px"}} onClick={()=>khifiNavigate("contact")}>Talk to Matthew</button>
+          </div>
+        </div>
+      </article>
+    </div>
   );
 }
 
@@ -176,17 +229,22 @@ function Article({ s, onBack }){
 }
 
 function StoriesPage(){
-  const [open, setOpen] = React.useState(null);
+  const [open, setOpen] = React.useState(null); // {kind:"founder"|"post", data}
   React.useEffect(()=> window.scrollTo(0,0), [open]);
   return (
     <div>
       <SiteNav sticky/>
-      {open ? (
-        <Article s={open} onBack={()=>setOpen(null)}/>
+      {open?.kind === "founder" ? (
+        <Article s={open.data} onBack={()=>setOpen(null)}/>
+      ) : open?.kind === "post" ? (
+        <BlogPost p={open.data} onBack={()=>setOpen(null)}/>
       ) : (
         <>
           <StoriesHero/>
-          <BlogIndex onOpenFounder={()=>setOpen(FOUNDER_NOTE)}/>
+          <BlogIndex
+            onOpenFounder={()=>setOpen({kind:"founder", data:FOUNDER_NOTE})}
+            onOpenPost={(p)=>setOpen({kind:"post", data:p})}
+          />
         </>
       )}
       <Footer/>
