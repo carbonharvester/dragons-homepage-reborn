@@ -5,6 +5,7 @@
   "description": "Kapes Adventures — public site + Netlify functions for the Impact Scorecard.",
   "scripts": {
     "dev": "python3 -m http.server 4173 --bind 127.0.0.1",
+    "build": "echo 'Static site — no build step.'",
     "deploy:check": "echo 'Static site — Netlify will publish the repo root. Functions in netlify/functions.'"
   }
 }

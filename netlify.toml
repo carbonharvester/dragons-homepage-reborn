@@ -3,6 +3,8 @@
 # History note: previous Vite/React app archived under /_archive_v1 — see git history.
 
 [build]
+  # Static site — no build step required. Files are served from the repo root as-is.
+  command = "echo 'Static site — no build needed.'"
   publish = "."
   functions = "netlify/functions"
 
