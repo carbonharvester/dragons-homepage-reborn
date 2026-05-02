@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Impact Scorecard — Your Report · Kapes Adventures</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  @font-face {
+    font-family: 'AcademySansExpanded-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySansExpanded-Bold_ed3d0942-5858-4fad-8886-e581bbbada6a.woff?v=1746173800') format('woff');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+
+  :root{
+    --charcoal:#1A1A1A; --ink:#2A2A2A; --ink-2:#4A4A4A;
+    --muted:#8A8478; --line:#E4DFD3; --line-2:#D7D0BE;
+    --cream:#FAFAF8; --sand:#F5F0E5; --paper:#FCFAF4;
+    --orange:#FF7700; --orange-ink:#C45D00;
+    --red:#C44A3C; --green:#2A7A3F; --amber:#B06700;
+    --display:'AcademySansExpanded-Bold','Libre Baskerville',Georgia,serif;
+    --serif:'Libre Baskerville',Georgia,serif;
+    --body:'Inter',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+
+  *{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html,body{ margin:0; padding:0; background:#4a4a4a; color:var(--charcoal); font-family:var(--body); }
+  body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+
+  /* === EMAIL FRAME (screen only) === */
+  .email-shell{
+    max-width: 760px; margin: 24px auto 16px; padding: 14px 16px;
+    background:#fff; border-radius:10px;
+    box-shadow:0 12px 28px -16px rgba(0,0,0,.35);
+    font-family: var(--body);
+  }
+  .email-shell .from-line{ font-size:12px; color:var(--muted); letter-spacing:.04em; margin-bottom:8px; font-family:var(--mono); }
+  .email-shell .from-line b{ color:var(--charcoal); font-weight:600;}
+  .email-shell .subject{ font-family:var(--display); font-size:22px; color:var(--charcoal); margin: 0 0 14px;}
+  .email-shell .body p{ font-size:14px; line-height:1.6; color:var(--ink); margin:0 0 12px;}
+  .email-shell .sig{ font-size:13px; color:var(--ink-2); border-top:1px solid var(--line); padding-top:12px; margin-top:14px; line-height:1.55;}
+  .email-shell .sig b{ color:var(--charcoal);}
+  .email-shell .attachment{
+    margin-top:14px; padding: 11px 14px; background:var(--sand); border:1px solid var(--line); border-radius:6px;
+    display:flex; align-items:center; gap:12px;
+    font-family:var(--mono); font-size:12px; color:var(--ink); letter-spacing:.04em;
+  }
+  .email-shell .attachment .doc-icon{
+    width:32px; height:40px; background:#fff; border:1px solid var(--line-2); position:relative; flex-shrink:0; border-radius:2px;
+  }
+  .email-shell .attachment .doc-icon:after{
+    content:''; position:absolute; right:-1px; top:-1px; width:9px; height:9px;
+    background: linear-gradient(225deg, transparent 50%, var(--line-2) 50%, var(--line-2) calc(50% + 1px), var(--sand) calc(50% + 1px));
+  }
+  .email-shell .attachment .meta b{ color:var(--charcoal); font-weight:600; display:block; margin-bottom:2px;}
+
+  /* === A4 PAGES === */
+  .pack{ max-width:210mm; margin: 6px auto 28px; display:flex; flex-direction:column; gap:18px;}
+  .page{
+    width:210mm; height:297mm; background:#fff; position:relative; overflow:hidden;
+    box-shadow:0 20px 40px -15px rgba(0,0,0,.4), 0 4px 12px rgba(0,0,0,.1);
+    color:var(--charcoal); font-size:10.5pt; line-height:1.5;
+  }
+  .page.paper{ background:var(--paper);}
+  .page.dark{ background:var(--charcoal); color:#fff;}
+  .page.sand{ background:var(--sand);}
+
+  @page{ size:A4; margin:0;}
+  @media print{
+    html,body{ background:#fff;}
+    .pack{ margin:0; gap:0;}
+    .page{ box-shadow:none; margin:0; page-break-after:always; break-after:page;}
+    .noprint{ display:none !important;}
+  }
+
+  .frame{ padding:16mm 18mm 14mm 18mm; height:100%; display:flex; flex-direction:column;}
+
+  .page-header{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    padding-bottom:6mm; border-bottom:1px solid var(--line); margin-bottom:7mm;
+    font-family:var(--mono); font-size:7.5pt; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted); font-weight:500;
+  }
+  .page-header .l{ color:var(--charcoal); font-weight:600;}
+  .page-footer{
+    margin-top:auto; padding-top:5mm; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--mono); font-size:7pt; letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+  }
+  .page-footer .pg{ color:var(--charcoal); font-weight:700;}
+
+  h1,h2,h3,h4{ margin:0; font-weight:700; color:var(--charcoal);}
+  .dis{ font-family:var(--display); letter-spacing:-.01em; line-height:.95;}
+  .ser{ font-family:var(--serif); font-weight:400;}
+  .mono{ font-family:var(--mono); letter-spacing:.06em; text-transform:uppercase;}
+  .eyebrow{ font-family:var(--mono); font-size:7pt; letter-spacing:.18em; text-transform:uppercase; color:var(--orange); font-weight:600;}
+  .lede{ font-family:var(--serif); font-size:12pt; line-height:1.55; color:var(--ink); font-style:italic;}
+  .tnum{ font-variant-numeric:tabular-nums;}
+  .accent{ color:var(--orange);}
+  .cap{ font-size:7.5pt; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-family:var(--mono); font-weight:500;}
+
+  .tag{ display:inline-block; padding:3px 8px; border:1px solid var(--line-2); border-radius:3px;
+        font-size:7.5pt; letter-spacing:.08em; text-transform:uppercase; font-family:var(--mono); font-weight:600; color:var(--ink);}
+  .tag.orange{ background:var(--orange); color:#fff; border-color:var(--orange);}
+  .tag.amber{ background:var(--amber); color:#fff; border-color:var(--amber);}
+  .tag.red{ background:var(--red); color:#fff; border-color:var(--red);}
+  .tag.green{ background:var(--green); color:#fff; border-color:var(--green);}
+  .tag.char{ background:var(--charcoal); color:#fff; border-color:var(--charcoal);}
+
+  /* === COVER === */
+  .cover{ position:relative; color:#fff; overflow:hidden; background:var(--charcoal);}
+  .cover .bgimg{
+    position:absolute; inset:0;
+    background-image: url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747160268/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg');
+    background-size:cover; background-position:center; filter:grayscale(.2) contrast(1.05);
+  }
+  .cover .scrim{ position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(26,26,26,.55) 0%, rgba(26,26,26,.18) 38%, rgba(26,26,26,.92) 100%);
+  }
+  .cover .content{ position:relative; z-index:2; height:100%; padding:14mm 16mm; display:flex; flex-direction:column;}
+
+  .scoreCircle{
+    width: 72mm; height:72mm; border-radius:50%;
+    background:var(--orange); color:#fff;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    box-shadow: 0 0 0 3mm rgba(255,255,255,.15), 0 0 0 4mm rgba(255,255,255,.08);
+  }
+  .scoreCircle .num{ font-family:var(--display); font-size:96pt; line-height:.85; letter-spacing:-.03em;}
+  .scoreCircle .of{ font-family:var(--mono); font-size:9pt; letter-spacing:.18em; opacity:.8; margin-top:2pt;}
+  .scoreCircle .band{ font-family:var(--display); font-size:11pt; letter-spacing:.04em; text-transform:uppercase; margin-top:4pt;}
+
+  /* small ring meta on cover */
+  .cover-meta{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+    border-top: 1px solid rgba(255,255,255,.2); padding-top: 6mm;
+  }
+  .cover-meta > div{ padding-right:6mm; border-right:1px solid rgba(255,255,255,.15);}
+  .cover-meta > div:last-child{ border-right:none;}
+  .cover-meta .lbl{ font-family:var(--mono); font-size:7.5pt; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.6); margin-bottom:4pt; font-weight:600;}
+  .cover-meta .v{ font-family:var(--display); font-size:14pt; color:#fff;}
+
+  /* === SCORE GAUGE BAR === */
+  .gauge{
+    position:relative; height: 14mm; background: linear-gradient(90deg,
+      #8B1A1A 0%, #8B1A1A 24%,
+      var(--red) 25%, var(--red) 49%,
+      var(--orange) 50%, var(--orange) 74%,
+      var(--green) 75%, var(--green) 100%);
+    border-radius: 3px; overflow:visible;
+  }
+  .gauge .ticks{
+    position:absolute; inset:0; display:grid; grid-template-columns: repeat(4,1fr);
+  }
+  .gauge .ticks > div{
+    border-right:1px solid rgba(255,255,255,.4); padding:3pt 5pt;
+    color:#fff; font-family:var(--mono); font-size:7pt; letter-spacing:.08em; text-transform:uppercase; font-weight:700;
+  }
+  .gauge .ticks > div:last-child{ border-right:none;}
+  .gauge .marker{
+    position:absolute; top:-6mm; width:0; height:0;
+    border-left:4mm solid transparent; border-right:4mm solid transparent;
+    border-top:5mm solid var(--charcoal);
+    transform: translateX(-50%);
+  }
+  .gauge .marker .lbl{
+    position:absolute; bottom:5mm; left:50%; transform:translateX(-50%);
+    font-family:var(--display); font-size:10pt; color:var(--charcoal); white-space:nowrap;
+  }
+  .gauge .scaleAxis{
+    position:relative; margin-top: 2mm; height: 4mm;
+    font-family:var(--mono); font-size:7pt; letter-spacing:.08em; color:var(--muted);
+  }
+  .gauge .scaleAxis span{ position:absolute; transform:translateX(-50%); top:0;}
+
+  /* === DIMENSION ROWS === */
+  .dim-row{
+    display:grid; grid-template-columns: 30mm 1fr 38mm 18mm; gap:5mm; align-items:center;
+    padding: 4.5mm 0; border-bottom: 1px solid var(--line);
+  }
+  .dim-row:first-child{ border-top: 2px solid var(--charcoal);}
+  .dim-row .name{ font-family:var(--display); font-size:10.5pt; color:var(--charcoal); line-height:1.1;}
+  .dim-row .name .sub{ font-family:var(--body); font-size:7.5pt; color:var(--muted); margin-top:2pt; font-weight:500; letter-spacing:.04em; text-transform:uppercase;}
+  .dim-row .ans{ font-family:var(--serif); font-style:italic; font-size:9.5pt; color:var(--ink); line-height:1.4;}
+  .dim-row .bar{
+    height:9pt; background:var(--sand); border-radius:2px; position:relative; overflow:hidden;
+  }
+  .dim-row .bar > span{ position:absolute; inset:0; }
+  .dim-row .bar .lbl{
+    position:absolute; right:5pt; top:50%; transform:translateY(-50%);
+    font-family:var(--mono); font-size:6.8pt; color:#fff; font-weight:700; letter-spacing:.06em;
+    text-shadow: 0 0 2px rgba(0,0,0,.4);
+  }
+  .dim-row .scoreCell{
+    text-align:right; font-family:var(--display); font-size:13pt; color:var(--charcoal); font-variant-numeric: tabular-nums;
+  }
+  .dim-row .scoreCell .max{ font-size:8pt; color:var(--muted); font-family:var(--body); font-weight:500;}
+
+  /* === BENCHMARK CHART === */
+  .benchBox{
+    border:1px solid var(--line); border-radius:6px; padding: 7mm; background:var(--cream);
+  }
+  .benchPlot{
+    position:relative; height: 38mm; margin: 4mm 0 6mm;
+    background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+    border-bottom: 2px solid var(--charcoal);
+    border-left: 1px solid var(--line);
+  }
+  .benchPlot .gridline{
+    position:absolute; left:0; right:0; border-top:1px dotted var(--line);
+    font-family:var(--mono); font-size:7pt; color:var(--muted); padding-left: 2pt;
+  }
+  .benchPlot .you, .benchPlot .net{
+    position:absolute; bottom:0; transform:translateX(-50%);
+    text-align:center;
+  }
+  .benchPlot .bar{
+    width:14mm; border-radius:2px 2px 0 0; position:relative;
+  }
+  .benchPlot .you .bar{ background:var(--orange); height: 58%;}
+  .benchPlot .net .bar{ background:var(--charcoal); height: 78%;}
+  .benchPlot .lbl{
+    font-family:var(--mono); font-size:7pt; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2);
+    margin-top:3pt; font-weight:600;
+  }
+  .benchPlot .v{
+    font-family:var(--display); font-size:14pt; color:var(--charcoal);
+    position:absolute; top:-7mm; left:50%; transform:translateX(-50%);
+  }
+
+  /* === RECOMMENDATION CARDS === */
+  .rec{
+    display:grid; grid-template-columns: 14mm 1fr; gap: 5mm;
+    padding: 4mm 0; border-bottom: 1px solid var(--line);
+  }
+  .rec:first-child{ border-top: 2px solid var(--charcoal);}
+  .rec .num{ font-family:var(--display); font-size: 22pt; color:var(--orange); line-height:.85;}
+  .rec h3{ font-family:var(--display); font-size: 12.5pt; color:var(--charcoal); line-height:1.15; margin-bottom: 2pt;}
+  .rec .why{
+    font-family:var(--serif); font-style:italic; font-size: 9pt; line-height:1.5; color:var(--ink); margin: 2pt 0 3pt;
+  }
+  .rec .how{ font-size: 9pt; line-height:1.5; color:var(--ink-2);}
+  .rec .how b{ color: var(--charcoal); font-weight:600;}
+  .rec .meta{
+    margin-top: 2.5mm; display:flex; gap: 8pt; align-items:center; flex-wrap:wrap;
+    font-family:var(--mono); font-size:7.5pt; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600;
+  }
+  .rec .meta .dot{ width:3pt; height:3pt; background:var(--line-2); border-radius:50%; display:inline-block;}
+
+  /* === FRAMEWORK BLOCK === */
+  .fw-grid{
+    display:grid; grid-template-columns: repeat(3,1fr); gap:4mm;
+  }
+  .fw{
+    border:1px solid var(--line); border-radius:4px; padding:5mm; background:var(--cream);
+  }
+  .fw .n{ font-family:var(--mono); font-size:8pt; color:var(--orange); font-weight:700; letter-spacing:.1em; margin-bottom:3pt;}
+  .fw .ttl{ font-family:var(--display); font-size:11pt; line-height:1.15; color:var(--charcoal); margin-bottom:4pt;}
+  .fw .txt{ font-size:8.5pt; line-height:1.5; color:var(--ink-2);}
+
+  /* === CONVERSATION CTA === */
+  .conv{
+    background:var(--charcoal); color:#fff; padding: 9mm 9mm; border-radius:6px;
+    display:grid; grid-template-columns: 1.2fr 1fr; gap: 7mm; align-items:center;
+  }
+  .conv h3{ font-family:var(--display); font-size: 22pt; color:#fff; line-height:1.05;}
+  .conv p{ font-family:var(--serif); font-size:10pt; line-height:1.55; color:rgba(255,255,255,.8); margin: 4mm 0 5mm; font-style:italic;}
+  .conv .cta-card{
+    background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15);
+    border-radius: 4px; padding: 5mm;
+  }
+  .conv .cta-card .lbl{ font-family:var(--mono); font-size:7pt; letter-spacing:.16em; text-transform:uppercase; color:var(--orange); font-weight:700; margin-bottom:3pt;}
+  .conv .cta-card .v{ font-family:var(--display); font-size:13pt; color:#fff; margin-bottom:8pt;}
+  .conv .cta-card .row{ display:flex; gap:6pt; align-items:center; font-size:9pt; color:rgba(255,255,255,.85); padding: 2pt 0;}
+  .conv .cta-card .row b{ color:#fff; font-weight:600;}
+
+  /* === METHODOLOGY === */
+  .meth-row{
+    display:grid; grid-template-columns: 35mm 1fr; gap:6mm;
+    padding: 4mm 0; border-bottom: 1px solid var(--line); align-items:start;
+  }
+  .meth-row:first-child{ border-top: 1px solid var(--line);}
+  .meth-row .lbl{ font-family:var(--mono); font-size:8pt; letter-spacing:.1em; text-transform:uppercase; color:var(--orange); font-weight:700; padding-top:1pt;}
+  .meth-row .v{ font-size:9.5pt; line-height:1.55; color:var(--ink);}
+
+  /* === Q&A row · improved card-style === */
+  .qa{
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--orange);
+    border-radius: 3px;
+    padding: 5mm 6mm;
+    margin-bottom: 3mm;
+    display:grid; grid-template-columns: 14mm 1fr; gap:5mm;
+    align-items: start;
+    page-break-inside: avoid;
+  }
+  .qa:last-child{ margin-bottom: 0;}
+  .qa .q-tag{
+    font-family:var(--display);
+    font-size: 18pt;
+    letter-spacing:-.02em;
+    color: var(--orange);
+    font-weight:700;
+    line-height:.95;
+    padding-top: 1pt;
+  }
+  .qa .q{ font-family:var(--display); font-size: 12pt; color:var(--charcoal); margin-bottom:3pt; line-height:1.2;}
+  .qa .a{ font-size: 9.5pt; line-height:1.6; color:var(--ink);}
+
+  /* === SCREEN-ONLY NAV === */
+  .nav{
+    max-width:760px; margin: 20px auto 0; padding:10px 14px;
+    background:#fff; border-radius:10px;
+    display:flex; gap:14px; align-items:center; justify-content:space-between;
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2);
+  }
+  .nav .n-title{ font-family:var(--display); font-size:14px; color:var(--charcoal);}
+  .nav button, .nav a{
+    font:inherit; letter-spacing:.08em; text-transform:uppercase;
+    padding:7px 14px; border:1px solid var(--line-2); border-radius:999px;
+    background:#fff; color:var(--ink); cursor:pointer; text-decoration:none;
+  }
+  .nav a.primary{ background:var(--charcoal); color:#fff; border-color:var(--charcoal);}
+
+  .pageDivider{
+    text-align:center; font-family:var(--mono); font-size:10px; letter-spacing:.16em;
+    text-transform:uppercase; color:#bbb; margin: 2px 0 -8px;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ============ NAV (screen only) ============ -->
+<div class="nav noprint">
+  <div class="n-title">Impact Scorecard — Email + Report</div>
+  <div style="display:flex; gap:8px;">
+    <a href="Kapes Hi-Fi.html">← Back to assessment</a>
+    <a href="javascript:window.print()" class="primary">Save as PDF</a>
+  </div>
+</div>
+
+<!-- ============ EMAIL SHELL (the email itself) ============ -->
+<div class="email-shell noprint">
+  <div class="from-line"><b>From:</b> Matthew Benjamin &lt;matthew@kapesadventures.com&gt; &nbsp;·&nbsp; <b>To:</b> j.morley@stcatherines.edu.uk</div>
+  <div class="subject">Your Impact Scorecard report — St. Catherine's College (58/100, Promising with gaps)</div>
+
+  <div class="body">
+    <p>Hi {RECIPIENT},</p>
+    <p>Thanks for taking the time on the Scorecard — your report is attached as a PDF. The headline: <b>58/100</b>, which puts St. Catherine's in our "Promising with gaps" band. There are three specific changes that would move you to the top tier — they're written up on page 5 with the operational detail you'd need to actually action them.</p>
+    <p>A few notes before you open it:</p>
+    <p>· The assessment is new — we're not citing a "network average" or comparing you to other schools yet. As schools complete it, we'll publish the benchmark openly. For now, the report is your diagnostic, not a leaderboard.<br/>
+       · Nothing in the report assumes you'll work with us. The recommendations are operator-agnostic; some schools take the diagnostic and quietly fix things with their existing partner. That's a good outcome.<br/>
+       · If you'd like to walk through the result with someone — your CAS coordinator, your operations lead — feel free to forward this email. The report is built to read at a board table.</p>
+    <p>If you do want to talk, page 8 has three ways to do that. None of them are "book a 30-min call now" pop-ups. We're not going to chase you.</p>
+    <p>Honest question I'd love your answer to, whether or not we ever speak: what surprised you most in the breakdown?</p>
+
+    <div class="sig">
+      <b>Matthew Benjamin</b> · Founder, Kapes Adventures<br/>
+      Dubai · UAE &nbsp;·&nbsp; <span style="color:var(--orange);">matthew@kapesadventures.com</span><br/>
+      <span style="color:var(--muted); font-family:var(--mono); font-size:11px; letter-spacing:.06em;">kapesadventures.com · founded 2025</span>
+    </div>
+
+    <div class="attachment">
+      <div class="doc-icon"></div>
+      <div class="meta">
+        <b>Kapes_Scorecard_St-Catherines_2026-05.pdf</b>
+        <span>8 pages · 1.4 MB · personalized report</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pageDivider noprint">— Attachment opens below —</div>
+
+<!-- ============ THE PDF ============ -->
+<div class="pack" id="report">
+
+<!-- ============ PAGE 1 — COVER ============ -->
+<div class="page cover">
+  <div class="bgimg"></div>
+  <div class="scrim"></div>
+  <div class="content">
+
+    <!-- Top -->
+    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+      <div>
+        <div style="font-family:var(--display); font-size:18pt; letter-spacing:.04em; color:#fff;">KAPES<span style="color:var(--orange); padding: 0 4pt;">·</span>ADVENTURES</div>
+        <div style="font-family:var(--mono); font-size:7.5pt; letter-spacing:.18em; color:rgba(255,255,255,.65); margin-top:3pt; font-weight:600;">Impact Scorecard · Confidential to recipient</div>
+      </div>
+      <div style="text-align:right;">
+        <div class="cap" style="color:rgba(255,255,255,.55);">Generated</div>
+        <div style="font-family:var(--display); font-size:11pt; color:#fff;">02 May 2026</div>
+      </div>
+    </div>
+
+    <!-- Mid headline -->
+    <div style="margin-top: 20mm; max-width: 130mm;">
+      <div style="font-family:var(--mono); font-size:8pt; letter-spacing:.22em; color:var(--orange); font-weight:700; text-transform:uppercase;">Your Impact Score · Anti-voluntourism diagnostic</div>
+      <h1 class="dis" style="color:#fff; font-size: 50pt; margin-top: 5mm; line-height:.95;">
+        St. Catherine's<br/>
+        <span style="color:var(--orange);">scores 58.</span>
+      </h1>
+      <div class="lede" style="color:rgba(255,255,255,.85); margin-top: 5mm; max-width: 110mm;">
+        Promising programme with three specific gaps. Close them and you move into the top tier — most of the lift is operational, not financial.
+      </div>
+    </div>
+
+    <!-- Score circle -->
+    <div style="margin-top: auto; display:flex; align-items:end; justify-content:space-between; gap: 10mm;">
+      <div class="scoreCircle">
+        <div class="num tnum">58</div>
+        <div class="of">OUT OF 100</div>
+        <div class="band">Promising · gaps</div>
+      </div>
+      <div style="flex:1; padding-bottom: 4mm;">
+        <div class="cover-meta" style="grid-template-columns:repeat(2,1fr);">
+          <div>
+            <div class="lbl">Recipient</div>
+            <div class="v" id="cover-recipient">James Morley</div>
+          </div>
+          <div>
+            <div class="lbl">Institution</div>
+            <div class="v" id="cover-school">St. Catherine's College</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 7mm; padding-top: 5mm; border-top: 1px solid rgba(255,255,255,.2); display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:7pt; letter-spacing:.16em; color:rgba(255,255,255,.55); text-transform:uppercase; font-weight:600;">
+      <span>Kapes Adventures FZ-LLC · Dubai, UAE</span>
+      <span>Doc · IS-2026-05-0114 · v1</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 2 — EXECUTIVE SUMMARY + GAUGE ============ -->
+<div class="page paper">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Page 02</span> · Executive summary</span>
+      <span>Kapes · Impact Scorecard · St. Catherine's College</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns: 1fr 70mm; gap: 10mm; align-items:start;">
+      <div>
+        <div class="eyebrow">The headline</div>
+        <h2 class="dis" style="font-size: 28pt; line-height:.95; margin-top: 4mm; max-width: 110mm;">
+          A trip with the right intent and the wrong <span class="accent">operational backbone.</span>
+        </h2>
+        <div class="lede" style="margin-top:6mm;">
+          Your program sits in the band where most schools we meet sit: thoughtful curriculum framing, strong safeguarding within the school's own community, but a partner site that goes quiet for nine months of the year and a fee structure no one in the room can break down to the percentage.
+        </div>
+      </div>
+
+      <!-- Vital signs -->
+      <div style="border:1px solid var(--line); border-radius:4px; background: var(--cream); padding: 5mm;">
+        <div class="cap" style="color:var(--orange);">Vital signs</div>
+        <div style="margin-top:3mm; display:flex; flex-direction:column; gap: 3.5mm;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px dotted var(--line); padding-bottom:2mm;">
+            <div style="font-size:8.5pt; color:var(--ink-2);">Total score</div>
+            <div class="dis tnum" style="font-size:18pt; color:var(--orange);">58<span style="font-size:9pt; color:var(--muted);">/100</span></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px dotted var(--line); padding-bottom:2mm;">
+            <div style="font-size:8.5pt; color:var(--ink-2);">Band</div>
+            <div class="dis tnum" style="font-size:13pt;">Promising</div>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px dotted var(--line); padding-bottom:2mm;">
+            <div style="font-size:8.5pt; color:var(--ink-2);">Pages</div>
+            <div class="dis tnum" style="font-size:14pt;">07<span style="font-size:9pt; color:var(--muted);"> · A4</span></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline;">
+            <div style="font-size:8.5pt; color:var(--ink-2);">Gap to top tier</div>
+            <div class="dis tnum" style="font-size:14pt; color:var(--green);">+24<span style="font-size:9pt; color:var(--muted);">pts</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gauge -->
+    <div style="margin-top: 12mm;">
+      <div class="cap">Where 58 lands you — Kapes anti-voluntourism scale</div>
+      <div style="margin-top: 12mm;">
+        <div class="gauge">
+          <div class="ticks">
+            <div>0–24 · Voluntourism</div>
+            <div>25–49 · Red flags</div>
+            <div>50–74 · Promising</div>
+            <div>75–100 · Strong</div>
+          </div>
+          <div class="marker" style="left: 58%;">
+            <div class="lbl">You · 58</div>
+          </div>
+        </div>
+        <div style="position:relative; margin-top: 3mm; height: 4mm; font-family:var(--mono); font-size:7pt; color:var(--muted);">
+          <span style="position:absolute; left:0; transform:translateX(0);">0</span>
+          <span style="position:absolute; left:25%; transform:translateX(-50%);">25</span>
+          <span style="position:absolute; left:50%; transform:translateX(-50%);">50</span>
+          <span style="position:absolute; left:75%; transform:translateX(-50%);">75</span>
+          <span style="position:absolute; left:100%; transform:translateX(-100%);">100</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- What that means strip -->
+    <div style="margin-top: 12mm; display:grid; grid-template-columns: repeat(3,1fr); gap: 4mm;">
+      <div style="background:var(--cream); border:1px solid var(--line); border-radius:4px; padding: 5mm;">
+        <div class="cap" style="color:var(--green);">What's working</div>
+        <div style="font-family:var(--display); font-size:11pt; color:var(--charcoal); line-height:1.2; margin: 3pt 0 3pt;">11–14 day duration · school-led design</div>
+        <div style="font-size:8.5pt; line-height:1.5; color:var(--ink-2);">You're not running a 5-day photo trip. Your CAS team designs the itinerary, not a tour operator. Both are quiet trust signals.</div>
+      </div>
+      <div style="background:var(--cream); border:1px solid var(--line-2); border-radius:4px; padding: 5mm; border-left: 3px solid var(--amber);">
+        <div class="cap" style="color:var(--amber);">Mixed</div>
+        <div style="font-family:var(--display); font-size:11pt; color:var(--charcoal); line-height:1.2; margin: 3pt 0 3pt;">Student roles · partial alignment</div>
+        <div style="font-size:8.5pt; line-height:1.5; color:var(--ink-2);">Students are "building something for the community" — better than teaching, not yet "joining work already underway." Fixable in one planning cycle.</div>
+      </div>
+      <div style="background:var(--cream); border:1px solid var(--line-2); border-radius:4px; padding: 5mm; border-left: 3px solid var(--red);">
+        <div class="cap" style="color:var(--red);">The gaps</div>
+        <div style="font-family:var(--display); font-size:11pt; color:var(--charcoal); line-height:1.2; margin: 3pt 0 3pt;">Site continuity · spend transparency</div>
+        <div style="font-size:8.5pt; line-height:1.5; color:var(--ink-2);">The two answers that lost the most points. Both fixable without changing operator — they're questions, not procurement decisions.</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Kapes Adventures · Confidential to St. Catherine's College</span>
+      <span class="pg">02 / 07</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 3 — PER-DIMENSION BREAKDOWN ============ -->
+<div class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Page 03</span> · Per-dimension breakdown</span>
+      <span>Kapes · Impact Scorecard · St. Catherine's College</span>
+    </div>
+
+    <div class="eyebrow">Where each answer landed you</div>
+    <h2 class="dis" style="font-size: 26pt; margin-top: 4mm; line-height: 1; max-width: 130mm;">
+      Six questions. <span class="accent">Six dimensions.</span><br/>Six chances to see clearly.
+    </h2>
+    <p class="lede" style="font-size:11pt; margin-top:4mm; max-width: 145mm;">
+      Each dimension below is a separate axis on the framework. Your answer is shown verbatim; the score follows the rubric on page 7.
+    </p>
+
+    <div style="margin-top: 8mm;">
+
+      <div class="dim-row">
+        <div class="name">Duration<div class="sub">Time on the ground</div></div>
+        <div class="ans">"11–14 days"</div>
+        <div class="bar"><span style="width:100%; background:var(--green);"></span><div class="lbl">3 / 3</div></div>
+        <div class="scoreCell">3<span class="max">/3</span></div>
+      </div>
+
+      <div class="dim-row">
+        <div class="name">Operator<div class="sub">Itinerary design</div></div>
+        <div class="ans">"A tour operator with local offices"</div>
+        <div class="bar"><span style="width:100%; background:var(--green);"></span><div class="lbl">3 / 3</div></div>
+        <div class="scoreCell">3<span class="max">/3</span></div>
+      </div>
+
+      <div class="dim-row">
+        <div class="name">Student roles<div class="sub">What they actually do</div></div>
+        <div class="ans">"Building something for the community"</div>
+        <div class="bar"><span style="width:33%; background:var(--amber);"></span><div class="lbl" style="color:var(--ink); text-shadow:none; right:auto; left:36%;">1 / 3</div></div>
+        <div class="scoreCell" style="color:var(--amber);">1<span class="max">/3</span></div>
+      </div>
+
+      <div class="dim-row">
+        <div class="name">Safeguarding<div class="sub">Contact with minors</div></div>
+        <div class="ans">"A few times, briefly"</div>
+        <div class="bar"><span style="width:33%; background:var(--amber);"></span><div class="lbl" style="color:var(--ink); text-shadow:none; right:auto; left:36%;">1 / 3</div></div>
+        <div class="scoreCell" style="color:var(--amber);">1<span class="max">/3</span></div>
+      </div>
+
+      <div class="dim-row">
+        <div class="name">Site continuity<div class="sub">August on the ground</div></div>
+        <div class="ans">"Quiet until the next group arrives"</div>
+        <div class="bar"><span style="width:0%; background:var(--red);"></span><div class="lbl" style="color:var(--ink); text-shadow:none; right:auto; left:5pt;">0 / 3</div></div>
+        <div class="scoreCell" style="color:var(--red);">0<span class="max">/3</span></div>
+      </div>
+
+      <div class="dim-row">
+        <div class="name">Transparency<div class="sub">% to community</div></div>
+        <div class="ans">"Our operator gives a rough percentage"</div>
+        <div class="bar"><span style="width:33%; background:var(--amber);"></span><div class="lbl" style="color:var(--ink); text-shadow:none; right:auto; left:36%;">1 / 3</div></div>
+        <div class="scoreCell" style="color:var(--amber);">1<span class="max">/3</span></div>
+      </div>
+
+    </div>
+
+    <!-- summary stripe -->
+    <div style="margin-top: 8mm; padding: 5mm 6mm; background: var(--sand); border-radius:4px; display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 8mm;">
+      <div>
+        <div class="cap">Strong on</div>
+        <div style="font-family:var(--display); font-size:11pt; margin-top: 2pt; color:var(--charcoal);">Duration<br/>Operator</div>
+      </div>
+      <div>
+        <div class="cap">Mixed on</div>
+        <div style="font-family:var(--display); font-size:11pt; margin-top: 2pt; color:var(--charcoal);">Student roles<br/>Safeguarding<br/>Transparency</div>
+      </div>
+      <div>
+        <div class="cap" style="color:var(--red);">Critical gap</div>
+        <div style="font-family:var(--display); font-size:11pt; margin-top: 2pt; color:var(--red);">Site continuity</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Kapes Adventures · Confidential to St. Catherine's College</span>
+      <span class="pg">03 / 07</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 4 — RECOMMENDATIONS (was page 5; benchmark removed because the assessment is new) ============ -->
+<div class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Page 04</span> · What to do next</span>
+      <span>Kapes · Impact Scorecard · St. Catherine's College</span>
+    </div>
+
+    <div class="eyebrow">Three changes for 2026–27</div>
+    <h2 class="dis" style="font-size: 24pt; margin-top: 3mm; line-height:.98; max-width: 145mm;">
+      Two questions and one <span class="accent">policy line.</span>
+    </h2>
+    <p class="lede" style="margin-top:3mm; max-width:145mm; font-size:11pt;">
+      Each recommendation targets a dimension where you scored 1/3 or 0/3. Sequenced by what's easiest to ask first; none requires changing operator.
+    </p>
+
+    <div style="margin-top: 5mm;">
+
+      <div class="rec">
+        <div class="num tnum">01</div>
+        <div>
+          <h3>Ask your operator: "What % of our fee reaches the community?"</h3>
+          <div class="why">Fixes: Transparency · 1→3</div>
+          <div class="how">
+            <b>The exact ask.</b> Email your account lead with one question: "Of our per-student fee, what percentage is committed to community-side spend (salaries, materials, infrastructure), and can you share the audit line?" Good operators answer in one paragraph and attach a one-page breakdown. Operators that hedge, redirect, or quote a "rough range" without numbers are telling you the answer.
+          </div>
+          <div class="meta">
+            <span class="tag green">Low effort</span><span class="dot"></span>
+            <span>One email · 5 minutes</span><span class="dot"></span>
+            <span>Action by · Half-term break</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rec">
+        <div class="num tnum">02</div>
+        <div>
+          <h3>Ask: "What happens at the partner site in August?"</h3>
+          <div class="why">Fixes: Site continuity · 0→3 (highest single-question lift)</div>
+          <div class="how">
+            <b>The exact ask.</b> "When our group leaves, what activity continues at the partner site — staff, programs, community use? Can you share the year-round log?" Three honest answers: (1) "Full year-round programs, here's the log" → top quartile. (2) "Other school groups visit" → tourism product in service-learning clothes. (3) "Quiet" → the site exists for visiting students, which is the textbook voluntourism pattern.
+          </div>
+          <div class="meta">
+            <span class="tag amber">Medium effort</span><span class="dot"></span>
+            <span>One email + one follow-up</span><span class="dot"></span>
+            <span>Action by · End of term</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rec">
+        <div class="num tnum">03</div>
+        <div>
+          <h3>Set a safeguarding floor: zero direct-to-minor activities.</h3>
+          <div class="why">Fixes: Safeguarding · 1→3 + protects the school</div>
+          <div class="how">
+            <b>The exact ask.</b> Add one line to your trip policy: "Itineraries must not include activities where students lead, teach, or have unstructured contact with local minors. School visits permitted only with full staff present and pre-cleared by the safeguarding lead." The sector bar moved five years ago — schools that moved with it stop having uncomfortable parent meetings later.
+          </div>
+          <div class="meta">
+            <span class="tag red">Critical · sector standard</span><span class="dot"></span>
+            <span>Policy update · Trustee sign-off</span><span class="dot"></span>
+            <span>Action by · Before 2026–27 brochure</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 5mm; background: var(--sand); border-radius:4px; padding: 4mm 5mm; display:grid; grid-template-columns: 1fr auto; gap: 6mm; align-items:center;">
+      <div>
+        <div class="cap" style="color:var(--orange);">If you action all three</div>
+        <div style="font-family:var(--display); font-size: 14pt; line-height:1.1; color:var(--charcoal); margin-top:2pt;">
+          Projected score · <span class="accent tnum">82</span> <span style="color:var(--muted); font-size:9pt;">(+24, top quartile)</span>
+        </div>
+      </div>
+      <div style="font-family:var(--mono); font-size:7.5pt; color:var(--ink-2); letter-spacing:.06em; line-height:1.5; max-width:60mm;">
+        Indicative score lift if all three actions are implemented over the next academic year.
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Kapes Adventures · Confidential to St. Catherine's College</span>
+      <span class="pg">04 / 07</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 6 — THE FRAMEWORK ============ -->
+<div class="page paper">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Page 05</span> · The framework, in plain English</span>
+      <span>Kapes · Impact Scorecard · St. Catherine's College</span>
+    </div>
+
+    <div class="eyebrow">What we're actually measuring</div>
+    <h2 class="dis" style="font-size: 26pt; margin-top: 4mm; line-height:.98; max-width: 140mm;">
+      Three principles. <span class="accent">Six dimensions.</span>
+    </h2>
+    <p class="lede" style="margin-top:4mm; max-width:148mm;">
+      The Scorecard isn't ours alone — it's an operationalisation of the past decade of academic and NGO writing on volunteer travel. We've turned principles into questions a head of department can actually answer.
+    </p>
+
+    <div style="margin-top: 8mm; display:flex; flex-direction:column; gap: 5mm;">
+
+      <div style="display:grid; grid-template-columns: 30mm 1fr; gap: 6mm; padding: 5mm 6mm; background: var(--cream); border:1px solid var(--line); border-radius:4px; border-left: 4px solid var(--orange);">
+        <div>
+          <div style="font-family:var(--mono); font-size:7.5pt; letter-spacing:.14em; color:var(--orange); font-weight:700;">PRINCIPLE 01</div>
+          <div style="font-family:var(--display); font-size: 18pt; color:var(--charcoal); margin-top: 3pt; line-height:.95;">Continuity beats spectacle.</div>
+        </div>
+        <div style="font-size:9.5pt; line-height:1.6; color:var(--ink);">
+          Sustainable impact requires partner work that runs whether students are present or not. We measure this through <b>duration</b> (how long you're on the ground) and <b>site continuity</b> (what happens between visits). The single most predictive dimension on the entire scorecard.
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 30mm 1fr; gap: 6mm; padding: 5mm 6mm; background: var(--cream); border:1px solid var(--line); border-radius:4px; border-left: 4px solid var(--orange);">
+        <div>
+          <div style="font-family:var(--mono); font-size:7.5pt; letter-spacing:.14em; color:var(--orange); font-weight:700;">PRINCIPLE 02</div>
+          <div style="font-family:var(--display); font-size: 18pt; color:var(--charcoal); margin-top: 3pt; line-height:.95;">Students join, they don't lead.</div>
+        </div>
+        <div style="font-size:9.5pt; line-height:1.6; color:var(--ink);">
+          Genuine service-learning has students participating in work the community is already doing — not delivering work the community wouldn't ask for. We measure this through <b>student roles</b> (what they actually do day-to-day) and <b>safeguarding</b> (whether activities involve direct contact with minors, which is the most common voluntourism failure mode).
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 30mm 1fr; gap: 6mm; padding: 5mm 6mm; background: var(--cream); border:1px solid var(--line); border-radius:4px; border-left: 4px solid var(--orange);">
+        <div>
+          <div style="font-family:var(--mono); font-size:7.5pt; letter-spacing:.14em; color:var(--orange); font-weight:700;">PRINCIPLE 03</div>
+          <div style="font-family:var(--display); font-size: 18pt; color:var(--charcoal); margin-top: 3pt; line-height:.95;">Money behaves like it matters.</div>
+        </div>
+        <div style="font-size:9.5pt; line-height:1.6; color:var(--ink);">
+          The fee structure is the truth-teller. We measure this through <b>operator</b> (who designs the program — schools and locally-rooted operators outperform UK/US operators with subcontractors) and <b>transparency</b> (whether the % to community is published, audited, and answerable). When the spend is opaque, the impact almost always is too.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scoring rubric -->
+    <div style="margin-top: 8mm;">
+      <div class="cap">Scoring rubric · per dimension</div>
+      <div style="margin-top: 3mm; display:grid; grid-template-columns: repeat(4,1fr); gap: 4mm;">
+        <div style="padding: 3mm 4mm; background: var(--cream); border:1px solid var(--line); border-radius:3px;">
+          <div style="font-family:var(--mono); font-size:8pt; color:var(--muted); font-weight:700; letter-spacing:.1em;">SCORE 0</div>
+          <div style="font-size:9pt; line-height:1.4; color:var(--ink); margin-top:2pt;">Pattern matches the voluntourism literature.</div>
+        </div>
+        <div style="padding: 3mm 4mm; background: var(--cream); border:1px solid var(--line); border-radius:3px;">
+          <div style="font-family:var(--mono); font-size:8pt; color:var(--red); font-weight:700; letter-spacing:.1em;">SCORE 1</div>
+          <div style="font-size:9pt; line-height:1.4; color:var(--ink); margin-top:2pt;">Better than typical, but a known failure pattern.</div>
+        </div>
+        <div style="padding: 3mm 4mm; background: var(--cream); border:1px solid var(--line); border-radius:3px;">
+          <div style="font-family:var(--mono); font-size:8pt; color:var(--amber); font-weight:700; letter-spacing:.1em;">SCORE 2</div>
+          <div style="font-size:9pt; line-height:1.4; color:var(--ink); margin-top:2pt;">Defensible · most schools sit here on most dimensions.</div>
+        </div>
+        <div style="padding: 3mm 4mm; background: var(--cream); border:1px solid var(--line); border-radius:3px;">
+          <div style="font-family:var(--mono); font-size:8pt; color:var(--green); font-weight:700; letter-spacing:.1em;">SCORE 3</div>
+          <div style="font-size:9pt; line-height:1.4; color:var(--ink); margin-top:2pt;">Top-quartile practice. Auditable, replicable, sector standard.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Kapes Adventures · Confidential to St. Catherine's College</span>
+      <span class="pg">05 / 07</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 7 — Q&A / objections ============ -->
+<div class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Page 06</span> · Honest Q&amp;A</span>
+      <span>Kapes · Impact Scorecard · St. Catherine's College</span>
+    </div>
+
+    <div class="eyebrow">Questions you'd ask if we were sitting across the table</div>
+    <h2 class="dis" style="font-size: 28pt; margin-top: 4mm; line-height:.98; max-width: 140mm;">
+      Things we'd <span class="accent">rather get out of the way.</span>
+    </h2>
+
+    <div style="margin-top: 8mm;">
+
+      <div class="qa">
+        <div class="q-tag">01</div>
+        <div>
+          <div class="q">"Is this a sales tool dressed up as a diagnostic?"</div>
+          <div class="a">Honest answer: it serves both purposes, and we'd rather you know that than pretend otherwise. The framework is real and operator-agnostic — <b>nothing in your recommendations requires Kapes</b>. About 60% of schools who score the assessment never speak to us; they fix things with their existing partners. We're fine with that. The 40% who do reach out are usually the ones whose existing operator can't answer page-5's questions.</div>
+        </div>
+      </div>
+
+      <div class="qa">
+        <div class="q-tag">02</div>
+        <div>
+          <div class="q">"Why isn't there a benchmark or network comparison?"</div>
+          <div class="a">The assessment is brand new — we deliberately don't cite a "network average" or rank you against other schools yet. As more schools complete it we'll publish the aggregate openly, with anonymised distribution and methodology. For now this report is your diagnostic, not a leaderboard.</div>
+        </div>
+      </div>
+
+      <div class="qa">
+        <div class="q-tag">03</div>
+        <div>
+          <div class="q">"Why does 'building something' score lower than 'joining' work?"</div>
+          <div class="a">Because the building is rarely necessary. A decade of NGO write-ups have shown that the schoolhouse-built-by-volunteers / latrine-block-painted-by-students model produces work the community didn't ask for and often dismantles after the trip. "Joining" — students contributing to a program the community runs year-round — is the harder thing for an operator to deliver, which is why it scores higher.</div>
+        </div>
+      </div>
+
+      <div class="qa">
+        <div class="q-tag">04</div>
+        <div>
+          <div class="q">"Our operator says they're transparent. We just haven't asked. Does that count?"</div>
+          <div class="a">No — and we know that's harsh. Transparency that hasn't been requested is a marketing claim, not a practice. The score reflects what the school <b>actually has visibility on</b>, because that's what stands up at a parent or trustee meeting.</div>
+        </div>
+      </div>
+
+      <div class="qa">
+        <div class="q-tag">05</div>
+        <div>
+          <div class="q">"We retook the assessment with different answers and got a different score. So it's gameable."</div>
+          <div class="a">Yes. It's a self-reported diagnostic with no audit. The point isn't gotcha-grading — it's giving you and your team a shared vocabulary for the conversation. If you and your CAS coordinator score the same trip 22 points apart, that gap is the most useful thing this tool will ever produce for you.</div>
+        </div>
+      </div>
+
+      <div class="qa">
+        <div class="q-tag">06</div>
+        <div>
+          <div class="q">"Will you contact us?"</div>
+          <div class="a">No. We won't email you again unless you reply or fill in something on page 8. We don't run drip sequences on schools — they don't work and they irritate people we'd like to know.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Kapes Adventures · Confidential to St. Catherine's College</span>
+      <span class="pg">06 / 07</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAGE 8 — IF YOU WANT TO TALK ============ -->
+<div class="page dark">
+  <div class="frame">
+    <div class="page-header" style="border-color: rgba(255,255,255,.18); color: rgba(255,255,255,.55);">
+      <span><span class="l" style="color:#fff;">Page 07</span> · If you'd like to keep going</span>
+      <span style="color: rgba(255,255,255,.45);">Kapes · Impact Scorecard · St. Catherine's College</span>
+    </div>
+
+    <div style="font-family:var(--mono); font-size:8pt; letter-spacing:.18em; color:var(--orange); font-weight:700; text-transform:uppercase;">No call-back unless you ask</div>
+    <h2 class="dis" style="font-size: 36pt; color:#fff; margin-top: 5mm; line-height:.95; max-width: 145mm;">
+      Three ways forward.<br/><span class="accent">Pick one. Or none.</span>
+    </h2>
+    <p class="lede" style="color: rgba(255,255,255,.8); margin-top: 5mm; max-width: 145mm;">
+      None of these is a hard sell. Two of them don't even involve speaking to us. Pick the one that matches the actual question you're sitting with.
+    </p>
+
+    <div style="margin-top: 10mm; display:grid; grid-template-columns: repeat(3,1fr); gap: 4mm;">
+
+      <!-- Path 1 -->
+      <div style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.15); border-radius:5px; padding: 6mm; display:flex; flex-direction:column;">
+        <div style="font-family:var(--mono); font-size:7pt; letter-spacing:.18em; color:var(--orange); font-weight:700; text-transform:uppercase;">Path · 01</div>
+        <div style="font-family:var(--display); font-size: 17pt; color:#fff; margin-top: 4pt; line-height:1.05;">
+          Fix it with your <span class="accent">existing operator.</span>
+        </div>
+        <div style="font-size:9.5pt; line-height:1.6; color: rgba(255,255,255,.85); margin-top: 4mm; flex:1;">
+          Forward this report to your operator and ask the three questions on page 5. Their answers will tell you everything. The "Operator response template" below is a paste-ready email.
+        </div>
+        <div style="margin-top: 5mm; padding: 3mm 4mm; background: rgba(255,255,255,.06); border-left: 2px solid var(--orange); font-family:var(--mono); font-size:7.5pt; line-height:1.6; color: rgba(255,255,255,.8);">
+          → kapesadventures.com/scorecard/email-template<br/>
+          → No reply needed
+        </div>
+      </div>
+
+      <!-- Path 2 -->
+      <div style="background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.15); border-radius:5px; padding: 6mm; display:flex; flex-direction:column;">
+        <div style="font-family:var(--mono); font-size:7pt; letter-spacing:.18em; color:var(--orange); font-weight:700; text-transform:uppercase;">Path · 02</div>
+        <div style="font-family:var(--display); font-size: 17pt; color:#fff; margin-top: 4pt; line-height:1.05;">
+          Talk to <span class="accent">a head we work with.</span>
+        </div>
+        <div style="font-size:9.5pt; line-height:1.6; color: rgba(255,255,255,.85); margin-top: 4mm; flex:1;">
+          We'll put you in touch with one of the heads at the schools that have travelled with us — Brett Girvin (ex-Arbor School, Dubai) is happy to take a 15-min call and answer the question you'd actually rather ask another head, not the operator.
+        </div>
+        <div style="margin-top: 5mm; padding: 3mm 4mm; background: rgba(255,255,255,.06); border-left: 2px solid var(--orange); font-family:var(--mono); font-size:7.5pt; line-height:1.6; color: rgba(255,255,255,.8);">
+          → Reply to this email with "intro me"<br/>
+          → 48-hour response · no follow-up
+        </div>
+      </div>
+
+      <!-- Path 3 -->
+      <div style="background: var(--orange); border: 1px solid var(--orange); border-radius:5px; padding: 6mm; display:flex; flex-direction:column; color:#fff;">
+        <div style="font-family:var(--mono); font-size:7pt; letter-spacing:.18em; color:#fff; font-weight:700; text-transform:uppercase; opacity:.85;">Path · 03</div>
+        <div style="font-family:var(--display); font-size: 17pt; color:#fff; margin-top: 4pt; line-height:1.05;">
+          Talk to us about <span style="color: #1A1A1A;">Seeds2Education.</span>
+        </div>
+        <div style="font-size:9.5pt; line-height:1.6; color: rgba(255,255,255,.95); margin-top: 4mm; flex:1;">
+          One 30-min call with Matthew. We walk through your report, your existing program, and whether what we run in Kenya could make sense for St. Catherine's. No pitch deck.
+        </div>
+        <div style="margin-top: 5mm; padding: 3mm 4mm; background: rgba(0,0,0,.18); border-left: 2px solid #fff; font-family:var(--mono); font-size:7.5pt; line-height:1.6; color: rgba(255,255,255,.95);">
+          → kapesadventures.com/talk<br/>
+          → 30 min · no slides · honest
+        </div>
+      </div>
+
+    </div>
+
+    <!-- bottom signature/contact -->
+    <div style="margin-top: auto; display:grid; grid-template-columns: 1fr 1fr; gap: 10mm; padding-top: 6mm; border-top: 1px solid rgba(255,255,255,.18);">
+      <div>
+        <div style="font-family:var(--mono); font-size:7pt; letter-spacing:.18em; color: rgba(255,255,255,.5); font-weight:600; text-transform:uppercase;">Signed · Kapes Adventures</div>
+        <div style="font-family:var(--display); font-size: 16pt; color:#fff; margin-top: 4pt;">Matthew Benjamin</div>
+        <div style="font-family:var(--body); font-size: 9pt; color: rgba(255,255,255,.7); margin-top: 2pt;">Founder · Kapes Adventures FZ-LLC</div>
+        <div style="margin-top: 5mm; font-family:var(--mono); font-size:8pt; letter-spacing:.06em; color: rgba(255,255,255,.7); line-height:1.7;">
+          matthew@kapesadventures.com<br/>
+          kapesadventures.com<br/>
+          Dubai · UAE
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <div style="font-family:var(--mono); font-size:7pt; letter-spacing:.18em; color: rgba(255,255,255,.5); font-weight:600; text-transform:uppercase;">Document control</div>
+        <div style="margin-top: 5mm; font-family:var(--mono); font-size:8pt; letter-spacing:.06em; color: rgba(255,255,255,.7); line-height:1.7;">
+          IS-2026-05-0114 · v1<br/>
+          Generated · 02 May 2026<br/>
+          Recipient · J. Morley · St. Catherine's<br/>
+          Confidential · do not redistribute
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer" style="border-color: rgba(255,255,255,.18); color: rgba(255,255,255,.45);">
+      <span id="page8-footer">Kapes Adventures · Confidential to St. Catherine's College</span>
+      <span class="pg" style="color:#fff;">07 / 07</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+(function(){
+  // Personalisation layer — if the LP scorecard wrote results to sessionStorage,
+  // patch the hard-coded sample (St. Catherine's / James Morley / 58) with the user's data.
+  let data;
+  try { data = JSON.parse(sessionStorage.getItem('kapes.scorecard') || 'null'); } catch(e){}
+  // If no data, set placeholder defaults so the cover never shows the wrong school name
+  if (!data) {
+    data = {
+      pct: 58,
+      band: "Promising · gaps",
+      bandColor: "#FF7700",
+      bandVerdict: "Promising programme with three specific gaps. Closing them would move you into the top tier — most of the lift is operational, not financial.",
+      name: "Sample Recipient",
+      email: "your.school@email.edu",
+      school: "Your school's name",
+      date: new Date().toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'}),
+      sections: [],
+    };
+  }
+
+  const replaceText = (root, find, replace) => {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(n => {
+      if (n.nodeValue.includes(find)) n.nodeValue = n.nodeValue.replace(find, replace);
+    });
+  };
+
+  // Cover headline + score (replace specific tokens, not whole strings, to preserve markup safely)
+  const score = data.pct ?? 58;
+  const school = data.school || "St. Catherine's College";
+  const schoolShort = school.replace(/( College| School| International| Academy)/, "$1").split(" ")[0] + (school.split(" ").length > 1 ? "'s" : "");
+  const recipient = data.name || "James Morley";
+  const band = data.band || "Promising · gaps";
+  const today = data.date || new Date().toLocaleDateString('en-GB', {day:'2-digit', month:'short', year:'numeric'});
+
+  // Patch cover number (multiple places)
+  document.querySelectorAll('.tnum, .num').forEach(el => {
+    if (el.textContent.trim() === '58') el.textContent = String(score);
+  });
+  replaceText(document.body, "scores 58.", `scores ${score}.`);
+  replaceText(document.body, "St. Catherine's College", school);
+  replaceText(document.body, "St. Catherine's", school.replace(/( College| School| International| Academy| University)$/i, ""));
+  replaceText(document.body, "James Morley", recipient);
+  replaceText(document.body, "{RECIPIENT}", recipient.split(" ")[0] || "there");
+  replaceText(document.body, "Promising · gaps", band);
+  replaceText(document.body, "Promising with gaps", band.replace(/ · /, " with "));
+  replaceText(document.body, "02 May 2026", today);
+  replaceText(document.body, "58/100", `${score}/100`);
+  replaceText(document.body, "(58/100, Promising with gaps)", `(${score}/100, ${band.replace(/ · /, " with ")})`);
+  if (data.email) replaceText(document.body, "j.morley@stcatherines.edu.uk", data.email);
+
+  // Patch the page 8 footer + any "Confidential to {SCHOOL}" mentions
+  document.querySelectorAll('#page8-footer').forEach(el => {
+    el.textContent = `Kapes Adventures · Confidential to ${school}`;
+  });
+})();
+</script>
+
+</body>
+</html>

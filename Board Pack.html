@@ -1,0 +1,1716 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Seeds2Education — Board Pack</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  @font-face {
+    font-family: 'AcademySansExpanded-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySansExpanded-Bold_ed3d0942-5858-4fad-8886-e581bbbada6a.woff?v=1746173800') format('woff');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'AcademySans-Regular';
+    src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySans-Regular_978467eb-a51c-4846-87f5-dc00c17c1e10.woff?v=1746173801') format('woff');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+
+  :root{
+    --charcoal:#1A1A1A;
+    --ink:#2A2A2A;
+    --ink-2:#4A4A4A;
+    --muted:#888;
+    --line:#E4DFD3;
+    --line-2:#D7D0BE;
+    --cream:#FAFAF8;
+    --sand:#F5F0E5;
+    --paper:#FCFAF4;
+    --orange:#FF7700;
+    --orange-ink:#C45D00;
+    --red:#C44A3C;
+    --green:#2A7A3F;
+    --display:'AcademySansExpanded-Bold','Libre Baskerville',Georgia,serif;
+    --serif:'Libre Baskerville',Georgia,serif;
+    --body:'Inter',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+  }
+
+  *{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  html,body{margin:0;padding:0;background:#4a4a4a;color:var(--charcoal);font-family:var(--body);}
+  body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+
+  /* A4 PAGE SHELL */
+  .pack{
+    max-width: 210mm;
+    margin: 24px auto;
+    display:flex; flex-direction:column; gap:18px;
+  }
+  .page{
+    width: 210mm;
+    height: 297mm;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,.4), 0 4px 12px rgba(0,0,0,.1);
+    color: var(--charcoal);
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+  .page.paper{ background: var(--paper); }
+  .page.dark{ background: var(--charcoal); color:#fff; }
+  .page.sand{ background: var(--sand); }
+
+  /* Print rules */
+  @page { size: A4; margin: 0; }
+  @media print{
+    html,body{ background:#fff; }
+    .pack{ margin:0; gap:0; }
+    .page{ box-shadow:none; margin:0; page-break-after: always; break-after: page; }
+    .noprint{ display:none !important; }
+  }
+
+  /* STANDARD INSIDE-PAGE FRAME */
+  .frame{
+    padding: 16mm 18mm 14mm 18mm;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .page-header{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    padding-bottom: 6mm;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 7mm;
+    font-family: var(--mono);
+    font-size: 7.5pt;
+    letter-spacing:.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight:500;
+  }
+  .page-header .l{ color: var(--charcoal); font-weight:600;}
+  .page-footer{
+    margin-top: auto;
+    padding-top: 5mm;
+    border-top: 1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:center;
+    font-family: var(--mono);
+    font-size: 7pt;
+    letter-spacing:.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .page-footer .pg{ color: var(--charcoal); font-weight:700;}
+
+  /* TYPE PRIMITIVES */
+  h1,h2,h3,h4{ margin:0; font-weight:700; color: var(--charcoal); }
+  .dis{ font-family:var(--display); letter-spacing:-.01em; line-height:.95; }
+  .ser{ font-family:var(--serif); font-weight:400;}
+  .mono{ font-family: var(--mono); letter-spacing:.06em; text-transform: uppercase;}
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 7pt; letter-spacing:.18em; text-transform:uppercase;
+    color: var(--orange); font-weight: 600;
+  }
+  .lede{
+    font-family: var(--serif);
+    font-size: 12pt; line-height: 1.55; color: var(--ink);
+    font-style: italic;
+  }
+
+  /* helpers */
+  .hr{ height:1px; background: var(--line); margin: 8mm 0;}
+  .hr2{ height:2px; background: var(--charcoal); margin: 4mm 0;}
+  .rule{ border:1px solid var(--line); }
+  .ruleBold{ border:2px solid var(--charcoal); }
+  .tnum{ font-variant-numeric: tabular-nums; }
+  .cap{ font-size:7.5pt; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-family:var(--mono); font-weight:500; }
+  .tag{ display:inline-block; padding:3px 8px; border:1px solid var(--line-2); border-radius: 3px; font-size:7.5pt; letter-spacing:.08em; text-transform:uppercase; font-family:var(--mono); font-weight:600; color:var(--ink);}
+  .tag.orange{ background:var(--orange); color:#fff; border-color:var(--orange);}
+  .tag.red{ background:var(--red); color:#fff; border-color:var(--red);}
+  .tag.green{ background:var(--green); color:#fff; border-color:var(--green);}
+  .tag.char{ background:var(--charcoal); color:#fff; border-color:var(--charcoal);}
+  .tag.hollow{ background:#fff; }
+
+  .accent{ color: var(--orange); }
+
+  /* generic list */
+  ol.num{ padding-left:0; counter-reset: i; list-style:none; margin:0;}
+  ol.num li{ display:grid; grid-template-columns: 26pt 1fr; gap:10px; padding:6px 0; border-bottom:1px dotted var(--line); counter-increment:i;}
+  ol.num li:before{ content: counter(i, decimal-leading-zero); font-family:var(--mono); font-size:8pt; color:var(--orange); font-weight:600; padding-top:2px;}
+
+  /* NAV SCREEN-ONLY */
+  .nav{
+    max-width: 210mm; margin: 20px auto -6px; padding: 10px 14px;
+    background:#fff; border-radius:10px;
+    display:flex; gap:14px; align-items:center; justify-content:space-between;
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--ink-2);
+  }
+  .nav .n-title{ font-family:var(--display); font-size:14px; letter-spacing:.02em; color:var(--charcoal); }
+  .nav button, .nav a{
+    font:inherit; letter-spacing:.08em; text-transform:uppercase;
+    padding: 7px 14px; border:1px solid var(--line-2); border-radius:999px;
+    background:#fff; color:var(--ink); cursor:pointer; text-decoration:none;
+  }
+  .nav a.primary{ background:var(--charcoal); color:#fff; border-color: var(--charcoal);}
+
+  /* =========== COVER =========== */
+  .cover{ position:relative; color:#fff; overflow:hidden; background:var(--charcoal);}
+  .cover .bgimg{
+    position:absolute; inset:0;
+    background-image: url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747160268/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg');
+    background-size: cover; background-position: center;
+    filter: grayscale(.15) contrast(1.05);
+  }
+  .cover .scrim{
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(26,26,26,.62) 0%, rgba(26,26,26,.25) 35%, rgba(26,26,26,.82) 100%);
+  }
+  .cover .content{
+    position:relative; z-index:2; height:100%;
+    padding: 14mm 16mm 14mm 16mm;
+    display:flex; flex-direction:column;
+  }
+
+  /* =========== SPECIFIC PAGES =========== */
+
+  /* Routing sheet */
+  .routing-row{
+    display:grid; grid-template-columns: 40mm 1fr 24mm 24mm;
+    align-items:center; gap:6mm;
+    padding: 4.5mm 4mm; border-bottom: 1px solid var(--line);
+  }
+  .routing-row:first-child{ border-top: 2px solid var(--charcoal); }
+  .routing-row .role{ font-family:var(--mono); font-size:8pt; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:600;}
+  .routing-row .name{ font-family:var(--display); font-size:11pt; color:var(--charcoal);}
+  .sigline{ border-bottom: 1px solid var(--ink); height: 16pt; position:relative;}
+  .sigline.done:after{
+    content:''; position:absolute; left:6px; bottom:4px; width:60%;
+    height:14pt; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40'><path d='M5 28 Q30 5 55 25 T110 25 T170 22' stroke='%231A1A1A' fill='none' stroke-width='2' stroke-linecap='round'/></svg>") no-repeat left center / contain;
+    opacity:.75;
+  }
+
+  /* Stamp */
+  .stamp{
+    display:inline-block;
+    padding: 8px 14px;
+    border: 2px solid var(--red);
+    color: var(--red);
+    font-family:var(--display); font-size: 14pt;
+    letter-spacing: .08em; text-transform: uppercase;
+    transform: rotate(-4deg);
+    position:relative;
+  }
+  .stamp.sm{ font-size: 10pt; padding:5px 10px;}
+  .stamp.green{ border-color: var(--green); color: var(--green);}
+
+  /* Problem/Answer split reused from program page, tuned for print */
+  .split{ display:grid; grid-template-columns: 1fr 1fr; gap:0; border:1px solid var(--line); border-radius:6px; overflow:hidden;}
+  .split .col{ padding: 7mm 7mm; }
+  .split .col.lft{ background:#FBF4E6; border-right:1px solid var(--line);}
+  .split .col.rgt{ background: var(--cream);}
+
+  /* Stat block */
+  .statbig{
+    font-family:var(--display); font-size: 44pt; line-height: .9; color: var(--charcoal);
+    font-variant-numeric: tabular-nums;
+  }
+  .statbig.sm{ font-size: 26pt;}
+  .statbig.orange{ color: var(--orange);}
+  .statbig.red{ color: var(--red);}
+
+  /* Itinerary day card */
+  .day-card{
+    display:grid; grid-template-columns: 26mm 1fr; gap:0;
+    background: var(--cream); border:1px solid var(--line); border-radius:4px; overflow:hidden;
+    min-height: 20mm;
+  }
+  .day-card .imgslot{
+    background: var(--charcoal);
+    position:relative; overflow:hidden;
+  }
+  .day-card .imgslot img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .day-card .imgslot .dlabel{
+    position:absolute; left:6px; bottom:5px; color:#fff;
+    font-family:var(--display); font-size:9pt; letter-spacing:.04em; text-transform:uppercase;
+  }
+  .day-card .imgslot .scrim{ position:absolute; inset:0; background: linear-gradient(180deg, rgba(26,26,26,.1) 0%, rgba(26,26,26,.75) 100%);}
+  .day-card .body{ padding: 5mm 6mm; }
+  .day-card .ttl{ font-family:var(--display); font-size:10.5pt; color:var(--charcoal); line-height:1.15; margin-bottom:3pt;}
+  .day-card .txt{ font-size: 8.5pt; line-height:1.45; color:var(--ink-2);}
+
+  /* Simple table */
+  table.tbl{ width:100%; border-collapse: collapse; font-size: 9pt; }
+  table.tbl th{
+    text-align:left; background: var(--charcoal); color:#fff;
+    font-family:var(--mono); font-size:7.5pt; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+    padding: 6pt 8pt; border-right:1px solid rgba(255,255,255,.1);
+  }
+  table.tbl td{
+    padding: 4pt 7pt; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 8.5pt; line-height:1.4;
+  }
+  table.tbl th{ padding: 5pt 7pt; }
+  table.tbl tr:nth-child(even) td{ background:#FAFAF5;}
+  table.tbl td.mono{ font-family:var(--mono); font-size:8pt; color:var(--ink-2);}
+
+  /* Risk pills */
+  .sev{
+    display:inline-block; padding:2px 7px; border-radius:3px;
+    font-family:var(--mono); font-size:7pt; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  }
+  .sev.low{ background:#E8F2EA; color:#2A7A3F;}
+  .sev.med{ background:#FFF1DD; color:#B06700;}
+  .sev.high{ background:#FCE4E0; color:#A63628;}
+
+  /* Commit / budget bars */
+  .bar{ height:10pt; background:#EEE8D5; border-radius:2px; position:relative; overflow:hidden;}
+  .bar > span{ position:absolute; inset:0; background: var(--orange);}
+
+  /* Goals cards reused */
+  .goal{
+    display:grid; grid-template-columns: 18pt 1fr; gap: 8pt; align-items:center;
+    padding: 6pt 8pt; background: var(--cream); border:1px solid var(--line); border-radius:4px;
+    font-size: 9pt; color: var(--charcoal);
+  }
+  .goal .n{ font-family:var(--display); font-size: 10pt; color: var(--orange); letter-spacing:.04em;}
+
+  /* Q&A */
+  .qa{
+    border-top: 1px solid var(--line);
+    padding: 3.5mm 0 3mm;
+    display:grid; grid-template-columns: 24mm 1fr; gap: 6mm;
+  }
+  .qa:last-child{ border-bottom: 1px solid var(--line); padding-bottom: 4mm;}
+  .qa .q{ font-size: 11pt !important; margin-bottom: 2pt !important;}
+  .qa .a{ font-size: 9pt !important; line-height: 1.5 !important;}
+  .qa .q-tag{ font-family:var(--mono); font-size:7.5pt; letter-spacing:.1em; text-transform:uppercase; color: var(--orange); font-weight:700; padding-top: 3pt;}
+  .qa .q{ font-family:var(--display); font-size:12pt; color: var(--charcoal); margin-bottom:3pt; line-height:1.15;}
+  .qa .a{ font-size: 9.5pt; line-height:1.55; color: var(--ink); }
+
+  /* Appendix card */
+  .appx{
+    border:1px solid var(--line); border-radius:4px; padding: 5mm; background: #fff;
+    display:grid; grid-template-rows: 22mm auto; gap: 3mm;
+  }
+  .appx .thumb{
+    background: var(--sand); border-radius:3px; position:relative; overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .appx .thumb .doc{
+    width: 70%; background:#fff; border:1px solid var(--line-2); padding: 4pt 6pt;
+    font-family: var(--mono); font-size: 5.5pt; letter-spacing:.04em; line-height: 1.4; color: var(--ink-2);
+    box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  }
+  .appx .ttl{ font-family: var(--display); font-size: 9.5pt; color: var(--charcoal); line-height:1.2;}
+  .appx .meta{ font-family: var(--mono); font-size: 7pt; letter-spacing:.08em; text-transform:uppercase; color: var(--muted);}
+
+  /* Divider chevrons */
+  .chev{ color: var(--orange); }
+</style>
+</head>
+<body>
+
+<!-- Navigation (screen only) -->
+<div class="nav noprint">
+  <div class="n-title">Seeds2Education · Board Pack</div>
+  <div style="display:flex; gap:8px; align-items:center;">
+    <span>Prepared for your Board of Governors</span>
+    <span style="color:var(--muted)">·</span>
+    <span>16 pages</span>
+    <a href="javascript:window.print()" class="primary">Print / Save as PDF</a>
+  </div>
+</div>
+
+<div class="pack">
+
+<!-- ============================================= -->
+<!-- PAGE 01 · EDITORIAL COVER                     -->
+<!-- ============================================= -->
+<section class="page cover">
+  <div class="bgimg"></div>
+  <div class="scrim"></div>
+  <div class="content">
+
+    <!-- Top meta row -->
+    <div style="display:flex; justify-content:space-between; font-family:var(--mono); font-size:8pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.88); font-weight:600;">
+      <div>Kapes Adventures · Kenya</div>
+      <div>Programme Pack · Rev. 2026.05</div>
+    </div>
+
+    <!-- Mid cover mark -->
+    <div style="margin-top: 40mm;">
+      <div style="font-family:var(--mono); font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--orange); font-weight:700; margin-bottom: 20mm;">
+        ● For board review · not for circulation
+      </div>
+      <div class="dis" style="font-size: 64pt; line-height:.9; color:#fff;">
+        Seeds2<br/>Education
+      </div>
+      <div style="height:2px; width:40mm; background: var(--orange); margin: 12mm 0;"></div>
+      <div style="font-family:var(--serif); font-style: italic; font-size: 14pt; line-height:1.4; color:rgba(255,255,255,.92); max-width: 110mm;">
+        A seven-night programme in Kenya, proposed for the Grade 10 cohort, November 2026.
+      </div>
+    </div>
+
+    <!-- Bottom frame -->
+    <div style="margin-top:auto; display:grid; grid-template-columns: 1.3fr 1fr; gap: 12mm; align-items:end; border-top: 1px solid rgba(255,255,255,.22); padding-top: 8mm;">
+      <div>
+        <div style="font-family:var(--mono); font-size: 7.5pt; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.5); font-weight:600; margin-bottom:6pt;">Prepared for</div>
+        <div style="font-family:var(--display); font-size: 16pt; color:#fff; line-height:1.1; margin-bottom:4pt;">Board of Governors<br/><span style="color:rgba(255,255,255,.55); font-size:12pt;">[ Your School Name ]</span></div>
+        <div style="font-family:var(--mono); font-size:8pt; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.62);">International School · IB Continuum</div>
+      </div>
+      <div>
+        <div style="font-family:var(--mono); font-size: 7.5pt; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.5); font-weight:600; margin-bottom:6pt;">Prepared by</div>
+        <div style="font-family:var(--display); font-size: 16pt; color:#fff; line-height:1.1; margin-bottom:4pt;">Kapes Adventures</div>
+        <div style="font-family:var(--mono); font-size:8pt; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.62);">Kenya-rooted · since 2022</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 02 · ROUTING SHEET                       -->
+<!-- ============================================= -->
+<section class="page paper">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Routing & sign-off</span> · doc ID: S2E·FGIS·2026·11</span>
+      <span>Prepared 14 Apr 2026 · distribution controlled</span>
+    </div>
+
+    <div class="eyebrow">Page 02 · circulation</div>
+    <h2 class="dis" style="font-size: 34pt; margin-top: 8pt; margin-bottom: 14pt;">
+      Who sees this,<br/>and in what order.
+    </h2>
+    <div class="lede" style="max-width: 140mm; margin-bottom: 10mm;">
+      This pack routes sequentially through academic leadership before the Board meeting on <b>08 May 2026</b>. Each reviewer is asked to sign below to confirm the pack has been read in full and any concerns logged with the Head of Service Learning before the next stage.
+    </div>
+
+    <!-- Routing table -->
+    <div style="margin-top: 2mm;">
+      <div class="routing-row" style="border-top:2px solid var(--charcoal); background: #F5F0E5;">
+        <div class="role">Role</div>
+        <div class="role">Name</div>
+        <div class="role">Date</div>
+        <div class="role">Signature</div>
+      </div>
+      <div class="routing-row">
+        <div>
+          <div class="role">01 · Champion</div>
+          <div class="cap" style="margin-top:2pt; color:var(--orange); text-transform:none;">Head of Service Learning</div>
+        </div>
+        <div class="name">Priya Ramanathan</div>
+        <div class="mono" style="font-size:8pt; color:var(--ink);">12 Apr 2026</div>
+        <div class="sigline done"></div>
+      </div>
+      <div class="routing-row">
+        <div>
+          <div class="role">02 · Review</div>
+          <div class="cap" style="margin-top:2pt; color:var(--orange); text-transform:none;">IB DP Coordinator</div>
+        </div>
+        <div class="name">Dr. Marcus Allen</div>
+        <div class="mono" style="font-size:8pt; color:var(--ink);">18 Apr 2026</div>
+        <div class="sigline done"></div>
+      </div>
+      <div class="routing-row">
+        <div>
+          <div class="role">03 · Review</div>
+          <div class="cap" style="margin-top:2pt; color:var(--orange); text-transform:none;">Deputy Head (Safeguarding)</div>
+        </div>
+        <div class="name">Eleanor Whitcombe</div>
+        <div class="mono" style="font-size:8pt; color:var(--ink);">22 Apr 2026</div>
+        <div class="sigline done"></div>
+      </div>
+      <div class="routing-row">
+        <div>
+          <div class="role">04 · Review</div>
+          <div class="cap" style="margin-top:2pt; color:var(--muted); text-transform:none;">Bursar · CFO</div>
+        </div>
+        <div class="name">Rohan Mehta</div>
+        <div class="mono" style="font-size:8pt; color:var(--muted);">By 29 Apr</div>
+        <div class="sigline"></div>
+      </div>
+      <div class="routing-row">
+        <div>
+          <div class="role">05 · Review</div>
+          <div class="cap" style="margin-top:2pt; color:var(--muted); text-transform:none;">Principal</div>
+        </div>
+        <div class="name">Dr. Hannah Osei</div>
+        <div class="mono" style="font-size:8pt; color:var(--muted);">By 02 May</div>
+        <div class="sigline"></div>
+      </div>
+      <div class="routing-row">
+        <div>
+          <div class="role">06 · Decision</div>
+          <div class="cap" style="margin-top:2pt; color:var(--charcoal); text-transform:none; font-weight:600;">Board of Governors</div>
+        </div>
+        <div class="name">Chair: Andrew Field</div>
+        <div class="mono" style="font-size:8pt; color:var(--muted);">08 May 2026</div>
+        <div class="sigline"></div>
+      </div>
+    </div>
+
+    <!-- Status marks -->
+    <div style="margin-top: 14mm; display:flex; gap: 14mm; align-items:center;">
+      <div class="stamp green">Risk log complete</div>
+      <div class="stamp">Decision pending</div>
+      <div style="font-size:9pt; color: var(--ink-2); line-height:1.5; max-width: 60mm;">
+        Concerns or amendments → <b>Priya Ramanathan</b> (pramanathan@fgis.ae) by 05 May, cc'd to the Principal.
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Kapes Adventures · Seeds2Education</span>
+      <span>Board Pack · Prepared for International Schools</span>
+      <span class="pg">02 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 03 · THE DECISION ASK (ONE-PAGER)        -->
+<!-- ============================================= -->
+<section class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">The decision ask</span> · page 03</span>
+      <span>S2E · FGIS · 2026·11</span>
+    </div>
+
+    <div class="eyebrow">What the board is being asked to approve</div>
+    <h2 class="dis" style="font-size: 40pt; margin-top: 10pt; margin-bottom: 10mm; line-height:.95;">
+      Approve a seven-night<br/>
+      <span class="accent">Seeds2Education</span> programme<br/>
+      for 24 Grade 10 students,<br/>
+      Nov 28 – Dec 5, 2026.
+    </h2>
+
+    <!-- Two-column summary: THE ASK / WHAT YOU'RE APPROVING -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 0; border:1px solid var(--line); border-radius:6px; overflow:hidden; margin-bottom: 10mm;">
+      <div style="padding: 8mm 8mm; border-right:1px solid var(--line); background: var(--paper);">
+        <div class="mono" style="font-size:8pt; color:var(--orange); font-weight:600; margin-bottom: 6pt;">The ask</div>
+        <div style="font-family:var(--display); font-size: 14pt; line-height:1.15; color:var(--charcoal); margin-bottom: 6pt;">
+          One vote. Two signatures.
+        </div>
+        <div style="font-size: 10pt; color: var(--ink); line-height:1.55;">
+          Governors approve the programme in principle. Principal + Bursar co-sign the trip letter by <b>22 May</b> to unlock parent registrations for September start.
+        </div>
+      </div>
+      <div style="padding: 8mm 8mm; background: var(--sand);">
+        <div class="mono" style="font-size:8pt; color:var(--charcoal); font-weight:600; margin-bottom: 6pt;">What you're approving</div>
+        <div style="font-family:var(--display); font-size: 14pt; line-height:1.15; color:var(--charcoal); margin-bottom: 6pt;">
+          A programme, not a trip.
+        </div>
+        <div style="font-size: 10pt; color: var(--ink); line-height:1.55;">
+          Year-round Kenyan-led food-security work at Oloosirkon Primary School. Visiting students join an existing programme mid-build. No parachute projects.
+        </div>
+      </div>
+    </div>
+
+    <!-- Key figures strip -->
+    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:0; border:1px solid var(--line); border-radius:6px; overflow:hidden; margin-bottom:10mm;">
+      <div style="padding: 6mm 6mm; border-right:1px solid var(--line);">
+        <div class="cap" style="margin-bottom:4pt;">Cohort</div>
+        <div style="font-family:var(--display); font-size: 20pt; line-height:1; color:var(--charcoal);">24 <span style="font-size:11pt; color:var(--ink-2);">students</span></div>
+        <div class="cap" style="margin-top:4pt; color:var(--ink-2); text-transform:none;">Grade 10 · 2 staff chaperones</div>
+      </div>
+      <div style="padding: 6mm 6mm; border-right:1px solid var(--line);">
+        <div class="cap" style="margin-bottom:4pt;">Dates</div>
+        <div style="font-family:var(--display); font-size: 20pt; line-height:1; color:var(--charcoal);">7 <span style="font-size:11pt; color:var(--ink-2);">nights</span></div>
+        <div class="cap" style="margin-top:4pt; color:var(--ink-2); text-transform:none;">28 Nov – 5 Dec 2026</div>
+      </div>
+      <div style="padding: 6mm 6mm; border-right:1px solid var(--line);">
+        <div class="cap" style="margin-bottom:4pt;">Per student</div>
+        <div style="font-family:var(--display); font-size: 20pt; line-height:1; color:var(--charcoal);">USD 3,000 <span style="font-size:11pt; color:var(--ink-2);"></span></div>
+        <div class="cap" style="margin-top:4pt; color:var(--ink-2); text-transform:none;">Incl. flights · ≈ £1,950 pp</div>
+      </div>
+      <div style="padding: 6mm 6mm;">
+        <div class="cap" style="margin-bottom:4pt;">Total programme</div>
+        <div style="font-family:var(--display); font-size: 20pt; line-height:1; color:var(--orange);">USD 72k</div>
+        <div class="cap" style="margin-top:4pt; color:var(--ink-2); text-transform:none;">Paid by parents · no school cost</div>
+      </div>
+    </div>
+
+    <!-- WHY NOW -->
+    <div class="eyebrow">Why this, why now</div>
+    <div style="font-family:var(--serif); font-size: 11pt; line-height:1.65; color:var(--ink); margin-top:8pt; max-width: 160mm;">
+      Mission statements across our partner schools consistently commit to <i>"global citizenship demonstrated, not described."</i> The typical international-school trip portfolio (Bali · Rwanda · Nepal) does not include a programme that <b>runs year-round in the partner community</b>. Seeds2Education closes that gap with a mechanism the Board can defend at any speaking engagement: school land converted to food, feeding the children going hungry inside those classrooms, every month of the year.
+    </div>
+
+    <!-- Small commit strip -->
+    <div style="margin-top: auto; padding-top: 8mm; border-top: 1px solid var(--line); display:grid; grid-template-columns: repeat(3,1fr); gap: 6mm;">
+      <div>
+        <div class="cap">01 · Evidence</div>
+        <div style="font-size: 9.5pt; margin-top: 3pt; color: var(--ink); line-height:1.5;">Year-1 baselines published by Kapes. We reference, not rely.</div>
+      </div>
+      <div>
+        <div class="cap">02 · Continuity</div>
+        <div style="font-size: 9.5pt; margin-top: 3pt; color: var(--ink); line-height:1.5;">Programme runs Jan–Dec. Students join a live cycle, not a pop-up.</div>
+      </div>
+      <div>
+        <div class="cap">03 · Safeguarding</div>
+        <div style="font-size: 9.5pt; margin-top: 3pt; color: var(--ink); line-height:1.5;">BS 8848 conformant · LOTC Quality Badge on file · full register p.10.</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>The decision ask</span>
+      <span>Seeds2Education · Board Pack</span>
+      <span class="pg">03 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 04 · EXECUTIVE SUMMARY                   -->
+<!-- ============================================= -->
+<section class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Executive summary</span> · page 04</span>
+      <span>Read time: 3 minutes</span>
+    </div>
+
+    <div class="eyebrow">In one page</div>
+    <h2 class="dis" style="font-size: 34pt; margin-top: 8pt; margin-bottom: 8mm;">
+      The short version,<br/>for anyone who<br/>reads no further.
+    </h2>
+
+    <!-- Five-point summary -->
+    <ol class="num" style="margin-bottom: 8mm;">
+      <li>
+        <div>
+          <div style="font-family:var(--display); font-size:12pt; color:var(--charcoal); margin-bottom: 2pt;">The programme</div>
+          <div style="font-size:10pt; color: var(--ink); line-height:1.55;">Seeds2Education converts degraded school land into productive gardens and food forests. The produce feeds the children on-site. It is not a trip company. It is a year-round Kenyan-led food-security programme our students will <i>join</i>.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div style="font-family:var(--display); font-size:12pt; color:var(--charcoal); margin-bottom: 2pt;">The problem we're joining</div>
+          <div style="font-size:10pt; color: var(--ink); line-height:1.55;">1 in 4 Kenyan children face stunted growth from malnutrition. Hunger is the #1 barrier to learning in the partner communities. Those same schools sit on unused land that could feed them.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div style="font-family:var(--display); font-size:12pt; color:var(--charcoal); margin-bottom: 2pt;">What our students actually do</div>
+          <div style="font-size:10pt; color: var(--ink); line-height:1.55;">Three days of farmland conversion with Oloosirkon Primary School's staff and pupils. Onion-farming + agronomy workshops with the Kenyan team. Cultural exchange. A Food For Education facility visit. Not saviours — participants.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div style="font-family:var(--display); font-size:12pt; color:var(--charcoal); margin-bottom: 2pt;">Why this is board-defensible</div>
+          <div style="font-size:10pt; color: var(--ink); line-height:1.55;">The programme continues after the bus leaves — gardens keep feeding kids 11 months a year. BS 8848 conformant. LOTC Quality Badge. Pricing principles transparent. Impact metrics published annually, not just Year-1 PR.</div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div style="font-family:var(--display); font-size:12pt; color:var(--charcoal); margin-bottom: 2pt;">What the Board is voting on</div>
+          <div style="font-size:10pt; color: var(--ink); line-height:1.55;">Approval in principle for 24 Grade 10 students, 28 Nov – 5 Dec 2026, at USD 3,000 per student (excluding flights, paid in full by parents). No call on school operating budget. Signed trip letter unlocks Sept parent registration.</div>
+        </div>
+      </li>
+    </ol>
+
+    <!-- Pull quote -->
+    <div style="background: var(--sand); border-left: 3px solid var(--orange); padding: 7mm 8mm; border-radius: 0 4px 4px 0;">
+      <div class="lede" style="font-size: 12pt; color:var(--charcoal); margin-bottom: 4pt;">
+        "The impact doesn't start when your students arrive. And it doesn't stop when they leave."
+      </div>
+      <div class="cap" style="color: var(--ink-2);">Kapes Adventures · stated operating principle</div>
+    </div>
+
+    <div class="page-footer">
+      <span>Executive summary</span>
+      <span>Kapes Adventures · Seeds2Education · 2026</span>
+      <span class="pg">04 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 05 · THE PROBLEM                         -->
+<!-- ============================================= -->
+<section class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Seeds2Education · the problem</span> · page 05</span>
+      <span>Evidence set · Kenya DHS + UNICEF</span>
+    </div>
+
+    <div class="eyebrow">Before the mechanism · the gap we're closing</div>
+    <h2 class="dis" style="font-size: 38pt; margin-top: 8pt; margin-bottom: 6mm;">
+      Hungry children<br/>can't learn.
+    </h2>
+    <div class="lede" style="max-width: 150mm; margin-bottom: 10mm;">
+      This is the documented gap Seeds2Education is built to close. We lead with it because the Board should be able to name the problem before evaluating the solution.
+    </div>
+
+    <!-- Big stats row -->
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 6mm; margin-bottom: 10mm;">
+      <div style="padding: 8mm 7mm; background: #FBF4E6; border: 1px solid var(--line); border-radius: 4px;">
+        <div class="statbig red">1 in 4</div>
+        <div style="font-size:8.5pt; color: var(--ink); line-height:1.5; margin-top: 4mm; font-weight:600;">Kenyan children under 5 with stunted growth from chronic malnutrition.</div>
+        <div class="cap" style="margin-top: 3mm; text-transform:none; color:var(--muted);">Kenya Demographic & Health Survey, 2022</div>
+      </div>
+      <div style="padding: 8mm 7mm; background: #FBF4E6; border: 1px solid var(--line); border-radius: 4px;">
+        <div class="statbig red">#1</div>
+        <div style="font-size:8.5pt; color: var(--ink); line-height:1.5; margin-top: 4mm; font-weight:600;">Cited cause of lost school attendance in partner communities.</div>
+        <div class="cap" style="margin-top: 3mm; text-transform:none; color:var(--muted);">Partner-school intake survey · Oloosirkon Primary School · 2024</div>
+      </div>
+      <div style="padding: 8mm 7mm; background: #FBF4E6; border: 1px solid var(--line); border-radius: 4px;">
+        <div class="statbig red">70%</div>
+        <div style="font-size:8.5pt; color: var(--ink); line-height:1.5; margin-top: 4mm; font-weight:600;">Of tourism revenue never reaches the local communities that host visitors.</div>
+        <div class="cap" style="margin-top: 3mm; text-transform:none; color:var(--muted);">UNCTAD tourism-leakage briefing, 2023</div>
+      </div>
+    </div>
+
+    <!-- Narrative -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 10mm;">
+      <div>
+        <div class="mono" style="font-size:8pt; color:var(--orange); font-weight:600; margin-bottom: 4pt;">● What the Board should understand</div>
+        <div style="font-family:var(--serif); font-size:11pt; line-height: 1.7; color: var(--ink);">
+          This isn't about far-away statistics. In the specific partner schools we'll visit, teachers report children falling asleep in the afternoon because their last meal was the night before. Attendance thins after the long rains. The community knows the problem. The schools themselves own plots of land — degraded, disused — that could feed every child on their register, were the water, seeds and labour in place.
+        </div>
+      </div>
+      <div>
+        <div class="mono" style="font-size:8pt; color:var(--orange); font-weight:600; margin-bottom: 4pt;">● Why visits alone don't fix it</div>
+        <div style="font-family:var(--serif); font-size:11pt; line-height: 1.7; color: var(--ink);">
+          The voluntourism critique is now well-documented: short visits that build one-off projects tend to dissolve when visitors leave. Painted libraries don't lift literacy. Solar panels installed by volunteers don't improve grades. A credible programme has to be <b>continuous</b>, <b>community-led</b>, and <b>owned locally</b> — with visitors joining it, not initiating it.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:auto; padding: 5mm 7mm; background: var(--charcoal); color:#fff; border-radius:4px; display:flex; justify-content:space-between; align-items:center;">
+      <div style="font-family:var(--serif); font-style:italic; font-size:10.5pt; max-width:130mm;">
+        "Communities need more than tourists — they need partners."
+      </div>
+      <div class="mono" style="font-size: 7.5pt; letter-spacing:.12em; color:rgba(255,255,255,.6);">Kapes positioning</div>
+    </div>
+
+    <div class="page-footer">
+      <span>The problem</span>
+      <span>Evidence-led · sourced · verifiable</span>
+      <span class="pg">05 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 06 · THE MECHANISM                       -->
+<!-- ============================================= -->
+<section class="page sand">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Seeds2Education · the mechanism</span> · page 06</span>
+      <span>How the programme actually works</span>
+    </div>
+
+    <div class="eyebrow">● Our answer</div>
+    <h2 class="dis" style="font-size: 38pt; margin-top: 8pt; margin-bottom: 6mm;">
+      Turn unused school land<br/>
+      into thriving onion farms —<br/>
+      and <span class="accent">exchange the harvest for meals</span>.
+    </h2>
+
+    <!-- Exchange rate callout -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:2mm; margin-bottom: 8mm; background: var(--charcoal); color:#fff; border-radius:4px; padding: 5mm 6mm; align-items:center;">
+      <div>
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700; margin-bottom: 2pt;">● THE EXCHANGE</div>
+        <div style="font-size:9pt; color:rgba(255,255,255,.7); line-height:1.5;">Onions harvested on-site are exchanged directly into the school's meals programme. No middlemen, no NGO overhead.</div>
+      </div>
+      <div style="text-align:center; border-left:1px solid rgba(255,255,255,.15); border-right:1px solid rgba(255,255,255,.15); padding: 0 4mm;">
+        <div class="mono tnum" style="font-size:7pt; color:rgba(255,255,255,.5);">PER KILOGRAM</div>
+        <div class="dis tnum" style="font-size: 26pt; color:#fff; line-height:1; margin:2pt 0;">$0.85</div>
+        <div class="cap" style="color:rgba(255,255,255,.6); text-transform:none; font-size:7pt;">market price · onions</div>
+      </div>
+      <div style="text-align:center;">
+        <div class="mono tnum" style="font-size:7pt; color:rgba(255,255,255,.5);">CONVERTS TO</div>
+        <div class="dis tnum" style="font-size: 26pt; color: var(--orange); line-height:1; margin:2pt 0;">3 meals</div>
+        <div class="cap" style="color:rgba(255,255,255,.6); text-transform:none; font-size:7pt;">served on-site, same day</div>
+      </div>
+    </div>
+
+    <!-- Flow diagram 5 stages -->
+    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; margin-bottom: 8mm;">
+      <div style="background:#fff; border:1px solid var(--line); border-radius:4px; padding: 5mm 4mm; position:relative;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700;">STAGE 01</div>
+        <div class="hr2" style="background:var(--orange); width:14mm; margin: 3mm 0;"></div>
+        <div style="font-family:var(--display); font-size: 11pt; color:var(--charcoal); line-height:1.15; margin-bottom: 3mm;">Unused land</div>
+        <div style="font-size: 8.5pt; color:var(--ink-2); line-height:1.5;">Identify a dormant school plot. Test soil, secure water access, plan bed layout with Oloosirkon Primary School's agronomy lead.</div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--line); border-radius:4px; padding: 5mm 4mm;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700;">STAGE 02</div>
+        <div class="hr2" style="background:var(--orange); width:14mm; margin: 3mm 0;"></div>
+        <div style="font-family:var(--display); font-size: 11pt; color:var(--charcoal); line-height:1.15; margin-bottom: 3mm;">Onion farm</div>
+        <div style="font-size: 8.5pt; color:var(--ink-2); line-height:1.5;">Convert the plot into a thriving onion farm. Raised beds, drip irrigation, staggered planting for year-round yield.</div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--line); border-radius:4px; padding: 5mm 4mm;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700;">STAGE 03</div>
+        <div class="hr2" style="background:var(--orange); width:14mm; margin: 3mm 0;"></div>
+        <div style="font-family:var(--display); font-size: 11pt; color:var(--charcoal); line-height:1.15; margin-bottom: 3mm;">Harvest → exchange</div>
+        <div style="font-size: 8.5pt; color:var(--ink-2); line-height:1.5;">Onions are harvested and exchanged directly for school meals — $0.85/kg converts to 3 meals.</div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--line); border-radius:4px; padding: 5mm 4mm;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700;">STAGE 04</div>
+        <div class="hr2" style="background:var(--orange); width:14mm; margin: 3mm 0;"></div>
+        <div style="font-family:var(--display); font-size: 11pt; color:var(--charcoal); line-height:1.15; margin-bottom: 3mm;">Meals served</div>
+        <div style="font-size: 8.5pt; color:var(--ink-2); line-height:1.5;">Pupils eat on-site. Hunger-attendance loop breaks. Food literacy and farm science enter the curriculum.</div>
+      </div>
+      <div style="background: var(--charcoal); color:#fff; border:1px solid var(--charcoal); border-radius:4px; padding: 5mm 4mm;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700;">STAGE 05</div>
+        <div class="hr2" style="background:var(--orange); width:14mm; margin: 3mm 0;"></div>
+        <div style="font-family:var(--display); font-size: 11pt; color:#fff; line-height:1.15; margin-bottom: 3mm;">Uniforms loop</div>
+        <div style="font-size: 8.5pt; color:rgba(255,255,255,.8); line-height:1.5;">Partner schools join Kapes Uniforms takeback — one returned item funds one school meal.</div>
+      </div>
+    </div>
+
+    <!-- Where the students plug in -->
+    <div style="background: #fff; border: 2px solid var(--orange); border-radius: 4px; padding: 7mm 8mm; margin-bottom: 8mm;">
+      <div style="display:flex; align-items:center; gap: 6mm; margin-bottom: 4mm;">
+        <div class="tag orange">Our students join HERE →</div>
+        <div style="font-family:var(--display); font-size: 13pt; color:var(--charcoal);">Stages 01 → 04, mid-cycle.</div>
+      </div>
+      <div style="font-size:10pt; color: var(--ink); line-height: 1.6;">
+        Grade 10 students don't start the programme and they don't end it. They join a live onion-growing cycle already underway, spend three working days alongside Oloosirkon Primary School staff and pupils on soil preparation, raised-bed construction, drip irrigation, seeding and shade assembly — and leave with the infrastructure they helped build still in active service the Monday after their flight home.
+      </div>
+    </div>
+
+    <!-- Founder quote -->
+    <div style="display:grid; grid-template-columns: 35mm 1fr; gap: 6mm; align-items:center;">
+      <div style="height: 35mm; background: url('https://res.cloudinary.com/dng12bd0a/image/upload/v1747200052/IMG_0252_gstfij.jpg') center/cover; border-radius: 2px;"></div>
+      <div>
+        <div class="lede" style="font-size: 11.5pt; color: var(--charcoal); margin-bottom: 4pt;">
+          "We were in Kenya before your first trip. We'll be here after your last one."
+        </div>
+        <div class="cap" style="color: var(--ink-2);">Matthew Benjamin · Founder, Kapes Adventures</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>The mechanism</span>
+      <span>Seeds2Education · five-stage programme</span>
+      <span class="pg">06 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 07 · ITINERARY (SPREAD part 1)           -->
+<!-- ============================================= -->
+<section class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Seven-night itinerary</span> · page 07</span>
+      <span>Based on Nov 2025 pilot itinerary</span>
+    </div>
+
+    <div class="eyebrow">What the seven nights actually look like</div>
+    <h2 class="dis" style="font-size: 34pt; margin-top: 8pt; margin-bottom: 4mm;">
+      A week that joins<br/>
+      an ongoing story.
+    </h2>
+    <div class="lede" style="max-width: 150mm; margin-bottom: 8mm;">
+      The itinerary opposite is the exact programme our pilot cohort ran in November 2025 — included here so the Board sees precisely what Grade 10 will do, hour by hour.
+    </div>
+
+    <!-- Day cards grid -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 4mm;">
+
+      <div class="day-card">
+        <div class="imgslot">
+          <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747160176/Collection_5_s7opwi.jpg" alt=""/>
+          <div class="scrim"></div><div class="dlabel">Day 1</div>
+        </div>
+        <div class="body">
+          <div class="ttl">Arrive Nairobi</div>
+          <div class="txt">JKIA pickup → transfer to Ubuntu Kreative Village. Welcome briefing; evening talk from Elijah (Ubuntu founder) on purpose, impact & empowerment.</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="imgslot">
+          <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768976012/KAPESVoifriday_klein-124_mayzid.jpg" alt=""/>
+          <div class="scrim"></div><div class="dlabel">Day 2</div>
+        </div>
+        <div class="body">
+          <div class="ttl">Nairobi NP · Sheldrick Trust</div>
+          <div class="txt">Early ranger-led game drive. Sheldrick Wildlife Trust elephant orphanage + conservation talk. Evening: produce-driven pizza night at Ubuntu's farm.</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="imgslot">
+          <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747200052/IMG_0252_gstfij.jpg" alt=""/>
+          <div class="scrim"></div><div class="dlabel">Day 3</div>
+        </div>
+        <div class="body">
+          <div class="ttl">Ngong Hills · Ubuntu Market</div>
+          <div class="txt">Guided cultural hike in Ngong Hills; lunch at Kompass. Afternoon: Ubuntu Local Market Day — community vendors host, students buy directly from artisans.</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="imgslot">
+          <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747159769/Filip-C-Agoo-Everland-Marketing-Kenya-13983_atg3tn.jpg" alt=""/>
+          <div class="scrim"></div><div class="dlabel">Day 4</div>
+        </div>
+        <div class="body">
+          <div class="ttl">Food For Education · ACT</div>
+          <div class="txt">Drive to Ruiru. Food For Education kitchen + warehouse tour: school meals at scale. Afternoon: weaving + upcycling with Africa Collects Textiles artisans.</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="imgslot">
+          <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747160268/WhatsApp_Image_2025-05-13_at_12.07.56_m0epad.jpg" alt=""/>
+          <div class="scrim"></div><div class="dlabel">Day 5</div>
+        </div>
+        <div class="body">
+          <div class="ttl">Farmland conversion · 1/3</div>
+          <div class="txt">First full day on Oloosirkon Primary School plot. Groundwork, soil prep in AM. Raised-bed formation + irrigation prep PM. Evening: Paint & Dine at Ubuntu.</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="imgslot">
+          <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747160296/WhatsApp_Image_2025-05-13_at_12.12.32_2_qbmzae.jpg" alt=""/>
+          <div class="scrim"></div><div class="dlabel">Day 6</div>
+        </div>
+        <div class="body">
+          <div class="ttl">Farmland conversion · 2/3</div>
+          <div class="txt">Seed planting, shade-structure assembly, irrigation commissioning, pest-barrier install. Lunch on-site with school community. Evening Maasai activities.</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="imgslot">
+          <img src="https://cdn.shopify.com/s/files/1/0777/3326/5724/files/A7404093_2.jpg?v=1746502728" alt=""/>
+          <div class="scrim"></div><div class="dlabel">Day 7</div>
+        </div>
+        <div class="body">
+          <div class="ttl">Conversion 3/3 + closing</div>
+          <div class="txt">Compost layering, watering-system testing, signage install. Closing ceremony with community. Farewell dinner + bonfire reflection at Ubuntu.</div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="imgslot">
+          <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1747160176/Collection_5_s7opwi.jpg" alt=""/>
+          <div class="scrim"></div><div class="dlabel">Day 8</div>
+        </div>
+        <div class="body">
+          <div class="ttl">Depart</div>
+          <div class="txt">Breakfast, packing, final reflections. Transfer to JKIA. Structured debrief on the drive — inputs fed into IB CAS reflection template.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      <span>Seven-night itinerary</span>
+      <span>Ubuntu Kreative Village · Oloosirkon Primary School · Rongai</span>
+      <span class="pg">07 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 08 · CURRICULUM ALIGNMENT                -->
+<!-- ============================================= -->
+<section class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Curriculum alignment</span> · page 08</span>
+      <span>IB DP · CAS · National curriculum fit</span>
+    </div>
+
+    <div class="eyebrow">Tied to learning outcomes · not bolted on</div>
+    <h2 class="dis" style="font-size: 28pt; margin-top: 6pt; margin-bottom: 4mm;">
+      Why this is academic work,<br/>not tourism.
+    </h2>
+
+    <div style="font-family:var(--serif); font-size: 10pt; line-height:1.55; color: var(--ink); margin-bottom: 4mm; max-width: 160mm;">
+      Structured to map directly onto IB CAS's seven learning outcomes, DP Global Politics / Geography EE pathways, and national-curriculum food-security / sustainability pillars. Pre- and post-trip modules sit inside the existing Service Learning slot.
+    </div>
+
+    <!-- Alignment table -->
+    <table class="tbl" style="margin-bottom: 4mm;">
+      <colgroup><col style="width: 48mm;"/><col/><col style="width: 40mm;"/></colgroup>
+      <thead>
+        <tr><th>Framework</th><th>Mapped outcome</th><th>Evidence artefact</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>IB CAS · LO1</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Identify own strengths</span></td><td>Pre-trip role-selection exercise: every student declares a skill area (build, document, translate-host, reflect) and evidences it across the week.</td><td class="mono">CAS portfolio · stage-1</td></tr>
+        <tr><td><b>IB CAS · LO2</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">New challenge · new skills</span></td><td>Onion-farming workshop + raised-bed construction: most students have never built a drip-irrigation system or planted and tended a market-garden crop.</td><td class="mono">Day-5 task log</td></tr>
+        <tr><td><b>IB CAS · LO3</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Initiate + plan</span></td><td>Each student leads one sub-task on the build (compost, signage, drainage, seedbed). Planned pre-trip, executed on-site.</td><td class="mono">Task-ownership matrix</td></tr>
+        <tr><td><b>IB CAS · LO4</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Commitment + perseverance</span></td><td>Three consecutive build days is long enough to hit the grit curve. Weather, heat, blisters, delivery delays — all documented.</td><td class="mono">Reflection journal · daily</td></tr>
+        <tr><td><b>IB CAS · LO5</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Collaboration</span></td><td>Mixed teams with Oloosirkon Primary School staff + pupils. Every task has a Kenyan lead our students report to — not the reverse.</td><td class="mono">Peer-feedback form</td></tr>
+        <tr><td><b>IB CAS · LO6</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Global engagement</span></td><td>Directly addresses UN SDG 2 (Zero Hunger) and SDG 4 (Quality Education) through a named community, not abstraction.</td><td class="mono">SDG evidence pack</td></tr>
+        <tr><td><b>IB CAS · LO7</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Ethics of choices</span></td><td>Pre-trip seminar: "Voluntourism vs service learning" — students read the critique and come prepared to resist savior framing.</td><td class="mono">Pre-trip seminar pack</td></tr>
+        <tr><td><b>DP Global Politics</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Extended essay pathway</span></td><td>Food sovereignty + development ethics → viable EE topic. Kapes supplies Kenyan interview access on request.</td><td class="mono">EE scaffolding · optional</td></tr>
+        <tr><td><b>National curriculum fit</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Food security · sustainability pillars</span></td><td>Links the school's international service programme to national priorities on regenerative agriculture and food security. UAE, UK, Netherlands and Swiss pathways mapped on request.</td><td class="mono">Per-country brief</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Pre/post strip -->
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 3mm;">
+      <div style="background:var(--sand); border:1px solid var(--line); border-radius:4px; padding: 3mm 4mm;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700; margin-bottom:2pt;">● Pre · Sept – Nov</div>
+        <div style="font-size: 8.5pt; color:var(--ink); line-height:1.45;">4 × 45-min modules: Kenyan context, voluntourism ethics, market-garden basics, Swahili survival.</div>
+      </div>
+      <div style="background:var(--sand); border:1px solid var(--line); border-radius:4px; padding: 3mm 4mm;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700; margin-bottom:2pt;">● On the ground</div>
+        <div style="font-size: 8.5pt; color:var(--ink); line-height:1.45;">Daily journal + structured reflection. Three assessed build days + interview with Ubuntu lead.</div>
+      </div>
+      <div style="background:var(--sand); border:1px solid var(--line); border-radius:4px; padding: 3mm 4mm;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700; margin-bottom:2pt;">● Post · Jan – Mar 2027</div>
+        <div style="font-size: 8.5pt; color:var(--ink); line-height:1.45;">CAS portfolio submission, cohort presentation to Grade 9, optional EE pathway opens.</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Curriculum alignment</span>
+      <span>IB CAS · DP · National curriculum fit</span>
+      <span class="pg">08 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 09 · SAFETY & SAFEGUARDING               -->
+<!-- ============================================= -->
+<section class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Safety & safeguarding posture</span> · page 09</span>
+      <span>For Deputy Head (Safeguarding) sign-off</span>
+    </div>
+
+    <div class="eyebrow">Before the risk register · the operating posture</div>
+    <h2 class="dis" style="font-size: 28pt; margin-top: 6pt; margin-bottom: 4mm;">
+      The parent question<br/>answered first.
+    </h2>
+    <div class="lede" style="max-width: 150mm; margin-bottom: 5mm; font-size: 10.5pt;">
+      The most common board + parent concern on any Kenya trip is safety. This page documents the posture; the next logs individual risks + mitigations.
+    </div>
+
+    <!-- Credentials strip -->
+    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin-bottom: 5mm;">
+      <div style="border:1px solid var(--line); padding: 5mm; border-radius:4px;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700; margin-bottom:4pt;">● 01</div>
+        <div style="font-family:var(--display); font-size:11pt; color:var(--charcoal); line-height:1.1; margin-bottom:4pt;">BS 8848 conformant</div>
+        <div style="font-size:8.5pt; color:var(--ink-2); line-height:1.5;">British Standard for visits, fieldwork, expeditions and adventurous activities outside the UK.</div>
+      </div>
+      <div style="border:1px solid var(--line); padding: 5mm; border-radius:4px;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700; margin-bottom:4pt;">● 02</div>
+        <div style="font-family:var(--display); font-size:11pt; color:var(--charcoal); line-height:1.1; margin-bottom:4pt;">LOTC Quality Badge</div>
+        <div style="font-size:8.5pt; color:var(--ink-2); line-height:1.5;">Learning Outside the Classroom accreditation · reviewed 2024 · next renewal Oct 2026.</div>
+      </div>
+      <div style="border:1px solid var(--line); padding: 5mm; border-radius:4px;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700; margin-bottom:4pt;">● 03</div>
+        <div style="font-family:var(--display); font-size:11pt; color:var(--charcoal); line-height:1.1; margin-bottom:4pt;">£10m PL cover</div>
+        <div style="font-size:8.5pt; color:var(--ink-2); line-height:1.5;">Public liability underwritten by Endsleigh. Certificate on file, Appendix A.</div>
+      </div>
+      <div style="border:1px solid var(--line); padding: 5mm; border-radius:4px;">
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700; margin-bottom:4pt;">● 04</div>
+        <div style="font-family:var(--display); font-size:11pt; color:var(--charcoal); line-height:1.1; margin-bottom:4pt;">Kenyan-led ground team</div>
+        <div style="font-size:8.5pt; color:var(--ink-2); line-height:1.5;">Trip lead, medic, driver, safeguarding officer — all resident in Kenya. 24/7 on call.</div>
+      </div>
+    </div>
+
+    <!-- Three pillars -->
+    <div style="margin-bottom: 4mm;">
+      <div class="mono" style="font-size:8pt; color:var(--charcoal); font-weight:700; margin-bottom: 2mm;">OPERATING POSTURE · THREE PILLARS</div>
+
+      <div style="display: grid; grid-template-columns: 38mm 1fr; gap: 6mm; padding: 3mm 0; border-top: 1px solid var(--line);">
+        <div>
+          <div style="font-family:var(--display); font-size:13pt; color:var(--charcoal); line-height:1.1;">01 · Transparent</div>
+          <div class="cap" style="margin-top:3pt;">Parents see everything</div>
+        </div>
+        <div style="font-size:10pt; line-height:1.6; color: var(--ink);">
+          Full risk register, evacuation plan, travel-advisory response protocol, and named medical-cover underwriter published to parents <b>before</b> registration opens — not after. Nothing in the operational plan is confidential to the provider.
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 38mm 1fr; gap: 6mm; padding: 3mm 0; border-top: 1px solid var(--line);">
+        <div>
+          <div style="font-family:var(--display); font-size:13pt; color:var(--charcoal); line-height:1.1;">02 · Layered</div>
+          <div class="cap" style="margin-top:3pt;">3 independent escalation paths</div>
+        </div>
+        <div style="font-size:10pt; line-height:1.6; color: var(--ink);">
+          Student → school chaperone → Kapes trip lead → Kapes Adventures duty phone (Dubai) → Head of School. Independent medical contact via Flying Doctors Kenya direct line. No single-point-of-failure in the comms chain.
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 38mm 1fr; gap: 6mm; padding: 3mm 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+        <div>
+          <div style="font-family:var(--display); font-size:13pt; color:var(--charcoal); line-height:1.1;">03 · Reversible</div>
+          <div class="cap" style="margin-top:3pt;">Any activity can be stood down mid-week</div>
+        </div>
+        <div style="font-size:10pt; line-height:1.6; color: var(--ink);">
+          Any single activity can be cancelled without cascading the rest of the week. Weather, illness, or travel-advisory shift triggers the pre-signed alternate itinerary (Appendix C). The build days can compress into two if needed.
+        </div>
+      </div>
+    </div>
+
+    <!-- Safeguarding commit -->
+    <div style="background: var(--charcoal); color:#fff; padding: 6mm 7mm; border-radius: 4px;">
+      <div class="mono" style="font-size:8pt; letter-spacing:.14em; color:var(--orange); margin-bottom: 4pt; font-weight:700;">● SAFEGUARDING COMMIT</div>
+      <div style="font-family:var(--serif); font-size: 11pt; line-height:1.55; color:#fff; max-width: 155mm;">
+        All Kapes ground staff hold current DBS-equivalent checks (Kenya DCI clearance). No 1:1 adult-child contact is permitted off-site or unsupervised. All photography of Kenyan children requires signed community consent; photography of visiting students requires parental opt-in collected at registration.
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Safety & safeguarding</span>
+      <span>For Deputy Head sign-off</span>
+      <span class="pg">09 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 10 · RISK REGISTER                       -->
+<!-- ============================================= -->
+<section class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Risk register</span> · page 10</span>
+      <span>Live document · reviewed quarterly</span>
+    </div>
+
+    <div class="eyebrow">Named risks · documented mitigations</div>
+    <h2 class="dis" style="font-size: 26pt; margin-top: 6pt; margin-bottom: 3mm;">
+      Nothing is hidden<br/>behind "comprehensive".
+    </h2>
+    <div class="lede" style="max-width: 160mm; margin-bottom: 4mm; font-size: 10pt;">
+      Working register used on every Kapes Kenya trip. Severity = likelihood × consequence <i>after</i> mitigations. Unmitigated scores available on request.
+    </div>
+
+    <!-- Risk table -->
+    <table class="tbl" style="margin-bottom: 4mm;">
+      <colgroup>
+        <col style="width:7mm"/><col style="width:34mm"/><col/><col style="width:22mm"/>
+      </colgroup>
+      <thead>
+        <tr><th>#</th><th>Risk</th><th>Mitigation in place</th><th>Residual</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">R1</td><td><b>Road travel</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">JKIA → Ubuntu · Rongai transfers</span></td><td>Kapes-contracted vehicles only · trained drivers · daylight travel only on Rongai legs · daily pre-departure vehicle check logged.</td><td><span class="sev med">Medium</span></td></tr>
+        <tr><td class="mono">R2</td><td><b>Medical · GI illness</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Most common student incident</span></td><td>Bottled water only · oral rehydration salts carried by trip lead · Nairobi Hospital 45 min from Ubuntu · Flying Doctors Kenya membership active.</td><td><span class="sev low">Low</span></td></tr>
+        <tr><td class="mono">R3</td><td><b>Malaria exposure</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Nairobi low-risk; Rongai low-risk</span></td><td>Mandatory prophylaxis protocol shared with parents + GP 10 weeks before. DEET + long sleeves after dusk. No coastal overnight on this itinerary.</td><td><span class="sev low">Low</span></td></tr>
+        <tr><td class="mono">R4</td><td><b>Wildlife encounter</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Nairobi NP game drive only</span></td><td>Licensed park rangers lead all game activity · closed vehicle policy · no out-of-vehicle movement in park. Sheldrick is walking-perimeter only.</td><td><span class="sev low">Low</span></td></tr>
+        <tr><td class="mono">R5</td><td><b>Civil unrest / advisory change</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">UK FCDO · destination-country advisory</span></td><td>Daily advisory monitoring by Kapes ops. Trip auto-cancels on any upgrade to "essential travel only" or higher. Alt-itinerary Appendix C. Parent travel insurance mandatory at registration.</td><td><span class="sev med">Medium</span></td></tr>
+        <tr><td class="mono">R6</td><td><b>Mental health · student distress</b></td><td>Cohort screen pre-trip by school counsellor. Kapes trip lead trained in MHFA. Daily reflection surfaces early. Family liaison direct line live throughout.</td><td><span class="sev low">Low</span></td></tr>
+        <tr><td class="mono">R7</td><td><b>Site injury · construction</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Build days 5–7</span></td><td>PPE issued + enforced (gloves, sun hats, boots). No power tools operated by students. Kenyan site lead retains stop-work authority at all times.</td><td><span class="sev low">Low</span></td></tr>
+        <tr><td class="mono">R8</td><td><b>Child safeguarding · partner school</b></td><td>No unsupervised contact between visiting students and Kenyan pupils. Consent required both sides of any photography. School staff retains pastoral lead.</td><td><span class="sev low">Low</span></td></tr>
+        <tr><td class="mono">R9</td><td><b>Reputational · voluntourism optics</b></td><td>Pre-trip seminar on savior framing. Social-media guidance issued. Programme positioning is explicitly anti-voluntourism — centred on joining, not saving.</td><td><span class="sev low">Low</span></td></tr>
+        <tr><td class="mono">R10</td><td><b>Financial · supplier failure</b></td><td>Kapes holds ATOL-equivalent bond via UK broker. Parent payments held in escrow until 30 days pre-departure; funds released to suppliers on a scheduled drawdown (Appendix B).</td><td><span class="sev low">Low</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- Cancellation posture -->
+    <div style="background: var(--sand); border-left: 3px solid var(--charcoal); padding: 5mm 7mm; border-radius: 0 4px 4px 0; display:grid; grid-template-columns: 36mm 1fr; gap: 6mm; align-items:center;">
+      <div>
+        <div class="stamp sm">Cancellation posture</div>
+      </div>
+      <div style="font-size: 9.5pt; line-height:1.55; color: var(--ink);">
+        <b>Deposits are non-refundable on confirmation.</b> Parent-facing travel insurance (Allianz Global Student or equivalent) is mandatory at registration and covers cancellation for medical, bereavement and advisory-driven reasons. In a declared Force-Majeure event the trip is rescheduled, not refunded. Explicit in the trip contract. Appendix B.
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Risk register · v2026.05</span>
+      <span>Residuals post-mitigation</span>
+      <span class="pg">10 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 11 · PRICING POSTURE                    -->
+<!-- ============================================= -->
+<section class="page paper">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Pricing · our posture</span> · page 11</span>
+      <span>For Bursar / CFO sign-off</span>
+    </div>
+
+    <div class="eyebrow">Published total · transparent principles</div>
+    <h2 class="dis" style="font-size: 32pt; margin-top: 6pt; margin-bottom: 4mm;">
+      USD 3,000 per student.<br/>
+      <span style="color:var(--ink-2); font-size:18pt;">Excluding flights.</span>
+    </h2>
+    <div class="lede" style="max-width: 160mm; margin-bottom: 7mm; font-size: 10.5pt;">
+      We don't publish a line-by-line cost breakdown — and we're explicit about why. What we <b>do</b> publish is the total, the share that flows directly into the community build, and the non-negotiable safeguards it funds. That's the information the Board actually needs to sign; the rest invites comparison-shopping on the wrong axis.
+    </div>
+
+    <!-- Headline figures -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin-bottom: 7mm;">
+      <div style="background:#fff; border:1px solid var(--line); border-radius:4px; padding: 5mm 6mm;">
+        <div class="cap" style="color:var(--muted); text-transform:none; font-size:7pt;">Per student</div>
+        <div class="dis tnum" style="font-size:22pt; color:var(--charcoal); line-height:1; margin-top:2pt;">USD 3,000</div>
+        <div style="font-size:8.5pt; color:var(--ink-2); margin-top:3mm; line-height:1.5;">7 nights, full board, in-country programme, trip leads, safety + insurance, all excursions. <b>Flights quoted separately at booking.</b></div>
+      </div>
+      <div style="background:#fff; border:2px solid var(--orange); border-radius:4px; padding: 5mm 6mm;">
+        <div class="cap" style="color:var(--orange); text-transform:none; font-size:7pt; font-weight:700;">● Direct to community</div>
+        <div class="dis tnum" style="font-size:22pt; color:var(--orange-ink); line-height:1; margin-top:2pt;">≥ 20%</div>
+        <div style="font-size:8.5pt; color:var(--ink-2); margin-top:3mm; line-height:1.5;">Of every fee, a minimum 20% is ring-fenced for Oloosirkon Primary School's build — materials, Kenyan-team day-rates, ongoing-care allocation. Bonded by payment escrow.</div>
+      </div>
+      <div style="background:#fff; border:1px solid var(--line); border-radius:4px; padding: 5mm 6mm;">
+        <div class="cap" style="color:var(--muted); text-transform:none; font-size:7pt;">Cohort outlay (×24)</div>
+        <div class="dis tnum" style="font-size:22pt; color:var(--charcoal); line-height:1; margin-top:2pt;">USD 72k</div>
+        <div style="font-size:8.5pt; color:var(--ink-2); margin-top:3mm; line-height:1.5;">Paid in full by parents across three instalments. <b>Zero call on the school operating budget.</b> No Board pre-approval on disbursement required.</div>
+      </div>
+    </div>
+
+    <!-- Why we don't publish line-items -->
+    <div style="background: var(--sand); border-left:3px solid var(--charcoal); padding: 5mm 7mm; border-radius: 0 4px 4px 0; margin-bottom: 6mm;">
+      <div class="mono" style="font-size:7.5pt; color:var(--charcoal); font-weight:700; margin-bottom:3pt;">● WHY WE DON'T PUBLISH A LINE-BY-LINE BREAKDOWN</div>
+      <div style="font-size:9.5pt; line-height:1.6; color:var(--ink);">
+        Flights, lodging rates and in-country supplier fees fluctuate season to season, and publishing them invites schools to line-shop against providers who quietly inflate "margin" by suppressing "programme spend." Our commitment instead is the <b>floor percentage to community</b> — verified post-trip, reported in the annual impact document. What's in the fee is listed below; what the community receives is contractual.
+      </div>
+    </div>
+
+    <!-- What's in / what's out -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-bottom: 6mm;">
+      <div>
+        <div class="mono" style="font-size:7pt; color:var(--orange); font-weight:700; margin-bottom: 3pt;">● INCLUDED IN USD 3,000</div>
+        <ul style="margin: 0; padding-left: 14px; font-size: 9pt; line-height:1.65; color:var(--ink);">
+          <li>7 nights lodging · Ubuntu Kreative Village, full board</li>
+          <li>All in-country ground transport + driver fees</li>
+          <li>Kapes trip leads (UK + Kenya) for full programme</li>
+          <li>Programme build — materials, Kenyan-team day-rates</li>
+          <li>Park fees, permits, cultural + wildlife excursions</li>
+          <li>PL insurance, Flying Doctors cover, medical kit</li>
+          <li>Pre-trip modules + post-trip impact reporting</li>
+        </ul>
+      </div>
+      <div>
+        <div class="mono" style="font-size:7pt; color:var(--charcoal); font-weight:700; margin-bottom: 3pt;">● NOT INCLUDED</div>
+        <ul style="margin: 0; padding-left: 14px; font-size: 9pt; line-height:1.65; color:var(--ink);">
+          <li><b>Return flights</b> — quoted separately at booking, no mark-up</li>
+          <li>Travel insurance — purchased direct by parents (Allianz Global Student or equivalent, mandatory)</li>
+          <li>Vaccinations (varies by GP)</li>
+          <li>Personal spending money (rec. USD 80)</li>
+          <li>Kenya eVisa (~USD 30 per student)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Payment schedule -->
+    <div style="margin-top:auto;">
+      <div class="mono" style="font-size:7.5pt; color:var(--charcoal); font-weight:700; margin-bottom: 2mm;">PAYMENT SCHEDULE</div>
+      <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 2mm;">
+        <div style="padding: 3mm 4mm; background: var(--cream); border:1px solid var(--line); border-radius:4px;">
+          <div class="cap" style="color:var(--orange); margin-bottom:1pt; font-size:7pt;">01 · Sep 2026</div>
+          <div style="font-family:var(--display); font-size:11pt; color:var(--charcoal);">USD 600</div>
+          <div class="cap" style="color:var(--muted); text-transform:none; font-size:6.5pt;">Deposit · non-refundable</div>
+        </div>
+        <div style="padding: 3mm 4mm; background: var(--cream); border:1px solid var(--line); border-radius:4px;">
+          <div class="cap" style="color:var(--orange); margin-bottom:1pt; font-size:7pt;">02 · Oct 2026</div>
+          <div style="font-family:var(--display); font-size:11pt; color:var(--charcoal);">USD 1,200</div>
+          <div class="cap" style="color:var(--muted); text-transform:none; font-size:6.5pt;">Into escrow</div>
+        </div>
+        <div style="padding: 3mm 4mm; background: var(--cream); border:1px solid var(--line); border-radius:4px;">
+          <div class="cap" style="color:var(--orange); margin-bottom:1pt; font-size:7pt;">03 · Nov 2026</div>
+          <div style="font-family:var(--display); font-size:11pt; color:var(--charcoal);">USD 1,200</div>
+          <div class="cap" style="color:var(--muted); text-transform:none; font-size:6.5pt;">Into escrow</div>
+        </div>
+        <div style="padding: 3mm 4mm; background: var(--charcoal); color:#fff; border:1px solid var(--charcoal); border-radius:4px;">
+          <div class="cap" style="color:var(--orange); margin-bottom:1pt; font-size:7pt;">04 · Dec 2026</div>
+          <div style="font-family:var(--display); font-size:11pt; color:#fff;">Trip runs</div>
+          <div class="cap" style="color:rgba(255,255,255,.6); text-transform:none; font-size:6.5pt;">Funds released</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Pricing posture</span>
+      <span>For CFO / Bursar sign-off</span>
+      <span class="pg">11 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 12 · IMPACT / OUTCOMES                   -->
+<!-- ============================================= -->
+<section class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Year-1 impact targets</span> · page 12</span>
+      <span>Honest · measured · annual</span>
+    </div>
+
+    <div class="eyebrow">What the programme reports, every year</div>
+    <h2 class="dis" style="font-size: 32pt; margin-top: 8pt; margin-bottom: 6mm;">
+      What we measure.<br/>
+      What we haven't yet.
+    </h2>
+    <div class="lede" style="max-width: 150mm; margin-bottom: 8mm; font-size: 11pt;">
+      Seeds2Education is in its first operating year. We publish Year-1 targets honestly, including what's still in pilot, and we'll publish the same metrics every year going forward — flat comparisons, not cherry-picked narrative.
+    </div>
+
+    <!-- Big outcomes table -->
+    <table class="tbl" style="margin-bottom: 8mm;">
+      <colgroup><col/><col style="width:24mm"/><col style="width:24mm"/><col style="width:26mm"/></colgroup>
+      <thead>
+        <tr><th>Metric (community-facing)</th><th>Year-1 target</th><th>Current</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>School meals served daily</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">via Food For Education partnership</span></td><td class="mono tnum">200</td><td class="mono tnum">148</td><td><span class="sev med">In pilot</span></td></tr>
+        <tr><td><b>Farmland under active cultivation (m²)</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">Oloosirkon Primary School · 1.5 acres</span></td><td class="mono tnum">6,070</td><td class="mono tnum">4,200</td><td><span class="sev med">In pilot</span></td></tr>
+        <tr><td><b>Kenyan staff on continuing payroll</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">S2E permanent farm crew</span></td><td class="mono tnum">30+</td><td class="mono tnum">30+</td><td><span class="sev low">On target</span></td></tr>
+        <tr><td><b>Partner-school pupils taught food science</b></td><td class="mono tnum">320</td><td class="mono tnum">190</td><td><span class="sev med">In pilot</span></td></tr>
+        <tr><td><b>Harvest cycles completed (12-month window)</b></td><td class="mono tnum">2</td><td class="mono tnum">1</td><td><span class="sev med">In pilot</span></td></tr>
+        <tr><td><b>Uniform items returned via takeback = meals funded</b></td><td class="mono tnum">1,500</td><td class="mono tnum">620</td><td><span class="sev high">Behind</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- Commentary split -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-bottom: 6mm;">
+      <div style="padding: 5mm 6mm; background:var(--sand); border-left:3px solid var(--green); border-radius:0 4px 4px 0;">
+        <div class="mono" style="font-size:7.5pt; color:var(--green); font-weight:700; margin-bottom:3pt;">● WHAT'S WORKING</div>
+        <div style="font-size:10pt; line-height:1.55; color:var(--ink);">
+          Kenyan staff continuity is our strongest Year-1 signal. The 30+ people on payroll across our programmes are the continuity contract — they'll be on-site when your cohort arrives, and they'll still be there in 2028. Not all 30 are on the farm every Tuesday — work happens at the cadence the season demands.
+        </div>
+      </div>
+      <div style="padding: 5mm 6mm; background:var(--sand); border-left:3px solid var(--red); border-radius:0 4px 4px 0;">
+        <div class="mono" style="font-size:7.5pt; color:var(--red); font-weight:700; margin-bottom:3pt;">● WHAT'S LAGGING</div>
+        <div style="font-size:10pt; line-height:1.55; color:var(--ink);">
+          Uniform takeback volumes trailing target. Acknowledged. Revised awareness campaign in Q3 2026, fronted by the participating schools themselves rather than Kapes marketing.
+        </div>
+      </div>
+    </div>
+
+    <!-- What we DON'T measure -->
+    <div style="border:1px solid var(--line); border-radius:4px; padding: 6mm 7mm;">
+      <div class="mono" style="font-size:8pt; color:var(--charcoal); font-weight:700; margin-bottom: 4mm;">● WHAT WE EXPLICITLY DO NOT MEASURE</div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 6mm;">
+        <div>
+          <div style="font-family:var(--display); font-size:10.5pt; color:var(--charcoal); margin-bottom:3pt;">Student "life-changing-ness"</div>
+          <div style="font-size:9pt; color:var(--ink-2); line-height:1.5;">Overused industry metric that centres the wrong party. Not a programme KPI.</div>
+        </div>
+        <div>
+          <div style="font-family:var(--display); font-size:10.5pt; color:var(--charcoal); margin-bottom:3pt;">Photos taken / social posts</div>
+          <div style="font-size:9pt; color:var(--ink-2); line-height:1.5;">Output not outcome. Measured only for safeguarding consent compliance.</div>
+        </div>
+        <div>
+          <div style="font-family:var(--display); font-size:10.5pt; color:var(--charcoal); margin-bottom:3pt;">"Lives touched"</div>
+          <div style="font-size:9pt; color:var(--ink-2); line-height:1.5;">Meaningless without verification. We count meals served and hectares planted.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Impact targets · Year 1</span>
+      <span>Seeds2Education · transparent baselines</span>
+      <span class="pg">12 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 13 · ANTICIPATED Q&A                     -->
+<!-- ============================================= -->
+<section class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Anticipated questions + prepped answers</span> · page 13</span>
+      <span>For board discussion · 08 May 2026</span>
+    </div>
+
+    <div class="eyebrow">Likely questions at the table</div>
+    <h2 class="dis" style="font-size: 32pt; margin-top: 8pt; margin-bottom: 8mm;">
+      Pre-drafted answers,<br/>
+      for the champion.
+    </h2>
+
+    <div class="qa">
+      <div class="q-tag">Q1 · Safety</div>
+      <div>
+        <div class="q">"Is Kenya safe for 15-year-olds right now?"</div>
+        <div class="a">Nairobi and the Rongai corridor are within standard FCDO "see our advice and prepare" guidance — the same risk tier as much of Southeast Asia. Our itinerary stays within that operating envelope. Coastal regions are excluded. Advisory monitored daily; trip auto-cancels on upgrade to "essential travel only". See p.10 for residuals.</div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="q-tag">Q2 · Voluntourism</div>
+      <div>
+        <div class="q">"How is this not just voluntourism with a coat of paint?"</div>
+        <div class="a">Three tests, all documented: (1) the programme runs year-round without us — six Kenyan staff on continuing payroll; (2) our students are <i>assigned to</i> Kenyan leads, not the reverse; (3) the infrastructure they help build stays in active service. We do not design projects for visitors. We run a programme; your cohort joins it mid-build.</div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="q-tag">Q3 · Cost</div>
+      <div>
+        <div class="q">"USD 3,000 is a lot. What's actually different?"</div>
+        <div class="a">Pricing posture is transparent in principle: the Board sees the total, the share going directly to the community build, and the non-negotiable safeguards it funds. 20% of the fee flows straight into Oloosirkon Primary School's build, bonded by payment escrow. Benchmark providers charge USD 3,800–6,000 with no public equivalent. Flights are excluded and quoted separately at booking — avoiding the margin mark-up most providers apply.</div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="q-tag">Q4 · Academics</div>
+      <div>
+        <div class="q">"How is this tied to what we actually teach?"</div>
+        <div class="a">Full IB CAS mapping on p.8 (all seven learning outcomes evidenced), optional DP Global Politics / Geography EE pathway, UAE National Agenda food-security pillar. Pre-trip modules sit in the existing Service Learning timetable slot. No new period pressure.</div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="q-tag">Q5 · Precedent</div>
+      <div>
+        <div class="q">"Have other schools done this? Any references?"</div>
+        <div class="a">The pilot cohort was a Dubai IB school's Grade 11 in Nov 2025 — written reference available. Two additional references on request: an IB school in Zurich (2024) and a UK independent (2023). Three Heads available to take a call before the Board meeting if helpful.</div>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="q-tag">Q6 · Optics</div>
+      <div>
+        <div class="q">"What if a parent posts a photo that makes us look bad?"</div>
+        <div class="a">Pre-trip seminar on savior framing is explicit and assessed. Social-media guidance issued to students + parents before departure. Photos of Kenyan children require community consent obtained on-site. We've built the programme to be photographable honestly — the problem doesn't arise if the work actually looks like partnership.</div>
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Board Q&A</span>
+      <span>Pre-drafted for the champion</span>
+      <span class="pg">13 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 14 · COMPARISON VS OTHER PROVIDERS       -->
+<!-- ============================================= -->
+<section class="page">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Provider comparison</span> · page 14</span>
+      <span>Mirror-test framework · self-assessed</span>
+    </div>
+
+    <div class="eyebrow">Why Kapes over the alternatives</div>
+    <h2 class="dis" style="font-size: 28pt; margin-top: 6pt; margin-bottom: 4mm;">
+      How the market actually looks.
+    </h2>
+    <div class="lede" style="max-width: 160mm; margin-bottom: 5mm; font-size: 10pt;">
+      Five leading providers the Board may have seen elsewhere. Scored against the five dimensions a rigorous Service Learning Charter requires. Scores are conservative, not self-flattering.
+    </div>
+
+    <!-- Comparison table -->
+    <table class="tbl" style="margin-bottom: 5mm;">
+      <colgroup><col style="width:40mm"/><col/><col style="width:18mm"/><col style="width:18mm"/><col style="width:18mm"/><col style="width:18mm"/><col style="width:18mm"/></colgroup>
+      <thead>
+        <tr>
+          <th>Provider</th><th>Format</th><th>Year-round</th><th>Community<br/>led</th><th>Pricing<br/>published</th><th>Measured<br/>outcomes</th><th>Curric.<br/>mapped</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="background: #FFF6E8;">
+          <td><b style="color:var(--orange);">● Kapes Adventures</b><br/><span class="cap" style="text-transform:none; color:var(--orange-ink);">Proposed</span></td>
+          <td>7-night programme join, year-round community base</td>
+          <td><span class="sev low">Yes</span></td><td><span class="sev low">Yes</span></td><td><span class="sev low">Yes</span></td><td><span class="sev med">Year-1</span></td><td><span class="sev low">Yes</span></td>
+        </tr>
+        <tr>
+          <td><b>Global Leadership Adventures</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">GLA · US</span></td>
+          <td>2–3 week summer/spring</td>
+          <td><span class="sev high">No</span></td><td><span class="sev med">Partial</span></td><td><span class="sev high">No</span></td><td><span class="sev high">Student-only</span></td><td><span class="sev med">Partial</span></td>
+        </tr>
+        <tr>
+          <td><b>Rustic Pathways</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">US · global</span></td>
+          <td>1–4 weeks</td>
+          <td><span class="sev high">No</span></td><td><span class="sev med">Partial</span></td><td><span class="sev high">No</span></td><td><span class="sev high">No</span></td><td><span class="sev med">Partial</span></td>
+        </tr>
+        <tr>
+          <td><b>Projects Abroad</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">UK</span></td>
+          <td>1–6 weeks</td>
+          <td><span class="sev med">Some sites</span></td><td><span class="sev med">Partial</span></td><td><span class="sev high">No</span></td><td><span class="sev high">No</span></td><td><span class="sev high">No</span></td>
+        </tr>
+        <tr>
+          <td><b>Camps International</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">UK</span></td>
+          <td>4-week expedition</td>
+          <td><span class="sev low">Yes</span></td><td><span class="sev low">Yes</span></td><td><span class="sev high">No</span></td><td><span class="sev med">Partial</span></td><td><span class="sev med">Partial</span></td>
+        </tr>
+        <tr>
+          <td><b>African Adventures</b><br/><span class="cap" style="text-transform:none; color:var(--muted);">UK · Kenya</span></td>
+          <td>1–2 week</td>
+          <td><span class="sev low">Yes</span></td><td><span class="sev med">Partial</span></td><td><span class="sev high">No</span></td><td><span class="sev high">No</span></td><td><span class="sev high">No</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Summary commentary -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-bottom: 4mm;">
+      <div>
+        <div class="mono" style="font-size:7.5pt; color:var(--orange); font-weight:700; margin-bottom:3pt;">● WHERE KAPES LEADS</div>
+        <div style="font-size:10pt; line-height:1.6; color:var(--ink);">
+          Pricing transparency and community-led programme design. Only two providers run year-round at the partner-community level; only one of those (us) publishes a per-line cost breakdown. Curriculum mapping is stronger on the IB side than competitors built for US HS market.
+        </div>
+      </div>
+      <div>
+        <div class="mono" style="font-size:7.5pt; color:var(--charcoal); font-weight:700; margin-bottom:3pt;">● WHERE WE'RE STILL BUILDING</div>
+        <div style="font-size:10pt; line-height:1.6; color:var(--ink);">
+          Year-1 outcome data is thinner than we'd like — it's our first operating year. Competitors with 10+ year histories have broader datasets. We opted to publish real Year-1 numbers rather than inherit borrowed ones; the Board should weigh that posture as a feature, not a gap.
+        </div>
+      </div>
+    </div>
+
+    <!-- Service learning charter note -->
+    <div style="background:var(--charcoal); color:#fff; padding: 5mm 7mm; border-radius:4px;">
+      <div class="mono" style="font-size:7.5pt; letter-spacing:.14em; color:var(--orange); font-weight:700; margin-bottom:3pt;">● SERVICE LEARNING CHARTER · MATCH</div>
+      <div style="font-size:10pt; line-height:1.55;">
+        A rigorous Service Learning Charter typically requires year-round continuity, community-led design, transparent pricing principles, and evidenced curriculum tie-in. Kapes is the only shortlisted provider meeting all four in full, and the only provider with a documented outcome-publishing commitment (Art. 5, encouraged).
+      </div>
+    </div>
+
+    <div class="page-footer">
+      <span>Provider comparison</span>
+      <span>Mirror test · Charter scored</span>
+      <span class="pg">14 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 15 · APPENDIX · RECEIPTS                 -->
+<!-- ============================================= -->
+<section class="page paper">
+  <div class="frame">
+    <div class="page-header">
+      <span><span class="l">Appendix · supporting documents</span> · page 15</span>
+      <span>Available on request · originals on file</span>
+    </div>
+
+    <div class="eyebrow">Receipts · not claims</div>
+    <h2 class="dis" style="font-size: 32pt; margin-top: 8pt; margin-bottom: 8mm;">
+      Everything referenced,<br/>
+      on file.
+    </h2>
+
+    <!-- Appendix grid -->
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin-bottom: 8mm;">
+
+      <div class="appx">
+        <div class="thumb">
+          <div class="doc">
+            <div style="font-weight:700; color:var(--charcoal); font-family:var(--display); text-transform:uppercase; font-size:6pt; letter-spacing:.1em;">Endsleigh Insurance</div>
+            <div style="margin-top:2pt;">Certificate of PL cover</div>
+            <div style="margin-top:2pt;">Policy #EI-24-8812</div>
+            <div style="margin-top:2pt;">Valid to: 31 Dec 2026</div>
+            <div style="margin-top:3pt; color:var(--orange);">£10,000,000</div>
+          </div>
+        </div>
+        <div>
+          <div class="ttl">A · Insurance certificate</div>
+          <div class="meta">Appendix A · 2 pp</div>
+        </div>
+      </div>
+
+      <div class="appx">
+        <div class="thumb">
+          <div class="doc">
+            <div style="font-weight:700; color:var(--charcoal); font-family:var(--display); text-transform:uppercase; font-size:6pt; letter-spacing:.1em;">Trip Contract</div>
+            <div style="margin-top:2pt;">Parent agreement · SP2-24</div>
+            <div style="margin-top:2pt;">12 pp · incl. kill switch</div>
+            <div style="margin-top:3pt; color:var(--orange);">Appendix B</div>
+          </div>
+        </div>
+        <div>
+          <div class="ttl">B · Parent trip contract</div>
+          <div class="meta">Appendix B · 12 pp</div>
+        </div>
+      </div>
+
+      <div class="appx">
+        <div class="thumb">
+          <div class="doc">
+            <div style="font-weight:700; color:var(--charcoal); font-family:var(--display); text-transform:uppercase; font-size:6pt; letter-spacing:.1em;">Alt-Itinerary</div>
+            <div style="margin-top:2pt;">Advisory-upgrade fallback</div>
+            <div style="margin-top:2pt;">Pre-signed by all parties</div>
+            <div style="margin-top:3pt; color:var(--orange);">Appendix C</div>
+          </div>
+        </div>
+        <div>
+          <div class="ttl">C · Alternate itinerary</div>
+          <div class="meta">Appendix C · 3 pp</div>
+        </div>
+      </div>
+
+      <div class="appx">
+        <div class="thumb">
+          <div class="doc">
+            <div style="font-weight:700; color:var(--charcoal); font-family:var(--display); text-transform:uppercase; font-size:6pt; letter-spacing:.1em;">LOTC Badge</div>
+            <div style="margin-top:2pt;">Learning Outside Classroom</div>
+            <div style="margin-top:2pt;">Accreditation 2024 · rev. 2026</div>
+            <div style="margin-top:3pt; color:var(--orange);">On file</div>
+          </div>
+        </div>
+        <div>
+          <div class="ttl">D · LOTC accreditation</div>
+          <div class="meta">Appendix D · 1 p</div>
+        </div>
+      </div>
+
+      <div class="appx">
+        <div class="thumb">
+          <div class="doc">
+            <div style="font-weight:700; color:var(--charcoal); font-family:var(--display); text-transform:uppercase; font-size:6pt; letter-spacing:.1em;">Media Consent</div>
+            <div style="margin-top:2pt;">Dual-side consent protocol</div>
+            <div style="margin-top:2pt;">Partner community · Oloosirkon</div>
+            <div style="margin-top:3pt; color:var(--orange);">Appendix E</div>
+          </div>
+        </div>
+        <div>
+          <div class="ttl">E · Media & consent policy</div>
+          <div class="meta">Appendix E · 4 pp</div>
+        </div>
+      </div>
+
+      <div class="appx">
+        <div class="thumb">
+          <div class="doc">
+            <div style="font-weight:700; color:var(--charcoal); font-family:var(--display); text-transform:uppercase; font-size:6pt; letter-spacing:.1em;">Safeguarding</div>
+            <div style="margin-top:2pt;">DCI clearances · Kenya team</div>
+            <div style="margin-top:2pt;">6 staff · redacted copies</div>
+            <div style="margin-top:3pt; color:var(--orange);">Appendix F</div>
+          </div>
+        </div>
+        <div>
+          <div class="ttl">F · Safeguarding clearances</div>
+          <div class="meta">Appendix F · 6 pp</div>
+        </div>
+      </div>
+
+      <div class="appx">
+        <div class="thumb">
+          <div class="doc">
+            <div style="font-weight:700; color:var(--charcoal); font-family:var(--display); text-transform:uppercase; font-size:6pt; letter-spacing:.1em;">Y1 Impact</div>
+            <div style="margin-top:2pt;">Seeds2Education 2025</div>
+            <div style="margin-top:2pt;">Baseline report · public</div>
+            <div style="margin-top:3pt; color:var(--orange);">Appendix G</div>
+          </div>
+        </div>
+        <div>
+          <div class="ttl">G · Year-1 impact report</div>
+          <div class="meta">Appendix G · 16 pp</div>
+        </div>
+      </div>
+
+      <div class="appx">
+        <div class="thumb">
+          <div class="doc">
+            <div style="font-weight:700; color:var(--charcoal); font-family:var(--display); text-transform:uppercase; font-size:6pt; letter-spacing:.1em;">Reference letter</div>
+            <div style="margin-top:2pt;">Nov 2025 pilot cohort</div>
+            <div style="margin-top:2pt;">Signed · M. Allen</div>
+            <div style="margin-top:3pt; color:var(--orange);">Appendix H</div>
+          </div>
+        </div>
+        <div>
+          <div class="ttl">H · Internal ref. letter (pilot)</div>
+          <div class="meta">Appendix H · 1 p</div>
+        </div>
+      </div>
+
+      <div class="appx">
+        <div class="thumb">
+          <div class="doc">
+            <div style="font-weight:700; color:var(--charcoal); font-family:var(--display); text-transform:uppercase; font-size:6pt; letter-spacing:.1em;">CAS Map</div>
+            <div style="margin-top:2pt;">LO1–7 evidence scaffolding</div>
+            <div style="margin-top:2pt;">Per-student template</div>
+            <div style="margin-top:3pt; color:var(--orange);">Appendix I</div>
+          </div>
+        </div>
+        <div>
+          <div class="ttl">I · IB CAS evidence map</div>
+          <div class="meta">Appendix I · 8 pp</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:auto; padding: 5mm 7mm; background: var(--charcoal); color:#fff; border-radius:4px; display:flex; justify-content:space-between; align-items:center;">
+      <div>
+        <div class="mono" style="font-size:7.5pt; color:var(--orange); font-weight:700; margin-bottom: 2pt;">● HOW TO REQUEST</div>
+        <div style="font-size:10pt;">Originals available to any named reviewer. Request via pramanathan@fgis.ae · turnaround 24h.</div>
+      </div>
+      <div class="mono" style="font-size:8pt; color:rgba(255,255,255,.7);">48 pp total · PDF on file</div>
+    </div>
+
+    <div class="page-footer">
+      <span>Appendix · receipts</span>
+      <span>9 documents · 48 pp total</span>
+      <span class="pg">15 / 16</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PAGE 16 · BACK COVER                          -->
+<!-- ============================================= -->
+<section class="page dark">
+  <div class="frame" style="color:#fff;">
+    <div class="page-header" style="color:rgba(255,255,255,.6); border-bottom-color:rgba(255,255,255,.18);">
+      <span><span style="color:#fff; font-weight:600;">Close</span> · page 16</span>
+      <span>End of board pack</span>
+    </div>
+
+    <div style="font-family:var(--mono); font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--orange); font-weight:700; margin-bottom: 30mm;">● The invitation</div>
+
+    <h2 class="dis" style="font-size: 50pt; color:#fff; line-height:.95; margin-bottom: 14mm;">
+      Your students don't<br/>
+      need to save Kenya.<br/>
+      Kenya has something<br/>
+      to <span class="accent">teach them</span>.
+    </h2>
+
+    <div style="font-family:var(--serif); font-style:italic; font-size: 14pt; line-height:1.55; color:rgba(255,255,255,.88); max-width: 150mm;">
+      The work is already happening. It has been since 2022. We're inviting your school to join it.
+    </div>
+
+    <!-- Closing -->
+    <div style="margin-top:auto; padding-top: 10mm; border-top: 1px solid rgba(255,255,255,.18); display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 10mm;">
+      <div>
+        <div class="mono" style="font-size:7.5pt; letter-spacing:.14em; color:var(--orange); font-weight:700; margin-bottom:4pt;">● Founder</div>
+        <div style="font-family:var(--display); font-size:14pt; color:#fff; line-height:1.15;">Matthew Benjamin</div>
+        <div style="font-size:9pt; color:rgba(255,255,255,.7); margin-top:4pt; line-height:1.5;">Founder & CEO · Dubai, UAE<br/>matthew@kapesadventures.com</div>
+      </div>
+      <div>
+        <div class="mono" style="font-size:7.5pt; letter-spacing:.14em; color:var(--orange); font-weight:700; margin-bottom:4pt;">● Kenyan team · on the ground</div>
+        <div style="font-family:var(--display); font-size:14pt; color:#fff; line-height:1.15;">Elly Oenga · Issacs</div>
+        <div style="font-size:9pt; color:rgba(255,255,255,.7); margin-top:4pt; line-height:1.5;">Programme partner · Farm manager<br/>Rongai · Nairobi area</div>
+      </div>
+      <div>
+        <div class="mono" style="font-size:7.5pt; letter-spacing:.14em; color:var(--orange); font-weight:700; margin-bottom:4pt;">● YOUR INTERNAL CHAMPION</div>
+        <div style="font-family:var(--display); font-size:14pt; color:#fff; line-height:1.15;">Priya Ramanathan</div>
+        <div style="font-size:9pt; color:rgba(255,255,255,.7); margin-top:4pt; line-height:1.5;">Head of Service Learning<br/>pramanathan@fgis.ae</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 10mm; display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:7.5pt; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,.5);">
+      <div>Seeds2Education · Board Pack · 2026·05</div>
+      <div>Prepared for International Schools</div>
+      <div>16 / 16 · end</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- Screen-only footer -->
+<div class="nav noprint" style="margin: 24px auto; justify-content:center; font-family:var(--mono); font-size:10px; color:var(--muted);">
+  End of board pack · 16 pages · A4 · Cmd+P to export PDF
+</div>
+
+</body>
+</html>

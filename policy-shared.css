@@ -1,0 +1,95 @@
+/* Shared styles for Kapes Adventures policy pages
+   (Privacy · Child Protection · Supplier Code) */
+:root{
+  --charcoal:#1A1A1A;
+  --ink:#2A2A2A;
+  --ink-2:#4A4A4A;
+  --muted:#888;
+  --line:#E4DFD3;
+  --cream:#FAFAF8;
+  --sand:#F5F0E5;
+  --paper:#FCFAF4;
+  --orange:#FF7700;
+  --red:#C44A3C;
+  --display:'AcademySansExpanded-Bold','Libre Baskerville',Georgia,serif;
+  --serif:'Libre Baskerville',Georgia,serif;
+  --body:'Inter',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+html,body{margin:0;padding:0;background:#4a4a4a;color:var(--charcoal);font-family:var(--body);}
+body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+@font-face{font-family:'AcademySansExpanded-Bold';src:url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySansExpanded-Bold_ed3d0942-5858-4fad-8886-e581bbbada6a.woff?v=1746173800') format('woff');font-weight:700;font-style:normal;font-display:swap;}
+.pack{ max-width:210mm; margin:24px auto; display:flex; flex-direction:column; gap:18px;}
+.page{
+  width:210mm; min-height:297mm;
+  background:#fff; position:relative; overflow:hidden;
+  box-shadow:0 20px 40px -15px rgba(0,0,0,.4), 0 4px 12px rgba(0,0,0,.1);
+  color:var(--charcoal); font-size:10.5pt; line-height:1.55;
+}
+@page { size:A4; margin:0; }
+@media print{
+  html,body{ background:#fff; }
+  .pack{ margin:0; gap:0; }
+  .page{ box-shadow:none; margin:0; }
+  .noprint{ display:none !important; }
+}
+.frame{ padding:18mm 18mm 14mm 18mm; min-height:297mm; display:flex; flex-direction:column;}
+.page-header{
+  display:flex; justify-content:space-between; align-items:flex-start;
+  padding-bottom:6mm; border-bottom:1px solid var(--line); margin-bottom:7mm;
+  font-family:var(--mono); font-size:7.5pt; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--muted); font-weight:500;
+}
+.page-header .l{ color:var(--charcoal); font-weight:600;}
+.page-footer{
+  margin-top:auto; padding-top:5mm; border-top:1px solid var(--line);
+  display:flex; justify-content:space-between; align-items:center;
+  font-family:var(--mono); font-size:7pt; letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+}
+h1.dis{
+  font-family:var(--display); letter-spacing:-.01em; line-height:.95;
+  font-size:36pt; margin:0 0 6mm; color:var(--charcoal);
+}
+h2{
+  font-family:var(--display); font-size:14pt; line-height:1.15;
+  margin:9mm 0 3mm; color:var(--charcoal);
+}
+h3{
+  font-family:var(--display); font-size:11pt; line-height:1.2;
+  margin:6mm 0 2mm; color:var(--charcoal);
+}
+p{ margin:0 0 3mm; color:var(--ink); font-size:10pt; line-height:1.65;}
+ul{ margin:0 0 4mm; padding-left:5mm; color:var(--ink); font-size:10pt; line-height:1.65;}
+li{ margin-bottom:1.5mm;}
+.eyebrow{ font-family:var(--mono); font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--orange); font-weight:600; }
+.lede{ font-family:var(--serif); font-size:12pt; line-height:1.55; color:var(--ink); font-style:italic; margin-bottom:7mm;}
+.cap{ font-size:7.5pt; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-family:var(--mono); font-weight:500;}
+.tag{ display:inline-block; padding:3px 8px; border:1px solid var(--line); border-radius:3px; font-size:7.5pt; letter-spacing:.08em; text-transform:uppercase; font-family:var(--mono); font-weight:600; color:var(--ink);}
+.tag.orange{ background:var(--orange); color:#fff; border-color:var(--orange);}
+.callout{
+  background:var(--sand); border-left:3px solid var(--orange);
+  padding:5mm 7mm; margin:5mm 0; font-size:10pt; line-height:1.6;
+}
+.callout strong{ color:var(--charcoal);}
+.contact-block{
+  background:var(--cream); border:1px solid var(--line); border-radius:4px;
+  padding:5mm 7mm; margin-top:8mm; font-size:9.5pt; line-height:1.55;
+}
+.contact-block h3{ margin-top:0; }
+
+/* Top nav (screen only) */
+.nav{
+  max-width:210mm; margin:20px auto -6px; padding:10px 14px;
+  background:#fff; border-radius:10px;
+  display:flex; gap:14px; align-items:center; justify-content:space-between;
+  font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--ink-2);
+}
+.nav .n-title{ font-family:var(--display); font-size:14px; letter-spacing:.02em; color:var(--charcoal); }
+.nav button, .nav a{
+  font:inherit; letter-spacing:.08em; text-transform:uppercase;
+  padding:7px 14px; border:1px solid var(--line); border-radius:999px;
+  background:#fff; color:var(--ink); cursor:pointer; text-decoration:none;
+}
+.nav a.primary{ background:var(--charcoal); color:#fff; border-color:var(--charcoal);}

@@ -1,0 +1,27 @@
+
+import React from "react";
+import { Link } from "react-router-dom";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
+
+const CTASection = () => {
+  return <section className="py-16 bg-dragon-sand text-dragon-dark rounded-lg shadow-sm mb-12">
+      <div className="container-wide">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">Experience Kenya with Kapes Adventures</h2>
+          <p className="text-lg mb-8">Discover this incredible country through our immersive programs, designed to connect you with its landscapes, wildlife, and cultures while creating lasting impact for communities.</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/programs" className="btn-primary h-12 w-full sm:w-auto inline-flex items-center justify-center">
+              Explore Our Programs
+            </Link>
+            <CalendlyEmbed 
+              url="https://calendly.com/kapesuniforms/kapes-uniforms-consultation-clone"
+              text="Schedule Consultation"
+              variant="secondary"
+              className="bg-white text-dragon hover:bg-gray-100 h-12 w-full sm:w-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </section>;
+};
+export default CTASection;

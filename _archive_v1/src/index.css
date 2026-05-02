@@ -1,0 +1,235 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+/* Import Proxima Nova */
+@import url('https://use.typekit.net/jss4vcb.css');
+
+/* Import League Gothic */
+@font-face {
+  font-family: 'League Gothic';
+  src: url('https://cdn.jsdelivr.net/gh/theleagueof/league-gothic/webfonts/LeagueGothic-Regular.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/theleagueof/league-gothic/webfonts/LeagueGothic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AcademySansExpanded-Black';
+  src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySansExpanded-Black.eot?v=1746173801') format('embedded-opentype'),
+       url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySans-Regular_978467eb-a51c-4846-87f5-dc00c17c1e10.woff?v=1746173801') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Add AcademySansExpanded-Bold font */
+@font-face {
+  font-family: 'AcademySansExpanded-Bold';
+  src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySansExpanded-Bold_ed3d0942-5858-4fad-8886-e581bbbada6a.woff?v=1746173800') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 152 67% 21%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 45 89% 61%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 215 15% 46.9%;
+
+    --accent: 28 16% 83%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 13% 86%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 152 67% 21%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'AcademySansExpanded-Black', 'League Gothic', sans-serif;
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Primary button - Justdiggit style pill shape */
+  .btn-primary {
+    @apply bg-kapes-charcoal text-white hover:bg-black px-8 py-4 rounded-full font-bold transition-all duration-200 text-base tracking-wide;
+  }
+
+  /* Action button - warm orange pill (Justdiggit-inspired) */
+  .btn-action {
+    @apply bg-kapes-orange text-white hover:bg-orange-600 px-8 py-4 rounded-full font-bold transition-all duration-200 text-base tracking-wide;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply bg-white text-kapes-charcoal hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition-all duration-200 text-base tracking-wide border-2 border-kapes-charcoal;
+  }
+
+  /* Ghost/outline button */
+  .btn-ghost {
+    @apply border-2 border-white text-white hover:bg-white hover:text-kapes-charcoal px-8 py-4 rounded-full font-bold transition-all duration-200;
+  }
+  
+  .container-wide {
+    @apply container max-w-7xl mx-auto px-4 md:px-8;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold text-dragon-dark mb-4 font-academy;
+  }
+  
+  .section-subheading {
+    @apply text-lg md:text-xl text-dragon-gray mb-8 max-w-3xl;
+  }
+  
+  .heading-gothic {
+    @apply font-gothic uppercase tracking-wide;
+  }
+
+  /* Hero-heading class for the hero banners specifically */
+  .hero-heading {
+    font-family: 'AcademySansExpanded-Bold', 'AcademySansExpanded-Black', sans-serif;
+  }
+
+  /* Enhanced animation classes */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-2;
+  }
+
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .stagger-children.animate > *:nth-child(1) { transition-delay: 100ms; }
+  .stagger-children.animate > *:nth-child(2) { transition-delay: 200ms; }
+  .stagger-children.animate > *:nth-child(3) { transition-delay: 300ms; }
+  .stagger-children.animate > *:nth-child(4) { transition-delay: 400ms; }
+  .stagger-children.animate > *:nth-child(5) { transition-delay: 500ms; }
+  .stagger-children.animate > *:nth-child(6) { transition-delay: 600ms; }
+
+  .stagger-children.animate > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .underline-animate {
+    position: relative;
+  }
+
+  .underline-animate::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: theme('colors.dragon.DEFAULT');
+    transition: width 0.3s ease-out;
+  }
+
+  .underline-animate:hover::after {
+    width: 100%;
+  }
+
+  .icon-bounce:hover {
+    animation: bounce-gentle 0.5s ease-in-out;
+  }
+
+  .parallax-bg {
+    transform: translateZ(0);
+    transition: transform 0.1s ease-out;
+  }
+}
+
+@layer utilities {
+  .min-w-6 {
+    min-width: 1.5rem;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+  
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .overflow-x-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .overflow-x-hidden {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Stagger animation delays */
+  .delay-0 { animation-delay: 0ms; }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
+}

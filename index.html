@@ -1,38 +1,368 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kapes Adventures | Travel That Transforms</title>
-    <meta name="description" content="Transformative student travel programs in Asia, Africa, and Latin America offering cultural immersion, wilderness adventure, and language learning since 1993." />
-    <meta name="author" content="Kapes Adventures" />
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/lovable-uploads/565e314b-84ac-43fe-9891-afbf53053bd3.png" type="image/png" />
-    
-    <!-- Critical resources preload -->
-    <link rel="preload" href="https://cdn.shopify.com/s/files/1/0777/3326/5724/files/klein-500-2_1.jpg?v=1747050056" as="image" />
-    <link rel="preconnect" href="https://cdn.shopify.com" />
-    <link rel="preconnect" href="https://images.unsplash.com" />
-    <link rel="dns-prefetch" href="https://cdn.shopify.com" />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
-    
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="Kapes Adventures | Travel That Transforms" />
-    <meta property="og:description" content="Transformative student travel programs in Asia, Africa, and Latin America offering cultural immersion, wilderness adventure, and language learning since 1993." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg" />
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Kapes Adventures — Hi-Fi Combo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@kapesadventures" />
-    <meta name="twitter:image" content="https://res.cloudinary.com/dng12bd0a/image/upload/v1747118794/klein-500-2_l4o6ap.jpg" />
-  </head>
+<style>
+  /* Real Kapes fonts from the live site */
+  @font-face {
+    font-family: 'AcademySansExpanded-Black';
+    src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySans-Regular_978467eb-a51c-4846-87f5-dc00c17c1e10.woff?v=9146173801') format('woff');
+    font-weight: 900; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'AcademySansExpanded-Bold';
+    src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySansExpanded-Bold_ed3d0942-5858-4fad-8886-e581bbbada6a.woff?v=9146173800') format('woff');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'League Gothic';
+    src: url('https://cdn.jsdelivr.net/gh/theleagueof/league-gothic/webfonts/LeagueGothic-Regular.woff2') format('woff2');
+    font-weight: normal; font-style: normal; font-display: swap;
+  }
 
-  <body>
+  :root{
+    --orange: #FF7700;
+    --orange-600: #E56600;
+    --charcoal: #1A1A1A;
+    --ink-2: #2B2B2B;
+    --muted: #6B6B6B;
+    --cream: #FAFAF7;
+    --sand: #F1EEE7;
+    --sand-2: #E5E0D5;
+    --rule: #1A1A1A;
+    --line: rgba(26,26,26,.12);
+    --display: 'AcademySansExpanded-Bold','AcademySansExpanded-Black','Helvetica Neue',sans-serif;
+    --gothic: 'League Gothic', 'AcademySansExpanded-Bold', sans-serif;
+    --body: 'Montserrat', 'Proxima Nova', 'Helvetica Neue', sans-serif;
+    --serif: 'Libre Baskerville', Georgia, serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#222;color:var(--charcoal);font-family:var(--body);}
+  body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+
+  /* ─── Top chrome ─────────────────────────────────────────────── */
+  .chrome{
+    position:sticky; top:0; z-index:60;
+    background:#0F0F0F; color:#fff;
+    border-bottom:1px solid #262626;
+    padding:12px 20px;
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+    font-family:var(--body); font-size:12px;
+  }
+  .brand{
+    font-family:var(--display); font-weight:700; font-size:20px; letter-spacing:.02em;
+    text-transform:uppercase;
+  }
+  .brand b{ color:var(--orange); }
+  .chrome .meta{ color:#9a9a9a; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+  .tab-groups{ display:flex; gap:10px; margin-left:auto; flex-wrap:wrap; align-items:center; }
+  .tab-group{ display:flex; gap:2px; background:#1a1a1a; padding:4px 4px 4px 14px; border-radius:999px; align-items:center; }
+  .tg-label{ font-size:9px; letter-spacing:.14em; text-transform:uppercase; color:#777; font-weight:700; margin-right:4px; }
+  .tab{
+    font-family:var(--body); font-size:11.5px; font-weight:600;
+    padding:7px 13px; border:none; background:transparent; color:#cfcfcf; cursor:pointer;
+    border-radius:999px; letter-spacing:.02em; white-space:nowrap;
+  }
+  .tab.active{ background:var(--orange); color:#fff; }
+  .tab:hover:not(.active){ color:#fff; }
+
+  /* ─── Viewport ──────────────────────────────────────────────── */
+  .stage{ padding:24px 24px 64px; background:#1A1A1A; min-height:100vh;}
+  .viewport{
+    max-width:1360px; margin:0 auto;
+    background:var(--cream);
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.05);
+  }
+  .vp-bar{
+    border-bottom:1px solid var(--line);
+    padding:10px 16px;
+    display:flex; gap:10px; align-items:center;
+    font-size:11px; color:var(--muted);
+    background:var(--cream);
+  }
+  .vp-bar .dots{ display:flex; gap:6px; }
+  .vp-bar .dot{ width:10px; height:10px; border-radius:50%; background:#e6e3d8; }
+  .vp-bar .dot:nth-child(2){ background:#f0d9a0; }
+  .vp-bar .dot:nth-child(3){ background:#cadfc3; }
+  .vp-bar .url{
+    flex:1; background:#F3EFE3; padding:5px 12px; border-radius:6px;
+    color:var(--charcoal); font-family:'SF Mono', ui-monospace, monospace; font-size:11px;
+  }
+
+  /* ─── Common page chrome inside viewport ─────────────────────── */
+  .site-nav{
+    display:flex; align-items:center; gap:32px;
+    padding:22px 48px;
+    border-bottom:1px solid var(--line);
+    background:var(--cream);
+    position:relative; z-index:5;
+  }
+  .site-nav .logo{
+    font-family:var(--display); font-size:22px; font-weight:700; letter-spacing:.02em;
+    text-transform:uppercase; color:var(--charcoal);
+  }
+  .site-nav .logo b{ color:var(--orange); }
+  .site-nav ul{ display:flex; gap:26px; list-style:none; margin:0; padding:0; }
+  .site-nav li{ font-size:13px; font-weight:500; color:var(--ink-2); cursor:pointer;}
+  .site-nav li:hover{ color:var(--orange); }
+  .site-nav .right{ margin-left:auto; display:flex; gap:10px; align-items:center;}
+  .btn-pill{
+    display:inline-flex; align-items:center; gap:8px; justify-content:center;
+    padding:12px 22px; border-radius:999px; font-weight:700; font-size:13px;
+    letter-spacing:.02em; cursor:pointer; border:none;
+    transition: transform .15s, background .2s;
+  }
+  .btn-pill:hover{ transform:translateY(-1px); }
+  .btn-primary{ background:var(--charcoal); color:#fff; }
+  .btn-primary:hover{ background:#000; }
+  .btn-action{ background:var(--orange); color:#fff; }
+  .btn-action:hover{ background:var(--orange-600); }
+  .btn-ghost{ background:transparent; color:var(--charcoal); border:1.5px solid var(--charcoal); }
+  .btn-ghost:hover{ background:var(--charcoal); color:#fff; }
+
+  /* ─── Global helpers ─────────────────────────────────────────── */
+  .container{ max-width:1240px; margin:0 auto; padding:0 48px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:11px; font-weight:600; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--muted);
+  }
+  .eyebrow::before{
+    content:""; width:24px; height:1px; background:var(--orange);
+  }
+  h1.display, h2.display, h3.display{
+    font-family:var(--display); font-weight:700;
+    line-height:.92; letter-spacing:-.01em;
+    color:var(--charcoal); margin:0;
+    text-wrap:balance;
+  }
+  h1.display{ font-size: clamp(56px, 6.2vw, 104px); }
+  h2.display{ font-size: clamp(40px, 4.2vw, 68px); }
+  h3.display{ font-size: clamp(24px, 2vw, 32px); }
+  .accent{ color:var(--orange); }
+  .lead{ font-size:18px; line-height:1.55; color:#2a2a2a; }
+  .tnum{ font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+  /* Image placeholder style when no image provided — subtle stripe */
+  .img-placeholder{
+    background:
+      repeating-linear-gradient(135deg, rgba(26,26,26,.05) 0 1px, transparent 1px 10px),
+      var(--sand);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--muted); font-family:'SF Mono',ui-monospace,monospace; font-size:11px;
+    text-transform:uppercase; letter-spacing:.1em;
+  }
+
+  img.kapes{
+    display:block; width:100%; height:100%; object-fit:cover;
+  }
+
+  /* Footer (shared) */
+  .foot{
+    background:var(--charcoal); color:#bbb;
+    padding:72px 48px 40px;
+  }
+  .foot .cols{ display:grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap:40px; max-width:1240px; margin:0 auto;}
+  .foot h5{ color:#fff; text-transform:uppercase; font-size:12px; letter-spacing:.1em; margin:0 0 14px;}
+  .foot ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:9px; font-size:13px;}
+  .foot .brand{ font-size:28px; }
+  .foot .fine{ max-width:1240px; margin:32px auto 0; padding-top:24px; border-top:1px solid #262626; display:flex; justify-content:space-between; color:#777; font-size:12px;}
+
+  /* ─── Tweaks panel ───────────────────────────────────────────── */
+  .tweaks-btn{
+    position:fixed; right:22px; bottom:22px; z-index:90;
+    background:var(--orange); color:#fff; border:none;
+    padding:11px 18px; border-radius:999px; font-weight:700; font-size:12px;
+    letter-spacing:.04em; cursor:pointer; text-transform:uppercase;
+    box-shadow: 0 10px 30px rgba(255,119,0,.4);
+  }
+  .tweaks-panel{
+    position:fixed; right:22px; bottom:74px; z-index:90;
+    width:280px; background:#fff; color:var(--charcoal);
+    border-radius:14px; padding:18px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    display:none; font-size:12px;
+  }
+  .tweaks-panel.open{ display:block; }
+  .tweaks-panel h4{ margin:0 0 14px; font-family:var(--display); font-size:16px; text-transform:uppercase; letter-spacing:.04em;}
+  .tweaks-panel .grp{ margin-bottom:14px; }
+  .tweaks-panel label{
+    display:block; font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:6px; font-weight:600;
+  }
+  .segs{ display:flex; background:var(--sand); padding:3px; border-radius:999px;}
+  .segs button{
+    flex:1; border:none; background:transparent; padding:7px 8px; border-radius:999px;
+    font-size:11px; font-weight:600; cursor:pointer; color:var(--ink-2); font-family:var(--body);
+  }
+  .segs button.on{ background:#fff; color:var(--charcoal); box-shadow:0 2px 6px rgba(0,0,0,.08); }
+  .swatches{ display:flex; gap:8px;}
+  .sw{ width:28px; height:28px; border-radius:50%; border:2px solid transparent; cursor:pointer;}
+  .sw.on{ border-color:var(--charcoal); }
+
+  /* accent swap */
+  body.acc-emerald{ --orange:#0B7A5A; --orange-600:#07593F; }
+  body.acc-navy{ --orange:#1D3557; --orange-600:#142842; }
+  body.acc-rust{ --orange:#C75D32; --orange-600:#A64A27; }
+
+  /* density */
+  body.compact .container{ padding:0 32px; }
+  body.compact .site-nav{ padding:16px 32px; }
+  body.compact .section{ padding-block: 64px !important; }
+
+  /* ─── Responsive ──────────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .container{ padding: 0 28px !important; }
+    .stage{ padding: 16px 16px 48px !important; }
+    .vp-bar > div:last-child{ display: none; } /* "1240 · desktop" label */
+  }
+
+  @media (max-width: 900px) {
+    .container{ padding: 0 22px !important; }
+    .site-nav{ padding: 14px 22px !important; flex-wrap: wrap !important; row-gap: 14px !important; gap: 18px !important; }
+    .site-nav ul{ flex-wrap: wrap !important; row-gap: 8px !important; gap: 18px !important; order: 3; width: 100%; }
+    .site-nav .right{ margin-left: auto; }
+    .foot{ padding: 56px 22px 32px !important; }
+    .foot .cols{ grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+    .foot .fine{ flex-direction: column; gap: 8px; align-items: flex-start; }
+
+    /* Top chrome */
+    .chrome{ padding: 10px 18px !important; gap: 10px !important; }
+    .chrome .meta{ display: none !important; }
+    .chrome .tab-groups{ margin-left: 0 !important; width: 100% !important; }
+    .chrome .tab-group{ flex-wrap: wrap !important; row-gap: 4px !important; padding: 4px 4px 4px 10px !important; }
+    .tg-label{ display: none !important; }
+
+    /* Stack inline grids */
+    [style*="display:grid"][style*="grid-template-columns"]:not([style*="repeat(12"]):not([style*="80px 1fr"]):not([style*="260px repeat"]),
+    [style*="display: grid"][style*="grid-template-columns"]:not([style*="repeat(12"]):not([style*="80px 1fr"]):not([style*="260px repeat"]) {
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+    }
+    /* Keep small stat grids as 2-col */
+    [style*="repeat(4,1fr)"], [style*="repeat(4, 1fr)"],
+    [style*="repeat(3,1fr)"], [style*="repeat(3, 1fr)"] {
+      grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Timeline + activity log get horizontal scroll instead of stacking */
+    [style*="260px repeat(12"], [style*="80px 1fr"]{
+      overflow-x: auto !important;
+      min-width: 0 !important;
+    }
+
+    /* Section padding */
+    .section, section{ padding-top: 64px !important; padding-bottom: 64px !important; }
+
+    /* Display sizes */
+    h1.display{ font-size: clamp(36px, 8vw, 56px) !important; }
+    h2.display{ font-size: clamp(28px, 6vw, 42px) !important; }
+    h3.display{ font-size: clamp(20px, 4vw, 28px) !important; }
+    .lead{ font-size: 16px !important; }
+    .display{ text-wrap: balance; }
+  }
+
+  @media (max-width: 640px) {
+    .container{ padding: 0 16px !important; }
+
+    /* All multi-col grids → single col */
+    [style*="repeat(2"], [style*="repeat(3"], [style*="repeat(4"], [style*="repeat(5"], [style*="repeat(6"], [style*="repeat(7"]{
+      grid-template-columns: 1fr !important;
+    }
+    .foot .cols{ grid-template-columns: 1fr !important; }
+
+    /* Tab chrome — let it scroll horizontally */
+    .chrome{ flex-wrap: nowrap !important; overflow-x: auto !important; gap: 8px !important; }
+    .chrome .tab-groups{ flex-wrap: nowrap !important; }
+    .chrome .tab-group{ flex-wrap: nowrap !important; }
+    .brand{ font-size: 16px !important; flex-shrink: 0; }
+
+    h1.display{ font-size: clamp(30px, 9vw, 42px) !important; }
+    h2.display{ font-size: clamp(24px, 7vw, 32px) !important; }
+    .btn-pill{ padding: 11px 18px !important; font-size: 12px !important; }
+
+    /* Hero photo containers — let aspect-ratio shrink */
+    [style*="aspect-ratio:4/5"], [style*="aspect-ratio: 4/5"]{
+      max-height: 360px !important;
+    }
+
+    /* Hide some decorative meta on mobile */
+    .vp-bar{ padding: 8px 12px !important; }
+
+    /* Outcomes / data tables — let them scroll */
+    [style*="grid-template-columns:160px 1fr 180px"],
+    [style*="grid-template-columns: 160px 1fr 180px"]{
+      grid-template-columns: 100px 1fr 80px !important;
+      font-size: 12px !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="chrome">
+  <div class="brand" style="display:flex; align-items:center; gap:10px;">
+    <img src="kapes-logo.png" alt="Kapes Adventures" style="height:24px; width:auto; display:block; filter:brightness(0) invert(1);"/>
+    <span style="font-size:10px; letter-spacing:.22em; color:#888; font-weight:700; padding-left:10px; border-left:1px solid #333;">ADVENTURES · HI-FI</span>
+  </div>
+  <div class="meta" id="chromeMeta">Full site · 10 pages</div>
+  <div class="tab-groups" id="tabs">
+    <div class="tab-group">
+      <span class="tg-label">Public</span>
+      <button class="tab active" data-tab="home">Home</button>
+      <button class="tab" data-tab="approach">Approach</button>
+      <button class="tab" data-tab="programs">Programs</button>
+      <button class="tab" data-tab="impact">Impact</button>
+      <button class="tab" data-tab="stories">Stories</button>
+      <button class="tab" data-tab="about">About</button>
+      <button class="tab" data-tab="contact">Contact</button>
+    </div>
+    <div class="tab-group">
+      <span class="tg-label">Schools</span>
+      <button class="tab" data-tab="schools">For Schools</button>
+      <button class="tab" data-tab="program">Programme</button>
+      <button class="tab" data-tab="lp">Scorecard</button>
+    </div>
+  </div>
+</div>
+
+<div class="stage">
+  <div class="viewport">
+    <div class="vp-bar">
+      <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="url" id="urlbar">kapesadventures.com/</div>
+      <div>1240 · desktop</div>
+    </div>
     <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" data-presets="env,react" src="hf-shared.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-home.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-program.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-lp.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-approach.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-programs.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-impact.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-about.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-stories.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-contact.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-schools.jsx?v=91"></script>
+<script type="text/babel" data-presets="env,react" src="hf-app.jsx?v=91"></script>
+
+</body>
 </html>

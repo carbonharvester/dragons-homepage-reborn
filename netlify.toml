@@ -1,0 +1,60 @@
+# Kapes Adventures · Netlify config
+# Static site (Babel-standalone in-browser) + Netlify Functions
+# History note: previous Vite/React app archived under /_archive_v1 — see git history.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Send the bare-domain root to the Hi-Fi shell
+# (Browsers will see clean URLs; Netlify rewrites preserve the URL bar.)
+
+[[redirects]]
+  from = "/scorecard"
+  to   = "/Scorecard%20Report.html"
+  status = 200
+
+[[redirects]]
+  from = "/board-pack"
+  to   = "/Board%20Pack.html"
+  status = 200
+
+[[redirects]]
+  from = "/privacy"
+  to   = "/Privacy.html"
+  status = 200
+
+[[redirects]]
+  from = "/child-protection"
+  to   = "/Child%20Protection.html"
+  status = 200
+
+[[redirects]]
+  from = "/supplier-code"
+  to   = "/Supplier%20Code.html"
+  status = 200
+
+# Cache static assets aggressively
+[[headers]]
+  for = "/photos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# JSX files are loaded by Babel-standalone in the browser — bust on each deploy via the ?v=NN query string in the HTML
+[[headers]]
+  for = "/*.jsx"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
