@@ -39,6 +39,17 @@
   to   = "/Supplier%20Code.html"
   status = 200
 
+# HTML — never cache aggressively; users should always get the latest deploy
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 # Cache static assets aggressively
 [[headers]]
   for = "/photos/*"
