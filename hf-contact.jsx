@@ -159,7 +159,7 @@ function Offices(){
             </p>
             <div style={{marginTop:16, paddingTop:16, borderTop:"1px dashed var(--line)", display:"flex", flexDirection:"column", gap:8, fontSize:13}}>
               <a href="mailto:hello@kapesadventures.com" style={{color:"var(--charcoal)", fontWeight:600, textDecoration:"underline", textUnderlineOffset:3}}>hello@kapesadventures.com</a>
-              <div style={{color:"var(--muted)", fontSize:11, letterSpacing:".04em"}}>Sun–Thu · 9am–6pm GST</div>
+              <div style={{color:"var(--muted)", fontSize:11, letterSpacing:".04em"}}>Mon–Fri · 9am–5pm</div>
             </div>
           </div>
           <div style={{background:"var(--sand)", padding:36, display:"flex", flexDirection:"column", gap:14}}>
