@@ -8,7 +8,7 @@ function HomeHero({ variant = "manifesto" }) {
         <img className="kapes" src={IMG.hero} alt="" style={{position:"absolute",inset:0, width:"100%", height:"100%", objectFit:"cover"}}/>
         <div style={{position:"absolute",inset:0, background:"linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.75) 100%)"}}/>
         <div className="container" style={{position:"relative", paddingTop:120, paddingBottom:100}}>
-          <div className="eyebrow" style={{color:"#fff"}}><span style={{background:"#fff",width:24,height:1,display:"inline-block",marginRight:10}}/>A different kind of school trip</div>
+          <div className="eyebrow" style={{color:"#fff"}}><span style={{background:"#fff",width:24,height:1,display:"inline-block",marginRight:10}}/>A different kind of impact programme</div>
           <h1 className="display" style={{color:"#fff", fontSize:"clamp(64px,7vw,120px)", marginTop:20, maxWidth:1100}}>
             Your students don't need <span className="accent">to save Africa.</span>
           </h1>
@@ -32,11 +32,14 @@ function HomeHero({ variant = "manifesto" }) {
           <div>
             <div className="eyebrow">A manifesto · not a brochure</div>
             <h1 className="display" style={{marginTop:20, fontSize:"clamp(54px, 5.8vw, 96px)"}}>
-              Your students don't need<br/>
+              Your cohort doesn't need<br/>
               <span className="accent">to save Africa.</span>
             </h1>
             <div style={{marginTop:28, maxWidth:560, fontSize:18, lineHeight:1.6, color:"var(--ink-2)"}}>
-              They need a week inside real work in Kenya — work whose impact keeps going long after they fly home. Our flagship programme, <b>Seeds2Education</b>, runs year-round with a permanent farm crew. Water Empowering Women installs water tanks and refurbishes classrooms — students help start each build, the community uses what's built for years. Community Conservation joins partner work that's been running since 2022. In every case, students contribute. In every case, the impact is ongoing.
+              They need a week inside real work in Kenya — work whose impact keeps going long after they fly home. Our flagship programme, <b>Seeds2Education</b>, runs year-round with a permanent farm crew. Water Empowering Women installs water tanks and refurbishes classrooms — your group helps start each build, the community uses what's built for years. Community Conservation joins partner work that's been running since 2022. In every case, your cohort contributes. In every case, the impact is ongoing.
+            </div>
+            <div style={{marginTop:18, fontSize:13, color:"var(--muted)", letterSpacing:".02em"}}>
+              For international schools — three programmes, one shape. Educators can come first on the 5-day CPD trip.
             </div>
             <div style={{display:"flex",gap:12, marginTop:36, flexWrap:"wrap"}}>
               <button className="btn-pill btn-action" style={{padding:"15px 26px"}} onClick={()=>khifiNavigate("programs")}>See the programmes →</button>
@@ -65,11 +68,11 @@ function HomeHero({ variant = "manifesto" }) {
 
 function Manifesto() {
   const points = [
-    { n:"01", t:"Our flagship runs all year. A trip is a chapter.", b:"Seeds2Education — our flagship — operates continuously in Kenya. A permanent farm crew works the land week in, week out. School trips visit. They never start the work, and they never end it. The crew keeps going whether your school comes back next year or not." },
-    { n:"02", t:"Students plant the seed — or join it mid-stream.", b:"Sometimes they help start a project (a water tank install, a classroom refurbishment). Sometimes they join one already running (the year-round Seeds2Education farm). In every case the work is chosen and led by Kenyan partners — and what gets built or planted keeps running long after the trip is over." },
-    { n:"03", t:"No orphanages. No classrooms with strangers.", b:"A six-day visit from unfamiliar adults is not education — it's disruption. We never place students in direct contact with vulnerable children." },
-    { n:"04", t:"The community is the client. You are the guest.", b:"Every programme is shaped by Kenyan partners against their own priorities. If a project isn't useful to the community, we don't run it. Full stop. Activities are chosen because they matter to the people whose communities you're visiting — not because they look good on a school trip." },
-    { n:"05", t:"Designed in Dubai. Delivered by Kenyans.", b:"Every trip is led on the ground by Kenyan trip leaders we contract directly. 1:10 leader-to-student ratio, minimum two leaders per trip — regardless of group size." },
+    { n:"01", t:"Our flagship runs all year. A trip is a chapter.", b:"Seeds2Education — our flagship — operates continuously in Kenya. A permanent farm crew works the land week in, week out. Visiting cohorts join. They never start the work, and they never end it. The crew keeps going whether your group comes back next year or not." },
+    { n:"02", t:"Cohorts plant the seed — or join it mid-stream.", b:"Sometimes a group helps start a project (a water tank install, a classroom refurbishment). Sometimes they join one already running (the year-round Seeds2Education farm). In every case the work is chosen and led by Kenyan partners — and what gets built or planted keeps running long after the trip is over." },
+    { n:"03", t:"No orphanages. No classrooms with strangers.", b:"A six-day visit from unfamiliar adults is not education — it's disruption. We never place visiting cohorts in direct contact with vulnerable children." },
+    { n:"04", t:"The community is the client. You are the guest.", b:"Every programme is shaped by Kenyan partners against their own priorities. If a project isn't useful to the community, we don't run it. Full stop. Activities are chosen because they matter to the people whose communities you're visiting — not because they look good in a brochure." },
+    { n:"05", t:"Designed in Dubai. Delivered by Kenyans.", b:"Every trip is led on the ground by Kenyan trip leaders we contract directly. 1:10 leader-to-participant ratio, minimum two leaders per trip — regardless of group size." },
   ];
   return (
     <section className="section" style={{padding:"96px 0", background:"var(--cream)"}}>
@@ -210,6 +213,64 @@ function Stat({n,l}){
       <div className="display tnum" style={{fontSize:44, color:"var(--charcoal)"}}>{n}</div>
       <div style={{fontSize:12, color:"var(--ink-2)", marginTop:8, lineHeight:1.4}}>{l}</div>
     </div>
+  );
+}
+
+function Audiences() {
+  const groups = [
+    {
+      tag:"For schools",
+      title:"Student cohorts.",
+      body:"Year 10–12 cohorts visit one of the three programmes for a week. CAS / EE / DofE-eligible. The bookable shape we've run since 2022 — Fairgreen, NLCS, ASD, Arbor and others.",
+      meta:"7-day trip · Y10–12 · 1:10 ratio",
+      cta:"For schools →",
+      route:"schools",
+      color:"#22C55E",
+    },
+    {
+      tag:"For teachers",
+      title:"A CPD trip across all three.",
+      body:"One trip, all three programmes — Seeds2Education, Water Empowering Women, Community Conservation. Built for educators planning a student cohort, or coordinating CAS / EE / DofE programmes back home.",
+      meta:"5-day CPD · S2E + WEW + CC · Small groups",
+      cta:"For teachers →",
+      route:"teachers",
+      color:"#F43F5E",
+    },
+  ];
+  return (
+    <section className="section" style={{padding:"96px 0", background:"var(--cream)", borderTop:"1px solid var(--line)"}}>
+      <div className="container">
+        <div className="eyebrow">Two ways to come to Kenya</div>
+        <h2 className="display" style={{marginTop:14, marginBottom:14, maxWidth:900}}>
+          Bring a cohort. <span className="accent">Or come first.</span>
+        </h2>
+        <p className="lead" style={{maxWidth:780, marginBottom:48, color:"var(--ink-2)"}}>
+          Most schools send a student cohort to one of the three programmes. Some heads, coordinators, and curriculum leads come first — a 5-day CPD trip across all three — to see the work in person before they design what their students will do.
+        </p>
+        <div style={{display:"grid", gridTemplateColumns:"repeat(2, 1fr)", gap:18, maxWidth:980}}>
+          {groups.map((g)=>(
+            <div key={g.tag} style={{
+              background:"var(--sand)",
+              border:"1px solid var(--line)",
+              borderTop:`4px solid ${g.color}`,
+              padding:28,
+              display:"flex",
+              flexDirection:"column",
+              gap:14,
+            }}>
+              <div style={{display:"flex", alignItems:"center", gap:8}}>
+                <span style={{width:9, height:9, borderRadius:50, background:g.color}}/>
+                <span style={{fontFamily:"SF Mono,ui-monospace,monospace", fontSize:10, letterSpacing:".14em", color:"var(--muted)", fontWeight:700, textTransform:"uppercase"}}>{g.tag}</span>
+              </div>
+              <h3 className="display" style={{fontSize:"clamp(22px,1.9vw,28px)", lineHeight:1.15, margin:0}}>{g.title}</h3>
+              <p style={{fontSize:14.5, lineHeight:1.6, color:"var(--ink-2)", margin:0, flex:1}}>{g.body}</p>
+              <div style={{fontSize:11, letterSpacing:".08em", textTransform:"uppercase", color:"var(--muted)", fontWeight:700, paddingTop:14, borderTop:"1px solid var(--line)"}}>{g.meta}</div>
+              <button className="btn-pill btn-ghost" style={{padding:"11px 18px", fontSize:13, alignSelf:"flex-start"}} onClick={()=>khifiNavigate(g.route)}>{g.cta}</button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -674,6 +735,7 @@ function HomePage({ heroVariant = "manifesto" }) {
       <BarriersToEducation/>
       <PrincipalQuote/>
       <Manifesto/>
+      <Audiences/>
       <MultiYearVision/>
       <PullQuote/>
       <TripVideo/>

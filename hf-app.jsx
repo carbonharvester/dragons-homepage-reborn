@@ -6,16 +6,18 @@ const read = (k,f)=> { try { const v = localStorage.getItem(k); return v==null? 
 const write = (k,v)=> { try { localStorage.setItem(k, JSON.stringify(v)); } catch(_){} };
 
 const URLS = {
-  home:     "/",
-  approach: "/our-approach",
-  programs: "/programs",
-  impact:   "/impact",
-  stories:  "/stories",
-  about:    "/about",
-  contact:  "/contact",
-  schools:  "/for-schools",
-  program:  "/programs/seeds2education", // updated dynamically by programme
-  lp:       "/scorecard",
+  home:          "/",
+  approach:      "/our-approach",
+  programs:      "/programs",
+  impact:        "/impact",
+  stories:       "/stories",
+  about:         "/about",
+  contact:       "/contact",
+  schools:       "/for-schools",
+  organisations: "/for-organisations",
+  teachers:      "/for-teachers",
+  program:       "/programs/seeds2education", // updated dynamically by programme
+  lp:            "/scorecard",
 };
 const PROGRAM_URLS = {
   s2e: "/programs/seeds2education",
@@ -38,7 +40,8 @@ function tabFromPath(pathname){
 const LABELS = {
   home:"01 Home", approach:"02 Our Approach", programs:"03 Programs",
   impact:"04 Impact", stories:"05 Stories", about:"06 About", contact:"07 Contact",
-  schools:"08 For Schools", program:"09 Programme overview", lp:"10 Scorecard LP"
+  schools:"08 For Schools", organisations:"09 For Organisations", teachers:"10 For Teachers",
+  program:"11 Programme overview", lp:"12 Scorecard LP"
 };
 
 function App(){
@@ -118,16 +121,18 @@ function App(){
   }, [tab, programme]);
 
   const PAGES = {
-    home:     { Comp: window.HomePage,     props: { heroVariant: tweaks.hero } },
-    approach: { Comp: window.ApproachPage, props: {} },
-    programs: { Comp: window.ProgramsPage, props: {} },
-    impact:   { Comp: window.ImpactPage,   props: {} },
-    stories:  { Comp: window.StoriesPage,  props: {} },
-    about:    { Comp: window.AboutPage,    props: {} },
-    contact:  { Comp: window.ContactPage,  props: {} },
-    schools:  { Comp: window.SchoolsPage,  props: {} },
-    program:  { Comp: window.ProgramPage,  props: { slug: programme } },
-    lp:       { Comp: window.LPPage,       props: {} },
+    home:          { Comp: window.HomePage,          props: { heroVariant: tweaks.hero } },
+    approach:      { Comp: window.ApproachPage,      props: {} },
+    programs:      { Comp: window.ProgramsPage,      props: {} },
+    impact:        { Comp: window.ImpactPage,        props: {} },
+    stories:       { Comp: window.StoriesPage,       props: {} },
+    about:         { Comp: window.AboutPage,         props: {} },
+    contact:       { Comp: window.ContactPage,       props: {} },
+    schools:       { Comp: window.SchoolsPage,       props: {} },
+    organisations: { Comp: window.OrganisationsPage, props: {} },
+    teachers:      { Comp: window.TeachersPage,      props: {} },
+    program:       { Comp: window.ProgramPage,       props: { slug: programme } },
+    lp:            { Comp: window.LPPage,            props: {} },
   };
   const entry = PAGES[tab] || PAGES.home;
   const Page = entry.Comp || (()=> <div style={{padding:80, textAlign:"center"}}>Loading {tab}…</div>);

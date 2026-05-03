@@ -19,7 +19,7 @@ function MobileHomeHero() {
           color:"rgba(255,255,255,.95)", marginBottom:24,
         }}>
           <span style={{width:6, height:6, borderRadius:50, background:"var(--orange)"}}/>
-          A different kind of school trip
+          A different kind of impact programme
         </div>
 
         <h1 className="display" style={{
@@ -27,7 +27,7 @@ function MobileHomeHero() {
           fontSize:"clamp(46px, 13vw, 64px)",
           lineHeight:.96, letterSpacing:"-.02em", margin:0,
         }}>
-          Your students<br/>don't need <span className="accent">to save Africa.</span>
+          Your cohort<br/>doesn't need <span className="accent">to save Africa.</span>
         </h1>
 
         <p style={{
@@ -556,6 +556,40 @@ function MobileMediaReel() {
   );
 }
 
+function MobileAudiences() {
+  const groups = [
+    { tag:"For schools", title:"Student cohorts.", body:"Y10–12 cohorts visit one of three programmes for a week. CAS / EE / DofE-eligible.", meta:"7-day · Y10–12 · 1:10", route:"schools", color:"#22C55E" },
+    { tag:"For teachers", title:"A CPD trip across all three.", body:"One trip, all three programmes — see how the work runs, take pedagogy + curriculum links back home.", meta:"5-day CPD · S2E + WEW + CC", route:"teachers", color:"#F43F5E" },
+  ];
+  return (
+    <section style={{padding:"64px 22px", background:"var(--cream)", borderTop:"1px solid var(--line)"}}>
+      <div className="eyebrow" style={{marginBottom:14}}>Two ways to come to Kenya</div>
+      <h2 className="display" style={{fontSize:32, lineHeight:1.05, margin:"0 0 18px", letterSpacing:"-.01em"}}>
+        Bring a cohort. <span className="accent">Or come first.</span>
+      </h2>
+      <p style={{fontSize:15.5, lineHeight:1.55, color:"var(--ink-2)", margin:"0 0 28px"}}>
+        Most schools send a student cohort. Some heads and coordinators come first — a 5-day CPD trip across all three programmes — to see the work in person before they design what their students will do.
+      </p>
+      <div style={{display:"flex", flexDirection:"column", gap:12}}>
+        {groups.map(g=>(
+          <div key={g.tag} onClick={()=>khifiNavigate(g.route)} style={{
+            background:"var(--sand)", border:"1px solid var(--line)", borderTop:`4px solid ${g.color}`,
+            padding:"20px 18px", borderRadius:6, cursor:"pointer",
+          }}>
+            <div style={{display:"flex", alignItems:"center", gap:8, marginBottom:8}}>
+              <span style={{width:8, height:8, borderRadius:50, background:g.color}}/>
+              <span style={{fontFamily:"SF Mono,ui-monospace,monospace", fontSize:10, letterSpacing:".14em", color:"var(--muted)", fontWeight:700, textTransform:"uppercase"}}>{g.tag}</span>
+            </div>
+            <h3 className="display" style={{fontSize:22, lineHeight:1.15, margin:"0 0 10px", letterSpacing:"-.005em"}}>{g.title}</h3>
+            <p style={{fontSize:14.5, lineHeight:1.55, color:"var(--ink-2)", margin:"0 0 12px"}}>{g.body}</p>
+            <div style={{fontSize:10.5, letterSpacing:".08em", textTransform:"uppercase", color:"var(--muted)", fontWeight:700}}>{g.meta} →</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function MobileHomePage() {
   return (
     <div>
@@ -565,6 +599,7 @@ function MobileHomePage() {
       <MobileEssence/>
       <MobileWatchVideo/>
       <MobileManifestoList/>
+      <MobileAudiences/>
       <MobileProgrammes/>
       <MobileVsVoluntourism/>
       <MobilePrincipalQuote/>

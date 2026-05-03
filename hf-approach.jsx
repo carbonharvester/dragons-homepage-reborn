@@ -92,7 +92,7 @@ function Pricing(){
         <div style={{display:"grid", gridTemplateColumns:"1.2fr 1fr", gap:48, alignItems:"start"}}>
           <div>
             <p className="lead" style={{maxWidth:580, color:"var(--ink-2)"}}>
-              Each of our three programmes — Seeds2Education, Water Empowering Women, Community Conservation — is priced separately, reflecting the different work, partners, and locations behind each one. International flights are excluded; we quote per cohort once we know your group size and dates.
+              Each of our three programmes — Seeds2Education, Water Empowering Women, Community Conservation — is priced separately. Different work, different partners, different locations. International flights are excluded; we quote per cohort once we know your group size and dates.
             </p>
             <p style={{fontSize:15, lineHeight:1.7, color:"var(--ink-2)", marginTop:18, maxWidth:580}}>
               We don't tier within a programme — there's no "premium" or "basic" version. Every cohort on a given trip gets the same accommodation, the same Kenyan trip leaders, the same 1:10 ratio, the same time on the work itself.
