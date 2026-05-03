@@ -7,9 +7,12 @@
   "schoolFootprint": "UAE · KSA · Qatar · Oman · Kuwait",
   "existingCSR": "The Sparkle Foundation (Malawi) — staff teacher-mentor programme",
 
-  "yearGroup": "Year 11",
+  "yearGroup": "Year 10–12",
   "cohortSize": 22,
   "staffCount": 2,
+
+  "priceFromUSD": "2,600",
+  "priceToUSD": "3,000",
 
   "duration": "seven-night",
   "durationNights": 7,
