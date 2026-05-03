@@ -25,10 +25,20 @@
   to   = "/Scorecard%20Report.html"
   status = 200
 
-# Cognita is a group pack now — bounce the old URL to the new one (301 permanent)
+# Cognita group pack — bounce both old URLs to the current canonical (cognita-me-2026)
 [[redirects]]
   from = "/board-pack/cognita-me-2027"
-  to   = "/group-pack/cognita-me-2027"
+  to   = "/group-pack/cognita-me-2026"
+  status = 301
+
+[[redirects]]
+  from = "/group-pack/cognita-me-2027"
+  to   = "/group-pack/cognita-me-2026"
+  status = 301
+
+[[redirects]]
+  from = "/board-pack/cognita-me-2026"
+  to   = "/group-pack/cognita-me-2026"
   status = 301
 
 # Customised Board Pack (per-school) — clean URL: /board-pack/<school-slug>
