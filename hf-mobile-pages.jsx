@@ -1388,8 +1388,8 @@ function MobileAboutPartners() {
   const partners = [
     {logo: IMG.f4eLogo, name:"Food for Education", tag:"Kenyan NGO · School-meals partner",
       note:"Subsidises school meals at scale. The Seeds2Education harvest is exchanged through their kitchen at $0.85/kg = three school meals.", url:"https://food4education.org/"},
-    {logo: IMG.wildlifeWorksFactory, name:"Wildlife Works", tag:"Kenyan conservancy · CC site + factory",
-      note:"World's first carbon-neutral garment factory inside a working wildlife conservation operation. Manufactures Kapes Uniforms; hosts Community Conservation cohorts.", url:"https://wildlifeworks.com/", isPhoto:true},
+    {logo: IMG.wildlifeWorksLogo, name:"Wildlife Works", tag:"Kenyan conservancy · CC site + factory",
+      note:"World's first carbon-neutral garment factory inside a working wildlife conservation operation. Manufactures Kapes Uniforms; hosts Community Conservation cohorts.", url:"https://wildlifeworks.com/"},
     {logo: IMG.edsideraLogo, name:"Edsidera", tag:"Digital partner · life-skills awards · 25/26",
       note:"UAE-based platform recognised by FOBISIA, BSME and COBIS. Students log evidence from trip work and earn formally credentialled awards.", url:"https://edsidera.com/"},
   ];

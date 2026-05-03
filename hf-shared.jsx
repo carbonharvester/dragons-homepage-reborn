@@ -166,6 +166,7 @@ const IMG = {
   mattCohortAerial:     "photos/matt-cohort-wide.jpg",    // drone-style · Matt in a crowd of kids in maroon uniforms (high-res)
   // Wildlife Works · the carbon-neutral garment factory where Kapes Uniforms are made
   wildlifeWorksFactory: "photos/wildlife-works-factory.jpg", // 4 Kenyan tailors at Juki machines · the factory floor
+  wildlifeWorksLogo:    "https://res.cloudinary.com/dng12bd0a/image/upload/v1777794154/wildlife_works_logo_xrazaf.jpg",
   // Kenyan team portraits
   ellyPortrait:         "photos/elly-portrait.jpg",          // Elijah "Elly" Oenga · S2E host · hilltop overlooking the Rift Valley
   monicaPortrait:       "photos/monica-portrait.jpg",        // Monica Makori · WEW Kenyan partner · Neema Women's Group · Taita-Taveta

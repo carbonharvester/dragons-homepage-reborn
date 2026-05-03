@@ -221,12 +221,11 @@ function Partners(){
       url:"https://food4education.org/",
     },
     {
-      logo: IMG.wildlifeWorksFactory,
+      logo: IMG.wildlifeWorksLogo,
       name:"Wildlife Works",
       tag:"Kenyan conservancy · CC site + Kapes Uniforms factory",
       note:"World's first carbon-neutral garment factory, sitting inside a working wildlife conservation operation. Manufactures Kapes Uniforms; hosts Community Conservation cohorts. The intersection at the heart of the company.",
       url:"https://wildlifeworks.com/",
-      isPhoto:true,
     },
     {
       logo: IMG.edsideraLogo,
