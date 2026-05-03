@@ -345,37 +345,29 @@ function MobileSocialProof() {
     {name:"American School of Dubai",       logo:"photos/logos/asd-logo.png"},
     {name:"ACS Hillingdon",                 logo:"photos/logos/acs-logo.png"},
   ];
+  // Duplicate the array so the marquee loop seamlessly (translateX 0 → -50%).
+  const marqueeSet = [...schools, ...schools];
   return (
-    <section style={{padding:"40px 22px", background:"var(--cream)", borderTop:"1px solid var(--line)", borderBottom:"1px solid var(--line)"}}>
-      <div style={{marginBottom:18}}>
+    <section style={{padding:"40px 0", background:"var(--cream)", borderTop:"1px solid var(--line)", borderBottom:"1px solid var(--line)", overflow:"hidden"}}>
+      <style>{`
+        @keyframes kapes-logo-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .kapes-logo-marquee { animation: kapes-logo-marquee 30s linear infinite; will-change: transform; }
+        .kapes-logo-fade-l, .kapes-logo-fade-r { position:absolute; top:0; bottom:0; width:32px; pointer-events:none; z-index:2; }
+        .kapes-logo-fade-l { left:0; background: linear-gradient(to right, var(--cream), transparent); }
+        .kapes-logo-fade-r { right:0; background: linear-gradient(to left, var(--cream), transparent); }
+      `}</style>
+      <div style={{padding:"0 22px", marginBottom:18}}>
         <div className="eyebrow">Schools whose Kenya trips we've designed</div>
       </div>
-      <div style={{
-        display:"grid", gridTemplateColumns:"1fr 1fr",
-        gap:1, background:"var(--line)", border:"1px solid var(--line)",
-      }}>
-        {schools.map(s=>(
-          <div key={s.name} style={{
-            background:"var(--sand)", height:84,
-            display:"flex", alignItems:"center", justifyContent:"center",
-            padding:"12px 14px",
-          }}>
-            <img src={s.logo} alt={s.name}
-              style={{maxHeight:50, maxWidth:"82%", objectFit:"contain", filter:"grayscale(1)", opacity:.75}}/>
-          </div>
-        ))}
-        {/* Fill the 8th cell when we have 7 logos so the grid stays balanced */}
-        {schools.length % 2 === 1 && (
-          <div style={{
-            background:"var(--sand)", height:84,
-            display:"flex", alignItems:"center", justifyContent:"center",
-            padding:"12px 14px",
-            fontSize:10, letterSpacing:".18em", textTransform:"uppercase",
-            color:"var(--muted)", fontWeight:700, textAlign:"center", lineHeight:1.4,
-          }}>
-            <div>● MENA<br/>since 2022</div>
-          </div>
-        )}
+      <div style={{position:"relative", overflow:"hidden"}}>
+        <div className="kapes-logo-fade-l"/>
+        <div className="kapes-logo-fade-r"/>
+        <div className="kapes-logo-marquee" style={{display:"flex", gap:42, width:"max-content", alignItems:"center", padding:"4px 0"}}>
+          {marqueeSet.map((s, i) => (
+            <img key={i} src={s.logo} alt={s.name} aria-hidden={i >= schools.length}
+              style={{height:46, width:"auto", objectFit:"contain", flexShrink:0, filter:"grayscale(1)", opacity:.7}}/>
+          ))}
+        </div>
       </div>
     </section>
   );
