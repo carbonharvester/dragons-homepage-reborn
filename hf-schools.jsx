@@ -18,7 +18,7 @@ function SchoolsHero(){
             <button className="btn-pill btn-ghost" style={{padding:"15px 26px"}} onClick={()=>khifiNavigate("lp")}>Take the 5-min scorecard</button>
           </div>
           <div style={{marginTop:32, display:"flex", gap:24, fontSize:11, letterSpacing:".08em", textTransform:"uppercase", color:"var(--muted)", fontWeight:600, flexWrap:"wrap"}}>
-            <span>Founded 2025</span><span>·</span>
+            <span>Dubai-based · Kenyan-led</span><span>·</span>
             <span>3 Kenya programmes</span><span>·</span>
             <span>1:10 leader ratio</span>
           </div>

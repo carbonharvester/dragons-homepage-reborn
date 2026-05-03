@@ -339,8 +339,12 @@ function MobileBottomCTA({ primaryLabel = "Book a call", primaryAction, secondar
       background:"rgba(15,15,15,.96)",
       backdropFilter:"blur(10px)", WebkitBackdropFilter:"blur(10px)",
       borderTop:"1px solid #262626",
-      padding:"10px 14px env(safe-area-inset-bottom, 12px)",
-      display:"flex", gap:8,
+      // Always at least 16px bottom padding, plus iOS home-indicator safe-area when present.
+      // env() returns 0 (not the fallback) on devices without a safe-area, so we calc on top.
+      paddingTop:12,
+      paddingLeft:14, paddingRight:14,
+      paddingBottom:"calc(env(safe-area-inset-bottom, 0px) + 16px)",
+      display:"flex", gap:10,
     }}>
       <button
         onClick={() => navigate(secondaryTab)}

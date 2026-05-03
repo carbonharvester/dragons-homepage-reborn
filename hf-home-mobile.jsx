@@ -68,7 +68,7 @@ function MobileHomeHero() {
           display:"flex", justifyContent:"space-between", gap:18,
           fontSize:11, letterSpacing:".08em", textTransform:"uppercase", color:"rgba(255,255,255,.7)", fontWeight:600,
         }}>
-          <div>Founded 2025</div>
+          <div>Kenyan-led</div>
           <div>3 programmes</div>
           <div>1:10 ratio</div>
         </div>
@@ -158,23 +158,23 @@ function MobileManifestoList() {
 function MobileProgrammes() {
   const programmes = [
     {
-      code:"S2E", color:"#e07a3f",
-      headline:"A working farm that feeds 5,000 students a year.",
-      img: IMG.farmGroupWide,
+      code:"S2E", color:"#22C55E",
+      headline:"Turning unused school land into farms that feed students.",
+      img: IMG.farmKenyanKid,
       cadence:"Year-round, 365 days",
       sub:"Seeds2Education · Kenya",
     },
     {
-      code:"WEW", color:"#3a8a8a",
-      headline:"Water tanks and refurbished classrooms.",
-      img: IMG.wewFinishedTank,
+      code:"WEW", color:"#F43F5E",
+      headline:"Bringing clean water to schools so girls can stay in class.",
+      img: IMG.wewPaintingTank,
       cadence:"Multi-year build cycles",
       sub:"Water Empowering Women · Kenya",
     },
     {
-      code:"CC", color:"#5a7a4f",
-      headline:"Five years of partner conservation work.",
-      img: IMG.ccLookout,
+      code:"CC", color:"#3B82F6",
+      headline:"Linking conservation, livelihoods, and education on one site.",
+      img: IMG.ccFactory,
       cadence:"Running since 2022",
       sub:"Community Conservation · Kenya",
     },
@@ -371,6 +371,109 @@ function MobileSocialProof() {
   );
 }
 
+/* ─── Mobile: Watch the trip (full-bleed video) ───────────────── */
+function MobileWatchVideo() {
+  const v = (typeof window !== "undefined" && window.VIDEO) || {};
+  if (!v.s2eFull) return null;
+  return (
+    <section style={{padding:"56px 0 0", background:"var(--charcoal)", color:"#fff"}}>
+      <div style={{padding:"0 22px 24px"}}>
+        <div style={{fontSize:11, letterSpacing:".18em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700, marginBottom:10}}>● Watch · 90 seconds</div>
+        <h2 className="display" style={{fontSize:32, lineHeight:1.05, color:"#fff", margin:0}}>
+          What a Kapes<br/>week looks like.
+        </h2>
+        <p style={{fontSize:14.5, lineHeight:1.6, color:"rgba(255,255,255,.78)", marginTop:14, marginBottom:0}}>
+          Edited from the November pilot. Same staff, same partner schools, same week your students would join.
+        </p>
+      </div>
+      <div style={{position:"relative", aspectRatio:"16/9", background:"#000", overflow:"hidden"}}>
+        <video
+          src={v.s2eFull}
+          poster={v.s2eFullPoster}
+          controls
+          preload="metadata"
+          playsInline
+          style={{width:"100%", height:"100%", objectFit:"cover", display:"block"}}
+        />
+      </div>
+    </section>
+  );
+}
+
+/* ─── Mobile: Featured-in media reel (radio, press, podcast) ──── */
+function MobileMediaReel() {
+  const [playing, setPlaying] = React.useState(null);
+  const items = [
+    {kind:"Radio interview", outlet:"Dubai Eye 103.8", note:"Founder interview on UAE's leading talk-radio station — the Fairgreen International School trip and the Kapes Adventures model.", media:"https://res.cloudinary.com/dng12bd0a/video/upload/f_auto,q_auto/v1777703190/dubai_eye_fairgreen_trip_full_radio_interview_gcvo31.mp4"},
+    {kind:"Feature", outlet:"Education UAE", note:"Profile on Kapes Adventures and the Kenya programmes.", url:"https://portfolio.quantummedia.me/view/815469704/200/"},
+    {kind:"Feature", outlet:"Education Saudi", note:"Coverage of the BIS Jeddah Water Empowering Women cohort.", url:"https://portfolio.quantummedia.me/view/210698821/118/"},
+    {kind:"Podcast", outlet:"QTheVoices", note:"Founder interview — educational travel and ethical school trips.", embed:"https://www.youtube.com/embed/LOYMYkjvLEc"},
+  ];
+  React.useEffect(() => {
+    document.body.style.overflow = playing ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [playing]);
+  return (
+    <section style={{padding:"56px 22px", background:"var(--cream)", borderTop:"1px solid var(--line)"}}>
+      <div style={{display:"flex", alignItems:"baseline", justifyContent:"space-between", marginBottom:18, paddingBottom:14, borderBottom:"1px solid var(--line)"}}>
+        <div>
+          <div style={{fontSize:11, letterSpacing:".18em", textTransform:"uppercase", color:"var(--muted)", fontWeight:700, marginBottom:6}}>Press · Media</div>
+          <h2 className="display" style={{fontSize:28, lineHeight:1.1, margin:0}}>Featured in.</h2>
+        </div>
+        <div style={{fontSize:10, letterSpacing:".14em", textTransform:"uppercase", color:"var(--muted)", fontWeight:700}}>● 4 mentions</div>
+      </div>
+      <div style={{display:"flex", flexDirection:"column"}}>
+        {items.map((m, i) => {
+          const interactive = m.media || m.embed || m.url;
+          const onClick = () => {
+            if (m.media || m.embed) setPlaying(m);
+            else if (m.url) window.open(m.url, "_blank", "noopener");
+          };
+          const ctaLabel = m.media ? "Listen" : m.embed ? "Watch" : "Read article";
+          const ctaIcon = (m.media || m.embed) ? "▶" : "↗";
+          return (
+            <div key={i} onClick={interactive ? onClick : undefined} style={{
+              padding:"20px 0", borderBottom: i===items.length-1 ? "none" : "1px solid var(--line)",
+              cursor: interactive ? "pointer" : "default", display:"flex", flexDirection:"column", gap:6,
+            }}>
+              <div style={{fontSize:10, letterSpacing:".18em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700}}>{m.kind}</div>
+              <div className="display" style={{fontSize:20, lineHeight:1.2}}>{m.outlet}</div>
+              <div style={{fontSize:13.5, color:"var(--ink-2)", lineHeight:1.55}}>{m.note}</div>
+              {interactive && (
+                <div style={{display:"inline-flex", alignItems:"center", gap:8, marginTop:4, fontSize:11, letterSpacing:".14em", textTransform:"uppercase", color:"var(--charcoal)", fontWeight:700}}>
+                  <span style={{width:24, height:24, borderRadius:"50%", background:"var(--orange)", color:"#fff", display:"inline-flex", alignItems:"center", justifyContent:"center", fontSize:10}}>{ctaIcon}</span>
+                  {ctaLabel}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {playing && (
+        <div onClick={()=>setPlaying(null)} style={{position:"fixed", inset:0, background:"rgba(0,0,0,.85)", zIndex:1000, display:"flex", alignItems:"center", justifyContent:"center", padding:14, cursor:"pointer"}}>
+          <div onClick={(e)=>e.stopPropagation()} style={{background:"var(--charcoal)", borderRadius:8, overflow:"hidden", width:"100%", maxWidth:560, boxShadow:"0 40px 100px rgba(0,0,0,.6)", cursor:"default"}}>
+            <div style={{padding:"14px 16px", display:"flex", alignItems:"center", justifyContent:"space-between", borderBottom:"1px solid #262626"}}>
+              <div>
+                <div style={{fontSize:10, letterSpacing:".18em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700}}>{playing.kind}</div>
+                <div style={{fontFamily:"var(--display)", fontSize:15, color:"#fff", marginTop:4}}>{playing.outlet}</div>
+              </div>
+              <button onClick={()=>setPlaying(null)} style={{background:"transparent", border:"1px solid rgba(255,255,255,.3)", color:"#fff", padding:"7px 12px", borderRadius:999, fontSize:10, letterSpacing:".1em", textTransform:"uppercase", fontWeight:700, cursor:"pointer"}}>Close ✕</button>
+            </div>
+            {playing.embed ? (
+              <div style={{position:"relative", aspectRatio:"16/9", background:"#000"}}>
+                <iframe src={`${playing.embed}?autoplay=1`} title={playing.outlet} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{position:"absolute", inset:0, width:"100%", height:"100%", border:"none"}}/>
+              </div>
+            ) : (
+              <video src={playing.media} controls autoPlay style={{width:"100%", height:"auto", maxHeight:"70vh", display:"block", background:"#000"}}/>
+            )}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 function MobileHomePage() {
   return (
     <div>
@@ -378,10 +481,12 @@ function MobileHomePage() {
       <MobileHomeHero/>
       <MobileSocialProof/>
       <MobileEssence/>
+      <MobileWatchVideo/>
       <MobileManifestoList/>
       <MobileProgrammes/>
       <MobileVsVoluntourism/>
       <MobilePullQuote/>
+      <MobileMediaReel/>
       <MobileCTA/>
       <Footer/>
     </div>

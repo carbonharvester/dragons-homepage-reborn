@@ -43,7 +43,7 @@ function HomeHero({ variant = "manifesto" }) {
               <button className="btn-pill btn-ghost" style={{padding:"15px 26px"}} onClick={()=>khifiNavigate("lp")}>Take the 5-min assessment</button>
             </div>
             <div style={{marginTop:40, display:"flex", gap:24, fontSize:12, letterSpacing:".08em", textTransform:"uppercase", color:"var(--muted)", fontWeight:600, flexWrap:"wrap"}}>
-              <div>Founded 2025</div>
+              <div>Dubai-based · Kenyan-led</div>
               <div>·</div>
               <div>3 Kenya programmes</div>
               <div>·</div>

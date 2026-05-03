@@ -425,6 +425,84 @@ function MobileProgramSpec() {
   );
 }
 
+function MobileProgramOverviewVideo() {
+  const v = (typeof window !== "undefined" && window.VIDEO) || {};
+  if (!v.s2eFull) return null;
+  return (
+    <section style={{padding:"40px 0 0", background:"var(--cream)", borderBottom:"1px solid var(--line)"}}>
+      <div style={{padding:"0 22px 16px"}}>
+        <div className="eyebrow" style={{marginBottom:8}}>● Watch · 90 sec</div>
+        <h2 className="display" style={{fontSize:26, lineHeight:1.1, margin:0}}>The trip in one minute.</h2>
+        <p style={{fontSize:14, color:"var(--ink-2)", lineHeight:1.55, marginTop:10, marginBottom:20}}>
+          Edited from the November 2025 pilot with Fairgreen International School — the same week, staff, and partner schools your students would join.
+        </p>
+      </div>
+      <div style={{position:"relative", aspectRatio:"16/9", background:"#000", overflow:"hidden"}}>
+        <video src={v.s2eFull} poster={v.s2eFullPoster} controls preload="metadata" playsInline style={{width:"100%", height:"100%", objectFit:"cover", display:"block"}}/>
+      </div>
+    </section>
+  );
+}
+
+function MobileProgramReels() {
+  const reels = (typeof window !== "undefined" && window.S2E_REELS) || [];
+  if (!reels.length) return null;
+  const [active, setActive] = React.useState(null);
+  React.useEffect(() => {
+    document.body.style.overflow = active ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [active]);
+  return (
+    <section style={{padding:"48px 0 56px", background:"var(--charcoal)", color:"#fff"}}>
+      <div style={{padding:"0 22px 18px"}}>
+        <div style={{fontSize:11, letterSpacing:".18em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700, marginBottom:8}}>● Day reels</div>
+        <h2 className="display" style={{fontSize:26, lineHeight:1.1, margin:0, color:"#fff"}}>What each day looks like.</h2>
+        <p style={{fontSize:14, color:"rgba(255,255,255,.7)", lineHeight:1.55, marginTop:10, marginBottom:0}}>
+          Tap any card to play the reel. Swipe →
+        </p>
+      </div>
+      <div style={{display:"flex", gap:12, overflowX:"auto", overflowY:"hidden", padding:"4px 22px 24px", scrollSnapType:"x mandatory", WebkitOverflowScrolling:"touch"}}>
+        {reels.map((r, i) => (
+          <div key={i} onClick={()=>setActive(r)} style={{
+            flex:"0 0 78%", maxWidth:280, scrollSnapAlign:"start",
+            background:"#1F1F1F", border:"1px solid #262626", borderRadius:10, overflow:"hidden",
+            cursor:"pointer", display:"flex", flexDirection:"column",
+          }}>
+            <div style={{position:"relative", aspectRatio:"4/5", background:"#000", overflow:"hidden"}}>
+              <img src={r.poster} alt={r.title} style={{width:"100%", height:"100%", objectFit:"cover", display:"block"}}/>
+              <div style={{position:"absolute", inset:0, background:"linear-gradient(to top, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 50%)"}}/>
+              <div style={{position:"absolute", top:10, left:10, background:"var(--orange)", color:"#fff", padding:"4px 9px", borderRadius:3, fontSize:9.5, letterSpacing:".14em", textTransform:"uppercase", fontWeight:700}}>{r.day}</div>
+              <div style={{position:"absolute", inset:0, display:"flex", alignItems:"center", justifyContent:"center"}}>
+                <div style={{width:54, height:54, borderRadius:"50%", background:"rgba(255,255,255,.92)", color:"var(--charcoal)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:20, paddingLeft:4}}>▶</div>
+              </div>
+            </div>
+            <div style={{padding:"14px 14px 16px"}}>
+              <div className="display" style={{fontSize:15.5, lineHeight:1.2, color:"#fff", marginBottom:6}}>{r.title}</div>
+              <div style={{fontSize:12.5, color:"rgba(255,255,255,.7)", lineHeight:1.5}}>{r.sub}</div>
+            </div>
+          </div>
+        ))}
+        <div style={{flex:"0 0 8px"}}/>
+      </div>
+
+      {active && (
+        <div onClick={()=>setActive(null)} style={{position:"fixed", inset:0, background:"rgba(0,0,0,.9)", zIndex:1000, display:"flex", alignItems:"center", justifyContent:"center", padding:14, cursor:"pointer"}}>
+          <div onClick={(e)=>e.stopPropagation()} style={{width:"100%", maxWidth:520, cursor:"default"}}>
+            <div style={{display:"flex", alignItems:"center", justifyContent:"space-between", marginBottom:12, color:"#fff"}}>
+              <div>
+                <div style={{fontSize:10, letterSpacing:".18em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700}}>{active.day}</div>
+                <div style={{fontFamily:"var(--display)", fontSize:18, marginTop:4}}>{active.title}</div>
+              </div>
+              <button onClick={()=>setActive(null)} style={{background:"transparent", border:"1px solid rgba(255,255,255,.3)", color:"#fff", padding:"7px 12px", borderRadius:999, fontSize:10, letterSpacing:".1em", textTransform:"uppercase", fontWeight:700, cursor:"pointer"}}>Close ✕</button>
+            </div>
+            <video src={active.src} poster={active.poster} controls autoPlay playsInline style={{width:"100%", height:"auto", maxHeight:"75vh", display:"block", background:"#000", borderRadius:6}}/>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 function MobileProgramProblem() {
   return (
     <section style={{padding:"56px 22px", background:"var(--sand)"}}>
@@ -598,8 +676,10 @@ function MobileProgramPage() {
       {window.MobileSiteNav ? <window.MobileSiteNav/> : <SiteNav/>}
       <MobileProgramHero/>
       <MobileProgramSpec/>
+      <MobileProgramOverviewVideo/>
       <MobileProgramProblem/>
       <MobileProgramDayByDay/>
+      <MobileProgramReels/>
       <MobileProgramPricing/>
       <MobileProgramFAQ/>
       <MobileProgramCTA/>
@@ -1563,7 +1643,7 @@ function MobileSchoolsHero() {
         <button className="btn-pill btn-ghost" style={{padding:"15px 22px"}} onClick={()=>khifiNavigate("lp")}>Take the 5-min scorecard</button>
       </div>
       <div style={{marginTop:24, paddingTop:20, borderTop:"1px solid var(--line)", display:"flex", gap:12, fontSize:11, letterSpacing:".08em", textTransform:"uppercase", color:"var(--muted)", fontWeight:600, flexWrap:"wrap"}}>
-        <span>Founded 2025</span><span>·</span>
+        <span>Kenyan-led</span><span>·</span>
         <span>3 programmes</span><span>·</span>
         <span>1:10 ratio</span>
       </div>
