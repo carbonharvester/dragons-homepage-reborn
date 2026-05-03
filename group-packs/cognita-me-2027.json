@@ -1,8 +1,11 @@
 {
-  "_comment": "Cognita Middle East — pitched at the regional senior leadership as a Y11 pilot at one flagship school, with explicit group-rollout language. Cognita already runs The Sparkle Foundation (Malawi) partnership, so this lands as a complement to existing Africa work, not a new ask. 14 schools across UAE/Saudi/Qatar/Oman/Kuwait. Update champion + dates + pilot school once a discovery call is booked.",
+  "_comment": "Cognita Middle East — Group Partnership Pack pitched at the regional senior leadership. Group runs The Sparkle Foundation (Malawi) partnership already, so this lands as a complement to existing Africa work, not a new ask. 14 schools across UAE/Saudi/Qatar/Oman/Kuwait. Update champion + dates once a discovery call is booked.",
 
   "school": "Cognita Middle East",
-  "schoolType": "Regional school operator · 14 schools · UAE · KSA · Qatar · Oman · Kuwait",
+  "schoolType": "Multi-school operator · 14 schools · UAE · KSA · Qatar · Oman · Kuwait",
+  "schoolCount": "14",
+  "schoolFootprint": "UAE · KSA · Qatar · Oman · Kuwait",
+  "existingCSR": "The Sparkle Foundation (Malawi) — staff teacher-mentor programme",
 
   "yearGroup": "Year 11",
   "cohortSize": 22,
@@ -12,6 +15,7 @@
   "durationNights": 7,
   "travelMonthYear": "March 2027",
   "travelDates": "13 – 20 Mar 2027",
+  "rolloutFromMonth": "September 2027",
 
   "perStudentUSD": "3,000",
   "perStudentNote": "Incl. flights · ≈ £1,950 / AED 11,015 pp",

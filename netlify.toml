@@ -25,8 +25,7 @@
   to   = "/Scorecard%20Report.html"
   status = 200
 
-# Customised Board Pack — clean URL form: /board-pack/<school-slug>
-# (rewrites to ?s=<slug> so the customisation script picks it up)
+# Customised Board Pack (per-school) — clean URL: /board-pack/<school-slug>
 [[redirects]]
   from = "/board-pack/:slug"
   to   = "/Board%20Pack.html?s=:slug"
@@ -35,6 +34,17 @@
 [[redirects]]
   from = "/board-pack"
   to   = "/Board%20Pack.html"
+  status = 200
+
+# Group Partnership Pack (multi-school operators) — clean URL: /group-pack/<group-slug>
+[[redirects]]
+  from = "/group-pack/:slug"
+  to   = "/Group%20Pack.html?s=:slug"
+  status = 200
+
+[[redirects]]
+  from = "/group-pack"
+  to   = "/Group%20Pack.html"
   status = 200
 
 [[redirects]]

@@ -1,0 +1,40 @@
+{
+  "_comment": "Group Partnership Pack template. Copy to <group-slug>.json and link at /group-pack/<group-slug>. Group packs pitch a preferred-partner framework (endorsement + pilot at one school) rather than a single-school trip approval. The pilot cohort fields (yearGroup, cohortSize, travelDates, perStudentUSD) describe the FIRST proposed cohort; group economics (schoolCount, schoolFootprint) describe the rollout potential.",
+
+  "school": "Group Name",
+  "schoolType": "Multi-school operator · region",
+  "schoolCount": "10",
+  "schoolFootprint": "UAE · Qatar · Singapore",
+  "existingCSR": "any existing community-partnership work the group runs",
+
+  "yearGroup": "Year 11",
+  "cohortSize": 22,
+  "staffCount": 2,
+
+  "duration": "seven-night",
+  "durationNights": 7,
+  "travelMonthYear": "March 2027",
+  "travelDates": "13 – 20 Mar 2027",
+  "rolloutFromMonth": "September 2027",
+
+  "perStudentUSD": "3,000",
+  "perStudentNote": "Incl. flights · ≈ £1,950 pp",
+
+  "decisionByDate": "29 May",
+  "registrationStart": "September",
+  "amendmentsDeadline": "22 May",
+  "boardMeetingDate": "05 Jun 2026",
+  "preparedDate": "Prepared 03 May 2026",
+
+  "docId": "S2E·GROUP-SLUG·YEAR·MM",
+
+  "championRole": "Director of Education",
+  "championName": "—",
+  "championEmail": "—",
+  "championDate": "—",
+
+  "principalRole": "Regional Managing Director",
+  "principalName": "—",
+
+  "boardChair": "Senior Leadership"
+}
