@@ -95,19 +95,6 @@ function EnquiryForm(){
           <p style={{fontSize:15, lineHeight:1.6, color:"var(--ink-2)", marginTop:18, maxWidth:380}}>
             Prefer to put it in writing? Fill this in. Every enquiry is read by Matthew personally — no shared inbox, no auto-responder.
           </p>
-          <div style={{marginTop:36, paddingTop:24, borderTop:"1px solid var(--line)", display:"flex", flexDirection:"column", gap:20}}>
-            {[
-              ["Response time","One working day"],
-              ["Who replies","Matthew Benjamin (Founder)"],
-              ["Data retention","12 months unless you opt in"],
-              ["Privacy","Full policy linked in footer"],
-            ].map(([k,v])=>(
-              <div key={k} style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:16, fontSize:13}}>
-                <div style={{color:"var(--muted)", fontWeight:600, letterSpacing:".04em", textTransform:"uppercase", fontSize:11}}>{k}</div>
-                <div style={{color:"var(--charcoal)", fontWeight:500}}>{v}</div>
-              </div>
-            ))}
-          </div>
         </div>
 
         <form onSubmit={onSubmit} style={{background:"var(--cream)", padding:36, border:"1px solid var(--line)", borderRadius:8}}>
