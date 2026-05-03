@@ -228,19 +228,19 @@
 
   /* Itinerary day card */
   .day-card{
-    display:grid; grid-template-columns: 18mm 1fr; gap:0;
+    display:grid; grid-template-columns: 32mm 1fr; gap:0;
     background: var(--cream); border:1px solid var(--line); border-radius:4px; overflow:hidden;
-    min-height: 20mm;
+    min-height: 26mm;
   }
-  .day-card .daychip{
+  .day-card .imgslot{
     background: var(--charcoal);
-    position:relative;
-    display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden;
   }
-  .day-card .daychip .dlabel{
-    color:#fff;
-    font-family:var(--display); font-size:11pt; letter-spacing:.04em; text-transform:uppercase;
-    text-align:center; line-height:1.1;
+  .day-card .imgslot img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .day-card .imgslot .scrim{ position:absolute; inset:0; background: linear-gradient(180deg, rgba(26,26,26,0) 40%, rgba(26,26,26,.7) 100%);}
+  .day-card .imgslot .dlabel{
+    position:absolute; left:6px; bottom:5px; color:#fff;
+    font-family:var(--display); font-size:9pt; letter-spacing:.04em; text-transform:uppercase;
   }
   .day-card .body{ padding: 5mm 6mm; }
   .day-card .ttl{ font-family:var(--display); font-size:10.5pt; color:var(--charcoal); line-height:1.15; margin-bottom:3pt;}
@@ -911,7 +911,7 @@
     <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 4mm;">
 
       <div class="day-card">
-        <div class="daychip"><div class="dlabel">Day 1</div></div>
+        <div class="imgslot"><img src="photos/farm-kenyan-led.jpg" alt=""/><div class="scrim"></div><div class="dlabel">Day 1</div></div>
         <div class="body">
           <div class="ttl">Arrive Nairobi</div>
           <div class="txt">JKIA pickup → transfer to Ubuntu Kreative Village. Welcome briefing; evening talk from Elijah (Ubuntu founder) on purpose, impact & empowerment.</div>
@@ -919,7 +919,7 @@
       </div>
 
       <div class="day-card">
-        <div class="daychip"><div class="dlabel">Day 2</div></div>
+        <div class="imgslot"><img src="photos/np-sheldrick-keeper.jpg" alt=""/><div class="scrim"></div><div class="dlabel">Day 2</div></div>
         <div class="body">
           <div class="ttl">Nairobi NP · Sheldrick Trust</div>
           <div class="txt">Early ranger-led game drive. Sheldrick Wildlife Trust elephant orphanage + conservation talk. Evening: produce-driven pizza night at Ubuntu's farm.</div>
@@ -927,7 +927,7 @@
       </div>
 
       <div class="day-card">
-        <div class="daychip"><div class="dlabel">Day 3</div></div>
+        <div class="imgslot"><img src="photos/ngong-ridge-turbines.jpg" alt=""/><div class="scrim"></div><div class="dlabel">Day 3</div></div>
         <div class="body">
           <div class="ttl">Ngong Hills · Ubuntu Market</div>
           <div class="txt">Guided cultural hike in Ngong Hills; lunch at Kompass. Afternoon: Ubuntu Local Market Day — community vendors host, students buy directly from artisans.</div>
@@ -935,7 +935,7 @@
       </div>
 
       <div class="day-card">
-        <div class="daychip"><div class="dlabel">Day 4</div></div>
+        <div class="imgslot"><img src="photos/ffe-kitchen-tour.jpg" alt=""/><div class="scrim"></div><div class="dlabel">Day 4</div></div>
         <div class="body">
           <div class="ttl">Food For Education · ACT</div>
           <div class="txt">Drive to Ruiru. Food For Education kitchen + warehouse tour: school meals at scale. Afternoon: weaving + upcycling with Africa Collects Textiles artisans.</div>
@@ -943,7 +943,7 @@
       </div>
 
       <div class="day-card">
-        <div class="daychip"><div class="dlabel">Day 5</div></div>
+        <div class="imgslot"><img src="photos/farm-prep-rake.jpg" alt=""/><div class="scrim"></div><div class="dlabel">Day 5</div></div>
         <div class="body">
           <div class="ttl">Farmland conversion · 1/3</div>
           <div class="txt">First full day on Oloosirkon Primary School plot. Groundwork, soil prep in AM. Raised-bed formation + irrigation prep PM. Evening: Paint & Dine at Ubuntu.</div>
@@ -951,7 +951,7 @@
       </div>
 
       <div class="day-card">
-        <div class="daychip"><div class="dlabel">Day 6</div></div>
+        <div class="imgslot"><img src="photos/farm-planting-close.jpg" alt=""/><div class="scrim"></div><div class="dlabel">Day 6</div></div>
         <div class="body">
           <div class="ttl">Farmland conversion · 2/3</div>
           <div class="txt">Seed planting, shade-structure assembly, irrigation commissioning, pest-barrier install. Lunch on-site with school community. Evening Maasai activities.</div>
@@ -959,7 +959,7 @@
       </div>
 
       <div class="day-card">
-        <div class="daychip"><div class="dlabel">Day 7</div></div>
+        <div class="imgslot"><img src="photos/farm-watering.jpg" alt=""/><div class="scrim"></div><div class="dlabel">Day 7</div></div>
         <div class="body">
           <div class="ttl">Conversion 3/3 + closing</div>
           <div class="txt">Compost layering, watering-system testing, signage install. Closing ceremony with community. Farewell dinner + bonfire reflection at Ubuntu.</div>
@@ -967,7 +967,7 @@
       </div>
 
       <div class="day-card">
-        <div class="daychip"><div class="dlabel">Day 8</div></div>
+        <div class="imgslot"><img src="photos/farm-group-wide.jpg" alt=""/><div class="scrim"></div><div class="dlabel">Day 8</div></div>
         <div class="body">
           <div class="ttl">Depart</div>
           <div class="txt">Breakfast, packing, final reflections. Transfer to JKIA. Structured debrief on the drive — inputs fed into IB CAS reflection template.</div>
