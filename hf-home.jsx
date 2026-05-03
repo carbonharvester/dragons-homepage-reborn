@@ -266,7 +266,7 @@ function SocialProof() {
           <div style={{maxWidth:620}}>
             <div className="eyebrow" style={{marginBottom:12}}>Schools whose Kenya trips we've designed</div>
             <h2 className="display" style={{fontSize:"clamp(24px,2.4vw,36px)", lineHeight:1.15, margin:0}}>
-              <span className="tnum" style={{color:"var(--orange)"}}>{schools.length}</span> schools across <span className="tnum">{countries}</span> countries — through Mountain Quests 2022–2024, direct since 2025.
+              <span className="tnum" style={{color:"var(--orange)"}}>{schools.length}</span> schools across <span className="tnum">{countries}</span> countries — since 2022.
             </h2>
           </div>
           <div style={{fontSize:11, letterSpacing:".14em", textTransform:"uppercase", color:"var(--muted)", fontWeight:700}}>● Across MENA · Trips designed by Kapes</div>
