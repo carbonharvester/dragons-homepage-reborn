@@ -464,7 +464,7 @@ function MobilePrincipalQuote() {
           </p>
 
           <div style={{marginTop:20, paddingTop:14, borderTop:"1px dashed var(--line)", fontSize:11.5, color:"var(--muted)", lineHeight:1.55}}>
-            The Arbor School is a Kapes Uniforms partner — Brett's groups visited the Kenyan school where Arbor's donated uniforms are in use, alongside the conservation programme. Two consecutive cohorts ran the trip in 2023 and 2024.
+            The Arbor School was a Kapes Uniforms partner from 2022 to 2025. Brett, then principal, visited Kenya in 2022 to see the school where Arbor's donated uniforms were in use, then brought two cohorts on Community Conservation trips in 2023 and 2024.
           </div>
         </div>
       </div>
