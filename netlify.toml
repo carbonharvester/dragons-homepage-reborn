@@ -25,6 +25,13 @@
   to   = "/Scorecard%20Report.html"
   status = 200
 
+# Customised Board Pack — clean URL form: /board-pack/<school-slug>
+# (rewrites to ?s=<slug> so the customisation script picks it up)
+[[redirects]]
+  from = "/board-pack/:slug"
+  to   = "/Board%20Pack.html?s=:slug"
+  status = 200
+
 [[redirects]]
   from = "/board-pack"
   to   = "/Board%20Pack.html"

@@ -249,16 +249,15 @@ function BoardPackCTA(){
         <div>
           <div className="eyebrow" style={{color:"var(--orange)"}}>For your SLT</div>
           <h2 className="display" style={{color:"#fff", marginTop:14, fontSize:"clamp(28px,3vw,42px)", lineHeight:1.1}}>
-            The 16-page <span className="accent">Board Pack.</span><br/>Print-ready. A4. Bring it to the meeting.
+            The 16-page <span className="accent">Board Pack.</span><br/>Customised for your school. Print-ready.
           </h2>
           <p style={{fontSize:15, lineHeight:1.65, color:"rgba(255,255,255,.78)", marginTop:20, maxWidth:600}}>
-            Editorial cover, decision ask, executive summary, day-by-day itinerary, curriculum alignment, safeguarding posture, risk register, transparent pricing, anticipated Q&A, and a comparison table. The document your champion teacher walks into the meeting with.
+            Editorial cover, decision ask, executive summary, day-by-day itinerary, curriculum alignment, safeguarding posture, risk register, transparent pricing, anticipated Q&A, and a comparison table — tailored to your cohort size, year group, and dates. The document your champion teacher walks into the meeting with.
           </p>
           <div style={{display:"flex", gap:12, marginTop:28, flexWrap:"wrap"}}>
-            <a href="Board Pack.html" target="_blank" rel="noopener" className="btn-pill btn-action" style={{padding:"14px 24px", textDecoration:"none"}}>Open the Board Pack →</a>
-            <a href="Board Pack.html" target="_blank" rel="noopener" className="btn-pill" style={{padding:"14px 24px", background:"transparent", color:"#fff", border:"1.5px solid rgba(255,255,255,.5)", textDecoration:"none"}}>Print / Save as PDF</a>
+            <a href="/board-pack" target="_blank" rel="noopener" className="btn-pill btn-action" style={{padding:"14px 24px", textDecoration:"none"}}>Request your school's pack →</a>
           </div>
-          <div style={{marginTop:22, fontSize:11, letterSpacing:".14em", textTransform:"uppercase", color:"rgba(255,255,255,.45)", fontWeight:600}}>16 pages · A4 · Seeds2Education · Rev. 2026.04</div>
+          <div style={{marginTop:22, fontSize:11, letterSpacing:".14em", textTransform:"uppercase", color:"rgba(255,255,255,.45)", fontWeight:600}}>16 pages · A4 · Customised per school · Sent within 48 hours</div>
         </div>
         <div style={{position:"relative", aspectRatio:"210/297", maxHeight:380, justifySelf:"end"}}>
           <div style={{position:"absolute", inset:0, background:"#fff", borderRadius:4, boxShadow:"0 24px 48px rgba(0,0,0,.6), 0 4px 14px rgba(0,0,0,.4)", overflow:"hidden", display:"flex", flexDirection:"column"}}>

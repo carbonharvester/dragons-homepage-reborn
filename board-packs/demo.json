@@ -1,0 +1,28 @@
+{
+  "school": "Oakridge International School",
+  "schoolType": "British curriculum · IGCSE · Sixth Form",
+
+  "yearGroup": "Year 11",
+  "cohortSize": 22,
+  "staffCount": 2,
+
+  "duration": "seven-night",
+  "durationNights": 7,
+  "travelMonthYear": "March 2027",
+  "travelDates": "12 – 19 Mar 2027",
+
+  "perStudentUSD": "3,000",
+  "perStudentNote": "Incl. flights · ≈ £1,950 pp",
+
+  "decisionByDate": "12 May",
+  "registrationStart": "September",
+  "amendmentsDeadline": "05 May",
+  "boardMeetingDate": "08 May 2026",
+  "preparedDate": "Prepared 03 May 2026",
+
+  "docId": "S2E·OAKRIDGE·2027·03",
+
+  "championRole": "Head of Service Learning",
+  "championName": "Sarah Mitchell",
+  "championEmail": "smitchell@oakridge.edu"
+}

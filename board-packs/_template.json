@@ -1,0 +1,37 @@
+{
+  "_comment": "Copy this file to <school-slug>.json (lowercase, hyphens) and link the customised pack at /board-pack?s=<school-slug>. Any field omitted falls back to the template default in Board Pack.html — try to fill all of them.",
+
+  "school": "Oakridge International School",
+  "schoolType": "British curriculum · IGCSE · Sixth Form",
+  "schoolLogo": "/board-packs/logos/oakridge.png",
+
+  "yearGroup": "Year 11",
+  "cohortSize": 22,
+  "staffCount": 2,
+
+  "duration": "seven-night",
+  "durationNights": 7,
+  "travelMonthYear": "March 2027",
+  "travelDates": "12 – 19 Mar 2027",
+
+  "perStudentUSD": "3,000",
+  "perStudentNote": "Incl. flights · ≈ £1,950 pp",
+
+  "decisionByDate": "12 May",
+  "registrationStart": "September",
+  "amendmentsDeadline": "05 May",
+  "boardMeetingDate": "08 May 2026",
+  "preparedDate": "Prepared 03 May 2026",
+
+  "docId": "S2E·OAKRIDGE·2027·03",
+
+  "championRole": "Head of Service Learning",
+  "championName": "Sarah Mitchell",
+  "championEmail": "smitchell@oakridge.edu",
+  "championDate": "—",
+
+  "principalRole": "Head of School",
+  "principalName": "Dr. James Patel",
+
+  "boardChair": "Chair: —"
+}

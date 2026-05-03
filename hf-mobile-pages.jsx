@@ -1727,13 +1727,12 @@ function MobileBoardPackCTA() {
         The 16-page <span className="accent">Board Pack.</span>
       </h2>
       <p style={{fontSize:14, lineHeight:1.65, color:"rgba(255,255,255,.78)", marginBottom:20}}>
-        Editorial cover, decision ask, executive summary, day-by-day itinerary, curriculum alignment, safeguarding, risk register, transparent pricing. The document your champion teacher walks into the meeting with.
+        Editorial cover, decision ask, executive summary, day-by-day itinerary, curriculum alignment, safeguarding, risk register, transparent pricing — tailored to your cohort size, year group and dates.
       </p>
       <div style={{display:"flex", flexDirection:"column", gap:10}}>
-        <a href="Board Pack.html" target="_blank" rel="noopener" className="btn-pill btn-action" style={{padding:"14px 22px", textDecoration:"none", textAlign:"center"}}>Open Board Pack →</a>
-        <a href="Board Pack.html" target="_blank" rel="noopener" className="btn-pill" style={{padding:"14px 22px", background:"transparent", color:"#fff", border:"1.5px solid rgba(255,255,255,.5)", textDecoration:"none", textAlign:"center"}}>Print / Save as PDF</a>
+        <a href="/board-pack" target="_blank" rel="noopener" className="btn-pill btn-action" style={{padding:"14px 22px", textDecoration:"none", textAlign:"center"}}>Request your school's pack →</a>
       </div>
-      <div style={{marginTop:18, fontSize:10, letterSpacing:".14em", textTransform:"uppercase", color:"rgba(255,255,255,.45)", fontWeight:600}}>16 pages · A4 · Seeds2Education · Rev. 2026.04</div>
+      <div style={{marginTop:18, fontSize:10, letterSpacing:".14em", textTransform:"uppercase", color:"rgba(255,255,255,.45)", fontWeight:600}}>16 pages · A4 · Customised per school · Sent within 48h</div>
     </section>
   );
 }
