@@ -1324,15 +1324,26 @@ function MobileTimeline() {
       <h2 className="display" style={{marginTop:12, fontSize:28, lineHeight:1.05, marginBottom:28}}>
         Six years. One <span className="accent">through-line.</span>
       </h2>
-      <div style={{borderLeft:"2px solid var(--charcoal)", paddingLeft:18}}>
-        {events.map((e,i)=>(
-          <div key={e.y} style={{paddingBottom:24, position:"relative"}}>
-            <div style={{position:"absolute", left:-25, top:4, width:10, height:10, borderRadius:50, background: i===events.length-1?"var(--orange)":"var(--charcoal)"}}/>
-            <div style={{fontFamily:"var(--display)", fontSize:20, color:"var(--charcoal)", lineHeight:1, marginBottom:6}}>{e.y}</div>
-            <div style={{fontSize:14, fontWeight:700, color:"var(--charcoal)", lineHeight:1.25, marginBottom:8}}>{e.t}</div>
-            <div style={{fontSize:13, lineHeight:1.55, color:"var(--ink-2)"}}>{e.d}</div>
-          </div>
-        ))}
+      <div>
+        {events.map((e,i)=>{
+          const isLast = i === events.length - 1;
+          const dotColor = isLast ? "var(--orange)" : "var(--charcoal)";
+          return (
+            <div key={e.y} style={{display:"grid", gridTemplateColumns:"22px 1fr", columnGap:16, paddingBottom: isLast ? 0 : 28}}>
+              {/* Dot + connecting line */}
+              <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+                <div style={{width:12, height:12, borderRadius:"50%", background:dotColor, marginTop:6, flexShrink:0}}/>
+                {!isLast && <div style={{flex:1, width:2, background:"var(--charcoal)", opacity:.18, marginTop:4}}/>}
+              </div>
+              {/* Content */}
+              <div>
+                <div style={{fontFamily:"var(--display)", fontSize:22, color:"var(--charcoal)", lineHeight:1, marginBottom:6, letterSpacing:".01em"}}>{e.y}</div>
+                <div style={{fontSize:14, fontWeight:700, color:"var(--charcoal)", lineHeight:1.25, marginBottom:8}}>{e.t}</div>
+                <div style={{fontSize:13, lineHeight:1.55, color:"var(--ink-2)"}}>{e.d}</div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
