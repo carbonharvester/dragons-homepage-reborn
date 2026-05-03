@@ -351,7 +351,7 @@ function MobileSocialProof() {
     <section style={{padding:"40px 0", background:"var(--cream)", borderTop:"1px solid var(--line)", borderBottom:"1px solid var(--line)", overflow:"hidden"}}>
       <style>{`
         @keyframes kapes-logo-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .kapes-logo-marquee { animation: kapes-logo-marquee 30s linear infinite; will-change: transform; }
+        .kapes-logo-marquee { animation: kapes-logo-marquee 14s linear infinite; will-change: transform; }
         .kapes-logo-fade-l, .kapes-logo-fade-r { position:absolute; top:0; bottom:0; width:32px; pointer-events:none; z-index:2; }
         .kapes-logo-fade-l { left:0; background: linear-gradient(to right, var(--cream), transparent); }
         .kapes-logo-fade-r { right:0; background: linear-gradient(to left, var(--cream), transparent); }
@@ -365,7 +365,7 @@ function MobileSocialProof() {
         <div className="kapes-logo-marquee" style={{display:"flex", gap:42, width:"max-content", alignItems:"center", padding:"4px 0"}}>
           {marqueeSet.map((s, i) => (
             <img key={i} src={s.logo} alt={s.name} aria-hidden={i >= schools.length}
-              style={{height:46, width:"auto", objectFit:"contain", flexShrink:0, filter:"grayscale(1)", opacity:.7}}/>
+              style={{height:50, width:"auto", objectFit:"contain", flexShrink:0}}/>
           ))}
         </div>
       </div>
