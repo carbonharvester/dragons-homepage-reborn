@@ -880,7 +880,7 @@ function MobileProgramsList() {
     {slug:"cc", code:"CC·03", color:"#3B82F6", img:IMG.ccFactory,
       audience:"Mixed · Wildlife + conservation", duration:"7 nights",
       title:"Community Conservation",
-      desc:"Based at a Kenyan wildlife conservancy where conservation, community livelihoods, and ethical manufacturing intersect. First trip ran 2022 with Arbor School.",
+      desc:"Based at a Kenyan wildlife conservancy where conservation, community livelihoods, and ethical manufacturing intersect. First trip ran 2022 with Arbor School and sponsored 15 local Kenyan children's school places.",
       cost:"USD 2,600 / student", cohort:"Up to 30 students"},
   ];
   return (

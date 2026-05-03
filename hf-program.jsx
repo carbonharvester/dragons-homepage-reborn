@@ -788,7 +788,7 @@ const SLIM_PROGRAMMES = {
     breadcrumb: "Community Conservation",
     headlineTop: "Community",
     headlineAccent: "Conservation.",
-    sub: "Based at a Kenyan wildlife conservancy where conservation, community livelihoods, and ethical garment manufacturing intersect on a single site. Our longest-running programme — first trip with Arbor School in 2022, then six more in partnership with Mountain Quests (UAE) before we began delivering directly in 2025.",
+    sub: "Based at a Kenyan wildlife conservancy where conservation, community livelihoods, and ethical garment manufacturing intersect on a single site. Our longest-running programme — the first Kapes Adventures trip ran with Arbor School in 2022 and sponsored 15 local Kenyan children's school places. Six more followed in partnership with Mountain Quests (UAE) before we began delivering directly in 2025.",
     sister: "Seeds2Education · Water Empowering Women",
     img: IMG.ccFactory,
     imgAlt: "Community Conservation — students hands-on inside the carbon-neutral garment factory tour",
@@ -811,7 +811,7 @@ const SLIM_PROGRAMMES = {
       tag: "The intersection",
       tagColor: "#1D3557",
       pBody: "The Kenyan conservancy that hosts Community Conservation is also where Kapes Uniforms are manufactured — the world's first carbon-neutral garment factory sits inside a working wildlife conservation operation, surrounded by community-run enterprises. The trip exposes students to all three on a single site.",
-      stats: [["2022","first trip ran with Arbor School"], ["1","conservancy partner"]],
+      stats: [["2022","first trip ran with Arbor School"], ["15","local children sponsored on that trip"], ["1","conservancy partner"]],
       answer: {
         eyebrow: "Community Conservation · our answer",
         title: "See the wildlife. See the factory. See how they share a fence.",
@@ -826,7 +826,7 @@ const SLIM_PROGRAMMES = {
       },
     },
     stats: [
-      ["2022", "first trip", "First Kapes Adventures trip — Arbor School", "Longest-running"],
+      ["2022", "first trip", "First Kapes Adventures trip — Arbor School · sponsored 15 local children", "Longest-running"],
       ["50%", "to education", "Of conservancy REDD+ profits go to school bursaries + facilities", "REDD+ project"],
       ["1", "factory", "Carbon-neutral garment factory on-site", "Kapes Uniforms manufacturing"],
       ["3", "lenses", "Wildlife · community · ethical manufacturing", "On a single site"],

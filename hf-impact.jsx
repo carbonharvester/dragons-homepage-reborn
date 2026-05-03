@@ -127,7 +127,7 @@ function ProgrammeBreakdown(){
       bullets:[
         "Programme based at a Kenyan wildlife conservancy that hosts the Kapes Uniforms factory",
         "Connects ethical garment manufacturing, conservation, and community livelihoods on a single site",
-        "First trip ran in 2022 with Arbor School — our longest-running programme",
+        "First trip ran in 2022 with Arbor School — sponsored 15 local Kenyan children's school places · our longest-running programme",
         "Different by design: experiential rather than impact-creating. We don't claim local-impact metrics here.",
       ],
       partners:"Kenyan conservancy partner",
