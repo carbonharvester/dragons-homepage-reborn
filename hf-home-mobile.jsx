@@ -400,6 +400,78 @@ function MobileWatchVideo() {
   );
 }
 
+/* ─── Mobile: Principal video quote (Brett Girvin) ───────────── */
+function MobilePrincipalQuote() {
+  const v = (typeof window !== "undefined" && window.VIDEO) || {};
+  const [playing, setPlaying] = React.useState(false);
+  const videoRef = React.useRef(null);
+  if (!v.brett) return null;
+  const start = () => {
+    setPlaying(true);
+    requestAnimationFrame(()=> { if (videoRef.current) videoRef.current.play().catch(()=>{}); });
+  };
+  return (
+    <section style={{padding:"56px 22px", background:"var(--sand)", borderTop:"1px solid var(--line)"}}>
+      <div style={{display:"flex", justifyContent:"space-between", alignItems:"baseline", marginBottom:16}}>
+        <div className="eyebrow">From a head of school</div>
+        <div style={{fontSize:10, letterSpacing:".14em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700}}>● Watch · 2 min</div>
+      </div>
+      <h2 className="display" style={{fontSize:28, lineHeight:1.1, marginBottom:18}}>
+        The full circle,<br/>in his own words.
+      </h2>
+
+      <div style={{background:"var(--cream)", border:"1px solid var(--line)", borderTop:"3px solid var(--orange)", overflow:"hidden", marginTop:8}}>
+        {/* Video block */}
+        <div style={{position:"relative", aspectRatio:"16/9", background:"#000", cursor: playing ? "default" : "pointer"}} onClick={!playing ? start : undefined}>
+          {playing ? (
+            <video
+              ref={videoRef}
+              src={v.brett}
+              poster={v.brettPoster}
+              controls
+              preload="metadata"
+              playsInline
+              style={{width:"100%", height:"100%", objectFit:"cover", display:"block"}}
+            />
+          ) : (
+            <>
+              <img src={v.brettPoster} alt="Brett Girvin on a Kapes Adventures trip — Tsavo lookout" style={{position:"absolute", inset:0, width:"100%", height:"100%", objectFit:"cover", display:"block"}}/>
+              <div style={{position:"absolute", inset:0, background:"linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.5) 100%)"}}/>
+              <button aria-label="Play Brett Girvin video" style={{position:"absolute", left:"50%", top:"50%", transform:"translate(-50%,-50%)", width:64, height:64, borderRadius:"50%", background:"var(--orange)", border:"none", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center", boxShadow:"0 10px 28px rgba(0,0,0,.4)"}}>
+                <svg width="22" height="24" viewBox="0 0 28 32" fill="none" style={{marginLeft:3}}>
+                  <path d="M2 2L26 16L2 30V2Z" fill="#fff"/>
+                </svg>
+              </button>
+              <div style={{position:"absolute", top:12, left:12, display:"flex", gap:6, alignItems:"center"}}>
+                <span style={{display:"inline-block", width:6, height:6, borderRadius:"50%", background:"var(--orange)"}}/>
+                <span style={{fontSize:9.5, letterSpacing:".14em", textTransform:"uppercase", fontWeight:700, color:"#fff", textShadow:"0 1px 4px rgba(0,0,0,.6)"}}>Brett Girvin · CC</span>
+              </div>
+            </>
+          )}
+        </div>
+
+        {/* Attribution + quote */}
+        <div style={{padding:"22px 22px 26px"}}>
+          <div className="display" style={{fontSize:20, lineHeight:1.15, marginBottom:4}}>Brett Girvin</div>
+          <div style={{fontSize:12.5, color:"var(--ink-2)", lineHeight:1.5}}>Ex-principal · The Arbor School, Dubai</div>
+          <div style={{fontSize:10, letterSpacing:".12em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700, marginTop:10}}>Community Conservation · 2023 + 2024</div>
+
+          <div style={{fontFamily:"var(--display)", fontSize:21, lineHeight:1.25, color:"var(--charcoal)", borderLeft:"3px solid var(--orange)", paddingLeft:16, margin:"22px 0 18px"}}>
+            "Mind-blowing to see those children in their uniforms — in school, happy, confident, ready to learn."
+          </div>
+          <p style={{fontFamily:"var(--serif)", fontStyle:"italic", fontSize:13.5, lineHeight:1.7, color:"var(--ink-2)", margin:0}}>
+            "We're here in Kenya with our partners from Kapes, who produce the sustainable uniforms for The Arbor School. For every student we dress, a child in need somewhere else receives a free uniform. Experiential learning brings to life what we can only do in theory in the classroom. It will change them as much as it's changed me on this short trip."
+          </p>
+
+          <div style={{marginTop:20, paddingTop:14, borderTop:"1px dashed var(--line)", fontSize:11.5, color:"var(--muted)", lineHeight:1.55}}>
+            The Arbor School is a Kapes Uniforms partner — Brett's groups visited the Kenyan school where Arbor's donated uniforms are in use, alongside the conservation programme. Two consecutive cohorts ran the trip in 2023 and 2024.
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Mobile: Featured-in media reel (radio, press, podcast) ──── */
 function MobileMediaReel() {
   const [playing, setPlaying] = React.useState(null);
@@ -485,6 +557,7 @@ function MobileHomePage() {
       <MobileManifestoList/>
       <MobileProgrammes/>
       <MobileVsVoluntourism/>
+      <MobilePrincipalQuote/>
       <MobilePullQuote/>
       <MobileMediaReel/>
       <MobileCTA/>
