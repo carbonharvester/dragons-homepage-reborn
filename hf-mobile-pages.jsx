@@ -1530,15 +1530,31 @@ function MobileEnquiryForm() {
   const [stage, setStage] = React.useState("Exploring");
   const [msg, setMsg] = React.useState("");
   const [news, setNews] = React.useState(false);
+  const [status, setStatus] = React.useState("idle");
+  const [errorMsg, setErrorMsg] = React.useState("");
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const subject = `Kapes Adventures enquiry — ${school || name || "school"}`;
-    const body = [
-      `Name: ${name}`, `Role: ${role}`, `School: ${school}`, `Email: ${email}`, `Stage: ${stage}`,
-      news ? "Field-letter opt-in: yes" : "", "", "Message:", msg,
-    ].filter(Boolean).join("\n");
-    window.location.href = `mailto:hello@kapesadventures.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (!name || !email) {
+      setErrorMsg("Please fill in your name and email.");
+      setStatus("error");
+      return;
+    }
+    setStatus("sending");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/.netlify/functions/contact-enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, role, school, email, stage, message: msg, newsletter: news }),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || !out.ok) throw new Error(out.error || "Send failed");
+      setStatus("sent");
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg("Something went wrong sending your enquiry. Please try again or email matthew@kapesadventures.com directly.");
+    }
   };
 
   const stages = ["Exploring","Year group identified","Budget in hand","Trip in pipeline","Reviewing existing provider"];
@@ -1586,8 +1602,20 @@ function MobileEnquiryForm() {
           <input type="checkbox" id="news-mobile" checked={news} onChange={e=>setNews(e.target.checked)} style={{marginTop:3}}/>
           <label htmlFor="news-mobile" style={{lineHeight:1.4}}>Send the quarterly field letter (4× a year)</label>
         </div>
-        <button type="submit" className="btn-pill btn-action" style={{marginTop:18, padding:"14px 22px", width:"100%"}}>Send to Matthew →</button>
-        <div style={{marginTop:10, fontSize:11, color:"var(--muted)", lineHeight:1.4}}>Opens your mail client with everything filled in — review before sending.</div>
+        {status === "sent" ? (
+          <div style={{marginTop:18, padding:"16px 18px", background:"var(--charcoal)", color:"#fff", borderRadius:6}}>
+            <div style={{fontSize:10, letterSpacing:".14em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700, marginBottom:6}}>● Sent</div>
+            <div style={{fontSize:13.5, lineHeight:1.55}}>Thanks {name.split(" ")[0]}. I'll come back to you within one working day. Check your inbox for a confirmation receipt.</div>
+          </div>
+        ) : (
+          <>
+            <button type="submit" disabled={status==="sending"} className="btn-pill btn-action" style={{marginTop:18, padding:"14px 22px", width:"100%", opacity: status==="sending"?0.6:1, cursor: status==="sending"?"wait":"pointer"}}>
+              {status === "sending" ? "Sending…" : "Send to Matthew →"}
+            </button>
+            {errorMsg && <div style={{marginTop:12, padding:"10px 14px", background:"#FBE9E7", border:"1px solid #C44A3C", color:"#7A2B22", borderRadius:6, fontSize:13, lineHeight:1.5}}>{errorMsg}</div>}
+            <div style={{marginTop:10, fontSize:11, color:"var(--muted)", lineHeight:1.4}}>Read by Matthew personally — typical reply within one working day.</div>
+          </>
+        )}
       </form>
     </section>
   );
