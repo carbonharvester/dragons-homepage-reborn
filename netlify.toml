@@ -14,8 +14,9 @@
 # Send the bare-domain root to the Hi-Fi shell
 # (Browsers will see clean URLs; Netlify rewrites preserve the URL bar.)
 
+# Standalone print-ready documents (live at clean URLs)
 [[redirects]]
-  from = "/scorecard"
+  from = "/scorecard-report"
   to   = "/Scorecard%20Report.html"
   status = 200
 
@@ -37,6 +38,14 @@
 [[redirects]]
   from = "/supplier-code"
   to   = "/Supplier%20Code.html"
+  status = 200
+
+# SPA catchall — any other path (e.g. /about, /our-approach, /programs/seeds2education)
+# serves index.html so the React app can render the right page.
+# Static files (.html, .js, .jsx, /photos/*, etc.) are served directly and are NOT rewritten.
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
   status = 200
 
 # HTML — never cache aggressively; users should always get the latest deploy

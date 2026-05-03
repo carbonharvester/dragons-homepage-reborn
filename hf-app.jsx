@@ -22,6 +22,19 @@ const PROGRAM_URLS = {
   wew: "/programs/water-empowering-women",
   cc:  "/programs/community-conservation",
 };
+
+// Reverse-lookup: pathname → {tab, programme}
+function tabFromPath(pathname){
+  const path = (pathname || "/").replace(/\/+$/,"") || "/";
+  for (const [slug, p] of Object.entries(PROGRAM_URLS)) {
+    if (path === p) return { tab: "program", programme: slug };
+  }
+  for (const [tab, p] of Object.entries(URLS)) {
+    if (tab === "program") continue;
+    if (path === (p === "/" ? "/" : p.replace(/\/+$/,""))) return { tab, programme: null };
+  }
+  return { tab: "home", programme: null };
+}
 const LABELS = {
   home:"01 Home", approach:"02 Our Approach", programs:"03 Programs",
   impact:"04 Impact", stories:"05 Stories", about:"06 About", contact:"07 Contact",
@@ -29,8 +42,15 @@ const LABELS = {
 };
 
 function App(){
-  const [tab, setTab] = useState(()=> read("khifi.tab","home"));
-  const [programme, setProgramme] = useState(()=> (typeof window !== "undefined" && window.kapesProgramme) || "s2e");
+  // In production (no ?prototype=1), seed state from the URL.
+  // In prototype mode, fall back to the previous tab in localStorage.
+  const isPrototype = typeof window !== "undefined" && new URLSearchParams(window.location.search).has("prototype");
+  const initial = (typeof window !== "undefined" && !isPrototype)
+    ? tabFromPath(window.location.pathname)
+    : { tab: read("khifi.tab","home"), programme: null };
+
+  const [tab, setTab] = useState(initial.tab);
+  const [programme, setProgramme] = useState(initial.programme || (typeof window !== "undefined" && window.kapesProgramme) || "s2e");
   const [navEpoch, setNavEpoch] = useState(0);
   const [tweaks, setTweaks] = useState(()=> read("khifi.tweaks",{
     accent:"orange", density:"normal", hero:"manifesto"
@@ -38,6 +58,30 @@ function App(){
 
   useEffect(()=> write("khifi.tab",tab), [tab]);
   useEffect(()=> write("khifi.tweaks",tweaks), [tweaks]);
+
+  // Sync browser URL <-> tab/programme state (production only).
+  useEffect(()=>{
+    if (isPrototype || typeof window === "undefined") return;
+    const target = tab === "program" ? PROGRAM_URLS[programme] : URLS[tab];
+    if (!target) return;
+    if (window.location.pathname !== target) {
+      window.history.pushState({tab, programme}, "", target);
+    }
+  }, [tab, programme, isPrototype]);
+
+  // Browser back/forward → update tab/programme.
+  useEffect(()=>{
+    if (isPrototype || typeof window === "undefined") return;
+    const onPop = () => {
+      const next = tabFromPath(window.location.pathname);
+      setTab(next.tab);
+      if (next.programme) setProgramme(next.programme);
+      setNavEpoch(n => n + 1);
+      window.scrollTo({top:0, behavior:"auto"});
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, [isPrototype]);
 
   // Listen for in-page nav clicks (SiteNav / Footer / programme cards)
   useEffect(()=>{
@@ -69,7 +113,8 @@ function App(){
       b.onclick = () => { setTab(b.dataset.tab); window.scrollTo({top:0, behavior:"auto"}); };
     });
     const urlPath = tab === "program" ? PROGRAM_URLS[programme] : URLS[tab];
-    document.getElementById("urlbar").textContent = "kapesadventures.com"+urlPath;
+    const urlbar = document.getElementById("urlbar");
+    if (urlbar) urlbar.textContent = "kapesadventures.com"+urlPath;
   }, [tab, programme]);
 
   const PAGES = {

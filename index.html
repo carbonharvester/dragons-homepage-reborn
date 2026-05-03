@@ -12,12 +12,12 @@
   /* Real Kapes fonts from the live site */
   @font-face {
     font-family: 'AcademySansExpanded-Black';
-    src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySans-Regular_978467eb-a51c-4846-87f5-dc00c17c1e10.woff?v=9346173801') format('woff');
+    src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySans-Regular_978467eb-a51c-4846-87f5-dc00c17c1e10.woff?v=9446173801') format('woff');
     font-weight: 900; font-style: normal; font-display: swap;
   }
   @font-face {
     font-family: 'AcademySansExpanded-Bold';
-    src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySansExpanded-Bold_ed3d0942-5858-4fad-8886-e581bbbada6a.woff?v=9346173800') format('woff');
+    src: url('https://cdn.shopify.com/s/files/1/0777/3326/5724/files/AcademySansExpanded-Bold_ed3d0942-5858-4fad-8886-e581bbbada6a.woff?v=9446173800') format('woff');
     font-weight: 700; font-style: normal; font-display: swap;
   }
   @font-face {
@@ -46,7 +46,19 @@
   html,body{margin:0;padding:0;background:#222;color:var(--charcoal);font-family:var(--body);}
   body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
 
-  /* ─── Top chrome ─────────────────────────────────────────────── */
+  /* ─── Top chrome (prototype only — hidden in production) ────── */
+  body:not(.prototype) .chrome,
+  body:not(.prototype) .vp-bar,
+  body:not(.prototype) .tweaks-btn,
+  body:not(.prototype) .tweaks-panel { display:none !important; }
+  body:not(.prototype) .stage{ padding:0 !important; background:var(--cream) !important; }
+  body:not(.prototype) .viewport{
+    max-width:none !important; margin:0 !important;
+    background:var(--cream) !important; border-radius:0 !important;
+    overflow:visible !important; box-shadow:none !important;
+  }
+  body:not(.prototype){ background:var(--cream) !important; }
+
   .chrome{
     position:sticky; top:0; z-index:60;
     background:#0F0F0F; color:#fff;
@@ -334,6 +346,13 @@
 </head>
 <body>
 
+<script>
+  // Show prototype chrome only when ?prototype=1 is present in URL.
+  if (new URLSearchParams(location.search).has("prototype")) {
+    document.body.classList.add("prototype");
+  }
+</script>
+
 <div class="chrome">
   <div class="brand" style="display:flex; align-items:center; gap:10px;">
     <img src="kapes-logo.png" alt="Kapes Adventures" style="height:24px; width:auto; display:block; filter:brightness(0) invert(1);"/>
@@ -376,20 +395,20 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked@13.0.2/marked.min.js"></script>
-<script src="blog-data.js?v=93"></script>
+<script src="blog-data.js?v=94"></script>
 
-<script type="text/babel" data-presets="env,react" src="hf-shared.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-home.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-program.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-lp.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-approach.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-programs.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-impact.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-about.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-stories.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-contact.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-schools.jsx?v=93"></script>
-<script type="text/babel" data-presets="env,react" src="hf-app.jsx?v=93"></script>
+<script type="text/babel" data-presets="env,react" src="hf-shared.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-home.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-program.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-lp.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-approach.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-programs.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-impact.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-about.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-stories.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-contact.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-schools.jsx?v=94"></script>
+<script type="text/babel" data-presets="env,react" src="hf-app.jsx?v=94"></script>
 
 </body>
 </html>
