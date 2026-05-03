@@ -504,7 +504,7 @@ function MobileMediaReel() {
             else if (m.url) window.open(m.url, "_blank", "noopener");
           };
           const ctaLabel = m.media ? "Listen" : m.embed ? "Watch" : "Read article";
-          const ctaIcon = (m.media || m.embed) ? "▶" : "↗";
+          const isPlay = !!(m.media || m.embed);
           return (
             <div key={i} onClick={interactive ? onClick : undefined} style={{
               padding:"20px 0", borderBottom: i===items.length-1 ? "none" : "1px solid var(--line)",
@@ -514,9 +514,17 @@ function MobileMediaReel() {
               <div className="display" style={{fontSize:20, lineHeight:1.2}}>{m.outlet}</div>
               <div style={{fontSize:13.5, color:"var(--ink-2)", lineHeight:1.55}}>{m.note}</div>
               {interactive && (
-                <div style={{display:"inline-flex", alignItems:"center", gap:8, marginTop:4, fontSize:11, letterSpacing:".14em", textTransform:"uppercase", color:"var(--charcoal)", fontWeight:700}}>
-                  <span style={{width:24, height:24, borderRadius:"50%", background:"var(--orange)", color:"#fff", display:"inline-flex", alignItems:"center", justifyContent:"center", fontSize:10}}>{ctaIcon}</span>
-                  {ctaLabel}
+                <div style={{display:"inline-flex", alignItems:"center", gap:8, marginTop:6, fontSize:11, letterSpacing:".14em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700}}>
+                  <span>{ctaLabel}</span>
+                  {isPlay ? (
+                    <svg width="10" height="12" viewBox="0 0 10 12" fill="none" style={{display:"block"}}>
+                      <path d="M1 1L9 6L1 11V1Z" fill="currentColor"/>
+                    </svg>
+                  ) : (
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{display:"block"}}>
+                      <path d="M3 9L9 3M9 3H4M9 3V8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  )}
                 </div>
               )}
             </div>
