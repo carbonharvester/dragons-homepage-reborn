@@ -1315,7 +1315,7 @@ function MobileTimeline() {
     { y:"2022", t:"First Kapes Adventures trip", d:"First trip runs with Arbor School — a Community Conservation programme at the Kenyan conservancy where Kapes uniforms are made. The trip sponsored 15 local Kenyan children's school places."},
     { y:"2022–24", t:"7 trips through Mountain Quests", d:"Seven trips run through partnership — building the model and safeguarding posture before going direct."},
     { y:"2025", t:"Direct delivery begins", d:"Three programmes live: Seeds2Education, Water Empowering Women, Community Conservation."},
-    { y:"25/26", t:"Seeds2Education pilot", d:"1.5 acres of unused land transformed into farmland. 2 water tanks installed. 1 classroom rebuilt. 40+ Kenyans employed."},
+    { y:"25/26", t:"Seeds2Education & Water Empowering Women pilots", d:"1.5 acres of unused school land transformed into farmland. 2 water tanks installed. 1 classroom rebuilt. 30+ Kenyans employed across the programmes. 40% increased enrolment at Hope School."},
     { y:"Next", t:"Where you come in", d:"International schools whose students step inside year-round work in Kenya — joining a permanent farm crew."},
   ];
   return (
