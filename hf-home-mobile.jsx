@@ -348,7 +348,8 @@ function MobileSocialProof() {
   return (
     <section style={{padding:"40px 0", background:"var(--cream)", borderTop:"1px solid var(--line)", borderBottom:"1px solid var(--line)"}}>
       <div style={{padding:"0 22px", marginBottom:18}}>
-        <div className="eyebrow">Trusted by international schools</div>
+        <div className="eyebrow">Schools whose Kenya trips we've designed</div>
+        <div style={{fontSize:11, color:"var(--muted)", marginTop:6, lineHeight:1.4}}>Through Mountain Quests 2022–2024, direct since 2025.</div>
       </div>
       <div style={{
         display:"flex", gap:0, overflowX:"auto", paddingLeft:22, paddingRight:22,
