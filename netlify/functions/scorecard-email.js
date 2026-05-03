@@ -97,17 +97,56 @@ exports.handler = async (event) => {
       subject,
       content: [{ type: "text/html", value: html }],
     };
-    try {
-      const sgRes = await fetch("https://api.sendgrid.com/v3/mail/send", {
+
+    // ─── Admin notification email — Matthew gets pinged on every submission ───
+    const adminSubject = `Scorecard submission · ${schoolDisplay} · ${pct}/100 · ${band || ""}`;
+    const adminHtml = `<!doctype html><html><body style="margin:0;padding:0;background:#FAFAF8;font-family:Inter,system-ui,sans-serif;color:#2A2A2A;">
+<div style="max-width:640px;margin:0 auto;padding:28px 24px;background:#fff;">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#888;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:10px;">● New scorecard submission</div>
+  <h1 style="font-size:20px;color:#1A1A1A;margin:0 0 4px;line-height:1.25;">${schoolDisplay} · ${pct}/100 · ${band || ""}</h1>
+  <div style="font-size:13px;color:#666;margin-bottom:20px;">${name || "(no name)"} · <a href="mailto:${email}" style="color:#FF7700;">${email}</a>${country ? " · " + country : ""}</div>
+
+  <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:20px;">
+    <tr><td style="padding:6px 0;border-bottom:1px solid #E4DFD3;width:40%;color:#888;">Score</td><td style="padding:6px 0;border-bottom:1px solid #E4DFD3;font-weight:600;font-family:'JetBrains Mono',monospace;">${pct}/100${total != null && max != null ? ` (${total}/${max})` : ""}</td></tr>
+    <tr><td style="padding:6px 0;border-bottom:1px solid #E4DFD3;color:#888;">Band</td><td style="padding:6px 0;border-bottom:1px solid #E4DFD3;font-weight:600;">${band || "—"}</td></tr>
+    <tr><td style="padding:6px 0;border-bottom:1px solid #E4DFD3;color:#888;">School</td><td style="padding:6px 0;border-bottom:1px solid #E4DFD3;font-weight:600;">${school || "—"}</td></tr>
+    <tr><td style="padding:6px 0;border-bottom:1px solid #E4DFD3;color:#888;">Country</td><td style="padding:6px 0;border-bottom:1px solid #E4DFD3;font-weight:600;">${country || "—"}</td></tr>
+  </table>
+
+  ${sectionsRows ? `<h3 style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#888;margin:18px 0 4px;font-weight:700;">Section breakdown</h3><table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:18px;">${sectionsRows}</table>` : ""}
+
+  <div style="background:#1A1A1A;color:#fff;padding:14px 18px;border-radius:6px;margin-bottom:14px;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#FF7700;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:6px;">Reply directly</div>
+    <div style="font-size:13px;line-height:1.5;">Hit Reply on this email to respond to ${name ? name.split(" ")[0] : "the submitter"}; reply-to is set to <a href="mailto:${email}" style="color:#FF7700;">${email}</a>. Full row in Supabase (<code style="background:rgba(255,255,255,.1);padding:1px 5px;border-radius:3px;">scorecard_submissions</code>).</div>
+  </div>
+</div></body></html>`;
+
+    const adminPayload = {
+      personalizations: [{ to: [{ email: fromEmail, name: fromName }] }],
+      from: { email: fromEmail, name: "Kapes Scorecard" },
+      reply_to: { email, name: name || email },
+      subject: adminSubject,
+      content: [{ type: "text/html", value: adminHtml }],
+    };
+
+    // Fire user-report email + admin-notification email in parallel
+    const [userRes, adminRes] = await Promise.all([
+      fetch("https://api.sendgrid.com/v3/mail/send", {
         method: "POST",
         headers: { "Authorization": `Bearer ${sgKey}`, "Content-Type": "application/json" },
         body: JSON.stringify(sgPayload),
-      });
-      result.sendgrid = { ok: sgRes.ok, status: sgRes.status };
-      if (!sgRes.ok) result.sendgrid.error = await sgRes.text();
-    } catch (err) {
-      result.sendgrid = { ok: false, error: String(err) };
-    }
+      }).catch(err => ({ ok: false, status: 0, _err: String(err) })),
+      fetch("https://api.sendgrid.com/v3/mail/send", {
+        method: "POST",
+        headers: { "Authorization": `Bearer ${sgKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify(adminPayload),
+      }).catch(err => ({ ok: false, status: 0, _err: String(err) })),
+    ]);
+
+    result.sendgrid = { ok: userRes.ok, status: userRes.status };
+    if (!userRes.ok) result.sendgrid.error = userRes._err || (userRes.text ? await userRes.text() : "");
+    result.adminNotification = { ok: adminRes.ok, status: adminRes.status };
+    if (!adminRes.ok) result.adminNotification.error = adminRes._err || (adminRes.text ? await adminRes.text() : "");
   } else {
     result.sendgrid = { ok: false, error: "SendGrid API key not configured" };
   }
