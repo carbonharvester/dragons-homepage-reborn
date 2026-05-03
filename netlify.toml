@@ -8,6 +8,11 @@
   publish = "."
   functions = "netlify/functions"
 
+[build.environment]
+  # SENDGRID_FROM_NAME is the founder's name ("Matthew Benjamin") — not a secret.
+  # It legitimately appears throughout the static site (Board Pack, policy docs, About page).
+  SECRETS_SCAN_OMIT_KEYS = "SENDGRID_FROM_NAME"
+
 [functions]
   node_bundler = "esbuild"
 
