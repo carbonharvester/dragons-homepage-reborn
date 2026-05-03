@@ -140,6 +140,15 @@ const IMG = {
   ccSchoolGirls:  "photos/cc-school-girls.jpg",
   ccFactory:      "photos/cc-factory.jpg",
   ccArborGroup:   "photos/cc-arbor-group.jpg",
+  // First Kapes Adventures trip (2022 · Arbor School · sponsored 15 local children)
+  ccArbor2022SponsoredKids:  "photos/arbor-2022/arbor-2022-sponsored-kids.jpg",
+  ccArbor2022KenyanLead:     "photos/arbor-2022/arbor-2022-kenyan-lead.jpg",
+  ccArbor2022Tsavo:          "photos/arbor-2022/arbor-2022-tsavo-landscape.jpg",
+  ccArbor2022Elephants:      "photos/arbor-2022/arbor-2022-elephants.jpg",
+  ccArbor2022Overlook:       "photos/arbor-2022/arbor-2022-overlook.jpg",
+  ccArbor2022Planting:       "photos/arbor-2022/arbor-2022-planting.jpg",
+  ccArbor2022Saplings:       "photos/arbor-2022/arbor-2022-saplings.jpg",
+  ccArbor2022BuildSite:      "photos/arbor-2022/arbor-2022-build-site.jpg",
   // Kapes Uniforms — Togo free-uniforms drive (Sept 2025)
   uniformsTogoSmile:    "photos/uniforms-togo-smile.jpg",
   uniformsTogoPortrait: "photos/uniforms-togo-portrait.jpg",

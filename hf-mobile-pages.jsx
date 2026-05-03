@@ -1329,11 +1329,13 @@ function MobileTimeline() {
           const isLast = i === events.length - 1;
           const dotColor = isLast ? "var(--orange)" : "var(--charcoal)";
           return (
-            <div key={e.y} style={{display:"grid", gridTemplateColumns:"22px 1fr", columnGap:16, paddingBottom: isLast ? 0 : 28}}>
-              {/* Dot + connecting line */}
-              <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-                <div style={{width:12, height:12, borderRadius:"50%", background:dotColor, marginTop:6, flexShrink:0}}/>
-                {!isLast && <div style={{flex:1, width:2, background:"var(--charcoal)", opacity:.18, marginTop:4}}/>}
+            <div key={e.y} style={{display:"grid", gridTemplateColumns:"16px 1fr", columnGap:18, paddingBottom: isLast ? 0 : 28}}>
+              {/* Left rail: dot at top, connecting line down to next dot */}
+              <div style={{position:"relative"}}>
+                {!isLast && (
+                  <div style={{position:"absolute", top:18, bottom:-10, left:7, width:2, background:"var(--charcoal)", opacity:.15}}/>
+                )}
+                <div style={{position:"absolute", top:6, left:2, width:12, height:12, borderRadius:"50%", background:dotColor}}/>
               </div>
               {/* Content */}
               <div>
