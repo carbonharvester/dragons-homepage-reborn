@@ -364,7 +364,6 @@
 
   @media (max-width: 640px){
     .viewport [style*="maxWidth:"]{ max-width: 100% !important; }
-    .viewport section{ padding-left: 0 !important; padding-right: 0 !important; }
     [style*="position:fixed"][style*="inset:0"] > div{ max-width: 95vw !important; }
     [style*="grid-template-columns:90px"], [style*="grid-template-columns: 90px"],
     [style*="grid-template-columns:64px"], [style*="grid-template-columns: 64px"]{
@@ -373,6 +372,15 @@
     [style*="repeat(7"], [style*="repeat(7,"]{
       grid-template-columns: repeat(2, 1fr) !important;
     }
+  }
+
+  /* Mobile horizontal breathing room — applies to any section/div that doesn't
+     already declare its own horizontal padding inline. Mobile components use
+     `padding:"56px 22px"` etc. on their wrappers; this is the fallback for any
+     bare <section> so content never sits edge-to-edge. */
+  @media (max-width: 767px){
+    .viewport section:not([style*="padding"]){ padding-left: 22px; padding-right: 22px; }
+    .container{ padding-left: 22px !important; padding-right: 22px !important; }
   }
 
   @media (max-width: 640px){
@@ -443,22 +451,22 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked@13.0.2/marked.min.js"></script>
-<script src="blog-data.js?v=95"></script>
+<script src="blog-data.js?v=96"></script>
 
-<script type="text/babel" data-presets="env,react" src="hf-shared.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-home.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-home-mobile.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-program.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-lp.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-approach.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-programs.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-impact.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-about.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-stories.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-contact.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-schools.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-mobile-pages.jsx?v=95"></script>
-<script type="text/babel" data-presets="env,react" src="hf-app.jsx?v=95"></script>
+<script type="text/babel" data-presets="env,react" src="hf-shared.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-home.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-home-mobile.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-program.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-lp.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-approach.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-programs.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-impact.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-about.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-stories.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-contact.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-schools.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-mobile-pages.jsx?v=96"></script>
+<script type="text/babel" data-presets="env,react" src="hf-app.jsx?v=96"></script>
 
 </body>
 </html>
