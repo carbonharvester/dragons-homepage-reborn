@@ -346,27 +346,37 @@ function MobileSocialProof() {
     {name:"ACS Hillingdon",                 logo:"photos/logos/acs-logo.png"},
   ];
   return (
-    <section style={{padding:"40px 0", background:"var(--cream)", borderTop:"1px solid var(--line)", borderBottom:"1px solid var(--line)"}}>
-      <div style={{padding:"0 22px", marginBottom:18}}>
+    <section style={{padding:"40px 22px", background:"var(--cream)", borderTop:"1px solid var(--line)", borderBottom:"1px solid var(--line)"}}>
+      <div style={{marginBottom:18}}>
         <div className="eyebrow">Schools whose Kenya trips we've designed</div>
         <div style={{fontSize:11, color:"var(--muted)", marginTop:6, lineHeight:1.4}}>Through Mountain Quests 2022–2024, direct since 2025.</div>
       </div>
       <div style={{
-        display:"flex", gap:0, overflowX:"auto", paddingLeft:22, paddingRight:22,
-        scrollSnapType:"x mandatory",
-        WebkitOverflowScrolling:"touch",
+        display:"grid", gridTemplateColumns:"1fr 1fr",
+        gap:1, background:"var(--line)", border:"1px solid var(--line)",
       }}>
         {schools.map(s=>(
           <div key={s.name} style={{
-            flex:"0 0 140px", height:78, marginRight:1,
-            background:"var(--sand)", border:"1px solid var(--line)",
+            background:"var(--sand)", height:84,
             display:"flex", alignItems:"center", justifyContent:"center",
-            scrollSnapAlign:"start",
+            padding:"12px 14px",
           }}>
             <img src={s.logo} alt={s.name}
-              style={{maxHeight:54, maxWidth:"75%", objectFit:"contain", filter:"grayscale(1)", opacity:.7}}/>
+              style={{maxHeight:50, maxWidth:"82%", objectFit:"contain", filter:"grayscale(1)", opacity:.75}}/>
           </div>
         ))}
+        {/* Fill the 8th cell when we have 7 logos so the grid stays balanced */}
+        {schools.length % 2 === 1 && (
+          <div style={{
+            background:"var(--sand)", height:84,
+            display:"flex", alignItems:"center", justifyContent:"center",
+            padding:"12px 14px",
+            fontSize:10, letterSpacing:".18em", textTransform:"uppercase",
+            color:"var(--muted)", fontWeight:700, textAlign:"center", lineHeight:1.4,
+          }}>
+            <div>● MENA<br/>since 2022</div>
+          </div>
+        )}
       </div>
     </section>
   );
