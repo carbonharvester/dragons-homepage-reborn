@@ -229,8 +229,10 @@ function Article({ s, onBack }){
 }
 
 function StoriesPage(){
+  const isMobile = window.useIsMobile ? window.useIsMobile() : false;
   const [open, setOpen] = React.useState(null); // {kind:"founder"|"post", data}
   React.useEffect(()=> window.scrollTo(0,0), [open]);
+  if (isMobile && window.MobileStoriesPage) return <window.MobileStoriesPage/>;
   return (
     <div>
       <SiteNav sticky/>
@@ -252,3 +254,6 @@ function StoriesPage(){
   );
 }
 window.StoriesPage = StoriesPage;
+window.Article = Article;
+window.BlogPost = BlogPost;
+window.FOUNDER_NOTE_DATA = FOUNDER_NOTE;

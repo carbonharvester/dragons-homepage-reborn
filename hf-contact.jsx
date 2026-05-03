@@ -179,6 +179,8 @@ function Offices(){
 }
 
 function ContactPage(){
+  const isMobile = window.useIsMobile ? window.useIsMobile() : false;
+  if (isMobile && window.MobileContactPage) return <window.MobileContactPage/>;
   return (
     <div>
       <SiteNav sticky/>

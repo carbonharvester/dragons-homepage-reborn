@@ -151,6 +151,8 @@ function SafeguardingStrip(){
 }
 
 function ApproachPage(){
+  const isMobile = window.useIsMobile ? window.useIsMobile() : false;
+  if (isMobile && window.MobileApproachPage) return <window.MobileApproachPage/>;
   return (
     <div>
       <SiteNav sticky/>

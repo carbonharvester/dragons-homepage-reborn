@@ -132,9 +132,13 @@ function App(){
   const entry = PAGES[tab] || PAGES.home;
   const Page = entry.Comp || (()=> <div style={{padding:80, textAlign:"center"}}>Loading {tab}…</div>);
 
+  const isMobile = typeof window !== "undefined" && window.useIsMobile ? window.useIsMobile() : false;
+  const showBottomCTA = isMobile && tab !== "lp" && tab !== "contact";
+
   return (
     <div data-screen-label={LABELS[tab] || tab}>
       <Page key={tab === "program" ? `program-${programme}-${navEpoch}` : `${tab}-${navEpoch}`} {...entry.props}/>
+      {showBottomCTA && window.MobileBottomCTA && <window.MobileBottomCTA/>}
     </div>
   );
 }

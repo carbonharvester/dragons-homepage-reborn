@@ -228,6 +228,8 @@ function HelpChoose(){
 }
 
 function ProgramsPage(){
+  const isMobile = window.useIsMobile ? window.useIsMobile() : false;
+  if (isMobile && window.MobileProgramsPage) return <window.MobileProgramsPage/>;
   return (
     <div>
       <SiteNav sticky/>

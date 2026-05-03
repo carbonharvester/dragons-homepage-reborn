@@ -1185,6 +1185,8 @@ function SlimProgramme({ slug }) {
 
 function ProgramPage({ slug }) {
   const s = slug || (typeof window !== "undefined" && window.kapesProgramme) || "s2e";
+  const isMobile = window.useIsMobile ? window.useIsMobile() : false;
+  if (isMobile && s === "s2e" && window.MobileProgramPage) return <window.MobileProgramPage/>;
   if (s === "s2e") return <S2EProgramme/>;
   return <SlimProgramme slug={s}/>;
 }

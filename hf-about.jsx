@@ -276,6 +276,8 @@ function Partners(){
 }
 
 function AboutPage(){
+  const isMobile = window.useIsMobile ? window.useIsMobile() : false;
+  if (isMobile && window.MobileAboutPage) return <window.MobileAboutPage/>;
   return (
     <div>
       <SiteNav sticky/>

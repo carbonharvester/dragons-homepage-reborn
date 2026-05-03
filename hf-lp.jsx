@@ -562,7 +562,9 @@ function MiniNav() {
 }
 
 function LPPage() {
+  const isMobile = window.useIsMobile ? window.useIsMobile() : false;
   const [state, setState] = useStateLP({ step:-1, answers:{}, done:false });
+  if (isMobile && window.MobileLPPage) return <window.MobileLPPage/>;
   const start    = () => setState({...state, step:0});
   const finish   = (ans) => setState({...state, step:ALL_QUESTIONS.length, answers:ans, done:true});
   const retake   = () => setState({ step:-1, answers:{}, done:false });

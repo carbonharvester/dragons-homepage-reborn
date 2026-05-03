@@ -233,6 +233,8 @@ function StoriesPlaceholder(){
 }
 
 function ImpactPage(){
+  const isMobile = window.useIsMobile ? window.useIsMobile() : false;
+  if (isMobile && window.MobileImpactPage) return <window.MobileImpactPage/>;
   return (
     <div>
       <SiteNav sticky/>

@@ -663,6 +663,8 @@ function PrincipalQuote() {
 }
 
 function HomePage({ heroVariant = "manifesto" }) {
+  const isMobile = window.useIsMobile ? window.useIsMobile() : false;
+  if (isMobile && window.MobileHomePage) return <window.MobileHomePage/>;
   return (
     <div>
       <SiteNav/>

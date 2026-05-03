@@ -278,6 +278,8 @@ function BoardPackCTA(){
 }
 
 function SchoolsPage(){
+  const isMobile = window.useIsMobile ? window.useIsMobile() : false;
+  if (isMobile && window.MobileSchoolsPage) return <window.MobileSchoolsPage/>;
   return (
     <div>
       <SiteNav sticky/>
