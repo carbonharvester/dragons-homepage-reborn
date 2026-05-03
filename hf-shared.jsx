@@ -171,7 +171,7 @@ const IMG = {
   ellyPortrait:         "photos/elly-portrait.jpg",          // Elijah "Elly" Oenga · S2E host · hilltop overlooking the Rift Valley
   monicaPortrait:       "photos/monica-portrait.jpg",        // Monica Makori · WEW Kenyan partner · Neema Women's Group · Taita-Taveta
   // Partner logos — non-school
-  edsideraLogo:         "photos/edsidera-logo.png", // Edsidera life-skills awards platform partner
+  edsideraLogo:         "https://res.cloudinary.com/dng12bd0a/image/upload/v1777794410/edsidera_logo_hlf2d9.jpg", // Edsidera life-skills awards platform partner
   f4eLogo:              "photos/f4e-logo.png",      // Food for Education · Kenyan school-meals NGO
   // Water Empowering Women — 1st day at the partner school (tank install + classroom + mural)
   wewFinishedTank:    "photos/wew-finished-tank.jpg",
