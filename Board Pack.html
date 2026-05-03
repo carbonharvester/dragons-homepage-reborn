@@ -318,40 +318,84 @@
   .bp-locked{
     position:fixed; inset:0; z-index:9999;
     background: var(--charcoal); color:#fff;
-    display:none; align-items:center; justify-content:center;
-    padding: 24px;
+    display:none; align-items:flex-start; justify-content:center;
+    padding: 32px 24px;
+    overflow-y: auto;
   }
   .bp-locked.show{ display:flex; }
   .bp-locked .card{
-    max-width: 540px; width:100%;
+    max-width: 560px; width:100%;
     background: #1F1F1F; border:1px solid #2A2A2A; border-radius: 12px;
-    padding: 36px 32px; text-align:center;
+    padding: 36px 32px;
+    margin: auto;
   }
   .bp-locked .mark{
     font-family:var(--mono); font-size:10px; letter-spacing:.2em;
     text-transform:uppercase; color: var(--orange); font-weight:700;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
   .bp-locked h1{
-    font-family:var(--display); font-size: 30px; line-height:1.1;
-    margin: 0 0 16px; color:#fff;
+    font-family:var(--display); font-size: 26px; line-height:1.15;
+    margin: 0 0 12px; color:#fff;
   }
-  .bp-locked p{
-    font-family:var(--body); font-size: 15px; line-height:1.55;
-    color: rgba(255,255,255,.78); margin: 0 0 22px;
+  .bp-locked .lead{
+    font-family:var(--body); font-size: 14px; line-height:1.6;
+    color: rgba(255,255,255,.72); margin: 0 0 24px;
   }
-  .bp-locked .cta{
-    display:inline-block; padding: 14px 26px; border-radius: 999px;
+  .bp-locked .row{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .bp-locked .field{ display:flex; flex-direction:column; gap:6px; margin-bottom: 12px; }
+  .bp-locked label{
+    font-family:var(--mono); font-size: 10px; letter-spacing:.14em;
+    text-transform:uppercase; color: rgba(255,255,255,.55); font-weight:700;
+  }
+  .bp-locked label .req{ color: var(--orange); }
+  .bp-locked input,
+  .bp-locked textarea{
+    font-family:var(--body); font-size:14px; color:#fff;
+    background: #151515; border: 1px solid #2E2E2E; border-radius: 6px;
+    padding: 10px 12px; width:100%; box-sizing:border-box;
+    transition: border-color .15s, background .15s;
+  }
+  .bp-locked input:focus,
+  .bp-locked textarea:focus{
+    outline:none; border-color: var(--orange); background:#1A1A1A;
+  }
+  .bp-locked textarea{ min-height: 70px; resize: vertical; font-family:var(--body); }
+  .bp-locked .submit{
+    margin-top: 8px; width:100%;
+    padding: 14px 22px; border-radius: 999px; border: none;
     background: var(--orange); color:#fff; font-weight:700; font-size: 14px;
-    text-decoration:none; letter-spacing:.01em;
+    letter-spacing:.01em; cursor: pointer;
+    transition: background .15s, transform .1s;
   }
-  .bp-locked .cta:hover{ background:#E56600; }
+  .bp-locked .submit:hover{ background:#E56600; }
+  .bp-locked .submit:disabled{ background:#3a3a3a; color:rgba(255,255,255,.5); cursor:wait; }
+  .bp-locked .submit:not(:disabled):active{ transform: translateY(1px); }
   .bp-locked .small{
     font-family:var(--mono); font-size:10px; letter-spacing:.14em;
     text-transform:uppercase; color: rgba(255,255,255,.4);
-    margin-top: 24px;
+    margin-top: 18px; text-align:center;
   }
   .bp-locked .small a{ color: rgba(255,255,255,.7); text-decoration:none; }
+  .bp-locked .err{
+    background: #2A1414; border:1px solid #4A1A1A; color:#FF8A6E;
+    padding: 10px 14px; border-radius: 6px; font-size: 13px; line-height:1.5;
+    margin-top: 12px;
+  }
+  .bp-locked .ok{
+    text-align: center;
+  }
+  .bp-locked .ok .check{
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--orange); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    margin: 0 auto 18px; font-size: 28px;
+  }
+  @media (max-width: 520px){
+    .bp-locked .row{ grid-template-columns: 1fr; }
+    .bp-locked .card{ padding: 28px 22px; }
+    .bp-locked h1{ font-size: 22px; }
+  }
   @media print{ .bp-locked{ display:none !important; } }
 
   /* Hide the pack while we're checking the token (avoid flash of generic copy)
@@ -365,16 +409,72 @@
 
 <!-- Customisation gate — shown when no/invalid school token is present in URL -->
 <div class="bp-locked" id="bpLocked" role="dialog" aria-labelledby="bpLockedTitle">
-  <div class="card">
+  <div class="card" id="bpLockedCard">
     <div class="mark">● Customised pack</div>
-    <h1 id="bpLockedTitle">This Board Pack is prepared per school.</h1>
-    <p>
-      Each pack is tailored to a specific cohort — your school name, year group, dates, and
-      cohort costing. To request a customised version for your Board, drop us a line and
-      we'll send you a unique link within 48 hours.
+    <h1 id="bpLockedTitle">Tell us about your cohort.</h1>
+    <p class="lead">
+      Each Board Pack is tailored to a specific school — your name, year group, cohort size,
+      dates, and pricing. Fill these in and we'll send you a unique link within 48 hours.
     </p>
-    <a href="/contact?topic=board-pack" class="cta">Request your school's pack →</a>
+
+    <form id="bpForm" novalidate>
+      <div class="field">
+        <label for="bp-school">School name <span class="req">*</span></label>
+        <input id="bp-school" name="school" type="text" required autocomplete="organization" placeholder="e.g. Oakridge International School"/>
+      </div>
+
+      <div class="row">
+        <div class="field" style="margin-bottom:0;">
+          <label for="bp-name">Your full name <span class="req">*</span></label>
+          <input id="bp-name" name="contactName" type="text" required autocomplete="name"/>
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="bp-role">Your role <span class="req">*</span></label>
+          <input id="bp-role" name="contactRole" type="text" required placeholder="e.g. Head of Service Learning"/>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="bp-email">Work email <span class="req">*</span></label>
+        <input id="bp-email" name="contactEmail" type="email" required autocomplete="email"/>
+      </div>
+
+      <div class="row">
+        <div class="field" style="margin-bottom:0;">
+          <label for="bp-year">Year group <span class="req">*</span></label>
+          <input id="bp-year" name="yearGroup" type="text" required placeholder="e.g. Year 11 / Grade 10"/>
+        </div>
+        <div class="field" style="margin-bottom:0;">
+          <label for="bp-cohort">Cohort size <span class="req">*</span></label>
+          <input id="bp-cohort" name="cohortSize" type="number" min="1" max="200" required placeholder="e.g. 22"/>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="bp-window">Target travel window <span class="req">*</span></label>
+        <input id="bp-window" name="travelWindow" type="text" required placeholder="e.g. March 2027 / Spring half-term"/>
+      </div>
+
+      <div class="field">
+        <label for="bp-notes">Anything else? (optional)</label>
+        <textarea id="bp-notes" name="notes" rows="3" placeholder="Decision deadline, particular focus, prior trip context…"></textarea>
+      </div>
+
+      <button type="submit" class="submit" id="bpSubmit">Request your customised pack →</button>
+      <div class="err" id="bpError" style="display:none;"></div>
+    </form>
+
     <div class="small">Or email <a href="mailto:matthew@kapesadventures.com?subject=Board%20Pack%20request">matthew@kapesadventures.com</a></div>
+  </div>
+
+  <div class="card ok" id="bpThanks" style="display:none;">
+    <div class="check">✓</div>
+    <div class="mark" style="margin-bottom:14px;">● Request received</div>
+    <h1>Your Board Pack is on the way.</h1>
+    <p class="lead" id="bpThanksMsg" style="margin-bottom:0;">
+      Matthew will prepare your school's pack and email the unique link within 48 hours. Check
+      your inbox for a confirmation receipt.
+    </p>
   </div>
 </div>
 
@@ -1846,6 +1946,67 @@
   }
 
   document.body.classList.remove("bp-checking");
+})();
+
+/* ─── Request form submission ────────────────────────────────────── */
+(function wireRequestForm(){
+  const form = document.getElementById("bpForm");
+  if (!form) return;
+  const submit = document.getElementById("bpSubmit");
+  const errBox = document.getElementById("bpError");
+  const card = document.getElementById("bpLockedCard");
+  const thanks = document.getElementById("bpThanks");
+  const thanksMsg = document.getElementById("bpThanksMsg");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errBox.style.display = "none";
+
+    const data = {};
+    new FormData(form).forEach((v,k) => { data[k] = String(v).trim(); });
+
+    // Lightweight client validation
+    const required = ["school","contactName","contactRole","contactEmail","yearGroup","cohortSize","travelWindow"];
+    for (const f of required) {
+      if (!data[f]) {
+        errBox.textContent = "Please fill in all required fields.";
+        errBox.style.display = "block";
+        return;
+      }
+    }
+    if (!/^\S+@\S+\.\S+$/.test(data.contactEmail)) {
+      errBox.textContent = "Please enter a valid email address.";
+      errBox.style.display = "block";
+      return;
+    }
+
+    submit.disabled = true;
+    submit.textContent = "Sending…";
+
+    try {
+      const res = await fetch("/.netlify/functions/board-pack-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const out = await res.json().catch(() => ({}));
+      if (!res.ok || !out.ok) {
+        throw new Error(out.error || "Request failed");
+      }
+      // Success — swap card for thank-you state
+      if (out.ackSent === false && thanksMsg) {
+        thanksMsg.textContent = "Matthew will prepare your school's pack and email the unique link within 48 hours. (Couldn't deliver an automated receipt to the address you entered — double-check it if no email arrives.)";
+      }
+      card.style.display = "none";
+      thanks.style.display = "block";
+    } catch (err) {
+      console.warn("Board pack request error:", err);
+      errBox.textContent = "Sorry — something went wrong sending your request. Please try again, or email matthew@kapesadventures.com directly.";
+      errBox.style.display = "block";
+      submit.disabled = false;
+      submit.textContent = "Request your customised pack →";
+    }
+  });
 })();
 </script>
 
