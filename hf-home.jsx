@@ -644,7 +644,7 @@ function PrincipalQuote() {
               <div style={{fontSize:13, color:"var(--ink-2)", lineHeight:1.5}}>Ex-principal · The Arbor School, Dubai</div>
               <div style={{fontSize:11, letterSpacing:".1em", textTransform:"uppercase", color:"var(--orange)", fontWeight:700, marginTop:12}}>Community Conservation · 2023 + 2024 cohorts</div>
               <div style={{marginTop:22, paddingTop:18, borderTop:"1px dashed var(--line)", fontSize:12, color:"var(--muted)", lineHeight:1.55}}>
-                The Arbor School was a Kapes Uniforms partner from 2022 to 2025. Brett, then principal, visited Kenya in 2022 to see the school where Arbor's donated uniforms were in use, then brought two cohorts on Community Conservation trips in 2023 and 2024.
+                Brett joined the first-ever Kapes Adventures trip in 2022 — which sponsored 15 local Kenyan children's school places. The Arbor School was a Kapes Uniforms partner from 2022 to 2025; Brett, then principal, brought two Arbor cohorts back on Community Conservation trips in 2023 and 2024.
               </div>
             </div>
             <div>

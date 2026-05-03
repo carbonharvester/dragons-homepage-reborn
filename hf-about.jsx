@@ -90,7 +90,7 @@ function FounderStory(){
 function Timeline(){
   const events = [
     { y:"2020", t:"Kapes Uniforms founded", d:"After reading research showing that free uniforms reduce absenteeism in Kenyan primary schools, Matthew founds Kapes Uniforms — manufacturing in Kenya, donating uniforms to children in need."},
-    { y:"2022", t:"First Kapes Adventures trip", d:"First school trip runs with Arbor School — a Community Conservation programme based at the Kenyan conservancy where Kapes uniforms are made. Delivered through Mountain Quests (UAE-based trip operator)."},
+    { y:"2022", t:"First Kapes Adventures trip", d:"First school trip runs with Arbor School — a Community Conservation programme based at the Kenyan conservancy where Kapes uniforms are made. Delivered through Mountain Quests (UAE-based trip operator). The trip sponsored 15 local Kenyan children's school places."},
     { y:"2022–24", t:"7 trips through Mountain Quests", d:"In total, seven school trips run through the partnership — building the programme model, on-the-ground relationships, and safeguarding posture before going direct."},
     { y:"2025", t:"Direct delivery begins", d:"Kapes Adventures begins designing and delivering trips end-to-end with Kenyan trip leaders, contracted directly. Three programmes live: Seeds2Education, Water Empowering Women, Community Conservation."},
     { y:"25/26", t:"Seeds2Education pilot", d:"1.5 acres of unused school land transformed into farmland. 2 water tanks installed (1 at Hope School · 1 at S2E). 1 classroom rebuilt. 40+ Kenyans employed across the programmes."},
