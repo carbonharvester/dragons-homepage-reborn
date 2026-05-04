@@ -11,7 +11,7 @@ function SchoolsHero(){
             your head, and your <span className="accent">trip coordinator</span> all sign off.
           </h1>
           <p className="lead" style={{marginTop:22, color:"var(--ink-2)", maxWidth:540}}>
-            Our flagship programme — <b>Seeds2Education</b> — runs year-round in Kenya with a permanent farm crew. Two further programmes available (Water Empowering Women, Community Conservation). Best as a <b>3 year partnership</b>: Year 1's cohort plants the seed; Year 3's cohort sees a thriving farm or transformed school. From USD 2,600 per student.
+            We're a social impact company that delivers school trips — not the other way round. Three Kenyan-led programmes employ 30+ Kenyans year-round to remove barriers to education. <b>Seeds2Education</b> grows food for student meals; <b>Water Empowering Women</b> installs tanks at partner schools; <b>Community Conservation</b> funds bursaries through Kenyan-led conservancy work. Best as a <b>3-year partnership</b>: Year 1's cohort plants the seed; Year 3's cohort sees a thriving farm or transformed school. From USD 2,600 per student.
           </p>
           <div style={{display:"flex", gap:12, marginTop:32, flexWrap:"wrap"}}>
             <button className="btn-pill btn-action" style={{padding:"15px 26px"}} onClick={bookCall}>Book a 30-min call →</button>

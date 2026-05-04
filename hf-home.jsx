@@ -8,12 +8,12 @@ function HomeHero({ variant = "manifesto" }) {
         <img className="kapes" src={IMG.hero} alt="" style={{position:"absolute",inset:0, width:"100%", height:"100%", objectFit:"cover"}}/>
         <div style={{position:"absolute",inset:0, background:"linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.55) 60%, rgba(0,0,0,.75) 100%)"}}/>
         <div className="container" style={{position:"relative", paddingTop:120, paddingBottom:100}}>
-          <div className="eyebrow" style={{color:"#fff"}}><span style={{background:"#fff",width:24,height:1,display:"inline-block",marginRight:10}}/>A different kind of impact programme</div>
-          <h1 className="display" style={{color:"#fff", fontSize:"clamp(64px,7vw,120px)", marginTop:20, maxWidth:1100}}>
-            Your students don't need <span className="accent">to save Africa.</span>
+          <div className="eyebrow" style={{color:"#fff"}}><span style={{background:"#fff",width:24,height:1,display:"inline-block",marginRight:10}}/>Year-round impact in Kenya · funded by school trips</div>
+          <h1 className="display" style={{color:"#fff", fontSize:"clamp(56px,6.4vw,108px)", marginTop:20, maxWidth:1100}}>
+            Year-round impact. <span className="accent">Not just the week your cohort visits.</span>
           </h1>
           <p className="lead" style={{color:"rgba(255,255,255,.88)", maxWidth:640, marginTop:28}}>
-            Our flagship programme — Seeds2Education — runs year-round in Kenya, with a permanent farm crew. Your students join their work for a week. The crew keeps going for the other 51.
+            Seeds2Education employs 30+ Kenyans to grow food that feeds 45,000 student meals a year. The crew works the land every week of the year. Your cohort joins for one of them.
           </p>
           <div style={{display:"flex",gap:12, marginTop:36}}>
             <button className="btn-pill btn-action" style={{padding:"16px 28px", fontSize:14}} onClick={()=>khifiNavigate("programs")}>See the programmes →</button>
@@ -30,16 +30,16 @@ function HomeHero({ variant = "manifesto" }) {
       <div className="container">
         <div style={{display:"grid", gridTemplateColumns:"1.3fr 1fr", gap:64, alignItems:"start"}}>
           <div>
-            <div className="eyebrow">A manifesto · not a brochure</div>
-            <h1 className="display" style={{marginTop:20, fontSize:"clamp(54px, 5.8vw, 96px)"}}>
-              Your cohort doesn't need<br/>
-              <span className="accent">to save Africa.</span>
+            <div className="eyebrow">Year-round impact in Kenya · funded by school trips</div>
+            <h1 className="display" style={{marginTop:20, fontSize:"clamp(48px, 5.2vw, 84px)"}}>
+              Removing the barriers between children<br/>
+              <span className="accent">and their classrooms.</span>
             </h1>
             <div style={{marginTop:28, maxWidth:560, fontSize:18, lineHeight:1.6, color:"var(--ink-2)"}}>
-              They need a week inside real work in Kenya — work whose impact keeps going long after they fly home. Our flagship programme, <b>Seeds2Education</b>, runs year-round with a permanent farm crew. Water Empowering Women installs water tanks and refurbishes classrooms — your group helps start each build, the community uses what's built for years. Community Conservation joins partner work that's been running since 2022. In every case, your cohort contributes. In every case, the impact is ongoing.
+              Three Kenyan-led programmes work continuously in Kenya. <b>Seeds2Education</b> employs 30+ Kenyans to grow food that feeds 45,000 student meals a year — wages stay in the community, kids eat, kids stay in class. <b>Water Empowering Women</b> installs tanks at schools where girls were missing classes to collect water. <b>Community Conservation</b> funds school bursaries through Kenyan-led conservancy work. School cohorts join for a week. The work runs whether they do or not — that's the point.
             </div>
             <div style={{marginTop:18, fontSize:13, color:"var(--muted)", letterSpacing:".02em"}}>
-              For international schools — three programmes, one shape. Educators can come first on the 5-day CPD trip.
+              We also run a standalone 5-day CPD trip for educators.
             </div>
             <div style={{display:"flex",gap:12, marginTop:36, flexWrap:"wrap"}}>
               <button className="btn-pill btn-action" style={{padding:"15px 26px"}} onClick={()=>khifiNavigate("programs")}>See the programmes →</button>
@@ -48,9 +48,9 @@ function HomeHero({ variant = "manifesto" }) {
             <div style={{marginTop:40, display:"flex", gap:24, fontSize:12, letterSpacing:".08em", textTransform:"uppercase", color:"var(--muted)", fontWeight:600, flexWrap:"wrap"}}>
               <div>Dubai-based · Kenyan-led</div>
               <div>·</div>
-              <div>3 Kenya programmes</div>
+              <div>30+ Kenyans on payroll</div>
               <div>·</div>
-              <div>1:10 leader ratio</div>
+              <div>Year-round impact</div>
             </div>
           </div>
           <div style={{position:"relative", aspectRatio:"4/5"}}>
@@ -68,11 +68,12 @@ function HomeHero({ variant = "manifesto" }) {
 
 function Manifesto() {
   const points = [
-    { n:"01", t:"Our flagship runs all year. A trip is a chapter.", b:"Seeds2Education — our flagship — operates continuously in Kenya. A permanent farm crew works the land week in, week out. Visiting cohorts join. They never start the work, and they never end it. The crew keeps going whether your group comes back next year or not." },
-    { n:"02", t:"Cohorts plant the seed — or join it mid-stream.", b:"Sometimes a group helps start a project (a water tank install, a classroom refurbishment). Sometimes they join one already running (the year-round Seeds2Education farm). In every case the work is chosen and led by Kenyan partners — and what gets built or planted keeps running long after the trip is over." },
-    { n:"03", t:"No orphanages. No classrooms with strangers.", b:"A six-day visit from unfamiliar adults is not education — it's disruption. We never place visiting cohorts in direct contact with vulnerable children." },
+    { n:"01", t:"Social impact first. Trips are how we fund it.", b:"Kapes Adventures isn't a trip operator that does some good on the side. It's the inverse. The Kenyan teams running our three programmes are paid year-round — by us, from trip income — and they keep working whether your cohort visits this term or not. Every commercial decision serves the work, not the other way around." },
+    { n:"02", t:"Salaries, not handouts.", b:"Seeds2Education employs 30+ Kenyans to grow onions on land donated by a partner school. The harvest is exchanged at 0.85 USD/kg with Food for Education — three subsidised school meals per kilogram. Wages stay in the community. Meals reach students. The aid model is broken; we're not interested in repeating it." },
+    { n:"03", t:"Year-round impact. Yours is one week of it.", b:"Seeds2Education operates continuously in Kenya. The permanent crew works the land week in, week out — planting, weeding, harvesting on the season's schedule, not yours. Visiting cohorts join. They never start the work, and they never end it. The crew keeps going whether your group comes back next year or not." },
     { n:"04", t:"The community is the client. You are the guest.", b:"Every programme is shaped by Kenyan partners against their own priorities. If a project isn't useful to the community, we don't run it. Full stop. Activities are chosen because they matter to the people whose communities you're visiting — not because they look good in a brochure." },
-    { n:"05", t:"Designed in Dubai. Delivered by Kenyans.", b:"Every trip is led on the ground by Kenyan trip leaders we contract directly. 1:10 leader-to-participant ratio, minimum two leaders per trip — regardless of group size." },
+    { n:"05", t:"No orphanages. No classrooms with strangers.", b:"A six-day visit from unfamiliar adults is not education — it's disruption. We never place visiting cohorts in direct contact with vulnerable children." },
+    { n:"06", t:"Designed in Dubai. Delivered by Kenyans.", b:"Every trip is led on the ground by Kenyan trip leaders we contract directly. 1:10 leader-to-participant ratio, minimum two leaders per trip — regardless of group size." },
   ];
   return (
     <section className="section" style={{padding:"96px 0", background:"var(--cream)"}}>
@@ -81,7 +82,7 @@ function Manifesto() {
           <div>
             <div className="eyebrow">The Kapes Manifesto</div>
             <h2 className="display" style={{marginTop:14, maxWidth:860}}>
-              Five commitments we'll <span className="accent">never quietly drop.</span>
+              Six commitments we'll <span className="accent">never quietly drop.</span>
             </h2>
           </div>
           <div style={{fontSize:12, letterSpacing:".08em", textTransform:"uppercase", color:"var(--muted)", fontWeight:600, maxWidth:240, textAlign:"right"}}>
@@ -111,34 +112,34 @@ function Diagram() {
   const programmes = [
     {
       code:"S2E·01", flagship:true, color:"#22C55E", title:"Seeds2Education",
-      headline:"A working farm.",
-      body:"Kenyan farm crew on the land — not all 30 people every day, but always whatever the season demands. Weeding when it's time to weed, planting when it's time to plant, harvesting when it's time to harvest. The onion harvest is exchanged with Food for Education at $0.85/kg — equal to three subsidised school meals. The trip joins this work for a week.",
-      stats:[["30+","Kenyans · paid crew"], ["45,000","meals · forecast Y1"], ["1.5","acres of farmland"]],
+      headline:"A working farm. Year-round wages.",
+      body:"30+ Kenyans paid year-round to grow onions on 1.5 acres of land donated by a partner school. The harvest is exchanged at 0.85 USD/kg with Food for Education — three subsidised school meals per kilogram. Wages stay in the community. Kids eat. Kids stay in class. The visiting cohort joins the work for a week — they're a chapter, not the whole story.",
+      stats:[["30+","Kenyans · paid year-round"], ["45,000","meals · forecast Y1"], ["1.5","acres of farmland"]],
     },
     {
       code:"WEW·02", color:"#F43F5E", title:"Water Empowering Women",
-      headline:"Infrastructure that stays.",
-      body:"The build happens with the visiting cohort — but the tank, the refurbished classroom, the painted mural don't pack up when the trip ends. Hope School fills the tank every day. 40+ children have daily access to clean water because of it. Enrolment rose 40% in the weeks after our build.",
+      headline:"Tanks at schools where girls were dropping out.",
+      body:"When water is scarce, girls walk hours to fetch it — and miss class. We install tanks at partner schools so they don't. The build happens with the visiting cohort, but the infrastructure stays. Hope School fills the tank every day. Enrolment rose 40% in the weeks after our first build. We're not interested in tanks that get installed for the photo and stop working in two years.",
       stats:[["+40%","enrolment · post-build"], ["1 tank","installed at Hope School"], ["40+","children · daily clean water"]],
     },
     {
       code:"CC·03", color:"#3B82F6", title:"Community Conservation",
-      headline:"A different kind of impact.",
-      body:"CC isn't an infrastructure programme. The impact is what travels home in the cohort: a different mental model of Africa. Students see Kenyans running a wildlife conservancy, a carbon-neutral garment factory, and community enterprises on a single site — and the lazy single-story narrative collapses. That's the work. It's slower, harder to measure, and worth doing.",
-      stats:[["1","conservancy site"], ["3","systems on display"], ["since 2022","first cohort"]],
+      headline:"A different mental model of Africa.",
+      body:"Kenyans run the wildlife conservancy at the heart of CC. Kenyans run the carbon-neutral garment factory. Kenyans run the community enterprises that sit alongside both. 50% of REDD+ profits fund school bursaries. The impact your cohort takes home is the collapse of the single-story narrative — not a saviour fantasy, an honest one. The conservancy site has been running this way since long before we showed up.",
+      stats:[["50%","REDD+ profits · bursaries"], ["3","Kenyan-led systems on site"], ["since 2022","first cohort"]],
     },
   ];
 
   return (
     <section className="section" style={{padding:"96px 0", background:"var(--sand)", borderTop:"1px solid var(--line)", borderBottom:"1px solid var(--line)"}}>
       <div className="container">
-        <div className="eyebrow">What each programme delivers</div>
+        <div className="eyebrow">What each programme actually does</div>
         <h2 className="display" style={{marginTop:14, marginBottom:14, maxWidth:900}}>
-          The trip is a chapter.<br/>
-          <span className="accent">The work runs whether you visit or not.</span>
+          Three barriers to education.<br/>
+          <span className="accent">Three Kenyan-led ways to remove them.</span>
         </h2>
         <p className="lead" style={{maxWidth:820, marginBottom:48, color:"var(--ink-2)"}}>
-          Three different shapes of outcome. A working farm. Infrastructure that stays. A change in how a cohort sees Africa. None of them depend on a school visit happening — the trip joins ongoing work, it doesn't invent it. That's the whole anti-voluntourism point in one paragraph.
+          Hunger. Water scarcity. Lack of livelihood. Each programme exists because one of those things keeps children out of school in Kenya. We employ Kenyans to fix it — year-round, regardless of whether a cohort visits this term. Trip income funds the work; the work compounds whether the trip happens or not. That's the whole anti-voluntourism point in one paragraph.
         </p>
 
         <div style={{display:"grid", gridTemplateColumns:"repeat(3, 1fr)", gap:18}}>
@@ -228,11 +229,11 @@ function Audiences() {
       color:"#22C55E",
     },
     {
-      tag:"For teachers",
-      title:"A CPD trip across all three.",
-      body:"One trip, all three programmes — Seeds2Education, Water Empowering Women, Community Conservation. Built for educators planning a student cohort, or coordinating CAS / EE / DofE programmes back home.",
+      tag:"For educators",
+      title:"A standalone CPD trip.",
+      body:"Five days inside Kenyan-led social impact work — all three programmes, in one trip. A serious professional development experience for teachers and school leaders. Independent of any school booking.",
       meta:"5-day CPD · S2E + WEW + CC · Small groups",
-      cta:"For teachers →",
+      cta:"For educators →",
       route:"teachers",
       color:"#F43F5E",
     },
@@ -240,12 +241,12 @@ function Audiences() {
   return (
     <section className="section" style={{padding:"96px 0", background:"var(--cream)", borderTop:"1px solid var(--line)"}}>
       <div className="container">
-        <div className="eyebrow">Two ways to come to Kenya</div>
+        <div className="eyebrow">Two products · same impact engine</div>
         <h2 className="display" style={{marginTop:14, marginBottom:14, maxWidth:900}}>
-          Bring a cohort. <span className="accent">Or come first.</span>
+          The school trip. <span className="accent">The educator CPD trip.</span>
         </h2>
         <p className="lead" style={{maxWidth:780, marginBottom:48, color:"var(--ink-2)"}}>
-          Most schools send a student cohort to one of the three programmes. Some heads, coordinators, and curriculum leads come first — a 5-day CPD trip across all three — to see the work in person before they design what their students will do.
+          Both join the same year-round work in Kenya. School cohorts visit one of the three programmes for a week. The CPD trip is a separate, standalone product for educators — not a sales pipeline for school bookings, just five days of serious professional development inside the work.
         </p>
         <div style={{display:"grid", gridTemplateColumns:"repeat(2, 1fr)", gap:18, maxWidth:980}}>
           {groups.map((g)=>(
@@ -276,11 +277,12 @@ function Audiences() {
 
 function VsVoluntourism() {
   const rows = [
-    ["Who decides what gets done",  "The trip operator",          "The Kenyan community partner"],
-    ["Who delivers the trip",       "Trip leaders flown in",      "Kenyan trip leaders (1:10, min 2)"],
-    ["What students do",            "A role invented for them",   "Real contribution — sometimes starting, sometimes joining mid-stream"],
-    ["What happens after the trip", "The site goes quiet",        "What got built or planted keeps running. The Seeds2Education farm crew works the land week in, week out — no school visit required."],
-    ["Who's the trip really for",   "The visiting students",      "Both — students learn, the community gains lasting work"],
+    ["Who decides what gets done",      "The trip operator",          "The Kenyan community partner"],
+    ["Who delivers the trip",           "Trip leaders flown in",      "Kenyan trip leaders (1:10, min 2)"],
+    ["Long-term jobs created",          "None — staff go home with the cohort", "30+ Kenyans on year-round payroll across the three programmes"],
+    ["What cohorts do",                 "A role invented for them",   "Real contribution — sometimes starting, sometimes joining mid-stream"],
+    ["What happens after the trip",     "The site goes quiet",        "Wages keep flowing, crews keep working. The Seeds2Education farm runs week in, week out — no school visit required."],
+    ["Who the work is really for",      "The visiting cohort",        "Kenyan kids in classrooms — barriers removed by Kenyans we employ"],
   ];
   return (
     <section className="section" style={{padding:"96px 0", background:"var(--cream)"}}>

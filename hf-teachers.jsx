@@ -5,13 +5,13 @@ function TeachersHero(){
     <section style={{background:"var(--cream)", padding:"72px 0 64px", borderBottom:"1px solid var(--line)"}}>
       <div className="container" style={{display:"grid", gridTemplateColumns:"1.3fr 1fr", gap:56, alignItems:"center"}}>
         <div>
-          <div className="eyebrow">For Teachers · CPD trip · Limited cohorts</div>
+          <div className="eyebrow">For Educators · Standalone CPD trip · Limited cohorts</div>
           <h1 className="display" style={{marginTop:18}}>
             One trip.<br/>
             <span className="accent">All three programmes.</span>
           </h1>
           <p className="lead" style={{marginTop:22, color:"var(--ink-2)", maxWidth:560}}>
-            A 5-day CPD trip for educators — Seeds2Education, Water Empowering Women, Community Conservation, all in one week. Built for the people who are evaluating whether to bring a student cohort, designing curriculum links, or coordinating CAS / DofE / EE programmes back home.
+            A 5-day CPD trip for teachers and school leaders — Seeds2Education, Water Empowering Women, Community Conservation, all in one week. A standalone professional development product, not a sales funnel for school bookings. Five days inside Kenyan-led social impact work, with the people running it.
           </p>
           <div style={{display:"flex", gap:12, marginTop:32, flexWrap:"wrap"}}>
             <button className="btn-pill btn-action" style={{padding:"15px 26px"}} onClick={()=>khifiNavigate("contact")}>Register interest →</button>
@@ -28,11 +28,11 @@ function TeachersHero(){
           <h3 className="display" style={{color:"#fff", fontSize:24, marginBottom:16}}>Five concrete things.</h3>
           <div style={{display:"flex", flexDirection:"column", gap:10, fontSize:13, color:"rgba(255,255,255,.8)"}}>
             {[
-              ["Curriculum links", "Mapped to IB CAS, DofE, BSO, MYP service learning"],
-              ["Honest assessment", "Whether the trip fits your cohort — without the sales conversation"],
-              ["Pedagogy notes", "What works, what doesn't, what to prepare students for"],
+              ["Global perspective", "Five days inside Kenyan-led impact work — social, educational, economic"],
+              ["Curriculum threads", "Cross-curricular hooks: geography, ESS, biology, business, world studies"],
+              ["Pedagogy notes", "What works in service-learning design, what doesn't, what we've learned"],
               ["Partner relationships", "First-name introductions to the Kenyans running each programme"],
-              ["Back-to-school pack", "Slides + materials to share with SLT, parents, students"],
+              ["CPD certificate", "Documented professional development hours — sharable with your school"],
             ].map(([f,d])=>(
               <div key={f} style={{display:"flex", gap:10, borderBottom:"1px solid #2a2a2a", paddingBottom:10}}>
                 <div style={{width:18, height:18, background:"var(--orange)", color:"#fff", fontSize:10, display:"flex", alignItems:"center", justifyContent:"center", borderRadius:3, flexShrink:0, marginTop:2}}>✓</div>
@@ -54,16 +54,16 @@ function TeachersHero(){
 function TeachersWho(){
   const fits = [
     {
-      tag:"Heads of school + deputies",
-      body:"You're considering Kenya for your school's service-learning programme and want to see the work in person before signing off a parent letter. We run the trip with that frame — you're evaluating, not being sold to.",
+      tag:"Teachers + curriculum leads",
+      body:"You teach geography, ESS, biology, business, world studies — subjects where five days inside Kenyan-led social impact work sharpens what you bring back to your classroom. Real partners, real economics, real outcomes you can reference for years.",
     },
     {
-      tag:"CAS / DofE / service-learning coordinators",
-      body:"You design the programmes students travel on. Spend a week inside ours — the partner conversations, the daily rhythm, the reflection sessions — and walk away with a clear view of what you'd build.",
+      tag:"Service-learning + CAS coordinators",
+      body:"You design the programmes other people travel on. Spend a week inside ours — the partner conversations, the daily rhythm, the reflection sessions. Take what's useful back to your own work, whatever shape it takes.",
     },
     {
-      tag:"IB EE supervisors + curriculum leads",
-      body:"You're the person who sees how a trip lands in the classroom afterwards. Map the cross-curricular threads (geography, ESS, biology, business management, world studies) against the actual on-the-ground work.",
+      tag:"Heads of school + senior leaders",
+      body:"You want serious CPD that actually moves how you think about social impact, leadership, and global education. Five days with the Kenyans running real work, not a conference circuit.",
     },
   ];
   return (
@@ -74,7 +74,7 @@ function TeachersWho(){
           The educators we've <span className="accent">designed this for.</span>
         </h2>
         <p className="lead" style={{maxWidth:760, marginBottom:48, color:"var(--ink-2)"}}>
-          Mixed cohort by design — heads, coordinators, and curriculum leads in the same group. The conversations across roles are most of the value.
+          Mixed cohort by design — teachers, coordinators, and senior leaders in the same group. The conversations across roles are most of the value.
         </p>
         <div style={{display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:18}}>
           {fits.map((f,i)=>(
@@ -150,14 +150,14 @@ function TeachersHonest(){
           Small cohorts. <span className="accent">Honest pricing.</span>
         </h2>
         <p style={{fontSize:16, lineHeight:1.65, color:"var(--ink-2)", marginBottom:18}}>
-          We run this trip 1–2 times a year, max 10 educators per cohort. Pricing is at-cost plus a small admin fee — this isn't a profit centre, it's how we make sure the people designing student trips have actually been on one. Indicative cost USD 1,800–2,200 per educator (twin share, excluding international flights). Final price confirmed once dates and group size lock.
+          We run this trip 1–2 times a year, max 10 educators per cohort. Pricing is at-cost plus a small admin fee — the trip funds the work in Kenya, not Kapes margin. Indicative cost USD 1,800–2,200 per educator (twin share, excluding international flights). Final price confirmed once dates and group size lock.
         </p>
         <p style={{fontSize:16, lineHeight:1.65, color:"var(--ink-2)", marginBottom:18}}>
-          Register interest below. We'll publish dates once we have 6+ educators on the list. If your school sends a student cohort within 18 months of your CPD trip, the educator's place is credited against that booking — pre-trip discovery, in effect.
+          Register interest below. We'll publish dates once we have 6+ educators on the list.
         </p>
         <div style={{display:"flex", gap:12, marginTop:24, flexWrap:"wrap"}}>
           <button className="btn-pill btn-action" style={{padding:"15px 26px"}} onClick={()=>khifiNavigate("contact")}>Register interest →</button>
-          <button className="btn-pill btn-ghost" style={{padding:"15px 26px"}} onClick={()=>khifiNavigate("schools")}>For schools (student trips)</button>
+          <button className="btn-pill btn-ghost" style={{padding:"15px 26px"}} onClick={()=>khifiNavigate("programs")}>See the three programmes</button>
         </div>
       </div>
     </section>

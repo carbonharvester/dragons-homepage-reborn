@@ -19,22 +19,22 @@ function MobileHomeHero() {
           color:"rgba(255,255,255,.95)", marginBottom:24,
         }}>
           <span style={{width:6, height:6, borderRadius:50, background:"var(--orange)"}}/>
-          A different kind of impact programme
+          Year-round impact in Kenya · funded by school trips
         </div>
 
         <h1 className="display" style={{
           color:"#fff",
-          fontSize:"clamp(46px, 13vw, 64px)",
-          lineHeight:.96, letterSpacing:"-.02em", margin:0,
+          fontSize:"clamp(40px, 11vw, 58px)",
+          lineHeight:.98, letterSpacing:"-.02em", margin:0,
         }}>
-          Your cohort<br/>doesn't need <span className="accent">to save Africa.</span>
+          Removing the barriers between children <span className="accent">and their classrooms.</span>
         </h1>
 
         <p style={{
           color:"rgba(255,255,255,.85)", fontSize:17, lineHeight:1.5,
-          marginTop:22, maxWidth:340,
+          marginTop:22, maxWidth:360,
         }}>
-          A week inside real work in Kenya. The work runs whether you visit or not.
+          Three Kenyan-led programmes work continuously in Kenya — food, water, livelihoods. We hire 30+ Kenyans year-round. School cohorts join for a week.
         </p>
 
         <div style={{display:"flex", flexDirection:"column", gap:10, marginTop:32}}>
@@ -69,8 +69,8 @@ function MobileHomeHero() {
           fontSize:11, letterSpacing:".08em", textTransform:"uppercase", color:"rgba(255,255,255,.7)", fontWeight:600,
         }}>
           <div>Kenyan-led</div>
-          <div>3 programmes</div>
-          <div>1:10 ratio</div>
+          <div>30+ on payroll</div>
+          <div>Year-round impact</div>
         </div>
       </div>
     </section>
@@ -83,10 +83,10 @@ function MobileEssence() {
     <section style={{padding:"64px 22px", background:"var(--cream)"}}>
       <div className="eyebrow" style={{marginBottom:14}}>A manifesto · not a brochure</div>
       <h2 className="display" style={{fontSize:34, lineHeight:1.05, letterSpacing:"-.01em", margin:"0 0 20px"}}>
-        Five commitments<br/>we'll <span className="accent">never quietly drop.</span>
+        Six commitments<br/>we'll <span className="accent">never quietly drop.</span>
       </h2>
       <p style={{fontSize:16, lineHeight:1.55, color:"var(--ink-2)", margin:0}}>
-        Our flagship programme runs year-round in Kenya, with a permanent crew. Your students join their work for a week. The crew keeps going for the other 51.
+        We employ 30+ Kenyans year-round to grow food, install water tanks, and run conservancy work. School cohorts join for a week. The work keeps going whether they do or not.
       </p>
 
       <div style={{
@@ -115,16 +115,18 @@ function MobileEssence() {
 /* Manifesto — five points as a vertical list */
 function MobileManifestoList() {
   const points = [
-    { n:"01", t:"Our flagship runs all year.",
-      b:"Seeds2Education operates continuously in Kenya. A permanent crew works the land week in, week out. Trips visit. They never start the work, and they never end it." },
-    { n:"02", t:"Students plant the seed — or join it mid-stream.",
-      b:"Sometimes they help start a project. Sometimes they join one already running. In every case the work is chosen and led by Kenyan partners." },
-    { n:"03", t:"No orphanages. No classrooms with strangers.",
-      b:"A six-day visit from unfamiliar adults is not education — it's disruption. We never place students in direct contact with vulnerable children." },
+    { n:"01", t:"Social impact first. Trips are how we fund it.",
+      b:"Kapes Adventures isn't a trip operator that does some good on the side. It's the inverse. Our Kenyan teams are paid year-round — by us, from trip income — and keep working whether your cohort visits this term or not." },
+    { n:"02", t:"Salaries, not handouts.",
+      b:"Seeds2Education employs 30+ Kenyans to grow onions on land donated by a Kenyan school. The harvest is exchanged at 0.85 USD/kg with Food for Education — three subsidised meals per kilogram. Wages stay in the community. Kids eat." },
+    { n:"03", t:"Year-round impact. Yours is one week of it.",
+      b:"Seeds2Education operates continuously in Kenya. The permanent crew works the land week in, week out. Cohorts join. They never start the work, and they never end it." },
     { n:"04", t:"The community is the client. You are the guest.",
       b:"Every programme is shaped by Kenyan partners against their own priorities. If a project isn't useful to the community, we don't run it." },
-    { n:"05", t:"Designed in Dubai. Delivered by Kenyans.",
-      b:"Every trip is led on the ground by Kenyan trip leaders we contract directly. 1:10 leader-to-student ratio, minimum two leaders per trip." },
+    { n:"05", t:"No orphanages. No classrooms with strangers.",
+      b:"A six-day visit from unfamiliar adults is not education — it's disruption. We never place visiting cohorts in direct contact with vulnerable children." },
+    { n:"06", t:"Designed in Dubai. Delivered by Kenyans.",
+      b:"Every trip is led on the ground by Kenyan trip leaders we contract directly. 1:10 leader ratio, minimum two leaders per trip." },
   ];
   return (
     <section style={{padding:"56px 22px 40px", background:"var(--cream)"}}>
@@ -159,34 +161,34 @@ function MobileProgrammes() {
   const programmes = [
     {
       code:"S2E", color:"#22C55E",
-      headline:"Turning unused school land into farms that feed students.",
+      headline:"A working farm. Year-round wages.",
       img: IMG.farmKenyanKid,
-      cadence:"Year-round, 365 days",
+      cadence:"30+ Kenyans on payroll · year-round",
       sub:"Seeds2Education · Kenya",
     },
     {
       code:"WEW", color:"#F43F5E",
-      headline:"Bringing clean water to schools so girls can stay in class.",
+      headline:"Tanks at schools where girls were dropping out.",
       img: IMG.wewPaintingTank,
-      cadence:"Multi-year build cycles",
+      cadence:"+40% enrolment post-build",
       sub:"Water Empowering Women · Kenya",
     },
     {
       code:"CC", color:"#3B82F6",
-      headline:"Linking conservation, livelihoods, and education on one site.",
+      headline:"A different mental model of Africa.",
       img: IMG.ccFactory,
-      cadence:"Running since 2022",
+      cadence:"50% of REDD+ profits → bursaries",
       sub:"Community Conservation · Kenya",
     },
   ];
   return (
     <section style={{padding:"64px 22px", background:"var(--sand)"}}>
-      <div className="eyebrow" style={{marginBottom:14}}>What each programme delivers</div>
+      <div className="eyebrow" style={{marginBottom:14}}>What each programme actually does</div>
       <h2 className="display" style={{fontSize:32, lineHeight:1.05, margin:"0 0 18px", letterSpacing:"-.01em"}}>
-        The trip is a chapter. <span className="accent">The work runs whether you visit or not.</span>
+        Three barriers to education. <span className="accent">Three Kenyan-led ways to remove them.</span>
       </h2>
       <p style={{fontSize:15.5, lineHeight:1.55, color:"var(--ink-2)", margin:"0 0 32px"}}>
-        Three different shapes of outcome — none of them depend on a school visit.
+        Hunger, water scarcity, lack of livelihood. We employ Kenyans to fix each one — year-round, regardless of whether a cohort visits.
       </p>
 
       <div style={{display:"flex", flexDirection:"column", gap:14}}>
@@ -559,16 +561,16 @@ function MobileMediaReel() {
 function MobileAudiences() {
   const groups = [
     { tag:"For schools", title:"Student cohorts.", body:"Y10–12 cohorts visit one of three programmes for a week. CAS / EE / DofE-eligible.", meta:"7-day · Y10–12 · 1:10", route:"schools", color:"#22C55E" },
-    { tag:"For teachers", title:"A CPD trip across all three.", body:"One trip, all three programmes — see how the work runs, take pedagogy + curriculum links back home.", meta:"5-day CPD · S2E + WEW + CC", route:"teachers", color:"#F43F5E" },
+    { tag:"For educators", title:"A standalone CPD trip.", body:"Five days inside Kenyan-led social impact work — all three programmes in one trip. Independent of any school booking. Serious professional development for teachers and school leaders.", meta:"5-day CPD · S2E + WEW + CC", route:"teachers", color:"#F43F5E" },
   ];
   return (
     <section style={{padding:"64px 22px", background:"var(--cream)", borderTop:"1px solid var(--line)"}}>
-      <div className="eyebrow" style={{marginBottom:14}}>Two ways to come to Kenya</div>
+      <div className="eyebrow" style={{marginBottom:14}}>Two products · same impact engine</div>
       <h2 className="display" style={{fontSize:32, lineHeight:1.05, margin:"0 0 18px", letterSpacing:"-.01em"}}>
-        Bring a cohort. <span className="accent">Or come first.</span>
+        The school trip. <span className="accent">The educator CPD trip.</span>
       </h2>
       <p style={{fontSize:15.5, lineHeight:1.55, color:"var(--ink-2)", margin:"0 0 28px"}}>
-        Most schools send a student cohort. Some heads and coordinators come first — a 5-day CPD trip across all three programmes — to see the work in person before they design what their students will do.
+        Both join the same year-round work in Kenya. Schools send a student cohort to one programme for a week. The CPD trip is a separate, standalone product for educators — not a sales pipeline for school bookings.
       </p>
       <div style={{display:"flex", flexDirection:"column", gap:12}}>
         {groups.map(g=>(
